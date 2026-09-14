@@ -254,7 +254,7 @@ Cada análise completa custa cerca de US$ 0,23 em uso da inteligência artificia
 
 ## Integrantes
 
-- **Giovanna Ribas dos Reis**
+- **Giovanna Ribas dos Reis** — [portfólio](https://ribasgiovanna.github.io/)
 - **Emelize Bonfim Mlot**
 - **Ana Beatriz Patussi**
 - **Julia Fernanda Zuchi**
