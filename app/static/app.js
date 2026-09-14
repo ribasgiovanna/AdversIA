@@ -82,7 +82,8 @@ const DURACAO_ETAPAS_DEMO = [1300, 1600, 1500, 2100, 1800, 1500];
    "chave" faz a análise real com a chave da Anthropic do próprio usuário. */
 let modo = "demo";
 let casoDemo = null;
-let contextoReal = null; // { documentos, tese, chave } da última análise real, para a simulação
+let contextoReal = null; // { documentos, tese, chave, codigo } da última análise real, para a simulação
+let codigoGestao = null; // código da gestão já conferido pelo servidor; só na memória desta aba
 
 /* ---------- utilidades ---------- */
 
@@ -698,10 +699,73 @@ function configurarModo() {
     opcao.addEventListener("change", () => {
       if (!opcao.checked) return;
       aplicarModo(opcao.value);
-      anunciar(opcao.value === "demo" ? "Modo demonstração gratuita." : "Modo análise com a sua chave.");
+      anunciar(opcao.value === "demo" ? "Modo demonstração gratuita." : "Modo análise com documentos.");
     });
   });
   aplicarModo(document.querySelector('input[name="modo"]:checked').value);
+}
+
+/* ---------- acesso da gestão (ADR-015) ---------- */
+
+function liberarGestao(codigo) {
+  codigoGestao = codigo;
+  $("opcao-modo-chave").hidden = false;
+  $("acesso-gestao").hidden = true;
+  $("modo-chave").checked = true;
+  aplicarModo("chave");
+  anunciar("Acesso da gestão liberado. Modo análise com documentos.");
+  $("modo-chave").focus();
+}
+
+async function entrarGestao() {
+  const campo = $("codigo-gestao");
+  const erro = $("gestao-erro");
+  const codigo = campo.value.trim();
+  erro.hidden = true;
+  if (!codigo) {
+    erro.textContent = "Digite o código de acesso da gestão.";
+    erro.hidden = false;
+    campo.focus();
+    return;
+  }
+  const botao = $("entrar-gestao");
+  botao.disabled = true;
+  try {
+    let resposta;
+    try {
+      resposta = await fetch("api/gestao", { method: "POST", headers: { "X-Codigo-Gestao": codigo } });
+    } catch {
+      throw new Error(MENSAGEM_SEM_CONEXAO);
+    }
+    const dados = await lerJson(resposta);
+    if (!resposta.ok) throw new Error(dados.erro || MENSAGEM_FALHA_PADRAO);
+    campo.value = "";
+    liberarGestao(codigo);
+  } catch (falha) {
+    erro.textContent = falha.message || MENSAGEM_FALHA_PADRAO;
+    erro.hidden = false;
+    campo.focus();
+  } finally {
+    botao.disabled = false;
+  }
+}
+
+function configurarGestao() {
+  const painel = $("painel-gestao");
+  const abrir = $("botao-gestao");
+  abrir.addEventListener("click", () => {
+    painel.hidden = !painel.hidden;
+    abrir.setAttribute("aria-expanded", String(!painel.hidden));
+    if (!painel.hidden) $("codigo-gestao").focus();
+  });
+  $("entrar-gestao").addEventListener("click", entrarGestao);
+  // O campo fica dentro do formulário da análise: Enter confere o código em vez de enviar o formulário.
+  $("codigo-gestao").addEventListener("keydown", (evento) => {
+    if (evento.key === "Enter") {
+      evento.preventDefault();
+      entrarGestao();
+    }
+  });
 }
 
 function mostrarErroFormulario(mensagem, focarEm) {
@@ -722,6 +786,10 @@ function validarFormulario() {
       return null;
     }
     return casoDemo.tese;
+  }
+  if (!codigoGestao) {
+    mostrarErroFormulario("A análise com documentos está disponível só para a gestão.", $("botao-gestao"));
+    return null;
   }
   const tese = $("tese").value.trim();
   if (arquivos.size === 0) {
@@ -833,14 +901,18 @@ async function executarAnaliseReal(tese) {
   try {
     let resposta;
     try {
-      resposta = await fetch("api/analisar", { method: "POST", headers: { "X-Anthropic-Key": chave }, body: dadosFormulario });
+      resposta = await fetch("api/analisar", {
+        method: "POST",
+        headers: { "X-Anthropic-Key": chave, "X-Codigo-Gestao": codigoGestao },
+        body: dadosFormulario,
+      });
     } catch {
       throw new Error(MENSAGEM_SEM_CONEXAO);
     }
     const dados = await lerJson(resposta);
     if (!resposta.ok) throw new Error(dados.erro || MENSAGEM_FALHA_PADRAO);
     renderizarEtapas(ETAPAS, ETAPAS.length, "concluida");
-    contextoReal = { documentos: dados.documentos, tese: dados.tese, chave };
+    contextoReal = { documentos: dados.documentos, tese: dados.tese, chave, codigo: codigoGestao };
     renderizarRelatorio(dados.relatorio);
   } finally {
     clearInterval(relogio);
@@ -1387,7 +1459,7 @@ async function enviarRespostaAudiencia(evento) {
     return;
   }
   if (!contextoReal) {
-    erro.textContent = "Faça uma análise com a sua chave para responder com as suas próprias palavras.";
+    erro.textContent = "Faça uma análise com documentos (área da gestão) para responder com as suas próprias palavras.";
     erro.hidden = false;
     return;
   }
@@ -1403,7 +1475,11 @@ async function enviarRespostaAudiencia(evento) {
     try {
       respostaHttp = await fetch("api/audiencia", {
         method: "POST",
-        headers: { "Content-Type": "application/json", "X-Anthropic-Key": contextoReal.chave },
+        headers: {
+          "Content-Type": "application/json",
+          "X-Anthropic-Key": contextoReal.chave,
+          "X-Codigo-Gestao": contextoReal.codigo,
+        },
         body: JSON.stringify({
           documentos: contextoReal.documentos,
           tese: contextoReal.tese,
@@ -1508,6 +1584,7 @@ document.addEventListener("DOMContentLoaded", () => {
   configurarPainelAcessibilidade();
   configurarEnvioDeArquivos();
   configurarModo();
+  configurarGestao();
   carregarExemplos();
   animarTitulo();
   digitarExemploDaTese();

@@ -145,6 +145,9 @@ class AdversIARequestHandler(BaseHTTPRequestHandler):
         if caminho == "/api/audiencia":
             api_comum.responder(self, api_comum.processar_audiencia, api_comum.MAX_CORPO_AUDIENCIA)
             return
+        if caminho == "/api/gestao":
+            api_comum.responder_gestao(self)
+            return
         if caminho != "/api/analyze":
             self._send_json(404, {"erro": MSG_NAO_ENCONTRADO})
             return

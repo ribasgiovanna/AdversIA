@@ -494,3 +494,40 @@ a chave.
 sem erros de JavaScript; `/api/analisar` sem chave (401), com chave malformada (400) e com
 chave falsa (401, mensagem da Anthropic traduzida), sem custo. Publicação na Vercel
 depende de a equipe conectar o repositório à conta dela.
+
+---
+
+## ADR-015
+
+**DATA:** 14/09/2026
+
+**DECISÃO:** A **análise com documentos** passa a ser exclusiva da **gestão**. Visitantes
+veem só a demonstração gratuita; a opção "Analisar documentos" aparece depois que alguém
+clica em "Acesso da gestão" e informa o código correto.
+
+**COMO FUNCIONA:**
+- O código fica na variável de ambiente `ADVERSIA_CODIGO_GESTAO` (painel da Vercel ou
+  `.env` local), **nunca no código-fonte**.
+- `POST /api/gestao` confere o código e libera a opção na tela. `POST /api/analisar` e
+  `POST /api/audiencia` conferem o código **de novo, antes de qualquer outra checagem**: esconder
+  o botão não basta, a proteção real é no servidor.
+- Comparação por `hmac.compare_digest`; código errado espera 1 s antes do 403; sem a
+  variável configurada, a análise real fica desligada (falha fechada).
+- No navegador, o código fica só na memória da aba (some ao recarregar), como a chave.
+
+**MOTIVO:** documentos de família são sensíveis; manter a análise real aberta a qualquer
+visitante contraria o uso só com dados fictícios e a responsabilidade da equipe sobre o que
+entra no sistema. A demonstração continua pública para avaliadores e interessados.
+
+**ALTERNATIVAS:** login individual por e-mail (mais seguro e auditável, mas exige serviço de
+autenticação e mais tempo); link separado para a gestão (descartado: quem descobre o link
+entra).
+
+**DESVANTAGENS:** código compartilhado por toda a gestão, sem identificar quem usou; trocar o
+código exige atualizar a variável e publicar de novo; sem contagem de tentativas entre
+instâncias (mitigado pela espera de 1 s e por um código longo).
+
+**RISCO:** Baixo, desde que o código seja longo e não seja divulgado.
+
+**STATUS:** Aceito. Validado localmente em 14/09/2026 (ver seção de testes da documentação
+técnica).

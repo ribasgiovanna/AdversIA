@@ -1278,3 +1278,10 @@ textarea.digitando { caret-color: transparent; }
   main { padding: 0; }
   .achado, .placar li, .tese-analisada { break-inside: avoid; }
 }
+
+/* ---------- acesso da gestão ---------- */
+
+.acesso-gestao { margin-top: 12px; display: flex; flex-direction: column; gap: 8px; }
+.painel-gestao { display: flex; flex-direction: column; gap: 6px; max-width: 28rem; }
+.linha-gestao { display: flex; flex-wrap: wrap; gap: 8px; }
+.linha-gestao .campo-texto { flex: 1 1 12rem; min-width: 0; }

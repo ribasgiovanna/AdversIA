@@ -113,11 +113,22 @@
               <span class="modo-titulo">Demonstração gratuita</span>
               <span class="modo-descricao">Escolha um caso fictício pronto e veja o relatório completo, sem custo e sem cadastro.</span>
             </label>
-            <label class="modo-opcao">
+            <label class="modo-opcao" id="opcao-modo-chave" hidden>
               <input type="radio" name="modo" id="modo-chave" value="chave" />
-              <span class="modo-titulo">Analisar com a minha chave</span>
-              <span class="modo-descricao">Envie os seus documentos e use a sua própria chave da Anthropic. O custo fica na sua conta.</span>
+              <span class="modo-titulo">Analisar documentos</span>
+              <span class="modo-descricao">Área da gestão: envie os documentos do caso e use uma chave da Anthropic. O custo fica na conta dessa chave.</span>
             </label>
+          </div>
+          <div class="acesso-gestao" id="acesso-gestao">
+            <button type="button" class="botao-texto" id="botao-gestao" aria-expanded="false" aria-controls="painel-gestao">Acesso da gestão</button>
+            <div class="painel-gestao" id="painel-gestao" hidden>
+              <label for="codigo-gestao" class="rotulo-filtro">Código de acesso da gestão</label>
+              <div class="linha-gestao">
+                <input type="password" class="campo-texto" id="codigo-gestao" autocomplete="off" spellcheck="false" aria-describedby="gestao-erro" />
+                <button type="button" class="botao-secundario" id="entrar-gestao">Entrar</button>
+              </div>
+              <p class="erro-formulario" id="gestao-erro" role="alert" hidden></p>
+            </div>
           </div>
         </fieldset>
 

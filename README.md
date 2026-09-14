@@ -93,9 +93,9 @@ palavra, no documento enviado.**
 
 A AdversIA tem **dois jeitos de usar**:
 
-| | Demonstração | Meus documentos |
+| | Demonstração | Análise com documentos (só gestão) |
 |---|---|---|
-| Para quem | Qualquer pessoa que queira conhecer o sistema | Quem quer analisar um caso próprio |
+| Para quem | Qualquer pessoa que queira conhecer o sistema | Equipe de gestão, com código de acesso |
 | Custo | **Gratuito**, sem cadastro | Usa a chave da Anthropic da própria pessoa (cerca de US$ 0,25 por análise, cobrado na conta dela) |
 | O que acontece | Você escolhe um dos **32 casos fictícios** e vê a análise completa, que foi preparada antes | A inteligência artificial lê os seus documentos na hora |
 | Simulação de audiência | Respostas prontas para escolher e ver a avaliação | Você escreve ou fala a sua resposta |
@@ -103,7 +103,8 @@ A AdversIA tem **dois jeitos de usar**:
 No modo demonstração, a tela avisa: *"Caso fictício de demonstração · análise preparada
 previamente"*.
 
-Passo a passo com os seus documentos:
+Passo a passo da análise com documentos, liberada só depois de clicar em **Acesso da
+gestão** e digitar o código:
 
 1. **Envie os documentos do caso**: petição, contestação, acordos, declarações (PDF,
    Word ou texto).
@@ -269,8 +270,9 @@ python -m app.server
 # abra http://localhost:8000
 ```
 
-Não é preciso nenhuma chave para rodar: o modo demonstração funciona sozinho, e a análise
-com documentos próprios pede a chave da Anthropic na tela. Cada análise completa custa
+O modo demonstração funciona sem nenhuma configuração. A análise com documentos é só
+para a gestão: defina a variável `ADVERSIA_CODIGO_GESTAO` (no `.env` ou no painel da
+Vercel) e informe esse código e a chave da Anthropic na tela. Cada análise completa custa
 cerca de US$ 0,25, cobrados na conta de quem informou a chave.
 
 ---

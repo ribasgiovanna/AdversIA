@@ -234,6 +234,11 @@ concluídas.
 **`app/api_comum.py`: regras compartilhadas.** Usado igualmente pelas funções da Vercel e
 pelo servidor local, para que os dois ambientes se comportem da mesma forma.
 
+- `verificar_gestao(cabecalhos)` (ADR-015): primeira checagem de toda rota de análise real.
+  Compara `X-Codigo-Gestao` com a variável `ADVERSIA_CODIGO_GESTAO` por
+  `hmac.compare_digest` (tempo constante). Variável ausente ou cabeçalho vazio → 403
+  (análise real desligada, falha fechada); código errado → espera 1 s e responde 403, para
+  atrasar tentativas de adivinhação. `responder_gestao` expõe só essa conferência.
 - `ler_chave(cabecalhos)`: lê `X-Anthropic-Key`; ausente → 401 ("informe a sua chave… ou use
   o modo demonstração"); fora do formato `^sk-ant-[A-Za-z0-9_\-]{20,300}$` → 400.
 - `responder(requisicao, processar, limite_bytes)`: valida `Content-Length` (vazio → 400;
@@ -564,8 +569,9 @@ Base: domínio da Vercel ou `http://localhost:8000`. Toda resposta da API é
 | `GET /` e estáticos | — | 200 arquivo | 404 (inexistente ou fora de `static/`) |
 | `GET demo/indice.json` | — | 200 `[{id, tipo, titulo, descricao}]` (32), estático | 404 |
 | `GET demo/casos/<id>.json` | id da lista | 200 `{id, tipo, titulo, descricao, documentos:[{nome, conteudo}], tese, relatorio, audiencia:[{pergunta, respostas:[{rotulo, texto, avaliacao}]}]}`, estático | 404 |
-| `POST /api/analisar` | cabeçalho `X-Anthropic-Key`; `multipart/form-data`: `documentos` (1..n arquivos), `tese` | 200 `{relatorio, documentos:{nome: texto}, tese}` | 400 (formato, chave malformada, extração, sem documento/tese), 401 (sem chave ou chave recusada), 402 (sem crédito), 403, 413 (>4 MB na Vercel, >15 MB local), 429, 502, 500 |
-| `POST /api/audiencia` | cabeçalho `X-Anthropic-Key`; JSON `{documentos, tese, pergunta, resposta}` (≤2 MB) | 200 `{avaliacao, resumo, pontos_fortes[], pontos_frageis[], sugestao, apoio_nos_documentos[{documento, trecho, conferido}], replica}` | 400, 401, 402, 403, 413, 429, 502, 500 |
+| `POST /api/analisar` | cabeçalhos `X-Codigo-Gestao` e `X-Anthropic-Key`; `multipart/form-data`: `documentos` (1..n arquivos), `tese` | 200 `{relatorio, documentos:{nome: texto}, tese}` | 400 (formato, chave malformada, extração, sem documento/tese), 401 (sem chave ou chave recusada), 402 (sem crédito), 403, 413 (>4 MB na Vercel, >15 MB local), 429, 502, 500 |
+| `POST /api/audiencia` | cabeçalhos `X-Codigo-Gestao` e `X-Anthropic-Key`; JSON `{documentos, tese, pergunta, resposta}` (≤2 MB) | 200 `{avaliacao, resumo, pontos_fortes[], pontos_frageis[], sugestao, apoio_nos_documentos[{documento, trecho, conferido}], replica}` | 400, 401, 402, 403, 413, 429, 502, 500 |
+| `POST /api/gestao` | cabeçalho `X-Codigo-Gestao` | 200 `{ok: true}` | 403 (código errado, vazio ou não configurado) |
 | `POST /api/analyze` (só local) | `multipart/form-data` sem chave; usa `.env` | 200 relatório completo | 400, 413, 500 |
 | Outras `/api/*` | — | — | 404 JSON |
 
@@ -886,10 +892,11 @@ curatela, tomada de decisão apoiada e abandono afetivo.
 
 ### 16.1 Variáveis de ambiente
 
-Nenhuma é obrigatória para o site funcionar (ADR-014).
+Nenhuma é obrigatória para o modo demonstração (ADR-014).
 
 | Variável | Obrigatória | Padrão | Uso |
 |---|---|---|---|
+| `ADVERSIA_CODIGO_GESTAO` | para a análise com documentos | — | código de acesso da gestão; sem ela, a análise real responde 403 (ADR-015) |
 | `ANTHROPIC_API_KEY` | não | — | só para `pytest` e `POST /api/analyze` locais |
 | `LLM_PROVIDER` | não | `anthropic` | `anthropic`, `groq` ou `gemini` (ignorada quando o usuário informa a chave) |
 | `GROQ_API_KEY` | se `groq` | — | testes gratuitos locais |
@@ -951,6 +958,7 @@ python -m pytest                   # suíte completa: exige ANTHROPIC_API_KEY e 
 | 012 | Acessibilidade: VLibras pronto + controles próprios (sem widgets de overlay com rastreamento) |
 | 013 | Linha do tempo, plano de provas, simulação de audiência e conferência de trechos |
 | 014 | Vercel, modo demonstração pré-montado (32 casos fictícios) e chave da Anthropic do próprio usuário |
+| 015 | Análise com documentos exclusiva da gestão, por código de acesso |
 
 - **Outros documentos:** `CONFORMIDADE.md` (acessibilidade, LGPD, segurança),
   `CATALOGO_DE_SITUACOES.md` (casos fictícios e fontes públicas dos temas), `COSTS.md`,

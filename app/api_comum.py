@@ -1,7 +1,11 @@
 """Regras da análise real compartilhadas pelo servidor local (app/server.py) e pelas
-funções da Vercel (api/analisar.py e api/audiencia.py).
+funções da Vercel (api/analisar.py, api/audiencia.py e api/gestao.py).
 
-A análise real usa SEMPRE a chave da Anthropic do próprio usuário, enviada no cabeçalho
+A análise com documentos é exclusiva da gestão (ADR-015): toda requisição precisa trazer,
+no cabeçalho `X-Codigo-Gestao`, o código definido na variável de ambiente
+`ADVERSIA_CODIGO_GESTAO`. Sem a variável configurada, a análise real fica desligada.
+
+A análise real usa SEMPRE a chave da Anthropic informada na tela, enviada no cabeçalho
 `X-Anthropic-Key` a cada requisição. A chave não é gravada, não vai para o log e não é
 reaproveitada entre requisições. O modo demonstração não passa por aqui: os resultados
 dele são arquivos estáticos em app/static/demo/.
@@ -13,8 +17,11 @@ simulação de audiência recebe esse texto de volta do navegador.
 
 from __future__ import annotations
 
+import hmac
 import json
+import os
 import re
+import time
 import traceback
 
 import anthropic
@@ -25,13 +32,20 @@ from app.llm_client import LLMConfigError, usar_chave_anthropic
 from app.multipart_parser import extrair_boundary, parse_multipart
 
 CABECALHO_CHAVE = "X-Anthropic-Key"
+CABECALHO_CODIGO_GESTAO = "X-Codigo-Gestao"
+VARIAVEL_CODIGO_GESTAO = "ADVERSIA_CODIGO_GESTAO"
 _FORMATO_CHAVE = re.compile(r"^sk-ant-[A-Za-z0-9_\-]{20,300}$")
 
 MAX_CORPO_AUDIENCIA = 2 * 1024 * 1024
 MAX_TEXTO_DOCUMENTOS = 400_000
 MAX_PERGUNTA = 2000
 MAX_RESPOSTA = 4000
+# Espera antes de responder a um código errado: sem banco para contar tentativas, atrasar
+# cada erro é a forma simples de tornar inviável adivinhar o código por repetição.
+ESPERA_CODIGO_ERRADO_S = 1.0
 
+MSG_SO_GESTAO = "A análise com documentos está disponível só para a gestão. Use a demonstração gratuita."
+MSG_CODIGO_ERRADO = "Código de acesso da gestão incorreto. Confira e tente de novo."
 MSG_CHAVE_AUSENTE = (
     "Para analisar os seus próprios documentos, informe a sua chave da Anthropic. "
     "Sem chave, use o modo demonstração."
@@ -56,6 +70,20 @@ class ErroParaUsuario(Exception):
         super().__init__(mensagem)
         self.status = status
         self.mensagem = mensagem
+
+
+def verificar_gestao(cabecalhos) -> None:
+    """Libera a análise real só para quem informa o código da gestão (ADR-015)."""
+    esperado = os.environ.get(VARIAVEL_CODIGO_GESTAO, "").strip()
+    if not esperado:
+        # Falha fechada: sem código configurado, ninguém usa a análise real.
+        raise ErroParaUsuario(403, MSG_SO_GESTAO)
+    recebido = (cabecalhos.get(CABECALHO_CODIGO_GESTAO) or "").strip()
+    if not recebido:
+        raise ErroParaUsuario(403, MSG_SO_GESTAO)
+    if not hmac.compare_digest(recebido.encode("utf-8"), esperado.encode("utf-8")):
+        time.sleep(ESPERA_CODIGO_ERRADO_S)
+        raise ErroParaUsuario(403, MSG_CODIGO_ERRADO)
 
 
 def ler_chave(cabecalhos) -> str:
@@ -180,9 +208,34 @@ def processar_audiencia(cabecalhos, corpo: bytes, chave: str) -> dict:
     return avaliar_audiencia(ler_json(corpo), chave)
 
 
+def _enviar_json(requisicao, status: int, conteudo: dict) -> None:
+    dados = json.dumps(conteudo, ensure_ascii=False).encode("utf-8")
+    requisicao.send_response(status)
+    requisicao.send_header("Content-Type", "application/json; charset=utf-8")
+    requisicao.send_header("Content-Length", str(len(dados)))
+    requisicao.send_header("Cache-Control", "no-store")
+    requisicao.send_header("X-Content-Type-Options", "nosniff")
+    requisicao.send_header("Referrer-Policy", "no-referrer")
+    requisicao.end_headers()
+    requisicao.wfile.write(dados)
+
+
+def responder_gestao(requisicao) -> None:
+    """Confere o código da gestão sem fazer nenhuma análise (libera a opção na tela)."""
+    try:
+        verificar_gestao(requisicao.headers)
+        status, conteudo = 200, {"ok": True}
+    except ErroParaUsuario as erro:
+        status, conteudo = erro.status, {"erro": erro.mensagem}
+    _enviar_json(requisicao, status, conteudo)
+
+
 def responder(requisicao, processar, limite_bytes: int) -> None:
     """Atende um POST de análise real num `BaseHTTPRequestHandler` (servidor local ou Vercel)."""
     try:
+        # O código da gestão é conferido antes de qualquer outra coisa: quem não é da gestão
+        # não chega a enviar documentos nem chave.
+        verificar_gestao(requisicao.headers)
         try:
             tamanho = int(requisicao.headers.get("Content-Length", 0))
         except ValueError:
@@ -200,13 +253,4 @@ def responder(requisicao, processar, limite_bytes: int) -> None:
         status, conteudo = 200, processar(requisicao.headers, corpo, chave)
     except ErroParaUsuario as erro:
         status, conteudo = erro.status, {"erro": erro.mensagem}
-
-    dados = json.dumps(conteudo, ensure_ascii=False).encode("utf-8")
-    requisicao.send_response(status)
-    requisicao.send_header("Content-Type", "application/json; charset=utf-8")
-    requisicao.send_header("Content-Length", str(len(dados)))
-    requisicao.send_header("Cache-Control", "no-store")
-    requisicao.send_header("X-Content-Type-Options", "nosniff")
-    requisicao.send_header("Referrer-Policy", "no-referrer")
-    requisicao.end_headers()
-    requisicao.wfile.write(dados)
+    _enviar_json(requisicao, status, conteudo)
