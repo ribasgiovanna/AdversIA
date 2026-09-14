@@ -1,0 +1,570 @@
+{
+ "id": "partilha-previdencia-privada",
+ "tipo": "Divórcio e partilha de bens",
+ "titulo": "Previdência privada aberta e fechada",
+ "descricao": "A ex-esposa pede metade do plano de previdência do marido, inclusive R$ 150 mil resgatados um mês antes da separação, e também do plano fechado da empresa dele.",
+ "documentos": [
+  {
+   "nome": "contestacao_ricardo.txt",
+   "conteudo": "CONTESTAÇÃO (CASO FICTÍCIO PARA TESTES, CENÁRIO SINTÉTICO — NENHUMA RELAÇÃO COM PESSOAS\nREAIS)\n\nRÉU: Ricardo, em resposta à ação proposta por Helena.\n\nDOS FATOS\n\nRicardo concorda com o divórcio. Discorda, porém, da partilha pedida.\n\nO plano de previdência aberta foi contratado em maio de 2014 com R$ 60 mil recebidos de\nherança do pai de Ricardo, falecido em 2013, e os aportes mensais seguintes eram feitos\ncom o salário dele, e não com dinheiro de Helena.\n\nO resgate de fevereiro de 2023 foi usado para quitar dívidas do próprio casal, entre elas\no cartão de crédito da família e o IPTU atrasado do apartamento.\n\nO plano fechado da empresa tem natureza de benefício previdenciário e não é\ninvestimento, razão pela qual não entra na partilha.\n\nA separação de fato ocorreu em janeiro de 2023, e não em março.\n\nDO PEDIDO\n\n1. Divórcio.\n2. Exclusão da partilha do valor de R$ 60 mil vindo da herança e dos valores do plano\n   fechado.\n3. Reconhecimento de que o resgate de fevereiro de 2023 foi usado em benefício da família.\n"
+  },
+  {
+   "nome": "peticao_helena.txt",
+   "conteudo": "AÇÃO DE DIVÓRCIO COM PARTILHA DE BENS (CASO FICTÍCIO PARA TESTES, CENÁRIO SINTÉTICO —\nNENHUMA RELAÇÃO COM PESSOAS REAIS)\n\nAUTORA: Helena\nRÉU: Ricardo\nREGIME DE BENS: comunhão parcial\n\nDOS FATOS\n\nHelena e Ricardo se casaram em 20/02/2010 e se separaram de fato em 15/03/2023, quando\nRicardo deixou o apartamento do casal.\n\nDurante o casamento, Ricardo contratou em 05/2014 um plano de previdência privada aberta\nem um banco, com aportes mensais feitos a partir da conta conjunta do casal. Em dezembro\nde 2022, o saldo informado no aplicativo do banco era de aproximadamente R$ 380 mil.\n\nRicardo também participa, desde 2012, do plano de previdência complementar fechado\noferecido pela empresa onde trabalha, com contribuições descontadas do salário.\n\nEm fevereiro de 2023, um mês antes da separação, Ricardo resgatou cerca de R$ 150 mil do\nplano aberto, sem informar Helena.\n\nDO PEDIDO\n\n1. Decretação do divórcio.\n2. Partilha igualitária do saldo do plano de previdência aberta existente na data da\n   separação de fato, incluindo os R$ 150 mil resgatados em fevereiro de 2023.\n3. Partilha dos valores do plano de previdência complementar fechado.\n"
+  }
+ ],
+ "tese": "Ação de divórcio com partilha de previdência privada. A tese a ser testada é a de Helena\n(autora): partilha igualitária do saldo do plano de previdência privada aberta, incluindo\nos R$ 150 mil resgatados por Ricardo um mês antes da separação, e partilha do plano de\nprevidência complementar fechado mantido pela empresa dele.",
+ "relatorio": {
+  "resumo_do_caso": "Lemos 2 documentos e identificamos 2 partes, 10 fatos relevantes e 6 pedidos.",
+  "tese_analisada": "Ação de divórcio com partilha de previdência privada. A tese a ser testada é a de Helena\n(autora): partilha igualitária do saldo do plano de previdência privada aberta, incluindo\nos R$ 150 mil resgatados por Ricardo um mês antes da separação, e partilha do plano de\nprevidência complementar fechado mantido pela empresa dele.",
+  "findings": [
+   {
+    "id": "contradicao-separacao",
+    "categoria": "contradicao",
+    "texto": "A data da separação de fato é diferente em cada documento: 15/03/2023 para Helena e janeiro de 2023 para Ricardo. A divergência é decisiva, porque o resgate de R$ 150 mil aconteceu em fevereiro de 2023: pela versão de Ricardo, ele teria ocorrido depois do fim da convivência.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "peticao_helena.txt",
+      "trecho": "se separaram de fato em 15/03/2023",
+      "pagina": null,
+      "conferido": true
+     },
+     {
+      "documento": "contestacao_ricardo.txt",
+      "trecho": "A separação de fato ocorreu em janeiro de 2023, e não em março",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "contradicao-aportes",
+    "categoria": "contradicao",
+    "texto": "Helena afirma que os aportes mensais saíam da conta conjunta do casal; Ricardo diz que saíam do salário dele. Nenhum dos dois junta extratos.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "peticao_helena.txt",
+      "trecho": "com aportes mensais feitos a partir da conta conjunta do casal",
+      "pagina": null,
+      "conferido": true
+     },
+     {
+      "documento": "contestacao_ricardo.txt",
+      "trecho": "os aportes mensais seguintes eram feitos com o salário dele, e não com dinheiro de Helena",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "contradicao-resgate",
+    "categoria": "contradicao",
+    "texto": "Para Helena, o resgate de fevereiro de 2023 foi feito às escondidas; para Ricardo, o dinheiro pagou dívidas da própria família, como o cartão de crédito e o IPTU do apartamento.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "peticao_helena.txt",
+      "trecho": "Ricardo resgatou cerca de R$ 150 mil do plano aberto, sem informar Helena",
+      "pagina": null,
+      "conferido": true
+     },
+     {
+      "documento": "contestacao_ricardo.txt",
+      "trecho": "foi usado para quitar dívidas do próprio casal",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-saldo",
+    "categoria": "lacuna_probatoria",
+    "texto": "O saldo do plano aberto é informado de forma aproximada e com base no aplicativo do banco, em dezembro de 2022, sem extrato oficial da data da separação, que é a base pedida para a partilha.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "peticao_helena.txt",
+      "trecho": "o saldo informado no aplicativo do banco era de aproximadamente R$ 380 mil",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-conta-conjunta",
+    "categoria": "lacuna_probatoria",
+    "texto": "A afirmação de que os aportes saíam da conta conjunta não vem acompanhada de extratos bancários de nenhum período entre 2014 e 2023.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "peticao_helena.txt",
+      "trecho": "com aportes mensais feitos a partir da conta conjunta do casal",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-heranca",
+    "categoria": "lacuna_probatoria",
+    "texto": "Ricardo afirma que o plano começou com R$ 60 mil de herança do pai, mas não junta o inventário nem o comprovante da transferência desse valor para o plano.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "contestacao_ricardo.txt",
+      "trecho": "contratado em maio de 2014 com R$ 60 mil recebidos de herança do pai de Ricardo",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-dividas",
+    "categoria": "lacuna_probatoria",
+    "texto": "O pagamento de dívidas do casal com o resgate é apenas afirmado: não há faturas, comprovantes de quitação do cartão nem guia do IPTU.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "contestacao_ricardo.txt",
+      "trecho": "o cartão de crédito da família e o IPTU atrasado do apartamento",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-plano-fechado",
+    "categoria": "contra_argumento",
+    "texto": "O pedido de partilha do plano fechado da empresa é o ponto mais exposto da tese: Ricardo sustenta que se trata de benefício previdenciário, e não de investimento, distinção que costuma afastar esse tipo de plano da divisão de bens.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "contestacao_ricardo.txt",
+      "trecho": "tem natureza de benefício previdenciário e não é investimento",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-heranca",
+    "categoria": "contra_argumento",
+    "texto": "Se Ricardo provar que os R$ 60 mil iniciais vieram da herança do pai, essa parcela tende a ser tratada como patrimônio exclusivo dele, reduzindo o valor a dividir.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "contestacao_ricardo.txt",
+      "trecho": "Exclusão da partilha do valor de R$ 60 mil vindo da herança",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-resgate",
+    "categoria": "contra_argumento",
+    "texto": "A outra parte dirá que, se o resgate pagou dívidas da família, não há o que devolver à partilha, e que exigir metade dos R$ 150 mil faria Helena receber duas vezes pelo mesmo benefício.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "contestacao_ricardo.txt",
+      "trecho": "Reconhecimento de que o resgate de fevereiro de 2023 foi usado em benefício da família",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-conta",
+    "categoria": "pergunta_dificil",
+    "texto": "De qual conta saíram os aportes mensais do plano aberto, e em nome de quem essa conta está?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "peticao_helena.txt",
+      "trecho": "a partir da conta conjunta do casal",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-data",
+    "categoria": "pergunta_dificil",
+    "texto": "Em que dia exatamente Ricardo deixou o apartamento, e existe algum documento que comprove essa data?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "peticao_helena.txt",
+      "trecho": "quando Ricardo deixou o apartamento do casal",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-dividas",
+    "categoria": "pergunta_dificil",
+    "texto": "Como Helena sabe que os R$ 150 mil não foram usados para pagar o cartão de crédito da família e o IPTU do apartamento?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "contestacao_ricardo.txt",
+      "trecho": "foi usado para quitar dívidas do próprio casal",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-plano-fechado",
+    "categoria": "pergunta_dificil",
+    "texto": "Qual é o fundamento para dividir um plano fechado de empresa, com contribuições descontadas do salário de Ricardo desde antes de 2014?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "peticao_helena.txt",
+      "trecho": "com contribuições descontadas do salário",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   }
+  ],
+  "perguntas_dificeis": [
+   "De qual conta saíram os aportes mensais do plano aberto, e em nome de quem essa conta está?",
+   "Em que dia exatamente Ricardo deixou o apartamento, e existe algum documento que comprove essa data?",
+   "Como Helena sabe que os R$ 150 mil não foram usados para pagar o cartão de crédito da família e o IPTU do apartamento?",
+   "Qual é o fundamento para dividir um plano fechado de empresa, com contribuições descontadas do salário de Ricardo desde antes de 2014?"
+  ],
+  "linha_do_tempo": [
+   {
+    "data": "20/02/2010",
+    "data_ordenacao": "2010-02-20",
+    "evento": "Casamento de Helena e Ricardo, em comunhão parcial",
+    "quem_afirma": "Helena",
+    "documento": "peticao_helena.txt",
+    "trecho": "Helena e Ricardo se casaram em 20/02/2010",
+    "trecho_conferido": true,
+    "divergencia": ""
+   },
+   {
+    "data": "2012",
+    "data_ordenacao": "2012",
+    "evento": "Ricardo passa a participar do plano fechado da empresa",
+    "quem_afirma": "Helena",
+    "documento": "peticao_helena.txt",
+    "trecho": "Ricardo também participa, desde 2012, do plano de previdência complementar fechado",
+    "trecho_conferido": true,
+    "divergencia": ""
+   },
+   {
+    "data": "2013",
+    "data_ordenacao": "2013",
+    "evento": "Falecimento do pai de Ricardo",
+    "quem_afirma": "Ricardo",
+    "documento": "contestacao_ricardo.txt",
+    "trecho": "herança do pai de Ricardo, falecido em 2013",
+    "trecho_conferido": true,
+    "divergencia": ""
+   },
+   {
+    "data": "05/2014",
+    "data_ordenacao": "2014-05",
+    "evento": "Contratação do plano aberto, com aportes da conta conjunta, segundo Helena",
+    "quem_afirma": "Helena",
+    "documento": "peticao_helena.txt",
+    "trecho": "Ricardo contratou em 05/2014 um plano de previdência privada aberta",
+    "trecho_conferido": true,
+    "divergencia": "Ricardo diz que o plano começou com R$ 60 mil de herança e aportes do salário dele."
+   },
+   {
+    "data": "maio de 2014",
+    "data_ordenacao": "2014-05",
+    "evento": "Contratação do plano aberto com R$ 60 mil de herança, segundo Ricardo",
+    "quem_afirma": "Ricardo",
+    "documento": "contestacao_ricardo.txt",
+    "trecho": "contratado em maio de 2014 com R$ 60 mil recebidos de herança",
+    "trecho_conferido": true,
+    "divergencia": "Helena afirma que os aportes saíam da conta conjunta do casal."
+   },
+   {
+    "data": "dezembro de 2022",
+    "data_ordenacao": "2022-12",
+    "evento": "Saldo aproximado de R$ 380 mil no plano aberto",
+    "quem_afirma": "Helena",
+    "documento": "peticao_helena.txt",
+    "trecho": "Em dezembro de 2022, o saldo informado no aplicativo do banco era de aproximadamente R$ 380 mil",
+    "trecho_conferido": true,
+    "divergencia": ""
+   },
+   {
+    "data": "janeiro de 2023",
+    "data_ordenacao": "2023-01",
+    "evento": "Separação de fato, segundo Ricardo",
+    "quem_afirma": "Ricardo",
+    "documento": "contestacao_ricardo.txt",
+    "trecho": "A separação de fato ocorreu em janeiro de 2023",
+    "trecho_conferido": true,
+    "divergencia": "Helena afirma que a separação foi em 15/03/2023."
+   },
+   {
+    "data": "fevereiro de 2023",
+    "data_ordenacao": "2023-02",
+    "evento": "Resgate de cerca de R$ 150 mil do plano aberto",
+    "quem_afirma": "Helena",
+    "documento": "peticao_helena.txt",
+    "trecho": "Em fevereiro de 2023, um mês antes da separação, Ricardo resgatou cerca de R$ 150 mil",
+    "trecho_conferido": true,
+    "divergencia": "Ricardo diz que o valor pagou dívidas do casal e que a separação já tinha ocorrido em janeiro."
+   },
+   {
+    "data": "15/03/2023",
+    "data_ordenacao": "2023-03-15",
+    "evento": "Separação de fato, com a saída de Ricardo do apartamento, segundo Helena",
+    "quem_afirma": "Helena",
+    "documento": "peticao_helena.txt",
+    "trecho": "se separaram de fato em 15/03/2023, quando Ricardo deixou o apartamento do casal",
+    "trecho_conferido": true,
+    "divergencia": "Ricardo afirma que a separação foi em janeiro de 2023."
+   }
+  ],
+  "plano_de_provas": [
+   {
+    "prova": "Extratos oficiais do plano de previdência aberta, com o histórico de aportes desde 2014 e o saldo de janeiro a março de 2023",
+    "finalidade": "Fixar o valor a partilhar na data da separação e mostrar de onde vinham os aportes.",
+    "como_obter": "Requerer ao juízo a expedição de ofício ao banco responsável pelo plano.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "lacuna-saldo",
+     "contradicao-aportes",
+     "pergunta-conta"
+    ]
+   },
+   {
+    "prova": "Extratos da conta conjunta do casal de 2014 a 2023",
+    "finalidade": "Comprovar que os aportes mensais eram debitados da conta conjunta.",
+    "como_obter": "Helena, como cotitular, pode emitir os extratos no próprio banco.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "contradicao-aportes",
+     "lacuna-conta-conjunta",
+     "pergunta-conta"
+    ]
+   },
+   {
+    "prova": "Extrato da conta que recebeu os R$ 150 mil resgatados em fevereiro de 2023",
+    "finalidade": "Mostrar para onde foi o dinheiro e testar a alegação de pagamento de dívidas da família.",
+    "como_obter": "Requerer que Ricardo exiba o extrato ou pedir ofício ao banco.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "contradicao-resgate",
+     "lacuna-dividas",
+     "argumento-resgate",
+     "pergunta-dividas"
+    ]
+   },
+   {
+    "prova": "Documento que fixe a saída de Ricardo do apartamento (contrato de aluguel do novo endereço, contas de consumo, mensagens da época)",
+    "finalidade": "Definir se a separação ocorreu antes ou depois do resgate.",
+    "como_obter": "Pedir a Ricardo o contrato do novo imóvel e reunir com a cliente mensagens e registros do condomínio.",
+    "prioridade": "media",
+    "apontamentos": [
+     "contradicao-separacao",
+     "pergunta-data"
+    ]
+   },
+   {
+    "prova": "Inventário do pai de Ricardo e comprovante da aplicação de R$ 60 mil no plano em 2014",
+    "finalidade": "Verificar se a parcela alegada como herança realmente foi aplicada no plano.",
+    "como_obter": "Requerer que Ricardo exiba o formal de partilha e o extrato da transferência.",
+    "prioridade": "media",
+    "apontamentos": [
+     "lacuna-heranca",
+     "argumento-heranca"
+    ]
+   },
+   {
+    "prova": "Regulamento do plano de previdência complementar fechado da empresa",
+    "finalidade": "Avaliar a natureza do plano antes de insistir no pedido de partilha.",
+    "como_obter": "Solicitar o regulamento à entidade do plano ou requerer sua exibição por Ricardo.",
+    "prioridade": "baixa",
+    "apontamentos": [
+     "argumento-plano-fechado",
+     "pergunta-plano-fechado"
+    ]
+   }
+  ],
+  "avisos": [
+   "Este relatório não é parecer jurídico: revise cada apontamento antes de usá-lo.",
+   "Versão de demonstração: use apenas documentos fictícios ou anonimizados."
+  ]
+ },
+ "audiencia": [
+  {
+   "pergunta": "De qual conta saíram os aportes mensais do plano aberto, e em nome de quem essa conta está?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Saíram da conta conjunta, todo mundo sabia que o casal pagava tudo junto.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta repete a petição, mas se apoia em algo que \"todo mundo sabia\", sem nenhum extrato que mostre os débitos.",
+      "pontos_fortes": [
+       "Mantém a versão apresentada na petição."
+      ],
+      "pontos_frageis": [
+       "Não indica nenhum documento.",
+       "Ricardo afirma que os aportes saíam do salário dele, e a resposta não enfrenta isso."
+      ],
+      "sugestao": "Diga que a conta conjunta será comprovada pelos extratos do período, que Helena pode emitir como cotitular, e que a contestação também não traz prova de pagamento com o salário de Ricardo.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_helena.txt",
+        "trecho": "com aportes mensais feitos a partir da conta conjunta do casal",
+        "conferido": true
+       },
+       {
+        "documento": "contestacao_ricardo.txt",
+        "trecho": "os aportes mensais seguintes eram feitos com o salário dele",
+        "conferido": true
+       }
+      ],
+      "replica": "Então a senhora pode juntar hoje algum extrato mostrando um único débito desses aportes na conta conjunta?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Os aportes saíam da conta conjunta, como consta da petição. Helena é cotitular e vai juntar os extratos de 2014 a 2023; a contestação, por sua vez, não traz prova de que o salário de Ricardo pagava os aportes.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta indica a prova certa e mostra que a outra parte também não provou o que diz, mas os extratos ainda não estão nos autos.",
+      "pontos_fortes": [
+       "Indica prova objetiva e acessível à cliente.",
+       "Aponta a falta de prova da versão de Ricardo."
+      ],
+      "pontos_frageis": [
+       "Enquanto os extratos não forem juntados, a divergência continua aberta."
+      ],
+      "sugestao": "Leve à audiência pelo menos alguns extratos com os débitos mensais identificados.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_helena.txt",
+        "trecho": "a partir da conta conjunta do casal",
+        "conferido": true
+       }
+      ],
+      "replica": "E se os extratos mostrarem que a conta conjunta recebia apenas o salário de Ricardo?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Em que dia exatamente Ricardo deixou o apartamento, e existe algum documento que comprove essa data?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Foi em 15/03/2023, isso é incontroverso.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta chama de incontroversa uma data que Ricardo contesta expressamente.",
+      "pontos_fortes": [],
+      "pontos_frageis": [
+       "A contestação afirma que a separação foi em janeiro de 2023.",
+       "Não indica nenhum documento que comprove a data."
+      ],
+      "sugestao": "Reconheça a divergência e indique como a data será provada, por exemplo com o contrato de aluguel do novo endereço de Ricardo.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_ricardo.txt",
+        "trecho": "A separação de fato ocorreu em janeiro de 2023, e não em março",
+        "conferido": true
+       }
+      ],
+      "replica": "Se a separação foi em janeiro, a senhora concorda que o resgate de fevereiro aconteceu depois dela?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "A petição indica 15/03/2023, e a contestação fala em janeiro de 2023 sem apresentar nenhum comprovante. Vamos pedir o contrato de aluguel do novo endereço de Ricardo para fixar a data.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta trata a divergência com honestidade e propõe uma prova objetiva, mas ainda não comprova a data defendida.",
+      "pontos_fortes": [
+       "Reconhece a divergência sem negar a versão contrária.",
+       "Mostra que a data de janeiro também não tem prova."
+      ],
+      "pontos_frageis": [
+       "A tese depende de a separação ter sido depois do resgate, e isso ainda não está demonstrado."
+      ],
+      "sugestao": "Reúna também mensagens e registros da época que situem a saída de Ricardo em março.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_helena.txt",
+        "trecho": "se separaram de fato em 15/03/2023",
+        "conferido": true
+       }
+      ],
+      "replica": "E se o contrato de aluguel de Ricardo for de janeiro de 2023?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Como Helena sabe que os R$ 150 mil não foram usados para pagar o cartão de crédito da família e o IPTU do apartamento?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Porque ele gastou com outra coisa, com certeza.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta afirma um destino diferente para o dinheiro sem qualquer base nos documentos.",
+      "pontos_fortes": [],
+      "pontos_frageis": [
+       "Nenhum documento indica outro destino para o resgate.",
+       "Transforma uma suspeita em afirmação."
+      ],
+      "sugestao": "Em vez de afirmar para onde foi o dinheiro, mostre que quem alega o pagamento de dívidas é Ricardo e que ele não juntou nenhum comprovante.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_ricardo.txt",
+        "trecho": "foi usado para quitar dívidas do próprio casal",
+        "conferido": true
+       }
+      ],
+      "replica": "Então a senhora não sabe, na verdade, para onde foi o dinheiro?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Quem afirma que o dinheiro pagou dívidas do casal é Ricardo, e a contestação não junta nenhuma fatura ou comprovante. O que está nos autos é que o resgate foi feito sem que Helena soubesse, um mês antes da separação.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta não inventa o destino do dinheiro, mostra que a alegação de pagamento de dívidas não tem prova e reforça o fato relevante descrito na petição.",
+      "pontos_fortes": [
+       "Coloca a necessidade de prova em quem alegou o pagamento das dívidas.",
+       "Não afirma nada além do que está nos documentos."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Mantenha a resposta e peça, na mesma audiência, a exibição do extrato da conta que recebeu o resgate.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_ricardo.txt",
+        "trecho": "o cartão de crédito da família e o IPTU atrasado do apartamento",
+        "conferido": true
+       },
+       {
+        "documento": "peticao_helena.txt",
+        "trecho": "resgatou cerca de R$ 150 mil do plano aberto, sem informar Helena",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    }
+   ]
+  }
+ ]
+}

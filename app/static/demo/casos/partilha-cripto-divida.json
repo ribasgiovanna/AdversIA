@@ -1,0 +1,530 @@
+{
+ "id": "partilha-cripto-divida",
+ "tipo": "Divórcio e partilha de bens",
+ "titulo": "Criptomoedas e empréstimo na partilha",
+ "descricao": "A ex-esposa pede metade das criptomoedas que o marido transferiu cinco dias depois da separação e quer excluir um empréstimo de R$ 80 mil. Ele diz que a carteira vale bem menos e que o empréstimo pagou a reforma da casa.",
+ "documentos": [
+  {
+   "nome": "contestacao_thiago.txt",
+   "conteudo": "CONTESTAÇÃO (CASO FICTÍCIO PARA TESTES, CENÁRIO SINTÉTICO — NENHUMA RELAÇÃO COM PESSOAS\nREAIS)\n\nRÉU: Thiago, em resposta à ação proposta por Sabrina.\n\nDOS FATOS\n\nThiago reconhece que comprou criptomoedas durante o casamento, mas afirma que a maior\nparte foi vendida com prejuízo em 2022, quando o mercado caiu. Hoje a carteira vale cerca\nde R$ 35 mil.\n\nA mensagem de fevereiro de 2024 foi uma brincadeira e não corresponde ao saldo real.\n\nA transferência de julho de 2024 foi feita por segurança, porque a corretora apresentou\ninstabilidade, e não para esconder patrimônio.\n\nO empréstimo de R$ 80 mil, contratado em março de 2023, foi usado para reformar a cozinha\ndo apartamento onde o casal morava, e Sabrina acompanhou a obra.\n\nDO PEDIDO\n\n1. Divórcio.\n2. Partilha das criptomoedas pelo valor atual, de cerca de R$ 35 mil.\n3. Partilha também da dívida do empréstimo, contraída em benefício da família.\n"
+  },
+  {
+   "nome": "peticao_sabrina.txt",
+   "conteudo": "AÇÃO DE DIVÓRCIO COM PARTILHA DE BENS (CASO FICTÍCIO PARA TESTES, CENÁRIO SINTÉTICO —\nNENHUMA RELAÇÃO COM PESSOAS REAIS)\n\nAUTORA: Sabrina\nRÉU: Thiago\nREGIME DE BENS: comunhão parcial\n\nDOS FATOS\n\nSabrina e Thiago se casaram em 14/11/2017 e se separaram de fato em 30/06/2024.\n\nA partir de 2021, Thiago passou a comprar criptomoedas por meio de uma corretora, com\ndinheiro do salário dele depositado na conta do casal. Em conversa por aplicativo de\nmensagens em 02/2024, ele disse a Sabrina que a carteira já passava de R$ 200 mil.\n\nEm 05/07/2024, poucos dias depois da separação, Thiago transferiu as criptomoedas para\numa carteira digital própria, fora da corretora.\n\nO empréstimo pessoal de R$ 80 mil contratado por Thiago em 03/2023 foi feito sem\nconhecimento de Sabrina e usado para despesas dele.\n\nDO PEDIDO\n\n1. Divórcio.\n2. Partilha igualitária das criptomoedas compradas durante o casamento, pelo valor da\n   data da separação de fato.\n3. Exclusão da partilha do empréstimo de R$ 80 mil.\n"
+  }
+ ],
+ "tese": "Ação de divórcio com partilha de criptomoedas e discussão sobre dívida. A tese a ser\ntestada é a de Sabrina (autora): partilha igualitária das criptomoedas compradas por\nThiago durante o casamento, pelo valor da data da separação de fato (que ela estima acima\nde R$ 200 mil), e exclusão da partilha do empréstimo de R$ 80 mil contratado por ele.",
+ "relatorio": {
+  "resumo_do_caso": "Lemos 2 documentos e identificamos 2 partes, 11 fatos relevantes e 6 pedidos.",
+  "tese_analisada": "Ação de divórcio com partilha de criptomoedas e discussão sobre dívida. A tese a ser\ntestada é a de Sabrina (autora): partilha igualitária das criptomoedas compradas por\nThiago durante o casamento, pelo valor da data da separação de fato (que ela estima acima\nde R$ 200 mil), e exclusão da partilha do empréstimo de R$ 80 mil contratado por ele.",
+  "findings": [
+   {
+    "id": "contradicao-valor",
+    "categoria": "contradicao",
+    "texto": "O valor da carteira é o centro da disputa: Sabrina aponta mais de R$ 200 mil em fevereiro de 2024; Thiago diz que a maior parte foi vendida com prejuízo em 2022 e que hoje vale cerca de R$ 35 mil.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "peticao_sabrina.txt",
+      "trecho": "a carteira já passava de R$ 200 mil",
+      "pagina": null,
+      "conferido": true
+     },
+     {
+      "documento": "contestacao_thiago.txt",
+      "trecho": "a maior parte foi vendida com prejuízo em 2022, quando o mercado caiu",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "contradicao-mensagem",
+    "categoria": "contradicao",
+    "texto": "A mensagem de fevereiro de 2024 é a principal base da estimativa de Sabrina, e Thiago diz que foi uma brincadeira.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "peticao_sabrina.txt",
+      "trecho": "Em conversa por aplicativo de mensagens em 02/2024",
+      "pagina": null,
+      "conferido": true
+     },
+     {
+      "documento": "contestacao_thiago.txt",
+      "trecho": "A mensagem de fevereiro de 2024 foi uma brincadeira e não corresponde ao saldo real",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "contradicao-transferencia",
+    "categoria": "contradicao",
+    "texto": "A transferência para uma carteira própria ocorreu cinco dias depois da separação. Sabrina a apresenta como retirada do alcance da partilha; Thiago diz que foi por segurança, diante de instabilidade da corretora.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "peticao_sabrina.txt",
+      "trecho": "Em 05/07/2024, poucos dias depois da separação, Thiago transferiu as criptomoedas para uma carteira digital própria",
+      "pagina": null,
+      "conferido": true
+     },
+     {
+      "documento": "contestacao_thiago.txt",
+      "trecho": "foi feita por segurança, porque a corretora apresentou instabilidade",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "contradicao-emprestimo",
+    "categoria": "contradicao",
+    "texto": "Para Sabrina, o empréstimo de R$ 80 mil foi feito sem o conhecimento dela e para despesas de Thiago; para ele, pagou a reforma da cozinha do apartamento do casal, acompanhada por ela.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "peticao_sabrina.txt",
+      "trecho": "foi feito sem conhecimento de Sabrina e usado para despesas dele",
+      "pagina": null,
+      "conferido": true
+     },
+     {
+      "documento": "contestacao_thiago.txt",
+      "trecho": "foi usado para reformar a cozinha do apartamento onde o casal morava, e Sabrina acompanhou a obra",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-extratos",
+    "categoria": "lacuna_probatoria",
+    "texto": "Não há extratos da corretora nem da carteira digital: nem o saldo em 30/06/2024, nem as vendas de 2022, nem a transferência de julho.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "peticao_sabrina.txt",
+      "trecho": "pelo valor da data da separação de fato",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-mensagem",
+    "categoria": "lacuna_probatoria",
+    "texto": "A conversa de fevereiro de 2024 é descrita, mas não foi juntada, nem mesmo em captura de tela.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "peticao_sabrina.txt",
+      "trecho": "ele disse a Sabrina que a carteira já passava de R$ 200 mil",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-destino-emprestimo",
+    "categoria": "lacuna_probatoria",
+    "texto": "Nenhuma das partes junta o contrato do empréstimo ou o extrato que mostre para onde foram os R$ 80 mil; também não há notas fiscais da suposta reforma.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "peticao_sabrina.txt",
+      "trecho": "O empréstimo pessoal de R$ 80 mil contratado por Thiago em 03/2023",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-valor-atual",
+    "categoria": "contra_argumento",
+    "texto": "Thiago pedirá a partilha pelo valor atual, de cerca de R$ 35 mil, e dirá que a queda do mercado atinge os dois, afastando a estimativa baseada numa mensagem.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "contestacao_thiago.txt",
+      "trecho": "Partilha das criptomoedas pelo valor atual, de cerca de R$ 35 mil",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-reforma",
+    "categoria": "contra_argumento",
+    "texto": "Se a reforma da cozinha for comprovada, a dívida tende a ser vista como contraída em benefício da família e dividida entre os dois, o oposto do que Sabrina pede.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "contestacao_thiago.txt",
+      "trecho": "Partilha também da dívida do empréstimo, contraída em benefício da família",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-saldo",
+    "categoria": "pergunta_dificil",
+    "texto": "Além de uma mensagem que Thiago chama de brincadeira, que prova Sabrina tem do saldo da carteira em 30/06/2024?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "contestacao_thiago.txt",
+      "trecho": "A mensagem de fevereiro de 2024 foi uma brincadeira",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-reforma",
+    "categoria": "pergunta_dificil",
+    "texto": "Houve reforma da cozinha em 2023, e Sabrina acompanhou a obra?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "contestacao_thiago.txt",
+      "trecho": "Sabrina acompanhou a obra",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-conhecimento",
+    "categoria": "pergunta_dificil",
+    "texto": "Como Sabrina não soube de um empréstimo de R$ 80 mil se o salário de Thiago era depositado na conta do casal?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "peticao_sabrina.txt",
+      "trecho": "com dinheiro do salário dele depositado na conta do casal",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-transferencia",
+    "categoria": "pergunta_dificil",
+    "texto": "Que prova indica que a transferência de 05/07/2024 foi feita para esconder patrimônio?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "contestacao_thiago.txt",
+      "trecho": "e não para esconder patrimônio",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   }
+  ],
+  "perguntas_dificeis": [
+   "Além de uma mensagem que Thiago chama de brincadeira, que prova Sabrina tem do saldo da carteira em 30/06/2024?",
+   "Houve reforma da cozinha em 2023, e Sabrina acompanhou a obra?",
+   "Como Sabrina não soube de um empréstimo de R$ 80 mil se o salário de Thiago era depositado na conta do casal?",
+   "Que prova indica que a transferência de 05/07/2024 foi feita para esconder patrimônio?"
+  ],
+  "linha_do_tempo": [
+   {
+    "data": "14/11/2017",
+    "data_ordenacao": "2017-11-14",
+    "evento": "Casamento de Sabrina e Thiago, em comunhão parcial",
+    "quem_afirma": "Sabrina",
+    "documento": "peticao_sabrina.txt",
+    "trecho": "Sabrina e Thiago se casaram em 14/11/2017",
+    "trecho_conferido": true,
+    "divergencia": ""
+   },
+   {
+    "data": "2021",
+    "data_ordenacao": "2021",
+    "evento": "Thiago começa a comprar criptomoedas por uma corretora",
+    "quem_afirma": "Sabrina",
+    "documento": "peticao_sabrina.txt",
+    "trecho": "A partir de 2021, Thiago passou a comprar criptomoedas por meio de uma corretora",
+    "trecho_conferido": true,
+    "divergencia": ""
+   },
+   {
+    "data": "2022",
+    "data_ordenacao": "2022",
+    "evento": "Venda da maior parte das criptomoedas com prejuízo, segundo Thiago",
+    "quem_afirma": "Thiago",
+    "documento": "contestacao_thiago.txt",
+    "trecho": "a maior parte foi vendida com prejuízo em 2022",
+    "trecho_conferido": true,
+    "divergencia": "Sabrina afirma que em fevereiro de 2024 a carteira passava de R$ 200 mil."
+   },
+   {
+    "data": "03/2023",
+    "data_ordenacao": "2023-03",
+    "evento": "Empréstimo de R$ 80 mil contratado por Thiago",
+    "quem_afirma": "Sabrina",
+    "documento": "peticao_sabrina.txt",
+    "trecho": "O empréstimo pessoal de R$ 80 mil contratado por Thiago em 03/2023",
+    "trecho_conferido": true,
+    "divergencia": "Sabrina diz que foi para despesas dele; Thiago, que pagou a reforma da cozinha."
+   },
+   {
+    "data": "02/2024",
+    "data_ordenacao": "2024-02",
+    "evento": "Mensagem de Thiago dizendo que a carteira passava de R$ 200 mil",
+    "quem_afirma": "Sabrina",
+    "documento": "peticao_sabrina.txt",
+    "trecho": "Em conversa por aplicativo de mensagens em 02/2024",
+    "trecho_conferido": true,
+    "divergencia": "Thiago diz que a mensagem foi uma brincadeira."
+   },
+   {
+    "data": "30/06/2024",
+    "data_ordenacao": "2024-06-30",
+    "evento": "Separação de fato",
+    "quem_afirma": "Sabrina",
+    "documento": "peticao_sabrina.txt",
+    "trecho": "se separaram de fato em 30/06/2024",
+    "trecho_conferido": true,
+    "divergencia": ""
+   },
+   {
+    "data": "05/07/2024",
+    "data_ordenacao": "2024-07-05",
+    "evento": "Transferência das criptomoedas para carteira digital própria, fora da corretora",
+    "quem_afirma": "Sabrina",
+    "documento": "peticao_sabrina.txt",
+    "trecho": "Em 05/07/2024, poucos dias depois da separação, Thiago transferiu as criptomoedas",
+    "trecho_conferido": true,
+    "divergencia": "Thiago diz que a transferência foi por segurança, por instabilidade da corretora."
+   }
+  ],
+  "plano_de_provas": [
+   {
+    "prova": "Histórico completo da corretora: compras, vendas, saldo em 30/06/2024 e a transferência de julho",
+    "finalidade": "Descobrir o valor real na data da separação e testar a venda alegada em 2022.",
+    "como_obter": "Requerer ao juízo a expedição de ofício à corretora.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "contradicao-valor",
+     "lacuna-extratos",
+     "contradicao-transferencia",
+     "pergunta-saldo"
+    ]
+   },
+   {
+    "prova": "Exportação da conversa de fevereiro de 2024, com ata notarial",
+    "finalidade": "Levar ao processo a mensagem sobre o valor da carteira, com autenticidade.",
+    "como_obter": "Exportar a conversa pelo aplicativo e registrar em cartório por ata notarial.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "contradicao-mensagem",
+     "lacuna-mensagem"
+    ]
+   },
+   {
+    "prova": "Contrato do empréstimo e extrato da conta que recebeu os R$ 80 mil",
+    "finalidade": "Mostrar para onde foi o dinheiro e se Sabrina sabia do empréstimo.",
+    "como_obter": "Requerer que Thiago exiba o contrato e o extrato, ou ofício ao banco.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "contradicao-emprestimo",
+     "lacuna-destino-emprestimo",
+     "argumento-reforma",
+     "pergunta-conhecimento"
+    ]
+   },
+   {
+    "prova": "Levantamento sobre a reforma: notas fiscais, orçamentos, fotos, vizinhos e síndico",
+    "finalidade": "Confirmar ou afastar a versão de que o empréstimo pagou a reforma da cozinha.",
+    "como_obter": "Requerer que Thiago junte as notas e ouvir o síndico ou vizinhos.",
+    "prioridade": "media",
+    "apontamentos": [
+     "argumento-reforma",
+     "pergunta-reforma"
+    ]
+   },
+   {
+    "prova": "Perícia técnica na carteira digital, com o rastreamento das movimentações após 05/07/2024",
+    "finalidade": "Verificar se houve saques ou transferências depois da separação.",
+    "como_obter": "Requerer perícia técnica ao juízo, com o endereço público da carteira.",
+    "prioridade": "media",
+    "apontamentos": [
+     "contradicao-transferencia",
+     "argumento-valor-atual",
+     "pergunta-transferencia"
+    ]
+   }
+  ],
+  "avisos": [
+   "Este relatório não é parecer jurídico: revise cada apontamento antes de usá-lo.",
+   "Versão de demonstração: use apenas documentos fictícios ou anonimizados."
+  ]
+ },
+ "audiencia": [
+  {
+   "pergunta": "Além de uma mensagem que Thiago chama de brincadeira, que prova Sabrina tem do saldo da carteira em 30/06/2024?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Ele mesmo disse que tinha mais de 200 mil, isso basta.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta trata como prova suficiente uma mensagem que não foi juntada e que a outra parte contesta.",
+      "pontos_fortes": [
+       "Usa um fato descrito na petição."
+      ],
+      "pontos_frageis": [
+       "A mensagem não está nos autos.",
+       "O pedido é pelo valor na data da separação, e a mensagem é de fevereiro."
+      ],
+      "sugestao": "Apresente a mensagem como indício e peça ofício à corretora para obter o saldo exato.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_thiago.txt",
+        "trecho": "A mensagem de fevereiro de 2024 foi uma brincadeira e não corresponde ao saldo real",
+        "conferido": true
+       }
+      ],
+      "replica": "E se o extrato da corretora mostrar R$ 35 mil em junho de 2024?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "A mensagem de 02/2024 é um indício, e pedimos ofício à corretora para obter o saldo exato na data da separação. Thiago, que diz ter vendido quase tudo em 2022, também não junta nenhum extrato.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta dá à mensagem o peso certo, pede a prova decisiva e mostra que a versão contrária também não tem prova.",
+      "pontos_fortes": [
+       "Não superestima a mensagem.",
+       "Indica a prova capaz de resolver a divergência."
+      ],
+      "pontos_frageis": [
+       "O valor defendido ainda não está comprovado."
+      ],
+      "sugestao": "Registre a conversa em ata notarial antes da audiência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_thiago.txt",
+        "trecho": "a maior parte foi vendida com prejuízo em 2022",
+        "conferido": true
+       }
+      ],
+      "replica": "E se a corretora confirmar as vendas de 2022?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Houve reforma da cozinha em 2023, e Sabrina acompanhou a obra?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Não houve reforma nenhuma.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta nega categoricamente um fato que pode ser comprovado por fotos, notas ou vizinhos.",
+      "pontos_fortes": [],
+      "pontos_frageis": [
+       "Se a reforma for provada, a credibilidade de todo o relato fica comprometida.",
+       "Não indica prova da negativa."
+      ],
+      "sugestao": "Em vez de negar, mostre que a outra parte não comprovou a reforma nem o destino do dinheiro.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_thiago.txt",
+        "trecho": "foi usado para reformar a cozinha do apartamento onde o casal morava",
+        "conferido": true
+       }
+      ],
+      "replica": "Então a cozinha do apartamento continua como era em 2022?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "A contestação não junta nenhuma nota fiscal, orçamento ou foto da reforma. Pedimos o contrato do empréstimo e o extrato do destino do dinheiro, que vão mostrar para onde foram os R$ 80 mil.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta não nega um fato que pode ser provado, aponta a falta de prova da versão contrária e pede o documento que resolve a questão.",
+      "pontos_fortes": [
+       "Coloca o ônus de provar a reforma em quem a alegou.",
+       "Indica prova bancária objetiva."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Mantenha a linha e confirme com a cliente, antes da audiência, se houve alguma obra no período.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_thiago.txt",
+        "trecho": "Sabrina acompanhou a obra",
+        "conferido": true
+       },
+       {
+        "documento": "peticao_sabrina.txt",
+        "trecho": "usado para despesas dele",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Que prova indica que a transferência de 05/07/2024 foi feita para esconder patrimônio?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "É óbvio que ele quis esconder, fez isso logo depois da separação.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta transforma a coincidência de datas em certeza sobre a intenção, sem nenhuma prova adicional.",
+      "pontos_fortes": [
+       "Usa a proximidade de datas, que está nos autos."
+      ],
+      "pontos_frageis": [
+       "Intenção não se presume apenas pela data.",
+       "Não enfrenta a explicação de instabilidade da corretora."
+      ],
+      "sugestao": "Apresente a data como indício e peça perícia na carteira para verificar movimentações posteriores.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_sabrina.txt",
+        "trecho": "Em 05/07/2024, poucos dias depois da separação",
+        "conferido": true
+       }
+      ],
+      "replica": "Instabilidade de corretora não é motivo razoável para proteger o dinheiro?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "A transferência ocorreu cinco dias após a separação, para uma carteira fora da corretora, e a instabilidade alegada não tem nenhuma prova. A perícia na carteira vai mostrar se houve movimentação depois disso.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta trata a data como indício, aponta a falta de prova da justificativa e pede a verificação técnica, mas ainda não demonstra a intenção.",
+      "pontos_fortes": [
+       "Não afirma intenção como fato.",
+       "Indica prova técnica."
+      ],
+      "pontos_frageis": [
+       "A finalidade da transferência continua em aberto."
+      ],
+      "sugestao": "Peça também à corretora informações sobre falhas no período para testar a justificativa.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_thiago.txt",
+        "trecho": "porque a corretora apresentou instabilidade",
+        "conferido": true
+       }
+      ],
+      "replica": "E se a perícia mostrar que o saldo continua intacto na carteira?"
+     }
+    }
+   ]
+  }
+ ]
+}

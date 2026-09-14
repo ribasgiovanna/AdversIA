@@ -104,24 +104,43 @@
     </section>
 
     <section class="cartao" id="secao-formulario" aria-label="Nova análise">
-      <form id="form-analise" novalidate>
+      <form id="form-analise" novalidate data-modo="demo">
+        <fieldset class="modo-analise">
+          <legend class="passo-titulo">Como você quer usar a AdversIA?</legend>
+          <div class="modo-opcoes">
+            <label class="modo-opcao">
+              <input type="radio" name="modo" id="modo-demo" value="demo" checked />
+              <span class="modo-titulo">Demonstração gratuita</span>
+              <span class="modo-descricao">Escolha um caso fictício pronto e veja o relatório completo, sem custo e sem cadastro.</span>
+            </label>
+            <label class="modo-opcao">
+              <input type="radio" name="modo" id="modo-chave" value="chave" />
+              <span class="modo-titulo">Analisar com a minha chave</span>
+              <span class="modo-descricao">Envie os seus documentos e use a sua própria chave da Anthropic. O custo fica na sua conta.</span>
+            </label>
+          </div>
+        </fieldset>
+
         <div class="passo">
           <div class="passo-cabecalho">
             <span class="passo-numero" aria-hidden="true">1</span>
-            <label for="documentos" class="passo-titulo">Documentos do caso</label>
+            <span class="passo-titulo" id="titulo-passo-documentos">Escolha um caso</span>
           </div>
-          <p class="passo-ajuda" id="documentos-ajuda">Petição, contestação, provas, acordos. Aceitamos PDF, Word (.docx) e texto (.txt).</p>
+          <p class="passo-ajuda" id="documentos-ajuda"></p>
 
-          <div class="zona-arquivos" id="zona-arquivos">
-            <input type="file" id="documentos" name="documentos" multiple accept=".pdf,.docx,.txt,.md" aria-describedby="documentos-ajuda" />
-            <svg aria-hidden="true" viewBox="0 0 24 24" width="28" height="28"><path d="M12 16V4m0 0-4.5 4.5M12 4l4.5 4.5M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <p class="zona-arquivos-texto"><strong>Clique para escolher</strong> ou arraste os arquivos para cá</p>
+          <div id="envio-proprio" hidden>
+            <div class="zona-arquivos" id="zona-arquivos">
+              <label for="documentos" class="visualmente-oculto">Escolher os documentos do caso</label>
+              <input type="file" id="documentos" name="documentos" multiple accept=".pdf,.docx,.txt,.md" aria-describedby="documentos-ajuda" />
+              <svg aria-hidden="true" viewBox="0 0 24 24" width="28" height="28"><path d="M12 16V4m0 0-4.5 4.5M12 4l4.5 4.5M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <p class="zona-arquivos-texto"><strong>Clique para escolher</strong> ou arraste os arquivos para cá</p>
+            </div>
           </div>
 
           <ul class="lista-arquivos" id="lista-arquivos"></ul>
 
           <fieldset class="exemplos" id="exemplos" hidden>
-            <legend class="exemplos-rotulo">Sem documentos à mão? Escolha um caso fictício pronto</legend>
+            <legend class="exemplos-rotulo" id="legenda-exemplos">Casos fictícios prontos</legend>
             <div class="exemplos-filtro">
               <div class="campo-filtro">
                 <span class="rotulo-filtro" id="rotulo-tipo">Tipo de caso</span>
@@ -154,26 +173,35 @@
         <div class="passo">
           <div class="passo-cabecalho">
             <span class="passo-numero" aria-hidden="true">2</span>
-            <label for="tese" class="passo-titulo">Sua tese</label>
+            <label for="tese" class="passo-titulo" id="rotulo-tese">Tese do caso</label>
           </div>
-          <p class="passo-ajuda" id="tese-ajuda">Em poucas linhas: o que você pretende sustentar e em nome de qual parte.</p>
+          <p class="passo-ajuda" id="tese-ajuda"></p>
           <textarea id="tese" name="tese" rows="4" aria-describedby="tese-ajuda" placeholder="Ex.: Em nome da mãe, pedir a guarda unilateral, alegando que o pai não participa da rotina da criança desde março."></textarea>
         </div>
 
-        <div class="confirmacao">
+        <div class="passo" id="passo-chave" hidden>
+          <div class="passo-cabecalho">
+            <span class="passo-numero" aria-hidden="true">3</span>
+            <label for="chave-anthropic" class="passo-titulo">Sua chave da Anthropic</label>
+          </div>
+          <p class="passo-ajuda" id="chave-ajuda">Usada só nesta análise: fica apenas nesta aba do navegador e não é gravada em lugar nenhum. Cada análise custa cerca de US$ 0,25 na sua conta. Não tem uma chave? <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener noreferrer">Crie no painel da Anthropic</a>.</p>
+          <input type="password" class="campo-texto" id="chave-anthropic" name="chave-anthropic" autocomplete="off" spellcheck="false" placeholder="sk-ant-…" aria-describedby="chave-ajuda" />
+        </div>
+
+        <div class="confirmacao" id="bloco-confirmacao" hidden>
           <input type="checkbox" id="confirmacao-dados" name="confirmacao-dados" />
           <label for="confirmacao-dados">Confirmo que os documentos são fictícios ou anonimizados, sem dados reais de clientes.</label>
         </div>
 
         <p class="erro-formulario" id="erro-formulario" role="alert" hidden></p>
 
-        <button type="submit" class="botao-principal" id="botao-analisar">Analisar estratégia</button>
+        <button type="submit" class="botao-principal" id="botao-analisar">Ver a análise deste caso</button>
       </form>
     </section>
 
     <section class="cartao" id="secao-progresso" hidden aria-labelledby="titulo-progresso">
       <h2 id="titulo-progresso" tabindex="-1">Analisando o seu caso</h2>
-      <p class="apoio-progresso">Costuma levar de 1 a 2 minutos. Acompanhe cada etapa abaixo.</p>
+      <p class="apoio-progresso" id="apoio-progresso">Acompanhe cada etapa abaixo.</p>
       <ol class="etapas" id="etapas"></ol>
     </section>
 
@@ -186,6 +214,7 @@
     <section class="relatorio" id="secao-relatorio" hidden aria-labelledby="titulo-relatorio">
       <header class="relatorio-cabecalho">
         <p class="rotulo-secao">Relatório de pontos vulneráveis</p>
+        <p class="selo-demo" id="selo-demo" hidden>Caso fictício de demonstração · análise preparada previamente</p>
         <h2 id="titulo-relatorio" tabindex="-1">O que a parte contrária pode explorar</h2>
         <p class="resumo" id="resumo-caso"></p>
         <div class="tese-analisada">
@@ -260,8 +289,15 @@
             </div>
             <button type="button" class="botao-texto" id="ouvir-pergunta">Ouvir pergunta</button>
           </div>
-          <label for="resposta-audiencia" class="rotulo-filtro">Sua resposta</label>
-          <textarea id="resposta-audiencia" name="resposta-audiencia" rows="4" placeholder="Responda como responderia na audiência."></textarea>
+          <div class="audiencia-opcoes" id="audiencia-opcoes" hidden>
+            <p class="rotulo-filtro" id="rotulo-opcoes">Escolha uma resposta para ver como ela seria avaliada</p>
+            <div class="audiencia-opcoes-lista" id="audiencia-opcoes-lista" role="group" aria-labelledby="rotulo-opcoes"></div>
+            <p class="nota-demo">Para responder com as suas próprias palavras, faça a análise com a sua chave.</p>
+          </div>
+          <div class="audiencia-livre" id="audiencia-livre">
+            <label for="resposta-audiencia" class="rotulo-filtro">Sua resposta</label>
+            <textarea id="resposta-audiencia" name="resposta-audiencia" rows="4" placeholder="Responda como responderia na audiência."></textarea>
+          </div>
           <p class="erro-formulario" id="audiencia-erro" role="alert" hidden></p>
           <div class="audiencia-acoes">
             <button type="button" class="botao-texto" id="pular-pergunta">Pular pergunta</button>

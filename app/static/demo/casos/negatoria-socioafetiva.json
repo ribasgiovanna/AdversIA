@@ -1,0 +1,464 @@
+{
+ "id": "negatoria-socioafetiva",
+ "tipo": "Filiação",
+ "titulo": "Negatória de paternidade e vínculo afetivo",
+ "descricao": "Depois de um exame de DNA particular, o pai registral quer tirar o nome do registro do filho de 10 anos e parar de pagar pensão. A mãe diz que ele sabia da dúvida desde 2019 e segue sendo pai para o menino.",
+ "documentos": [
+  {
+   "nome": "contestacao_tatiana.txt",
+   "conteudo": "CONTESTAÇÃO (CASO FICTÍCIO PARA TESTES, CENÁRIO SINTÉTICO — NENHUMA RELAÇÃO COM PESSOAS\nREAIS)\n\nRÉU: Gabriel, representado pela mãe, Tatiana.\n\nDOS FATOS\n\nFábio sabe desde 2019 que poderia não ser o pai biológico: Tatiana contou a ele sobre um\nrelacionamento anterior, e ele respondeu, em mensagem, que pai é quem cria e que isso não\nmudava nada.\n\nO exame de DNA particular foi feito sem o conhecimento de Tatiana e sem cadeia de custódia\ndo material, com cabelo retirado da escova de Gabriel.\n\nFábio convive com Gabriel em fins de semana alternados desde a separação, participa das\nreuniões da escola e é chamado de pai pelo menino. Em 06/2025, depois do exame, levou\nGabriel à festa do Dia dos Pais da escola.\n\nDO PEDIDO\n\nRejeição do pedido, pela existência de paternidade socioafetiva.\n"
+  },
+  {
+   "nome": "peticao_fabio.txt",
+   "conteudo": "AÇÃO NEGATÓRIA DE PATERNIDADE (CASO FICTÍCIO PARA TESTES, CENÁRIO SINTÉTICO — NENHUMA\nRELAÇÃO COM PESSOAS REAIS)\n\nAUTOR: Fábio\nRÉU: Gabriel, de 10 anos, representado pela mãe, Tatiana\n\nDOS FATOS\n\nFábio registrou Gabriel como filho logo depois do nascimento, em 05/2015, acreditando ser\no pai biológico, porque vivia em união estável com Tatiana.\n\nO casal se separou em 2023. Em 03/2025, um exame de DNA feito em laboratório particular,\ncom material coletado por Fábio, concluiu que ele não é o pai biológico de Gabriel.\n\nFábio afirma que foi enganado por Tatiana e que não teria registrado Gabriel se soubesse\nda verdade.\n\nDO PEDIDO\n\n1. Declaração de que Fábio não é pai de Gabriel e exclusão do nome dele do registro.\n2. Fim da pensão alimentícia de R$ 1.100,00 paga a Gabriel desde 2023.\n"
+  }
+ ],
+ "tese": "Ação negatória de paternidade. A tese a ser testada é a de Fábio (autor): exclusão da\npaternidade de Gabriel, de 10 anos, e fim da pensão, porque um exame de DNA particular de\n03/2025 mostrou que ele não é o pai biológico e porque ele teria sido enganado pela mãe ao\nregistrar o menino.",
+ "relatorio": {
+  "resumo_do_caso": "Lemos 2 documentos e identificamos 3 partes, 10 fatos relevantes e 2 pedidos.",
+  "tese_analisada": "Ação negatória de paternidade. A tese a ser testada é a de Fábio (autor): exclusão da\npaternidade de Gabriel, de 10 anos, e fim da pensão, porque um exame de DNA particular de\n03/2025 mostrou que ele não é o pai biológico e porque ele teria sido enganado pela mãe ao\nregistrar o menino.",
+  "findings": [
+   {
+    "id": "contradicao-engano",
+    "categoria": "contradicao",
+    "texto": "Fábio afirma que foi enganado e não teria registrado Gabriel se soubesse; Tatiana diz que ele sabe desde 2019 da possibilidade e respondeu por mensagem que isso não mudava nada.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "peticao_fabio.txt",
+      "trecho": "Fábio afirma que foi enganado por Tatiana e que não teria registrado Gabriel se soubesse da verdade",
+      "pagina": null,
+      "conferido": true
+     },
+     {
+      "documento": "contestacao_tatiana.txt",
+      "trecho": "ele respondeu, em mensagem, que pai é quem cria e que isso não mudava nada",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "contradicao-conduta-posterior",
+    "categoria": "contradicao",
+    "texto": "Mesmo depois do exame de 03/2025, Fábio teria levado Gabriel à festa do Dia dos Pais da escola, o que contrasta com o pedido de excluir a paternidade.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "peticao_fabio.txt",
+      "trecho": "Em 03/2025, um exame de DNA feito em laboratório particular",
+      "pagina": null,
+      "conferido": true
+     },
+     {
+      "documento": "contestacao_tatiana.txt",
+      "trecho": "Em 06/2025, depois do exame, levou Gabriel à festa do Dia dos Pais da escola",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-exame",
+    "categoria": "lacuna_probatoria",
+    "texto": "O exame foi feito com material coletado pelo próprio Fábio, sem conhecimento da mãe e sem cadeia de custódia; não há exame judicial.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "contestacao_tatiana.txt",
+      "trecho": "sem cadeia de custódia do material, com cabelo retirado da escova de Gabriel",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-mensagem-2019",
+    "categoria": "lacuna_probatoria",
+    "texto": "A mensagem de 2019 em que Fábio teria dito que pai é quem cria é citada, mas não foi juntada.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "contestacao_tatiana.txt",
+      "trecho": "Fábio sabe desde 2019 que poderia não ser o pai biológico",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-vinculo",
+    "categoria": "lacuna_probatoria",
+    "texto": "A petição não trata do vínculo construído com Gabriel ao longo de 10 anos, nem de como a exclusão afetaria o menino.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "peticao_fabio.txt",
+      "trecho": "Declaração de que Fábio não é pai de Gabriel e exclusão do nome dele do registro",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-socioafetiva",
+    "categoria": "contra_argumento",
+    "texto": "Tatiana sustentará que existe paternidade socioafetiva: convivência regular, participação na escola e o menino chamando Fábio de pai.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "contestacao_tatiana.txt",
+      "trecho": "participa das reuniões da escola e é chamado de pai pelo menino",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-registro-voluntario",
+    "categoria": "contra_argumento",
+    "texto": "A defesa lembrará que o registro foi feito voluntariamente e mantido por anos após a dúvida, o que dificulta falar em erro.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "peticao_fabio.txt",
+      "trecho": "Fábio registrou Gabriel como filho logo depois do nascimento, em 05/2015",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-pensao",
+    "categoria": "contra_argumento",
+    "texto": "Enquanto a paternidade constar do registro, o pedido de fim da pensão depende do resultado da discussão principal.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "peticao_fabio.txt",
+      "trecho": "Fim da pensão alimentícia de R$ 1.100,00 paga a Gabriel desde 2023",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-2019",
+    "categoria": "pergunta_dificil",
+    "texto": "O senhor escreveu a Tatiana, em 2019, que pai é quem cria e que isso não mudava nada?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "contestacao_tatiana.txt",
+      "trecho": "pai é quem cria",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-dia-dos-pais",
+    "categoria": "pergunta_dificil",
+    "texto": "Por que o senhor foi à festa do Dia dos Pais depois de receber o resultado do exame?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "contestacao_tatiana.txt",
+      "trecho": "levou Gabriel à festa do Dia dos Pais da escola",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-coleta",
+    "categoria": "pergunta_dificil",
+    "texto": "Como foi coletado o material do exame e quem pode garantir que era de Gabriel?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "peticao_fabio.txt",
+      "trecho": "com material coletado por Fábio",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-gabriel",
+    "categoria": "pergunta_dificil",
+    "texto": "O que o senhor pretende dizer a Gabriel, que o chama de pai?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "contestacao_tatiana.txt",
+      "trecho": "é chamado de pai pelo menino",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   }
+  ],
+  "perguntas_dificeis": [
+   "O senhor escreveu a Tatiana, em 2019, que pai é quem cria e que isso não mudava nada?",
+   "Por que o senhor foi à festa do Dia dos Pais depois de receber o resultado do exame?",
+   "Como foi coletado o material do exame e quem pode garantir que era de Gabriel?",
+   "O que o senhor pretende dizer a Gabriel, que o chama de pai?"
+  ],
+  "linha_do_tempo": [
+   {
+    "data": "05/2015",
+    "data_ordenacao": "2015-05",
+    "evento": "Fábio registra Gabriel como filho",
+    "quem_afirma": "Fábio",
+    "documento": "peticao_fabio.txt",
+    "trecho": "Fábio registrou Gabriel como filho logo depois do nascimento, em 05/2015",
+    "trecho_conferido": true,
+    "divergencia": ""
+   },
+   {
+    "data": "2019",
+    "data_ordenacao": "2019",
+    "evento": "Tatiana conta a Fábio sobre relacionamento anterior; ele responde que isso não mudava nada",
+    "quem_afirma": "Tatiana",
+    "documento": "contestacao_tatiana.txt",
+    "trecho": "Fábio sabe desde 2019 que poderia não ser o pai biológico",
+    "trecho_conferido": true,
+    "divergencia": "Fábio afirma que foi enganado e não sabia da verdade."
+   },
+   {
+    "data": "2023",
+    "data_ordenacao": "2023",
+    "evento": "Separação do casal; início da pensão",
+    "quem_afirma": "Fábio",
+    "documento": "peticao_fabio.txt",
+    "trecho": "O casal se separou em 2023",
+    "trecho_conferido": true,
+    "divergencia": ""
+   },
+   {
+    "data": "03/2025",
+    "data_ordenacao": "2025-03",
+    "evento": "Exame de DNA particular exclui a paternidade biológica",
+    "quem_afirma": "Fábio",
+    "documento": "peticao_fabio.txt",
+    "trecho": "Em 03/2025, um exame de DNA feito em laboratório particular",
+    "trecho_conferido": true,
+    "divergencia": "Tatiana questiona a coleta, feita sem seu conhecimento e sem cadeia de custódia."
+   },
+   {
+    "data": "06/2025",
+    "data_ordenacao": "2025-06",
+    "evento": "Fábio leva Gabriel à festa do Dia dos Pais da escola",
+    "quem_afirma": "Tatiana",
+    "documento": "contestacao_tatiana.txt",
+    "trecho": "Em 06/2025, depois do exame, levou Gabriel à festa do Dia dos Pais da escola",
+    "trecho_conferido": true,
+    "divergencia": ""
+   }
+  ],
+  "plano_de_provas": [
+   {
+    "prova": "Exame de DNA judicial, com coleta oficial",
+    "finalidade": "Substituir o exame particular contestado por uma prova segura.",
+    "como_obter": "Requerer ao juízo a realização do exame.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "lacuna-exame",
+     "pergunta-coleta"
+    ]
+   },
+   {
+    "prova": "Provas de que Fábio não sabia da possibilidade antes de 2025, ou do contexto da mensagem de 2019",
+    "finalidade": "Enfrentar a alegação de que ele sabia e aceitou a paternidade.",
+    "como_obter": "Revisar com o cliente as conversas de 2019 e juntar a conversa completa, se existir.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "contradicao-engano",
+     "lacuna-mensagem-2019",
+     "argumento-registro-voluntario",
+     "pergunta-2019"
+    ]
+   },
+   {
+    "prova": "Estudo psicossocial sobre o vínculo entre Fábio e Gabriel",
+    "finalidade": "Avaliar a relação existente e os efeitos da exclusão para a criança.",
+    "como_obter": "Requerer ao juízo o estudo pela equipe técnica.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "argumento-socioafetiva",
+     "lacuna-vinculo",
+     "pergunta-gabriel"
+    ]
+   },
+   {
+    "prova": "Explicação documentada sobre a ida à festa do Dia dos Pais",
+    "finalidade": "Contextualizar a conduta posterior ao exame.",
+    "como_obter": "Conversar com o cliente e reunir mensagens da época sobre o convite.",
+    "prioridade": "media",
+    "apontamentos": [
+     "contradicao-conduta-posterior",
+     "pergunta-dia-dos-pais"
+    ]
+   }
+  ],
+  "avisos": [
+   "Este relatório não é parecer jurídico: revise cada apontamento antes de usá-lo.",
+   "Versão de demonstração: use apenas documentos fictícios ou anonimizados."
+  ]
+ },
+ "audiencia": [
+  {
+   "pergunta": "O senhor escreveu a Tatiana, em 2019, que pai é quem cria e que isso não mudava nada?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Não me lembro dessa mensagem.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta é evasiva sobre uma mensagem que pode ser exibida e enfraquece a alegação de engano.",
+      "pontos_fortes": [],
+      "pontos_frageis": [
+       "Se a mensagem aparecer, a tese de engano cai.",
+       "Não oferece contexto."
+      ],
+      "sugestao": "Verifique as conversas antes e, se a mensagem existir, explique em que contexto foi escrita.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_tatiana.txt",
+        "trecho": "ele respondeu, em mensagem, que pai é quem cria",
+        "conferido": true
+       }
+      ],
+      "replica": "E se a mensagem for juntada ao processo?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Tatiana falou de um relacionamento anterior, mas disse que Gabriel era meu filho. Eu confiei nela e respondi daquela forma para encerrar a discussão. Só tive certeza em 2025, com o exame.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta dá contexto e mantém a alegação de engano, mas admite que a dúvida existia desde 2019.",
+      "pontos_fortes": [
+       "Não nega o que pode ser provado.",
+       "Explica a mensagem."
+      ],
+      "pontos_frageis": [
+       "Confirma que Fábio seguiu como pai mesmo sabendo da possibilidade."
+      ],
+      "sugestao": "Junte a conversa completa para mostrar o que Tatiana disse naquela ocasião.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_fabio.txt",
+        "trecho": "Fábio afirma que foi enganado por Tatiana",
+        "conferido": true
+       }
+      ],
+      "replica": "E por que o senhor não pediu o exame em 2019?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Por que o senhor foi à festa do Dia dos Pais depois de receber o resultado do exame?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Fui só para não chatear o menino, mas não sou pai dele.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta confirma o cuidado com Gabriel e, ao mesmo tempo, reforça o vínculo que a defesa quer demonstrar.",
+      "pontos_fortes": [
+       "Sinceridade."
+      ],
+      "pontos_frageis": [
+       "Reforça o argumento da paternidade socioafetiva."
+      ],
+      "sugestao": "Separe o cuidado com a criança do pedido jurídico e explique que a situação está em definição.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_tatiana.txt",
+        "trecho": "levou Gabriel à festa do Dia dos Pais da escola",
+        "conferido": true
+       }
+      ],
+      "replica": "Então o senhor se preocupa com ele como pai?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Gabriel não tem culpa de nada e eu não quis que ele sofresse antes de a situação ser resolvida pelo juízo. Isso não muda o fato de que fui levado a registrá-lo com uma informação falsa.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é humana e mantém o foco no alegado engano, mas não afasta o vínculo afetivo que a própria conduta indica.",
+      "pontos_fortes": [
+       "Mostra cuidado com a criança.",
+       "Retoma a tese central."
+      ],
+      "pontos_frageis": [
+       "O vínculo afetivo continua evidente."
+      ],
+      "sugestao": "Prepare-se para a pergunta sobre o que acontece com a relação com Gabriel depois da ação.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_fabio.txt",
+        "trecho": "não teria registrado Gabriel se soubesse da verdade",
+        "conferido": true
+       }
+      ],
+      "replica": "E o senhor pretende continuar convivendo com ele?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Como foi coletado o material do exame e quem pode garantir que era de Gabriel?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Eu mesmo peguei o cabelo da escova, o resultado é claro.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta confirma exatamente a falha apontada pela defesa: coleta feita pelo interessado, sem controle.",
+      "pontos_fortes": [],
+      "pontos_frageis": [
+       "Admite a ausência de cadeia de custódia.",
+       "Não propõe prova segura."
+      ],
+      "sugestao": "Reconheça o limite do exame particular e peça o exame judicial.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_tatiana.txt",
+        "trecho": "sem cadeia de custódia do material",
+        "conferido": true
+       }
+      ],
+      "replica": "Então ninguém garante que o material era do menino?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "O exame particular serviu para confirmar a suspeita. Justamente por isso pedimos o exame judicial, com coleta oficial, para que não fique nenhuma dúvida.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta reconhece o limite do exame particular sem abandonar a tese e oferece a prova que resolve a questão.",
+      "pontos_fortes": [
+       "Neutraliza a crítica à coleta.",
+       "Mostra boa-fé processual."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Formalize o pedido de exame judicial antes da audiência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_fabio.txt",
+        "trecho": "concluiu que ele não é o pai biológico de Gabriel",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,194 @@
+[
+ {
+  "id": "partilha-empresa-imovel",
+  "tipo": "Divórcio e partilha de bens",
+  "titulo": "Empresa e imóvel anteriores ao casamento",
+  "descricao": "A ex-esposa pede metade da empresa e do imóvel que o marido já tinha antes de casar, por ter ajudado a administrar o negócio."
+ },
+ {
+  "id": "partilha-aposentadoria",
+  "tipo": "Divórcio e partilha de bens",
+  "titulo": "Aposentadoria na partilha e pedido de pensão",
+  "descricao": "A ex-esposa pede que os valores da aposentadoria do marido entrem na partilha e pede pensão alimentícia."
+ },
+ {
+  "id": "partilha-fgts",
+  "tipo": "Divórcio e partilha de bens",
+  "titulo": "FGTS acumulado durante o casamento",
+  "descricao": "Um dos cônjuges pede que o FGTS depositado durante o casamento fique fora da partilha."
+ },
+ {
+  "id": "partilha-previdencia-privada",
+  "tipo": "Divórcio e partilha de bens",
+  "titulo": "Previdência privada aberta e fechada",
+  "descricao": "A ex-esposa pede metade do plano de previdência do marido, inclusive R$ 150 mil resgatados um mês antes da separação, e também do plano fechado da empresa dele."
+ },
+ {
+  "id": "partilha-imovel-aluguel",
+  "tipo": "Divórcio e partilha de bens",
+  "titulo": "Aluguel pelo uso do imóvel comum",
+  "descricao": "O ex-marido pede que a ex-esposa pague aluguel por morar no apartamento do casal e quer vender o imóvel. Ela diz que mora ali com o filho e que ele parou de pagar o financiamento."
+ },
+ {
+  "id": "partilha-cripto-divida",
+  "tipo": "Divórcio e partilha de bens",
+  "titulo": "Criptomoedas e empréstimo na partilha",
+  "descricao": "A ex-esposa pede metade das criptomoedas que o marido transferiu cinco dias depois da separação e quer excluir um empréstimo de R$ 80 mil. Ele diz que a carteira vale bem menos e que o empréstimo pagou a reforma da casa."
+ },
+ {
+  "id": "uniao-estavel-post-mortem",
+  "tipo": "União estável",
+  "titulo": "União estável depois da morte do companheiro",
+  "descricao": "A companheira pede o reconhecimento da união estável depois da morte dele. Os filhos dizem que era namoro e que ela mantinha o próprio apartamento."
+ },
+ {
+  "id": "uniao-estavel-animal",
+  "tipo": "União estável",
+  "titulo": "Animal de estimação na separação",
+  "descricao": "Na dissolução da união estável, a ex-companheira quer ficar só com o cachorro e dividir as despesas do veterinário. O ex-companheiro quer convivência nos fins de semana."
+ },
+ {
+  "id": "pensao-perda-emprego",
+  "tipo": "Pensão alimentícia",
+  "titulo": "Perda de emprego e mudança de cidade",
+  "descricao": "O pai pede para reduzir a pensão depois de ser demitido e ampliar a convivência depois que a mãe se mudou com a filha. As datas das duas versões não batem."
+ },
+ {
+  "id": "pensao-filha-maior",
+  "tipo": "Pensão alimentícia",
+  "titulo": "Filha maior de idade com renda própria",
+  "descricao": "O pai pede reduzir ou encerrar a pensão da filha de 18 anos que trabalha meio período e faz curso técnico."
+ },
+ {
+  "id": "pensao-ex-esposa-trabalho",
+  "tipo": "Pensão alimentícia",
+  "titulo": "Ex-esposa voltou a trabalhar",
+  "descricao": "O ex-marido pede o fim da pensão paga há mais de seis anos porque a ex-esposa voltou ao mercado de trabalho."
+ },
+ {
+  "id": "pensao-ex-esposa-tempo",
+  "tipo": "Pensão alimentícia",
+  "titulo": "Pensão entre ex-cônjuges há muitos anos",
+  "descricao": "O ex-marido pede o fim da pensão pelo tempo passado desde o divórcio. Só a versão dele consta nos documentos."
+ },
+ {
+  "id": "alimentos-gravidicos",
+  "tipo": "Pensão alimentícia",
+  "titulo": "Alimentos durante a gravidez",
+  "descricao": "A gestante pede pensão ao ex-namorado até o nascimento. Ele diz que o namoro terminou antes da provável data da concepção e que ganha menos do que ela afirma."
+ },
+ {
+  "id": "alimentos-avoengos",
+  "tipo": "Pensão alimentícia",
+  "titulo": "Pensão cobrada dos avós",
+  "descricao": "A mãe pede que os avós paternos paguem pensão ao neto porque o pai parou de pagar. Os avós dizem que o pai nunca foi cobrado e que eles não têm condições."
+ },
+ {
+  "id": "execucao-prisao-civil",
+  "tipo": "Pensão alimentícia",
+  "titulo": "Pensão atrasada com pedido de prisão",
+  "descricao": "A mãe cobra 14 meses de pensão atrasada e pede a prisão do pai. Ele diz que pagou a escola da filha diretamente, fez transferências e voltou a pagar em dia."
+ },
+ {
+  "id": "alimentos-compensatorios",
+  "tipo": "Pensão alimentícia",
+  "titulo": "Alimentos compensatórios até a partilha",
+  "descricao": "Depois de 26 anos de casamento, a ex-esposa pede R$ 8.000,00 por mês porque o ex-marido recebe sozinho a renda dos bens do casal. Ele diz que a renda é bem menor e que já adiantou R$ 50 mil."
+ },
+ {
+  "id": "guarda-alienacao",
+  "tipo": "Guarda e convivência",
+  "titulo": "Alegação de alienação parental",
+  "descricao": "O pai pede a guarda unilateral alegando que a mãe pratica alienação parental."
+ },
+ {
+  "id": "guarda-unilateral",
+  "tipo": "Guarda e convivência",
+  "titulo": "Guarda unilateral ou compartilhada",
+  "descricao": "Um dos pais pede a guarda unilateral, argumentando que a compartilhada prejudica a criança."
+ },
+ {
+  "id": "guarda-residencia",
+  "tipo": "Guarda e convivência",
+  "titulo": "Mudança de residência do filho",
+  "descricao": "O pai pede que o filho passe a morar com ele, citando a preferência da criança e a proximidade da escola."
+ },
+ {
+  "id": "guarda-exterior",
+  "tipo": "Guarda e convivência",
+  "titulo": "Mudança de país com a filha",
+  "descricao": "A mãe pede autorização para morar em Lisboa com a filha de 8 anos por causa de uma proposta de emprego. O pai diz que participa da rotina da menina muito além dos fins de semana."
+ },
+ {
+  "id": "guarda-violencia-domestica",
+  "tipo": "Guarda e convivência",
+  "titulo": "Guarda com medida protetiva",
+  "descricao": "A mãe pede a guarda unilateral e visitas assistidas depois de um episódio de violência doméstica. O pai nega a agressão, diz que o inquérito foi arquivado e que o filho volta tranquilo das visitas."
+ },
+ {
+  "id": "convivencia-avos",
+  "tipo": "Guarda e convivência",
+  "titulo": "Convivência dos avós com a neta",
+  "descricao": "Depois da morte da mãe, os avós maternos pedem para ver a neta em fins de semana alternados, sem o pai. Ele diz que a avó falou mal da madrasta para a menina e que a psicóloga recomendou cautela."
+ },
+ {
+  "id": "investigacao-paternidade-dna",
+  "tipo": "Filiação",
+  "titulo": "Investigação de paternidade sem exame de DNA",
+  "descricao": "Um menino de 12 anos, representado pela mãe, pede o reconhecimento da paternidade e pensão. O suposto pai faltou duas vezes ao exame de DNA e diz que tinha motivos para isso."
+ },
+ {
+  "id": "negatoria-socioafetiva",
+  "tipo": "Filiação",
+  "titulo": "Negatória de paternidade e vínculo afetivo",
+  "descricao": "Depois de um exame de DNA particular, o pai registral quer tirar o nome do registro do filho de 10 anos e parar de pagar pensão. A mãe diz que ele sabia da dúvida desde 2019 e segue sendo pai para o menino."
+ },
+ {
+  "id": "multiparentalidade",
+  "tipo": "Filiação",
+  "titulo": "Pai biológico e pai registral",
+  "descricao": "Um pai biológico confirmado por DNA quer ser incluído no registro da menina de 7 anos sem retirar o pai registral. A mãe diz que o avisou da gravidez em 2017 e que a criança ainda não sabe da história."
+ },
+ {
+  "id": "curatela-idoso",
+  "tipo": "Curatela e proteção",
+  "titulo": "Curatela de mãe com Alzheimer",
+  "descricao": "Uma filha pede para ser curadora da mãe de 82 anos e para revogar a procuração do irmão, por causa de saques de R$ 42 mil. O irmão diz que a mãe ainda decide e que o dinheiro pagou cuidados dela."
+ },
+ {
+  "id": "tomada-decisao-apoiada",
+  "tipo": "Curatela e proteção",
+  "titulo": "Tomada de decisão apoiada",
+  "descricao": "Um jovem com deficiência intelectual leve pede apoio da mãe e de um amigo para decisões financeiras, depois de assinar empréstimos que não conseguia pagar. O pai pede curatela e aponta conflito de interesses do amigo."
+ },
+ {
+  "id": "heranca-cuidadora",
+  "tipo": "Herança",
+  "titulo": "Filha que cuidou do pai",
+  "descricao": "A filha que cuidou do pai por oito anos pede uma parte maior da casa deixada por ele, em disputa com o irmão."
+ },
+ {
+  "id": "heranca-companheira",
+  "tipo": "Herança",
+  "titulo": "Companheira e parentes do falecido",
+  "descricao": "Irmãos, tios e sobrinhos de quem morreu sem filhos querem dividir a herança com a companheira."
+ },
+ {
+  "id": "morte-relacao-paralela",
+  "tipo": "Pensão por morte",
+  "titulo": "Relação paralela ao casamento",
+  "descricao": "Quem manteve relação paralela a um casamento pede o reconhecimento da família para receber pensão por morte."
+ },
+ {
+  "id": "morte-escritura",
+  "tipo": "Pensão por morte",
+  "titulo": "Pensão combinada em cartório",
+  "descricao": "A ex-esposa pede pensão por morte com base na pensão alimentícia definida em escritura de divórcio."
+ },
+ {
+  "id": "abandono-afetivo",
+  "tipo": "Responsabilidade na família",
+  "titulo": "Indenização por abandono afetivo",
+  "descricao": "Uma jovem de 22 anos pede indenização ao pai, que não a visitou desde 2010. Ele diz que tentou contato, que a mãe dificultou as visitas e que sempre pagou a pensão."
+ }
+]

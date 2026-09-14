@@ -1,0 +1,457 @@
+{
+ "id": "curatela-idoso",
+ "tipo": "Curatela e proteção",
+ "titulo": "Curatela de mãe com Alzheimer",
+ "descricao": "Uma filha pede para ser curadora da mãe de 82 anos e para revogar a procuração do irmão, por causa de saques de R$ 42 mil. O irmão diz que a mãe ainda decide e que o dinheiro pagou cuidados dela.",
+ "documentos": [
+  {
+   "nome": "manifestacao_rogerio.txt",
+   "conteudo": "MANIFESTAÇÃO DO INTERESSADO (CASO FICTÍCIO PARA TESTES, CENÁRIO SINTÉTICO — NENHUMA\nRELAÇÃO COM PESSOAS REAIS)\n\nINTERESSADO: Rogério, filho de Aurora.\n\nDOS FATOS\n\nRogério concorda que a mãe precisa de ajuda, mas afirma que ela ainda conversa, lê e\nreconhece os filhos. O laudo de 09/2023 indica fase inicial da doença.\n\nOs saques de 2025 pagaram a cuidadora noturna, os remédios e a reforma do banheiro da casa\nde Mônica, onde a mãe mora, conforme recibos que Rogério guarda.\n\nAurora disse a vizinhos que quer continuar decidindo sobre o próprio dinheiro com a ajuda\ndos dois filhos.\n\nDO PEDIDO\n\n1. Rejeição da curatela ampla.\n2. Caso seja necessária alguma medida, adoção de tomada de decisão apoiada, com Rogério e\n   Mônica como apoiadores.\n"
+  },
+  {
+   "nome": "pedido_monica.txt",
+   "conteudo": "AÇÃO DE CURATELA (CASO FICTÍCIO PARA TESTES, CENÁRIO SINTÉTICO — NENHUMA RELAÇÃO COM\nPESSOAS REAIS)\n\nREQUERENTE: Mônica, filha\nCURATELANDA: Aurora, de 82 anos, mãe de Mônica\nINTERESSADO: Rogério, filho de Aurora\n\nDOS FATOS\n\nAurora recebeu diagnóstico de doença de Alzheimer em 09/2023 e mora com Mônica desde\n01/2024.\n\nRogério tem procuração da mãe desde 2022 para movimentar a conta bancária dela. Entre\njaneiro e junho de 2025, foram sacados cerca de R$ 42.000,00 da conta de Aurora, sem que\nMônica saiba para quê.\n\nAurora já não reconhece alguns netos e se perde quando sai sozinha.\n\nDO PEDIDO\n\n1. Nomeação de Mônica como curadora de Aurora, com poderes para administrar todos os bens\n   e decidir sobre o tratamento médico.\n2. Revogação da procuração dada a Rogério.\n"
+  }
+ ],
+ "tese": "Ação de curatela de pessoa idosa com Alzheimer. A tese a ser testada é a de Mônica\n(filha): nomeação dela como curadora da mãe, Aurora, de 82 anos, com poderes amplos sobre\nbens e tratamento médico, e revogação da procuração do irmão, Rogério, por causa de saques\nde cerca de R$ 42 mil sem explicação.",
+ "relatorio": {
+  "resumo_do_caso": "Lemos 2 documentos e identificamos 3 partes, 9 fatos relevantes e 4 pedidos.",
+  "tese_analisada": "Ação de curatela de pessoa idosa com Alzheimer. A tese a ser testada é a de Mônica\n(filha): nomeação dela como curadora da mãe, Aurora, de 82 anos, com poderes amplos sobre\nbens e tratamento médico, e revogação da procuração do irmão, Rogério, por causa de saques\nde cerca de R$ 42 mil sem explicação.",
+  "findings": [
+   {
+    "id": "contradicao-capacidade",
+    "categoria": "contradicao",
+    "texto": "Mônica descreve uma mãe que já não reconhece netos e se perde; Rogério diz que ela ainda conversa, lê e reconhece os filhos. O único laudo citado é de 09/2023 e, segundo ele, indica fase inicial.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "pedido_monica.txt",
+      "trecho": "Aurora já não reconhece alguns netos e se perde quando sai sozinha",
+      "pagina": null,
+      "conferido": true
+     },
+     {
+      "documento": "manifestacao_rogerio.txt",
+      "trecho": "ela ainda conversa, lê e reconhece os filhos. O laudo de 09/2023 indica fase inicial da doença",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "contradicao-saques",
+    "categoria": "contradicao",
+    "texto": "Mônica diz não saber o destino dos cerca de R$ 42.000,00; Rogério afirma que pagaram cuidadora, remédios e a reforma do banheiro da casa da própria Mônica.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "pedido_monica.txt",
+      "trecho": "foram sacados cerca de R$ 42.000,00 da conta de Aurora, sem que Mônica saiba para quê",
+      "pagina": null,
+      "conferido": true
+     },
+     {
+      "documento": "manifestacao_rogerio.txt",
+      "trecho": "pagaram a cuidadora noturna, os remédios e a reforma do banheiro da casa de Mônica",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-laudo-atual",
+    "categoria": "lacuna_probatoria",
+    "texto": "Não há avaliação médica recente sobre a capacidade atual de Aurora; o diagnóstico citado é de 09/2023.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "pedido_monica.txt",
+      "trecho": "Aurora recebeu diagnóstico de doença de Alzheimer em 09/2023",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-extratos",
+    "categoria": "lacuna_probatoria",
+    "texto": "Os extratos da conta e os recibos que Rogério diz guardar não foram juntados.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "manifestacao_rogerio.txt",
+      "trecho": "conforme recibos que Rogério guarda",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-oitiva",
+    "categoria": "lacuna_probatoria",
+    "texto": "Aurora não foi ouvida; a vontade dela aparece apenas no relato de conversas com vizinhos.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "manifestacao_rogerio.txt",
+      "trecho": "Aurora disse a vizinhos que quer continuar decidindo sobre o próprio dinheiro",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-poderes-amplos",
+    "categoria": "contra_argumento",
+    "texto": "A outra parte sustentará que o pedido de poderes sobre todos os bens e sobre o tratamento médico vai além do necessário e retira de Aurora decisões que ela ainda pode tomar.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "pedido_monica.txt",
+      "trecho": "com poderes para administrar todos os bens e decidir sobre o tratamento médico",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-decisao-apoiada",
+    "categoria": "contra_argumento",
+    "texto": "Rogério apresentará a tomada de decisão apoiada, com os dois filhos, como medida menos restritiva e compatível com a vontade manifestada por Aurora.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "manifestacao_rogerio.txt",
+      "trecho": "adoção de tomada de decisão apoiada, com Rogério e Mônica como apoiadores",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-beneficio-monica",
+    "categoria": "contra_argumento",
+    "texto": "A defesa lembrará que parte dos saques teria beneficiado a casa onde Mônica mora, o que enfraquece a acusação de uso indevido.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "manifestacao_rogerio.txt",
+      "trecho": "a reforma do banheiro da casa de Mônica, onde a mãe mora",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-reforma",
+    "categoria": "pergunta_dificil",
+    "texto": "O banheiro da casa de Mônica foi reformado em 2025? Quem pagou?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "manifestacao_rogerio.txt",
+      "trecho": "a reforma do banheiro da casa de Mônica",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-cuidadora",
+    "categoria": "pergunta_dificil",
+    "texto": "Quem paga a cuidadora noturna e os remédios de Aurora?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "manifestacao_rogerio.txt",
+      "trecho": "pagaram a cuidadora noturna, os remédios",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-tratamento",
+    "categoria": "pergunta_dificil",
+    "texto": "Por que a curadora precisaria decidir sobre o tratamento médico, se Aurora ainda conversa e reconhece os filhos?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "pedido_monica.txt",
+      "trecho": "decidir sobre o tratamento médico",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-apoio",
+    "categoria": "pergunta_dificil",
+    "texto": "Por que a tomada de decisão apoiada, com os dois filhos, não seria suficiente?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "manifestacao_rogerio.txt",
+      "trecho": "com a ajuda dos dois filhos",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   }
+  ],
+  "perguntas_dificeis": [
+   "O banheiro da casa de Mônica foi reformado em 2025? Quem pagou?",
+   "Quem paga a cuidadora noturna e os remédios de Aurora?",
+   "Por que a curadora precisaria decidir sobre o tratamento médico, se Aurora ainda conversa e reconhece os filhos?",
+   "Por que a tomada de decisão apoiada, com os dois filhos, não seria suficiente?"
+  ],
+  "linha_do_tempo": [
+   {
+    "data": "2022",
+    "data_ordenacao": "2022",
+    "evento": "Aurora dá procuração a Rogério para movimentar a conta",
+    "quem_afirma": "Mônica",
+    "documento": "pedido_monica.txt",
+    "trecho": "Rogério tem procuração da mãe desde 2022",
+    "trecho_conferido": true,
+    "divergencia": ""
+   },
+   {
+    "data": "09/2023",
+    "data_ordenacao": "2023-09",
+    "evento": "Diagnóstico de Alzheimer",
+    "quem_afirma": "Mônica",
+    "documento": "pedido_monica.txt",
+    "trecho": "Aurora recebeu diagnóstico de doença de Alzheimer em 09/2023",
+    "trecho_conferido": true,
+    "divergencia": "Rogério afirma que o laudo indica fase inicial."
+   },
+   {
+    "data": "01/2024",
+    "data_ordenacao": "2024-01",
+    "evento": "Aurora passa a morar com Mônica",
+    "quem_afirma": "Mônica",
+    "documento": "pedido_monica.txt",
+    "trecho": "mora com Mônica desde 01/2024",
+    "trecho_conferido": true,
+    "divergencia": ""
+   },
+   {
+    "data": "janeiro a junho de 2025",
+    "data_ordenacao": "2025-01",
+    "evento": "Saques de cerca de R$ 42.000,00 da conta de Aurora",
+    "quem_afirma": "Mônica",
+    "documento": "pedido_monica.txt",
+    "trecho": "Entre janeiro e junho de 2025, foram sacados cerca de R$ 42.000,00",
+    "trecho_conferido": true,
+    "divergencia": "Rogério afirma que pagaram cuidadora, remédios e reforma na casa de Mônica."
+   }
+  ],
+  "plano_de_provas": [
+   {
+    "prova": "Perícia médica atual sobre a capacidade de Aurora para cada tipo de decisão",
+    "finalidade": "Mostrar se e em que medida ela precisa de curatela, e não apenas de apoio.",
+    "como_obter": "Requerer a perícia ao juízo e juntar relatórios recentes do médico que a acompanha.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "contradicao-capacidade",
+     "lacuna-laudo-atual",
+     "argumento-poderes-amplos",
+     "pergunta-tratamento",
+     "pergunta-apoio"
+    ]
+   },
+   {
+    "prova": "Extratos bancários de 2025 e prestação de contas com os recibos",
+    "finalidade": "Verificar o destino dos cerca de R$ 42.000,00.",
+    "como_obter": "Requerer que Rogério preste contas e que o banco forneça os extratos.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "contradicao-saques",
+     "lacuna-extratos",
+     "argumento-beneficio-monica"
+    ]
+   },
+   {
+    "prova": "Comprovantes de quem pagou cuidadora, remédios e a reforma",
+    "finalidade": "Responder às perguntas sobre gastos que envolvem a casa da própria cliente.",
+    "como_obter": "Reunir com Mônica recibos, contratos e transferências de 2025.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "pergunta-reforma",
+     "pergunta-cuidadora",
+     "argumento-beneficio-monica"
+    ]
+   },
+   {
+    "prova": "Entrevista de Aurora pelo juízo e estudo social",
+    "finalidade": "Registrar a vontade dela e a rotina de cuidados.",
+    "como_obter": "Requerer a entrevista e o estudo pela equipe técnica.",
+    "prioridade": "media",
+    "apontamentos": [
+     "lacuna-oitiva",
+     "argumento-decisao-apoiada"
+    ]
+   }
+  ],
+  "avisos": [
+   "Este relatório não é parecer jurídico: revise cada apontamento antes de usá-lo.",
+   "Versão de demonstração: use apenas documentos fictícios ou anonimizados."
+  ]
+ },
+ "audiencia": [
+  {
+   "pergunta": "O banheiro da casa de Mônica foi reformado em 2025? Quem pagou?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Isso não tem nada a ver com o processo.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta evita um ponto que atinge diretamente a acusação sobre os saques.",
+      "pontos_fortes": [],
+      "pontos_frageis": [
+       "Deixa sem resposta a alegação de que o dinheiro beneficiou a casa de Mônica.",
+       "Passa impressão de esconder algo."
+      ],
+      "sugestao": "Responda com os fatos e explique se a reforma atendeu à segurança de Aurora.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "manifestacao_rogerio.txt",
+        "trecho": "a reforma do banheiro da casa de Mônica, onde a mãe mora",
+        "conferido": true
+       }
+      ],
+      "replica": "Então a senhora não nega que a reforma foi paga com o dinheiro da sua mãe?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Houve uma reforma para adaptar o banheiro à mãe, e parte foi paga com o dinheiro dela. Mas isso responde por uma parte pequena dos R$ 42 mil, e o restante precisa de prestação de contas com os extratos.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é honesta e mantém o pedido de contas, mas afirma um valor proporcional que ainda não está provado.",
+      "pontos_fortes": [
+       "Não nega o que pode ser comprovado.",
+       "Liga a reforma ao cuidado com Aurora.",
+       "Mantém o foco na prestação de contas."
+      ],
+      "pontos_frageis": [
+       "\"Parte pequena\" não tem apoio em documento."
+      ],
+      "sugestao": "Leve o valor da reforma comprovado para a audiência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_monica.txt",
+        "trecho": "cerca de R$ 42.000,00",
+        "conferido": true
+       }
+      ],
+      "replica": "Qual foi o valor da reforma?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Por que a curadora precisaria decidir sobre o tratamento médico, se Aurora ainda conversa e reconhece os filhos?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Porque ela tem Alzheimer e não tem mais condições de decidir nada.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta trata o diagnóstico como incapacidade total, sem avaliação atual e contra o que o outro filho descreve.",
+      "pontos_fortes": [],
+      "pontos_frageis": [
+       "O laudo citado é de 09/2023.",
+       "Ignora a vontade manifestada por Aurora."
+      ],
+      "sugestao": "Ajuste o pedido ao que a perícia atual indicar e limite a curatela ao necessário.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "manifestacao_rogerio.txt",
+        "trecho": "O laudo de 09/2023 indica fase inicial da doença",
+        "conferido": true
+       }
+      ],
+      "replica": "Algum médico avaliou a sua mãe depois de 2023?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Mônica aceita que a curatela seja limitada ao que a perícia apontar, com foco na administração do dinheiro. O mais urgente é proteger o patrimônio de Aurora e ter prestação de contas.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta ajusta o pedido a uma medida proporcional, esvazia a crítica de excesso e mantém o objetivo central de proteção.",
+      "pontos_fortes": [
+       "Reduz o pedido ao necessário.",
+       "Mantém o foco nos saques.",
+       "Condiciona o alcance à perícia."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Prepare-se para explicar por que o apoio dos dois filhos não bastaria para a parte financeira.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_monica.txt",
+        "trecho": "Revogação da procuração dada a Rogério",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Por que a tomada de decisão apoiada, com os dois filhos, não seria suficiente?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Porque meu irmão não é confiável.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta acusa o irmão sem indicar prova e transforma a questão em conflito familiar.",
+      "pontos_fortes": [],
+      "pontos_frageis": [
+       "Nenhum documento comprova uso indevido.",
+       "Não fala da situação de Aurora."
+      ],
+      "sugestao": "Fale dos fatos objetivos: saques sem prestação de contas e a necessidade de controle.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "manifestacao_rogerio.txt",
+        "trecho": "conforme recibos que Rogério guarda",
+        "conferido": true
+       }
+      ],
+      "replica": "A senhora tem alguma prova de que ele usou o dinheiro para si?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "O apoio pressupõe que Aurora consiga compreender e decidir com ajuda. Se a perícia mostrar isso, Mônica aceita. O que não pode continuar é a movimentação da conta sem nenhuma prestação de contas.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é equilibrada e aceita o critério técnico, mas admite que a curatela pode não ser necessária.",
+      "pontos_fortes": [
+       "Respeita a autonomia de Aurora.",
+       "Mantém a exigência de contas."
+      ],
+      "pontos_frageis": [
+       "Enfraquece o pedido principal de curatela."
+      ],
+      "sugestao": "Peça, em qualquer cenário, a prestação de contas e a revogação da procuração.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "manifestacao_rogerio.txt",
+        "trecho": "quer continuar decidindo sobre o próprio dinheiro com a ajuda dos dois filhos",
+        "conferido": true
+       }
+      ],
+      "replica": "Então a senhora concorda com a decisão apoiada?"
+     }
+    }
+   ]
+  }
+ ]
+}

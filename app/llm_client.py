@@ -16,6 +16,8 @@ Provedor ativo controlado pela variável de ambiente `LLM_PROVIDER`:
 
 from __future__ import annotations
 
+import contextlib
+import contextvars
 import json
 import os
 import sys
@@ -86,7 +88,26 @@ _PRECOS_POR_MILHAO_USD = {
 _uso_acumulado: dict[str, dict[str, int]] = {}
 
 
+# Chave da Anthropic do próprio usuário na requisição atual (análise real no site). Vale só
+# dentro de `usar_chave_anthropic`, tem prioridade sobre a variável de ambiente e força o
+# provedor Anthropic. É um ContextVar para nunca vazar de uma requisição para outra.
+_chave_anthropic_da_requisicao: contextvars.ContextVar[str | None] = contextvars.ContextVar(
+    "chave_anthropic_da_requisicao", default=None
+)
+
+
+@contextlib.contextmanager
+def usar_chave_anthropic(chave: str):
+    marcador = _chave_anthropic_da_requisicao.set(chave)
+    try:
+        yield
+    finally:
+        _chave_anthropic_da_requisicao.reset(marcador)
+
+
 def _provedor_ativo() -> str:
+    if _chave_anthropic_da_requisicao.get():
+        return "anthropic"
     return os.environ.get("LLM_PROVIDER", "anthropic").strip().lower()
 
 
@@ -129,6 +150,10 @@ class LLMConfigError(RuntimeError):
 
 def _get_anthropic_client() -> anthropic.Anthropic:
     global _client_anthropic
+    chave_do_usuario = _chave_anthropic_da_requisicao.get()
+    if chave_do_usuario:
+        # Um cliente por requisição: a chave de um usuário nunca é reaproveitada para outro.
+        return anthropic.Anthropic(api_key=chave_do_usuario)
     if _client_anthropic is None:
         api_key = os.environ.get("ANTHROPIC_API_KEY")
         if not api_key:

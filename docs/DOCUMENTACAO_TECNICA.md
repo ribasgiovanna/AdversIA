@@ -3,7 +3,7 @@
 > Documento para auditoria técnica. Descreve arquitetura, módulos, contratos, fluxo de
 > dados, segurança, testes e limitações do protótipo apresentado no Hackathon da Cidadania
 > OAB/PR 2026. Reflete o código do repositório `ribasgiovanna/AdversIA`, branch `main`,
-> em 13/09/2026. Quando um item não foi verificado, o texto diz isso.
+> em 14/09/2026. Quando um item não foi verificado, o texto diz isso.
 
 ---
 
@@ -52,8 +52,13 @@ caso do ponto de vista da parte contrária. A saída tem quatro partes:
 advogado. Toda afirmação carrega a sua origem, e cada trecho citado é **conferido por
 código** no texto do documento enviado (seção 10).
 
-**Status.** Protótipo de hackathon (MVP). Sem autenticação, sem banco de dados, rodando num
-notebook e exposto por túnel público temporário (seção 16).
+**Status.** Protótipo de hackathon (MVP). Sem autenticação e sem banco de dados. Publicado
+na Vercel (arquivos estáticos + funções Python) **sem nenhuma chave de IA da equipe**
+(ADR-014). Dois modos:
+
+- **Demonstração:** 32 casos fictícios com análise preparada previamente, servida como
+  arquivo estático (custo zero);
+- **Meus documentos:** análise real com a chave da Anthropic do próprio usuário.
 
 ---
 
@@ -62,36 +67,35 @@ notebook e exposto por túnel público temporário (seção 16).
 ```
 ┌──────────────────────────── Navegador (qualquer dispositivo) ───────────────────────────┐
 │  index.html + app.js + style.css  (SPA sem framework, sem build)                         │
-│  - formulário de upload/tese, filtro de casos de exemplo                                 │
-│  - tela de progresso (polling a cada 1,5 s)                                              │
+│  - escolha do modo: demonstração ou meus documentos (com a chave da Anthropic)           │
+│  - demonstração: lê demo/indice.json e demo/casos/<id>.json (estáticos)                  │
+│  - análise real: 1 POST síncrono; guarda documentos extraídos só na memória da aba       │
 │  - relatório em 4 abas; simulação de audiência                                           │
 │  - acessibilidade: VLibras (script externo gov.br), tema, fonte, contraste, voz          │
 └──────────────┬───────────────────────────────────────────────────────────────────────────┘
-               │ HTTPS (terminado na Cloudflare)
-┌──────────────▼──────────────┐
-│ Cloudflare Quick Tunnel     │  cloudflared no mesmo notebook, URL *.trycloudflare.com
-└──────────────┬──────────────┘
-               │ HTTP → localhost:8000
+               │ HTTPS
 ┌──────────────▼───────────────────────────────────────────────────────────────────────────┐
-│ app/server.py  (http.server da biblioteca padrão, ThreadingHTTPServer)                   │
-│  - arquivos estáticos · API JSON · parsing multipart                                     │
-│  - registro de análises em memória (dict + threading.Lock, máx. 50)                      │
-│  - uma thread de trabalho por análise                                                    │
-│        │                                                                                 │
+│ Vercel                                                                                   │
+│  estáticos: app/static/** (inclui demo/, gerado por scripts/construir_demo.py)           │
+│  funções Python (sem estado, máx. 300 s):                                                │
+│   api/analisar.py  ─┐                                                                    │
+│   api/audiencia.py ─┴─▶ app/api_comum.py  chave do usuário (X-Anthropic-Key), limites,  │
+│                              │            tradução de erros                              │
+│        ┌─────────────────────┼───────────────────────────┐                               │
 │        ├─ app/document_reader.py   PDF (pypdf) · DOCX (python-docx) · TXT/MD             │
 │        ├─ app/multipart_parser.py  multipart/form-data (substitui o módulo cgi)          │
 │        └─ app/pipeline.py          6 etapas + simulação + conferência de trechos         │
-│               │                                                                          │
 │               ├─ app/prompts/*.md        instruções por etapa + contexto de domínio      │
 │               ├─ app/tool_schemas.py     JSON Schema de saída de cada etapa              │
 │               ├─ app/schemas.py          modelos de dados (dataclasses)                  │
 │               └─ app/llm_client.py       ÚNICO ponto de acoplamento com o provedor de IA │
 └───────────────────────────────────────────────┬──────────────────────────────────────────┘
-                                                │ HTTPS (SDKs oficiais)
-                         ┌──────────────────────┼──────────────────────┐
-                   Anthropic (padrão)      Groq (testes)        Google Gemini (testes)
-                   Claude Sonnet 5 +       gpt-oss-20b          gemini-3.6-flash
-                   Claude Haiku 4.5
+                                                │ HTTPS (SDK oficial, chave do usuário)
+                                        Anthropic: Claude Sonnet 5 + Claude Haiku 4.5
+
+Execução local: app/server.py (http.server, localhost:8000) serve os mesmos estáticos e
+as mesmas rotas /api/analisar e /api/audiencia, usando o mesmo app/api_comum.py.
+Groq e Gemini continuam disponíveis só para testes locais (LLM_PROVIDER, ADR-009/010).
 ```
 
 **Decisões estruturais** (detalhes na seção 17):
@@ -119,7 +123,7 @@ notebook e exposto por túnel público temporário (seção 16).
 | `pytest` | `>=8.0,<9.0` | testes |
 | Front-end | HTML5, CSS, JavaScript puro (ES2020+) | sem framework, sem bundler, sem `npm` |
 | Recursos externos no navegador | Google Fonts (Atkinson Hyperlegible, Lexend); script VLibras de `vlibras.gov.br` | tipografia e Libras |
-| Exposição pública | `cloudflared` (Cloudflare Quick Tunnel), instalado via winget | URL HTTPS temporária |
+| Hospedagem | Vercel (estáticos + runtime Python), configurada em `vercel.json` | URL HTTPS fixa |
 
 A biblioteca padrão cobre HTTP (`http.server`), threads, JSON, regex, `uuid`, `unicodedata`.
 **Não há** Flask/FastAPI, ORM, banco, fila, cache externo nem `python-dotenv` (há um
@@ -130,11 +134,15 @@ carregador próprio de `.env`, seção 6.8).
 ## 4. Estrutura do repositório
 
 ```
+api/
+  analisar.py             função da Vercel: POST /api/analisar (4 MB) (23 linhas)
+  audiencia.py            função da Vercel: POST /api/audiencia (19)
 app/
   __init__.py
-  server.py               servidor HTTP, rotas, registro de análises (445 linhas)
+  api_comum.py            chave do usuário, leitura do envio, tradução de erros, resposta JSON (212)
+  server.py               servidor local: estáticos + mesmas rotas da Vercel (208)
   pipeline.py             orquestração das etapas, conferência de trechos (565)
-  llm_client.py           provedores de IA, contagem de uso/custo (471)
+  llm_client.py           provedores de IA, chave por requisição, contagem de uso/custo (496)
   tool_schemas.py         JSON Schemas das saídas estruturadas (215)
   schemas.py              dataclasses: CaseModel, Finding, Citation, VulnerabilityReport (128)
   document_reader.py      extração de texto PDF/DOCX/TXT (104)
@@ -150,126 +158,147 @@ app/
     06_plano_de_provas.md etapa 6: plano de provas
     07_simulacao_audiencia.md simulação de audiência (sob demanda)
   static/
-    index.html            estrutura da página (300)
-    app.js                lógica do front-end (1.373)
-    style.css             estilos, temas, acessibilidade, animações (1.186)
+    index.html            estrutura da página (336)
+    app.js                lógica do front-end (1.524)
+    style.css             estilos, temas, acessibilidade, animações (1.280)
     logo-adversia.png, favicon.png
+    demo/                 GERADO: indice.json + casos/<id>.json (32 casos, ~680 KB)
+demo/fontes/<id>.json     análises da demonstração, escritas e revisadas (32)
+scripts/construir_demo.py gera app/static/demo/ e confere cada trecho citado (202)
 tests/
   conftest.py             carga de casos, cache de relatórios por caso, resumo de custo
   test_pipeline_*.py      testes contra a API real (seção 15)
 golden_dataset/
   case_01/                caso genérico com contradição plantada
-  case_familia_01..14/    casos fictícios de família: documentos .txt, tese.txt, gabarito.md
+  case_familia_01..32/    casos fictícios de família: documentos .txt, tese.txt, gabarito.md
 specs/001-adversarial-vulnerability-report/  spec, plan, data-model, contracts, research, quickstart
 .specify/memory/constitution.md   constituição do projeto (5 princípios), spec-kit
-docs/                     decisões (ADRs), conformidade, custos, riscos, métricas, testes, README técnico
-requirements.txt · .env.example · .gitignore · README.md (versão para leigos)
+docs/                     decisões (ADRs), conformidade, catálogo de situações, custos, riscos, métricas, testes
+vercel.json · .vercelignore · requirements.txt · .env.example · .gitignore · README.md (versão para leigos)
 ```
 
 ---
 
 ## 5. Fluxo ponta a ponta de uma análise
 
+### 5.1 Modo demonstração (sem IA, sem custo)
+
 ```
-Navegador                              server.py                       pipeline.py / llm_client.py
-   │ POST /api/analises (multipart)       │                                   │
-   │ ───────────────────────────────────▶ │ valida Content-Type/Length        │
-   │                                      │ lê corpo (≤15 MB) e faz parsing   │
-   │                                      │ extrai texto de cada arquivo      │
-   │                                      │ cria registro {estado:processando}│
-   │                                      │ inicia thread ───────────────────▶│ etapa 1 … etapa 6
-   │ ◀─────────── 202 {id, etapas[6]} ─── │                                   │ (ao_avancar(n) atualiza
-   │                                      │                                   │  etapa_atual sob lock)
-   │ GET /api/analises/<id>  (a cada 1,5s)│                                   │
-   │ ───────────────────────────────────▶ │ copia registro sob lock           │
-   │ ◀── 200 {estado, etapa_atual, …} ─── │ remove campos internos            │
-   │            …                         │                                   │
-   │ ◀── 200 {estado:"concluida",         │ ◀──────────── VulnerabilityReport │
-   │         relatorio:{…}} ───────────── │                                   │
-   │ renderiza 4 abas                     │                                   │
-   │ POST /api/analises/<id>/audiencia    │                                   │
-   │ ───────────────────────────────────▶ │ busca documentos/tese em memória ▶│ avaliar_resposta_audiencia
-   │ ◀── 200 {avaliacao, replica, …} ──── │ ◀─────────────────────────────────│
+Navegador                                          Vercel (estáticos)
+   │ GET demo/indice.json ───────────────────────▶ │ [{id, tipo, titulo, descricao}] (32)
+   │ usuário escolhe tipo e situação               │
+   │ GET demo/casos/<id>.json ───────────────────▶ │ {documentos, tese, relatorio, audiencia}
+   │ mostra documentos (só leitura) e tese         │
+   │ "Ver a análise deste caso"                    │
+   │ etapas com tempos fixos (1,3 a 2,1 s cada, ~10 s)
+   │ renderiza o relatório + selo "análise preparada previamente"
+   │ simulação: escolhe resposta pronta → mostra avaliação preparada
 ```
 
-**Por que assíncrono.** Uma análise leva de 1,5 a 2,5 minutos (seção 14). Uma requisição
-síncrona desse tamanho estoura timeouts de proxy/túnel e não dá retorno ao usuário. O
-servidor devolve um id na hora e processa em thread; o front-end consulta o estado. A rota
-síncrona original (`POST /api/analyze`) foi mantida por compatibilidade.
+O conteúdo dos arquivos `demo/casos/*.json` foi produzido antes (seção 6.3) e tem o mesmo
+formato do relatório real, com `conferido: true` calculado pelo script de geração.
+
+### 5.2 Modo "meus documentos" (IA com a chave do usuário)
+
+```
+Navegador                          função api/analisar.py → app/api_comum.py → pipeline
+   │ POST api/analisar (multipart)     │
+   │   cabeçalho X-Anthropic-Key       │ Content-Length ≤ 4 MB? senão 413
+   │ ────────────────────────────────▶ │ chave presente (401) e no formato sk-ant-… (400)
+   │                                   │ parsing multipart, extração de texto
+   │                                   │ with usar_chave_anthropic(chave):
+   │   (tela mostra etapas estimadas   │     pipeline.analisar_caso → etapas 1 a 6
+   │    por tempo: 0, 15, 35, 60,      │
+   │    90 e 125 s)                    │
+   │ ◀── 200 {relatorio, documentos, tese} ──  (ou erro traduzido: 401/402/403/429/502/500)
+   │ guarda {documentos, tese, chave} só na memória da aba
+   │ POST api/audiencia (JSON)         │ função api/audiencia.py
+   │   {documentos, tese, pergunta,    │ corpo ≤ 2 MB; texto ≤ 400 mil caracteres
+   │    resposta} + X-Anthropic-Key    │ pipeline.avaliar_resposta_audiencia
+   │ ◀── 200 {avaliacao, replica, …} ──│
+```
+
+**Por que síncrono e sem estado.** Na Vercel cada chamada pode cair numa instância
+diferente e não há memória compartilhada; um registro de análises em memória (versão
+anterior) não funcionaria. A análise leva de 2 a 3 minutos e cabe no limite de 300 s da
+função. Como não há como consultar o progresso, a tela avança as etapas por tempo
+estimado (medido nas análises reais) e, ao receber o relatório, marca todas como
+concluídas.
 
 ---
 
 ## 6. Módulos do back-end
 
-### 6.1 `app/server.py`: servidor HTTP e API
+### 6.1 `app/api_comum.py`, `api/*.py` e `app/server.py`: a API
 
-**Responsabilidades:** servir o front-end, expor a API JSON, receber uploads, manter o
-registro de análises e isolar o usuário de mensagens técnicas.
+**`app/api_comum.py`: regras compartilhadas.** Usado igualmente pelas funções da Vercel e
+pelo servidor local, para que os dois ambientes se comportem da mesma forma.
 
-**Classe de servidor: `_ServidorSemBindDuplicado(ThreadingHTTPServer)`**
-- `allow_reuse_address = False`: no Windows, `SO_REUSEADDR` (ligado por padrão no
-  `http.server`) permite **dois processos escutando a mesma porta** sem erro, e as
-  requisições caem em qualquer um dos dois. Isso causou uma falha real em 12/09/2026
-  (processo antigo respondendo com código velho). Desligado, um segundo servidor falha ao
-  subir com mensagem clara.
-- `daemon_threads = True`: threads de requisição não seguram o encerramento do processo.
-- Bind em `("localhost", 8000)`: **não escuta na rede local**; o acesso externo passa só pelo
-  túnel.
+- `ler_chave(cabecalhos)`: lê `X-Anthropic-Key`; ausente → 401 ("informe a sua chave… ou use
+  o modo demonstração"); fora do formato `^sk-ant-[A-Za-z0-9_\-]{20,300}$` → 400.
+- `responder(requisicao, processar, limite_bytes)`: valida `Content-Length` (vazio → 400;
+  acima do limite → 413 **antes de ler o corpo**), lê a chave, chama o processador e grava a
+  resposta JSON com `Cache-Control: no-store`, `nosniff` e `no-referrer`.
+- `ler_formulario(content_type, corpo)`: parsing multipart; o nome do arquivo passa por
+  `_nome_do_arquivo`, que descarta qualquer caminho (barra normal ou invertida); erros de
+  extração são acumulados e devolvidos juntos (400); sem documento ou sem tese → 400.
+- `analisar(documentos, tese, chave)`: roda `pipeline.analisar_caso` dentro de
+  `usar_chave_anthropic(chave)` e devolve `{relatorio, documentos, tese}`.
+- `avaliar_audiencia(dados, chave)`: exige `documentos` como objeto `{nome: texto}` de
+  strings, com no máximo 400 mil caracteres somados, e `tese`; senão 400 ("faça uma nova
+  análise"). Trunca `pergunta` em 2.000 e `resposta` em 4.000 caracteres.
+- `traduzir_falha(exc, padrao)`: `AuthenticationError` → 401 (chave recusada),
+  `PermissionDeniedError` → 403, `RateLimitError` → 429, `BadRequestError` com "credit" →
+  402 (conta sem crédito), `APIConnectionError` → 502, `LLMConfigError` → 401; qualquer
+  outra → 500 com mensagem genérica. O traceback vai só para o log; **a chave nunca é
+  registrada**.
 
-**Inicialização: `main()`**
-1. `verificar_configuracao()` valida, antes de abrir a porta, se existe a chave de API do
-   provedor ativo. Sem chave, encerra com código 1 e instrução de como definir.
-2. Tenta o bind; se a porta estiver ocupada, explica como achar e encerrar o processo.
-3. `serve_forever()`; `Ctrl+C` chama `shutdown()`.
+**`api/analisar.py` e `api/audiencia.py`: funções da Vercel.** Classe `handler
+(BaseHTTPRequestHandler)` com `do_POST` que só delega a `api_comum.responder`. Limites:
+4 MB na análise (a Vercel recusa corpos acima de 4,5 MB antes de chamar a função; o limite
+menor garante a mensagem própria) e 2 MB na simulação. `vercel.json` define
+`maxDuration: 300` e `includeFiles: "app/**"` (pipeline, prompts e schemas empacotados na
+função).
 
-**Registro de análises (estado em memória)**
-- `_ANALISES: dict[str, dict]`, protegido por `_ANALISES_TRAVA = threading.Lock()`.
-- Cada registro contém `estado` (`processando` | `concluida` | `erro`), `etapa_atual`,
-  `relatorio`, `erro`, `criada_em`, e os campos internos `_documentos` e `_tese`.
-- Campos iniciados por `_` e `criada_em` **nunca são serializados** na resposta do GET.
-- Limite `_MAX_ANALISES_GUARDADAS = 50`: ao criar a 51ª, remove a mais antiga
-  (`min` por `criada_em`).
-- Id: `uuid.uuid4().hex` (32 caracteres hexadecimais, 122 bits aleatórios). Validado por
-  regex `^[0-9a-f]{32}$` antes de consultar o dicionário.
+**`app/server.py`: servidor local.**
+- `_ServidorSemBindDuplicado(ThreadingHTTPServer)` com `allow_reuse_address = False`: no
+  Windows, `SO_REUSEADDR` permite **dois processos na mesma porta** sem erro, e as
+  requisições caem em qualquer um. Isso causou uma falha real em 12/09/2026. Desligado, um
+  segundo servidor falha ao subir com mensagem clara. `daemon_threads = True`.
+- Bind em `("localhost", 8000)`: **não escuta na rede local**.
+- `main()`: sem chave no `.env`, apenas avisa ("modo demonstração e análise com a chave do
+  usuário") e sobe normalmente; porta ocupada → explica como encerrar o processo antigo.
+- Rotas: `POST /api/analisar` e `POST /api/audiencia` (via `api_comum`, com limite de
+  15 MB na análise) e `POST /api/analyze`, análise síncrona com a chave do `.env`, mantida
+  para desenvolvimento e medições. As rotas antigas (`/api/analises`, `/api/exemplos`) e o
+  registro de análises em memória foram **removidos** em 14/09/2026.
+- `_send_static()`: `/` serve `index.html`; o caminho resolvido só é servido se estiver dentro
+  de `app/static` (**bloqueia path traversal**); `Content-Type` por extensão, incluindo
+  `.json` para os arquivos da demonstração.
+- Mensagens `MSG_*` em português simples; detalhe técnico só em `stderr`.
 
-**`_iniciar_analise(documentos, tese)`**: cria o registro e dispara
-`threading.Thread(daemon=True)`. A thread chama `pipeline.analisar_caso(..., ao_avancar=)`.
-O callback atualiza `etapa_atual` sob o lock. Em exceção: `traceback.print_exc()` no log e
-mensagem amigável no registro (`_mensagem_de_falha`: `LLMConfigError` vira "serviço
-indisponível"; qualquer outra vira "não foi possível concluir a análise").
+**`llm_client.usar_chave_anthropic(chave)`.** Gerenciador de contexto baseado em
+`ContextVar`: enquanto ativo, `_provedor_ativo()` devolve `anthropic` (ignora
+`LLM_PROVIDER`) e `_get_anthropic_client()` cria um cliente **só para aquela requisição**
+com a chave informada, em vez do cliente global do `.env`. Ao sair do contexto a variável
+volta ao valor anterior; a chave não é guardada em nenhum atributo global.
 
-**Leitura do formulário: `_ler_formulario()`**
-1. Exige `Content-Type` com `boundary` e `Content-Length > 0`; senão, 400.
-2. `Content-Length > MAX_BODY_SIZE (15 MB)`: 413, **sem ler o corpo**.
-3. Lê exatamente `Content-Length` bytes e faz o parsing multipart.
-4. Para cada parte `documentos` com `filename`: aplica `Path(filename).name` (descarta
-   qualquer caminho enviado pelo cliente) e chama `extrair_texto`. Erros de extração são
-   **acumulados** e devolvidos juntos (400), para o usuário corrigir tudo de uma vez.
-5. Sem documento válido: 400. Sem tese: 400.
+### 6.1.1 `scripts/construir_demo.py`: geração do modo demonstração
 
-**Arquivos estáticos: `_send_static()`**
-- `/` serve `index.html`. O caminho é resolvido e só é servido se `STATIC_DIR.resolve()`
-  estiver entre os pais do arquivo resolvido; isso **bloqueia path traversal** (`/../.env`
-  devolve 404, testado).
-- `Content-Type` por extensão (`.html .js .css .png .svg .ico`); o restante vai como
-  `application/octet-stream`.
-- Cabeçalhos: `X-Content-Type-Options: nosniff`, `Referrer-Policy: no-referrer`,
-  `Cache-Control: no-cache` (estáticos) e `no-store` (JSON).
-
-**Casos de exemplo: `EXEMPLOS`**
-- Lista **fechada** de 14 entradas (`id → tipo, título, descrição, pasta`). O id da URL só
-  é usado como chave do dicionário; **nunca vira caminho de arquivo**.
-- `_carregar_exemplo(pasta)` lê todos os `.txt` da pasta, exceto `tese.txt`. O `gabarito.md`
-  não é `.txt` e nunca é enviado.
-
-**Simulação: `_responder_audiencia(analise_id)`**
-- `Content-Length` entre 1 e 64 KB (`MAX_CORPO_AUDIENCIA`); JSON válido e objeto; senão, 400.
-- `pergunta` truncada em 2.000 caracteres e `resposta` em 4.000.
-- Só funciona para análise existente com `estado == "concluida"`; senão, 404.
-- Chama `pipeline.avaliar_resposta_audiencia` de forma **síncrona** (cerca de 12 s).
-
-**Mensagens ao usuário.** Constantes `MSG_*` em português simples. Detalhe técnico vai só
-para `stderr`. `log_message` escreve o access log em `stderr` (IP e linha da requisição).
+- Entrada: `demo/fontes/<id>.json` (tipo, ordem, título, descrição, pasta do golden dataset,
+  apontamentos, linha do tempo, plano de provas e perguntas da simulação com respostas e
+  avaliações) + documentos `.txt` da pasta (exceto `tese.txt`).
+- Para **cada trecho citado** (apontamentos, linha do tempo e apoio das avaliações), aplica
+  o mesmo `pipeline._trecho_consta` usado na análise real e grava `conferido`. Trecho não
+  encontrado **interrompe a geração** (código de saída 1), salvo com
+  `--permitir-nao-conferidos`.
+- Também valida: documento citado existe; ids do plano apontam para apontamentos
+  existentes; prioridade e veredito da simulação dentro dos valores aceitos; linha do tempo
+  montada por `pipeline.montar_linha_do_tempo` (mesma ordenação da análise real).
+- Saída: `app/static/demo/indice.json` (ordenado por tipo e `ordem`) e
+  `app/static/demo/casos/<id>.json`. Última execução (14/09/2026): **32 casos e 424
+  trechos conferidos**.
+- Uso: `python scripts/construir_demo.py`.
 
 ### 6.2 `app/pipeline.py`: orquestração e regras de confiabilidade
 
@@ -527,18 +556,17 @@ tem precedência** sobre o arquivo. Não depende de `python-dotenv`.
 
 ## 7. Contrato da API HTTP
 
-Base: `http://localhost:8000` (público via túnel). Toda resposta da API é
+Base: domínio da Vercel ou `http://localhost:8000`. Toda resposta da API é
 `application/json; charset=utf-8`. Erros seguem o formato `{"erro": "<mensagem ao usuário>"}`.
 
 | Método e rota | Entrada | Sucesso | Erros |
 |---|---|---|---|
 | `GET /` e estáticos | — | 200 arquivo | 404 (inexistente ou fora de `static/`) |
-| `GET /api/exemplos` | — | 200 `[{id, tipo, titulo, descricao}]` (14) | — |
-| `GET /api/exemplos/<id>` | id da lista fechada | 200 `{titulo, documentos:[{nome, conteudo}], tese}` | 404 |
-| `POST /api/analises` | `multipart/form-data`: `documentos` (1..n arquivos), `tese` (texto) | **202** `{id, etapas:[6 nomes]}` | 400 (formato, extração, sem documento, sem tese), 413 (>15 MB) |
-| `GET /api/analises/<id>` | id de 32 hex | 200 `{estado, etapa_atual, relatorio, erro}` | 404 (inexistente, expulso do limite de 50 ou servidor reiniciado) |
-| `POST /api/analises/<id>/audiencia` | JSON `{pergunta, resposta}` (≤64 KB) | 200 `{avaliacao, resumo, pontos_fortes[], pontos_frageis[], sugestao, apoio_nos_documentos[{documento, trecho, conferido}], replica}` | 400, 404 (análise inexistente ou não concluída), 500 |
-| `POST /api/analyze` | igual a `/api/analises` | 200 relatório completo (síncrono) | 400, 413, 500 |
+| `GET demo/indice.json` | — | 200 `[{id, tipo, titulo, descricao}]` (32), estático | 404 |
+| `GET demo/casos/<id>.json` | id da lista | 200 `{id, tipo, titulo, descricao, documentos:[{nome, conteudo}], tese, relatorio, audiencia:[{pergunta, respostas:[{rotulo, texto, avaliacao}]}]}`, estático | 404 |
+| `POST /api/analisar` | cabeçalho `X-Anthropic-Key`; `multipart/form-data`: `documentos` (1..n arquivos), `tese` | 200 `{relatorio, documentos:{nome: texto}, tese}` | 400 (formato, chave malformada, extração, sem documento/tese), 401 (sem chave ou chave recusada), 402 (sem crédito), 403, 413 (>4 MB na Vercel, >15 MB local), 429, 502, 500 |
+| `POST /api/audiencia` | cabeçalho `X-Anthropic-Key`; JSON `{documentos, tese, pergunta, resposta}` (≤2 MB) | 200 `{avaliacao, resumo, pontos_fortes[], pontos_frageis[], sugestao, apoio_nos_documentos[{documento, trecho, conferido}], replica}` | 400, 401, 402, 403, 413, 429, 502, 500 |
+| `POST /api/analyze` (só local) | `multipart/form-data` sem chave; usa `.env` | 200 relatório completo | 400, 413, 500 |
 | Outras `/api/*` | — | — | 404 JSON |
 
 **Formato de `relatorio`:**
@@ -619,12 +647,14 @@ próprio back-end. `app.js` em `"use strict"`, carregado no fim do `<body>`.
 | Movimento | `movimentoReduzido()`, digitação do título (50 ms por letra), digitação do exemplo da tese, preenchimento "digitado" do caso, troca suave, `revelarAoRolar` (IntersectionObserver) |
 | Acessibilidade | preferências (tema, escala 0,9 a 1,75, contraste, espaçamento, animações) persistidas em `localStorage` |
 | Formulário | lista de arquivos (sem duplicar nome), arrastar e soltar, validação local com foco no campo com erro |
-| Casos de exemplo | componente próprio de lista de seleção (padrão ARIA *select-only combobox*: setas, Home/End, Enter/Espaço, Esc, Tab, busca por letra, fecha ao clicar fora); ao usar o caso, cria objetos `File` a partir do texto e envia pelo mesmo fluxo de upload |
-| Análise | `POST /api/analises`; polling `GET` a cada 1,5 s; 4 falhas de rede seguidas geram mensagem de conexão; etapas com estados aguardando/andamento/concluída anunciados ao leitor de tela |
+| Modos | `configurarModo`/`aplicarModo`: rádios "Demonstração" e "Meus documentos"; troca títulos, ajudas e campos visíveis (`data-modo` no formulário); a validação muda por modo |
+| Casos de exemplo | componente próprio de lista de seleção (padrão ARIA *select-only combobox*: setas, Home/End, Enter/Espaço, Esc, Tab, busca por letra, fecha ao clicar fora); lê `demo/indice.json`; ao escolher, busca `demo/casos/<id>.json` e mostra documentos e tese somente leitura |
+| Análise (demonstração) | `executarDemonstracao`: etapas com duração fixa (`DURACAO_ETAPAS_DEMO`, ~10 s), anunciadas ao leitor de tela; depois renderiza o relatório pré-montado com o selo de demonstração |
+| Análise (real) | `executarAnaliseReal`: um `POST api/analisar` com `X-Anthropic-Key`; etapas avançam por tempo estimado (`INICIO_ETAPAS_REAL`); guarda `{documentos, tese, chave}` em `contextoReal`, só em memória |
 | Relatório | nomes numerados por categoria ("Falta de prova 2"); cartões com selo de conferência; placar; abas com teclado (setas, Home, End) |
 | Linha do tempo | lista ordenada, marcador de divergência, selo de conferência |
 | Plano de provas | agrupado por prioridade, checkbox com contador, botões de vínculo que trocam de aba, rolam até o apontamento e o destacam |
-| Simulação | pergunta atual, resposta digitada ou por **ditado** (`SpeechRecognition`, pt-BR, resultados parciais), envio, avaliação renderizada, réplica, próxima pergunta, resumo final |
+| Simulação | demonstração: botões com respostas prontas (`escolherRespostaDemo`) e avaliação pré-montada; real: resposta digitada ou por **ditado** (`SpeechRecognition`, pt-BR), `POST api/audiencia` com documentos e tese da memória, avaliação, réplica (só no modo real), próxima pergunta, resumo final |
 | Leitura em voz alta | `speechSynthesis`, voz pt-BR quando disponível |
 
 **Segurança no DOM:** **nenhum uso de `innerHTML`, `insertAdjacentHTML`, `eval` ou
@@ -632,7 +662,8 @@ próprio back-end. `app.js` em `"use strict"`, carregado no fim do `<body>`.
 entra por `textContent`, o que elimina XSS por conteúdo gerado.
 
 **Estado no navegador:** só preferências de acessibilidade (`localStorage`). Documentos,
-relatório e respostas da simulação ficam apenas em memória da aba.
+relatório, respostas da simulação e a **chave da Anthropic** ficam apenas em memória da
+aba (variáveis JavaScript), nunca em `localStorage`, `sessionStorage` ou cookie.
 
 ### 9.3 `style.css`
 - **Tokens** em `:root` (cores, raio, espaçamentos, fontes). Tema escuro por
@@ -678,31 +709,30 @@ trecho **sustenta** a conclusão. A pertinência continua sendo julgamento do ad
 
 | Controle | Implementação |
 |---|---|
-| Segredos fora do código | `ANTHROPIC_API_KEY` só em variável de ambiente ou `.env`; `.env` no `.gitignore` (verificado a cada commit); `.env.example` sem valores |
-| Chave nunca no navegador | toda chamada à IA parte do servidor |
-| Bind só em `localhost` | sem exposição direta na rede; acesso externo só pelo túnel |
-| Limite de upload | 413 acima de 15 MB **antes** de ler o corpo |
-| Limite da simulação | corpo ≤ 64 KB; pergunta ≤ 2.000 e resposta ≤ 4.000 caracteres |
-| Path traversal | resolução de caminho + checagem de pai; `Path(filename).name` nos uploads |
-| Ids não adivinháveis | `uuid4` (122 bits) + validação por regex |
-| Lista fechada de exemplos | id nunca vira caminho |
+| Nenhuma chave da equipe em produção | site público usa só a chave do usuário (ADR-014); `.env` no `.gitignore` e no `.vercelignore`; `.env.example` sem valores |
+| Chave do usuário | só por HTTPS, cabeçalho próprio; formato validado; cliente por requisição (`ContextVar`); nunca gravada, registrada em log ou devolvida; campo `type="password"`; não vai para `localStorage` |
+| Bind local só em `localhost` | o servidor local não escuta na rede |
+| Limite de upload | 413 **antes** de ler o corpo: 4 MB na Vercel, 15 MB local |
+| Limite da simulação | corpo ≤ 2 MB; documentos ≤ 400 mil caracteres; pergunta ≤ 2.000 e resposta ≤ 4.000 |
+| Path traversal | resolução de caminho + checagem de pai no servidor local; nomes de arquivo sem caminho nos uploads |
+| Demonstração estática | casos de demonstração são arquivos gerados; nenhum id vira caminho no servidor |
 | XSS | front-end sem `innerHTML`/`eval`; tudo via `textContent` |
-| Cabeçalhos | `X-Content-Type-Options: nosniff`; `Referrer-Policy: no-referrer`; `Cache-Control: no-store` na API |
+| Cabeçalhos | `X-Content-Type-Options: nosniff`; `Referrer-Policy: no-referrer`; `Cache-Control: no-store` na API; `X-Frame-Options: DENY` na Vercel |
 | Erros sem detalhe interno | usuário recebe mensagem genérica; traceback só no log |
 | Servidor duplicado | `allow_reuse_address=False` evita dois processos na mesma porta |
-| Transporte público | HTTPS terminado na Cloudflare |
-| Repositório | privado no GitHub |
+| Transporte público | HTTPS da Vercel |
+| Repositório | público no GitHub, histórico limpo, sem dados pessoais nem segredos |
 | Prompt injection (mitigação parcial) | saída forçada por schema; na simulação, delimitadores e instrução para ignorar comandos embutidos; filtros de citação independentes do modelo |
 
 ### 11.2 Lacunas conhecidas (aceitas para o protótipo)
 
 | Lacuna | Risco | Recomendação |
 |---|---|---|
-| **Sem autenticação** | qualquer pessoa com o link usa o sistema e consome crédito pago | login; link só com convidados enquanto isso |
-| **Sem rate limiting** | abuso de custo; várias análises simultâneas | limite por IP/usuário e fila |
-| Threads sem limite | muitas análises simultâneas consomem memória e CPU e multiplicam custo | pool/fila com concorrência máxima |
-| Corpo lido em memória | até 15 MB por requisição × requisições concorrentes | streaming ou limite de concorrência |
-| Sem CSP, HSTS ou `X-Frame-Options` | defesa em profundidade reduzida; página pode ser embutida em iframe | adicionar CSP restrita (fonts.googleapis, vlibras.gov.br), `frame-ancestors 'none'` |
+| **Sem autenticação** | qualquer pessoa usa o site; o custo de IA recai sobre a chave de quem usa, e as chamadas às funções contam no limite do plano da Vercel da equipe | login; limites por usuário |
+| **Chave digitada no navegador** | uma extensão maliciosa no navegador do usuário poderia lê-la | orientar o uso de chave dedicada, com limite de gasto, apagada depois; em produção, conta própria do escritório no servidor |
+| Sem rate limiting próprio | uso intenso pode esgotar o limite gratuito das funções | limite por IP na borda |
+| Corpo lido em memória | até 4 MB (Vercel) ou 15 MB (local) por requisição | streaming ou limite de concorrência |
+| Sem CSP nem HSTS próprio | defesa em profundidade reduzida | adicionar CSP restrita (fonts.googleapis, vlibras.gov.br) |
 | **Script de terceiro** (VLibras) sem SRI | se `vlibras.gov.br` for comprometido, o script roda na página | CSP + avaliação de hospedar cópia versionada |
 | Sem proteção contra requisições de outra origem | um site pode disparar `POST` multipart e gastar crédito (não lê a resposta) | autenticação + verificação de `Origin` |
 | Prompt injection residual | documento malicioso pode tentar influenciar a análise | validações atuais limitam o impacto (schema, citações conferidas), mas não eliminam |
@@ -710,7 +740,7 @@ trecho **sustenta** a conclusão. A pertinência continua sendo julgamento do ad
 | Logs podem conter conteúdo | `LLMStructuredOutputError` inclui a resposta bruta do modelo, que pode trazer trechos do caso, no `stderr` | mascarar ou remover conteúdo dos logs |
 | Parser multipart simplificado | casos de borda do RFC não tratados | biblioteca madura em produção |
 | Contagem de uso sem lock | números de custo podem subcontar com concorrência | lock ou contador por análise |
-| URL do túnel temporária | sem SLA; cai se o notebook desligar | hospedagem gerenciada |
+| Plano gratuito da Vercel | limites de uso e de duração (300 s) sem SLA; análise muito longa pode estourar o tempo | plano pago ou fila assíncrona com armazenamento |
 
 ---
 
@@ -721,18 +751,23 @@ trecho **sustenta** a conclusão. A pertinência continua sendo julgamento do ad
   anonimizados**, com checkbox obrigatório antes de cada análise e aviso fixo em todo
   relatório.
 - **Onde os dados passam:**
-  1. navegador → Cloudflare (túnel, HTTPS) → servidor local;
-  2. servidor → API da Anthropic (processamento **fora do Brasil**: transferência
-     internacional, art. 33 da LGPD, que exige base legal e contrato em uso real);
+  1. modo demonstração: **nenhum dado do usuário sai do navegador**; só arquivos estáticos
+     fictícios são baixados;
+  2. modo real: navegador → Vercel (HTTPS) → API da Anthropic com a chave do usuário
+     (processamento **fora do Brasil**: transferência internacional, art. 33 da LGPD, que
+     exige base legal e contrato em uso real);
   3. **ditado por voz** (opcional): no Chrome, o áudio é processado pelo serviço de
      reconhecimento do Google.
 - **Retenção:**
-  - nada é gravado em disco ou banco pelo sistema;
-  - documentos e tese ficam **em memória** junto da análise, só para a simulação (máximo
-    de 50 análises, apagados ao reiniciar);
-  - os casos de exemplo são arquivos fictícios versionados no repositório;
-  - no navegador, só preferências de acessibilidade.
-- **Minimização no front-end:** a API nunca devolve os documentos armazenados.
+  - nada é gravado em disco ou banco; as funções não guardam estado entre chamadas;
+  - o texto extraído dos documentos, a tese e a chave ficam **só na memória da aba** do
+    usuário, para a simulação; somem ao fechar ou recarregar a página;
+  - os casos de demonstração são fictícios e versionados no repositório; foram criados a
+    partir de temas pesquisados em fontes públicas, **sem raspagem de processos reais**
+    (`docs/CATALOGO_DE_SITUACOES.md`);
+  - no navegador, só preferências de acessibilidade são persistidas.
+- **Minimização:** a análise devolve ao próprio usuário apenas o texto que ele mesmo enviou,
+  para evitar guardar qualquer coisa no servidor.
 - **Pendências para uso real:** expiração automática (ex.: 1 hora), contrato e DPA com o
   provedor de IA, autenticação, aviso antes do microfone, logs sem conteúdo do caso.
   Detalhado em `docs/CONFORMIDADE.md`.
@@ -788,7 +823,9 @@ Carga de páginas pelo túnel: arquivos estáticos entre 0,19 s e 0,36 s.
 
 ### 15.1 Suíte automatizada (`pytest`)
 - **Chama a API real** (não usa mock): mede a qualidade real do modelo e custa dinheiro.
-  Sem `ANTHROPIC_API_KEY`, todos os testes são pulados (`skip`).
+  Sem `ANTHROPIC_API_KEY` no ambiente, todos os testes são pulados (`skip`). Com os 33
+  casos do golden dataset, a suíte completa custa cerca de 33 análises; para rodar só um
+  subconjunto, use `pytest -k`.
 - **Cache por caso** (`conftest._obter_relatorio`): cada caso é analisado **uma vez por
   execução** e compartilhado entre testes. Isso reduziu o custo da suíte várias vezes,
   depois de uma lição de 12/09 em que cada teste refazia a análise.
@@ -801,12 +838,15 @@ Carga de páginas pelo túnel: arquivos estáticos entre 0,19 s e 0,36 s.
 | `test_pipeline_hard_questions.py` | ≥ 3 perguntas; não genéricas; referenciam fatos do caso |
 | `test_pipeline_provenance.py` | todo finding tem proveniência; FACT/SOURCE sempre com origem; avisos fixos presentes |
 | `test_pipeline_familia.py` | lacunas de partilha sinalizadas; nenhuma conclusão de mérito como fato; perguntas sobre partilha |
-| `test_pipeline_todos_os_casos.py` | **parametrizado sobre todas as pastas do golden dataset** (15 casos): roda sem erro, resumo presente, 2 avisos, invariante FACT/SOURCE, citações só de documentos reais |
+| `test_pipeline_todos_os_casos.py` | **parametrizado sobre todas as pastas do golden dataset** (33 casos): roda sem erro, resumo presente, 2 avisos, invariante FACT/SOURCE, citações só de documentos reais |
 
-**Golden dataset:** `case_01` (genérico, contradição plantada) e `case_familia_01..14`
+**Golden dataset:** `case_01` (genérico, contradição plantada) e `case_familia_01..32`
 (fictícios), cada um com documentos, `tese.txt` e **`gabarito.md`** com a vulnerabilidade
 central esperada, as lacunas, as perguntas aceitáveis e os **falsos positivos a evitar**.
-O caso 14 foi criado para exercitar datas conflitantes.
+O caso 14 foi criado para exercitar datas conflitantes; os casos 15 a 32 (14/09/2026)
+ampliam a cobertura para união estável, alimentos gravídicos/avoengos/compensatórios,
+prisão civil, guarda internacional e com medida protetiva, convivência de avós, filiação,
+curatela, tomada de decisão apoiada e abandono afetivo.
 
 ### 15.2 Lacunas de cobertura (declaradas)
 - As funções de 13/09/2026 (linha do tempo, plano de provas, simulação, conferência de
@@ -832,6 +872,11 @@ O caso 14 foi criado para exercitar datas conflitantes.
   13 eventos e divergências corretas (separação e mudança de cidade); plano com 8 e 10
   provas; simulação classificou como "frágil" uma resposta que alegava fato inexistente
   nos documentos.
+- **Modo demonstração e chave do usuário (14/09/2026):** `construir_demo.py` com 32 casos e
+  424 trechos conferidos; fluxo de demonstração no navegador (Playwright) com seleção de
+  casos novos, relatório, selo, abas e simulação com respostas prontas, sem erros de
+  JavaScript; `POST /api/analisar` sem chave (401), chave malformada (400) e chave falsa
+  (401 traduzido da Anthropic), sem custo.
 - Registros anteriores de testes internos e do teste externo: `docs/testes-internos.md`,
   `docs/roteiro-teste-externo.md`, `docs/evidencias/`.
 
@@ -841,31 +886,39 @@ O caso 14 foi criado para exercitar datas conflitantes.
 
 ### 16.1 Variáveis de ambiente
 
+Nenhuma é obrigatória para o site funcionar (ADR-014).
+
 | Variável | Obrigatória | Padrão | Uso |
 |---|---|---|---|
-| `ANTHROPIC_API_KEY` | sim (provedor padrão) | — | chave da Anthropic |
-| `LLM_PROVIDER` | não | `anthropic` | `anthropic`, `groq` ou `gemini` |
-| `GROQ_API_KEY` | se `groq` | — | testes gratuitos |
-| `GEMINI_API_KEY` | se `gemini` | — | testes gratuitos |
+| `ANTHROPIC_API_KEY` | não | — | só para `pytest` e `POST /api/analyze` locais |
+| `LLM_PROVIDER` | não | `anthropic` | `anthropic`, `groq` ou `gemini` (ignorada quando o usuário informa a chave) |
+| `GROQ_API_KEY` | se `groq` | — | testes gratuitos locais |
+| `GEMINI_API_KEY` | se `gemini` | — | testes gratuitos locais |
 
 ### 16.2 Execução local
 ```bash
 pip install -r requirements.txt
-# criar .env na raiz com ANTHROPIC_API_KEY=... (nunca commitar)
-python -m app.server          # http://localhost:8000
-python -m pytest              # suíte completa: chama a API real e tem custo
+python -m app.server               # http://localhost:8000 (sem chave: demonstração + chave do usuário)
+python scripts/construir_demo.py   # regenera app/static/demo/ depois de editar demo/fontes/
+python -m pytest                   # suíte completa: exige ANTHROPIC_API_KEY e tem custo
 ```
 
-### 16.3 Hospedagem atual: Cloudflare Quick Tunnel (ADR-011)
-```bash
-cloudflared tunnel --url http://localhost:8000
-```
-- Gera uma URL `https://<aleatório>.trycloudflare.com`, com HTTPS na borda da Cloudflare e
-  tráfego encaminhado ao `localhost:8000` do notebook.
-- **Características:** sem conta, sem configuração de DNS e sem abrir portas no roteador;
-  URL **temporária** (muda ao reiniciar o túnel); sem SLA; depende de o notebook estar
-  ligado, conectado e sem suspensão.
-- **Escolha consciente para o hackathon.** Para produção, ver seção 19.
+### 16.3 Hospedagem: Vercel (ADR-014)
+
+- **Configuração (`vercel.json`):** `buildCommand` vazio (não há build), `outputDirectory:
+  app/static`, funções `api/*.py` com `maxDuration: 300` e `includeFiles: app/**`;
+  cabeçalhos `nosniff`, `no-referrer`, `X-Frame-Options: DENY`; `Cache-Control` de 5
+  minutos para `demo/*`. Dependências Python lidas de `requirements.txt`.
+- **`.vercelignore`:** exclui `.env`, `tests/`, `golden_dataset/`, `demo/`, `scripts/`,
+  `docs/`, `specs/`, `.specify/`, `.claude/`, PDFs, PPTX e caches.
+- **Publicação:** importar o repositório `ribasgiovanna/AdversIA` no painel da Vercel; cada
+  push na `main` gera nova publicação. Nenhuma variável de ambiente precisa ser configurada.
+- **Domínio:** subdomínio gratuito `*.vercel.app` (o nome depende da disponibilidade no
+  momento da importação).
+- **Não verificado ainda:** comportamento das funções Python na Vercel com uma análise
+  real completa (o fluxo foi validado no servidor local, com o mesmo `api_comum.py`).
+- **Histórico:** até 13/09/2026 o acesso externo era por Cloudflare Quick Tunnel a partir de
+  um notebook (ADR-011), com a chave da equipe; substituído por esta configuração.
 
 ---
 
@@ -897,8 +950,10 @@ cloudflared tunnel --url http://localhost:8000
 | 011 | Cloudflare Quick Tunnel para teste externo, com Anthropic |
 | 012 | Acessibilidade: VLibras pronto + controles próprios (sem widgets de overlay com rastreamento) |
 | 013 | Linha do tempo, plano de provas, simulação de audiência e conferência de trechos |
+| 014 | Vercel, modo demonstração pré-montado (32 casos fictícios) e chave da Anthropic do próprio usuário |
 
-- **Outros documentos:** `CONFORMIDADE.md` (acessibilidade, LGPD, segurança), `COSTS.md`,
+- **Outros documentos:** `CONFORMIDADE.md` (acessibilidade, LGPD, segurança),
+  `CATALOGO_DE_SITUACOES.md` (casos fictícios e fontes públicas dos temas), `COSTS.md`,
   `RISKS.md`, `METRICS.md`, `BACKLOG.md`, `PRODUCT_SCOPE.md`, `ANALISE_CASOS_FAMILIA.md`,
   `ADVERSIA_PROJECT_FOUNDATION_V1.md`.
 
@@ -916,10 +971,13 @@ cloudflared tunnel --url http://localhost:8000
 - Resultados não são determinísticos: duas análises do mesmo caso podem variar.
 
 **Operacionais**
-- Estado só em memória: reiniciar o servidor perde análises (e a simulação delas).
-- Um único processo num notebook; sem redundância, monitoramento ou backup.
-- Dependência de serviços externos: Anthropic, Cloudflare, Google Fonts, VLibras.
-- Custo por uso sem teto técnico (seção 11.2).
+- Sem estado no servidor: recarregar a página perde o relatório e a simulação daquela
+  análise.
+- Plano gratuito da Vercel: limites de uso e duração máxima de 300 s por função.
+- Dependência de serviços externos: Vercel, Anthropic, Google Fonts, VLibras.
+- A análise real exige que o usuário tenha conta e crédito na Anthropic.
+- A demonstração mostra análises preparadas previamente, não geradas na hora (a tela
+  informa isso).
 
 ---
 

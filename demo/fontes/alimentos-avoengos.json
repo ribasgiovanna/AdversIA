@@ -1,0 +1,149 @@
+{
+ "id": "alimentos-avoengos",
+ "tipo": "Pensão alimentícia",
+ "ordem": 6,
+ "titulo": "Pensão cobrada dos avós",
+ "descricao": "A mãe pede que os avós paternos paguem pensão ao neto porque o pai parou de pagar. Os avós dizem que o pai nunca foi cobrado e que eles não têm condições.",
+ "pasta": "case_familia_21",
+ "relatorio": {
+  "resumo_do_caso": "Lemos 2 documentos e identificamos 5 partes, 10 fatos relevantes e 2 pedidos.",
+  "findings": [
+   {
+    "id": "contradicao-paradeiro",
+    "categoria": "contradicao",
+    "texto": "Vanessa diz que Rodrigo não é encontrado; os avós afirmam que ele trabalha como motorista de aplicativo em outra cidade desde 2023 e que Vanessa sabe como encontrá-lo.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {"documento": "peticao_vanessa.txt", "trecho": "não é encontrado no endereço conhecido"},
+     {"documento": "contestacao_avos.txt", "trecho": "Rodrigo não está desaparecido: trabalha como motorista de aplicativo em outra cidade desde 2023, e Vanessa sabe como encontrá-lo"}
+    ]
+   },
+   {
+    "id": "contradicao-viagens",
+    "categoria": "contradicao",
+    "texto": "As viagens ao exterior são usadas por Vanessa como sinal de capacidade financeira dos avós; eles dizem que foram presentes da filha que mora em Portugal.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {"documento": "peticao_vanessa.txt", "trecho": "viajaram duas vezes para o exterior em 2024"},
+     {"documento": "contestacao_avos.txt", "trecho": "As viagens de 2024 foram presentes da filha do casal, que mora em Portugal, e não foram pagas pelos avós"}
+    ]
+   },
+   {
+    "id": "lacuna-execucao",
+    "categoria": "lacuna_probatoria",
+    "texto": "Nenhum documento mostra tentativa de cobrar a pensão de Rodrigo; os avós afirmam que a execução contra ele nunca foi iniciada. É a lacuna mais grave, porque a obrigação dos avós costuma depender da impossibilidade de cobrar o pai.",
+    "provenance": "INFERENCE",
+    "origem": [{"documento": "contestacao_avos.txt", "trecho": "A execução da pensão contra ele nunca foi iniciada"}]
+   },
+   {
+    "id": "lacuna-diligencias",
+    "categoria": "lacuna_probatoria",
+    "texto": "A afirmação de que Rodrigo não é encontrado não vem acompanhada de nenhuma tentativa documentada de localização.",
+    "provenance": "INFERENCE",
+    "origem": [{"documento": "peticao_vanessa.txt", "trecho": "Desde agosto de 2023, Rodrigo não paga nada e não é encontrado no endereço conhecido"}]
+   },
+   {
+    "id": "lacuna-despesas",
+    "categoria": "lacuna_probatoria",
+    "texto": "A asma e a medicação contínua de Enzo são mencionadas sem receitas, laudo ou custo mensal.",
+    "provenance": "INFERENCE",
+    "origem": [{"documento": "peticao_vanessa.txt", "trecho": "que tem asma e usa medicação contínua"}]
+   },
+   {
+    "id": "lacuna-renda-avos",
+    "categoria": "lacuna_probatoria",
+    "texto": "A renda de R$ 4.300,00 e os gastos de saúde dos avós são afirmados sem comprovantes.",
+    "provenance": "INFERENCE",
+    "origem": [{"documento": "contestacao_avos.txt", "trecho": "Sérgio e Marta recebem, juntos, cerca de R$ 4.300,00 de aposentadoria"}]
+   },
+   {
+    "id": "argumento-subsidiariedade",
+    "categoria": "contra_argumento",
+    "texto": "Os avós sustentarão que só podem ser chamados a pagar depois de esgotadas as tentativas de cobrar o pai, o que ainda não aconteceu.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "contestacao_avos.txt", "trecho": "porque a obrigação dos avós só existe depois de esgotadas as tentativas de cobrar o pai"}]
+   },
+   {
+    "id": "argumento-valor-integral",
+    "categoria": "contra_argumento",
+    "texto": "O pedido se diz de alimentos complementares, mas cobra dos avós exatamente o valor inteiro da pensão do pai, R$ 700,00. A outra parte dirá que se trata de substituir o pai, e não de complementar.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {"documento": "peticao_vanessa.txt", "trecho": "Fixação de alimentos complementares de R$ 700,00 por mês"},
+     {"documento": "peticao_vanessa.txt", "trecho": "foi condenado a pagar pensão de R$ 700,00 por mês"}
+    ]
+   },
+   {
+    "id": "argumento-capacidade-avos",
+    "categoria": "contra_argumento",
+    "texto": "Com 71 e 68 anos e gastos com remédios e plano de saúde, os avós dirão que pagar a pensão comprometeria o próprio sustento.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "contestacao_avos.txt", "trecho": "gastam grande parte com remédios e com o plano de saúde dos dois, que têm 71 e 68 anos"}]
+   },
+   {
+    "id": "pergunta-execucao",
+    "categoria": "pergunta_dificil",
+    "texto": "Por que a cobrança da pensão contra Rodrigo nunca foi iniciada?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "contestacao_avos.txt", "trecho": "A execução da pensão contra ele nunca foi iniciada"}]
+   },
+   {
+    "id": "pergunta-complementar",
+    "categoria": "pergunta_dificil",
+    "texto": "Por que os avós deveriam pagar o valor inteiro da pensão do pai, se o pedido é de complementação?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "peticao_vanessa.txt", "trecho": "alimentos complementares de R$ 700,00 por mês"}]
+   },
+   {
+    "id": "pergunta-paradeiro",
+    "categoria": "pergunta_dificil",
+    "texto": "Vanessa sabe onde Rodrigo trabalha hoje?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "contestacao_avos.txt", "trecho": "trabalha como motorista de aplicativo em outra cidade"}]
+   },
+   {
+    "id": "pergunta-despesas",
+    "categoria": "pergunta_dificil",
+    "texto": "Quanto custa por mês a medicação de Enzo?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "peticao_vanessa.txt", "trecho": "usa medicação contínua"}]
+   }
+  ],
+  "linha_do_tempo": [
+   {"data": "18/04/2022", "data_ordenacao": "2022-04-18", "evento": "Rodrigo é condenado a pagar pensão de R$ 700,00 a Enzo", "quem_afirma": "Vanessa", "documento": "peticao_vanessa.txt", "trecho": "Em 18/04/2022, o pai de Enzo, Rodrigo, foi condenado a pagar pensão de R$ 700,00 por mês", "divergencia": ""},
+   {"data": "2023", "data_ordenacao": "2023", "evento": "Rodrigo passa a trabalhar como motorista de aplicativo em outra cidade, segundo os avós", "quem_afirma": "Sérgio e Marta", "documento": "contestacao_avos.txt", "trecho": "trabalha como motorista de aplicativo em outra cidade desde 2023", "divergencia": "Vanessa afirma que Rodrigo não é encontrado."},
+   {"data": "agosto de 2023", "data_ordenacao": "2023-08", "evento": "Rodrigo deixa de pagar a pensão", "quem_afirma": "Vanessa", "documento": "peticao_vanessa.txt", "trecho": "Desde agosto de 2023, Rodrigo não paga nada", "divergencia": ""},
+   {"data": "2024", "data_ordenacao": "2024", "evento": "Duas viagens dos avós ao exterior", "quem_afirma": "Vanessa", "documento": "peticao_vanessa.txt", "trecho": "viajaram duas vezes para o exterior em 2024", "divergencia": "Os avós dizem que as viagens foram presentes da filha."}
+  ],
+  "plano_de_provas": [
+   {"prova": "Pedido de cumprimento de sentença contra Rodrigo, com as tentativas de cobrança e penhora", "finalidade": "Mostrar que o pai foi cobrado antes de chamar os avós.", "como_obter": "Iniciar a execução da pensão fixada em 18/04/2022 e juntar os resultados.", "prioridade": "alta", "apontamentos": ["lacuna-execucao", "argumento-subsidiariedade", "pergunta-execucao"]},
+   {"prova": "Pesquisa de endereço, vínculos e ganhos de Rodrigo", "finalidade": "Demonstrar as tentativas de localizar o pai ou encontrá-lo para cobrar.", "como_obter": "Requerer ao juízo ofícios ao INSS e à plataforma de transporte e o uso dos sistemas de busca de endereço.", "prioridade": "alta", "apontamentos": ["contradicao-paradeiro", "lacuna-diligencias", "pergunta-paradeiro"]},
+   {"prova": "Receitas, laudo e comprovantes de gastos com medicação, escola e saúde de Enzo", "finalidade": "Mostrar a necessidade real e calcular o valor do complemento.", "como_obter": "Reunir com a cliente receitas, notas de farmácia e boletos da escola.", "prioridade": "alta", "apontamentos": ["lacuna-despesas", "argumento-valor-integral", "pergunta-despesas", "pergunta-complementar"]},
+   {"prova": "Comprovantes de aposentadoria e gastos de saúde dos avós", "finalidade": "Avaliar com números a capacidade de contribuição dos avós.", "como_obter": "Requerer que os avós juntem os extratos de benefício e os boletos do plano de saúde.", "prioridade": "media", "apontamentos": ["lacuna-renda-avos", "argumento-capacidade-avos"]},
+   {"prova": "Informações sobre quem pagou as viagens de 2024", "finalidade": "Verificar a alegação de que foram presentes da filha.", "como_obter": "Requerer a exibição das passagens e dos comprovantes de pagamento.", "prioridade": "media", "apontamentos": ["contradicao-viagens"]}
+  ]
+ },
+ "audiencia": [
+  {
+   "pergunta": "Por que a cobrança da pensão contra Rodrigo nunca foi iniciada?",
+   "respostas": [
+    {"rotulo": "Resposta A", "texto": "Não adianta cobrar ele, ele nunca vai pagar.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta admite que o pai não foi cobrado e troca a tentativa por uma suposição.", "pontos_fortes": [], "pontos_frageis": ["Confirma a principal crítica dos avós.", "Nenhum documento mostra que a cobrança seria inútil."], "sugestao": "Informe que a cobrança contra o pai será iniciada e que o pedido contra os avós busca evitar o desamparo de Enzo enquanto isso.", "apoio_nos_documentos": [{"documento": "contestacao_avos.txt", "trecho": "A execução da pensão contra ele nunca foi iniciada"}], "replica": "Então os avós estão sendo cobrados no lugar do pai sem que ele tenha sido procurado?"}},
+    {"rotulo": "Resposta B", "texto": "A cobrança contra Rodrigo será iniciada agora, com pedido de busca do endereço e dos ganhos dele. O pedido contra os avós existe para que Enzo não fique desamparado enquanto isso.", "avaliacao": {"avaliacao": "parcial", "resumo": "Sua resposta corrige o rumo e dá uma justificativa razoável, mas confirma que a condição principal ainda não foi cumprida.", "pontos_fortes": ["Reconhece a falha sem inventar desculpas.", "Explica a urgência do pedido."], "pontos_frageis": ["Enquanto a cobrança do pai não avançar, o pedido contra os avós continua frágil."], "sugestao": "Inicie a execução antes da audiência e leve o comprovante do protocolo.", "apoio_nos_documentos": [{"documento": "peticao_vanessa.txt", "trecho": "Desde agosto de 2023, Rodrigo não paga nada"}], "replica": "E por que esperar quase dois anos para cobrar o pai?"}}
+   ]
+  },
+  {
+   "pergunta": "Por que os avós deveriam pagar o valor inteiro da pensão do pai, se o pedido é de complementação?",
+   "respostas": [
+    {"rotulo": "Resposta A", "texto": "Porque é o valor que o pai deveria pagar.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta confirma que o pedido substitui o pai, e não o complementa.", "pontos_fortes": [], "pontos_frageis": ["Contraria a própria natureza do pedido.", "Ignora a capacidade dos avós."], "sugestao": "Proponha que o valor seja fixado conforme as necessidades comprovadas de Enzo e as possibilidades dos avós.", "apoio_nos_documentos": [{"documento": "peticao_vanessa.txt", "trecho": "foi condenado a pagar pensão de R$ 700,00 por mês"}], "replica": "Então os avós respondem pela dívida inteira do filho?"}},
+    {"rotulo": "Resposta B", "texto": "O valor pode ser ajustado. Pedimos que os avós complementem o que faltar para as necessidades de Enzo, na medida das possibilidades deles, e a planilha de despesas vai mostrar quanto é esse complemento.", "avaliacao": {"avaliacao": "convincente", "resumo": "Sua resposta resolve a incoerência do pedido, respeita a natureza complementar da obrigação dos avós e se apoia em prova a produzir.", "pontos_fortes": ["Coerente com o pedido de alimentos complementares.", "Considera a capacidade dos avós.", "Indica como calcular o valor."], "pontos_frageis": [], "sugestao": "Leve a planilha com as despesas de Enzo e o que Vanessa já paga.", "apoio_nos_documentos": [{"documento": "peticao_vanessa.txt", "trecho": "não consegue arcar sozinha com escola, saúde e alimentação de Enzo"}], "replica": ""}}
+   ]
+  },
+  {
+   "pergunta": "Vanessa sabe onde Rodrigo trabalha hoje?",
+   "respostas": [
+    {"rotulo": "Resposta A", "texto": "Ninguém sabe onde ele está.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta nega saber o paradeiro quando os avós afirmam que Vanessa sabe como encontrá-lo.", "pontos_fortes": ["Coerente com a petição."], "pontos_frageis": ["Se ficar provado que ela sabia, a credibilidade cai.", "Nenhuma tentativa de localização é indicada."], "sugestao": "Responda com o que Vanessa efetivamente sabe e peça as buscas oficiais.", "apoio_nos_documentos": [{"documento": "contestacao_avos.txt", "trecho": "Vanessa sabe como encontrá-lo"}], "replica": "A senhora nunca recebeu nenhuma mensagem dele desde 2023?"}},
+    {"rotulo": "Resposta B", "texto": "Vanessa não tem o endereço atual de Rodrigo. Se ele trabalha como motorista de aplicativo em outra cidade, pedimos ofício à plataforma e ao INSS para localizá-lo e cobrá-lo.", "avaliacao": {"avaliacao": "parcial", "resumo": "Sua resposta usa a informação dos avós a favor da cobrança do pai, mas ainda não mostra nenhuma tentativa já feita.", "pontos_fortes": ["Transforma a informação contrária em caminho de cobrança."], "pontos_frageis": ["Nenhuma diligência anterior está documentada."], "sugestao": "Pergunte aos avós, na audiência, se eles têm o contato atual de Rodrigo.", "apoio_nos_documentos": [{"documento": "contestacao_avos.txt", "trecho": "trabalha como motorista de aplicativo em outra cidade desde 2023"}], "replica": "E os avós têm contato com o próprio filho?"}}
+   ]
+  }
+ ]
+}

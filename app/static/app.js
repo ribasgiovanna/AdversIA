@@ -64,6 +64,26 @@ const ORIGENS = {
 const MENSAGEM_FALHA_PADRAO = "Não foi possível concluir a análise agora. Tente novamente em alguns instantes.";
 const MENSAGEM_SEM_CONEXAO = "Perdemos a conexão com o servidor. Verifique a internet e tente de novo.";
 
+// Mesmos nomes de app/pipeline.py::ETAPAS.
+const ETAPAS = [
+  "Lendo os documentos do caso",
+  "Relacionando cada alegação com as provas",
+  "Procurando contradições",
+  "Pensando como a parte contrária",
+  "Conferindo cada apontamento nos documentos",
+  "Montando o plano de provas",
+];
+// Segundo em que cada etapa costuma começar numa análise real (medições de 13/09/2026).
+const INICIO_ETAPAS_REAL = [0, 15, 35, 60, 90, 125];
+// Ritmo das etapas no modo demonstração, em milissegundos.
+const DURACAO_ETAPAS_DEMO = [1300, 1600, 1500, 2100, 1800, 1500];
+
+/* Modo de uso: "demo" mostra resultados preparados para casos fictícios (sem custo);
+   "chave" faz a análise real com a chave da Anthropic do próprio usuário. */
+let modo = "demo";
+let casoDemo = null;
+let contextoReal = null; // { documentos, tese, chave } da última análise real, para a simulação
+
 /* ---------- utilidades ---------- */
 
 const $ = (id) => document.getElementById(id);
@@ -330,6 +350,22 @@ function formatarTamanho(bytes) {
 function renderizarArquivos() {
   const lista = $("lista-arquivos");
   lista.replaceChildren();
+  if (modo === "demo") {
+    (casoDemo ? casoDemo.documentos : []).forEach((doc) => {
+      lista.appendChild(
+        el("li", { classe: "documento-demo" }, [
+          el("details", {}, [
+            el("summary", {}, [
+              el("span", { classe: "arquivo-nome", texto: doc.nome }),
+              el("span", { classe: "arquivo-tamanho", texto: "ler documento" }),
+            ]),
+            el("pre", { classe: "documento-conteudo", texto: doc.conteudo }),
+          ]),
+        ])
+      );
+    });
+    return;
+  }
   for (const arquivo of arquivos.values()) {
     const remover = el("button", {
       type: "button",
@@ -549,7 +585,7 @@ function preencherSituacoes() {
 
 async function carregarExemplos() {
   try {
-    const resposta = await fetch("/api/exemplos");
+    const resposta = await fetch("demo/indice.json");
     if (!resposta.ok) return;
     exemplos = await resposta.json();
     if (!exemplos.length) return;
@@ -568,7 +604,7 @@ async function carregarExemplos() {
         {
           nome: null,
           itens: [
-            { valor: "", rotulo: `Todos os tipos (${exemplos.length} casos)` },
+            { valor: "", rotulo: `Todos os tipos (${exemplos.length} ${plural(exemplos.length, ["caso", "casos"])})` },
             ...Array.from(contagem, ([tipo, total]) => ({
               valor: tipo,
               rotulo: `${tipo} (${total} ${plural(total, ["caso", "casos"])})`,
@@ -593,21 +629,74 @@ async function carregarExemplos() {
 
 async function usarExemplo(exemplo) {
   try {
-    const resposta = await fetch(`/api/exemplos/${encodeURIComponent(exemplo.id)}`);
+    const resposta = await fetch(`demo/casos/${encodeURIComponent(exemplo.id)}.json`);
     if (!resposta.ok) throw new Error();
-    const dados = await resposta.json();
+    casoDemo = await resposta.json();
     arquivos.clear();
-    dados.documentos.forEach((doc) => {
+    casoDemo.documentos.forEach((doc) => {
       arquivos.set(doc.nome, new File([doc.conteudo], doc.nome, { type: "text/plain" }));
     });
     renderizarArquivos();
-    digitarNoCampo($("tese"), dados.tese);
+    digitarNoCampo($("tese"), casoDemo.tese);
     $("confirmacao-dados").checked = true;
     esconderErroFormulario();
-    anunciar(`Caso de exemplo carregado: ${exemplo.titulo}. ${dados.documentos.length} documentos e a tese foram preenchidos.`);
+    anunciar(`Caso carregado: ${exemplo.titulo}. ${casoDemo.documentos.length} documentos e a tese foram preenchidos.`);
   } catch {
+    casoDemo = null;
     mostrarErroFormulario("Não conseguimos carregar o caso de exemplo. Tente de novo.");
   }
+}
+
+const TEXTOS_MODO = {
+  demo: {
+    tituloDocumentos: "Escolha um caso",
+    ajudaDocumentos: "Casos fictícios preparados para mostrar tudo o que a AdversIA entrega. Escolha o tipo, a situação e clique em “Usar este caso”.",
+    legendaExemplos: "Casos fictícios prontos",
+    tituloTese: "Tese do caso",
+    ajudaTese: "A tese vem preenchida com o caso escolhido.",
+    botao: "Ver a análise deste caso",
+  },
+  chave: {
+    tituloDocumentos: "Documentos do caso",
+    ajudaDocumentos: "Petição, contestação, provas, acordos. Aceitamos PDF, Word (.docx) e texto (.txt).",
+    legendaExemplos: "Sem documentos à mão? Use um caso fictício pronto",
+    tituloTese: "Sua tese",
+    ajudaTese: "Em poucas linhas: o que você pretende sustentar e em nome de qual parte.",
+    botao: "Analisar estratégia",
+  },
+};
+
+function aplicarModo(novoModo) {
+  modo = novoModo;
+  const textos = TEXTOS_MODO[modo];
+  $("form-analise").dataset.modo = modo;
+  $("titulo-passo-documentos").textContent = textos.tituloDocumentos;
+  $("documentos-ajuda").textContent = textos.ajudaDocumentos;
+  $("legenda-exemplos").textContent = textos.legendaExemplos;
+  $("rotulo-tese").textContent = textos.tituloTese;
+  $("tese-ajuda").textContent = textos.ajudaTese;
+  $("botao-analisar").textContent = textos.botao;
+  $("envio-proprio").hidden = modo === "demo";
+  $("passo-chave").hidden = modo === "demo";
+  $("bloco-confirmacao").hidden = modo === "demo";
+  $("tese").readOnly = modo === "demo";
+  if (modo === "demo") {
+    pararDigitacao();
+    $("tese").value = casoDemo ? casoDemo.tese : "";
+  }
+  renderizarArquivos();
+  esconderErroFormulario();
+}
+
+function configurarModo() {
+  document.querySelectorAll('input[name="modo"]').forEach((opcao) => {
+    opcao.addEventListener("change", () => {
+      if (!opcao.checked) return;
+      aplicarModo(opcao.value);
+      anunciar(opcao.value === "demo" ? "Modo demonstração gratuita." : "Modo análise com a sua chave.");
+    });
+  });
+  aplicarModo(document.querySelector('input[name="modo"]:checked').value);
 }
 
 function mostrarErroFormulario(mensagem, focarEm) {
@@ -622,6 +711,13 @@ function esconderErroFormulario() {
 }
 
 function validarFormulario() {
+  if (modo === "demo") {
+    if (!casoDemo) {
+      mostrarErroFormulario("Escolha um caso e clique em “Usar este caso” para ver a análise.", $("filtro-situacao"));
+      return null;
+    }
+    return casoDemo.tese;
+  }
   const tese = $("tese").value.trim();
   if (arquivos.size === 0) {
     mostrarErroFormulario("Envie pelo menos um documento do caso.", $("documentos"));
@@ -629,6 +725,15 @@ function validarFormulario() {
   }
   if (!tese) {
     mostrarErroFormulario("Descreva a tese que você quer testar.", $("tese"));
+    return null;
+  }
+  const chave = $("chave-anthropic").value.trim();
+  if (!chave) {
+    mostrarErroFormulario("Informe a sua chave da Anthropic para fazer a análise real, ou escolha a demonstração gratuita.", $("chave-anthropic"));
+    return null;
+  }
+  if (!/^sk-ant-/.test(chave)) {
+    mostrarErroFormulario("Essa não parece uma chave da Anthropic. Ela começa com “sk-ant-”.", $("chave-anthropic"));
     return null;
   }
   if (!$("confirmacao-dados").checked) {
@@ -687,24 +792,53 @@ function renderizarEtapas(etapas, etapaAtual, estado) {
   });
 }
 
-async function acompanharAnalise(id, etapas) {
-  let falhasSeguidas = 0;
-  for (;;) {
-    await esperar(1500);
+function mostrarProgresso(texto) {
+  $("apoio-progresso").textContent = texto;
+  $("etapas").replaceChildren();
+  renderizarEtapas(ETAPAS, 1, "processando");
+  mostrarTela("progresso");
+  $("titulo-progresso").focus();
+}
+
+async function executarDemonstracao() {
+  mostrarProgresso("Acompanhe cada etapa abaixo.");
+  for (let etapa = 1; etapa <= ETAPAS.length; etapa += 1) {
+    renderizarEtapas(ETAPAS, etapa, "processando");
+    await esperar(movimentoReduzido() ? 250 : DURACAO_ETAPAS_DEMO[etapa - 1]);
+  }
+  renderizarEtapas(ETAPAS, ETAPAS.length, "concluida");
+  contextoReal = null;
+  renderizarRelatorio(casoDemo.relatorio);
+}
+
+async function executarAnaliseReal(tese) {
+  const chave = $("chave-anthropic").value.trim();
+  const dadosFormulario = new FormData();
+  for (const arquivo of arquivos.values()) dadosFormulario.append("documentos", arquivo, arquivo.name);
+  dadosFormulario.append("tese", tese);
+
+  mostrarProgresso("Costuma levar de 2 a 3 minutos. Acompanhe cada etapa abaixo.");
+  // A análise real roda numa única chamada; a tela avança pelas etapas no tempo típico de cada uma.
+  const inicio = Date.now();
+  const relogio = setInterval(() => {
+    const segundos = (Date.now() - inicio) / 1000;
+    renderizarEtapas(ETAPAS, INICIO_ETAPAS_REAL.filter((s) => segundos >= s).length, "processando");
+  }, 1000);
+
+  try {
     let resposta;
     try {
-      resposta = await fetch(`/api/analises/${encodeURIComponent(id)}`, { cache: "no-store" });
+      resposta = await fetch("api/analisar", { method: "POST", headers: { "X-Anthropic-Key": chave }, body: dadosFormulario });
     } catch {
-      falhasSeguidas += 1;
-      if (falhasSeguidas >= 4) throw new Error(MENSAGEM_SEM_CONEXAO);
-      continue;
+      throw new Error(MENSAGEM_SEM_CONEXAO);
     }
-    falhasSeguidas = 0;
     const dados = await lerJson(resposta);
     if (!resposta.ok) throw new Error(dados.erro || MENSAGEM_FALHA_PADRAO);
-    renderizarEtapas(etapas, dados.etapa_atual || 0, dados.estado);
-    if (dados.estado === "concluida") return dados.relatorio;
-    if (dados.estado === "erro") throw new Error(dados.erro || MENSAGEM_FALHA_PADRAO);
+    renderizarEtapas(ETAPAS, ETAPAS.length, "concluida");
+    contextoReal = { documentos: dados.documentos, tese: dados.tese, chave };
+    renderizarRelatorio(dados.relatorio);
+  } finally {
+    clearInterval(relogio);
   }
 }
 
@@ -715,34 +849,11 @@ async function analisar(evento) {
   const tese = validarFormulario();
   if (tese === null) return;
 
-  const dadosFormulario = new FormData();
-  for (const arquivo of arquivos.values()) dadosFormulario.append("documentos", arquivo, arquivo.name);
-  dadosFormulario.append("tese", tese);
-
   const botao = $("botao-analisar");
   botao.disabled = true;
-
   try {
-    let resposta;
-    try {
-      resposta = await fetch("/api/analises", { method: "POST", body: dadosFormulario });
-    } catch {
-      throw new Error(MENSAGEM_SEM_CONEXAO);
-    }
-    const dados = await lerJson(resposta);
-    if (!resposta.ok) {
-      mostrarErroFormulario(dados.erro || MENSAGEM_FALHA_PADRAO, $("botao-analisar"));
-      return;
-    }
-
-    analiseAtualId = dados.id;
-    $("etapas").replaceChildren();
-    renderizarEtapas(dados.etapas, 1, "processando");
-    mostrarTela("progresso");
-    $("titulo-progresso").focus();
-
-    const relatorio = await acompanharAnalise(dados.id, dados.etapas);
-    renderizarRelatorio(relatorio);
+    if (modo === "demo") await executarDemonstracao();
+    else await executarAnaliseReal(tese);
   } catch (erro) {
     $("erro-texto").textContent = erro.message || MENSAGEM_FALHA_PADRAO;
     mostrarTela("erro");
@@ -798,6 +909,7 @@ function renderizarRelatorio(relatorio) {
     contagemPorCategoria[achado.categoria] = (contagemPorCategoria[achado.categoria] || 0) + 1;
     nomesDosAchados.set(achado.id, `${categoria.rotulo} ${contagemPorCategoria[achado.categoria]}`);
   });
+  $("selo-demo").hidden = contextoReal !== null;
   $("resumo-caso").textContent = relatorio.resumo_do_caso;
   $("tese-analisada").textContent = relatorio.tese_analisada;
 
@@ -850,7 +962,11 @@ function renderizarRelatorio(relatorio) {
   renderizarLinhaDoTempo(relatorio.linha_do_tempo || []);
   renderizarPlano(relatorio.plano_de_provas, relatorio.findings || []);
   prepararAudiencia(
-    (relatorio.findings || []).filter((achado) => achado.categoria === "pergunta_dificil").map((achado) => achado.texto)
+    contextoReal
+      ? (relatorio.findings || []).filter((achado) => achado.categoria === "pergunta_dificil").map((achado) => achado.texto)
+      : casoDemo && casoDemo.audiencia
+        ? casoDemo.audiencia.map((bloco) => bloco.pergunta)
+        : []
   );
   selecionarAba("pontos", false);
 
@@ -865,7 +981,6 @@ function renderizarRelatorio(relatorio) {
    ========================================================================== */
 
 let nomesDosAchados = new Map();
-let analiseAtualId = null;
 
 const ABAS = ["pontos", "linha", "plano", "audiencia"];
 
@@ -1097,6 +1212,36 @@ function mostrarPergunta(texto, ehReplica) {
   $("audiencia-erro").hidden = true;
   $("audiencia-form").hidden = false;
   $("pular-pergunta").textContent = ehReplica ? "Pular réplica" : "Pular pergunta";
+
+  // Na demonstração, a pessoa escolhe entre respostas preparadas; com a chave, responde livremente.
+  const demonstracao = !contextoReal;
+  const bloco = demonstracao && !ehReplica && casoDemo ? casoDemo.audiencia[audiencia.indice] : null;
+  $("audiencia-opcoes").hidden = !demonstracao;
+  $("audiencia-livre").hidden = demonstracao;
+  $("enviar-resposta").hidden = demonstracao;
+  $("ditar-resposta").hidden = demonstracao || !Reconhecimento;
+  $("audiencia-opcoes-lista").replaceChildren(
+    ...(bloco ? bloco.respostas : []).map((opcao) => {
+      const botao = el("button", { type: "button", classe: "opcao-resposta" }, [
+        el("span", { classe: "opcao-rotulo", texto: opcao.rotulo }),
+        el("span", { classe: "opcao-texto", texto: opcao.texto }),
+      ]);
+      botao.addEventListener("click", () => escolherRespostaDemo(opcao));
+      return botao;
+    })
+  );
+}
+
+async function escolherRespostaDemo(opcao) {
+  if (audiencia.enviando) return;
+  audiencia.enviando = true;
+  document.querySelectorAll(".opcao-resposta").forEach((botao) => { botao.disabled = true; });
+  $("rotulo-opcoes").textContent = "Avaliando a resposta…";
+  anunciar("Avaliando a resposta.");
+  await esperar(movimentoReduzido() ? 200 : 1400);
+  $("rotulo-opcoes").textContent = "Escolha uma resposta para ver como ela seria avaliada";
+  audiencia.enviando = false;
+  registrarRodada(opcao.texto, opcao.avaliacao);
 }
 
 function prepararAudiencia(perguntas) {
@@ -1199,7 +1344,7 @@ function registrarRodada(resposta, avaliacao) {
 
   const acoes = cartao.querySelector(".avaliacao-acoes");
   const ultima = audiencia.indice >= audiencia.perguntas.length - 1;
-  if (avaliacao.replica) {
+  if (avaliacao.replica && contextoReal) {
     const responder = el("button", { type: "button", classe: "botao-secundario", texto: "Responder à réplica" });
     responder.addEventListener("click", () => {
       acoes.replaceChildren();
@@ -1210,7 +1355,7 @@ function registrarRodada(resposta, avaliacao) {
   }
   const seguir = el("button", {
     type: "button",
-    classe: avaliacao.replica ? "botao-texto" : "botao-secundario",
+    classe: avaliacao.replica && contextoReal ? "botao-texto" : "botao-secundario",
     texto: ultima ? "Encerrar simulação" : "Próxima pergunta",
   });
   seguir.addEventListener("click", () => {
@@ -1236,8 +1381,8 @@ async function enviarRespostaAudiencia(evento) {
     $("resposta-audiencia").focus();
     return;
   }
-  if (!analiseAtualId) {
-    erro.textContent = "Faça uma nova análise para usar a simulação de audiência.";
+  if (!contextoReal) {
+    erro.textContent = "Faça uma análise com a sua chave para responder com as suas próprias palavras.";
     erro.hidden = false;
     return;
   }
@@ -1251,10 +1396,15 @@ async function enviarRespostaAudiencia(evento) {
   try {
     let respostaHttp;
     try {
-      respostaHttp = await fetch(`/api/analises/${encodeURIComponent(analiseAtualId)}/audiencia`, {
+      respostaHttp = await fetch("api/audiencia", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ pergunta: audiencia.perguntaAtual, resposta }),
+        headers: { "Content-Type": "application/json", "X-Anthropic-Key": contextoReal.chave },
+        body: JSON.stringify({
+          documentos: contextoReal.documentos,
+          tese: contextoReal.tese,
+          pergunta: audiencia.perguntaAtual,
+          resposta,
+        }),
       });
     } catch {
       throw new Error(MENSAGEM_SEM_CONEXAO);
@@ -1352,6 +1502,7 @@ function alternarLeitura() {
 document.addEventListener("DOMContentLoaded", () => {
   configurarPainelAcessibilidade();
   configurarEnvioDeArquivos();
+  configurarModo();
   carregarExemplos();
   animarTitulo();
   digitarExemploDaTese();
@@ -1360,7 +1511,7 @@ document.addEventListener("DOMContentLoaded", () => {
   configurarAudiencia();
 
   $("form-analise").addEventListener("submit", analisar);
-  $("botao-tentar-de-novo").addEventListener("click", () => { mostrarTela("formulario"); $("documentos").focus(); });
+  $("botao-tentar-de-novo").addEventListener("click", () => { mostrarTela("formulario"); $("botao-analisar").focus(); });
   $("nova-analise").addEventListener("click", () => { pararLeitura(); mostrarTela("formulario"); $("tese").focus(); });
   $("imprimir-relatorio").addEventListener("click", () => window.print());
 

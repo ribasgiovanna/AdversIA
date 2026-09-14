@@ -1,0 +1,18 @@
+# Só o site (app/static), as funções (api/), o código Python (app/) e requirements.txt
+# precisam ir para a Vercel. O resto é documentação, testes e material de construção.
+.env
+# Servidor só para rodar no computador. Na Vercel quem responde são as funções de api/;
+# se este arquivo for enviado, a Vercel tenta usá-lo como aplicação e o build falha.
+app/server.py
+.claude/
+.specify/
+specs/
+docs/
+tests/
+golden_dataset/
+demo/
+scripts/
+*.pdf
+*.pptx
+__pycache__/
+.pytest_cache/

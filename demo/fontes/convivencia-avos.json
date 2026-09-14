@@ -1,0 +1,130 @@
+{
+ "id": "convivencia-avos",
+ "tipo": "Guarda e convivência",
+ "ordem": 6,
+ "titulo": "Convivência dos avós com a neta",
+ "descricao": "Depois da morte da mãe, os avós maternos pedem para ver a neta em fins de semana alternados, sem o pai. Ele diz que a avó falou mal da madrasta para a menina e que a psicóloga recomendou cautela.",
+ "pasta": "case_familia_26",
+ "relatorio": {
+  "resumo_do_caso": "Lemos 2 documentos e identificamos 4 partes, 10 fatos relevantes e 3 pedidos.",
+  "findings": [
+   {
+    "id": "contradicao-motivo",
+    "categoria": "contradicao",
+    "texto": "Os avós ligam a restrição das visitas ao novo casamento de Caio; Caio a liga a um episódio de outubro de 2024, em que a avó teria dito a Lívia que a madrasta nunca substituiria a mãe. O pedido dos avós não menciona esse episódio.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {"documento": "pedido_avos.txt", "trecho": "Depois que Caio se casou de novo, em 02/2024, os avós passaram a ver a neta só uma vez por mês"},
+     {"documento": "contestacao_caio.txt", "trecho": "a avó disse a Lívia que a madrasta nunca vai substituir sua mãe, e Lívia voltou chorando"}
+    ]
+   },
+   {
+    "id": "lacuna-episodio",
+    "categoria": "lacuna_probatoria",
+    "texto": "O episódio de outubro de 2024 é descrito só por Caio, sem testemunha, e os avós não apresentam a própria versão sobre ele.",
+    "provenance": "INFERENCE",
+    "origem": [{"documento": "contestacao_caio.txt", "trecho": "Em outubro de 2024, na última visita"}]
+   },
+   {
+    "id": "lacuna-vinculo",
+    "categoria": "lacuna_probatoria",
+    "texto": "A convivência diária anterior, com as tardes na casa dos avós, é afirmada sem registros da escola ou testemunhas.",
+    "provenance": "INFERENCE",
+    "origem": [{"documento": "pedido_avos.txt", "trecho": "Lívia passava todas as tardes na casa dos avós, que a buscavam na escola"}]
+   },
+   {
+    "id": "lacuna-psicologa",
+    "categoria": "lacuna_probatoria",
+    "texto": "A recomendação de cautela da psicóloga da escola e o acompanhamento psicológico de Lívia não vêm com nenhum relatório.",
+    "provenance": "INFERENCE",
+    "origem": [{"documento": "contestacao_caio.txt", "trecho": "Caio conversou com a psicóloga da escola, que recomendou cautela"}]
+   },
+   {
+    "id": "lacuna-perguntas-livia",
+    "categoria": "lacuna_probatoria",
+    "texto": "Os avós dizem que Lívia pergunta por eles, mas não indicam como sabem disso, já que não a veem desde outubro de 2024.",
+    "provenance": "INFERENCE",
+    "origem": [{"documento": "pedido_avos.txt", "trecho": "Lívia pergunta pelos avós e pela casa onde a mãe cresceu"}]
+   },
+   {
+    "id": "argumento-cautela",
+    "categoria": "contra_argumento",
+    "texto": "Caio sustentará que Lívia está em acompanhamento psicológico para lidar com o luto e com a nova família, e que visitas sem a presença dele contrariam a cautela recomendada.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "contestacao_caio.txt", "trecho": "Lívia começou acompanhamento psicológico em janeiro de 2025 para lidar com o luto e com a adaptação à nova família"}]
+   },
+   {
+    "id": "argumento-tempo-pai",
+    "categoria": "contra_argumento",
+    "texto": "Fins de semana alternados tirariam metade do único tempo que o pai tem com a filha, já que ele trabalha em turnos durante a semana.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "contestacao_caio.txt", "trecho": "Os fins de semana são o único tempo que Caio tem com a filha, porque trabalha em turnos durante a semana"}]
+   },
+   {
+    "id": "argumento-nao-oposicao",
+    "categoria": "contra_argumento",
+    "texto": "Caio dirá que não se opõe à convivência e já propõe visitas mensais, o que desloca a discussão do direito de ver a neta para as condições das visitas.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "contestacao_caio.txt", "trecho": "Caio não se opõe a que Lívia veja os avós, mas não aceita as visitas sem sua presença"}]
+   },
+   {
+    "id": "pergunta-frase",
+    "categoria": "pergunta_dificil",
+    "texto": "A avó disse a Lívia que a madrasta nunca vai substituir a mãe?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "contestacao_caio.txt", "trecho": "a madrasta nunca vai substituir sua mãe"}]
+   },
+   {
+    "id": "pergunta-fim-de-semana",
+    "categoria": "pergunta_dificil",
+    "texto": "Por que a convivência precisa ser nos fins de semana, o único tempo que o pai tem com a filha?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "pedido_avos.txt", "trecho": "Convivência dos avós com Lívia em fins de semana alternados"}]
+   },
+   {
+    "id": "pergunta-sem-pai",
+    "categoria": "pergunta_dificil",
+    "texto": "Por que as visitas precisam acontecer sem a presença do pai?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "contestacao_caio.txt", "trecho": "não aceita as visitas sem sua presença"}]
+   }
+  ],
+  "linha_do_tempo": [
+   {"data": "14/06/2023", "data_ordenacao": "2023-06-14", "evento": "Morte da mãe de Lívia", "quem_afirma": "Irene e Walter", "documento": "pedido_avos.txt", "trecho": "A mãe de Lívia, filha de Irene e Walter, morreu em 14/06/2023", "divergencia": ""},
+   {"data": "02/2024", "data_ordenacao": "2024-02", "evento": "Novo casamento de Caio; visitas dos avós passam a ser mensais e na casa dele", "quem_afirma": "Irene e Walter", "documento": "pedido_avos.txt", "trecho": "Depois que Caio se casou de novo, em 02/2024", "divergencia": ""},
+   {"data": "outubro de 2024", "data_ordenacao": "2024-10", "evento": "Última visita; Lívia volta chorando após fala da avó, segundo Caio", "quem_afirma": "Caio", "documento": "contestacao_caio.txt", "trecho": "Em outubro de 2024, na última visita", "divergencia": "O pedido dos avós não menciona esse episódio."},
+   {"data": "novembro de 2024", "data_ordenacao": "2024-11", "evento": "Caio deixa de responder às mensagens dos avós", "quem_afirma": "Irene e Walter", "documento": "pedido_avos.txt", "trecho": "Desde novembro de 2024, Caio não responde às mensagens dos avós", "divergencia": ""},
+   {"data": "janeiro de 2025", "data_ordenacao": "2025-01", "evento": "Lívia inicia acompanhamento psicológico", "quem_afirma": "Caio", "documento": "contestacao_caio.txt", "trecho": "Lívia começou acompanhamento psicológico em janeiro de 2025", "divergencia": ""}
+  ],
+  "plano_de_provas": [
+   {"prova": "Estudo psicossocial com Lívia, os avós e o pai", "finalidade": "Avaliar o vínculo com os avós, o episódio de outubro de 2024 e a melhor forma de convivência.", "como_obter": "Requerer ao juízo o estudo pela equipe técnica.", "prioridade": "alta", "apontamentos": ["contradicao-motivo", "lacuna-episodio", "pergunta-frase"]},
+   {"prova": "Relatórios da psicóloga que acompanha Lívia e da psicóloga da escola", "finalidade": "Conhecer a recomendação profissional sobre as visitas.", "como_obter": "Requerer ao juízo que as profissionais informem, preservado o sigilo necessário.", "prioridade": "alta", "apontamentos": ["lacuna-psicologa", "argumento-cautela"]},
+   {"prova": "Registros escolares de quem buscava Lívia até 2023 e testemunhas da rotina com os avós", "finalidade": "Comprovar o vínculo anterior à morte da mãe.", "como_obter": "Pedir à escola os registros de autorização de saída e indicar professores ou vizinhos.", "prioridade": "media", "apontamentos": ["lacuna-vinculo"]},
+   {"prova": "Mensagens enviadas pelos avós a Caio desde 2024", "finalidade": "Mostrar as tentativas de contato e o tom das conversas.", "como_obter": "Exportar as conversas pelo aplicativo, com data e hora.", "prioridade": "media", "apontamentos": ["contradicao-motivo", "lacuna-perguntas-livia"]},
+   {"prova": "Proposta de convivência gradual, fora do tempo de fim de semana do pai", "finalidade": "Responder às objeções sobre o tempo do pai e a presença dele nas visitas.", "como_obter": "Montar com os clientes uma proposta com transição supervisionada e dias alternativos.", "prioridade": "media", "apontamentos": ["argumento-tempo-pai", "argumento-nao-oposicao", "pergunta-fim-de-semana", "pergunta-sem-pai"]}
+  ]
+ },
+ "audiencia": [
+  {
+   "pergunta": "A avó disse a Lívia que a madrasta nunca vai substituir a mãe?",
+   "respostas": [
+    {"rotulo": "Resposta A", "texto": "Isso é invenção dele para afastar a gente da neta.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta acusa o pai de inventar o episódio sem nenhum elemento e ignora a recomendação de cautela.", "pontos_fortes": [], "pontos_frageis": ["Nenhum documento sustenta que o episódio foi inventado.", "O tom de confronto reforça a preocupação do pai."], "sugestao": "Não negue nem admita sem cuidado: peça que o episódio seja avaliado tecnicamente e mostre abertura a orientação profissional.", "apoio_nos_documentos": [{"documento": "contestacao_caio.txt", "trecho": "Lívia voltou chorando"}], "replica": "Então a psicóloga da escola também inventou a recomendação de cautela?"}},
+    {"rotulo": "Resposta B", "texto": "O episódio precisa ser esclarecido com cuidado pela avaliação técnica. Os avós aceitam orientação profissional sobre como falar da mãe de Lívia com ela, e isso não justifica afastá-los da neta.", "avaliacao": {"avaliacao": "convincente", "resumo": "Sua resposta não nega nem admite um fato sem prova, demonstra disposição para proteger Lívia e mantém o pedido de convivência.", "pontos_fortes": ["Não prejulga o episódio.", "Mostra sensibilidade ao luto da criança.", "Separa o episódio do direito de convivência."], "pontos_frageis": [], "sugestao": "Prepare os avós para demonstrar essa abertura também na avaliação técnica.", "apoio_nos_documentos": [{"documento": "contestacao_caio.txt", "trecho": "Caio não se opõe a que Lívia veja os avós"}], "replica": ""}}
+   ]
+  },
+  {
+   "pergunta": "Por que a convivência precisa ser nos fins de semana, o único tempo que o pai tem com a filha?",
+   "respostas": [
+    {"rotulo": "Resposta A", "texto": "O pai já tem a semana inteira com ela.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta contradiz o que Caio afirma sobre trabalhar em turnos durante a semana.", "pontos_fortes": [], "pontos_frageis": ["Ignora a informação sobre o trabalho em turnos.", "Não oferece alternativa."], "sugestao": "Proponha dias ou períodos que não tirem o tempo do pai com a filha.", "apoio_nos_documentos": [{"documento": "contestacao_caio.txt", "trecho": "trabalha em turnos durante a semana"}], "replica": "Os avós sabem os horários de trabalho de Caio?"}},
+    {"rotulo": "Resposta B", "texto": "Os avós aceitam ajustar os dias para não tirar o tempo do pai, por exemplo com um sábado por mês ou uma tarde durante a semana, desde que a convivência aconteça na casa deles, onde Lívia passava as tardes antes.", "avaliacao": {"avaliacao": "parcial", "resumo": "Sua resposta mostra flexibilidade e usa o vínculo anterior, mas mantém a exigência de visitas na casa dos avós sem enfrentar a recomendação de cautela.", "pontos_fortes": ["Responde à objeção sobre o tempo do pai.", "Usa um fato do pedido."], "pontos_frageis": ["Não trata da recomendação de cautela da psicóloga."], "sugestao": "Proponha uma transição supervisionada antes das visitas na casa dos avós.", "apoio_nos_documentos": [{"documento": "pedido_avos.txt", "trecho": "Lívia passava todas as tardes na casa dos avós"}], "replica": "E a recomendação de cautela da psicóloga?"}}
+   ]
+  },
+  {
+   "pergunta": "Por que as visitas precisam acontecer sem a presença do pai?",
+   "respostas": [
+    {"rotulo": "Resposta A", "texto": "Porque o pai não deixa a gente à vontade com a neta.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta coloca o conforto dos avós à frente do cuidado com a criança, num momento de acompanhamento psicológico.", "pontos_fortes": [], "pontos_frageis": ["Não se refere ao interesse de Lívia.", "Reforça a preocupação do pai."], "sugestao": "Explique a importância de um espaço próprio de convivência para Lívia e aceite uma transição gradual.", "apoio_nos_documentos": [{"documento": "contestacao_caio.txt", "trecho": "não aceita as visitas sem sua presença"}], "replica": "E o bem-estar de Lívia fica onde nisso?"}},
+    {"rotulo": "Resposta B", "texto": "Os avós aceitam uma transição: as primeiras visitas podem ser acompanhadas e, com o parecer da psicóloga, passam a acontecer na casa deles, sem a presença do pai.", "avaliacao": {"avaliacao": "parcial", "resumo": "Sua resposta é conciliadora e usa o critério profissional, mas cede parte do pedido original.", "pontos_fortes": ["Respeita a recomendação de cautela.", "Mantém o objetivo de convivência na casa dos avós."], "pontos_frageis": ["Admite que o pedido inicial era prematuro."], "sugestao": "Proponha prazos e critérios claros para a transição.", "apoio_nos_documentos": [{"documento": "contestacao_caio.txt", "trecho": "Caio conversou com a psicóloga da escola, que recomendou cautela"}], "replica": "E quem define quando a transição termina?"}}
+   ]
+  }
+ ]
+}

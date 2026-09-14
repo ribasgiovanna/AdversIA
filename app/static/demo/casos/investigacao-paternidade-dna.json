@@ -1,0 +1,479 @@
+{
+ "id": "investigacao-paternidade-dna",
+ "tipo": "Filiação",
+ "titulo": "Investigação de paternidade sem exame de DNA",
+ "descricao": "Um menino de 12 anos, representado pela mãe, pede o reconhecimento da paternidade e pensão. O suposto pai faltou duas vezes ao exame de DNA e diz que tinha motivos para isso.",
+ "documentos": [
+  {
+   "nome": "contestacao_alexandre.txt",
+   "conteudo": "CONTESTAÇÃO (CASO FICTÍCIO PARA TESTES, CENÁRIO SINTÉTICO — NENHUMA RELAÇÃO COM PESSOAS\nREAIS)\n\nRÉU: Alexandre, em resposta à ação proposta por Mateus, representado por Sílvia.\n\nDOS FATOS\n\nAlexandre reconhece que teve um relacionamento com Sílvia, mas afirma que ele terminou em\nsetembro de 2012, e não em novembro.\n\nNa época em que Mateus foi concebido, Sílvia também se relacionava com outro colega de\ntrabalho, conforme sabiam outros funcionários da empresa.\n\nAlexandre foi à maternidade como colega de trabalho e ajudou com o enxoval por\nsolidariedade, e não por se considerar pai.\n\nNão compareceu ao exame de 14/05/2025 porque estava internado, e ao de 11/06/2025 porque\nnão recebeu a intimação, que foi enviada para um endereço antigo.\n\nDO PEDIDO\n\n1. Rejeição do pedido.\n2. Realização de novo exame de DNA, com intimação no endereço atual.\n"
+  },
+  {
+   "nome": "peticao_silvia.txt",
+   "conteudo": "AÇÃO DE INVESTIGAÇÃO DE PATERNIDADE COM ALIMENTOS (CASO FICTÍCIO PARA TESTES, CENÁRIO\nSINTÉTICO — NENHUMA RELAÇÃO COM PESSOAS REAIS)\n\nAUTOR: Mateus, de 12 anos, representado pela mãe, Sílvia\nRÉU: Alexandre\n\nDOS FATOS\n\nSílvia e Alexandre tiveram um relacionamento de março a novembro de 2012, período em que\ntrabalhavam na mesma empresa. Mateus nasceu em 20/08/2013.\n\nAlexandre visitou Mateus na maternidade e pagou algumas despesas do enxoval, mas nunca\nregistrou o filho.\n\nO juízo determinou exame de DNA, marcado para 14/05/2025 e remarcado para 11/06/2025.\nAlexandre não compareceu a nenhuma das datas e não apresentou justificativa.\n\nDO PEDIDO\n\n1. Declaração de que Alexandre é pai de Mateus, com registro na certidão de nascimento.\n2. Fixação de pensão alimentícia de 30% dos rendimentos de Alexandre.\n"
+  }
+ ],
+ "tese": "Ação de investigação de paternidade com alimentos. A tese a ser testada é a de Mateus,\nrepresentado pela mãe, Sílvia: reconhecimento de que Alexandre é o pai, com base no\nrelacionamento de março a novembro de 2012, nas atitudes dele depois do nascimento e nas\nduas ausências ao exame de DNA, e fixação de pensão de 30% dos rendimentos dele.",
+ "relatorio": {
+  "resumo_do_caso": "Lemos 2 documentos e identificamos 3 partes, 9 fatos relevantes e 2 pedidos.",
+  "tese_analisada": "Ação de investigação de paternidade com alimentos. A tese a ser testada é a de Mateus,\nrepresentado pela mãe, Sílvia: reconhecimento de que Alexandre é o pai, com base no\nrelacionamento de março a novembro de 2012, nas atitudes dele depois do nascimento e nas\nduas ausências ao exame de DNA, e fixação de pensão de 30% dos rendimentos dele.",
+  "findings": [
+   {
+    "id": "contradicao-fim-relacionamento",
+    "categoria": "contradicao",
+    "texto": "Sílvia afirma que o relacionamento durou até novembro de 2012; Alexandre diz que terminou em setembro. Como Mateus nasceu em 20/08/2013, a data do fim pesa sobre a possibilidade de concepção no período.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "peticao_silvia.txt",
+      "trecho": "tiveram um relacionamento de março a novembro de 2012",
+      "pagina": null,
+      "conferido": true
+     },
+     {
+      "documento": "contestacao_alexandre.txt",
+      "trecho": "ele terminou em setembro de 2012, e não em novembro",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "contradicao-ausencias",
+    "categoria": "contradicao",
+    "texto": "A petição diz que Alexandre faltou aos dois exames sem justificativa; ele alega internação na primeira data e intimação enviada a endereço antigo na segunda.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "peticao_silvia.txt",
+      "trecho": "Alexandre não compareceu a nenhuma das datas e não apresentou justificativa",
+      "pagina": null,
+      "conferido": true
+     },
+     {
+      "documento": "contestacao_alexandre.txt",
+      "trecho": "Não compareceu ao exame de 14/05/2025 porque estava internado, e ao de 11/06/2025 porque não recebeu a intimação",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "contradicao-maternidade",
+    "categoria": "contradicao",
+    "texto": "A petição usa a visita à maternidade e o enxoval como sinais de paternidade; Alexandre diz que agiu como colega de trabalho, por solidariedade.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "peticao_silvia.txt",
+      "trecho": "Alexandre visitou Mateus na maternidade e pagou algumas despesas do enxoval",
+      "pagina": null,
+      "conferido": true
+     },
+     {
+      "documento": "contestacao_alexandre.txt",
+      "trecho": "ajudou com o enxoval por solidariedade, e não por se considerar pai",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-internacao",
+    "categoria": "lacuna_probatoria",
+    "texto": "A internação em 14/05/2025 e a mudança de endereço são apenas afirmadas; nenhum documento acompanha a contestação.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "contestacao_alexandre.txt",
+      "trecho": "que foi enviada para um endereço antigo",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-relacionamento",
+    "categoria": "lacuna_probatoria",
+    "texto": "Não há mensagens, fotos ou testemunhas que situem o relacionamento no tempo.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "peticao_silvia.txt",
+      "trecho": "período em que trabalhavam na mesma empresa",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-rendimentos",
+    "categoria": "lacuna_probatoria",
+    "texto": "O pedido de pensão de 30% não traz nenhuma informação sobre os rendimentos de Alexandre nem sobre as necessidades de Mateus.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "peticao_silvia.txt",
+      "trecho": "Fixação de pensão alimentícia de 30% dos rendimentos de Alexandre",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-outro-relacionamento",
+    "categoria": "contra_argumento",
+    "texto": "Alexandre sustentará que Sílvia se relacionava com outro colega na época da concepção, para afastar a presunção criada pelas ausências ao exame.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "contestacao_alexandre.txt",
+      "trecho": "Sílvia também se relacionava com outro colega de trabalho",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-novo-exame",
+    "categoria": "contra_argumento",
+    "texto": "Ao pedir um novo exame, Alexandre tentará mostrar que não está fugindo da prova, o que enfraquece o uso das ausências contra ele.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "contestacao_alexandre.txt",
+      "trecho": "Realização de novo exame de DNA, com intimação no endereço atual",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-data-fim",
+    "categoria": "pergunta_dificil",
+    "texto": "Que prova mostra que o relacionamento durou até novembro de 2012?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "peticao_silvia.txt",
+      "trecho": "de março a novembro de 2012",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-outro-colega",
+    "categoria": "pergunta_dificil",
+    "texto": "Sílvia se relacionava com outra pessoa da empresa na época em que Mateus foi concebido?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "contestacao_alexandre.txt",
+      "trecho": "conforme sabiam outros funcionários da empresa",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-registro",
+    "categoria": "pergunta_dificil",
+    "texto": "Por que a ação só foi proposta quando Mateus já tinha 12 anos?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "peticao_silvia.txt",
+      "trecho": "Mateus, de 12 anos",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-novo-exame",
+    "categoria": "pergunta_dificil",
+    "texto": "Se Alexandre aceita fazer o exame agora, há algum motivo para se opor a uma nova data?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "contestacao_alexandre.txt",
+      "trecho": "Realização de novo exame de DNA",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   }
+  ],
+  "perguntas_dificeis": [
+   "Que prova mostra que o relacionamento durou até novembro de 2012?",
+   "Sílvia se relacionava com outra pessoa da empresa na época em que Mateus foi concebido?",
+   "Por que a ação só foi proposta quando Mateus já tinha 12 anos?",
+   "Se Alexandre aceita fazer o exame agora, há algum motivo para se opor a uma nova data?"
+  ],
+  "linha_do_tempo": [
+   {
+    "data": "março de 2012",
+    "data_ordenacao": "2012-03",
+    "evento": "Início do relacionamento entre Sílvia e Alexandre",
+    "quem_afirma": "Sílvia",
+    "documento": "peticao_silvia.txt",
+    "trecho": "tiveram um relacionamento de março a novembro de 2012",
+    "trecho_conferido": true,
+    "divergencia": ""
+   },
+   {
+    "data": "setembro de 2012",
+    "data_ordenacao": "2012-09",
+    "evento": "Fim do relacionamento, segundo Alexandre",
+    "quem_afirma": "Alexandre",
+    "documento": "contestacao_alexandre.txt",
+    "trecho": "ele terminou em setembro de 2012, e não em novembro",
+    "trecho_conferido": true,
+    "divergencia": "Sílvia situa o fim em novembro de 2012."
+   },
+   {
+    "data": "20/08/2013",
+    "data_ordenacao": "2013-08-20",
+    "evento": "Nascimento de Mateus",
+    "quem_afirma": "Sílvia",
+    "documento": "peticao_silvia.txt",
+    "trecho": "Mateus nasceu em 20/08/2013",
+    "trecho_conferido": true,
+    "divergencia": ""
+   },
+   {
+    "data": "14/05/2025",
+    "data_ordenacao": "2025-05-14",
+    "evento": "Primeira data do exame de DNA; Alexandre não comparece",
+    "quem_afirma": "Sílvia",
+    "documento": "peticao_silvia.txt",
+    "trecho": "marcado para 14/05/2025",
+    "trecho_conferido": true,
+    "divergencia": "Alexandre alega que estava internado."
+   },
+   {
+    "data": "11/06/2025",
+    "data_ordenacao": "2025-06-11",
+    "evento": "Segunda data do exame de DNA; Alexandre não comparece",
+    "quem_afirma": "Sílvia",
+    "documento": "peticao_silvia.txt",
+    "trecho": "remarcado para 11/06/2025",
+    "trecho_conferido": true,
+    "divergencia": "Alexandre alega intimação enviada a endereço antigo."
+   }
+  ],
+  "plano_de_provas": [
+   {
+    "prova": "Novo exame de DNA com intimação pessoal no endereço atual",
+    "finalidade": "Resolver a paternidade com a prova mais segura e retirar do réu a justificativa das ausências.",
+    "como_obter": "Concordar com a nova data e pedir que conste a advertência sobre as consequências de nova ausência.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "contradicao-ausencias",
+     "argumento-novo-exame",
+     "argumento-outro-relacionamento",
+     "pergunta-novo-exame"
+    ]
+   },
+   {
+    "prova": "Mensagens, fotos e testemunhas de colegas sobre o período do relacionamento",
+    "finalidade": "Mostrar até quando o relacionamento durou.",
+    "como_obter": "Reunir com Sílvia registros de 2012 e indicar colegas da empresa.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "contradicao-fim-relacionamento",
+     "lacuna-relacionamento",
+     "pergunta-data-fim",
+     "pergunta-outro-colega"
+    ]
+   },
+   {
+    "prova": "Cópias da intimação e do endereço usado; pedido de comprovante da internação",
+    "finalidade": "Verificar se as justificativas das ausências se sustentam.",
+    "como_obter": "Consultar os autos e requerer que Alexandre junte o documento da internação.",
+    "prioridade": "media",
+    "apontamentos": [
+     "lacuna-internacao",
+     "contradicao-ausencias"
+    ]
+   },
+   {
+    "prova": "Pedido de informação sobre rendimentos de Alexandre e planilha de gastos de Mateus",
+    "finalidade": "Dar base concreta ao percentual de pensão pedido.",
+    "como_obter": "Requerer ofício ao empregador e montar a lista de despesas com comprovantes.",
+    "prioridade": "media",
+    "apontamentos": [
+     "lacuna-rendimentos"
+    ]
+   },
+   {
+    "prova": "Relatos sobre a visita à maternidade e comprovantes do enxoval",
+    "finalidade": "Mostrar o contexto das atitudes de Alexandre após o nascimento.",
+    "como_obter": "Indicar quem presenciou a visita e reunir recibos ou mensagens da época.",
+    "prioridade": "baixa",
+    "apontamentos": [
+     "contradicao-maternidade"
+    ]
+   }
+  ],
+  "avisos": [
+   "Este relatório não é parecer jurídico: revise cada apontamento antes de usá-lo.",
+   "Versão de demonstração: use apenas documentos fictícios ou anonimizados."
+  ]
+ },
+ "audiencia": [
+  {
+   "pergunta": "Que prova mostra que o relacionamento durou até novembro de 2012?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Todo mundo na empresa sabia que a gente estava junto.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta não indica quem sabia, nem até quando, e o réu usa o mesmo tipo de argumento a favor dele.",
+      "pontos_fortes": [],
+      "pontos_frageis": [
+       "Nenhuma testemunha identificada.",
+       "Não situa o fim do relacionamento no tempo."
+      ],
+      "sugestao": "Indique pessoas e registros concretos do período de setembro a novembro de 2012.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_alexandre.txt",
+        "trecho": "conforme sabiam outros funcionários da empresa",
+        "conferido": true
+       }
+      ],
+      "replica": "E os mesmos funcionários sabiam do outro relacionamento?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "A data exata do fim fica em segundo plano diante do exame de DNA. Concordamos com o novo exame, com intimação no endereço atual, e vamos juntar mensagens de outubro e novembro de 2012.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta desloca a discussão para a prova decisiva, aceita a nova data pedida pelo réu e ainda indica prova sobre o período.",
+      "pontos_fortes": [
+       "Retira do réu a justificativa das ausências.",
+       "Não depende só da memória sobre datas.",
+       "Indica registros concretos."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Confira antes se as mensagens de outubro e novembro realmente existem.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_alexandre.txt",
+        "trecho": "Realização de novo exame de DNA, com intimação no endereço atual",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Sílvia se relacionava com outra pessoa da empresa na época em que Mateus foi concebido?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Isso é uma ofensa e não merece resposta.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta evita a pergunta, o que tende a ser lido como confirmação.",
+      "pontos_fortes": [],
+      "pontos_frageis": [
+       "Não nega nem esclarece.",
+       "Deixa o argumento do réu sem resposta."
+      ],
+      "sugestao": "Responda com objetividade e lembre que o exame de DNA encerra a dúvida.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_alexandre.txt",
+        "trecho": "Sílvia também se relacionava com outro colega de trabalho",
+        "conferido": true
+       }
+      ],
+      "replica": "Então a senhora não nega?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Sílvia nega. De todo modo, é justamente para afastar qualquer dúvida que o exame de DNA existe, e Mateus quer fazê-lo.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta nega com calma e aponta a solução, mas não traz elemento que contradiga o que o réu afirma sobre os colegas.",
+      "pontos_fortes": [
+       "Resposta direta.",
+       "Coerente com o pedido de exame."
+      ],
+      "pontos_frageis": [
+       "A negativa fica sem apoio além da palavra de Sílvia."
+      ],
+      "sugestao": "Peça que Alexandre indique quem seriam os funcionários que sabiam.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_silvia.txt",
+        "trecho": "O juízo determinou exame de DNA",
+        "conferido": true
+       }
+      ],
+      "replica": "E quem era o outro colega?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Por que a ação só foi proposta quando Mateus já tinha 12 anos?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Porque só agora a mãe decidiu correr atrás.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta sugere desinteresse e não explica a demora.",
+      "pontos_fortes": [
+       "É sincera."
+      ],
+      "pontos_frageis": [
+       "Pode ser usada para reforçar a dúvida sobre a paternidade."
+      ],
+      "sugestao": "Explique o contexto da demora e lembre que o direito ao reconhecimento é do filho.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_silvia.txt",
+        "trecho": "nunca registrou o filho",
+        "conferido": true
+       }
+      ],
+      "replica": "E durante 12 anos a senhora nunca pediu nada a ele?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "O reconhecimento é um direito de Mateus, que pode ser exercido a qualquer tempo. A demora não muda o que o exame de DNA vai mostrar.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta coloca o foco no direito do filho, mas não explica por que a ação demorou.",
+      "pontos_fortes": [
+       "Tira o foco da conduta da mãe."
+      ],
+      "pontos_frageis": [
+       "A falta de explicação pode seguir sendo explorada."
+      ],
+      "sugestao": "Prepare com Sílvia uma explicação breve e verdadeira para a demora.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_silvia.txt",
+        "trecho": "Declaração de que Alexandre é pai de Mateus",
+        "conferido": true
+       }
+      ],
+      "replica": "E por que ela não pediu antes?"
+     }
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,106 @@
+{
+ "id": "morte-escritura",
+ "tipo": "Pensão por morte",
+ "ordem": 2,
+ "titulo": "Pensão combinada em cartório",
+ "descricao": "A ex-esposa pede pensão por morte com base na pensão alimentícia definida em escritura de divórcio.",
+ "pasta": "case_familia_12",
+ "relatorio": {
+  "resumo_do_caso": "Lemos 1 documento e identificamos 2 partes, 4 fatos relevantes e 1 pedido.",
+  "findings": [
+   {
+    "id": "lacuna-escritura",
+    "categoria": "lacuna_probatoria",
+    "texto": "A escritura pública do divórcio não foi juntada: não se conhecem o valor, a data nem eventual prazo da pensão.",
+    "provenance": "INFERENCE",
+    "origem": [{"documento": "pedido_pensao_por_morte.txt", "trecho": "estabelecida por escritura pública em divórcio consensual extrajudicial"}]
+   },
+   {
+    "id": "lacuna-pagamento",
+    "categoria": "lacuna_probatoria",
+    "texto": "O documento diz que ela recebia a pensão, mas não há extratos que mostrem os pagamentos até a morte do ex-marido.",
+    "provenance": "INFERENCE",
+    "origem": [{"documento": "pedido_pensao_por_morte.txt", "trecho": "recebia pensão alimentícia do ex-marido"}]
+   },
+   {
+    "id": "lacuna-dependencia",
+    "categoria": "lacuna_probatoria",
+    "texto": "Não há informação sobre a renda da ex-esposa nem sobre o quanto a pensão representava no sustento dela.",
+    "provenance": "INFERENCE",
+    "origem": [{"documento": "pedido_pensao_por_morte.txt", "trecho": "Não seria razoável perder a proteção previdenciária"}]
+   },
+   {
+    "id": "argumento-literalidade",
+    "categoria": "contra_argumento",
+    "texto": "O órgão responsável pelo benefício sustentará que o texto aplicável fala em pensão fixada judicialmente e que a pensão fixada em cartório não se enquadra nessa hipótese.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "pedido_pensao_por_morte.txt", "trecho": "menciona o ex-cônjuge divorciado que recebesse pensão alimentícia fixada judicialmente"}]
+   },
+   {
+    "id": "argumento-validade",
+    "categoria": "contra_argumento",
+    "texto": "A outra parte dirá que a validade da pensão entre os ex-cônjuges não se confunde com o requisito para o benefício previdenciário, que teria regras próprias.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "pedido_pensao_por_morte.txt", "trecho": "A pensão alimentícia era válida"}]
+   },
+   {
+    "id": "argumento-cessacao",
+    "categoria": "contra_argumento",
+    "texto": "Se os pagamentos tiverem parado antes da morte, a outra parte dirá que não havia dependência econômica atual a ser protegida.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "pedido_pensao_por_morte.txt", "trecho": "Quando ele morreu, ela pediu também pensão por morte"}]
+   },
+   {
+    "id": "pergunta-pagamento",
+    "categoria": "pergunta_dificil",
+    "texto": "A pensão estava sendo paga até a morte do ex-marido? Onde isso está comprovado?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "pedido_pensao_por_morte.txt", "trecho": "recebia pensão alimentícia do ex-marido"}]
+   },
+   {
+    "id": "pergunta-literal",
+    "categoria": "pergunta_dificil",
+    "texto": "Por que a pensão fixada em cartório deveria ser tratada como a fixada pelo juiz, se o texto fala em fixação judicial?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "pedido_pensao_por_morte.txt", "trecho": "neste caso, a pensão foi fixada por escritura pública, não por decisão judicial"}]
+   },
+   {
+    "id": "pergunta-escritura",
+    "categoria": "pergunta_dificil",
+    "texto": "Qual era o valor da pensão na escritura, e havia prazo para ela terminar?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "pedido_pensao_por_morte.txt", "trecho": "estabelecida por escritura pública"}]
+   }
+  ],
+  "linha_do_tempo": [],
+  "plano_de_provas": [
+   {"prova": "Certidão da escritura pública de divórcio", "finalidade": "Mostrar o valor, a data e as condições da pensão.", "como_obter": "Solicitar certidão no cartório de notas em que a escritura foi lavrada.", "prioridade": "alta", "apontamentos": ["lacuna-escritura", "pergunta-escritura"]},
+   {"prova": "Extratos dos depósitos da pensão até a data da morte", "finalidade": "Comprovar que a pensão era efetivamente paga e recebida.", "como_obter": "Extratos bancários da própria cliente.", "prioridade": "alta", "apontamentos": ["lacuna-pagamento", "argumento-cessacao", "pergunta-pagamento"]},
+   {"prova": "Decisão do órgão responsável pelo benefício que negou o pedido, se houver", "finalidade": "Conhecer exatamente o fundamento usado contra a ex-esposa.", "como_obter": "Pedir cópia do processo administrativo.", "prioridade": "media", "apontamentos": ["argumento-literalidade", "argumento-validade", "pergunta-literal"]},
+   {"prova": "Comprovantes de renda e despesas da ex-esposa", "finalidade": "Mostrar o peso da pensão no sustento dela.", "como_obter": "Reunir com a cliente extratos e contas fixas.", "prioridade": "media", "apontamentos": ["lacuna-dependencia"]}
+  ]
+ },
+ "audiencia": [
+  {
+   "pergunta": "A pensão estava sendo paga até a morte do ex-marido? Onde isso está comprovado?",
+   "respostas": [
+    {"rotulo": "Resposta A", "texto": "Ele pagava todo mês, sempre, sem falhar.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta afirma regularidade absoluta sem apresentar nenhum comprovante.", "pontos_fortes": ["Coerente com o fato de que ela recebia a pensão."], "pontos_frageis": ["Nenhum extrato está nos autos.", "\"Sem falhar\" amplia o que o documento diz."], "sugestao": "Indique os extratos bancários como prova e comprometa-se a juntá-los.", "apoio_nos_documentos": [{"documento": "pedido_pensao_por_morte.txt", "trecho": "recebia pensão alimentícia do ex-marido"}], "replica": "E qual foi o último depósito?"}},
+    {"rotulo": "Resposta B", "texto": "Vamos juntar os extratos com os depósitos da pensão até a data da morte, para mostrar que ela era efetivamente paga.", "avaliacao": {"avaliacao": "parcial", "resumo": "Sua resposta indica a prova certa, mas um requisito importante ainda não está demonstrado.", "pontos_fortes": ["Prova simples e disponível à cliente."], "pontos_frageis": ["Até a juntada, a dependência atual continua sem prova."], "sugestao": "Separe os extratos dos últimos 12 meses antes da morte.", "apoio_nos_documentos": [{"documento": "pedido_pensao_por_morte.txt", "trecho": "A pensão alimentícia era válida"}], "replica": "E se houver meses sem depósito?"}}
+   ]
+  },
+  {
+   "pergunta": "Por que a pensão fixada em cartório deveria ser tratada como a fixada pelo juiz, se o texto fala em fixação judicial?",
+   "respostas": [
+    {"rotulo": "Resposta A", "texto": "Cartório e juiz são a mesma coisa.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta faz uma equiparação simplista que ignora a distinção levantada e não usa os argumentos do próprio pedido.", "pontos_fortes": [], "pontos_frageis": ["Não enfrenta a literalidade do texto.", "Afirmação genérica e fácil de rebater."], "sugestao": "Explique que a escritura e a decisão judicial cumprem a mesma função de fixar a pensão, e que a via escolhida não apaga a obrigação.", "apoio_nos_documentos": [{"documento": "pedido_pensao_por_morte.txt", "trecho": "O fato de ter sido estabelecida por escritura pública não eliminava sua existência"}], "replica": "Então o texto que fala em fixação judicial deve ser ignorado?"}},
+    {"rotulo": "Resposta B", "texto": "A escritura e a decisão judicial cumprem a mesma função: fixar a pensão. A diferença é só a via escolhida pelo casal. A pensão existia, era válida e era recebida, e não faz sentido que a ex-esposa perca a proteção por ter feito o divórcio de forma consensual em cartório.", "avaliacao": {"avaliacao": "convincente", "resumo": "Sua resposta enfrenta a literalidade com um argumento de função, coerente com os três argumentos do pedido.", "pontos_fortes": ["Usa os argumentos que constam do documento.", "Explica por que a forma não deveria prevalecer sobre a substância."], "pontos_frageis": [], "sugestao": "Reforce com a prova de que a pensão era efetivamente paga, que torna o argumento mais concreto.", "apoio_nos_documentos": [{"documento": "pedido_pensao_por_morte.txt", "trecho": "Não seria razoável perder a proteção previdenciária simplesmente porque o divórcio foi realizado extrajudicialmente"}], "replica": ""}}
+   ]
+  },
+  {
+   "pergunta": "Qual era o valor da pensão na escritura, e havia prazo para ela terminar?",
+   "respostas": [
+    {"rotulo": "Resposta A", "texto": "Não lembro o valor, mas era alto e não tinha prazo.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta não informa o valor e afirma a ausência de prazo sem o documento.", "pontos_fortes": [], "pontos_frageis": ["Nenhum valor é indicado.", "A escritura não está nos autos para confirmar a falta de prazo."], "sugestao": "Obtenha a certidão da escritura antes de responder sobre valor e prazo.", "apoio_nos_documentos": [{"documento": "pedido_pensao_por_morte.txt", "trecho": "estabelecida por escritura pública"}], "replica": "Como a senhora sabe que não havia prazo sem ter a escritura?"}},
+    {"rotulo": "Resposta B", "texto": "Vamos juntar a certidão da escritura, que traz o valor e as condições da pensão, inclusive se havia prazo.", "avaliacao": {"avaliacao": "parcial", "resumo": "Sua resposta é prudente e indica o documento certo, mas dados essenciais continuam desconhecidos.", "pontos_fortes": ["Não afirma nada sem prova."], "pontos_frageis": ["Valor e prazo seguem fora dos autos."], "sugestao": "Peça a certidão com urgência ao cartório de notas.", "apoio_nos_documentos": [{"documento": "pedido_pensao_por_morte.txt", "trecho": "estabelecida por escritura pública em divórcio consensual extrajudicial"}], "replica": "E se a escritura previa pensão só por alguns anos?"}}
+   ]
+  }
+ ]
+}

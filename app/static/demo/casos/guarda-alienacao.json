@@ -1,0 +1,371 @@
+{
+ "id": "guarda-alienacao",
+ "tipo": "Guarda e convivência",
+ "titulo": "Alegação de alienação parental",
+ "descricao": "O pai pede a guarda unilateral alegando que a mãe pratica alienação parental.",
+ "documentos": [
+  {
+   "nome": "alegacoes_mae.txt",
+   "conteudo": "MANIFESTAÇÃO DA GENITORA — RECURSO (CASO FICTÍCIO PARA TESTES, INSPIRADO EM PADRÃO DE\nJURISPRUDÊNCIA SOBRE ALIENAÇÃO PARENTAL — NENHUMA RELAÇÃO COM PESSOAS OU PROCESSOS REAIS\nESPECÍFICOS)\n\nEm primeiro grau, foi determinada guarda compartilhada, mas a criança permaneceu morando\ncom o pai. As visitas da mãe foram regulamentadas e sua ampliação ficou condicionada à\nrealização de acompanhamento psicoterápico. A mãe recorreu dessa decisão.\n\nArgumentos da mãe:\n1. A guarda compartilhada é a regra prevista no Código Civil.\n2. O simples conflito entre os pais não seria suficiente para afastá-la.\n3. As restrições à convivência materna seriam excessivas.\n"
+  },
+  {
+   "nome": "alegacoes_pai.txt",
+   "conteudo": "MANIFESTAÇÃO DO GENITOR — AÇÃO DE GUARDA (CASO FICTÍCIO PARA TESTES, INSPIRADO EM PADRÃO\nDE JURISPRUDÊNCIA SOBRE ALIENAÇÃO PARENTAL — NENHUMA RELAÇÃO COM PESSOAS OU PROCESSOS\nREAIS ESPECÍFICOS)\n\nO pai entrou na Justiça buscando a guarda da filha e alegou que a mãe praticava atos de\nalienação parental.\n\nArgumentos do pai:\n1. A mãe estaria praticando atos de alienação parental.\n2. A convivência da criança com a mãe precisava ser analisada considerando o bem-estar\n   da filha.\n3. A guarda compartilhada não deveria ser aplicada automaticamente quando pudesse\n   prejudicar a criança.\n"
+  }
+ ],
+ "tese": "Ação de guarda com alegação de alienação parental. Tese a ser testada: a do pai —\nconcessão da guarda unilateral em razão de suposta alienação parental praticada pela\nmãe, e de que a guarda compartilhada não deveria ser aplicada automaticamente quando\npudesse prejudicar o bem-estar da criança.",
+ "relatorio": {
+  "resumo_do_caso": "Lemos 2 documentos e identificamos 3 partes, 5 fatos relevantes e 2 pedidos.",
+  "tese_analisada": "Ação de guarda com alegação de alienação parental. Tese a ser testada: a do pai —\nconcessão da guarda unilateral em razão de suposta alienação parental praticada pela\nmãe, e de que a guarda compartilhada não deveria ser aplicada automaticamente quando\npudesse prejudicar o bem-estar da criança.",
+  "findings": [
+   {
+    "id": "lacuna-atos",
+    "categoria": "lacuna_probatoria",
+    "texto": "A alienação parental é afirmada de forma genérica: nenhum ato concreto, data ou episódio é descrito.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "alegacoes_pai.txt",
+      "trecho": "A mãe estaria praticando atos de alienação parental",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-laudo",
+    "categoria": "lacuna_probatoria",
+    "texto": "Não há laudo psicológico, estudo psicossocial ou outra prova técnica, que costuma ser indispensável para reconhecer alienação parental.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "alegacoes_pai.txt",
+      "trecho": "alegou que a mãe praticava atos de alienação parental",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-prejuizo",
+    "categoria": "lacuna_probatoria",
+    "texto": "O pai fala em analisar o bem-estar da filha, mas não indica nenhum sinal de prejuízo, como relatório escolar, pediátrico ou psicológico.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "alegacoes_pai.txt",
+      "trecho": "A convivência da criança com a mãe precisava ser analisada considerando o bem-estar da filha",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-acompanhamento",
+    "categoria": "lacuna_probatoria",
+    "texto": "Os documentos não informam se a mãe iniciou o acompanhamento psicoterápico ao qual a ampliação das visitas foi condicionada.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "alegacoes_mae.txt",
+      "trecho": "sua ampliação ficou condicionada à realização de acompanhamento psicoterápico",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-regra",
+    "categoria": "contra_argumento",
+    "texto": "A mãe sustentará que a guarda compartilhada é a regra e que afastá-la exige demonstração concreta de prejuízo, que ainda não existe nos autos.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "alegacoes_mae.txt",
+      "trecho": "A guarda compartilhada é a regra prevista no Código Civil",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-conflito",
+    "categoria": "contra_argumento",
+    "texto": "Sem atos concretos, a acusação de alienação parental pode ser lida como simples conflito entre os pais, que por si só não afasta a guarda compartilhada.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "alegacoes_mae.txt",
+      "trecho": "O simples conflito entre os pais não seria suficiente para afastá-la",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-restricoes",
+    "categoria": "contra_argumento",
+    "texto": "A mãe dirá que as restrições já impostas à convivência são excessivas, o que torna ainda mais difícil justificar uma guarda unilateral.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "alegacoes_mae.txt",
+      "trecho": "As restrições à convivência materna seriam excessivas",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-atos",
+    "categoria": "pergunta_dificil",
+    "texto": "Quais atos concretos de alienação parental a mãe praticou, e em que datas?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "alegacoes_pai.txt",
+      "trecho": "A mãe estaria praticando atos de alienação parental",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-laudo",
+    "categoria": "pergunta_dificil",
+    "texto": "Existe algum laudo ou estudo técnico que aponte alienação parental?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "alegacoes_pai.txt",
+      "trecho": "alegou que a mãe praticava atos de alienação parental",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-conflito",
+    "categoria": "pergunta_dificil",
+    "texto": "O que diferencia esta situação de um conflito comum entre pais separados?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "alegacoes_mae.txt",
+      "trecho": "O simples conflito entre os pais",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   }
+  ],
+  "perguntas_dificeis": [
+   "Quais atos concretos de alienação parental a mãe praticou, e em que datas?",
+   "Existe algum laudo ou estudo técnico que aponte alienação parental?",
+   "O que diferencia esta situação de um conflito comum entre pais separados?"
+  ],
+  "linha_do_tempo": [],
+  "plano_de_provas": [
+   {
+    "prova": "Perícia psicológica ou estudo psicossocial com a família",
+    "finalidade": "Apurar tecnicamente se há alienação parental e qual o efeito sobre a filha.",
+    "como_obter": "Requerer ao juízo a perícia pela equipe técnica ou por perito nomeado.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "lacuna-laudo",
+     "lacuna-atos",
+     "argumento-conflito",
+     "pergunta-laudo"
+    ]
+   },
+   {
+    "prova": "Registro dos episódios alegados, com datas: mensagens, e-mails, relatos da escola",
+    "finalidade": "Transformar a acusação genérica em fatos verificáveis.",
+    "como_obter": "Reunir com o cliente as mensagens e pedir à escola relatórios sobre o comportamento da criança.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "lacuna-atos",
+     "pergunta-atos",
+     "pergunta-conflito"
+    ]
+   },
+   {
+    "prova": "Relatórios escolar e pediátrico sobre o bem-estar da criança",
+    "finalidade": "Mostrar se há prejuízo concreto, e não apenas conflito entre os pais.",
+    "como_obter": "Solicitar à escola e ao pediatra relatórios atualizados.",
+    "prioridade": "media",
+    "apontamentos": [
+     "lacuna-prejuizo",
+     "argumento-restricoes",
+     "argumento-regra"
+    ]
+   },
+   {
+    "prova": "Comprovação, pela mãe, do acompanhamento psicoterápico determinado em primeiro grau",
+    "finalidade": "Saber se a condição para ampliar as visitas foi cumprida.",
+    "como_obter": "Requerer que a mãe junte declaração do profissional responsável.",
+    "prioridade": "media",
+    "apontamentos": [
+     "lacuna-acompanhamento"
+    ]
+   }
+  ],
+  "avisos": [
+   "Este relatório não é parecer jurídico: revise cada apontamento antes de usá-lo.",
+   "Versão de demonstração: use apenas documentos fictícios ou anonimizados."
+  ]
+ },
+ "audiencia": [
+  {
+   "pergunta": "Quais atos concretos de alienação parental a mãe praticou, e em que datas?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Ela fala mal do pai para a criança o tempo todo, todo mundo vê.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta descreve comportamentos que não aparecem em nenhum documento e não traz nenhuma data.",
+      "pontos_fortes": [],
+      "pontos_frageis": [
+       "Nenhum documento relata que a mãe fala mal do pai.",
+       "\"Todo mundo vê\" não indica testemunhas nem registros."
+      ],
+      "sugestao": "Reconheça que os episódios ainda precisam ser documentados e requeira a perícia psicológica.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "alegacoes_pai.txt",
+        "trecho": "A mãe estaria praticando atos de alienação parental",
+        "conferido": true
+       }
+      ],
+      "replica": "Quem é esse \"todo mundo\", e por que ninguém foi indicado como testemunha?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Os episódios serão demonstrados por mensagens e relatórios da escola, e requeremos perícia psicológica para avaliá-los. O pai não pede que a alienação seja presumida.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é prudente e indica as provas corretas, mas não descreve nenhum ato concreto, que é o que a pergunta pede.",
+      "pontos_fortes": [
+       "Não afirma fatos ausentes dos documentos.",
+       "Pede a prova técnica adequada."
+      ],
+      "pontos_frageis": [
+       "A acusação continua sem nenhum episódio descrito."
+      ],
+      "sugestao": "Antes da audiência, levante com o cliente dois ou três episódios com datas e registros.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "alegacoes_pai.txt",
+        "trecho": "alegou que a mãe praticava atos de alienação parental",
+        "conferido": true
+       }
+      ],
+      "replica": "Então hoje o senhor não sabe citar um único episódio?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Existe algum laudo ou estudo técnico que aponte alienação parental?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Não precisa de laudo, a alienação é evidente.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta dispensa a prova técnica justamente no ponto em que ela é mais necessária.",
+      "pontos_fortes": [],
+      "pontos_frageis": [
+       "Nenhum documento torna a alienação \"evidente\".",
+       "Enfraquece o pedido de guarda unilateral."
+      ],
+      "sugestao": "Admita que ainda não há laudo e peça a perícia antes de qualquer decisão definitiva.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "alegacoes_mae.txt",
+        "trecho": "O simples conflito entre os pais não seria suficiente para afastá-la",
+        "conferido": true
+       }
+      ],
+      "replica": "Se é evidente, por que o juízo de primeiro grau manteve a guarda compartilhada?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Ainda não há laudo nos autos, e é por isso que o pai requer a perícia psicológica antes de qualquer decisão definitiva. O próprio primeiro grau condicionou a ampliação das visitas a acompanhamento psicoterápico.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta reconhece a falta de laudo, pede a prova certa e usa um fato dos autos que mostra a preocupação do juízo com a convivência.",
+      "pontos_fortes": [
+       "Não afirma nada além dos documentos.",
+       "Usa a condição imposta em primeiro grau a favor do pedido de perícia."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Mantenha a resposta e peça que a mãe comprove se iniciou o acompanhamento.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "alegacoes_mae.txt",
+        "trecho": "sua ampliação ficou condicionada à realização de acompanhamento psicoterápico",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "O que diferencia esta situação de um conflito comum entre pais separados?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Não é conflito, é alienação, ponto.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta repete a acusação sem oferecer nenhum critério ou fato que a diferencie de um conflito.",
+      "pontos_fortes": [],
+      "pontos_frageis": [
+       "Não indica nenhum fato.",
+       "Deixa sem resposta o principal argumento da mãe."
+      ],
+      "sugestao": "Explique que a diferença está nos atos dirigidos à criança e no efeito sobre ela, que a perícia vai apurar.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "alegacoes_mae.txt",
+        "trecho": "O simples conflito entre os pais não seria suficiente para afastá-la",
+        "conferido": true
+       }
+      ],
+      "replica": "E em que a filha foi prejudicada até agora?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "A diferença estará nos atos concretos e no efeito sobre a filha, que a perícia vai apurar. O pai não pede que o conflito, por si só, afaste a guarda compartilhada.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta aceita o critério correto e evita o exagero, mas ainda não aponta nenhum efeito concreto sobre a criança.",
+      "pontos_fortes": [
+       "Reconhece que conflito, sozinho, não basta.",
+       "Indica a prova técnica."
+      ],
+      "pontos_frageis": [
+       "Sem relatórios sobre a criança, o prejuízo continua apenas alegado."
+      ],
+      "sugestao": "Junte relatórios escolar e pediátrico que mostrem o estado atual da filha.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "alegacoes_pai.txt",
+        "trecho": "A guarda compartilhada não deveria ser aplicada automaticamente quando pudesse prejudicar a criança",
+        "conferido": true
+       }
+      ],
+      "replica": "E se a perícia concluir que a filha está bem com os dois?"
+     }
+    }
+   ]
+  }
+ ]
+}

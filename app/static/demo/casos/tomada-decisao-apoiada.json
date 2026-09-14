@@ -1,0 +1,430 @@
+{
+ "id": "tomada-decisao-apoiada",
+ "tipo": "Curatela e proteção",
+ "titulo": "Tomada de decisão apoiada",
+ "descricao": "Um jovem com deficiência intelectual leve pede apoio da mãe e de um amigo para decisões financeiras, depois de assinar empréstimos que não conseguia pagar. O pai pede curatela e aponta conflito de interesses do amigo.",
+ "documentos": [
+  {
+   "nome": "manifestacao_jorge.txt",
+   "conteudo": "MANIFESTAÇÃO DO PAI (CASO FICTÍCIO PARA TESTES, CENÁRIO SINTÉTICO — NENHUMA RELAÇÃO COM\nPESSOAS REAIS)\n\nINTERESSADO: Jorge, pai de Tiago.\n\nDOS FATOS\n\nJorge afirma que a tomada de decisão apoiada não protege Tiago o suficiente. Em 2024,\nalém dos dois empréstimos, Tiago transferiu R$ 3.000,00 para uma pessoa que conheceu em\numa rede social e nunca mais respondeu.\n\nVinícius, o amigo indicado como apoiador, deve R$ 4.000,00 a Tiago desde 2023, o que\nmostra conflito de interesses.\n\nJorge pede que seja nomeado curador de Tiago para atos patrimoniais, porque é aposentado e\ntem tempo para acompanhar as finanças do filho.\n\nDO PEDIDO\n\n1. Rejeição da tomada de decisão apoiada.\n2. Nomeação de Jorge como curador de Tiago para atos patrimoniais.\n"
+  },
+  {
+   "nome": "pedido_tiago.txt",
+   "conteudo": "PEDIDO DE TOMADA DE DECISÃO APOIADA (CASO FICTÍCIO PARA TESTES, CENÁRIO SINTÉTICO —\nNENHUMA RELAÇÃO COM PESSOAS REAIS)\n\nREQUERENTE: Tiago, de 28 anos\nAPOIADORES INDICADOS: Sandra, mãe de Tiago, e Vinícius, amigo de infância\n\nDOS FATOS\n\nTiago tem deficiência intelectual leve, trabalha como auxiliar de biblioteca desde 2019 e\nrecebe salário mensal de R$ 1.800,00.\n\nEm 2024, Tiago assinou dois empréstimos consignados que somaram R$ 15.000,00, oferecidos\npor telefone, e depois percebeu que não conseguia pagar. Por isso, ele mesmo procurou a\nDefensoria Pública.\n\nTiago quer continuar decidindo sobre a própria vida, mas com apoio de pessoas de confiança\npara contratos, empréstimos e compras de valor alto.\n\nDO PEDIDO\n\nHomologação da tomada de decisão apoiada, com Sandra e Vinícius como apoiadores para\natos patrimoniais acima de R$ 2.000,00.\n"
+  }
+ ],
+ "tese": "Pedido de tomada de decisão apoiada. A tese a ser testada é a de Tiago (requerente), de\n28 anos, com deficiência intelectual leve: homologação do apoio da mãe, Sandra, e do amigo\nVinícius para atos patrimoniais acima de R$ 2.000,00, em vez de curatela, depois de ter\nassinado empréstimos que não conseguia pagar.",
+ "relatorio": {
+  "resumo_do_caso": "Lemos 2 documentos e identificamos 4 partes, 9 fatos relevantes e 3 pedidos.",
+  "tese_analisada": "Pedido de tomada de decisão apoiada. A tese a ser testada é a de Tiago (requerente), de\n28 anos, com deficiência intelectual leve: homologação do apoio da mãe, Sandra, e do amigo\nVinícius para atos patrimoniais acima de R$ 2.000,00, em vez de curatela, depois de ter\nassinado empréstimos que não conseguia pagar.",
+  "findings": [
+   {
+    "id": "contradicao-transferencia",
+    "categoria": "contradicao",
+    "texto": "O pedido cita apenas os dois empréstimos; Jorge acrescenta uma transferência de R$ 3.000,00 a uma pessoa conhecida em rede social. A omissão pode ser usada para questionar se o apoio pedido é suficiente.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "pedido_tiago.txt",
+      "trecho": "Tiago assinou dois empréstimos consignados que somaram R$ 15.000,00",
+      "pagina": null,
+      "conferido": true
+     },
+     {
+      "documento": "manifestacao_jorge.txt",
+      "trecho": "Tiago transferiu R$ 3.000,00 para uma pessoa que conheceu em uma rede social e nunca mais respondeu",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-laudo",
+    "categoria": "lacuna_probatoria",
+    "texto": "Não há laudo sobre a deficiência intelectual leve nem sobre as habilidades de Tiago para lidar com dinheiro.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "pedido_tiago.txt",
+      "trecho": "Tiago tem deficiência intelectual leve",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-divida-vinicius",
+    "categoria": "lacuna_probatoria",
+    "texto": "A dívida de R$ 4.000,00 atribuída a Vinícius é apenas afirmada; também não há resposta de Vinícius sobre ela.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "manifestacao_jorge.txt",
+      "trecho": "Vinícius, o amigo indicado como apoiador, deve R$ 4.000,00 a Tiago desde 2023",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-contratos",
+    "categoria": "lacuna_probatoria",
+    "texto": "Os contratos dos empréstimos e a situação atual das dívidas não foram juntados.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "pedido_tiago.txt",
+      "trecho": "oferecidos por telefone, e depois percebeu que não conseguia pagar",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-conflito",
+    "categoria": "contra_argumento",
+    "texto": "Jorge sustentará que um apoiador que deve dinheiro ao apoiado tem conflito de interesses e não deveria orientar decisões financeiras dele.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "manifestacao_jorge.txt",
+      "trecho": "o que mostra conflito de interesses",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-insuficiencia",
+    "categoria": "contra_argumento",
+    "texto": "A outra parte dirá que o apoio não impede novas contratações por telefone ou transferências, e que só a curatela protegeria Tiago.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "manifestacao_jorge.txt",
+      "trecho": "a tomada de decisão apoiada não protege Tiago o suficiente",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-limite-valor",
+    "categoria": "contra_argumento",
+    "texto": "O limite de R$ 2.000,00 deixaria de fora uma transferência como a de R$ 3.000,00 apenas por pouco, e não cobre golpes em valores menores repetidos.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "pedido_tiago.txt",
+      "trecho": "atos patrimoniais acima de R$ 2.000,00",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-transferencia",
+    "categoria": "pergunta_dificil",
+    "texto": "Por que o pedido não menciona a transferência de R$ 3.000,00 para a pessoa da rede social?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "manifestacao_jorge.txt",
+      "trecho": "transferiu R$ 3.000,00",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-vinicius",
+    "categoria": "pergunta_dificil",
+    "texto": "Vinícius deve dinheiro a Tiago? Como ele poderia apoiar decisões financeiras nessa situação?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "manifestacao_jorge.txt",
+      "trecho": "deve R$ 4.000,00 a Tiago desde 2023",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-jorge",
+    "categoria": "pergunta_dificil",
+    "texto": "Por que Tiago não escolheu o pai, que é aposentado e tem tempo, como apoiador?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "manifestacao_jorge.txt",
+      "trecho": "porque é aposentado e tem tempo para acompanhar as finanças do filho",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-protecao",
+    "categoria": "pergunta_dificil",
+    "texto": "O que impede Tiago de contratar outro empréstimo por telefone amanhã?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "pedido_tiago.txt",
+      "trecho": "oferecidos por telefone",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   }
+  ],
+  "perguntas_dificeis": [
+   "Por que o pedido não menciona a transferência de R$ 3.000,00 para a pessoa da rede social?",
+   "Vinícius deve dinheiro a Tiago? Como ele poderia apoiar decisões financeiras nessa situação?",
+   "Por que Tiago não escolheu o pai, que é aposentado e tem tempo, como apoiador?",
+   "O que impede Tiago de contratar outro empréstimo por telefone amanhã?"
+  ],
+  "linha_do_tempo": [
+   {
+    "data": "2019",
+    "data_ordenacao": "2019",
+    "evento": "Tiago começa a trabalhar como auxiliar de biblioteca",
+    "quem_afirma": "Tiago",
+    "documento": "pedido_tiago.txt",
+    "trecho": "trabalha como auxiliar de biblioteca desde 2019",
+    "trecho_conferido": true,
+    "divergencia": ""
+   },
+   {
+    "data": "2023",
+    "data_ordenacao": "2023",
+    "evento": "Vinícius passaria a dever R$ 4.000,00 a Tiago",
+    "quem_afirma": "Jorge",
+    "documento": "manifestacao_jorge.txt",
+    "trecho": "deve R$ 4.000,00 a Tiago desde 2023",
+    "trecho_conferido": true,
+    "divergencia": ""
+   },
+   {
+    "data": "2024",
+    "data_ordenacao": "2024",
+    "evento": "Dois empréstimos consignados (R$ 15.000,00) e transferência de R$ 3.000,00",
+    "quem_afirma": "Tiago e Jorge",
+    "documento": "pedido_tiago.txt",
+    "trecho": "Em 2024, Tiago assinou dois empréstimos consignados",
+    "trecho_conferido": true,
+    "divergencia": "O pedido não menciona a transferência citada por Jorge."
+   }
+  ],
+  "plano_de_provas": [
+   {
+    "prova": "Avaliação biopsicossocial de Tiago, com foco na gestão do dinheiro",
+    "finalidade": "Mostrar que Tiago decide com apoio e que a curatela não é necessária.",
+    "como_obter": "Requerer a avaliação pela equipe técnica e juntar relatórios de profissionais que o acompanham.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "lacuna-laudo",
+     "argumento-insuficiencia",
+     "pergunta-protecao"
+    ]
+   },
+   {
+    "prova": "Esclarecimento sobre a dívida de Vinícius ou indicação de outro apoiador",
+    "finalidade": "Afastar o conflito de interesses apontado.",
+    "como_obter": "Conversar com Tiago e Vinícius, documentar eventual quitação ou propor substituição do apoiador.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "lacuna-divida-vinicius",
+     "argumento-conflito",
+     "pergunta-vinicius"
+    ]
+   },
+   {
+    "prova": "Relato e comprovante da transferência de R$ 3.000,00, com eventual registro de ocorrência",
+    "finalidade": "Enfrentar o fato omitido e mostrar que Tiago reconheceu o golpe.",
+    "como_obter": "Reunir com Tiago o comprovante e verificar se houve registro.",
+    "prioridade": "media",
+    "apontamentos": [
+     "contradicao-transferencia",
+     "pergunta-transferencia",
+     "argumento-limite-valor"
+    ]
+   },
+   {
+    "prova": "Contratos dos empréstimos e medidas de proteção bancária",
+    "finalidade": "Mostrar como novas contratações serão evitadas na prática.",
+    "como_obter": "Pedir os contratos ao banco e combinar com Tiago medidas como bloqueio de novas contratações.",
+    "prioridade": "media",
+    "apontamentos": [
+     "lacuna-contratos",
+     "pergunta-protecao"
+    ]
+   },
+   {
+    "prova": "Declaração de Tiago sobre a escolha dos apoiadores",
+    "finalidade": "Registrar por que ele confia em Sandra e Vinícius.",
+    "como_obter": "Preparar Tiago para a entrevista com o juízo.",
+    "prioridade": "baixa",
+    "apontamentos": [
+     "pergunta-jorge"
+    ]
+   }
+  ],
+  "avisos": [
+   "Este relatório não é parecer jurídico: revise cada apontamento antes de usá-lo.",
+   "Versão de demonstração: use apenas documentos fictícios ou anonimizados."
+  ]
+ },
+ "audiencia": [
+  {
+   "pergunta": "Vinícius deve dinheiro a Tiago? Como ele poderia apoiar decisões financeiras nessa situação?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Isso é problema entre eles, não tem relação com o pedido.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta ignora o conflito de interesses, que tem relação direta com a função de apoiador.",
+      "pontos_fortes": [],
+      "pontos_frageis": [
+       "Não esclarece se a dívida existe.",
+       "Reforça o argumento de que o apoio não protege."
+      ],
+      "sugestao": "Esclareça a dívida ou proponha outro apoiador.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "manifestacao_jorge.txt",
+        "trecho": "o que mostra conflito de interesses",
+        "conferido": true
+       }
+      ],
+      "replica": "Então Tiago pode ter como apoiador alguém que lhe deve dinheiro?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Se houver dívida, ela será esclarecida e quitada antes da homologação. E, se o juízo entender que há conflito, Tiago aceita indicar outra pessoa de confiança no lugar de Vinícius.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta não nega sem saber, resolve o conflito apontado e preserva a escolha de Tiago.",
+      "pontos_fortes": [
+       "Neutraliza o argumento principal do pai.",
+       "Mantém a tomada de decisão apoiada."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Tenha já em mente um segundo nome de confiança indicado por Tiago.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_tiago.txt",
+        "trecho": "com apoio de pessoas de confiança",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Por que o pedido não menciona a transferência de R$ 3.000,00 para a pessoa da rede social?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Porque não achamos importante.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta minimiza um golpe que ajuda o pai a sustentar a necessidade de curatela.",
+      "pontos_fortes": [],
+      "pontos_frageis": [
+       "Sugere omissão deliberada.",
+       "Não mostra aprendizado de Tiago com o episódio."
+      ],
+      "sugestao": "Reconheça o episódio e mostre que ele reforça a necessidade de apoio, não de curatela.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "manifestacao_jorge.txt",
+        "trecho": "nunca mais respondeu",
+        "conferido": true
+       }
+      ],
+      "replica": "E quantos outros episódios não foram mencionados?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "A transferência aconteceu e Tiago percebeu o golpe. É justamente por episódios assim que ele próprio pediu apoio para decisões financeiras, e o limite de valor pode ser reduzido se o juízo entender necessário.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta reconhece o fato e o usa a favor do pedido, mas não explica por que ele não constou do pedido.",
+      "pontos_fortes": [
+       "Não nega o episódio.",
+       "Oferece ajuste do limite."
+      ],
+      "pontos_frageis": [
+       "A omissão continua sem explicação."
+      ],
+      "sugestao": "Explique brevemente por que o episódio não foi descrito no pedido.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_tiago.txt",
+        "trecho": "Por isso, ele mesmo procurou a Defensoria Pública",
+        "conferido": true
+       }
+      ],
+      "replica": "E se ele cair em outro golpe com o apoio já homologado?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "O que impede Tiago de contratar outro empréstimo por telefone amanhã?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Ele prometeu que não vai fazer de novo.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta depende só de uma promessa e não mostra nenhum mecanismo de proteção.",
+      "pontos_fortes": [],
+      "pontos_frageis": [
+       "Nenhuma medida concreta.",
+       "Reforça o argumento de insuficiência do apoio."
+      ],
+      "sugestao": "Apresente medidas práticas combinadas com Tiago e os apoiadores.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "manifestacao_jorge.txt",
+        "trecho": "a tomada de decisão apoiada não protege Tiago o suficiente",
+        "conferido": true
+       }
+      ],
+      "replica": "E promessa basta para proteger o salário dele?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Além do apoio homologado, Tiago concordou em pedir ao banco o bloqueio de novas contratações por telefone e em combinar com os apoiadores uma conversa antes de qualquer compromisso financeiro. Ele trabalha desde 2019 e procurou ajuda sozinho: sabe reconhecer quando precisa de apoio.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta traz medidas concretas e usa fatos que mostram a autonomia de Tiago.",
+      "pontos_fortes": [
+       "Mecanismo prático de proteção.",
+       "Valoriza o trabalho e a iniciativa de Tiago."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Junte o comprovante do pedido de bloqueio ao banco.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_tiago.txt",
+        "trecho": "trabalha como auxiliar de biblioteca desde 2019",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    }
+   ]
+  }
+ ]
+}

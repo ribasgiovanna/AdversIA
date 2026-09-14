@@ -67,8 +67,11 @@ domínio genérico original do MVP.
 | Checkbox de confirmação obrigatória antes de enviar qualquer documento | `index.html` (`confirmacao-dados`, `required`) | opera o Princípio V da Constituição de forma ativa, não só um aviso passivo |
 | Aviso fixo em toda resposta do sistema | `app/schemas.py::AVISOS_FIXOS` | usuário é lembrado a cada relatório, não só na tela inicial |
 | Sem persistência de documentos em disco ou banco | `app/pipeline.py`, `app/server.py` — nenhuma escrita em disco/banco dos documentos enviados | dado do usuário só existe na memória do processo |
-| Retenção em memória limitada para a simulação de audiência (ADR-013) | `app/server.py::_iniciar_analise` — documentos e tese guardados junto da análise, nunca devolvidos pela API (chaves com `_`), no máximo 50 análises, apagados ao reiniciar o servidor | a simulação avalia respostas sobre os mesmos documentos sem pedir novo upload |
-| Chave de API nunca exposta ao navegador | `app/llm_client.py` (chamada só no servidor) + `.env` no `.gitignore` | dado não pode ser interceptado no lado do cliente |
+| Nenhum estado no servidor (ADR-014) | `app/api_comum.py` — a análise devolve o texto extraído e a simulação o recebe de volta; nada fica guardado entre requisições | o texto do caso só existe na memória da aba de quem fez a análise |
+| Chave da Anthropic do próprio usuário, sem armazenamento (ADR-014) | `app/api_comum.py::ler_chave` (formato validado) + `llm_client.usar_chave_anthropic` (cliente por requisição, descartado ao fim); o campo da tela é `type="password"` e a chave não vai para `localStorage` nem para o log | a equipe não guarda credencial de terceiros e não paga pelo uso de terceiros |
+| Nenhuma chave da equipe no site público | a chave da equipe foi retirada; o modo demonstração é arquivo estático | link público não consome crédito da equipe |
+| Casos de demonstração fictícios, sem raspagem de processos | `golden_dataset/case_familia_*` com aviso em cada documento; fontes públicas usadas só para escolher temas (`docs/CATALOGO_DE_SITUACOES.md`) | processos de família correm em segredo de justiça |
+| Demonstração identificada como tal | selo "Caso fictício de demonstração · análise preparada previamente" no relatório | o visitante não é levado a achar que a IA gerou aquela análise na hora |
 | Mensagens de erro não vazam detalhe interno ao cliente | `app/server.py::do_POST` (exceção genérica loga no servidor, resposta ao cliente é só uma mensagem amigável) | reduz risco de vazamento de informação técnica/dado em trânsito |
 
 ### Pendente / recomendação — importante para o pitch e para além do hackathon
@@ -76,8 +79,10 @@ domínio genérico original do MVP.
 - **Ditado por voz na simulação de audiência**: usa o reconhecimento de voz do próprio
   navegador; no Chrome o áudio é processado por servidores do Google. Com dados reais,
   avisar o usuário antes de ativar o microfone ou oferecer só a digitação.
-- **Expiração das análises em memória**: hoje saem só pelo limite de 50 ou ao reiniciar;
-  para uso real, apagar automaticamente após um prazo curto (ex.: 1 hora).
+- **Chave no navegador**: a chave digitada trafega por HTTPS até a função e fica na memória
+  da aba enquanto ela está aberta (para a simulação). Uma extensão maliciosa no navegador do
+  usuário poderia lê-la. Recomendação na tela: usar uma chave criada só para isso, com
+  limite de gasto, e apagá-la no painel da Anthropic depois.
 
 - **Transferência internacional de dados**: os documentos enviados são processados pela
   API da Anthropic (processamento fora do Brasil). Isso é uma transferência internacional
@@ -117,23 +122,22 @@ domínio genérico original do MVP.
 | Ataque | Mitigação | Onde |
 |---|---|---|
 | Path traversal (ler arquivo fora de `app/static/`) | checagem `STATIC_DIR not in arquivo.resolve().parents` antes de servir qualquer arquivo | `app/server.py::_send_static` — testado manualmente em 12/09 com `../server.py`, `../../requirements.txt` etc.: todos bloqueados |
-| Negação de serviço por upload gigante | corpo da requisição limitado a 15MB, com erro 413 explícito | `app/server.py::do_POST` (`MAX_BODY_SIZE`) — valor confirmado em 12/09 |
+| Negação de serviço por upload gigante | corpo limitado a 15 MB no servidor local e 4 MB na Vercel, com erro 413 explícito antes de ler o corpo | `app/api_comum.py::responder`, `api/analisar.py` (`MAX_CORPO`) |
+| Uso do crédito da equipe por terceiros | site público sem chave da equipe; análise real só com a chave de quem usa | ADR-014 |
 | XSS (script injetado via texto do caso/relatório) | toda inserção de texto no DOM usa `textContent`, nunca `innerHTML` com dado do usuário | `app/static/app.js::el()` e `renderFinding()` |
 | Vazamento de detalhe interno (stack trace, caminho de arquivo) em erro 500 | exceção genérica loga completo só no servidor (`stderr`), resposta ao cliente é mensagem fixa | `app/server.py::do_POST` |
-| Exposição da chave de API no cliente | chave só existe no processo do servidor (`.env`, nunca enviada ao navegador) | `app/llm_client.py`, `.gitignore` |
+| Exposição da chave do usuário | só por HTTPS; validada por formato; nunca gravada, registrada em log ou devolvida na resposta; cliente da Anthropic criado por requisição | `app/api_comum.py`, `app/llm_client.py::usar_chave_anthropic` |
 | Credencial commitada por engano no repositório público (exigência do hackathon) | `.env` no `.gitignore`; só `.env.example` (vazio) é versionado | `.gitignore`, `.env.example` |
 
 ### Pendente / recomendação — limitações conhecidas do MVP de hackathon
 
-- **Sem HTTPS**: o servidor roda em `http://localhost` — aceitável para demo local, mas
-  **nunca deve ser exposto à internet nessa forma**. Documentado aqui para não virar uma
-  suposição errada em uso futuro.
-- **Sem autenticação/autorização**: qualquer processo que consiga acessar `localhost:8000`
-  pode usar a API — aceitável para demo de um usuário só; um piloto real precisaria de
-  login e isolamento por usuário/escritório.
-- **Sem rate limiting**: nada impede múltiplas chamadas simultâneas (e, portanto, custo de
-  API descontrolado) se o servidor for exposto além de localhost — mitigação real é não
-  expor além de localhost neste estágio.
+- **HTTPS**: na Vercel o HTTPS é da plataforma. O servidor local (`python -m app.server`)
+  continua em `http://localhost` e **não deve ser exposto à internet nessa forma**.
+- **Sem autenticação/autorização**: qualquer pessoa pode usar o site. O custo da análise
+  real recai sobre a chave de quem a usa; um piloto real precisaria de login e isolamento
+  por usuário/escritório.
+- **Sem rate limiting próprio**: chamadas às funções contam no limite de uso do plano da
+  Vercel da equipe (não geram custo de IA para a equipe).
 - **Sem validação de tipo de arquivo por conteúdo (magic bytes)**: `document_reader.py`
   confia na extensão do nome do arquivo; um arquivo malicioso renomeado para `.txt` seria
   lido como texto (baixo risco, já que o conteúdo só é enviado a um LLM como texto, nunca

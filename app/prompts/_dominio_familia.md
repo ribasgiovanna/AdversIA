@@ -1,9 +1,11 @@
 CONTEXTO DE DOMÍNIO — DIREITO DE FAMÍLIA (aplique em toda a análise abaixo)
 
-O AdversIA, neste MVP, analisa exclusivamente casos de Direito de Família (divórcio):
-partilha de bens, pensão alimentícia, guarda e convivência. Use este contexto para
-interpretar os documentos e para saber que tipo de prova normalmente sustenta (ou não)
-cada tipo de alegação neste domínio:
+O AdversIA analisa casos de competência da Vara de Família: divórcio e partilha de bens,
+união estável, alimentos, guarda e convivência, filiação, curatela e proteção de pessoas,
+e questões sucessórias ligadas à família. Use este contexto para interpretar os
+documentos e para saber que tipo de prova normalmente sustenta (ou não) cada tipo de
+alegação neste domínio. Nunca cite número de lei, artigo, súmula ou processo que não
+esteja nos documentos: descreva os critérios em termos fáticos.
 
 - Partilha de bens: bem particular anterior ao casamento não se comunica
   automaticamente; a discussão típica é sobre contribuição indireta não documentada
@@ -27,6 +29,51 @@ cada tipo de alegação neste domínio:
   boletim de ocorrência ou prova técnica equivalente, qualquer conclusão nesse sentido é,
   no máximo, `ADVERSARIAL_HYPOTHESIS` ou deve ser listada como `informacoes_ausentes`
   ("laudo pericial ainda não produzido").
+
+- Partilha, casos específicos: previdência privada aberta (investimento, costuma entrar na
+  partilha) é tratada diferente da fechada (benefício, costuma ficar fora); FGTS e
+  verbas trabalhistas do período da união; dívidas contraídas em benefício da família;
+  imóvel financiado (parcelas pagas antes e durante a união); criptoativos e contas no
+  exterior (prova de existência e saldo na data da separação); uso exclusivo do imóvel
+  comum por um dos ex-cônjuges (pedido de aluguel, que perde força quando o filho comum
+  mora no imóvel). Prova que normalmente falta: extratos com datas, contrato de
+  financiamento, declaração de IR, laudo de avaliação.
+- União estável: reconhecimento (inclusive depois da morte de um dos companheiros) exige
+  convivência pública, contínua e com objetivo de constituir família — diferente de
+  namoro, ainda que longo. Relação paralela a casamento ou união anterior é o ponto mais
+  controvertido. Prova que normalmente falta: comprovantes de residência comum,
+  dependência em plano de saúde ou IR, conta conjunta, testemunhas sem interesse direto.
+- Alimentos, variações: gravídicos (indícios de paternidade bastam na fase inicial;
+  despesas da gestação precisam ser comprovadas); avoengos (dos avós, só de forma
+  complementar e subsidiária, depois de demonstrada a impossibilidade dos pais);
+  compensatórios (corrigem desequilíbrio patrimonial grave, não subsistência); filho
+  maior (em regra até concluir formação, com prova de matrícula e dedicação);
+  execução com pedido de prisão civil (só para parcelas recentes e quando demonstrada a
+  urgência; alternativas como penhora pesam). Prova que normalmente falta: planilha de
+  débito mês a mês, comprovantes de pagamentos parciais, prova da renda real.
+- Guarda, variações: violência doméstica ou medida protetiva (avaliar se atingiu a criança
+  e o risco atual, sem presumir); mudança para outra cidade ou país (a guarda
+  compartilhada é possível à distância, com plano concreto de convivência e custos);
+  convivência com avós e outros parentes (vínculo afetivo prévio e benefício à criança).
+  Prova que normalmente falta: estudo psicossocial, boletim de ocorrência e desfecho,
+  relatório escolar, histórico de convivência documentado.
+- Filiação: investigação de paternidade (a recusa injustificada ao exame de DNA gera
+  presunção relativa, que precisa ser somada a outros indícios); negatória de paternidade
+  (o vínculo socioafetivo construído costuma prevalecer, salvo erro induzido demonstrado);
+  multiparentalidade (vínculo biológico e socioafetivo podem coexistir). Prova que
+  normalmente falta: exame de DNA, prova da convivência e do tratamento como filho,
+  comunicação que demonstre o momento em que se soube da verdade biológica.
+- Curatela e tomada de decisão apoiada: a curatela é medida excepcional, limitada a atos
+  patrimoniais e negociais, e só cabe se apoios menos restritivos forem insuficientes; a
+  pessoa tem direito a ser ouvida. Disputas entre familiares pelo encargo exigem prova de
+  quem já cuida, de conflitos de interesse e da gestão dos bens. Prova que normalmente
+  falta: laudo médico recente e específico, prestação de contas, relatório social.
+- Animais de estimação: não se resolve como simples divisão de bem móvel; pesam vínculo
+  afetivo, quem arcava com cuidados e despesas. Prova que normalmente falta: registros de
+  veterinário e de despesas no nome de cada parte.
+- Abandono afetivo: indenização exige prova do descumprimento do dever de cuidado e do
+  dano, não apenas a ausência de afeto. Prova que normalmente falta: laudo psicológico,
+  histórico de tentativas de contato, prova de condições de exercer a convivência.
 
 Padrão a procurar sistematicamente: em Direito de Família, alegações raramente vêm
 acompanhadas do tipo específico de prova formal que o pedido exigiria (rastreamento

@@ -1,0 +1,143 @@
+{
+ "id": "multiparentalidade",
+ "tipo": "Filiação",
+ "ordem": 3,
+ "titulo": "Pai biológico e pai registral",
+ "descricao": "Um pai biológico confirmado por DNA quer ser incluído no registro da menina de 7 anos sem retirar o pai registral. A mãe diz que o avisou da gravidez em 2017 e que a criança ainda não sabe da história.",
+ "pasta": "case_familia_29",
+ "relatorio": {
+  "resumo_do_caso": "Lemos 2 documentos e identificamos 4 partes, 10 fatos relevantes e 2 pedidos.",
+  "findings": [
+   {
+    "id": "contradicao-conhecimento",
+    "categoria": "contradicao",
+    "texto": "Bernardo afirma que só soube da possível paternidade em 10/2024; Priscila diz que o avisou da gravidez por mensagem em 11/2017 e que ele respondeu que não queria saber.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {"documento": "peticao_bernardo.txt", "trecho": "Bernardo só soube que poderia ser o pai de Alice em 10/2024"},
+     {"documento": "contestacao_priscila_leandro.txt", "trecho": "Priscila avisou Bernardo da gravidez em 11/2017, por mensagem, e ele respondeu que não queria saber"}
+    ]
+   },
+   {
+    "id": "contradicao-autorizacao",
+    "categoria": "contradicao",
+    "texto": "A petição usa a autorização de Priscila para o exame como apoio; ela diz que autorizou apenas para que Bernardo parasse de procurá-la.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {"documento": "peticao_bernardo.txt", "trecho": "Um exame de DNA feito com autorização de Priscila, em 01/2025, confirmou a paternidade biológica"},
+     {"documento": "contestacao_priscila_leandro.txt", "trecho": "apenas para que Bernardo parasse de procurá-la, e não por concordar com a inclusão dele no registro"}
+    ]
+   },
+   {
+    "id": "contradicao-frequencia",
+    "categoria": "contradicao",
+    "texto": "Os fatos falam em visitas quinzenais e o pedido em fins de semana alternados, sem detalhar se haveria pernoite nem transição para uma criança que não conhece o autor.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {"documento": "peticao_bernardo.txt", "trecho": "com visitas quinzenais"},
+     {"documento": "peticao_bernardo.txt", "trecho": "Convivência com Alice em fins de semana alternados"}
+    ]
+   },
+   {
+    "id": "lacuna-mensagem-2017",
+    "categoria": "lacuna_probatoria",
+    "texto": "A mensagem de 11/2017 é decisiva para a boa-fé de Bernardo, mas não foi juntada por nenhuma das partes.",
+    "provenance": "INFERENCE",
+    "origem": [{"documento": "contestacao_priscila_leandro.txt", "trecho": "por mensagem"}]
+   },
+   {
+    "id": "lacuna-laudo-dna",
+    "categoria": "lacuna_probatoria",
+    "texto": "O laudo do exame de 01/2025 não acompanha a petição.",
+    "provenance": "INFERENCE",
+    "origem": [{"documento": "peticao_bernardo.txt", "trecho": "confirmou a paternidade biológica"}]
+   },
+   {
+    "id": "lacuna-psicologa",
+    "categoria": "lacuna_probatoria",
+    "texto": "A recomendação da psicóloga sobre a revelação gradual é mencionada sem relatório.",
+    "provenance": "INFERENCE",
+    "origem": [{"documento": "contestacao_priscila_leandro.txt", "trecho": "A psicóloga que acompanha a família recomendou que essa revelação seja feita aos poucos"}]
+   },
+   {
+    "id": "argumento-sofrimento",
+    "categoria": "contra_argumento",
+    "texto": "Os réus sustentarão que Alice não sabe da origem biológica e que visitas imediatas com um desconhecido podem causar sofrimento.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "contestacao_priscila_leandro.txt", "trecho": "Visitas quinzenais imediatas com um homem que Alice não conhece podem causar sofrimento à criança"}]
+   },
+   {
+    "id": "argumento-leandro",
+    "categoria": "contra_argumento",
+    "texto": "A defesa destacará que Leandro assumiu Alice desde o nascimento, o que dá peso ao vínculo existente e à estabilidade da criança.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "contestacao_priscila_leandro.txt", "trecho": "Leandro assumiu Alice desde o nascimento"}]
+   },
+   {
+    "id": "argumento-gradual",
+    "categoria": "contra_argumento",
+    "texto": "O pedido subsidiário de convivência gradual, com acompanhamento, indica um caminho que o juízo pode preferir à convivência imediata.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "contestacao_priscila_leandro.txt", "trecho": "que qualquer convivência seja precedida de acompanhamento psicológico e comece de forma gradual"}]
+   },
+   {
+    "id": "pergunta-mensagem",
+    "categoria": "pergunta_dificil",
+    "texto": "O senhor recebeu uma mensagem de Priscila em 11/2017 falando da gravidez? O que respondeu?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "contestacao_priscila_leandro.txt", "trecho": "ele respondeu que não queria saber"}]
+   },
+   {
+    "id": "pergunta-imediata",
+    "categoria": "pergunta_dificil",
+    "texto": "Como Alice seria preparada para conviver com alguém que ela não conhece?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "contestacao_priscila_leandro.txt", "trecho": "Alice não sabe que Leandro não é o pai biológico"}]
+   },
+   {
+    "id": "pergunta-amiga",
+    "categoria": "pergunta_dificil",
+    "texto": "Por que a semelhança física só chamou atenção em 2024, e a amiga em comum pode confirmar isso?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "peticao_bernardo.txt", "trecho": "quando uma amiga em comum comentou a semelhança física"}]
+   }
+  ],
+  "linha_do_tempo": [
+   {"data": "2017", "data_ordenacao": "2017", "evento": "Breve relacionamento entre Bernardo e Priscila", "quem_afirma": "Bernardo", "documento": "peticao_bernardo.txt", "trecho": "Bernardo e Priscila tiveram um breve relacionamento em 2017", "divergencia": ""},
+   {"data": "11/2017", "data_ordenacao": "2017-11", "evento": "Priscila avisa Bernardo da gravidez por mensagem", "quem_afirma": "Priscila e Leandro", "documento": "contestacao_priscila_leandro.txt", "trecho": "Priscila avisou Bernardo da gravidez em 11/2017", "divergencia": "Bernardo afirma que só soube da possível paternidade em 10/2024."},
+   {"data": "12/2017", "data_ordenacao": "2017-12", "evento": "Casamento de Priscila e Leandro", "quem_afirma": "Bernardo", "documento": "peticao_bernardo.txt", "trecho": "Priscila se casou com Leandro em 12/2017", "divergencia": ""},
+   {"data": "22/07/2018", "data_ordenacao": "2018-07-22", "evento": "Nascimento de Alice, registrada por Leandro", "quem_afirma": "Bernardo", "documento": "peticao_bernardo.txt", "trecho": "Alice nasceu em 22/07/2018, registrada por Leandro", "divergencia": ""},
+   {"data": "10/2024", "data_ordenacao": "2024-10", "evento": "Bernardo diz ter sabido da possível paternidade por comentário de amiga", "quem_afirma": "Bernardo", "documento": "peticao_bernardo.txt", "trecho": "Bernardo só soube que poderia ser o pai de Alice em 10/2024", "divergencia": "Priscila afirma que o avisou em 11/2017."},
+   {"data": "01/2025", "data_ordenacao": "2025-01", "evento": "Exame de DNA confirma a paternidade biológica", "quem_afirma": "Bernardo", "documento": "peticao_bernardo.txt", "trecho": "Um exame de DNA feito com autorização de Priscila, em 01/2025", "divergencia": "Priscila diz que autorizou só para encerrar os contatos."}
+  ],
+  "plano_de_provas": [
+   {"prova": "Histórico de conversas entre Bernardo e Priscila em 2017", "finalidade": "Esclarecer se Bernardo foi avisado da gravidez, ponto central para a boa-fé dele.", "como_obter": "Verificar com o cliente o celular e backups da época e exportar as conversas com data.", "prioridade": "alta", "apontamentos": ["contradicao-conhecimento", "lacuna-mensagem-2017", "pergunta-mensagem"]},
+   {"prova": "Laudo do exame de DNA de 01/2025", "finalidade": "Comprovar documentalmente a paternidade biológica.", "como_obter": "Juntar o laudo do laboratório ou pedir exame judicial, se houver impugnação.", "prioridade": "alta", "apontamentos": ["lacuna-laudo-dna", "contradicao-autorizacao"]},
+   {"prova": "Estudo psicossocial e plano de aproximação gradual acompanhado", "finalidade": "Mostrar que o pedido de convivência protege Alice e respeita o vínculo com Leandro.", "como_obter": "Requerer o estudo pela equipe técnica e propor aproximação em etapas.", "prioridade": "alta", "apontamentos": ["argumento-sofrimento", "argumento-gradual", "argumento-leandro", "lacuna-psicologa", "contradicao-frequencia", "pergunta-imediata"]},
+   {"prova": "Declaração da amiga em comum", "finalidade": "Confirmar como e quando Bernardo soube da possível paternidade.", "como_obter": "Indicar a amiga como testemunha.", "prioridade": "media", "apontamentos": ["pergunta-amiga", "contradicao-conhecimento"]}
+  ]
+ },
+ "audiencia": [
+  {
+   "pergunta": "O senhor recebeu uma mensagem de Priscila em 11/2017 falando da gravidez? O que respondeu?",
+   "respostas": [
+    {"rotulo": "Resposta A", "texto": "Nunca recebi mensagem nenhuma.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta nega de forma absoluta uma mensagem que pode ser exibida pela outra parte.", "pontos_fortes": ["Coerente com a petição."], "pontos_frageis": ["Se a mensagem aparecer, toda a credibilidade do autor fica comprometida."], "sugestao": "Verifique as conversas de 2017 antes da audiência e responda com base no que encontrar.", "apoio_nos_documentos": [{"documento": "contestacao_priscila_leandro.txt", "trecho": "Priscila avisou Bernardo da gravidez em 11/2017, por mensagem"}], "replica": "O senhor autoriza a juntada das conversas daquele período?"}},
+    {"rotulo": "Resposta B", "texto": "Não me lembro de ter recebido essa mensagem. Se ela existir, peço que seja juntada inteira. Mesmo que eu tivesse sido avisado, Alice tem direito de conhecer a própria origem e de ter os dois pais.", "avaliacao": {"avaliacao": "parcial", "resumo": "Sua resposta evita uma negativa arriscada e desloca o foco para o interesse de Alice, mas deixa a boa-fé do autor em aberto.", "pontos_fortes": ["Não nega o que pode ser provado.", "Centra o pedido no direito da criança."], "pontos_frageis": ["\"Não me lembro\" pode soar evasivo.", "Não afasta a resposta \"não queria saber\"."], "sugestao": "Confirme o que há nas conversas antes da audiência para responder com segurança.", "apoio_nos_documentos": [{"documento": "peticao_bernardo.txt", "trecho": "Bernardo não quer retirar Leandro do registro"}], "replica": "E se a mensagem mostrar que o senhor disse que não queria saber?"}}
+   ]
+  },
+  {
+   "pergunta": "Como Alice seria preparada para conviver com alguém que ela não conhece?",
+   "respostas": [
+    {"rotulo": "Resposta A", "texto": "Ela vai se acostumar, criança se adapta rápido.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta ignora a recomendação profissional e reforça o argumento de risco de sofrimento.", "pontos_fortes": [], "pontos_frageis": ["Desconsidera que Alice não sabe da origem biológica.", "Não propõe nenhum cuidado."], "sugestao": "Proponha uma aproximação gradual com acompanhamento psicológico.", "apoio_nos_documentos": [{"documento": "contestacao_priscila_leandro.txt", "trecho": "podem causar sofrimento à criança"}], "replica": "O senhor está disposto a esperar o tempo que a psicóloga indicar?"}},
+    {"rotulo": "Resposta B", "texto": "Bernardo concorda com uma aproximação gradual, acompanhada por profissional, começando por encontros curtos e respeitando o tempo de Alice. Os fins de semana alternados seriam o objetivo final, não o ponto de partida.", "avaliacao": {"avaliacao": "convincente", "resumo": "Sua resposta incorpora a preocupação dos réus, protege a criança e mantém o pedido de convivência.", "pontos_fortes": ["Responde ao risco de sofrimento.", "Aproxima-se do pedido subsidiário dos réus.", "Mostra que o foco é Alice."], "pontos_frageis": [], "sugestao": "Leve uma proposta por escrito com as etapas da aproximação.", "apoio_nos_documentos": [{"documento": "contestacao_priscila_leandro.txt", "trecho": "comece de forma gradual"}], "replica": ""}}
+   ]
+  },
+  {
+   "pergunta": "Por que a semelhança física só chamou atenção em 2024, e a amiga em comum pode confirmar isso?",
+   "respostas": [
+    {"rotulo": "Resposta A", "texto": "Eu não via a Alice antes, então não tinha como saber.", "avaliacao": {"avaliacao": "parcial", "resumo": "Sua resposta é plausível, mas não indica prova e não responde sobre a amiga.", "pontos_fortes": ["Explicação simples e coerente."], "pontos_frageis": ["Não confirma a versão por outra pessoa."], "sugestao": "Indique a amiga como testemunha.", "apoio_nos_documentos": [{"documento": "peticao_bernardo.txt", "trecho": "quando uma amiga em comum comentou a semelhança física"}], "replica": "E o senhor nunca desconfiou, sabendo do relacionamento em 2017?"}},
+    {"rotulo": "Resposta B", "texto": "Todo mundo fala que ela é a minha cara.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta não explica a data e não identifica quem comentou a semelhança.", "pontos_fortes": [], "pontos_frageis": ["Não responde à pergunta sobre 2024.", "Não indica testemunha."], "sugestao": "Explique quando e como soube e indique a amiga em comum.", "apoio_nos_documentos": [{"documento": "peticao_bernardo.txt", "trecho": "em 10/2024"}], "replica": "Quem é \"todo mundo\"?"}}
+   ]
+  }
+ ]
+}

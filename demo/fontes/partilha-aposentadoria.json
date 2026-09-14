@@ -1,0 +1,106 @@
+{
+ "id": "partilha-aposentadoria",
+ "tipo": "Divórcio e partilha de bens",
+ "ordem": 2,
+ "titulo": "Aposentadoria na partilha e pedido de pensão",
+ "descricao": "A ex-esposa pede que os valores da aposentadoria do marido entrem na partilha e pede pensão alimentícia.",
+ "pasta": "case_familia_06",
+ "relatorio": {
+  "resumo_do_caso": "Lemos 2 documentos e identificamos 2 partes, 5 fatos relevantes e 3 pedidos.",
+  "findings": [
+   {
+    "id": "lacuna-valores",
+    "categoria": "lacuna_probatoria",
+    "texto": "Os valores da aposentadoria especial não são quantificados: não há cálculo dos atrasados, valor do benefício nem cópia da decisão da outra ação.",
+    "provenance": "INFERENCE",
+    "origem": [{"documento": "pedido_esposa.txt", "trecho": "valores referentes a uma aposentadoria especial que havia sido reconhecida em outra ação judicial"}]
+   },
+   {
+    "id": "lacuna-periodo",
+    "categoria": "lacuna_probatoria",
+    "texto": "A relação entre os valores e o período do casamento é afirmada, mas nenhum documento mostra quais anos de trabalho geraram o benefício.",
+    "provenance": "INFERENCE",
+    "origem": [{"documento": "pedido_esposa.txt", "trecho": "O valor da aposentadoria estava relacionado a período em que ainda existia a relação conjugal"}]
+   },
+   {
+    "id": "lacuna-necessidade",
+    "categoria": "lacuna_probatoria",
+    "texto": "O pedido de pensão se apoia genericamente nas \"circunstâncias econômicas do casal\", sem informar renda, despesas ou condições de trabalho da ex-esposa.",
+    "provenance": "INFERENCE",
+    "origem": [{"documento": "pedido_esposa.txt", "trecho": "Diante das circunstâncias econômicas do casal, ela também teria direito à pensão"}]
+   },
+   {
+    "id": "argumento-pedido-tardio",
+    "categoria": "contra_argumento",
+    "texto": "O ex-marido dirá que os valores não foram apresentados no início da ação e que o pedido posterior não pode ampliar a partilha livremente, o que exige explicar por que a questão só surgiu depois.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "contestacao_marido.txt", "trecho": "incluir um bem/valor que não havia sido apresentado originalmente na ação"}]
+   },
+   {
+    "id": "argumento-requisitos-pensao",
+    "categoria": "contra_argumento",
+    "texto": "A defesa exigirá a demonstração dos requisitos da pensão: necessidade de quem pede e possibilidade de quem paga. Sem dados, o pedido fica vulnerável.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "contestacao_marido.txt", "trecho": "a necessidade de demonstrar os requisitos para a pensão alimentícia"}]
+   },
+   {
+    "id": "argumento-dupla-vantagem",
+    "categoria": "contra_argumento",
+    "texto": "A outra parte pode sustentar que pedir metade dos valores da aposentadoria e, ao mesmo tempo, pensão alimentícia sobre a renda do ex-marido faria a ex-esposa aproveitar duas vezes a mesma fonte.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "pedido_esposa.txt", "trecho": "A ex-esposa pediu que esses valores também fossem incluídos na partilha, além de pensão alimentícia"}]
+   },
+   {
+    "id": "pergunta-valor",
+    "categoria": "pergunta_dificil",
+    "texto": "Qual é o valor dos atrasados da aposentadoria, e a quais anos de trabalho eles correspondem?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "pedido_esposa.txt", "trecho": "reconhecida em outra ação judicial"}]
+   },
+   {
+    "id": "pergunta-momento",
+    "categoria": "pergunta_dificil",
+    "texto": "Por que o pedido de incluir esses valores só apareceu depois de iniciado o processo de divórcio?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "contestacao_marido.txt", "trecho": "especialmente porque o pedido da ex-esposa surgiu posteriormente"}]
+   },
+   {
+    "id": "pergunta-necessidade",
+    "categoria": "pergunta_dificil",
+    "texto": "Quais são a renda e as despesas atuais da ex-esposa que justificam a pensão?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "pedido_esposa.txt", "trecho": "ela também teria direito à pensão"}]
+   }
+  ],
+  "linha_do_tempo": [],
+  "plano_de_provas": [
+   {"prova": "Cópia da decisão da ação previdenciária, com o cálculo dos atrasados e os períodos reconhecidos", "finalidade": "Quantificar os valores e mostrar que correspondem a anos de casamento.", "como_obter": "Pedir certidão e cópia do processo previdenciário; se necessário, requerer ao juízo que a solicite.", "prioridade": "alta", "apontamentos": ["lacuna-valores", "lacuna-periodo", "pergunta-valor"]},
+   {"prova": "Comprovantes de renda e despesas da ex-esposa", "finalidade": "Demonstrar a necessidade que fundamenta o pedido de pensão.", "como_obter": "Reunir com a cliente extratos, contas fixas, gastos de saúde e declaração de imposto de renda.", "prioridade": "alta", "apontamentos": ["lacuna-necessidade", "argumento-requisitos-pensao", "pergunta-necessidade"]},
+   {"prova": "Data em que a aposentadoria foi reconhecida na outra ação", "finalidade": "Explicar por que o pedido surgiu durante o processo de divórcio.", "como_obter": "Extrair a data da sentença ou do trânsito em julgado na cópia do processo previdenciário.", "prioridade": "media", "apontamentos": ["argumento-pedido-tardio", "pergunta-momento"]},
+   {"prova": "Certidão de casamento com o regime de bens", "finalidade": "Cruzar a data do casamento com os períodos de trabalho que geraram o benefício.", "como_obter": "Certidão atualizada no cartório de registro civil.", "prioridade": "baixa", "apontamentos": ["lacuna-periodo", "argumento-dupla-vantagem"]}
+  ]
+ },
+ "audiencia": [
+  {
+   "pergunta": "Qual é o valor dos atrasados da aposentadoria, e a quais anos de trabalho eles correspondem?",
+   "respostas": [
+    {"rotulo": "Resposta A", "texto": "É muito dinheiro, uns atrasados enormes que ele recebeu sozinho.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta não informa valor nem período e acrescenta que ele recebeu sozinho, o que não está nos documentos.", "pontos_fortes": [], "pontos_frageis": ["Nenhum valor é indicado.", "Nenhum documento diz se os atrasados já foram pagos."], "sugestao": "Informe que os valores e períodos constam da decisão previdenciária e que ela será juntada com o cálculo.", "apoio_nos_documentos": [{"documento": "pedido_esposa.txt", "trecho": "reconhecida em outra ação judicial"}], "replica": "Se a senhora não sabe o valor, como sabe que é enorme?"}},
+    {"rotulo": "Resposta B", "texto": "O valor e os períodos estão na decisão da ação previdenciária. Vamos juntar a cópia e o cálculo dos atrasados, para mostrar quais anos coincidem com o casamento.", "avaliacao": {"avaliacao": "parcial", "resumo": "Sua resposta aponta a prova certa, mas o dado central da tese ainda não está nos autos.", "pontos_fortes": ["Não inventa valores.", "Liga a prova ao período do casamento, que é o que importa."], "pontos_frageis": ["Sem o cálculo, a proporção a partilhar continua indefinida."], "sugestao": "Obtenha a cópia antes da audiência e leve o recorte dos anos de casamento.", "apoio_nos_documentos": [{"documento": "pedido_esposa.txt", "trecho": "O valor da aposentadoria estava relacionado a período em que ainda existia a relação conjugal"}], "replica": "E os anos de trabalho anteriores ao casamento, como ficam nessa conta?"}}
+   ]
+  },
+  {
+   "pergunta": "Por que o pedido de incluir esses valores só apareceu depois de iniciado o processo de divórcio?",
+   "respostas": [
+    {"rotulo": "Resposta A", "texto": "Esquecemos de colocar no começo.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta confirma a crítica da outra parte e trata como descuido o que pode ter explicação legítima.", "pontos_fortes": [], "pontos_frageis": ["Reforça o argumento de pedido tardio.", "Ignora que a questão surgiu durante o processo."], "sugestao": "Explique que os valores decorrem de uma decisão em outra ação e que o pedido foi feito quando a questão apareceu.", "apoio_nos_documentos": [{"documento": "contestacao_marido.txt", "trecho": "especialmente porque o pedido da ex-esposa surgiu posteriormente"}], "replica": "Então a senhora admite que o pedido é novo?"}},
+    {"rotulo": "Resposta B", "texto": "A aposentadoria foi reconhecida em outra ação, e a questão surgiu durante o processo, como está descrito. O pedido foi feito assim que o fato apareceu, e a data da decisão previdenciária vai demonstrar isso.", "avaliacao": {"avaliacao": "convincente", "resumo": "Sua resposta explica o momento do pedido com base no próprio relato dos autos e indica o documento que confirma a cronologia.", "pontos_fortes": ["Usa o fato de que a questão surgiu durante o processo.", "Indica prova simples para confirmar a data."], "pontos_frageis": [], "sugestao": "Leve a data exata da decisão previdenciária para encerrar a discussão.", "apoio_nos_documentos": [{"documento": "pedido_esposa.txt", "trecho": "Durante o processo, surgiu uma questão envolvendo valores referentes a uma aposentadoria especial"}], "replica": ""}}
+   ]
+  },
+  {
+   "pergunta": "Quais são a renda e as despesas atuais da ex-esposa que justificam a pensão?",
+   "respostas": [
+    {"rotulo": "Resposta A", "texto": "Ela sempre dependeu dele, então precisa da pensão.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta afirma uma dependência que nenhum documento descreve e não traz nenhum número.", "pontos_fortes": [], "pontos_frageis": ["Nenhum documento diz que ela sempre dependeu do marido.", "Não responde à exigência de demonstrar os requisitos."], "sugestao": "Informe a renda e as despesas atuais com documentos, e relacione a necessidade ao fim do casamento de mais de 20 anos.", "apoio_nos_documentos": [{"documento": "contestacao_marido.txt", "trecho": "a necessidade de demonstrar os requisitos para a pensão alimentícia"}], "replica": "Ela trabalha hoje?"}},
+    {"rotulo": "Resposta B", "texto": "Vamos juntar os comprovantes de renda e das despesas fixas da ex-esposa. Depois de mais de 20 anos de casamento, é esse conjunto que vai mostrar a necessidade.", "avaliacao": {"avaliacao": "parcial", "resumo": "Sua resposta indica as provas certas e usa um fato dos autos, a duração do casamento, mas ainda não apresenta os números.", "pontos_fortes": ["Usa a longa duração do casamento, que consta dos documentos.", "Compromete-se com prova concreta."], "pontos_frageis": ["A necessidade continua sem demonstração."], "sugestao": "Leve uma planilha simples com renda e despesas comprovadas.", "apoio_nos_documentos": [{"documento": "pedido_esposa.txt", "trecho": "O casal permaneceu casado por mais de 20 anos"}], "replica": "E ela tem condições de voltar a trabalhar?"}}
+   ]
+  }
+ ]
+}

@@ -1,0 +1,395 @@
+{
+ "id": "heranca-cuidadora",
+ "tipo": "Herança",
+ "titulo": "Filha que cuidou do pai",
+ "descricao": "A filha que cuidou do pai por oito anos pede uma parte maior da casa deixada por ele, em disputa com o irmão.",
+ "documentos": [
+  {
+   "nome": "alegacoes_fernanda.txt",
+   "conteudo": "MANIFESTAÇÃO DA HERDEIRA — INVENTÁRIO (CASO FICTÍCIO PARA TESTES, BASEADO EM CENÁRIO\nSINTÉTICO — NENHUMA RELAÇÃO COM PESSOAS REAIS)\n\nREQUERENTE: Fernanda\nHERDEIRO/IRMÃO: Carlos\n\nDOS FATOS\n\nFernanda e Carlos são os dois únicos filhos de João, falecido, que deixou como patrimônio\numa casa avaliada em R$ 600.000,00 (seiscentos mil reais).\n\nDurante os últimos oito anos de vida do pai, Fernanda morou com ele e ficou responsável\npor acompanhá-lo em consultas médicas, administrar seus medicamentos e realizar as\ntarefas domésticas do dia a dia.\n\nCarlos morava em outra cidade durante esse período e visitava o pai algumas vezes por\nano.\n\nDOS ARGUMENTOS DA REQUERENTE\n\n1. Fernanda dedicou anos de sua vida ao cuidado direto e cotidiano do pai.\n2. Fernanda deixou de trabalhar em determinados períodos para poder acompanhá-lo.\n3. Carlos contribuiu financeiramente durante o período, mas não participou diretamente\n   dos cuidados do dia a dia.\n4. Fernanda considera injusto receber exatamente a mesma parcela da herança que Carlos,\n   depois de ter assumido praticamente toda a responsabilidade direta pelos cuidados do\n   pai ao longo de oito anos.\n\nDO PEDIDO\n\nRequer-se o reconhecimento de um direito a receber uma parcela maior do patrimônio\ndeixado pelo pai, em razão da dedicação direta e contínua aos cuidados dele durante os\núltimos oito anos de vida.\n"
+  },
+  {
+   "nome": "manifestacao_carlos.txt",
+   "conteudo": "MANIFESTAÇÃO DO HERDEIRO — INVENTÁRIO (CASO FICTÍCIO PARA TESTES, BASEADO EM CENÁRIO\nSINTÉTICO — NENHUMA RELAÇÃO COM PESSOAS REAIS)\n\nHERDEIRO: Carlos, irmão de Fernanda, em resposta ao pedido dela.\n\nCarlos afirma que enviava mensalmente dinheiro para ajudar nas despesas médicas e\ndomésticas do pai, durante o período em que morava em outra cidade e o visitava algumas\nvezes por ano.\n\nCarlos discorda do pedido de Fernanda. Afirma que ambos são herdeiros e que o fato de\nFernanda ter cuidado do pai não significa que ela deva receber uma parcela maior da\nherança.\n"
+  }
+ ],
+ "tese": "Inventário/partilha de herança entre irmãos. A tese a ser testada é a da Requerente\n(Fernanda): direito a receber uma parcela maior do patrimônio deixado pelo pai (uma casa\navaliada em R$ 600 mil), com fundamento na dedicação direta e contínua aos cuidados dele\ndurante os últimos oito anos de vida, em contraste com a contribuição apenas financeira e\na presença esporádica do irmão (Carlos) no mesmo período.",
+ "relatorio": {
+  "resumo_do_caso": "Lemos 2 documentos e identificamos 3 partes, 7 fatos relevantes e 1 pedido.",
+  "tese_analisada": "Inventário/partilha de herança entre irmãos. A tese a ser testada é a da Requerente\n(Fernanda): direito a receber uma parcela maior do patrimônio deixado pelo pai (uma casa\navaliada em R$ 600 mil), com fundamento na dedicação direta e contínua aos cuidados dele\ndurante os últimos oito anos de vida, em contraste com a contribuição apenas financeira e\na presença esporádica do irmão (Carlos) no mesmo período.",
+  "findings": [
+   {
+    "id": "lacuna-cuidados",
+    "categoria": "lacuna_probatoria",
+    "texto": "Os oito anos de cuidados são descritos com detalhes, mas sem receitas, agendamentos de consultas, relatórios médicos ou testemunhas.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "alegacoes_fernanda.txt",
+      "trecho": "ficou responsável por acompanhá-lo em consultas médicas, administrar seus medicamentos e realizar as tarefas domésticas do dia a dia",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-perda-renda",
+    "categoria": "lacuna_probatoria",
+    "texto": "Fernanda afirma ter deixado de trabalhar \"em determinados períodos\", sem dizer quais nem quanto deixou de ganhar.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "alegacoes_fernanda.txt",
+      "trecho": "Fernanda deixou de trabalhar em determinados períodos para poder acompanhá-lo",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-valores-carlos",
+    "categoria": "lacuna_probatoria",
+    "texto": "Os valores enviados por Carlos todos os meses não são informados por nenhuma das partes.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "manifestacao_carlos.txt",
+      "trecho": "Carlos afirma que enviava mensalmente dinheiro para ajudar nas despesas médicas e domésticas do pai",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-testamento",
+    "categoria": "lacuna_probatoria",
+    "texto": "Nenhum documento menciona testamento ou doação do pai; sem isso, não há manifestação de vontade dele que favoreça Fernanda.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "alegacoes_fernanda.txt",
+      "trecho": "uma casa avaliada em R$ 600.000,00",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-igualdade",
+    "categoria": "contra_argumento",
+    "texto": "Carlos sustentará que os dois filhos são herdeiros na mesma posição e que cuidar do pai, por mais valioso que seja, não altera a divisão da herança.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "manifestacao_carlos.txt",
+      "trecho": "Afirma que ambos são herdeiros e que o fato de Fernanda ter cuidado do pai não significa que ela deva receber uma parcela maior da herança",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-contribuicao",
+    "categoria": "contra_argumento",
+    "texto": "Carlos apresentará o dinheiro enviado todo mês como a forma de cuidado possível para quem morava em outra cidade, e a própria Fernanda reconhece essa contribuição.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "alegacoes_fernanda.txt",
+      "trecho": "Carlos contribuiu financeiramente durante o período",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-moradia",
+    "categoria": "contra_argumento",
+    "texto": "A outra parte pode lembrar que Fernanda morou na casa do pai durante os oito anos, o que também representou um benefício a ela no período.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "alegacoes_fernanda.txt",
+      "trecho": "Fernanda morou com ele",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-via",
+    "categoria": "contra_argumento",
+    "texto": "Carlos poderá sustentar que a divisão da herança não é o lugar para compensar cuidados, e que um eventual ressarcimento teria de ser discutido de outra forma e com prova dos gastos e da renda perdida.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "alegacoes_fernanda.txt",
+      "trecho": "Requer-se o reconhecimento de um direito a receber uma parcela maior do patrimônio deixado pelo pai",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-base",
+    "categoria": "pergunta_dificil",
+    "texto": "Em que se baseia o pedido de uma parcela maior, se os dois são filhos e herdeiros?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "manifestacao_carlos.txt",
+      "trecho": "ambos são herdeiros",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-provas",
+    "categoria": "pergunta_dificil",
+    "texto": "Que documentos comprovam os oito anos de cuidados diários?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "alegacoes_fernanda.txt",
+      "trecho": "Durante os últimos oito anos de vida do pai",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-carlos",
+    "categoria": "pergunta_dificil",
+    "texto": "Fernanda reconhece que Carlos enviava dinheiro todo mês para as despesas do pai?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "manifestacao_carlos.txt",
+      "trecho": "enviava mensalmente dinheiro",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   }
+  ],
+  "perguntas_dificeis": [
+   "Em que se baseia o pedido de uma parcela maior, se os dois são filhos e herdeiros?",
+   "Que documentos comprovam os oito anos de cuidados diários?",
+   "Fernanda reconhece que Carlos enviava dinheiro todo mês para as despesas do pai?"
+  ],
+  "linha_do_tempo": [],
+  "plano_de_provas": [
+   {
+    "prova": "Provas dos cuidados: receitas, agendamentos e prontuários com Fernanda como acompanhante, e testemunhas como médicos e vizinhos",
+    "finalidade": "Demonstrar a dedicação direta e contínua descrita no pedido.",
+    "como_obter": "Pedir cópias às clínicas e farmácias e indicar testemunhas sem interesse na herança.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "lacuna-cuidados",
+     "pergunta-provas"
+    ]
+   },
+   {
+    "prova": "Carteira de trabalho e comprovantes de renda de Fernanda no período",
+    "finalidade": "Mostrar os períodos sem trabalho e a renda perdida.",
+    "como_obter": "Carteira de Trabalho Digital e extrato de vínculos junto ao INSS.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "lacuna-perda-renda",
+     "argumento-via"
+    ]
+   },
+   {
+    "prova": "Extratos das transferências feitas por Carlos",
+    "finalidade": "Dimensionar a contribuição financeira dele.",
+    "como_obter": "Requerer que Carlos exiba os comprovantes.",
+    "prioridade": "media",
+    "apontamentos": [
+     "lacuna-valores-carlos",
+     "argumento-contribuicao",
+     "pergunta-carlos"
+    ]
+   },
+   {
+    "prova": "Comprovantes das despesas da casa pagas por Fernanda",
+    "finalidade": "Responder à ideia de que ela apenas se beneficiou da moradia.",
+    "como_obter": "Reunir contas de consumo, IPTU e compras pagas por ela.",
+    "prioridade": "media",
+    "apontamentos": [
+     "argumento-moradia"
+    ]
+   },
+   {
+    "prova": "Pesquisa de testamento em nome do pai",
+    "finalidade": "Verificar se existe manifestação de vontade que favoreça Fernanda.",
+    "como_obter": "Solicitar certidão na central de testamentos dos cartórios de notas.",
+    "prioridade": "baixa",
+    "apontamentos": [
+     "lacuna-testamento",
+     "argumento-igualdade",
+     "pergunta-base"
+    ]
+   }
+  ],
+  "avisos": [
+   "Este relatório não é parecer jurídico: revise cada apontamento antes de usá-lo.",
+   "Versão de demonstração: use apenas documentos fictícios ou anonimizados."
+  ]
+ },
+ "audiencia": [
+  {
+   "pergunta": "Em que se baseia o pedido de uma parcela maior, se os dois são filhos e herdeiros?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Porque é justo: ela cuidou do pai e ele não fez nada.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta se apoia só em justiça em sentido geral e ainda afirma que Carlos não fez nada, o que contradiz o próprio pedido de Fernanda.",
+      "pontos_fortes": [
+       "Destaca a dedicação de Fernanda."
+      ],
+      "pontos_frageis": [
+       "O pedido reconhece que Carlos contribuiu financeiramente.",
+       "Não indica fundamento além do senso de justiça."
+      ],
+      "sugestao": "Reconheça a contribuição de Carlos e explique que a diferença está nos cuidados diretos, que precisam ser comprovados.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "alegacoes_fernanda.txt",
+        "trecho": "Carlos contribuiu financeiramente durante o período",
+        "conferido": true
+       }
+      ],
+      "replica": "Então a senhora nega que Carlos mandava dinheiro todo mês?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "O pedido se baseia na dedicação direta por oito anos, com perda de renda. Se não couber parcela maior da herança, os mesmos fatos sustentam um pedido de compensação pelos cuidados e pela renda perdida.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é estrategicamente prudente ao preparar um caminho alternativo, mas admite que o pedido principal tem base frágil.",
+      "pontos_fortes": [
+       "Usa fatos descritos nos documentos.",
+       "Antecipa uma alternativa."
+      ],
+      "pontos_frageis": [
+       "Enfraquece o pedido principal ao admitir que ele pode não caber.",
+       "Perda de renda e cuidados ainda sem prova."
+      ],
+      "sugestao": "Reúna provas dos cuidados e da renda perdida, que servem para qualquer um dos caminhos.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "alegacoes_fernanda.txt",
+        "trecho": "Fernanda deixou de trabalhar em determinados períodos para poder acompanhá-lo",
+        "conferido": true
+       }
+      ],
+      "replica": "E quanto a senhora deixou de ganhar nesses períodos?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Que documentos comprovam os oito anos de cuidados diários?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Todo mundo na família sabe que foi ela.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta não indica nenhum documento e se apoia em pessoas da família, que não são testemunhas isentas.",
+      "pontos_fortes": [],
+      "pontos_frageis": [
+       "Nenhum documento é indicado.",
+       "Parentes têm interesse na herança."
+      ],
+      "sugestao": "Indique receitas, agendamentos e testemunhas sem interesse, como médicos e vizinhos.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "alegacoes_fernanda.txt",
+        "trecho": "Fernanda dedicou anos de sua vida ao cuidado direto e cotidiano do pai",
+        "conferido": true
+       }
+      ],
+      "replica": "E quem, fora da família, pode confirmar isso?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Vamos juntar receitas e comprovantes de consultas em que Fernanda aparece como acompanhante, e indicar médicos e vizinhos como testemunhas.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta indica provas adequadas e isentas, mas nenhuma delas está nos autos ainda.",
+      "pontos_fortes": [
+       "Provas documentais e testemunhas sem interesse."
+      ],
+      "pontos_frageis": [
+       "Os cuidados continuam sem comprovação."
+      ],
+      "sugestao": "Organize os documentos por ano para mostrar a continuidade ao longo dos oito anos.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "alegacoes_fernanda.txt",
+        "trecho": "acompanhá-lo em consultas médicas",
+        "conferido": true
+       }
+      ],
+      "replica": "E Carlos também não acompanhava o pai nas visitas?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Fernanda reconhece que Carlos enviava dinheiro todo mês para as despesas do pai?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Ele mandava uma mixaria, não fazia diferença nenhuma.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta desqualifica uma contribuição sem saber o valor, que não consta de nenhum documento.",
+      "pontos_fortes": [],
+      "pontos_frageis": [
+       "O valor enviado é desconhecido.",
+       "O tom tende a prejudicar a credibilidade."
+      ],
+      "sugestao": "Reconheça a contribuição, como o próprio pedido faz, e diferencie o apoio financeiro dos cuidados diretos.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "manifestacao_carlos.txt",
+        "trecho": "enviava mensalmente dinheiro para ajudar nas despesas médicas e domésticas do pai",
+        "conferido": true
+       }
+      ],
+      "replica": "A senhora sabe quanto ele mandava?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "A contribuição financeira de Carlos é reconhecida no próprio pedido. Ela não substitui os cuidados diretos do dia a dia, que é o que diferencia a situação de Fernanda. O valor enviado será conhecido pelos extratos.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta é coerente com o pedido, reconhece o que a outra parte fez e reforça a distinção central da tese.",
+      "pontos_fortes": [
+       "Coerente com o que Fernanda já afirmou.",
+       "Destaca a diferença entre apoio financeiro e cuidado direto."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Mantenha a resposta e peça a exibição dos extratos de Carlos.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "alegacoes_fernanda.txt",
+        "trecho": "Carlos contribuiu financeiramente durante o período, mas não participou diretamente dos cuidados do dia a dia",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    }
+   ]
+  }
+ ]
+}

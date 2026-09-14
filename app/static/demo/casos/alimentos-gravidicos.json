@@ -1,0 +1,535 @@
+{
+ "id": "alimentos-gravidicos",
+ "tipo": "Pensão alimentícia",
+ "titulo": "Alimentos durante a gravidez",
+ "descricao": "A gestante pede pensão ao ex-namorado até o nascimento. Ele diz que o namoro terminou antes da provável data da concepção e que ganha menos do que ela afirma.",
+ "documentos": [
+  {
+   "nome": "contestacao_gustavo.txt",
+   "conteudo": "CONTESTAÇÃO (CASO FICTÍCIO PARA TESTES, CENÁRIO SINTÉTICO — NENHUMA RELAÇÃO COM PESSOAS\nREAIS)\n\nRÉU: Gustavo, em resposta ao pedido de Aline.\n\nDOS FATOS\n\nGustavo reconhece que namorou Aline, mas afirma que o relacionamento terminou em fevereiro\nde 2025, e não em abril, e que não houve contato entre os dois depois disso.\n\nGustavo não bloqueou Aline: trocou de número de telefone em março de 2025.\n\nGustavo trabalha como vendedor, e não como gerente, e recebe cerca de R$ 2.500,00 por mês.\nPaga pensão de R$ 600,00 a outro filho, de 5 anos.\n\nGustavo aceita fazer exame de DNA assim que for possível.\n\nDO PEDIDO\n\n1. Rejeição do pedido, por falta de indícios de paternidade.\n2. Subsidiariamente, fixação em valor compatível com a renda dele.\n"
+  },
+  {
+   "nome": "peticao_aline.txt",
+   "conteudo": "AÇÃO DE ALIMENTOS GRAVÍDICOS (CASO FICTÍCIO PARA TESTES, CENÁRIO SINTÉTICO — NENHUMA\nRELAÇÃO COM PESSOAS REAIS)\n\nAUTORA: Aline\nRÉU: Gustavo\n\nDOS FATOS\n\nAline e Gustavo namoraram de outubro de 2024 a abril de 2025. Em 02/05/2025, um exame\nconfirmou a gravidez de Aline, com cerca de oito semanas de gestação.\n\nAline avisou Gustavo da gravidez por mensagem em 05/05/2025. Desde então, ele deixou de\nresponder e bloqueou o número dela.\n\nA gestação exige consultas de pré-natal, exames e medicamentos. Aline trabalha como\natendente e recebe um salário mínimo.\n\nGustavo é gerente de uma loja de eletrônicos.\n\nDO PEDIDO\n\nFixação de alimentos gravídicos de R$ 1.200,00 por mês até o nascimento.\n"
+  }
+ ],
+ "tese": "Ação de alimentos gravídicos. A tese a ser testada é a de Aline (autora): fixação de\nalimentos gravídicos de R$ 1.200,00 por mês, a serem pagos por Gustavo até o nascimento,\ncom base no namoro que, segundo ela, durou até abril de 2025 e na gravidez confirmada em\n02/05/2025.",
+ "relatorio": {
+  "resumo_do_caso": "Lemos 2 documentos e identificamos 2 partes, 12 fatos relevantes e 3 pedidos.",
+  "tese_analisada": "Ação de alimentos gravídicos. A tese a ser testada é a de Aline (autora): fixação de\nalimentos gravídicos de R$ 1.200,00 por mês, a serem pagos por Gustavo até o nascimento,\ncom base no namoro que, segundo ela, durou até abril de 2025 e na gravidez confirmada em\n02/05/2025.",
+  "findings": [
+   {
+    "id": "contradicao-fim-namoro",
+    "categoria": "contradicao",
+    "texto": "O ponto decisivo é a data do fim do namoro. Uma gravidez de cerca de oito semanas em 02/05/2025 aponta concepção por volta de março de 2025. Aline diz que o namoro durou até abril; Gustavo diz que terminou em fevereiro e que não houve contato depois. Pela versão dele, faltam indícios de paternidade.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "peticao_aline.txt",
+      "trecho": "Aline e Gustavo namoraram de outubro de 2024 a abril de 2025",
+      "pagina": null,
+      "conferido": true
+     },
+     {
+      "documento": "peticao_aline.txt",
+      "trecho": "com cerca de oito semanas de gestação",
+      "pagina": null,
+      "conferido": true
+     },
+     {
+      "documento": "contestacao_gustavo.txt",
+      "trecho": "afirma que o relacionamento terminou em fevereiro de 2025, e não em abril",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "contradicao-bloqueio",
+    "categoria": "contradicao",
+    "texto": "Aline diz que Gustavo bloqueou o número dela depois do aviso da gravidez; Gustavo diz que não bloqueou ninguém e que trocou de número em março de 2025, antes do aviso.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "peticao_aline.txt",
+      "trecho": "ele deixou de responder e bloqueou o número dela",
+      "pagina": null,
+      "conferido": true
+     },
+     {
+      "documento": "contestacao_gustavo.txt",
+      "trecho": "Gustavo não bloqueou Aline: trocou de número de telefone em março de 2025",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "contradicao-trabalho",
+    "categoria": "contradicao",
+    "texto": "Aline descreve Gustavo como gerente; ele afirma ser vendedor, com renda de cerca de R$ 2.500,00 e outro filho com pensão de R$ 600,00. A capacidade de pagamento muda muito conforme a versão.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "peticao_aline.txt",
+      "trecho": "Gustavo é gerente de uma loja de eletrônicos",
+      "pagina": null,
+      "conferido": true
+     },
+     {
+      "documento": "contestacao_gustavo.txt",
+      "trecho": "Gustavo trabalha como vendedor, e não como gerente, e recebe cerca de R$ 2.500,00 por mês",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-mensagens",
+    "categoria": "lacuna_probatoria",
+    "texto": "A mensagem de 05/05/2025 e o suposto bloqueio não foram juntados, nem há mensagens ou fotos que mostrem o relacionamento em março e abril.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "peticao_aline.txt",
+      "trecho": "Aline avisou Gustavo da gravidez por mensagem em 05/05/2025",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-exame",
+    "categoria": "lacuna_probatoria",
+    "texto": "O exame de 02/05/2025, que fixa a idade gestacional e a provável data da concepção, não foi juntado.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "peticao_aline.txt",
+      "trecho": "Em 02/05/2025, um exame confirmou a gravidez de Aline",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-despesas",
+    "categoria": "lacuna_probatoria",
+    "texto": "As despesas da gestação são mencionadas sem nenhum valor ou recibo, o que deixa o pedido de R$ 1.200,00 sem cálculo.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "peticao_aline.txt",
+      "trecho": "A gestação exige consultas de pré-natal, exames e medicamentos",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-renda-gustavo",
+    "categoria": "lacuna_probatoria",
+    "texto": "Nenhuma das versões sobre o trabalho de Gustavo vem com prova, e a pensão paga ao outro filho também não é comprovada.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "contestacao_gustavo.txt",
+      "trecho": "Paga pensão de R$ 600,00 a outro filho, de 5 anos",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-indicios",
+    "categoria": "contra_argumento",
+    "texto": "Gustavo pedirá a rejeição por falta de indícios de paternidade, sustentando que não houve contato entre os dois no período provável da concepção.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "contestacao_gustavo.txt",
+      "trecho": "Rejeição do pedido, por falta de indícios de paternidade",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-capacidade",
+    "categoria": "contra_argumento",
+    "texto": "Com renda de cerca de R$ 2.500,00 e outro filho, Gustavo dirá que R$ 1.200,00 por mês é desproporcional e pedirá valor compatível com a renda dele.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "contestacao_gustavo.txt",
+      "trecho": "fixação em valor compatível com a renda dele",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-dna",
+    "categoria": "contra_argumento",
+    "texto": "A disposição de Gustavo em fazer exame de DNA será usada para mostrar boa-fé e para sustentar que não há motivo para pagar antes do resultado.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "contestacao_gustavo.txt",
+      "trecho": "Gustavo aceita fazer exame de DNA assim que for possível",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-contato",
+    "categoria": "pergunta_dificil",
+    "texto": "Que prova mostra que Aline e Gustavo ainda se relacionavam em março de 2025?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "contestacao_gustavo.txt",
+      "trecho": "que não houve contato entre os dois depois disso",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-numero",
+    "categoria": "pergunta_dificil",
+    "texto": "Para qual número Aline enviou a mensagem de 05/05/2025, se Gustavo trocou de número em março?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "contestacao_gustavo.txt",
+      "trecho": "trocou de número de telefone em março de 2025",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-valor",
+    "categoria": "pergunta_dificil",
+    "texto": "Como se chegou a R$ 1.200,00 por mês, e quanto custam de fato as despesas da gestação?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "peticao_aline.txt",
+      "trecho": "Fixação de alimentos gravídicos de R$ 1.200,00 por mês até o nascimento",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-cargo",
+    "categoria": "pergunta_dificil",
+    "texto": "Que documento mostra que Gustavo é gerente, e não vendedor?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "peticao_aline.txt",
+      "trecho": "Gustavo é gerente de uma loja de eletrônicos",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   }
+  ],
+  "perguntas_dificeis": [
+   "Que prova mostra que Aline e Gustavo ainda se relacionavam em março de 2025?",
+   "Para qual número Aline enviou a mensagem de 05/05/2025, se Gustavo trocou de número em março?",
+   "Como se chegou a R$ 1.200,00 por mês, e quanto custam de fato as despesas da gestação?",
+   "Que documento mostra que Gustavo é gerente, e não vendedor?"
+  ],
+  "linha_do_tempo": [
+   {
+    "data": "outubro de 2024",
+    "data_ordenacao": "2024-10",
+    "evento": "Início do namoro",
+    "quem_afirma": "Aline",
+    "documento": "peticao_aline.txt",
+    "trecho": "namoraram de outubro de 2024 a abril de 2025",
+    "trecho_conferido": true,
+    "divergencia": ""
+   },
+   {
+    "data": "fevereiro de 2025",
+    "data_ordenacao": "2025-02",
+    "evento": "Fim do namoro, segundo Gustavo, sem contato depois",
+    "quem_afirma": "Gustavo",
+    "documento": "contestacao_gustavo.txt",
+    "trecho": "o relacionamento terminou em fevereiro de 2025",
+    "trecho_conferido": true,
+    "divergencia": "Aline afirma que o namoro durou até abril de 2025."
+   },
+   {
+    "data": "março de 2025",
+    "data_ordenacao": "2025-03",
+    "evento": "Gustavo troca de número de telefone",
+    "quem_afirma": "Gustavo",
+    "documento": "contestacao_gustavo.txt",
+    "trecho": "trocou de número de telefone em março de 2025",
+    "trecho_conferido": true,
+    "divergencia": "Aline afirma que ele bloqueou o número dela depois do aviso da gravidez."
+   },
+   {
+    "data": "abril de 2025",
+    "data_ordenacao": "2025-04",
+    "evento": "Fim do namoro, segundo Aline",
+    "quem_afirma": "Aline",
+    "documento": "peticao_aline.txt",
+    "trecho": "de outubro de 2024 a abril de 2025",
+    "trecho_conferido": true,
+    "divergencia": "Gustavo afirma que o namoro terminou em fevereiro de 2025."
+   },
+   {
+    "data": "02/05/2025",
+    "data_ordenacao": "2025-05-02",
+    "evento": "Exame confirma a gravidez, com cerca de oito semanas",
+    "quem_afirma": "Aline",
+    "documento": "peticao_aline.txt",
+    "trecho": "Em 02/05/2025, um exame confirmou a gravidez de Aline, com cerca de oito semanas de gestação",
+    "trecho_conferido": true,
+    "divergencia": ""
+   },
+   {
+    "data": "05/05/2025",
+    "data_ordenacao": "2025-05-05",
+    "evento": "Aline avisa Gustavo da gravidez por mensagem; ele deixa de responder",
+    "quem_afirma": "Aline",
+    "documento": "peticao_aline.txt",
+    "trecho": "Aline avisou Gustavo da gravidez por mensagem em 05/05/2025",
+    "trecho_conferido": true,
+    "divergencia": "Gustavo diz que não bloqueou Aline e que já tinha trocado de número em março."
+   }
+  ],
+  "plano_de_provas": [
+   {
+    "prova": "Mensagens, fotos e registros de encontros entre fevereiro e abril de 2025",
+    "finalidade": "Mostrar que o relacionamento continuava no período provável da concepção.",
+    "como_obter": "Exportar as conversas pelo aplicativo, com data e hora, e registrar em ata notarial; indicar testemunhas.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "contradicao-fim-namoro",
+     "lacuna-mensagens",
+     "argumento-indicios",
+     "pergunta-contato"
+    ]
+   },
+   {
+    "prova": "Exame de gravidez e laudo de ultrassom com a idade gestacional",
+    "finalidade": "Fixar a provável data da concepção.",
+    "como_obter": "A cliente tem os exames; pedir ao médico do pré-natal um laudo com a idade gestacional.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "contradicao-fim-namoro",
+     "lacuna-exame"
+    ]
+   },
+   {
+    "prova": "Recibos e orçamentos do pré-natal, exames e medicamentos",
+    "finalidade": "Dar base concreta ao valor pedido.",
+    "como_obter": "Reunir com a cliente e pedir à clínica a lista de exames previstos com custos.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "lacuna-despesas",
+     "argumento-capacidade",
+     "pergunta-valor"
+    ]
+   },
+   {
+    "prova": "Cargo e salário de Gustavo",
+    "finalidade": "Resolver a divergência sobre a capacidade de pagamento.",
+    "como_obter": "Requerer ao juízo ofício à loja em que ele trabalha.",
+    "prioridade": "media",
+    "apontamentos": [
+     "contradicao-trabalho",
+     "lacuna-renda-gustavo",
+     "pergunta-cargo"
+    ]
+   },
+   {
+    "prova": "Registro da troca de número de telefone de Gustavo",
+    "finalidade": "Verificar a versão sobre bloqueio e troca de número.",
+    "como_obter": "Requerer ao juízo ofício à operadora de telefonia.",
+    "prioridade": "media",
+    "apontamentos": [
+     "contradicao-bloqueio",
+     "pergunta-numero"
+    ]
+   },
+   {
+    "prova": "Pedido de exame de DNA assim que for possível",
+    "finalidade": "Aproveitar a disposição de Gustavo e dar certeza sobre a paternidade.",
+    "como_obter": "Requerer ao juízo a realização do exame no momento clinicamente adequado.",
+    "prioridade": "baixa",
+    "apontamentos": [
+     "argumento-dna"
+    ]
+   }
+  ],
+  "avisos": [
+   "Este relatório não é parecer jurídico: revise cada apontamento antes de usá-lo.",
+   "Versão de demonstração: use apenas documentos fictícios ou anonimizados."
+  ]
+ },
+ "audiencia": [
+  {
+   "pergunta": "Que prova mostra que Aline e Gustavo ainda se relacionavam em março de 2025?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Eles estavam juntos até abril, isso é certo.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta repete a petição, mas não indica prova para o ponto que decide o caso.",
+      "pontos_fortes": [
+       "Coerente com a petição."
+      ],
+      "pontos_frageis": [
+       "Nenhuma prova é indicada.",
+       "Gustavo afirma que não houve contato depois de fevereiro."
+      ],
+      "sugestao": "Indique mensagens, fotos ou testemunhas de março e abril de 2025.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_gustavo.txt",
+        "trecho": "que não houve contato entre os dois depois disso",
+        "conferido": true
+       }
+      ],
+      "replica": "Então não há uma única mensagem de março?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "A petição informa namoro até abril. Vamos juntar as conversas exportadas e fotos de março e abril de 2025, com ata notarial, e indicar amigos que conviviam com o casal.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta indica as provas adequadas para o ponto decisivo, mas nenhuma delas está nos autos ainda.",
+      "pontos_fortes": [
+       "Provas com data, que resolvem a divergência.",
+       "Uso de ata notarial."
+      ],
+      "pontos_frageis": [
+       "Até a juntada, os indícios de paternidade ficam frágeis."
+      ],
+      "sugestao": "Priorize essa prova antes de qualquer outra.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_aline.txt",
+        "trecho": "namoraram de outubro de 2024 a abril de 2025",
+        "conferido": true
+       }
+      ],
+      "replica": "E essas conversas são do número novo ou do antigo de Gustavo?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Para qual número Aline enviou a mensagem de 05/05/2025, se Gustavo trocou de número em março?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Não sei, ela mandou para o número de sempre.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta admite desconhecer um detalhe que pode derrubar a versão do bloqueio.",
+      "pontos_fortes": [],
+      "pontos_frageis": [
+       "Se foi o número antigo, a falta de resposta tem outra explicação.",
+       "Enfraquece a acusação de bloqueio."
+      ],
+      "sugestao": "Verifique a conversa antes da audiência e responda com o que ela mostrar.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_gustavo.txt",
+        "trecho": "trocou de número de telefone em março de 2025",
+        "conferido": true
+       }
+      ],
+      "replica": "Então a senhora não tem como afirmar que houve bloqueio?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "A conversa será exportada com o número de destino. Se ele trocou de número em março, a pergunta passa a ser como Aline e Gustavo se comunicavam em março e abril, e é isso que as mensagens vão mostrar.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta reconhece o problema e redireciona para o ponto relevante, mas não esclarece o fato perguntado.",
+      "pontos_fortes": [
+       "Não sustenta o bloqueio sem verificar.",
+       "Conecta a pergunta ao ponto decisivo."
+      ],
+      "pontos_frageis": [
+       "O número de destino continua desconhecido."
+      ],
+      "sugestao": "Descubra, antes da audiência, qual número aparece nas conversas de março e abril.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_aline.txt",
+        "trecho": "Aline avisou Gustavo da gravidez por mensagem em 05/05/2025",
+        "conferido": true
+       }
+      ],
+      "replica": "E se todas as mensagens de março e abril forem para o número antigo, sem resposta?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Como se chegou a R$ 1.200,00 por mês, e quanto custam de fato as despesas da gestação?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "É o mínimo para uma gestação digna.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta usa uma afirmação geral no lugar do cálculo pedido.",
+      "pontos_fortes": [],
+      "pontos_frageis": [
+       "Nenhum valor de despesa é informado.",
+       "Não considera a renda informada por Gustavo."
+      ],
+      "sugestao": "Apresente os recibos e orçamentos do pré-natal e aceite a adequação à renda comprovada.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_aline.txt",
+        "trecho": "A gestação exige consultas de pré-natal, exames e medicamentos",
+        "conferido": true
+       }
+      ],
+      "replica": "Mesmo que Gustavo ganhe R$ 2.500,00 e já pague outra pensão?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "O valor será demonstrado com os recibos e orçamentos do pré-natal e dos exames. Se a renda de Gustavo for a que ele informa, Aline aceita que o juízo fixe um valor proporcional, porque nesta fase o que se exige são indícios da paternidade, e não a certeza.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta indica a base do cálculo, mostra flexibilidade diante da renda contestada e mantém o pedido de pé.",
+      "pontos_fortes": [
+       "Prova concreta das despesas.",
+       "Aceita ajuste de valor sem abrir mão do pedido."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Leve uma planilha com as despesas mensais estimadas até o nascimento.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_gustavo.txt",
+        "trecho": "fixação em valor compatível com a renda dele",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    }
+   ]
+  }
+ ]
+}

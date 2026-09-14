@@ -1,0 +1,157 @@
+{
+ "id": "partilha-empresa-imovel",
+ "tipo": "Divórcio e partilha de bens",
+ "ordem": 1,
+ "titulo": "Empresa e imóvel anteriores ao casamento",
+ "descricao": "A ex-esposa pede metade da empresa e do imóvel que o marido já tinha antes de casar, por ter ajudado a administrar o negócio.",
+ "pasta": "case_familia_01",
+ "relatorio": {
+  "resumo_do_caso": "Lemos 2 documentos e identificamos 2 partes, 8 fatos relevantes e 4 pedidos.",
+  "findings": [
+   {
+    "id": "contradicao-origem-empresa",
+    "categoria": "contradicao",
+    "texto": "Os documentos contam a origem da empresa de formas incompatíveis: para Mariana, ela foi aberta depois, no imóvel que Rafael já tinha; para Rafael, foi criada com recursos do imóvel e de patrimônio anterior ao casamento. A data de abertura e a origem do dinheiro decidem se o negócio é bem comum.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {"documento": "peticao_mariana.txt", "trecho": "no qual posteriormente abriu uma empresa de manutenção de equipamentos"},
+     {"documento": "contestacao_rafael.txt", "trecho": "A empresa de manutenção de equipamentos foi criada utilizando recursos provenientes desse imóvel"}
+    ]
+   },
+   {
+    "id": "contradicao-crescimento",
+    "categoria": "contradicao",
+    "texto": "Mariana atribui o crescimento do patrimônio ao esforço comum do casal; Rafael atribui ao próprio trabalho na parte operacional. As duas versões não podem ser ambas integralmente verdadeiras, e nenhuma vem com prova.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {"documento": "peticao_mariana.txt", "trecho": "o crescimento do patrimônio decorre do esforço comum do casal"},
+     {"documento": "contestacao_rafael.txt", "trecho": "decorreu principalmente do trabalho direto do Réu na parte operacional da empresa"}
+    ]
+   },
+   {
+    "id": "lacuna-imovel-fora-do-pedido",
+    "categoria": "lacuna_probatoria",
+    "texto": "A tese defende a metade do imóvel comercial, mas a petição não faz esse pedido: pede a metade da empresa, dos investimentos e dos bens adquiridos durante a união, e o imóvel foi adquirido antes dela.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {"documento": "peticao_mariana.txt", "trecho": "Divisão dos demais bens adquiridos na constância da união"}
+    ]
+   },
+   {
+    "id": "lacuna-contribuicao",
+    "categoria": "lacuna_probatoria",
+    "texto": "A participação de Mariana na administração da empresa é descrita em detalhe, mas sem nenhum documento: contratos assinados por ela, procurações bancárias, e-mails com clientes ou testemunhas.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {"documento": "peticao_mariana.txt", "trecho": "cuidando das contas, dos contratos, do atendimento aos clientes e da organização financeira do negócio"}
+    ]
+   },
+   {
+    "id": "lacuna-data-abertura",
+    "categoria": "lacuna_probatoria",
+    "texto": "Nenhum documento informa em que ano a empresa foi aberta; a petição diz apenas que foi \"posteriormente\". Sem o contrato social, não se sabe se ela nasceu antes ou durante o casamento.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {"documento": "peticao_mariana.txt", "trecho": "no qual posteriormente abriu uma empresa"}
+    ]
+   },
+   {
+    "id": "lacuna-valores",
+    "categoria": "lacuna_probatoria",
+    "texto": "Os valores de R$ 800 mil da empresa e R$ 500 mil do imóvel são aproximados, sem laudo de avaliação e sem o valor de cada bem na data do casamento, o que impede medir a valorização ocorrida durante a união.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {"documento": "peticao_mariana.txt", "trecho": "hoje vale aproximadamente R$ 800.000,00"},
+     {"documento": "peticao_mariana.txt", "trecho": "atualmente vale cerca de R$ 500.000,00"}
+    ]
+   },
+   {
+    "id": "lacuna-investimentos",
+    "categoria": "lacuna_probatoria",
+    "texto": "O pedido de metade dos investimentos feitos com os lucros não identifica nenhum investimento, conta ou valor.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {"documento": "peticao_mariana.txt", "trecho": "Metade dos investimentos realizados com os lucros da empresa durante o casamento"}
+    ]
+   },
+   {
+    "id": "argumento-bem-particular",
+    "categoria": "contra_argumento",
+    "texto": "Rafael sustentará que o imóvel é bem particular, adquirido antes da união com recursos próprios, e que por isso não se comunica, o que torna frágil qualquer pretensão sobre a metade do imóvel.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {"documento": "contestacao_rafael.txt", "trecho": "já era de sua propriedade exclusiva antes do casamento, adquirido com recursos próprios anteriores à união"}
+    ]
+   },
+   {
+    "id": "argumento-socia",
+    "categoria": "contra_argumento",
+    "texto": "A falta de registro de Mariana como sócia será usada para dizer que a atuação dela era de apoio familiar, e não de gestão do negócio, reduzindo o peso da contribuição indireta.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {"documento": "contestacao_rafael.txt", "trecho": "A Autora nunca foi formalmente registrada como sócia da empresa"}
+    ]
+   },
+   {
+    "id": "pergunta-provas-gestao",
+    "categoria": "pergunta_dificil",
+    "texto": "Que documentos mostram Mariana assinando contratos, pagando contas ou atendendo clientes da empresa?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {"documento": "peticao_mariana.txt", "trecho": "passou a auxiliar o Réu na administração da empresa"}
+    ]
+   },
+   {
+    "id": "pergunta-imovel",
+    "categoria": "pergunta_dificil",
+    "texto": "Por que o imóvel comercial, que Rafael já tinha antes do casamento, deveria ser dividido pela metade?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {"documento": "peticao_mariana.txt", "trecho": "Na época do casamento, o Réu já possuía um pequeno imóvel comercial"}
+    ]
+   },
+   {
+    "id": "pergunta-data-empresa",
+    "categoria": "pergunta_dificil",
+    "texto": "Em que ano a empresa foi aberta: antes ou depois do casamento, em 2014?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {"documento": "peticao_mariana.txt", "trecho": "As partes se casaram em 2014"}
+    ]
+   }
+  ],
+  "linha_do_tempo": [
+   {"data": "2014", "data_ordenacao": "2014", "evento": "Casamento de Mariana e Rafael; o imóvel comercial já pertencia a Rafael", "quem_afirma": "Mariana", "documento": "peticao_mariana.txt", "trecho": "As partes se casaram em 2014", "divergencia": ""}
+  ],
+  "plano_de_provas": [
+   {"prova": "Contrato social da empresa e todas as alterações, com a data de abertura", "finalidade": "Mostrar quando a empresa nasceu e quem constava como sócio em cada período.", "como_obter": "Certidão da Junta Comercial, que pode ser pedida por qualquer pessoa.", "prioridade": "alta", "apontamentos": ["contradicao-origem-empresa", "lacuna-data-abertura", "argumento-socia", "pergunta-data-empresa"]},
+   {"prova": "Documentos da atuação de Mariana na empresa: contratos e boletos assinados, procurações bancárias, e-mails com clientes e fornecedores", "finalidade": "Transformar a descrição da contribuição indireta em prova concreta.", "como_obter": "Reunir com a cliente e requerer que a empresa exiba os documentos; arrolar clientes e fornecedores como testemunhas.", "prioridade": "alta", "apontamentos": ["lacuna-contribuicao", "contradicao-crescimento", "pergunta-provas-gestao"]},
+   {"prova": "Perícia contábil da empresa, com o valor em 2014 e na data da separação", "finalidade": "Medir a valorização ocorrida durante o casamento e a origem dos recursos aplicados.", "como_obter": "Requerer perícia contábil ao juízo.", "prioridade": "alta", "apontamentos": ["lacuna-valores", "contradicao-crescimento", "contradicao-origem-empresa"]},
+   {"prova": "Matrícula atualizada do imóvel e laudo de avaliação", "finalidade": "Confirmar a data de aquisição e avaliar se ainda faz sentido discutir o imóvel.", "como_obter": "Certidão de matrícula no cartório de registro de imóveis e avaliação por perito.", "prioridade": "media", "apontamentos": ["lacuna-imovel-fora-do-pedido", "argumento-bem-particular", "pergunta-imovel"]},
+   {"prova": "Extratos e declarações de imposto de renda que identifiquem investimentos feitos com os lucros", "finalidade": "Dar objeto concreto ao pedido de metade dos investimentos.", "como_obter": "Requerer ofício à Receita Federal e aos bancos.", "prioridade": "media", "apontamentos": ["lacuna-investimentos"]}
+  ]
+ },
+ "audiencia": [
+  {
+   "pergunta": "Que documentos mostram Mariana assinando contratos, pagando contas ou atendendo clientes da empresa?",
+   "respostas": [
+    {"rotulo": "Resposta A", "texto": "Todos os funcionários sabiam que era ela quem mandava na empresa.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta afirma um fato novo, sobre funcionários, que não aparece em nenhum documento, e não indica prova alguma.", "pontos_fortes": [], "pontos_frageis": ["Nenhum documento menciona funcionários ou que Mariana \"mandava\" na empresa.", "Exagera a descrição da própria petição, que fala em auxílio na administração."], "sugestao": "Repita o que a petição descreve e diga quais documentos e testemunhas vão comprovar essa atuação.", "apoio_nos_documentos": [{"documento": "peticao_mariana.txt", "trecho": "passou a auxiliar o Réu na administração da empresa"}], "replica": "Então por que o nome dela nunca apareceu no contrato social?"}},
+    {"rotulo": "Resposta B", "texto": "A petição descreve que Mariana cuidava das contas, dos contratos e do atendimento. Vamos juntar contratos e boletos assinados por ela e ouvir clientes e fornecedores.", "avaliacao": {"avaliacao": "parcial", "resumo": "Sua resposta é fiel à petição e indica as provas certas, mas nenhum desses documentos está nos autos ainda.", "pontos_fortes": ["Não amplia os fatos descritos.", "Indica prova documental e testemunhal."], "pontos_frageis": ["A contribuição continua sem comprovação até que os documentos sejam juntados."], "sugestao": "Leve à audiência pelo menos alguns documentos assinados por Mariana.", "apoio_nos_documentos": [{"documento": "peticao_mariana.txt", "trecho": "cuidando das contas, dos contratos, do atendimento aos clientes e da organização financeira do negócio"}], "replica": "Esses documentos são de antes ou de depois de 2014?"}}
+   ]
+  },
+  {
+   "pergunta": "Por que o imóvel comercial, que Rafael já tinha antes do casamento, deveria ser dividido pela metade?",
+   "respostas": [
+    {"rotulo": "Resposta A", "texto": "Porque tudo o que o casal tem deve ser dividido meio a meio.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta ignora que o imóvel é anterior ao casamento, fato reconhecido pelas duas partes.", "pontos_fortes": [], "pontos_frageis": ["A própria petição admite que o imóvel já era de Rafael antes da união.", "Generaliza uma regra de divisão que não se aplica a bens anteriores."], "sugestao": "Não sustente a metade do imóvel; concentre-se na valorização da empresa construída durante o casamento.", "apoio_nos_documentos": [{"documento": "peticao_mariana.txt", "trecho": "Na época do casamento, o Réu já possuía um pequeno imóvel comercial"}, {"documento": "contestacao_rafael.txt", "trecho": "já era de sua propriedade exclusiva antes do casamento"}], "replica": "Então a senhora reconhece que o imóvel é bem particular?"}},
+    {"rotulo": "Resposta B", "texto": "O pedido da petição não é a metade do imóvel em si, mas a metade do valor da empresa construída durante o casamento e dos investimentos feitos com os lucros. A valorização do negócio será apurada na perícia.", "avaliacao": {"avaliacao": "convincente", "resumo": "Sua resposta evita defender o ponto mais fraco, se apoia no que a petição realmente pede e leva a discussão para a prova técnica.", "pontos_fortes": ["Está de acordo com os pedidos formulados.", "Não disputa o que as duas partes reconhecem sobre o imóvel.", "Indica a perícia como caminho."], "pontos_frageis": [], "sugestao": "Mantenha a linha e prepare os documentos da atuação de Mariana para a perícia.", "apoio_nos_documentos": [{"documento": "peticao_mariana.txt", "trecho": "Metade do valor atual da empresa"}], "replica": ""}}
+   ]
+  },
+  {
+   "pergunta": "Em que ano a empresa foi aberta: antes ou depois do casamento, em 2014?",
+   "respostas": [
+    {"rotulo": "Resposta A", "texto": "Foi depois do casamento, isso é óbvio.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta trata como óbvio um ponto que nenhum documento esclarece e que Rafael contesta.", "pontos_fortes": [], "pontos_frageis": ["Nenhum documento informa a data de abertura.", "Rafael afirma que a empresa foi criada com patrimônio anterior ao casamento."], "sugestao": "Indique que a data será comprovada pelo contrato social na Junta Comercial.", "apoio_nos_documentos": [{"documento": "contestacao_rafael.txt", "trecho": "de patrimônio que o Réu já possuía antes de se casar com a Autora"}], "replica": "E se o contrato social for de 2012?"}},
+    {"rotulo": "Resposta B", "texto": "A petição diz que a empresa foi aberta posteriormente no imóvel. O contrato social na Junta Comercial vai mostrar a data exata, e requeremos a certidão.", "avaliacao": {"avaliacao": "parcial", "resumo": "Sua resposta é prudente e indica a prova certa, mas deixa a tese dependendo de um documento que ainda não foi juntado.", "pontos_fortes": ["Não afirma o que os documentos não mostram.", "A certidão é de fácil obtenção."], "pontos_frageis": ["Se a empresa for anterior ao casamento, a tese perde sua base principal."], "sugestao": "Obtenha a certidão antes da audiência para saber em que terreno a tese está.", "apoio_nos_documentos": [{"documento": "peticao_mariana.txt", "trecho": "no qual posteriormente abriu uma empresa de manutenção de equipamentos"}], "replica": "Se a empresa já existia antes de 2014, o que sobra do pedido?"}}
+   ]
+  }
+ ]
+}

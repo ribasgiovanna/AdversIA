@@ -1,0 +1,113 @@
+{
+ "id": "partilha-fgts",
+ "tipo": "Divórcio e partilha de bens",
+ "ordem": 3,
+ "titulo": "FGTS acumulado durante o casamento",
+ "descricao": "Um dos cônjuges pede que o FGTS depositado durante o casamento fique fora da partilha.",
+ "pasta": "case_familia_13",
+ "relatorio": {
+  "resumo_do_caso": "Lemos 1 documento e identificamos 2 partes, 3 fatos relevantes e 1 pedido.",
+  "findings": [
+   {
+    "id": "lacuna-valores",
+    "categoria": "lacuna_probatoria",
+    "texto": "O saldo do FGTS não é informado, nem o valor depositado em cada período.",
+    "provenance": "INFERENCE",
+    "origem": [{"documento": "pedido_exclusao_fgts.txt", "trecho": "um dos cônjuges acumulou valores em conta vinculada ao FGTS"}]
+   },
+   {
+    "id": "lacuna-periodo",
+    "categoria": "lacuna_probatoria",
+    "texto": "O documento reconhece que os valores foram acumulados durante o casamento, mas não separa o que foi depositado antes e durante a união.",
+    "provenance": "INFERENCE",
+    "origem": [{"documento": "pedido_exclusao_fgts.txt", "trecho": "Durante o casamento, um dos cônjuges acumulou valores"}]
+   },
+   {
+    "id": "lacuna-uso",
+    "categoria": "lacuna_probatoria",
+    "texto": "Não se sabe se o FGTS foi usado, em algum momento, na compra de bens do casal, o que mudaria a discussão.",
+    "provenance": "INFERENCE",
+    "origem": [{"documento": "pedido_exclusao_fgts.txt", "trecho": "conta vinculada ao FGTS"}]
+   },
+   {
+    "id": "lacuna-outra-parte",
+    "categoria": "lacuna_probatoria",
+    "texto": "Só a posição de quem defende a exclusão está nos documentos; os argumentos do outro cônjuge ainda não aparecem.",
+    "provenance": "INFERENCE",
+    "origem": [{"documento": "pedido_exclusao_fgts.txt", "trecho": "Argumento de quem defende a exclusão do FGTS da partilha"}]
+   },
+   {
+    "id": "argumento-fruto-trabalho",
+    "categoria": "contra_argumento",
+    "texto": "O outro cônjuge dirá que, na comunhão parcial, o que é fruto do trabalho durante a união se divide, e que os depósitos do FGTS feitos nesse período são justamente fruto do trabalho.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "pedido_exclusao_fgts.txt", "trecho": "Um casal estava submetido ao regime de comunhão parcial de bens"}]
+   },
+   {
+    "id": "argumento-natureza",
+    "categoria": "contra_argumento",
+    "texto": "A \"natureza pessoal\" é uma conclusão, não um fato: a outra parte dirá que o vínculo ao trabalhador explica quem pode sacar, não a quem o valor pertence no casamento.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "pedido_exclusao_fgts.txt", "trecho": "O dinheiro possui natureza pessoal"}]
+   },
+   {
+    "id": "argumento-reserva",
+    "categoria": "contra_argumento",
+    "texto": "Mesmo que o saldo não possa ser sacado agora, a outra parte pode pedir que a parte do período do casamento seja reservada para quando houver saque.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "pedido_exclusao_fgts.txt", "trecho": "Depois do divórcio, surgiu a discussão"}]
+   },
+   {
+    "id": "pergunta-diferenca",
+    "categoria": "pergunta_dificil",
+    "texto": "Qual é a diferença entre o FGTS depositado durante o casamento e o salário do mesmo período, que entra na partilha?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "pedido_exclusao_fgts.txt", "trecho": "O FGTS está vinculado ao trabalhador individualmente"}]
+   },
+   {
+    "id": "pergunta-periodo",
+    "categoria": "pergunta_dificil",
+    "texto": "Quanto do saldo foi depositado durante o casamento, e quanto antes dele?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "pedido_exclusao_fgts.txt", "trecho": "Durante o casamento, um dos cônjuges acumulou valores"}]
+   },
+   {
+    "id": "pergunta-uso",
+    "categoria": "pergunta_dificil",
+    "texto": "O FGTS foi usado na compra de algum bem do casal?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "pedido_exclusao_fgts.txt", "trecho": "conta vinculada ao FGTS"}]
+   }
+  ],
+  "linha_do_tempo": [],
+  "plano_de_provas": [
+   {"prova": "Extrato analítico do FGTS com a data de cada depósito", "finalidade": "Separar o que foi depositado antes e durante o casamento.", "como_obter": "O próprio titular emite pelo aplicativo do FGTS ou na Caixa.", "prioridade": "alta", "apontamentos": ["lacuna-valores", "lacuna-periodo", "pergunta-periodo"]},
+   {"prova": "Certidão de casamento e sentença de divórcio com as datas", "finalidade": "Delimitar o período da união para cruzar com os depósitos.", "como_obter": "Certidão no cartório de registro civil e cópia do processo.", "prioridade": "alta", "apontamentos": ["lacuna-periodo", "argumento-fruto-trabalho", "argumento-reserva"]},
+   {"prova": "Histórico de saques do FGTS", "finalidade": "Verificar se o fundo foi usado na compra de algum bem.", "como_obter": "Extrato de saques emitido pelo titular na Caixa.", "prioridade": "media", "apontamentos": ["lacuna-uso", "pergunta-uso"]},
+   {"prova": "Manifestação do outro cônjuge, quando juntada", "finalidade": "Conhecer os argumentos contrários e revisar a análise.", "como_obter": "Rodar nova análise com a manifestação do outro cônjuge.", "prioridade": "baixa", "apontamentos": ["lacuna-outra-parte", "argumento-natureza", "pergunta-diferenca"]}
+  ]
+ },
+ "audiencia": [
+  {
+   "pergunta": "Qual é a diferença entre o FGTS depositado durante o casamento e o salário do mesmo período, que entra na partilha?",
+   "respostas": [
+    {"rotulo": "Resposta A", "texto": "FGTS é diferente, todo mundo sabe que é pessoal.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta repete a conclusão sem explicar a diferença que a pergunta pede.", "pontos_fortes": ["Coerente com a posição defendida."], "pontos_frageis": ["Não apresenta nenhum critério.", "\"Todo mundo sabe\" não é argumento."], "sugestao": "Explique a característica concreta do FGTS que o documento destaca, o vínculo ao trabalhador, e reconheça que a outra parte vai questionar esse ponto.", "apoio_nos_documentos": [{"documento": "pedido_exclusao_fgts.txt", "trecho": "O FGTS está vinculado ao trabalhador individualmente"}], "replica": "E o salário também não está vinculado ao trabalhador?"}},
+    {"rotulo": "Resposta B", "texto": "O FGTS fica vinculado ao trabalhador e não fica à disposição livre do casal, ao contrário do salário que entra na conta e é usado pela família. Por isso não seria patrimônio comum disponível para partilha.", "avaliacao": {"avaliacao": "parcial", "resumo": "Sua resposta desenvolve bem o argumento do documento, mas a distinção entre disponibilidade e propriedade ainda é contestável.", "pontos_fortes": ["Usa os argumentos que constam do documento.", "Oferece uma distinção concreta."], "pontos_frageis": ["A ideia de que o salário \"é usado pela família\" não está nos documentos.", "A outra parte dirá que indisponibilidade não significa exclusividade."], "sugestao": "Prepare-se para a réplica sobre a reserva do valor para saque futuro.", "apoio_nos_documentos": [{"documento": "pedido_exclusao_fgts.txt", "trecho": "não deveria ser tratado como patrimônio comum disponível para partilha"}], "replica": "Então, quando houver saque, a outra parte teria direito a uma parte?"}}
+   ]
+  },
+  {
+   "pergunta": "Quanto do saldo foi depositado durante o casamento, e quanto antes dele?",
+   "respostas": [
+    {"rotulo": "Resposta A", "texto": "Foi quase tudo antes do casamento.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta contradiz o próprio documento, que diz que os valores foram acumulados durante o casamento.", "pontos_fortes": [], "pontos_frageis": ["O documento afirma o acúmulo durante o casamento.", "Nenhum extrato sustenta a afirmação."], "sugestao": "Não afirme proporções sem o extrato analítico; indique que ele vai separar os períodos.", "apoio_nos_documentos": [{"documento": "pedido_exclusao_fgts.txt", "trecho": "Durante o casamento, um dos cônjuges acumulou valores em conta vinculada ao FGTS"}], "replica": "Então por que o próprio pedido diz que os valores foram acumulados durante o casamento?"}},
+    {"rotulo": "Resposta B", "texto": "Vamos juntar o extrato analítico do FGTS, que mostra a data de cada depósito, e separar o que foi depositado antes e durante o casamento.", "avaliacao": {"avaliacao": "parcial", "resumo": "Sua resposta indica a prova correta sem afirmar o que ainda não se sabe, mas o valor em discussão continua indefinido.", "pontos_fortes": ["Não contradiz os documentos.", "Prova de fácil obtenção."], "pontos_frageis": ["O extrato ainda não está nos autos."], "sugestao": "Emita o extrato antes da audiência e leve o cálculo por período.", "apoio_nos_documentos": [{"documento": "pedido_exclusao_fgts.txt", "trecho": "acumulou valores em conta vinculada ao FGTS"}], "replica": "E, se a maior parte for do período do casamento, a exclusão ainda se justifica?"}}
+   ]
+  },
+  {
+   "pergunta": "O FGTS foi usado na compra de algum bem do casal?",
+   "respostas": [
+    {"rotulo": "Resposta A", "texto": "Isso não importa para a discussão.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta descarta um ponto que pode mudar completamente a discussão sobre a partilha.", "pontos_fortes": [], "pontos_frageis": ["O uso do FGTS em um bem comum é relevante.", "Pode sugerir que há algo a esconder."], "sugestao": "Responda com base no histórico de saques e diga que a questão será esclarecida por ele.", "apoio_nos_documentos": [{"documento": "pedido_exclusao_fgts.txt", "trecho": "conta vinculada ao FGTS"}], "replica": "Então houve uso na compra de imóvel?"}},
+    {"rotulo": "Resposta B", "texto": "Os documentos não mencionam uso do FGTS na compra de bens. O histórico de saques vai esclarecer isso, e, se houve uso, a discussão passa a ser sobre esse bem, e não sobre o saldo que ficou na conta.", "avaliacao": {"avaliacao": "convincente", "resumo": "Sua resposta não afirma nada que os documentos não mostram, indica a prova certa e separa corretamente as duas situações.", "pontos_fortes": ["Fiel aos documentos.", "Antecipa as duas possibilidades com clareza."], "pontos_frageis": [], "sugestao": "Emita o histórico de saques antes da audiência para responder com segurança.", "apoio_nos_documentos": [{"documento": "pedido_exclusao_fgts.txt", "trecho": "O FGTS está vinculado ao trabalhador individualmente"}], "replica": ""}}
+   ]
+  }
+ ]
+}

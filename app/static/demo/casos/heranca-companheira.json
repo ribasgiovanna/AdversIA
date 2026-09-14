@@ -1,0 +1,358 @@
+{
+ "id": "heranca-companheira",
+ "tipo": "Herança",
+ "titulo": "Companheira e parentes do falecido",
+ "descricao": "Irmãos, tios e sobrinhos de quem morreu sem filhos querem dividir a herança com a companheira.",
+ "documentos": [
+  {
+   "nome": "manifestacao_colaterais.txt",
+   "conteudo": "MANIFESTAÇÃO DOS PARENTES COLATERAIS — INVENTÁRIO (CASO FICTÍCIO PARA TESTES, INSPIRADO\nEM PADRÃO DE JURISPRUDÊNCIA SUCESSÓRIA — NENHUMA RELAÇÃO COM PESSOAS OU PROCESSOS REAIS\nESPECÍFICOS)\n\nUm homem faleceu sem deixar descendentes ou ascendentes. Ele vivia em união estável. Os\nparentes colaterais — irmãos, tios e sobrinhos — discutem quem deveria receber os bens.\n\nArgumento dos parentes colaterais:\n1. Os familiares defendem sua participação na sucessão, especialmente porque são\n   parentes do falecido.\n"
+  }
+ ],
+ "tese": "Inventário — sucessão de pessoa falecida sem descendentes/ascendentes, que vivia em\nunião estável. Tese a ser testada: a dos parentes colaterais (irmãos, tios, sobrinhos),\nque reivindicam participação na herança em concorrência com a companheira sobrevivente.",
+ "relatorio": {
+  "resumo_do_caso": "Lemos 1 documento e identificamos 2 partes, 3 fatos relevantes e 1 pedido.",
+  "tese_analisada": "Inventário — sucessão de pessoa falecida sem descendentes/ascendentes, que vivia em\nunião estável. Tese a ser testada: a dos parentes colaterais (irmãos, tios, sobrinhos),\nque reivindicam participação na herança em concorrência com a companheira sobrevivente.",
+  "findings": [
+   {
+    "id": "lacuna-bens",
+    "categoria": "lacuna_probatoria",
+    "texto": "Não há relação dos bens deixados nem das datas em que foram adquiridos, informação necessária para discutir o que cabe a cada um.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "manifestacao_colaterais.txt",
+      "trecho": "discutem quem deveria receber os bens",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-graus",
+    "categoria": "lacuna_probatoria",
+    "texto": "O documento reúne irmãos, tios e sobrinhos numa mesma posição, sem identificar quem são nem o grau de parentesco de cada um, o que pode gerar disputa entre os próprios parentes.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "manifestacao_colaterais.txt",
+      "trecho": "Os parentes colaterais — irmãos, tios e sobrinhos",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-testamento",
+    "categoria": "lacuna_probatoria",
+    "texto": "Nenhum documento informa se o falecido deixou testamento.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "manifestacao_colaterais.txt",
+      "trecho": "Um homem faleceu sem deixar descendentes ou ascendentes",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-outra-parte",
+    "categoria": "lacuna_probatoria",
+    "texto": "A versão da companheira não está nos documentos; os argumentos dela ainda não foram considerados nesta análise.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "manifestacao_colaterais.txt",
+      "trecho": "Argumento dos parentes colaterais",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-uniao-admitida",
+    "categoria": "contra_argumento",
+    "texto": "O próprio documento dos parentes afirma que o falecido vivia em união estável. A companheira usará essa admissão para sustentar que a posição dela na sucessão é mais forte que a dos parentes colaterais.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "manifestacao_colaterais.txt",
+      "trecho": "Ele vivia em união estável",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-parentesco",
+    "categoria": "contra_argumento",
+    "texto": "O único argumento apresentado é o parentesco, e a companheira dirá que ser parente, por si só, não define a ordem de quem herda.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "manifestacao_colaterais.txt",
+      "trecho": "especialmente porque são parentes do falecido",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-uniao",
+    "categoria": "pergunta_dificil",
+    "texto": "Os parentes reconhecem que o falecido vivia em união estável com a companheira?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "manifestacao_colaterais.txt",
+      "trecho": "Ele vivia em união estável",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-quem",
+    "categoria": "pergunta_dificil",
+    "texto": "Quem exatamente, entre irmãos, tios e sobrinhos, está pedindo participação na herança?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "manifestacao_colaterais.txt",
+      "trecho": "irmãos, tios e sobrinhos",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-bens",
+    "categoria": "pergunta_dificil",
+    "texto": "Quais bens estão em disputa, e quando foram adquiridos?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "manifestacao_colaterais.txt",
+      "trecho": "quem deveria receber os bens",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   }
+  ],
+  "perguntas_dificeis": [
+   "Os parentes reconhecem que o falecido vivia em união estável com a companheira?",
+   "Quem exatamente, entre irmãos, tios e sobrinhos, está pedindo participação na herança?",
+   "Quais bens estão em disputa, e quando foram adquiridos?"
+  ],
+  "linha_do_tempo": [],
+  "plano_de_provas": [
+   {
+    "prova": "Certidões que comprovem o parentesco de cada parente com o falecido",
+    "finalidade": "Identificar quem pede a herança e em que grau de parentesco.",
+    "como_obter": "Certidões de nascimento e de óbito nos cartórios de registro civil.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "lacuna-graus",
+     "pergunta-quem"
+    ]
+   },
+   {
+    "prova": "Relação de bens com as datas de aquisição: matrículas de imóveis, extratos, documentos de veículos",
+    "finalidade": "Delimitar o patrimônio e separar o que foi adquirido antes e durante a união.",
+    "como_obter": "Certidões dos cartórios de imóveis, pesquisa de veículos e requerimento de ofício aos bancos.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "lacuna-bens",
+     "pergunta-bens"
+    ]
+   },
+   {
+    "prova": "Documentos sobre a união estável: escritura, data de início e prova de duração",
+    "finalidade": "Avaliar o alcance da posição da companheira, que o próprio documento admite existir.",
+    "como_obter": "Pesquisar escritura em cartórios de notas e reunir documentos de endereço comum.",
+    "prioridade": "media",
+    "apontamentos": [
+     "argumento-uniao-admitida",
+     "argumento-parentesco",
+     "pergunta-uniao"
+    ]
+   },
+   {
+    "prova": "Pesquisa de testamento em nome do falecido",
+    "finalidade": "Verificar se há manifestação de vontade que altere a divisão.",
+    "como_obter": "Certidão na central de testamentos dos cartórios de notas.",
+    "prioridade": "media",
+    "apontamentos": [
+     "lacuna-testamento"
+    ]
+   },
+   {
+    "prova": "Manifestação da companheira, quando juntada",
+    "finalidade": "Revisar a análise com a versão da outra parte.",
+    "como_obter": "Rodar nova análise com a manifestação dela.",
+    "prioridade": "baixa",
+    "apontamentos": [
+     "lacuna-outra-parte"
+    ]
+   }
+  ],
+  "avisos": [
+   "Este relatório não é parecer jurídico: revise cada apontamento antes de usá-lo.",
+   "Versão de demonstração: use apenas documentos fictícios ou anonimizados."
+  ]
+ },
+ "audiencia": [
+  {
+   "pergunta": "Os parentes reconhecem que o falecido vivia em união estável com a companheira?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Não era união estável de verdade, ela era só uma namorada.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta contradiz o próprio documento apresentado pelos parentes, que afirma a união estável.",
+      "pontos_fortes": [],
+      "pontos_frageis": [
+       "O documento dos parentes diz expressamente que ele vivia em união estável.",
+       "Nenhum fato sustenta a ideia de namoro."
+      ],
+      "sugestao": "Não negue o que o próprio documento admite; concentre-se nos bens e no grau de parentesco.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "manifestacao_colaterais.txt",
+        "trecho": "Ele vivia em união estável",
+        "conferido": true
+       }
+      ],
+      "replica": "Então por que a manifestação dos senhores afirma a união estável?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "O documento registra a união estável. O que se discute é a participação dos parentes na sucessão, e para isso vamos demonstrar a relação de bens e o grau de parentesco de cada um.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é coerente com o documento, mas deixa a tese dos parentes dependente de fatos que ainda não foram apresentados.",
+      "pontos_fortes": [
+       "Não contradiz a manifestação dos parentes.",
+       "Direciona a discussão para provas objetivas."
+      ],
+      "pontos_frageis": [
+       "Com a união admitida, a posição dos parentes fica mais difícil."
+      ],
+      "sugestao": "Levante com os clientes a data de aquisição de cada bem antes da audiência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "manifestacao_colaterais.txt",
+        "trecho": "Os familiares defendem sua participação na sucessão",
+        "conferido": true
+       }
+      ],
+      "replica": "E qual bem, especificamente, os senhores entendem que lhes cabe?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Quem exatamente, entre irmãos, tios e sobrinhos, está pedindo participação na herança?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Todos os parentes têm direito igual.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta não identifica ninguém e afirma igualdade entre parentes de graus diferentes sem nenhuma base.",
+      "pontos_fortes": [],
+      "pontos_frageis": [
+       "Não responde quem são os parentes.",
+       "Ignora que graus de parentesco diferentes podem ter tratamento diferente."
+      ],
+      "sugestao": "Identifique cada parente e comprove o parentesco com certidões.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "manifestacao_colaterais.txt",
+        "trecho": "irmãos, tios e sobrinhos",
+        "conferido": true
+       }
+      ],
+      "replica": "Os tios pedem a mesma parte que os irmãos?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Vamos juntar as certidões de cada parente, para identificar quem são e o grau de parentesco de cada um com o falecido.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta indica a prova correta, mas a identificação dos parentes, básica para o pedido, ainda não foi feita.",
+      "pontos_fortes": [
+       "Prova documental simples."
+      ],
+      "pontos_frageis": [
+       "A lista de parentes continua indefinida."
+      ],
+      "sugestao": "Monte uma árvore familiar com as certidões antes da audiência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "manifestacao_colaterais.txt",
+        "trecho": "Os parentes colaterais — irmãos, tios e sobrinhos",
+        "conferido": true
+       }
+      ],
+      "replica": "Algum desses parentes já faleceu e tem filhos?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Quais bens estão em disputa, e quando foram adquiridos?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Tudo o que ele tinha.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta não identifica nenhum bem e ignora que a data de aquisição pode mudar o tratamento de cada um.",
+      "pontos_fortes": [],
+      "pontos_frageis": [
+       "Nenhum bem é identificado.",
+       "Não diferencia bens anteriores e posteriores à união."
+      ],
+      "sugestao": "Apresente a relação de bens com as datas de aquisição.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "manifestacao_colaterais.txt",
+        "trecho": "quem deveria receber os bens",
+        "conferido": true
+       }
+      ],
+      "replica": "Inclusive o que foi adquirido junto com a companheira?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "A relação de bens com as datas de aquisição ainda será juntada. Ela é necessária porque os bens adquiridos antes e durante a união podem ter tratamento diferente na sucessão.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta reconhece o que falta, indica a prova e explica por que ela é relevante, sem afirmar nada que os documentos contradigam.",
+      "pontos_fortes": [
+       "Honesta sobre o estado das provas.",
+       "Identifica o critério que realmente importa para a divisão."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Priorize a pesquisa nos cartórios de imóveis.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "manifestacao_colaterais.txt",
+        "trecho": "Ele vivia em união estável",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,507 @@
+{
+ "id": "execucao-prisao-civil",
+ "tipo": "Pensão alimentícia",
+ "titulo": "Pensão atrasada com pedido de prisão",
+ "descricao": "A mãe cobra 14 meses de pensão atrasada e pede a prisão do pai. Ele diz que pagou a escola da filha diretamente, fez transferências e voltou a pagar em dia.",
+ "documentos": [
+  {
+   "nome": "justificativa_anderson.txt",
+   "conteudo": "JUSTIFICATIVA DO EXECUTADO (CASO FICTÍCIO PARA TESTES, CENÁRIO SINTÉTICO — NENHUMA RELAÇÃO\nCOM PESSOAS REAIS)\n\nEXECUTADO: Anderson, em resposta ao pedido de prisão.\n\nDOS FATOS\n\nAnderson foi demitido em 15/04/2024 e só voltou a trabalhar, com carteira assinada, em\n02/05/2025.\n\nDurante o desemprego, pagou diretamente a mensalidade escolar de Laura de maio a dezembro\nde 2024, no valor de R$ 450,00 por mês, e comprou o material escolar de 2025, conforme\nrecibos que guarda.\n\nAnderson também transferiu R$ 300,00 para Camila em março e em abril de 2025.\n\nDesde maio de 2025 voltou a pagar a pensão em dia.\n\nDO PEDIDO\n\n1. Reconhecimento dos pagamentos feitos diretamente à escola e das transferências.\n2. Afastamento da prisão civil, por impossibilidade de pagar durante o desemprego.\n3. Parcelamento do saldo restante.\n"
+  },
+  {
+   "nome": "requerimento_camila.txt",
+   "conteudo": "CUMPRIMENTO DE SENTENÇA DE ALIMENTOS COM PEDIDO DE PRISÃO CIVIL (CASO FICTÍCIO PARA\nTESTES, CENÁRIO SINTÉTICO — NENHUMA RELAÇÃO COM PESSOAS REAIS)\n\nEXEQUENTE: Laura, de 10 anos, representada pela mãe, Camila\nEXECUTADO: Anderson\n\nDOS FATOS\n\nPor acordo homologado em 09/03/2021, Anderson se obrigou a pagar pensão de R$ 900,00 por\nmês à filha Laura, todo dia 10.\n\nAnderson não pagou nenhuma parcela de maio de 2024 a junho de 2025, somando 14 meses e\numa dívida de R$ 12.600,00, sem correção.\n\nLaura precisou trocar de escola por falta de dinheiro para a mensalidade.\n\nDO PEDIDO\n\n1. Intimação de Anderson para pagar R$ 12.600,00 em três dias, sob pena de prisão civil.\n2. Decretação da prisão civil caso o valor não seja pago.\n"
+  }
+ ],
+ "tese": "Cumprimento de sentença de alimentos com pedido de prisão civil. A tese a ser testada é a\nde Laura, representada pela mãe, Camila: prisão civil de Anderson caso não pague em três\ndias R$ 12.600,00 referentes a 14 meses sem nenhum pagamento, de maio de 2024 a junho de\n2025.",
+ "relatorio": {
+  "resumo_do_caso": "Lemos 2 documentos e identificamos 3 partes, 11 fatos relevantes e 5 pedidos.",
+  "tese_analisada": "Cumprimento de sentença de alimentos com pedido de prisão civil. A tese a ser testada é a\nde Laura, representada pela mãe, Camila: prisão civil de Anderson caso não pague em três\ndias R$ 12.600,00 referentes a 14 meses sem nenhum pagamento, de maio de 2024 a junho de\n2025.",
+  "findings": [
+   {
+    "id": "contradicao-nenhuma-parcela",
+    "categoria": "contradicao",
+    "texto": "O pedido afirma que nenhuma parcela foi paga em 14 meses. Anderson diz que pagou a mensalidade escolar de maio a dezembro de 2024, o material escolar de 2025 e fez transferências em março e abril de 2025.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "requerimento_camila.txt",
+      "trecho": "Anderson não pagou nenhuma parcela de maio de 2024 a junho de 2025",
+      "pagina": null,
+      "conferido": true
+     },
+     {
+      "documento": "justificativa_anderson.txt",
+      "trecho": "pagou diretamente a mensalidade escolar de Laura de maio a dezembro de 2024, no valor de R$ 450,00 por mês",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "contradicao-maio-junho",
+    "categoria": "contradicao",
+    "texto": "A cobrança vai até junho de 2025, mas Anderson afirma que voltou a pagar a pensão em dia desde maio de 2025. Se isso se confirmar, dois dos 14 meses cobrados já estariam pagos.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "requerimento_camila.txt",
+      "trecho": "somando 14 meses e uma dívida de R$ 12.600,00",
+      "pagina": null,
+      "conferido": true
+     },
+     {
+      "documento": "justificativa_anderson.txt",
+      "trecho": "Desde maio de 2025 voltou a pagar a pensão em dia",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "contradicao-escola",
+    "categoria": "contradicao",
+    "texto": "Camila diz que Laura trocou de escola por falta de dinheiro para a mensalidade; Anderson diz que pagou essa mensalidade diretamente durante 2024.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "requerimento_camila.txt",
+      "trecho": "Laura precisou trocar de escola por falta de dinheiro para a mensalidade",
+      "pagina": null,
+      "conferido": true
+     },
+     {
+      "documento": "justificativa_anderson.txt",
+      "trecho": "pagou diretamente a mensalidade escolar de Laura",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-calculo",
+    "categoria": "lacuna_probatoria",
+    "texto": "O valor de R$ 12.600,00 é apenas 14 vezes R$ 900,00, sem planilha mês a mês e sem extratos que mostrem a ausência de qualquer entrada no período.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "requerimento_camila.txt",
+      "trecho": "uma dívida de R$ 12.600,00, sem correção",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-recibos",
+    "categoria": "lacuna_probatoria",
+    "texto": "Anderson diz guardar recibos da escola e do material, mas não os juntou.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "justificativa_anderson.txt",
+      "trecho": "conforme recibos que guarda",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-desemprego",
+    "categoria": "lacuna_probatoria",
+    "texto": "O período de desemprego, base do pedido para afastar a prisão, não vem com termo de rescisão ou carteira de trabalho.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "justificativa_anderson.txt",
+      "trecho": "Anderson foi demitido em 15/04/2024 e só voltou a trabalhar, com carteira assinada, em 02/05/2025",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-parcelas-antigas",
+    "categoria": "contra_argumento",
+    "texto": "A defesa dirá que a prisão civil é medida excepcional, voltada às parcelas recentes e à urgência atual, e não a uma dívida acumulada de 14 meses quando a pensão já voltou a ser paga.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "requerimento_camila.txt",
+      "trecho": "Decretação da prisão civil caso o valor não seja pago",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-impossibilidade",
+    "categoria": "contra_argumento",
+    "texto": "Anderson sustentará que o desemprego de mais de um ano tornou impossível pagar o valor integral, o que costuma pesar contra a prisão.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "justificativa_anderson.txt",
+      "trecho": "Afastamento da prisão civil, por impossibilidade de pagar durante o desemprego",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-abatimento",
+    "categoria": "contra_argumento",
+    "texto": "Os pagamentos diretos à escola, o material e as transferências serão apresentados para abater a dívida e reduzir o saldo, com pedido de parcelamento.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "justificativa_anderson.txt",
+      "trecho": "Reconhecimento dos pagamentos feitos diretamente à escola e das transferências",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-escola",
+    "categoria": "pergunta_dificil",
+    "texto": "Anderson pagou a mensalidade escolar de Laura entre maio e dezembro de 2024?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "justificativa_anderson.txt",
+      "trecho": "de maio a dezembro de 2024, no valor de R$ 450,00 por mês",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-maio-junho",
+    "categoria": "pergunta_dificil",
+    "texto": "Por que maio e junho de 2025 estão na cobrança, se Anderson diz que voltou a pagar em dia?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "justificativa_anderson.txt",
+      "trecho": "Desde maio de 2025 voltou a pagar a pensão em dia",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-transferencias",
+    "categoria": "pergunta_dificil",
+    "texto": "Camila recebeu R$ 300,00 em março e em abril de 2025?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "justificativa_anderson.txt",
+      "trecho": "Anderson também transferiu R$ 300,00 para Camila em março e em abril de 2025",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-urgencia",
+    "categoria": "pergunta_dificil",
+    "texto": "Qual é a urgência atual da prisão, se a pensão voltou a ser paga?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "requerimento_camila.txt",
+      "trecho": "sob pena de prisão civil",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   }
+  ],
+  "perguntas_dificeis": [
+   "Anderson pagou a mensalidade escolar de Laura entre maio e dezembro de 2024?",
+   "Por que maio e junho de 2025 estão na cobrança, se Anderson diz que voltou a pagar em dia?",
+   "Camila recebeu R$ 300,00 em março e em abril de 2025?",
+   "Qual é a urgência atual da prisão, se a pensão voltou a ser paga?"
+  ],
+  "linha_do_tempo": [
+   {
+    "data": "09/03/2021",
+    "data_ordenacao": "2021-03-09",
+    "evento": "Acordo homologado fixa pensão de R$ 900,00 por mês",
+    "quem_afirma": "Camila",
+    "documento": "requerimento_camila.txt",
+    "trecho": "Por acordo homologado em 09/03/2021, Anderson se obrigou a pagar pensão de R$ 900,00",
+    "trecho_conferido": true,
+    "divergencia": ""
+   },
+   {
+    "data": "15/04/2024",
+    "data_ordenacao": "2024-04-15",
+    "evento": "Anderson é demitido",
+    "quem_afirma": "Anderson",
+    "documento": "justificativa_anderson.txt",
+    "trecho": "Anderson foi demitido em 15/04/2024",
+    "trecho_conferido": true,
+    "divergencia": ""
+   },
+   {
+    "data": "maio de 2024",
+    "data_ordenacao": "2024-05",
+    "evento": "Início do período cobrado, sem nenhuma parcela paga, segundo Camila",
+    "quem_afirma": "Camila",
+    "documento": "requerimento_camila.txt",
+    "trecho": "não pagou nenhuma parcela de maio de 2024 a junho de 2025",
+    "trecho_conferido": true,
+    "divergencia": "Anderson diz que pagou a mensalidade escolar de maio a dezembro de 2024."
+   },
+   {
+    "data": "março de 2025",
+    "data_ordenacao": "2025-03",
+    "evento": "Transferências de R$ 300,00 em março e abril, segundo Anderson",
+    "quem_afirma": "Anderson",
+    "documento": "justificativa_anderson.txt",
+    "trecho": "transferiu R$ 300,00 para Camila em março e em abril de 2025",
+    "trecho_conferido": true,
+    "divergencia": "Camila afirma que não houve nenhum pagamento no período."
+   },
+   {
+    "data": "maio de 2025",
+    "data_ordenacao": "2025-05",
+    "evento": "Anderson volta a pagar a pensão em dia, segundo ele",
+    "quem_afirma": "Anderson",
+    "documento": "justificativa_anderson.txt",
+    "trecho": "Desde maio de 2025 voltou a pagar a pensão em dia",
+    "trecho_conferido": true,
+    "divergencia": "Camila inclui maio e junho de 2025 na cobrança."
+   },
+   {
+    "data": "02/05/2025",
+    "data_ordenacao": "2025-05-02",
+    "evento": "Anderson volta a trabalhar com carteira assinada",
+    "quem_afirma": "Anderson",
+    "documento": "justificativa_anderson.txt",
+    "trecho": "só voltou a trabalhar, com carteira assinada, em 02/05/2025",
+    "trecho_conferido": true,
+    "divergencia": ""
+   },
+   {
+    "data": "junho de 2025",
+    "data_ordenacao": "2025-06",
+    "evento": "Fim do período cobrado, segundo Camila",
+    "quem_afirma": "Camila",
+    "documento": "requerimento_camila.txt",
+    "trecho": "de maio de 2024 a junho de 2025",
+    "trecho_conferido": true,
+    "divergencia": "Anderson afirma pagamento em dia desde maio de 2025."
+   }
+  ],
+  "plano_de_provas": [
+   {
+    "prova": "Planilha do débito mês a mês com os extratos da conta de Camila no período",
+    "finalidade": "Mostrar o que entrou e o que não entrou em cada mês e corrigir o valor cobrado.",
+    "como_obter": "Reunir com a cliente os extratos de maio de 2024 a junho de 2025 e montar a planilha.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "lacuna-calculo",
+     "contradicao-nenhuma-parcela",
+     "contradicao-maio-junho",
+     "pergunta-maio-junho",
+     "pergunta-transferencias"
+    ]
+   },
+   {
+    "prova": "Declaração da escola sobre quem pagou as mensalidades de 2024 e sobre a troca de escola",
+    "finalidade": "Esclarecer os pagamentos diretos alegados e o motivo da mudança.",
+    "como_obter": "Solicitar à escola declaração de pagamentos e de transferência da aluna.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "contradicao-escola",
+     "argumento-abatimento",
+     "pergunta-escola"
+    ]
+   },
+   {
+    "prova": "Separação, na planilha, das parcelas mais recentes e das antigas",
+    "finalidade": "Manter o pedido de prisão sobre as parcelas recentes e cobrar o restante por outra via.",
+    "como_obter": "Reorganizar o cálculo e ajustar o pedido.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "argumento-parcelas-antigas",
+     "pergunta-urgencia"
+    ]
+   },
+   {
+    "prova": "Recibos de Anderson e documentos do desemprego",
+    "finalidade": "Testar os pagamentos alegados e a impossibilidade de pagar.",
+    "como_obter": "Requerer que Anderson junte os recibos, o termo de rescisão e a carteira de trabalho.",
+    "prioridade": "media",
+    "apontamentos": [
+     "lacuna-recibos",
+     "lacuna-desemprego",
+     "argumento-impossibilidade"
+    ]
+   }
+  ],
+  "avisos": [
+   "Este relatório não é parecer jurídico: revise cada apontamento antes de usá-lo.",
+   "Versão de demonstração: use apenas documentos fictícios ou anonimizados."
+  ]
+ },
+ "audiencia": [
+  {
+   "pergunta": "Anderson pagou a mensalidade escolar de Laura entre maio e dezembro de 2024?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Ele nunca pagou nada, é tudo mentira.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta nega pagamentos que podem ser confirmados facilmente pela escola.",
+      "pontos_fortes": [
+       "Coerente com o pedido."
+      ],
+      "pontos_frageis": [
+       "Se a escola confirmar os pagamentos, a credibilidade do cálculo inteiro cai.",
+       "Não indica prova da negativa."
+      ],
+      "sugestao": "Peça a declaração da escola antes de negar e ajuste o cálculo ao que for comprovado.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "justificativa_anderson.txt",
+        "trecho": "pagou diretamente a mensalidade escolar de Laura de maio a dezembro de 2024",
+        "conferido": true
+       }
+      ],
+      "replica": "A senhora autoriza que a escola informe quem pagou as mensalidades?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Se houve pagamento direto à escola, ele não foi combinado como forma de pagar a pensão. De todo modo, vamos pedir à escola a declaração de quem pagou, e o que for comprovado será considerado no cálculo.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é prudente e indica a prova, mas deixa em aberto um ponto que pode reduzir bastante a dívida.",
+      "pontos_fortes": [
+       "Não nega um fato verificável.",
+       "Mostra disposição para corrigir o cálculo."
+      ],
+      "pontos_frageis": [
+       "O valor cobrado continua possivelmente inflado."
+      ],
+      "sugestao": "Obtenha a declaração da escola antes da audiência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "requerimento_camila.txt",
+        "trecho": "Anderson não pagou nenhuma parcela de maio de 2024 a junho de 2025",
+        "conferido": true
+       }
+      ],
+      "replica": "Então o valor de R$ 12.600,00 pode estar errado?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Por que maio e junho de 2025 estão na cobrança, se Anderson diz que voltou a pagar em dia?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Porque a dívida é essa e pronto.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta mantém um cálculo que pode incluir meses pagos, sem nenhuma verificação.",
+      "pontos_fortes": [],
+      "pontos_frageis": [
+       "Não enfrenta a alegação de pagamento em dia.",
+       "Arrisca a credibilidade de todo o pedido."
+      ],
+      "sugestao": "Verifique os extratos de maio e junho de 2025 e ajuste a cobrança.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "justificativa_anderson.txt",
+        "trecho": "Desde maio de 2025 voltou a pagar a pensão em dia",
+        "conferido": true
+       }
+      ],
+      "replica": "E se os extratos mostrarem os depósitos de maio e junho?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Vamos apresentar a planilha mês a mês com os extratos de Camila. Se os pagamentos de maio e junho de 2025 estiverem nos extratos, esses meses sairão do cálculo, e a cobrança seguirá pelo saldo real.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta demonstra boa-fé, propõe a prova certa e protege a cobrança do que realmente está em atraso.",
+      "pontos_fortes": [
+       "Reconhece a possibilidade de erro no cálculo.",
+       "Mantém firme a cobrança do saldo verdadeiro."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Leve a planilha pronta, com as parcelas recentes separadas das antigas.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "requerimento_camila.txt",
+        "trecho": "somando 14 meses e uma dívida de R$ 12.600,00, sem correção",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Qual é a urgência atual da prisão, se a pensão voltou a ser paga?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "A menina está passando fome por causa dele.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta afirma uma situação grave que nenhum documento descreve.",
+      "pontos_fortes": [],
+      "pontos_frageis": [
+       "Nenhum documento fala em fome.",
+       "Exagero tende a enfraquecer o pedido."
+      ],
+      "sugestao": "Use os fatos dos autos, como a troca de escola, e ajuste o pedido de prisão às parcelas recentes.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "requerimento_camila.txt",
+        "trecho": "Laura precisou trocar de escola por falta de dinheiro para a mensalidade",
+        "conferido": true
+       }
+      ],
+      "replica": "E como ela está hoje, com a pensão sendo paga?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "A urgência está nas parcelas acumuladas que a família precisou cobrir sozinha, como mostra a troca de escola. Pedimos a prisão pelas parcelas mais recentes em atraso e a cobrança do restante por penhora.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta ajusta o pedido de forma realista e usa um fato dos autos, mas a urgência atual ainda é discutível.",
+      "pontos_fortes": [
+       "Separa parcelas recentes e antigas.",
+       "Usa a troca de escola, que consta do pedido."
+      ],
+      "pontos_frageis": [
+       "Se as parcelas recentes estiverem pagas, a prisão perde a base."
+      ],
+      "sugestao": "Confirme nos extratos quais parcelas recentes continuam em aberto.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "requerimento_camila.txt",
+        "trecho": "Laura precisou trocar de escola por falta de dinheiro para a mensalidade",
+        "conferido": true
+       }
+      ],
+      "replica": "E quais parcelas recentes estão realmente em aberto?"
+     }
+    }
+   ]
+  }
+ ]
+}

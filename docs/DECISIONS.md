@@ -426,3 +426,71 @@ com versões diferentes (separação, mudança de cidade), todos os trechos conf
 limite de 16.000 tokens para o plano e aviso no log quando uma resposta é cortada. Plano
 vazio com apontamentos a resolver agora é tratado como falha (a tela avisa). Segunda
 rodada: plano com 10 provas.
+
+---
+
+## ADR-014
+
+**DATA:** 14/09/2026
+
+**DECISÃO:** Publicar o site na **Vercel** (arquivos estáticos + funções Python), sem
+nenhuma chave de IA da equipe. O site passa a ter dois modos:
+1. **Demonstração** (padrão): 32 casos fictícios com a análise **preparada previamente** e
+   servida como arquivo estático; custo zero para qualquer visitante.
+2. **Meus documentos**: análise real que usa a **chave da Anthropic da própria pessoa**
+   (*bring your own key*), enviada no cabeçalho `X-Anthropic-Key` a cada requisição.
+
+**COMO FUNCIONA:**
+- **Demonstração:** `demo/fontes/<id>.json` (análise escrita e revisada) +
+  `golden_dataset/case_familia_NN/` (documentos) → `scripts/construir_demo.py` gera
+  `app/static/demo/indice.json` e `app/static/demo/casos/<id>.json`. O script usa o mesmo
+  `_trecho_consta` do pipeline e **falha** se algum trecho citado não estiver no documento
+  (32 casos, 424 trechos conferidos em 14/09/2026). A tela mostra as seis etapas com
+  tempos fixos (~10 s no total) e o selo "Caso fictício de demonstração · análise preparada
+  previamente". Na simulação, a pessoa escolhe entre respostas prontas, cada uma com a
+  avaliação preparada.
+- **Chave do usuário:** `app/api_comum.py` valida o formato (`sk-ant-…`), abre
+  `llm_client.usar_chave_anthropic(chave)` (ContextVar: força o provedor Anthropic e cria um
+  cliente só para aquela requisição) e traduz erros da Anthropic em mensagens resolvíveis
+  (chave recusada 401, sem permissão 403, limite 429, sem crédito 402, falha de conexão 502).
+  A chave não é gravada, não vai para o log e não é guardada no navegador.
+- **Sem estado no servidor:** cada chamada da Vercel pode cair numa instância diferente.
+  `POST /api/analisar` devolve `{relatorio, documentos, tese}`; o navegador guarda o texto
+  extraído só na memória da aba e o reenvia em `POST /api/audiencia`. As rotas antigas
+  com análise em segundo plano e registro em memória (`/api/analises`, `/api/exemplos`)
+  foram removidas.
+- **Vercel:** `vercel.json` publica `app/static` e as funções `api/analisar.py` e
+  `api/audiencia.py` (duração máxima 300 s, `includeFiles: app/**`). Corpo limitado a 4 MB
+  na análise (a plataforma recusa acima de 4,5 MB). `.vercelignore` exclui `.env`, testes,
+  golden dataset, fontes da demonstração e documentação.
+- **Novos casos:** pesquisa em fontes públicas (STJ, TJSP, TJPR, TJMG, TJDFT) só para mapear
+  os **tipos** de conflito; casos inteiramente fictícios (`case_familia_15` a `32`). Nenhum
+  processo real foi raspado: ações de família correm em segredo de justiça e envolvem
+  crianças. Detalhes em `docs/CATALOGO_DE_SITUACOES.md`.
+
+**MOTIVO:** com o repositório público e o link aberto para testes, manter a chave da
+equipe no servidor permitiria que qualquer pessoa consumisse crédito pago. A demonstração
+pré-montada deixa qualquer avaliador ver o produto completo sem custo e sem cadastro; a
+chave própria permite a análise real sem que a equipe pague por ela. A Vercel substitui o
+túnel temporário (ADR-011): URL fixa, HTTPS e nada dependendo de um notebook ligado.
+
+**ALTERNATIVAS:** manter a chave da equipe com limite por IP (descartada: sem banco, o
+limite não sobrevive entre instâncias e o custo continua exposto); só modo demonstração
+(descartada: esconderia que a análise real funciona); Render/Railway com servidor
+contínuo (descartada: planos gratuitos dormem ou têm horas limitadas; a Vercel foi a
+escolha da equipe).
+
+**DESVANTAGENS:** a demonstração não é gerada pela IA na hora; por isso a tela declara que
+a análise foi preparada previamente. Colar uma chave de API num site exige confiança; a
+tela explica que a chave não fica guardada e aponta para o painel oficial da Anthropic. A
+análise real é síncrona (2 a 3 minutos numa única requisição) e depende do limite de 300 s
+da função; sem progresso real, a tela mostra etapas estimadas por tempo. O limite de
+upload cai de 15 MB (servidor local) para 4 MB (Vercel).
+
+**RISCO:** Baixo para custo da equipe (zero). Médio para confiança do usuário ao informar
+a chave.
+
+**STATUS:** Aceito. Validado localmente em 14/09/2026: fluxo de demonstração no navegador
+sem erros de JavaScript; `/api/analisar` sem chave (401), com chave malformada (400) e com
+chave falsa (401, mensagem da Anthropic traduzida), sem custo. Publicação na Vercel
+depende de a equipe conectar o repositório à conta dela.

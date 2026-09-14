@@ -1,0 +1,391 @@
+{
+ "id": "guarda-residencia",
+ "tipo": "Guarda e convivência",
+ "titulo": "Mudança de residência do filho",
+ "descricao": "O pai pede que o filho passe a morar com ele, citando a preferência da criança e a proximidade da escola.",
+ "documentos": [
+  {
+   "nome": "manifestacao_patricia.txt",
+   "conteudo": "MANIFESTAÇÃO EM OPOSIÇÃO (CASO FICTÍCIO PARA TESTES, BASEADO EM CENÁRIO SINTÉTICO —\nNENHUMA RELAÇÃO COM PESSOAS REAIS)\n\nREQUERIDA: Patrícia, em resposta ao pedido de Daniel de transferência da residência de\nreferência de Lucas.\n\nPatrícia se opõe ao pedido. Alega que sempre foi a principal responsável pela rotina\nescolar e médica do filho, e que a mudança de residência de referência poderia\nrepresentar uma ruptura desnecessária na vida de Lucas.\n"
+  },
+  {
+   "nome": "pedido_daniel.txt",
+   "conteudo": "PEDIDO DE ALTERAÇÃO DE RESIDÊNCIA DE REFERÊNCIA (CASO FICTÍCIO PARA TESTES, BASEADO EM\nCENÁRIO SINTÉTICO — NENHUMA RELAÇÃO COM PESSOAS REAIS)\n\nREQUERENTE: Daniel (genitor)\nREQUERIDA: Patrícia (genitora)\nMENOR: Lucas\n\nDOS FATOS\n\nPatrícia e Daniel estão divorciados há quatro anos e possuem guarda compartilhada do\nfilho Lucas. Durante a semana, Lucas mora com Patrícia e passa alguns finais de semana\ncom Daniel.\n\nNos últimos meses, Lucas passou a afirmar que prefere permanecer mais tempo na casa do\npai, pois Daniel mora próximo à escola, enquanto Patrícia precisa percorrer uma distância\nmaior diariamente para levá-lo às aulas.\n\nDOS ARGUMENTOS DO REQUERENTE\n\n1. Lucas manifesta claramente preferência por permanecer com o pai.\n2. A residência de Daniel fica próxima à escola e às atividades do menino.\n3. Daniel possui horários de trabalho mais flexíveis.\n4. A mudança reduziria o tempo que Lucas passa diariamente no trânsito.\n\nDO PEDIDO\n\nRequer-se a transferência da residência de referência de Lucas para a casa de Daniel.\n"
+  }
+ ],
+ "tese": "Pedido de alteração de residência de referência no âmbito de guarda compartilhada. A\ntese a ser testada é a de Daniel (genitor): transferência da residência de referência do\nfilho Lucas para a casa dele, com fundamento na preferência manifestada pela criança, na\nproximidade da escola, em seus horários de trabalho mais flexíveis e na redução do tempo\nde deslocamento diário do menino.",
+ "relatorio": {
+  "resumo_do_caso": "Lemos 2 documentos e identificamos 3 partes, 6 fatos relevantes e 2 pedidos.",
+  "tese_analisada": "Pedido de alteração de residência de referência no âmbito de guarda compartilhada. A\ntese a ser testada é a de Daniel (genitor): transferência da residência de referência do\nfilho Lucas para a casa dele, com fundamento na preferência manifestada pela criança, na\nproximidade da escola, em seus horários de trabalho mais flexíveis e na redução do tempo\nde deslocamento diário do menino.",
+  "findings": [
+   {
+    "id": "lacuna-preferencia",
+    "categoria": "lacuna_probatoria",
+    "texto": "A preferência de Lucas é o principal argumento do pedido, mas aparece só como relato do pai, sem escuta por psicólogo ou assistente social.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "pedido_daniel.txt",
+      "trecho": "Lucas passou a afirmar que prefere permanecer mais tempo na casa do pai",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-idade",
+    "categoria": "lacuna_probatoria",
+    "texto": "Nenhum documento informa a idade de Lucas, dado essencial para avaliar o peso da vontade da criança.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "pedido_daniel.txt",
+      "trecho": "MENOR: Lucas",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-distancia",
+    "categoria": "lacuna_probatoria",
+    "texto": "A proximidade da escola e a redução do tempo no trânsito não vêm com distâncias, tempos de trajeto ou endereços.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "pedido_daniel.txt",
+      "trecho": "Daniel mora próximo à escola",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-horarios",
+    "categoria": "lacuna_probatoria",
+    "texto": "A flexibilidade de horário de Daniel é afirmada sem declaração do empregador ou qualquer documento.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "pedido_daniel.txt",
+      "trecho": "Daniel possui horários de trabalho mais flexíveis",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-rotina-mae",
+    "categoria": "lacuna_probatoria",
+    "texto": "Patrícia diz ser a principal responsável pela rotina escolar e médica, mas também não junta registros disso.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "manifestacao_patricia.txt",
+      "trecho": "sempre foi a principal responsável pela rotina escolar e médica do filho",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-conveniencia",
+    "categoria": "contra_argumento",
+    "texto": "A outra parte dirá que o pedido se apoia em conveniência logística, como trânsito e distância, e não no que é melhor para Lucas em sentido amplo.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "pedido_daniel.txt",
+      "trecho": "A mudança reduziria o tempo que Lucas passa diariamente no trânsito",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-ruptura",
+    "categoria": "contra_argumento",
+    "texto": "Patrícia apresentará a mudança como uma ruptura na rotina que já funciona, depois de quatro anos morando com a mãe durante a semana.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "manifestacao_patricia.txt",
+      "trecho": "poderia representar uma ruptura desnecessária na vida de Lucas",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-vinculo",
+    "categoria": "contra_argumento",
+    "texto": "Se a mãe comprovar que acompanha a escola e a saúde de Lucas, a continuidade desse cuidado pesará contra a mudança.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "manifestacao_patricia.txt",
+      "trecho": "sempre foi a principal responsável",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-preferencia",
+    "categoria": "pergunta_dificil",
+    "texto": "A preferência de Lucas foi ouvida por um profissional, ou é apenas o que ele diz aos pais?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "pedido_daniel.txt",
+      "trecho": "Lucas manifesta claramente preferência por permanecer com o pai",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-rotina",
+    "categoria": "pergunta_dificil",
+    "texto": "Quem leva Lucas às consultas médicas e às reuniões da escola hoje?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "manifestacao_patricia.txt",
+      "trecho": "rotina escolar e médica do filho",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-horarios",
+    "categoria": "pergunta_dificil",
+    "texto": "Que documento comprova que Daniel tem horários de trabalho mais flexíveis?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "pedido_daniel.txt",
+      "trecho": "Daniel possui horários de trabalho mais flexíveis",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   }
+  ],
+  "perguntas_dificeis": [
+   "A preferência de Lucas foi ouvida por um profissional, ou é apenas o que ele diz aos pais?",
+   "Quem leva Lucas às consultas médicas e às reuniões da escola hoje?",
+   "Que documento comprova que Daniel tem horários de trabalho mais flexíveis?"
+  ],
+  "linha_do_tempo": [],
+  "plano_de_provas": [
+   {
+    "prova": "Estudo psicossocial com escuta de Lucas por equipe técnica",
+    "finalidade": "Registrar a vontade da criança da forma adequada e avaliar o impacto da mudança.",
+    "como_obter": "Requerer ao juízo o estudo pela equipe técnica da vara.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "lacuna-preferencia",
+     "argumento-ruptura",
+     "pergunta-preferencia"
+    ]
+   },
+   {
+    "prova": "Declaração do empregador com os horários de trabalho de Daniel",
+    "finalidade": "Comprovar a disponibilidade para a rotina diária de Lucas.",
+    "como_obter": "Pedir ao cliente a declaração assinada pelo empregador.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "lacuna-horarios",
+     "pergunta-horarios"
+    ]
+   },
+   {
+    "prova": "Registros da escola e das consultas médicas de Lucas",
+    "finalidade": "Mostrar quem, de fato, acompanha a rotina escolar e de saúde.",
+    "como_obter": "Requerer à escola e às clínicas informações sobre os responsáveis que comparecem.",
+    "prioridade": "media",
+    "apontamentos": [
+     "lacuna-rotina-mae",
+     "argumento-vinculo",
+     "pergunta-rotina"
+    ]
+   },
+   {
+    "prova": "Mapa com a distância e o tempo de trajeto de cada casa até a escola",
+    "finalidade": "Dar concretude ao argumento logístico.",
+    "como_obter": "Gerar os trajetos em um aplicativo de mapas e juntar os comprovantes de endereço.",
+    "prioridade": "media",
+    "apontamentos": [
+     "lacuna-distancia",
+     "argumento-conveniencia"
+    ]
+   },
+   {
+    "prova": "Certidão de nascimento de Lucas",
+    "finalidade": "Informar a idade da criança.",
+    "como_obter": "O próprio cliente tem a certidão.",
+    "prioridade": "baixa",
+    "apontamentos": [
+     "lacuna-idade"
+    ]
+   }
+  ],
+  "avisos": [
+   "Este relatório não é parecer jurídico: revise cada apontamento antes de usá-lo.",
+   "Versão de demonstração: use apenas documentos fictícios ou anonimizados."
+  ]
+ },
+ "audiencia": [
+  {
+   "pergunta": "A preferência de Lucas foi ouvida por um profissional, ou é apenas o que ele diz aos pais?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "O Lucas deixou bem claro que quer morar com o pai, ele fala isso toda semana.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta acrescenta um fato, a frequência semanal, que não está nos documentos, e confirma que não houve escuta profissional.",
+      "pontos_fortes": [],
+      "pontos_frageis": [
+       "\"Toda semana\" não aparece em nenhum documento.",
+       "Reforça que a preferência é só relato do pai."
+      ],
+      "sugestao": "Reconheça que a preferência ainda não foi colhida por profissional e requeira o estudo psicossocial.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_daniel.txt",
+        "trecho": "Lucas passou a afirmar que prefere permanecer mais tempo na casa do pai",
+        "conferido": true
+       }
+      ],
+      "replica": "E quantos anos Lucas tem para essa preferência ser levada em conta?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "O pedido relata a preferência de Lucas. Por isso requeremos que ele seja ouvido por equipe técnica, para que a vontade dele seja registrada da forma adequada.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é honesta e propõe o caminho certo, mas admite que o principal argumento ainda não tem prova.",
+      "pontos_fortes": [
+       "Não amplia o relato.",
+       "Propõe a prova adequada."
+      ],
+      "pontos_frageis": [
+       "Até o estudo, a preferência continua sendo apenas relato."
+      ],
+      "sugestao": "Informe também a idade de Lucas para dar peso ao pedido de escuta.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_daniel.txt",
+        "trecho": "Lucas manifesta claramente preferência por permanecer com o pai",
+        "conferido": true
+       }
+      ],
+      "replica": "E se o estudo mostrar que ele diz o mesmo à mãe sobre a casa dela?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Quem leva Lucas às consultas médicas e às reuniões da escola hoje?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "A mãe não participa de nada, quem faz tudo é o pai.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta contradiz o que a mãe afirma e o próprio pedido, que diz que Lucas mora com ela durante a semana.",
+      "pontos_fortes": [],
+      "pontos_frageis": [
+       "Nenhum documento sustenta que o pai faz \"tudo\".",
+       "É pouco crível diante da rotina semanal descrita no pedido."
+      ],
+      "sugestao": "Não negue a participação da mãe; mostre que ela também não comprovou ser a principal responsável e peça os registros da escola.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_daniel.txt",
+        "trecho": "Durante a semana, Lucas mora com Patrícia",
+        "conferido": true
+       }
+      ],
+      "replica": "Então por que Lucas mora com a mãe durante a semana?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Patrícia afirma ser a principal responsável, mas não junta nenhum registro disso. Pedimos à escola e às clínicas as informações sobre quem acompanha Lucas, para que a rotina real apareça.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta não nega a participação da mãe, aponta a falta de prova e propõe uma forma objetiva de esclarecer o ponto.",
+      "pontos_fortes": [
+       "Não afirma nada que os documentos contradigam.",
+       "Indica prova de terceiros, sem interesse na causa."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Mantenha a linha e prepare o cliente para relatar a própria participação com exemplos que possam ser confirmados.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "manifestacao_patricia.txt",
+        "trecho": "sempre foi a principal responsável pela rotina escolar e médica do filho",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Que documento comprova que Daniel tem horários de trabalho mais flexíveis?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Ele é o próprio chefe, pode sair quando quiser.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta acrescenta um fato novo, que Daniel é o próprio chefe, sem nenhum documento.",
+      "pontos_fortes": [],
+      "pontos_frageis": [
+       "Nenhum documento informa a ocupação de Daniel."
+      ],
+      "sugestao": "Indique a declaração do empregador ou, se ele for autônomo, documentos que mostrem a rotina de trabalho.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_daniel.txt",
+        "trecho": "Daniel possui horários de trabalho mais flexíveis",
+        "conferido": true
+       }
+      ],
+      "replica": "E qual é a profissão dele, afinal?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Vamos juntar a declaração do empregador com os horários de Daniel.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta indica a prova certa, mas de forma breve e sem explicar como a flexibilidade atende à rotina de Lucas.",
+      "pontos_fortes": [
+       "Indica prova objetiva."
+      ],
+      "pontos_frageis": [
+       "Não relaciona os horários às necessidades da criança."
+      ],
+      "sugestao": "Explique quais horários de Lucas o pai conseguiria cobrir, como entrada e saída da escola.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_daniel.txt",
+        "trecho": "Daniel possui horários de trabalho mais flexíveis",
+        "conferido": true
+       }
+      ],
+      "replica": "E quem fica com Lucas nos dias em que o pai não tem essa flexibilidade?"
+     }
+    }
+   ]
+  }
+ ]
+}

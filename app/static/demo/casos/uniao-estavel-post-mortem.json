@@ -1,0 +1,505 @@
+{
+ "id": "uniao-estavel-post-mortem",
+ "tipo": "União estável",
+ "titulo": "União estável depois da morte do companheiro",
+ "descricao": "A companheira pede o reconhecimento da união estável depois da morte dele. Os filhos dizem que era namoro e que ela mantinha o próprio apartamento.",
+ "documentos": [
+  {
+   "nome": "contestacao_filhos.txt",
+   "conteudo": "CONTESTAÇÃO (CASO FICTÍCIO PARA TESTES, CENÁRIO SINTÉTICO — NENHUMA RELAÇÃO COM PESSOAS\nREAIS)\n\nRÉUS: Bruno e Carla, filhos de Eduardo.\n\nDOS FATOS\n\nEduardo e Luciana tinham um namoro, não uma união estável. Luciana manteve durante todo o\nperíodo o próprio apartamento, onde recebia correspondências e declarava residência.\n\nEduardo passava os fins de semana com os filhos e nunca apresentou Luciana como\ncompanheira em documentos, testamento ou declaração de imposto de renda.\n\nA inclusão no plano de saúde, em 2021, foi feita apenas para que Luciana tivesse\ncobertura durante uma cirurgia, e ela foi excluída do plano em 2022.\n\nNos últimos meses de vida de Eduardo, quem cuidou dele no hospital foram os filhos.\n\nDO PEDIDO\n\nRejeição do pedido de reconhecimento da união estável.\n"
+  },
+  {
+   "nome": "peticao_luciana.txt",
+   "conteudo": "AÇÃO DE RECONHECIMENTO DE UNIÃO ESTÁVEL APÓS A MORTE DO COMPANHEIRO (CASO FICTÍCIO PARA\nTESTES, CENÁRIO SINTÉTICO — NENHUMA RELAÇÃO COM PESSOAS REAIS)\n\nAUTORA: Luciana\nRÉUS: Bruno e Carla, filhos e herdeiros de Eduardo\n\nDOS FATOS\n\nLuciana e Eduardo começaram a se relacionar em junho de 2016 e passaram a viver juntos\nem 2018, no apartamento de Eduardo, onde Luciana permaneceu até a morte dele, em\n12/03/2025.\n\nDurante esse período, os dois viajavam juntos, frequentavam festas de família e eram\napresentados como um casal. Em 2021, Eduardo incluiu Luciana como dependente no plano de\nsaúde da empresa onde trabalhava.\n\nLuciana ajudava nas despesas da casa com o salário de professora.\n\nDO PEDIDO\n\nReconhecimento da união estável entre Luciana e Eduardo de 2018 até 12/03/2025, com os\nefeitos patrimoniais e sucessórios correspondentes.\n"
+  }
+ ],
+ "tese": "Ação de reconhecimento de união estável após a morte do companheiro. A tese a ser testada\né a de Luciana (autora): reconhecimento da união estável com Eduardo de 2018 até a morte\ndele, em 12/03/2025, com base na convivência no apartamento dele, na apresentação pública\ncomo casal e na inclusão dela como dependente no plano de saúde.",
+ "relatorio": {
+  "resumo_do_caso": "Lemos 2 documentos e identificamos 4 partes, 10 fatos relevantes e 2 pedidos.",
+  "tese_analisada": "Ação de reconhecimento de união estável após a morte do companheiro. A tese a ser testada\né a de Luciana (autora): reconhecimento da união estável com Eduardo de 2018 até a morte\ndele, em 12/03/2025, com base na convivência no apartamento dele, na apresentação pública\ncomo casal e na inclusão dela como dependente no plano de saúde.",
+  "findings": [
+   {
+    "id": "contradicao-residencia",
+    "categoria": "contradicao",
+    "texto": "Luciana diz que passou a viver no apartamento de Eduardo em 2018; os filhos dizem que ela manteve o próprio apartamento durante todo o período, com correspondências e residência declarada lá. É o ponto que mais ameaça a tese.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "peticao_luciana.txt",
+      "trecho": "passaram a viver juntos em 2018, no apartamento de Eduardo",
+      "pagina": null,
+      "conferido": true
+     },
+     {
+      "documento": "contestacao_filhos.txt",
+      "trecho": "Luciana manteve durante todo o período o próprio apartamento, onde recebia correspondências e declarava residência",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "contradicao-natureza",
+    "categoria": "contradicao",
+    "texto": "A mesma relação é descrita como convivência de casal apresentado publicamente, por Luciana, e como namoro, pelos filhos.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "peticao_luciana.txt",
+      "trecho": "eram apresentados como um casal",
+      "pagina": null,
+      "conferido": true
+     },
+     {
+      "documento": "contestacao_filhos.txt",
+      "trecho": "Eduardo e Luciana tinham um namoro, não uma união estável",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "contradicao-plano",
+    "categoria": "contradicao",
+    "texto": "A inclusão no plano de saúde, principal documento a favor de Luciana, é apresentada pelos filhos como medida pontual para uma cirurgia, com exclusão em 2022.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "peticao_luciana.txt",
+      "trecho": "Em 2021, Eduardo incluiu Luciana como dependente no plano de saúde",
+      "pagina": null,
+      "conferido": true
+     },
+     {
+      "documento": "contestacao_filhos.txt",
+      "trecho": "foi feita apenas para que Luciana tivesse cobertura durante uma cirurgia, e ela foi excluída do plano em 2022",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-endereco",
+    "categoria": "lacuna_probatoria",
+    "texto": "Nenhum comprovante de endereço mostra Luciana morando no apartamento de Eduardo entre 2018 e 2025.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "peticao_luciana.txt",
+      "trecho": "onde Luciana permaneceu até a morte dele",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-publicidade",
+    "categoria": "lacuna_probatoria",
+    "texto": "Viagens, festas de família e apresentação como casal são descritas sem fotos, convites, mensagens ou testemunhas.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "peticao_luciana.txt",
+      "trecho": "os dois viajavam juntos, frequentavam festas de família e eram apresentados como um casal",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-despesas",
+    "categoria": "lacuna_probatoria",
+    "texto": "A contribuição de Luciana nas despesas da casa não vem acompanhada de transferências, contas pagas ou qualquer comprovante.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "peticao_luciana.txt",
+      "trecho": "Luciana ajudava nas despesas da casa com o salário de professora",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "lacuna-exclusao",
+    "categoria": "lacuna_probatoria",
+    "texto": "Os filhos afirmam a exclusão do plano em 2022 e o motivo da inclusão sem juntar nenhum documento da operadora.",
+    "provenance": "INFERENCE",
+    "origem": [
+     {
+      "documento": "contestacao_filhos.txt",
+      "trecho": "ela foi excluída do plano em 2022",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-documentos-formais",
+    "categoria": "contra_argumento",
+    "texto": "Os filhos dirão que, em sete anos, Eduardo nunca registrou Luciana como companheira em nenhum documento, testamento ou declaração de imposto de renda.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "contestacao_filhos.txt",
+      "trecho": "nunca apresentou Luciana como companheira em documentos, testamento ou declaração de imposto de renda",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "argumento-cuidados-finais",
+    "categoria": "contra_argumento",
+    "texto": "A informação de que foram os filhos que cuidaram de Eduardo no hospital será usada para questionar a existência de vida em comum no fim da relação.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "contestacao_filhos.txt",
+      "trecho": "Nos últimos meses de vida de Eduardo, quem cuidou dele no hospital foram os filhos",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-endereco",
+    "categoria": "pergunta_dificil",
+    "texto": "Em qual endereço Luciana recebia correspondências e declarava residência entre 2018 e 2025?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "contestacao_filhos.txt",
+      "trecho": "onde recebia correspondências e declarava residência",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-plano",
+    "categoria": "pergunta_dificil",
+    "texto": "Por que Luciana saiu do plano de saúde em 2022, se o casal continuava junto?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "contestacao_filhos.txt",
+      "trecho": "ela foi excluída do plano em 2022",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-ir",
+    "categoria": "pergunta_dificil",
+    "texto": "Por que Eduardo nunca declarou Luciana como dependente ou companheira no imposto de renda?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "contestacao_filhos.txt",
+      "trecho": "declaração de imposto de renda",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   },
+   {
+    "id": "pergunta-hospital",
+    "categoria": "pergunta_dificil",
+    "texto": "Luciana acompanhou Eduardo no hospital nos últimos meses de vida dele?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [
+     {
+      "documento": "contestacao_filhos.txt",
+      "trecho": "quem cuidou dele no hospital foram os filhos",
+      "pagina": null,
+      "conferido": true
+     }
+    ]
+   }
+  ],
+  "perguntas_dificeis": [
+   "Em qual endereço Luciana recebia correspondências e declarava residência entre 2018 e 2025?",
+   "Por que Luciana saiu do plano de saúde em 2022, se o casal continuava junto?",
+   "Por que Eduardo nunca declarou Luciana como dependente ou companheira no imposto de renda?",
+   "Luciana acompanhou Eduardo no hospital nos últimos meses de vida dele?"
+  ],
+  "linha_do_tempo": [
+   {
+    "data": "junho de 2016",
+    "data_ordenacao": "2016-06",
+    "evento": "Início do relacionamento",
+    "quem_afirma": "Luciana",
+    "documento": "peticao_luciana.txt",
+    "trecho": "Luciana e Eduardo começaram a se relacionar em junho de 2016",
+    "trecho_conferido": true,
+    "divergencia": ""
+   },
+   {
+    "data": "2018",
+    "data_ordenacao": "2018",
+    "evento": "Luciana e Eduardo passam a viver juntos no apartamento dele, segundo Luciana",
+    "quem_afirma": "Luciana",
+    "documento": "peticao_luciana.txt",
+    "trecho": "passaram a viver juntos em 2018, no apartamento de Eduardo",
+    "trecho_conferido": true,
+    "divergencia": "Os filhos afirmam que Luciana manteve o próprio apartamento durante todo o período."
+   },
+   {
+    "data": "2021",
+    "data_ordenacao": "2021",
+    "evento": "Inclusão de Luciana como dependente no plano de saúde de Eduardo",
+    "quem_afirma": "Luciana",
+    "documento": "peticao_luciana.txt",
+    "trecho": "Em 2021, Eduardo incluiu Luciana como dependente no plano de saúde",
+    "trecho_conferido": true,
+    "divergencia": "Os filhos dizem que a inclusão foi só para cobrir uma cirurgia."
+   },
+   {
+    "data": "2022",
+    "data_ordenacao": "2022",
+    "evento": "Exclusão de Luciana do plano de saúde, segundo os filhos",
+    "quem_afirma": "Bruno e Carla",
+    "documento": "contestacao_filhos.txt",
+    "trecho": "ela foi excluída do plano em 2022",
+    "trecho_conferido": true,
+    "divergencia": ""
+   },
+   {
+    "data": "12/03/2025",
+    "data_ordenacao": "2025-03-12",
+    "evento": "Morte de Eduardo",
+    "quem_afirma": "Luciana",
+    "documento": "peticao_luciana.txt",
+    "trecho": "até a morte dele, em 12/03/2025",
+    "trecho_conferido": true,
+    "divergencia": ""
+   }
+  ],
+  "plano_de_provas": [
+   {
+    "prova": "Comprovantes de que Luciana morava no apartamento de Eduardo: contas, correspondências, cadastro no condomínio, título de eleitor",
+    "finalidade": "Enfrentar a afirmação de que ela manteve residência no próprio apartamento.",
+    "como_obter": "Reunir com a cliente documentos no endereço de Eduardo e requerer ao condomínio o cadastro de moradores.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "contradicao-residencia",
+     "contradicao-natureza",
+     "lacuna-endereco",
+     "pergunta-endereco"
+    ]
+   },
+   {
+    "prova": "Histórico do plano de saúde com as datas e os motivos de inclusão e exclusão",
+    "finalidade": "Esclarecer se a inclusão foi pontual e se houve mesmo exclusão em 2022.",
+    "como_obter": "Requerer ao juízo ofício à operadora do plano.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "contradicao-plano",
+     "lacuna-exclusao",
+     "pergunta-plano"
+    ]
+   },
+   {
+    "prova": "Fotos datadas, mensagens, convites de família e testemunhas como vizinhos, porteiros e amigos",
+    "finalidade": "Demonstrar a convivência pública como casal.",
+    "como_obter": "Reunir com a cliente e indicar testemunhas sem interesse na herança.",
+    "prioridade": "media",
+    "apontamentos": [
+     "lacuna-publicidade",
+     "contradicao-natureza"
+    ]
+   },
+   {
+    "prova": "Comprovantes de despesas da casa pagas por Luciana",
+    "finalidade": "Mostrar a contribuição para a vida em comum.",
+    "como_obter": "Extratos bancários da cliente com pagamentos e transferências.",
+    "prioridade": "media",
+    "apontamentos": [
+     "lacuna-despesas"
+    ]
+   },
+   {
+    "prova": "Registros de acompanhantes e visitas no hospital",
+    "finalidade": "Verificar a presença de Luciana nos últimos meses.",
+    "como_obter": "Requerer ao hospital os registros de acompanhantes.",
+    "prioridade": "media",
+    "apontamentos": [
+     "argumento-cuidados-finais",
+     "pergunta-hospital"
+    ]
+   },
+   {
+    "prova": "Declarações de imposto de renda de Eduardo",
+    "finalidade": "Confirmar ou afastar a ausência de Luciana como dependente.",
+    "como_obter": "Requerer ao juízo ofício à Receita Federal.",
+    "prioridade": "baixa",
+    "apontamentos": [
+     "argumento-documentos-formais",
+     "pergunta-ir"
+    ]
+   }
+  ],
+  "avisos": [
+   "Este relatório não é parecer jurídico: revise cada apontamento antes de usá-lo.",
+   "Versão de demonstração: use apenas documentos fictícios ou anonimizados."
+  ]
+ },
+ "audiencia": [
+  {
+   "pergunta": "Em qual endereço Luciana recebia correspondências e declarava residência entre 2018 e 2025?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Ela morava com ele; o apartamento dela ficou abandonado.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta afirma um abandono do apartamento que nenhum documento menciona e não responde onde ela declarava residência.",
+      "pontos_fortes": [
+       "Mantém a versão da convivência."
+      ],
+      "pontos_frageis": [
+       "\"Abandonado\" não está nos documentos.",
+       "Não enfrenta as correspondências e a residência declarada."
+      ],
+      "sugestao": "Reconheça que ela manteve o imóvel, se for o caso, e mostre com documentos que a vida cotidiana era no apartamento de Eduardo.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_filhos.txt",
+        "trecho": "Luciana manteve durante todo o período o próprio apartamento",
+        "conferido": true
+       }
+      ],
+      "replica": "Então por que as contas desse apartamento continuaram no nome dela?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Luciana manteve o apartamento antigo, mas vivia com Eduardo. Vamos demonstrar isso com contas no endereço dele, o cadastro no condomínio e testemunhas.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é realista ao admitir o apartamento mantido e indica as provas certas, mas a moradia comum ainda não está comprovada.",
+      "pontos_fortes": [
+       "Não nega um fato provável.",
+       "Aponta provas de terceiros."
+      ],
+      "pontos_frageis": [
+       "Manter o próprio imóvel será explorado como sinal de namoro."
+      ],
+      "sugestao": "Explique por que ela manteve o imóvel, com documentos, se possível.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_luciana.txt",
+        "trecho": "passaram a viver juntos em 2018, no apartamento de Eduardo",
+        "conferido": true
+       }
+      ],
+      "replica": "E por que alguém mantém um apartamento vazio por sete anos?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Por que Luciana saiu do plano de saúde em 2022, se o casal continuava junto?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Ela nunca saiu do plano.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta nega categoricamente um fato que pode ser confirmado com um simples documento da operadora.",
+      "pontos_fortes": [],
+      "pontos_frageis": [
+       "Se a exclusão for confirmada, a credibilidade do relato cai.",
+       "Não indica prova da negativa."
+      ],
+      "sugestao": "Em vez de negar, peça o histórico à operadora e mostre que os filhos não comprovaram o que afirmam.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_filhos.txt",
+        "trecho": "ela foi excluída do plano em 2022",
+        "conferido": true
+       }
+      ],
+      "replica": "A senhora autoriza que a operadora informe o histórico?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "A exclusão em 2022 é afirmada pelos filhos sem nenhum documento. Pedimos à operadora o histórico com datas e motivos. De todo modo, a inclusão como dependente em 2021 mostra como Eduardo tratava Luciana.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta aponta a falta de prova da versão contrária, pede o documento que resolve a dúvida e preserva o valor da inclusão de 2021.",
+      "pontos_fortes": [
+       "Não nega um fato verificável.",
+       "Coloca o ônus de provar a exclusão em quem a alegou.",
+       "Mantém o indício favorável."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Confirme com a cliente, antes da audiência, se houve saída do plano e por quê.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_luciana.txt",
+        "trecho": "Em 2021, Eduardo incluiu Luciana como dependente no plano de saúde",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Por que Eduardo nunca declarou Luciana como dependente ou companheira no imposto de renda?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Ele não entendia nada de imposto de renda.",
+     "avaliacao": {
+      "avaliacao": "fragil",
+      "resumo": "Sua resposta cria uma explicação sobre Eduardo que nenhum documento sustenta.",
+      "pontos_fortes": [],
+      "pontos_frageis": [
+       "Não há base nos documentos para essa explicação.",
+       "Parece uma justificativa improvisada."
+      ],
+      "sugestao": "Não explique a omissão com suposições; mostre que a ausência no imposto de renda não afasta, sozinha, a convivência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_filhos.txt",
+        "trecho": "nunca apresentou Luciana como companheira em documentos, testamento ou declaração de imposto de renda",
+        "conferido": true
+       }
+      ],
+      "replica": "Mas para incluir no plano de saúde ele entendia?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "A ausência na declaração de imposto de renda não afasta, sozinha, a convivência. A união será demonstrada pelo conjunto de provas de moradia e de vida em comum, inclusive a inclusão no plano de saúde.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta relativiza bem o ponto, mas depende de um conjunto de provas que ainda não foi apresentado.",
+      "pontos_fortes": [
+       "Não inventa explicações.",
+       "Usa um documento favorável."
+      ],
+      "pontos_frageis": [
+       "Sem as provas de moradia, o argumento perde força."
+      ],
+      "sugestao": "Priorize as provas de endereço comum.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_luciana.txt",
+        "trecho": "Eduardo incluiu Luciana como dependente no plano de saúde da empresa onde trabalhava",
+        "conferido": true
+       }
+      ],
+      "replica": "E que outro documento, além do plano, registra Luciana como companheira?"
+     }
+    }
+   ]
+  }
+ ]
+}

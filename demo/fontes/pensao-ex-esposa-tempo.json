@@ -1,0 +1,113 @@
+{
+ "id": "pensao-ex-esposa-tempo",
+ "tipo": "Pensão alimentícia",
+ "ordem": 4,
+ "titulo": "Pensão entre ex-cônjuges há muitos anos",
+ "descricao": "O ex-marido pede o fim da pensão pelo tempo passado desde o divórcio. Só a versão dele consta nos documentos.",
+ "pasta": "case_familia_10",
+ "relatorio": {
+  "resumo_do_caso": "Lemos 1 documento e identificamos 2 partes, 3 fatos relevantes e 1 pedido.",
+  "findings": [
+   {
+    "id": "lacuna-uma-versao",
+    "categoria": "lacuna_probatoria",
+    "texto": "Só a versão do ex-marido está disponível. A análise mostra onde o pedido é vulnerável, mas a defesa da ex-esposa pode trazer fatos que ainda não aparecem.",
+    "provenance": "INFERENCE",
+    "origem": [{"documento": "pedido_exoneracao.txt", "trecho": "SOMENTE UMA DAS PARTES"}]
+   },
+   {
+    "id": "lacuna-tempo",
+    "categoria": "lacuna_probatoria",
+    "texto": "O tempo decorrido desde o divórcio é o principal argumento, mas não é informado quanto tempo passou.",
+    "provenance": "INFERENCE",
+    "origem": [{"documento": "pedido_exoneracao.txt", "trecho": "O tempo decorrido desde o divórcio deveria ser considerado"}]
+   },
+   {
+    "id": "lacuna-condicoes",
+    "categoria": "lacuna_probatoria",
+    "texto": "A afirmação de que a ex-esposa teria condições de se sustentar não vem com renda, formação, idade ou situação de trabalho dela.",
+    "provenance": "INFERENCE",
+    "origem": [{"documento": "pedido_exoneracao.txt", "trecho": "argumentando que a mulher teria condições de se sustentar"}]
+   },
+   {
+    "id": "lacuna-fixacao",
+    "categoria": "lacuna_probatoria",
+    "texto": "Não se sabe em que termos a pensão foi fixada no divórcio: valor, prazo previsto ou motivo.",
+    "provenance": "INFERENCE",
+    "origem": [{"documento": "pedido_exoneracao.txt", "trecho": "Um homem pagava pensão à ex-esposa desde o divórcio"}]
+   },
+   {
+    "id": "argumento-sem-mudanca",
+    "categoria": "contra_argumento",
+    "texto": "A defesa dirá que o pedido não aponta nenhuma mudança concreta, apenas a passagem do tempo, e que isso sozinho não demonstra que a necessidade acabou.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "pedido_exoneracao.txt", "trecho": "O tempo decorrido desde o divórcio deveria ser considerado"}]
+   },
+   {
+    "id": "argumento-autonomia-futura",
+    "categoria": "contra_argumento",
+    "texto": "Ao dizer que a ex-esposa \"deveria buscar\" autonomia financeira, o próprio pedido sugere que ela ainda não a tem, o que a outra parte usará a seu favor.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "pedido_exoneracao.txt", "trecho": "A ex-esposa deveria buscar autonomia financeira"}]
+   },
+   {
+    "id": "argumento-reinsercao",
+    "categoria": "contra_argumento",
+    "texto": "A ex-esposa poderá sustentar dificuldade de voltar ao mercado de trabalho depois de anos fora dele, ponto sobre o qual o pedido não traz nenhuma informação.",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "pedido_exoneracao.txt", "trecho": "normalmente possui caráter excepcional e transitório"}]
+   },
+   {
+    "id": "pergunta-anos",
+    "categoria": "pergunta_dificil",
+    "texto": "Há quantos anos a pensão é paga, e qual era a situação da ex-esposa no divórcio?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "pedido_exoneracao.txt", "trecho": "pagava pensão à ex-esposa desde o divórcio"}]
+   },
+   {
+    "id": "pergunta-autonomia",
+    "categoria": "pergunta_dificil",
+    "texto": "Que fato concreto mostra que a ex-esposa hoje tem condições de se sustentar?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "pedido_exoneracao.txt", "trecho": "teria condições de se sustentar"}]
+   },
+   {
+    "id": "pergunta-transicao",
+    "categoria": "pergunta_dificil",
+    "texto": "O ex-marido aceitaria um prazo final de transição, em vez do fim imediato da pensão?",
+    "provenance": "ADVERSARIAL_HYPOTHESIS",
+    "origem": [{"documento": "pedido_exoneracao.txt", "trecho": "caráter excepcional e transitório"}]
+   }
+  ],
+  "linha_do_tempo": [],
+  "plano_de_provas": [
+   {"prova": "Sentença ou escritura do divórcio com a data e os termos da pensão", "finalidade": "Mostrar há quanto tempo a pensão é paga e em que condições foi fixada.", "como_obter": "Cópia do processo ou da escritura, que o cliente tem.", "prioridade": "alta", "apontamentos": ["lacuna-tempo", "lacuna-fixacao", "pergunta-anos"]},
+   {"prova": "Informações sobre trabalho e renda atuais da ex-esposa", "finalidade": "Demonstrar com fatos a capacidade de se sustentar.", "como_obter": "Requerer ao juízo ofício ao INSS para o extrato de vínculos e remunerações.", "prioridade": "alta", "apontamentos": ["lacuna-condicoes", "argumento-sem-mudanca", "argumento-reinsercao", "pergunta-autonomia"]},
+   {"prova": "Proposta escrita de prazo final de transição", "finalidade": "Oferecer uma solução intermediária coerente com o caráter transitório defendido.", "como_obter": "Definir o prazo com o cliente e juntar ao processo.", "prioridade": "media", "apontamentos": ["argumento-autonomia-futura", "pergunta-transicao"]},
+   {"prova": "Revisão deste relatório quando a defesa da ex-esposa for apresentada", "finalidade": "Incorporar a versão dela, que ainda não está nos documentos.", "como_obter": "Rodar nova análise com a contestação junto.", "prioridade": "baixa", "apontamentos": ["lacuna-uma-versao"]}
+  ]
+ },
+ "audiencia": [
+  {
+   "pergunta": "Há quantos anos a pensão é paga, e qual era a situação da ex-esposa no divórcio?",
+   "respostas": [
+    {"rotulo": "Resposta A", "texto": "Faz muito tempo, ela já teve tempo mais que suficiente.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta não informa o número de anos nem a situação da época, que é o que a pergunta pede.", "pontos_fortes": ["Mantém o argumento do tempo decorrido."], "pontos_frageis": ["Nenhum dado concreto.", "\"Tempo suficiente\" é uma opinião, não um fato."], "sugestao": "Informe a data do divórcio e os termos da pensão com base na sentença ou escritura.", "apoio_nos_documentos": [{"documento": "pedido_exoneracao.txt", "trecho": "O tempo decorrido desde o divórcio deveria ser considerado"}], "replica": "E quanto tempo, exatamente?"}},
+    {"rotulo": "Resposta B", "texto": "Vamos juntar a sentença de divórcio, que mostra a data e as condições em que a pensão foi fixada, para demonstrar há quanto tempo ela é paga.", "avaliacao": {"avaliacao": "parcial", "resumo": "Sua resposta indica o documento certo, mas o dado central do pedido continua fora dos autos.", "pontos_fortes": ["Prova simples e objetiva."], "pontos_frageis": ["O tempo e a situação original seguem desconhecidos."], "sugestao": "Leve a sentença à audiência e destaque o motivo da fixação.", "apoio_nos_documentos": [{"documento": "pedido_exoneracao.txt", "trecho": "Um homem pagava pensão à ex-esposa desde o divórcio"}], "replica": "E a sentença previa algum prazo para a pensão?"}}
+   ]
+  },
+  {
+   "pergunta": "Que fato concreto mostra que a ex-esposa hoje tem condições de se sustentar?",
+   "respostas": [
+    {"rotulo": "Resposta A", "texto": "Ela é jovem e saudável, pode muito bem trabalhar.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta afirma idade e saúde da ex-esposa, dados que não aparecem em nenhum documento.", "pontos_fortes": [], "pontos_frageis": ["Nenhum documento informa idade ou saúde.", "Poder trabalhar não é o mesmo que ter renda."], "sugestao": "Indique a prova de vínculos e renda que será requerida ao INSS.", "apoio_nos_documentos": [{"documento": "pedido_exoneracao.txt", "trecho": "teria condições de se sustentar"}], "replica": "Quantos anos ela tem?"}},
+    {"rotulo": "Resposta B", "texto": "O pedido se apoia no caráter transitório da pensão entre ex-cônjuges. Para mostrar a capacidade atual dela, vamos requerer ofício ao INSS com os vínculos e a renda.", "avaliacao": {"avaliacao": "parcial", "resumo": "Sua resposta combina o argumento do pedido com a prova adequada, mas ainda não aponta nenhum fato concreto.", "pontos_fortes": ["Fiel ao documento.", "Prova oficial."], "pontos_frageis": ["A capacidade de sustento continua sem demonstração."], "sugestao": "Se o cliente souber de algum trabalho atual da ex-esposa, informe desde já.", "apoio_nos_documentos": [{"documento": "pedido_exoneracao.txt", "trecho": "A obrigação alimentar entre ex-cônjuges normalmente possui caráter excepcional e transitório"}], "replica": "E se ela não tiver nenhum vínculo registrado?"}}
+   ]
+  },
+  {
+   "pergunta": "O ex-marido aceitaria um prazo final de transição, em vez do fim imediato da pensão?",
+   "respostas": [
+    {"rotulo": "Resposta A", "texto": "Não, ele não quer pagar mais nada.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta recusa uma solução intermediária que seria coerente com o próprio argumento de transitoriedade.", "pontos_fortes": [], "pontos_frageis": ["Parece inflexível.", "Desperdiça a coerência com o caráter transitório."], "sugestao": "Mantenha o pedido principal, mas aceite um prazo de transição como alternativa.", "apoio_nos_documentos": [{"documento": "pedido_exoneracao.txt", "trecho": "caráter excepcional e transitório"}], "replica": "Mesmo que ela não tenha renda nenhuma hoje?"}},
+    {"rotulo": "Resposta B", "texto": "Se o fim imediato não for acolhido, o ex-marido aceita um prazo final razoável, coerente com o caráter transitório da obrigação que ele defende.", "avaliacao": {"avaliacao": "convincente", "resumo": "Sua resposta demonstra razoabilidade e reforça a lógica do próprio pedido, sem abrir mão da pretensão principal.", "pontos_fortes": ["Coerente com o argumento de transitoriedade.", "Mostra boa-fé."], "pontos_frageis": [], "sugestao": "Defina o prazo com o cliente antes da audiência.", "apoio_nos_documentos": [{"documento": "pedido_exoneracao.txt", "trecho": "A obrigação alimentar entre ex-cônjuges normalmente possui caráter excepcional e transitório"}], "replica": ""}}
+   ]
+  }
+ ]
+}

@@ -1079,6 +1079,100 @@ textarea:focus-visible { border-color: var(--tinta); }
   .plano-marcar { accent-color: #000; }
 }
 
+/* ---------- modo de uso: demonstração ou chave própria ---------- */
+
+.modo-analise { margin: 0; padding: 0; border: 0; min-width: 0; }
+.modo-analise legend { padding: 0; margin-bottom: 12px; }
+.modo-opcoes { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: 12px; }
+.modo-opcao {
+  position: relative;
+  display: flex; flex-direction: column; gap: 4px;
+  padding: 16px 18px 16px 50px;
+  border: 1.5px solid var(--linha-forte);
+  border-radius: var(--raio);
+  background: var(--superficie);
+  cursor: pointer;
+  transition: border-color var(--duracao), background var(--duracao), box-shadow var(--duracao);
+}
+.modo-opcao:hover { border-color: var(--tinta); }
+.modo-opcao input { position: absolute; left: 18px; top: 19px; width: 1.2rem; height: 1.2rem; margin: 0; accent-color: var(--acao); }
+.modo-opcao:has(input:checked) { border-color: var(--tinta); background: var(--superficie-2); box-shadow: inset 0 0 0 1px var(--tinta); }
+.modo-opcao:has(input:focus-visible) { outline: 3px solid var(--foco); outline-offset: 3px; }
+.modo-titulo { font-family: var(--fonte-titulo); font-weight: 600; font-size: 1.05rem; }
+.modo-descricao { color: var(--tinta-suave); font-size: 0.93rem; }
+
+#form-analise[data-modo="demo"] #exemplos { order: 1; }
+#form-analise[data-modo="demo"] #lista-arquivos { order: 2; }
+#form-analise[data-modo="chave"] #envio-proprio { order: 1; }
+#form-analise[data-modo="chave"] #lista-arquivos { order: 2; }
+#form-analise[data-modo="chave"] #exemplos { order: 3; }
+
+.lista-arquivos li.documento-demo { display: block; padding: 0; overflow: hidden; }
+.documento-demo summary {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 10px 14px;
+  cursor: pointer;
+  list-style: none;
+}
+.documento-demo summary::-webkit-details-marker { display: none; }
+.documento-demo summary .arquivo-tamanho::after { content: " ▾"; }
+.documento-demo details[open] summary .arquivo-tamanho::after { content: " ▴"; }
+.documento-conteudo {
+  margin: 0;
+  padding: 12px 14px;
+  max-height: 18rem;
+  overflow: auto;
+  border-top: 1px solid var(--linha);
+  background: var(--superficie-2);
+  font-family: var(--fonte-texto);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.campo-texto {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid var(--linha-forte);
+  border-radius: 10px;
+  background: var(--superficie);
+  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  font-size: 0.95rem;
+}
+.campo-texto:focus-visible { border-color: var(--tinta); }
+.passo-ajuda a { color: var(--destaque-texto); font-weight: 700; }
+textarea[readonly] { background: var(--superficie-2); color: var(--tinta-suave); cursor: default; }
+
+.selo-demo {
+  align-self: flex-start;
+  padding: 3px 12px;
+  border: 1px solid var(--linha);
+  border-radius: 999px;
+  background: var(--superficie-2);
+  color: var(--tinta-suave);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.audiencia-opcoes, .audiencia-opcoes-lista, .audiencia-livre { display: flex; flex-direction: column; gap: 10px; }
+.opcao-resposta {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 4px;
+  width: 100%;
+  padding: 14px 16px;
+  border: 1.5px solid var(--linha-forte);
+  border-radius: 12px;
+  background: var(--superficie);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color var(--duracao), background var(--duracao);
+}
+.opcao-resposta:hover:not(:disabled) { border-color: var(--tinta); background: var(--superficie-2); }
+.opcao-resposta:disabled { opacity: 0.6; cursor: progress; }
+.opcao-rotulo { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--destaque-texto); }
+.opcao-texto { font-size: 1rem; }
+.nota-demo { font-size: 0.9rem; color: var(--tinta-suave); }
+
 /* ---------- movimento ----------
    Inspirado no template de referência (PromptMaster/Lovable): blocos do topo surgem de
    baixo em sequência (0,1s → 0,55s), texto digitado a 50 ms por letra com cursor
