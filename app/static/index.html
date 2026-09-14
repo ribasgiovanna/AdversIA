@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AdversIA</title>
+  <meta name="description" content="Revisão adversarial de estratégias em Direito de Família." />
+  <link rel="icon" href="/favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Lexend:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script>
+    // Aplica as preferências de acessibilidade antes da primeira pintura da página,
+    // para não piscar o tema ou o tamanho de texto errados ao carregar.
+    (function () {
+      try {
+        var p = JSON.parse(localStorage.getItem("adversia:acessibilidade") || "{}");
+        var r = document.documentElement;
+        if (p.tema === "claro") r.setAttribute("data-theme", "light");
+        if (p.tema === "escuro") r.setAttribute("data-theme", "dark");
+        if (p.contraste) r.setAttribute("data-contraste", "alto");
+        if (p.espacamento) r.setAttribute("data-espacamento", "amplo");
+        if (p.semAnimacoes) r.setAttribute("data-movimento", "reduzido");
+        if (p.escala) r.style.setProperty("--escala", p.escala);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topo">
+    <div class="topo-interno">
+      <a class="marca" href="/">
+        <img class="marca-logo" src="/logo-adversia.png" alt="AdversIA — página inicial" />
+      </a>
+      <button type="button" class="botao-acessibilidade" id="abrir-acessibilidade" aria-expanded="false" aria-controls="painel-acessibilidade">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="4.5" r="2" fill="currentColor"/><path d="M4 8.5c2.6.8 5.3 1.2 8 1.2s5.4-.4 8-1.2M12 9.7v4.6m0 0-3 6.2m3-6.2 3 6.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Acessibilidade</span>
+      </button>
+    </div>
+
+    <section class="painel-acessibilidade" id="painel-acessibilidade" hidden aria-labelledby="titulo-acessibilidade">
+      <div class="painel-interno">
+        <div class="painel-cabecalho">
+          <h2 id="titulo-acessibilidade">Acessibilidade</h2>
+          <button type="button" class="botao-texto" id="fechar-acessibilidade">Fechar</button>
+        </div>
+
+        <div class="painel-grade">
+          <div class="grupo-opcao">
+            <span class="rotulo-opcao" id="rotulo-tamanho">Tamanho do texto</span>
+            <div class="controle-segmentado" role="group" aria-labelledby="rotulo-tamanho">
+              <button type="button" id="diminuir-texto" aria-label="Diminuir o texto">A−</button>
+              <output id="valor-tamanho" aria-live="polite">100%</output>
+              <button type="button" id="aumentar-texto" aria-label="Aumentar o texto">A+</button>
+            </div>
+          </div>
+
+          <div class="grupo-opcao">
+            <span class="rotulo-opcao" id="rotulo-tema">Tema</span>
+            <div class="controle-segmentado" role="radiogroup" aria-labelledby="rotulo-tema">
+              <button type="button" role="radio" data-tema="claro" aria-checked="false">Claro</button>
+              <button type="button" role="radio" data-tema="escuro" aria-checked="false">Escuro</button>
+              <button type="button" role="radio" data-tema="auto" aria-checked="true">Automático</button>
+            </div>
+          </div>
+
+          <div class="grupo-opcao">
+            <span class="rotulo-opcao">Leitura</span>
+            <label class="opcao-alternar"><input type="checkbox" id="alto-contraste" /><span>Alto contraste</span></label>
+            <label class="opcao-alternar"><input type="checkbox" id="espacamento-amplo" /><span>Texto mais espaçado</span></label>
+            <label class="opcao-alternar"><input type="checkbox" id="reduzir-animacoes" /><span>Reduzir animações</span></label>
+          </div>
+
+          <div class="grupo-opcao">
+            <span class="rotulo-opcao">Libras e áudio</span>
+            <p class="nota-opcao">Para tradução em Libras, use o botão do <strong>VLibras</strong> na lateral direita da tela.</p>
+            <p class="nota-opcao">No relatório, o botão <strong>Ouvir relatório</strong> lê todo o conteúdo em voz alta.</p>
+          </div>
+        </div>
+
+        <button type="button" class="botao-texto" id="restaurar-acessibilidade">Restaurar configurações padrão</button>
+      </div>
+    </section>
+  </header>
+
+  <main id="conteudo" tabindex="-1">
+    <p class="visualmente-oculto" id="anuncio" aria-live="polite"></p>
+
+    <section class="abertura" id="abertura">
+      <p class="tagline">A divorciar? adversIA.</p>
+      <h1>
+        <span class="visualmente-oculto">Veja a sua tese pelos olhos da parte contrária.</span>
+        <span aria-hidden="true">Veja a sua tese pelos olhos da
+          <span class="titulo-destaque"><span class="titulo-fantasma">parte contrária.</span><span class="titulo-digitado" id="titulo-digitado" data-texto="parte contrária.">parte contrária.</span></span>
+        </span>
+      </h1>
+      <p class="apoio">
+        Envie os documentos do caso e a sua tese. A AdversIA aponta contradições, alegações sem
+        prova e perguntas difíceis, mostrando de onde tirou cada ponto.
+      </p>
+    </section>
+
+    <section class="cartao" id="secao-formulario" aria-label="Nova análise">
+      <form id="form-analise" novalidate>
+        <div class="passo">
+          <div class="passo-cabecalho">
+            <span class="passo-numero" aria-hidden="true">1</span>
+            <label for="documentos" class="passo-titulo">Documentos do caso</label>
+          </div>
+          <p class="passo-ajuda" id="documentos-ajuda">Petição, contestação, provas, acordos. Aceitamos PDF, Word (.docx) e texto (.txt).</p>
+
+          <div class="zona-arquivos" id="zona-arquivos">
+            <input type="file" id="documentos" name="documentos" multiple accept=".pdf,.docx,.txt,.md" aria-describedby="documentos-ajuda" />
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="28" height="28"><path d="M12 16V4m0 0-4.5 4.5M12 4l4.5 4.5M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <p class="zona-arquivos-texto"><strong>Clique para escolher</strong> ou arraste os arquivos para cá</p>
+          </div>
+
+          <ul class="lista-arquivos" id="lista-arquivos"></ul>
+
+          <fieldset class="exemplos" id="exemplos" hidden>
+            <legend class="exemplos-rotulo">Sem documentos à mão? Escolha um caso fictício pronto</legend>
+            <div class="exemplos-filtro">
+              <div class="campo-filtro">
+                <span class="rotulo-filtro" id="rotulo-tipo">Tipo de caso</span>
+                <div class="selecao" id="selecao-tipo">
+                  <button type="button" class="selecao-botao" id="filtro-tipo" aria-haspopup="listbox" aria-expanded="false" aria-controls="lista-tipo" aria-labelledby="rotulo-tipo valor-tipo">
+                    <span class="selecao-valor" id="valor-tipo"></span>
+                    <span class="selecao-seta" aria-hidden="true"></span>
+                  </button>
+                  <div class="selecao-lista" id="lista-tipo" role="listbox" tabindex="-1" aria-labelledby="rotulo-tipo" hidden></div>
+                </div>
+              </div>
+              <div class="campo-filtro">
+                <span class="rotulo-filtro" id="rotulo-situacao">Situação</span>
+                <div class="selecao" id="selecao-situacao">
+                  <button type="button" class="selecao-botao" id="filtro-situacao" aria-haspopup="listbox" aria-expanded="false" aria-controls="lista-situacao" aria-labelledby="rotulo-situacao valor-situacao" aria-describedby="exemplo-descricao">
+                    <span class="selecao-valor" id="valor-situacao"></span>
+                    <span class="selecao-seta" aria-hidden="true"></span>
+                  </button>
+                  <div class="selecao-lista" id="lista-situacao" role="listbox" tabindex="-1" aria-labelledby="rotulo-situacao" hidden></div>
+                </div>
+              </div>
+            </div>
+            <div class="exemplo-escolhido">
+              <p class="exemplo-descricao" id="exemplo-descricao"></p>
+              <button type="button" class="botao-secundario" id="usar-exemplo">Usar este caso</button>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="passo">
+          <div class="passo-cabecalho">
+            <span class="passo-numero" aria-hidden="true">2</span>
+            <label for="tese" class="passo-titulo">Sua tese</label>
+          </div>
+          <p class="passo-ajuda" id="tese-ajuda">Em poucas linhas: o que você pretende sustentar e em nome de qual parte.</p>
+          <textarea id="tese" name="tese" rows="4" aria-describedby="tese-ajuda" placeholder="Ex.: Em nome da mãe, pedir a guarda unilateral, alegando que o pai não participa da rotina da criança desde março."></textarea>
+        </div>
+
+        <div class="confirmacao">
+          <input type="checkbox" id="confirmacao-dados" name="confirmacao-dados" />
+          <label for="confirmacao-dados">Confirmo que os documentos são fictícios ou anonimizados, sem dados reais de clientes.</label>
+        </div>
+
+        <p class="erro-formulario" id="erro-formulario" role="alert" hidden></p>
+
+        <button type="submit" class="botao-principal" id="botao-analisar">Analisar estratégia</button>
+      </form>
+    </section>
+
+    <section class="cartao" id="secao-progresso" hidden aria-labelledby="titulo-progresso">
+      <h2 id="titulo-progresso" tabindex="-1">Analisando o seu caso</h2>
+      <p class="apoio-progresso">Costuma levar de 1 a 2 minutos. Acompanhe cada etapa abaixo.</p>
+      <ol class="etapas" id="etapas"></ol>
+    </section>
+
+    <section class="cartao cartao-erro" id="secao-erro" hidden aria-labelledby="titulo-erro">
+      <h2 id="titulo-erro" tabindex="-1">Não foi possível concluir a análise</h2>
+      <p id="erro-texto"></p>
+      <button type="button" class="botao-principal" id="botao-tentar-de-novo">Voltar e tentar de novo</button>
+    </section>
+
+    <section class="relatorio" id="secao-relatorio" hidden aria-labelledby="titulo-relatorio">
+      <header class="relatorio-cabecalho">
+        <p class="rotulo-secao">Relatório de pontos vulneráveis</p>
+        <h2 id="titulo-relatorio" tabindex="-1">O que a parte contrária pode explorar</h2>
+        <p class="resumo" id="resumo-caso"></p>
+        <div class="tese-analisada">
+          <span class="tese-rotulo">Tese analisada</span>
+          <p id="tese-analisada"></p>
+        </div>
+        <div class="acoes-relatorio">
+          <button type="button" class="botao-secundario" id="ouvir-relatorio" aria-pressed="false">Ouvir relatório</button>
+          <button type="button" class="botao-secundario" id="imprimir-relatorio">Imprimir ou salvar em PDF</button>
+          <button type="button" class="botao-secundario" id="nova-analise">Nova análise</button>
+        </div>
+      </header>
+
+      <div class="abas" role="tablist" aria-label="Partes do relatório">
+        <button type="button" role="tab" id="aba-pontos" aria-controls="painel-pontos" aria-selected="true">Pontos vulneráveis <span class="aba-contador" id="contador-pontos"></span></button>
+        <button type="button" role="tab" id="aba-linha" aria-controls="painel-linha" aria-selected="false" tabindex="-1">Linha do tempo <span class="aba-contador" id="contador-linha"></span></button>
+        <button type="button" role="tab" id="aba-plano" aria-controls="painel-plano" aria-selected="false" tabindex="-1">Plano de provas <span class="aba-contador" id="contador-plano"></span></button>
+        <button type="button" role="tab" id="aba-audiencia" aria-controls="painel-audiencia" aria-selected="false" tabindex="-1">Simular audiência <span class="aba-contador" id="contador-audiencia"></span></button>
+      </div>
+
+      <div class="painel-relatorio" role="tabpanel" id="painel-pontos" aria-labelledby="aba-pontos" tabindex="0">
+        <ul class="placar" id="placar" aria-label="Resumo dos apontamentos"></ul>
+
+        <details class="legenda">
+          <summary>Como ler este relatório</summary>
+          <p>Cada apontamento traz uma etiqueta que diz de onde ele veio, e logo abaixo o trecho do documento que o sustenta — para você conferir, não para confiar de olhos fechados.</p>
+          <dl class="legenda-lista">
+            <div><dt><span class="etiqueta etiqueta-fato">Está nos documentos</span></dt><dd>Aparece de forma literal em um dos documentos enviados.</dd></div>
+            <div><dt><span class="etiqueta etiqueta-conclusao">Conclusão tirada dos documentos</span></dt><dd>Uma dedução a partir do que está escrito. O trecho de origem vem logo abaixo.</dd></div>
+            <div><dt><span class="etiqueta etiqueta-hipotese">Possível argumento da outra parte</span></dt><dd>Uma linha de ataque plausível. Não é fato comprovado: avalie se ela se sustenta.</dd></div>
+            <div><dt><span class="etiqueta etiqueta-sembase">Sem base suficiente — confira</span></dt><dd>Não encontramos apoio suficiente nos documentos. Trate com cautela.</dd></div>
+            <div><dt><span class="selo-conferido">✓ Trecho conferido no documento</span></dt><dd>A AdversIA procurou o trecho citado no texto do documento enviado e o encontrou, palavra por palavra.</dd></div>
+            <div><dt><span class="selo-confira">Não localizamos este trecho exato — confira</span></dt><dd>O trecho não foi encontrado de forma literal. Pode ser um resumo: confira no documento antes de usar.</dd></div>
+          </dl>
+        </details>
+
+        <div id="grupos"></div>
+      </div>
+
+      <div class="painel-relatorio" role="tabpanel" id="painel-linha" aria-labelledby="aba-linha" tabindex="0" hidden>
+        <header class="painel-relatorio-cabecalho">
+          <h3>Linha do tempo do caso</h3>
+          <p>Os fatos com data, na ordem em que aconteceram, segundo cada documento. Quando as versões das partes não batem, o ponto aparece destacado.</p>
+          <p class="resumo-painel" id="resumo-linha"></p>
+        </header>
+        <ol class="linha-do-tempo" id="linha-do-tempo"></ol>
+      </div>
+
+      <div class="painel-relatorio" role="tabpanel" id="painel-plano" aria-labelledby="aba-plano" tabindex="0" hidden>
+        <header class="painel-relatorio-cabecalho">
+          <h3>Plano de provas</h3>
+          <p>O que providenciar para fechar os pontos fracos antes da audiência, em ordem de prioridade. Marque o que já foi providenciado.</p>
+          <p class="resumo-painel" id="progresso-plano" aria-live="polite"></p>
+        </header>
+        <div id="plano-de-provas"></div>
+      </div>
+
+      <div class="painel-relatorio" role="tabpanel" id="painel-audiencia" aria-labelledby="aba-audiencia" tabindex="0" hidden>
+        <header class="painel-relatorio-cabecalho">
+          <h3>Simulação de audiência</h3>
+          <p>A AdversIA faz as perguntas difíceis como o advogado da parte contrária. Responda como faria na audiência e veja se a sua resposta se sustenta nos documentos.</p>
+        </header>
+
+        <div class="audiencia-transcricao" id="audiencia-transcricao"></div>
+
+        <form class="audiencia-form" id="audiencia-form" novalidate>
+          <div class="audiencia-pergunta-atual">
+            <p class="rotulo-secao" id="audiencia-contador"></p>
+            <div class="balao balao-contrario">
+              <span class="balao-autor">Advogado(a) da parte contrária</span>
+              <p id="audiencia-pergunta"></p>
+            </div>
+            <button type="button" class="botao-texto" id="ouvir-pergunta">Ouvir pergunta</button>
+          </div>
+          <label for="resposta-audiencia" class="rotulo-filtro">Sua resposta</label>
+          <textarea id="resposta-audiencia" name="resposta-audiencia" rows="4" placeholder="Responda como responderia na audiência."></textarea>
+          <p class="erro-formulario" id="audiencia-erro" role="alert" hidden></p>
+          <div class="audiencia-acoes">
+            <button type="button" class="botao-texto" id="pular-pergunta">Pular pergunta</button>
+            <button type="button" class="botao-secundario" id="ditar-resposta" aria-pressed="false" hidden>Falar a resposta</button>
+            <button type="submit" class="botao-principal botao-compacto" id="enviar-resposta">Enviar resposta</button>
+          </div>
+        </form>
+
+        <div class="audiencia-fim" id="audiencia-fim" hidden>
+          <h4 id="audiencia-fim-titulo" tabindex="-1">Simulação concluída</h4>
+          <p id="audiencia-fim-resumo"></p>
+          <button type="button" class="botao-secundario" id="recomecar-audiencia">Recomeçar simulação</button>
+        </div>
+      </div>
+
+      <div class="avisos" id="avisos"></div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>AdversIA · Hackathon da Cidadania OAB/PR 2026 · Protótipo de demonstração</p>
+  </footer>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    try { new window.VLibras.Widget("https://vlibras.gov.br/app"); } catch (e) {}
+  </script>
+  <script src="/app.js"></script>
+</body>
+</html>

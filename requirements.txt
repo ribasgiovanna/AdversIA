@@ -1,0 +1,11 @@
+anthropic>=0.40,<1.0
+pytest>=8.0,<9.0
+# Leitura dos documentos enviados pelo advogado: PDF e Word (.docx).
+pypdf>=5.0,<7.0
+python-docx>=1.1,<2.0
+# Usado apenas se LLM_PROVIDER=groq (ADR-009, docs/DECISIONS.md) — a API da Groq é
+# compatível com o SDK da OpenAI, usada para testar o pipeline com um provedor gratuito.
+openai>=1.50,<2.0
+# Usado apenas se LLM_PROVIDER=gemini (ADR-010, docs/DECISIONS.md) — segundo provedor
+# gratuito, para fechar testes quando a cota diária da Groq se esgota.
+google-genai>=1.0,<2.0

@@ -1,0 +1,14 @@
+# Credenciais locais — nunca commitar (Constituição, Princípio V; ADR-005)
+.env
+
+# Agentes de codificação podem guardar credenciais/tokens na própria pasta do agente
+.claude/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Materiais da organização do hackathon (terceiros) — ficam só na máquina local
+*.pdf
+*.pptx

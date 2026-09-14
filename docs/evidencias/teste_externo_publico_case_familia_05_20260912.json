@@ -1,0 +1,239 @@
+{
+  "resumo_do_caso": "Caso com 3 parte(s) identificada(s), 5 fato(s) e 3 pedido(s) extraídos a partir de 2 documento(s).",
+  "tese_analisada": "Ação de guarda com alegação de alienação parental. Tese a ser testada: a do pai —\nconcessão da guarda unilateral em razão de suposta alienação parental praticada pela\nmãe, e de que a guarda compartilhada não deveria ser aplicada automaticamente quando\npudesse prejudicar o bem-estar da criança.",
+  "findings": [
+    {
+      "id": "lacuna-1",
+      "categoria": "lacuna_probatoria",
+      "texto": "Alegação sem evidência apresentada: a mãe pratica atos de alienação parental — não há laudo pericial psicológico, boletim de ocorrência ou qualquer exemplo concreto de conduta que sustente essa conclusão, que neste domínio exige prova técnica.",
+      "provenance": "INFERENCE",
+      "origem": [
+        {
+          "documento": "alegacoes_pai.txt",
+          "trecho": "A mãe pratica atos de alienação parental",
+          "pagina": null
+        }
+      ]
+    },
+    {
+      "id": "lacuna-2",
+      "categoria": "lacuna_probatoria",
+      "texto": "Alegação sem evidência apresentada: a convivência da criança com a mãe prejudica o bem-estar da filha — não há avaliação técnica, manifestação da criança ou outro elemento probatório que sustente essa afirmação.",
+      "provenance": "INFERENCE",
+      "origem": [
+        {
+          "documento": "alegacoes_pai.txt",
+          "trecho": "A convivência da criança com a mãe prejudica o bem-estar da filha",
+          "pagina": null
+        }
+      ]
+    },
+    {
+      "id": "lacuna-3",
+      "categoria": "lacuna_probatoria",
+      "texto": "Alegação sem evidência apresentada: a guarda compartilhada não deveria ser aplicada automaticamente quando pudesse prejudicar a criança — não há indicação de qual elemento fático concreto tornaria a guarda compartilhada prejudicial neste caso específico.",
+      "provenance": "INFERENCE",
+      "origem": [
+        {
+          "documento": "alegacoes_pai.txt",
+          "trecho": "A guarda compartilhada não deveria ser aplicada automaticamente quando pudesse prejudicar a criança",
+          "pagina": null
+        }
+      ]
+    },
+    {
+      "id": "lacuna-4",
+      "categoria": "lacuna_probatoria",
+      "texto": "Alegação de que a guarda compartilhada é a regra prevista no Código Civil não é propriamente uma alegação factual carente de prova, mas um argumento jurídico — não há uma 'lacuna probatória' aplicável a essa afirmação da forma como as demais, sendo mais apropriado tratá-la como argumento de direito, não de fato a ser provado.",
+      "provenance": "UNVERIFIED",
+      "origem": []
+    },
+    {
+      "id": "lacuna-5",
+      "categoria": "lacuna_probatoria",
+      "texto": "Alegação sem evidência apresentada: o simples conflito entre os pais não seria suficiente para afastar a guarda compartilhada — não há detalhamento do conflito alegado nem prova de sua natureza/gravidade que permita avaliar se, de fato, é 'simples'.",
+      "provenance": "INFERENCE",
+      "origem": [
+        {
+          "documento": "alegacoes_mae.txt",
+          "trecho": "O simples conflito entre os pais não seria suficiente para afastar a guarda compartilhada",
+          "pagina": null
+        }
+      ]
+    },
+    {
+      "id": "lacuna-6",
+      "categoria": "lacuna_probatoria",
+      "texto": "Alegação sem evidência apresentada: as restrições à convivência materna seriam excessivas — não há o teor da decisão de primeiro grau que impôs tais restrições, nem sua justificativa, para avaliar se são de fato desproporcionais.",
+      "provenance": "INFERENCE",
+      "origem": [
+        {
+          "documento": "alegacoes_mae.txt",
+          "trecho": "As restrições à convivência materna seriam excessivas",
+          "pagina": null
+        }
+      ]
+    },
+    {
+      "id": "lacuna-7",
+      "categoria": "lacuna_probatoria",
+      "texto": "Pedido de concessão da guarda unilateral em favor do pai não vem acompanhado de avaliação formal do genitor quanto à possibilidade e qualidade do exercício da guarda, nem de laudo pericial que embase a mudança do regime de guarda compartilhada para unilateral.",
+      "provenance": "INFERENCE",
+      "origem": [
+        {
+          "documento": "alegacoes_pai.txt",
+          "trecho": "Concessão da guarda unilateral em favor do pai",
+          "pagina": null
+        }
+      ]
+    },
+    {
+      "id": "lacuna-8",
+      "categoria": "lacuna_probatoria",
+      "texto": "Pedido de reforma da decisão de primeiro grau que determinou guarda compartilhada não vem acompanhado do texto da própria sentença recorrida nem de elementos que permitam avaliar os fundamentos originais da decisão a ser reformada.",
+      "provenance": "UNVERIFIED",
+      "origem": []
+    },
+    {
+      "id": "lacuna-9",
+      "categoria": "lacuna_probatoria",
+      "texto": "Pedido de ampliação das visitas da mãe sem condicionamento a acompanhamento psicoterápico não vem acompanhado de avaliação técnica sobre a genitora ou sobre o estado emocional da criança que justifique a dispensa dessa condição.",
+      "provenance": "INFERENCE",
+      "origem": [
+        {
+          "documento": "alegacoes_mae.txt",
+          "trecho": "Ampliação das visitas da mãe sem condicionamento a acompanhamento psicoterápico",
+          "pagina": null
+        }
+      ]
+    },
+    {
+      "id": "contra-argumento-1",
+      "categoria": "contra_argumento",
+      "texto": "O pai alega que a mãe 'pratica atos de alienação parental' (alegacoes_pai.txt), mas o Case Model não registra nenhum exemplo concreto desses atos (nenhuma data, nenhuma comunicação, nenhuma conduta específica descrita) nem laudo pericial psicológico que tecnicamente caracterize alienação parental. Sem esse laudo — que o próprio domínio trata como CRÍTICO para esse tipo de conclusão — a alegação permanece no campo da hipótese, não do fato provado, e não pode fundamentar sozinha a guarda unilateral pedida.",
+      "provenance": "INFERENCE",
+      "origem": [
+        {
+          "documento": "alegacoes_pai.txt",
+          "trecho": "A mãe pratica atos de alienação parental",
+          "pagina": null
+        }
+      ]
+    },
+    {
+      "id": "contra-argumento-2",
+      "categoria": "contra_argumento",
+      "texto": "A mãe sustenta que 'o simples conflito entre os pais não seria suficiente para afastar a guarda compartilhada' e que as restrições à sua convivência 'seriam excessivas' (alegacoes_mae.txt), mas essa mesma alegação carece de qualquer evidência sobre o teor real das restrições impostas em primeiro grau ou sobre sua justificativa na sentença. Sem o texto da decisão que fixou o condicionamento a acompanhamento psicoterápico, não é possível avaliar se a restrição foi de fato desproporcional ou se respondeu a algum elemento fático não relatado pela mãe.",
+      "provenance": "INFERENCE",
+      "origem": [
+        {
+          "documento": "alegacoes_mae.txt",
+          "trecho": "As restrições à convivência materna seriam excessivas",
+          "pagina": null
+        }
+      ]
+    },
+    {
+      "id": "contra-argumento-3",
+      "categoria": "contra_argumento",
+      "texto": "O fato de 'a criança ter permanecido morando com o pai após decisão de primeiro grau' que determinou guarda compartilhada (alegacoes_mae.txt) é apresentado sem explicação de sua causa — pode indicar tanto uma acomodação prática legítima quanto um descumprimento unilateral da decisão judicial pelo pai. Essa ambiguidade enfraquece qualquer narrativa que as partes construam a partir desse fato, seja para sustentar que a guarda de fato já favorece o pai, seja para alegar violação da decisão judicial.",
+      "provenance": "INFERENCE",
+      "origem": [
+        {
+          "documento": "alegacoes_mae.txt",
+          "trecho": "A criança permaneceu morando com o pai após decisão de primeiro grau",
+          "pagina": null
+        }
+      ]
+    },
+    {
+      "id": "contra-argumento-4",
+      "categoria": "contra_argumento",
+      "texto": "O pedido de 'ampliação das visitas da mãe sem condicionamento a acompanhamento psicoterápico' (alegacoes_mae.txt) pressupõe que esse acompanhamento seja desnecessário, mas nenhuma avaliação técnica sobre a genitora ou sobre o estado emocional da criança foi trazida ao Case Model para sustentar essa dispensa — a ausência de manifestação da própria criança e de avaliação formal do genitor enfraquece o pedido tanto quanto enfraquece a alegação paterna de alienação.",
+      "provenance": "ADVERSARIAL_HYPOTHESIS",
+      "origem": [
+        {
+          "documento": "alegacoes_mae.txt",
+          "trecho": "Ampliação das visitas da mãe sem condicionamento a acompanhamento psicoterápico",
+          "pagina": null
+        }
+      ]
+    },
+    {
+      "id": "pergunta-1",
+      "categoria": "pergunta_dificil",
+      "texto": "Quais atos concretos, com datas e descrição de conduta, sustentam a afirmação de que a mãe pratica alienação parental — e por que nenhum deles foi mencionado no documento que embasa esse pedido de guarda unilateral?",
+      "provenance": "ADVERSARIAL_HYPOTHESIS",
+      "origem": [
+        {
+          "documento": "alegacoes_pai.txt",
+          "trecho": "A mãe pratica atos de alienação parental",
+          "pagina": null
+        }
+      ]
+    },
+    {
+      "id": "pergunta-2",
+      "categoria": "pergunta_dificil",
+      "texto": "A criança permaneceu morando com o pai por decisão judicial superveniente, por acordo entre as partes, ou por descumprimento da decisão de guarda compartilhada de primeiro grau — e, se foi descumprimento, isso não deveria pesar contra o pedido do próprio pai de ampliar seus direitos de guarda?",
+      "provenance": "ADVERSARIAL_HYPOTHESIS",
+      "origem": [
+        {
+          "documento": "alegacoes_mae.txt",
+          "trecho": "A criança permaneceu morando com o pai após decisão de primeiro grau",
+          "pagina": null
+        }
+      ]
+    },
+    {
+      "id": "pergunta-3",
+      "categoria": "pergunta_dificil",
+      "texto": "Qual foi a motivação específica do juízo de primeiro grau para condicionar as visitas maternas a acompanhamento psicoterápico — foi resposta a algum incidente concreto ou risco identificado, ou uma medida genérica de cautela — e como a mãe pode pedir a ampliação das visitas sem essa condição sem enfrentar diretamente essa motivação original?",
+      "provenance": "ADVERSARIAL_HYPOTHESIS",
+      "origem": [
+        {
+          "documento": "alegacoes_mae.txt",
+          "trecho": "As restrições à convivência materna seriam excessivas",
+          "pagina": null
+        }
+      ]
+    },
+    {
+      "id": "pergunta-4",
+      "categoria": "pergunta_dificil",
+      "texto": "Havendo apenas duas peças de alegação de cada genitor e nenhuma perícia técnica, com base em que elementos o julgador deveria decidir entre a tese de alienação parental (pai) e a tese de conflito comum sem gravidade (mãe), já que ambas carecem do mesmo tipo de prova técnica que o próprio domínio considera indispensável?",
+      "provenance": "INFERENCE",
+      "origem": [
+        {
+          "documento": "alegacoes_pai.txt",
+          "trecho": "A mãe pratica atos de alienação parental",
+          "pagina": null
+        },
+        {
+          "documento": "alegacoes_mae.txt",
+          "trecho": "O simples conflito entre os pais não seria suficiente para afastar a guarda compartilhada",
+          "pagina": null
+        }
+      ]
+    }
+  ],
+  "perguntas_dificeis": [
+    "Quais atos concretos, com datas e descrição de conduta, sustentam a afirmação de que a mãe pratica alienação parental — e por que nenhum deles foi mencionado no documento que embasa esse pedido de guarda unilateral?",
+    "A criança permaneceu morando com o pai por decisão judicial superveniente, por acordo entre as partes, ou por descumprimento da decisão de guarda compartilhada de primeiro grau — e, se foi descumprimento, isso não deveria pesar contra o pedido do próprio pai de ampliar seus direitos de guarda?",
+    "Qual foi a motivação específica do juízo de primeiro grau para condicionar as visitas maternas a acompanhamento psicoterápico — foi resposta a algum incidente concreto ou risco identificado, ou uma medida genérica de cautela — e como a mãe pode pedir a ampliação das visitas sem essa condição sem enfrentar diretamente essa motivação original?",
+    "Havendo apenas duas peças de alegação de cada genitor e nenhuma perícia técnica, com base em que elementos o julgador deveria decidir entre a tese de alienação parental (pai) e a tese de conflito comum sem gravidade (mãe), já que ambas carecem do mesmo tipo de prova técnica que o próprio domínio considera indispensável?"
+  ],
+  "avisos": [
+    "Este relatório não é parecer jurídico e requer revisão humana antes de qualquer uso.",
+    "Use apenas dados fictícios/anonimizados neste demo."
+  ],
+  "_metadados_execucao": {
+    "data": "2026-09-12",
+    "caso": "case_familia_05 (FAM-005, guarda/alienacao parental)",
+    "provedor": "anthropic (claude-sonnet-5 / claude-haiku-4-5)",
+    "canal": "URL publica via Cloudflare Tunnel (belong-grade-amy-longest.trycloudflare.com)",
+    "tempo_resposta_segundos": 80,
+    "violacoes_provenance": 0,
+    "citacoes_documento_inexistente": 0
+  }
+}

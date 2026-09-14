@@ -1,0 +1,12 @@
+PRINT DE CONVERSA DE WHATSAPP (CASO FICTÍCIO PARA TESTES)
+Transcrição juntada pelo Reclamante.
+
+Conversa entre Carlos Eduardo Lima e Roberto Nunes (gerente da loja).
+Data da conversa: sexta-feira, 14/07/2023.
+
+Roberto Nunes: "Carlos, pode fechar a loja hoje às 19h? Vamos ter entrega tarde do
+fornecedor."
+
+Carlos Eduardo Lima: "Pode deixar, fico até resolver."
+
+Roberto Nunes: "Valeu, só hoje mesmo por causa da entrega."
