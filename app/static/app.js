@@ -586,9 +586,9 @@ function preencherSituacoes() {
 async function carregarExemplos() {
   try {
     const resposta = await fetch("demo/indice.json");
-    if (!resposta.ok) return;
+    if (!resposta.ok) throw new Error(`indice ${resposta.status}`);
     exemplos = await resposta.json();
-    if (!exemplos.length) return;
+    if (!exemplos.length) throw new Error("indice vazio");
 
     selecaoSituacao = criarSelecao($("selecao-situacao"), mostrarDescricaoExemplo);
     selecaoTipo = criarSelecao($("selecao-tipo"), () => {
@@ -622,8 +622,13 @@ async function carregarExemplos() {
 
     preencherSituacoes();
     $("exemplos").hidden = false;
-  } catch {
-    /* sem exemplos: o formulário continua funcionando normalmente */
+  } catch (erro) {
+    // No modo demonstração os casos são o conteúdo principal: sem eles, avisar em vez de
+    // deixar a tela sem opções (foi assim que o problema da publicação passou despercebido).
+    console.warn("Casos de demonstração indisponíveis:", erro);
+    if (modo === "demo") {
+      mostrarErroFormulario("Não conseguimos carregar os casos de demonstração. Recarregue a página em instantes.");
+    }
   }
 }
 
