@@ -5,11 +5,16 @@
   </picture>
 </p>
 
-<h3 align="center">A divorciar? adversIA.</h3>
+<h3 align="center">A divorciar? AdversIA</h3>
 
 <p align="center">
   <strong>Veja a sua tese pelos olhos da parte contrária.</strong><br>
   Revisão adversarial de estratégias em Direito de Família, com inteligência artificial.
+</p>
+
+<p align="center">
+  <a href="https://adversia.vercel.app"><strong>Acesse o site: adversia.vercel.app</strong></a><br>
+  <sub>Demonstração gratuita, sem cadastro</sub>
 </p>
 
 <p align="center">
@@ -34,6 +39,7 @@
 - [Privacidade e cuidados](#privacidade-e-cuidados)
 - [Escopo do projeto](#escopo-do-projeto)
 - [Casos de exemplo](#casos-de-exemplo)
+- [Como é feito](#como-é-feito)
 - [Como rodar](#como-rodar)
 - [Documentação](#documentação)
 - [Integrantes](#integrantes)
@@ -75,14 +81,15 @@ tem, principalmente o advogado que atende a população com menos recursos.
 ## A solução
 
 Uma ferramenta que faz o papel do "advogado do diabo" em minutos e entrega um relatório
-em quatro partes:
+em quatro partes, que também pode ser salvo em PDF:
 
 | | O que entrega |
 |---|---|
 | **Pontos vulneráveis** | Contradições, alegações sem prova, argumentos que a outra parte pode usar e perguntas difíceis, cada um mostrando de onde veio |
 | **Linha do tempo do caso** | Os fatos com data, em ordem, com destaque onde as versões das partes não batem |
 | **Plano de provas** | O que providenciar para fechar cada ponto fraco, por prioridade e com a forma lícita de obter |
-| **Simulação de audiência** | Um treino em que a IA faz as perguntas da parte contrária e avalia a resposta do advogado |
+| **Simulação de audiência** | Um treino em formato de conversa: a parte contrária pergunta, o advogado responde e recebe a avaliação, uma sugestão de como fortalecer a resposta e a réplica |
+| **Relatório em PDF** | Documento formal, em linguagem técnica: identificação, tese, síntese, vulnerabilidades numeradas com os trechos dos documentos, cronologia e plano de diligências em tabelas |
 
 E um compromisso que atravessa tudo: **cada trecho citado é conferido, palavra por
 palavra, no documento enviado.**
@@ -98,12 +105,20 @@ A AdversIA tem **dois jeitos de usar**:
 | Para quem | Qualquer pessoa que queira conhecer o sistema | Equipe de gestão, com código de acesso |
 | Custo | **Gratuito**, sem cadastro | Usa a chave da Anthropic da própria pessoa (cerca de US$ 0,25 por análise, cobrado na conta dela) |
 | O que acontece | Você escolhe um dos **32 casos fictícios** e vê a análise completa, que foi preparada antes | A inteligência artificial lê os seus documentos na hora |
-| Simulação de audiência | Respostas prontas para escolher e ver a avaliação | Você escreve ou fala a sua resposta |
+| Simulação de audiência | **5 perguntas por caso**, cada uma com duas respostas bem construídas para escolher e comparar a avaliação | Você escreve ou fala a sua resposta |
 
-No modo demonstração, a tela avisa: *"Caso fictício de demonstração · análise preparada
+No modo demonstração, o relatório mostra o selo *"Demonstração · análise preparada
 previamente"*.
 
-Passo a passo da análise com documentos, liberada só depois de clicar em **Acesso da
+Passo a passo da demonstração:
+
+1. Clique em **Experimentar com um caso**.
+2. **Escolha um caso** (dá para filtrar por tipo e ver os documentos antes).
+3. Clique em **Analisar caso** e navegue pelas abas do relatório.
+4. Na aba **Simular audiência**, treine respondendo às perguntas da parte contrária.
+5. Use o botão de impressora para **salvar o relatório em PDF**.
+
+Passo a passo da análise com documentos, liberada só depois de clicar em **Área da
 gestão** e digitar o código:
 
 1. **Envie os documentos do caso**: petição, contestação, acordos, declarações (PDF,
@@ -112,26 +127,28 @@ gestão** e digitar o código:
 3. **Informe a sua chave da Anthropic.** Ela é usada só naquela análise e não fica
    guardada.
 4. **Confirme** que os documentos são fictícios ou anonimizados.
-5. **Acompanhe a análise** (seis etapas, de 2 a 3 minutos), leia o relatório e treine na
-   simulação de audiência.
+5. **Acompanhe a análise** (seis etapas, de 2 a 3 minutos), leia o relatório, treine na
+   simulação de audiência e salve em PDF.
 
 ---
 
 ## O sistema em imagens
 
 ### Casos de exemplo prontos
-Filtro por tipo de caso e situação, para testar sem documentos próprios e sem custo.
+Filtro por tipo de caso e cartões com um resumo de cada situação, para testar sem
+documentos próprios e sem custo.
 
-<p align="center"><img src="docs/imagens/02_casos_de_exemplo.png" alt="Filtro de casos de exemplo" width="760"></p>
+<p align="center"><img src="docs/imagens/02_casos_de_exemplo.png" alt="Escolha de casos de exemplo" width="760"></p>
 
 ### Análise em etapas
-O progresso real aparece na tela enquanto o caso é analisado.
+O progresso aparece na tela enquanto o caso é analisado.
 
 <p align="center"><img src="docs/imagens/03_progresso.png" alt="Tela de progresso da análise" width="760"></p>
 
 ### Pontos vulneráveis
 Placar do que a parte contrária pode explorar e cada apontamento com a sua origem e o
-trecho conferido no documento.
+trecho conferido no documento. As seções abrem e fecham, para não precisar rolar a página
+inteira.
 
 <p align="center"><img src="docs/imagens/04_pontos_vulneraveis.png" alt="Relatório de pontos vulneráveis" width="860"></p>
 
@@ -141,16 +158,22 @@ Fatos datados, em ordem, com as divergências entre as versões destacadas.
 <p align="center"><img src="docs/imagens/05_linha_do_tempo.png" alt="Linha do tempo do caso" width="860"></p>
 
 ### Plano de provas
-O que providenciar, por prioridade, com vínculo direto para o ponto fraco que cada prova
-resolve.
+O que providenciar, por prioridade, com caixa para marcar o que já foi providenciado e
+vínculo direto para o ponto fraco que cada prova resolve.
 
 <p align="center"><img src="docs/imagens/06_plano_de_provas.png" alt="Plano de provas" width="860"></p>
 
 ### Simulação de audiência
-A IA pergunta como advogado da parte contrária, avalia a resposta com base nos
-documentos, sugere como fortalecê-la e devolve a réplica.
+Em formato de conversa: a parte contrária pergunta, a AdversIA avalia a resposta com base
+nos documentos, sugere como fortalecê-la e a parte contrária devolve a réplica.
 
 <p align="center"><img src="docs/imagens/07_simulacao_de_audiencia.png" alt="Simulação de audiência" width="860"></p>
+
+### Relatório em PDF
+Documento formal em folha A4, sem os elementos visuais da página, com seções numeradas,
+tabelas e numeração de páginas.
+
+<p align="center"><img src="docs/imagens/11_relatorio_pdf.png" alt="Primeira página do relatório em PDF" width="600"></p>
 
 ### Acessibilidade, tema escuro e celular
 
@@ -167,14 +190,14 @@ documentos, sugere como fortalecê-la e devolve a réplica.
 ## Por que dá para confiar
 
 - **Tudo mostra de onde veio.** Cada apontamento traz uma etiqueta: *Está nos
-  documentos*, *Conclusão tirada dos documentos*, *Possível argumento da outra parte* ou
-  *Sem base suficiente, confira*.
+  documentos*, *Fonte jurídica citada*, *Conclusão tirada dos documentos*, *Possível
+  argumento da outra parte* ou *Sem base suficiente — confira*.
 - **Cada trecho citado é conferido automaticamente** no documento enviado:
-  *"✓ Trecho conferido no documento"* ou *"Não localizamos este trecho exato, confira"*.
+  *"✓ Trecho conferido no documento"* ou *"Não localizamos este trecho exato — confira"*.
 - **Não inventa leis nem decisões.** Nenhum número de lei, artigo ou processo é citado
   sem estar nos documentos.
 - **Na dúvida, é cautelosa.** Quando falta base, ela diz isso em vez de afirmar.
-- **O advogado sempre decide.** Todo relatório avisa que não é parecer jurídico.
+- **O advogado sempre decide.** O relatório é apoio à revisão, não parecer jurídico.
 
 ---
 
@@ -186,9 +209,10 @@ Pensada para ser usada por todos. No botão **Acessibilidade**, no topo:
 - **tamanho do texto** de 90% a 175%;
 - **tema claro, escuro ou automático**, e **alto contraste**;
 - **texto mais espaçado**, que ajuda pessoas com dislexia;
-- **reduzir animações**;
+- **reduzir animações** (a página também respeita essa preferência do sistema);
 - **ouvir o relatório** e as perguntas em voz alta, e **responder falando** na simulação;
-- letra criada para pessoas com baixa visão (Atkinson Hyperlegible);
+- letras escolhidas pela leitura fácil: Atkinson Hyperlegible, criada para pessoas com
+  baixa visão, e Lexend nos títulos;
 - uso completo pelo teclado, compatível com leitores de tela, e versão para celular;
 - **linguagem simples**, sem termos técnicos.
 
@@ -197,11 +221,13 @@ Pensada para ser usada por todos. No botão **Acessibilidade**, no topo:
 ## Privacidade e cuidados
 
 - Versão de demonstração: **use apenas documentos fictícios ou anonimizados**. A tela
-  pede essa confirmação antes de cada análise.
+  pede essa confirmação antes de cada análise com documentos.
 - **Nada é gravado.** Os documentos são lidos, analisados e descartados. Para a simulação
   de audiência, o texto dos documentos fica só na aba do navegador de quem fez a análise.
 - **A chave da Anthropic não fica guardada**: vai junto de cada pedido de análise e é
   descartada em seguida. Ela não é salva no navegador nem no servidor.
+- **A análise com documentos é só para a gestão**, protegida por código de acesso. O
+  público usa apenas os casos fictícios.
 - Os casos do modo demonstração são **inventados**. As fontes públicas pesquisadas serviram
   só para escolher os temas; nenhum dado de processo real foi usado.
 - Casos de família envolvem dados sensíveis, inclusive de crianças. Para uso com clientes
@@ -220,9 +246,12 @@ Pensada para ser usada por todos. No botão **Acessibilidade**, no topo:
 - Leitura de PDF com texto, Word (.docx) e arquivos de texto.
 - Relatório de pontos vulneráveis com origem de cada apontamento e conferência dos
   trechos.
-- Linha do tempo, plano de provas e simulação de audiência.
-- Modo demonstração gratuito com 32 casos fictícios e análises preparadas.
-- Análise real com a chave da Anthropic da própria pessoa.
+- Linha do tempo, plano de provas e simulação de audiência em formato de conversa.
+- Exportação do relatório em PDF, em formato de documento técnico.
+- Modo demonstração gratuito com 32 casos fictícios, análises preparadas e 5 perguntas de
+  audiência por caso.
+- Análise real com documentos, restrita à gestão, com a chave da Anthropic da própria
+  pessoa.
 - Site publicado na internet (Vercel).
 - Painel de acessibilidade completo e interface em linguagem simples.
 
@@ -257,10 +286,34 @@ temas: [catálogo de situações](docs/CATALOGO_DE_SITUACOES.md).
 
 ---
 
+## Como é feito
+
+| Parte | Tecnologia |
+|---|---|
+| Site | HTML, CSS e JavaScript puros, sem framework nem etapa de build |
+| Servidor local | Python 3.13, só com a biblioteca padrão (`app/server.py`) |
+| Publicação | Vercel: site estático + funções Python em `api/` |
+| Inteligência artificial | Claude, da Anthropic, com a chave de quem faz a análise |
+| Leitura de documentos | `pypdf` (PDF) e `python-docx` (Word) |
+
+Estrutura do repositório:
+
+```
+app/            código Python (pipeline de análise, leitura de documentos, API) e o site em app/static
+api/            funções da Vercel: analisar, audiencia e gestao
+demo/fontes/    análises e perguntas escritas para os 32 casos de demonstração
+golden_dataset/ documentos fictícios de cada caso
+scripts/        construir_demo.py: confere cada trecho citado e gera app/static/demo
+tests/          testes do pipeline (chamam a API real da Anthropic)
+docs/           documentação técnica, decisões, conformidade e imagens
+```
+
+---
+
 ## Como rodar
 
-**Na internet:** o site é publicado na Vercel a partir deste repositório. O modo
-demonstração funciona sem nenhuma configuração.
+**Na internet:** [adversia.vercel.app](https://adversia.vercel.app), publicado na Vercel a
+partir deste repositório. O modo demonstração funciona sem nenhuma configuração.
 
 **No computador**, com Python 3.13:
 
@@ -272,8 +325,18 @@ python -m app.server
 
 O modo demonstração funciona sem nenhuma configuração. A análise com documentos é só
 para a gestão: defina a variável `ADVERSIA_CODIGO_GESTAO` (no `.env` ou no painel da
-Vercel) e informe esse código e a chave da Anthropic na tela. Cada análise completa custa
-cerca de US$ 0,25, cobrados na conta de quem informou a chave.
+Vercel; veja `.env.example`) e informe esse código e a chave da Anthropic na tela. Cada
+análise completa custa cerca de US$ 0,25, cobrados na conta de quem informou a chave.
+
+**Depois de alterar um caso de demonstração** (`demo/fontes`), gere os arquivos do site de
+novo. O script para se algum trecho citado não estiver, palavra por palavra, no documento:
+
+```bash
+python scripts/construir_demo.py
+```
+
+**Testes:** `pytest` roda os testes do pipeline com a API real da Anthropic (há custo) e
+exige `ANTHROPIC_API_KEY`; sem a chave, eles são pulados.
 
 ---
 
@@ -283,6 +346,9 @@ cerca de US$ 0,25, cobrados na conta de quem informou a chave.
   segurança, testes e limitações.
 - [Decisões do projeto](docs/DECISIONS.md): o porquê de cada escolha.
 - [Conformidade](docs/CONFORMIDADE.md): acessibilidade, LGPD e segurança.
+- [Requisitos de experiência de uso](docs/REQUISITOS_UX.md): as referências que guiaram
+  o redesenho da interface.
+- [Custos](docs/COSTS.md): quanto custa cada análise e como foi medido.
 - [Catálogo de situações](docs/CATALOGO_DE_SITUACOES.md): os 32 casos fictícios e as
   fontes públicas que inspiraram os temas.
 - [Testes internos](docs/testes-internos.md) e [roteiro de teste externo](docs/roteiro-teste-externo.md).
