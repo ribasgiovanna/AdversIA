@@ -1,4 +1,8 @@
 <p align="center">
+  🇧🇷 Português · <a href="README.en.md">🇺🇸 English</a>
+</p>
+
+<p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="docs/imagens/logo-adversia-branca.png">
     <img src="app/static/logo-adversia.png" alt="AdversIA" width="420">
