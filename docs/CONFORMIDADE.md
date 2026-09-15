@@ -144,6 +144,43 @@ domínio genérico original do MVP.
   lido como texto (baixo risco, já que o conteúdo só é enviado a um LLM como texto, nunca
   executado), mas é uma limitação a documentar.
 
+## Política de publicação do repositório
+
+O código é aberto sob a [licença MIT](../LICENSE) (Copyright (c) 2026 Equipe Código de
+Defesa). Abrir o código não significa abrir os dados: o repositório público segue as regras
+abaixo.
+
+**Nunca publicar:**
+- `.env`, chave da Anthropic, tokens e quaisquer credenciais;
+- banco de dados real e dados de usuários;
+- documentos reais de clientes;
+- logs com informações pessoais;
+- arquivos enviados nos testes externos.
+
+**Pode ficar privado ou em repositório separado:**
+- infraestrutura de produção e configurações internas;
+- dados de teste reais;
+- métricas brutas com informações de participantes;
+- futuras integrações comerciais.
+
+**Como isso é garantido:**
+
+| Regra | Onde |
+|---|---|
+| Credenciais (`.env`, `.env.*`, chaves, certificados, `.vercel/`) ignoradas pelo Git; só o `.env.example`, sem valores, é publicado | `.gitignore` |
+| Uploads, arquivos de testes externos, datasets sensíveis e métricas brutas ignorados (`uploads/`, `testes_externos/`, `dados_reais/`, `metricas_brutas/`, `respostas_participantes/`) | `.gitignore` |
+| Infraestrutura, configurações internas e integrações comerciais ficam em `privado/` (ignorada) ou em repositório privado separado | `.gitignore` |
+| Bancos locais (`*.db`, `*.sqlite`), logs (`*.log`, `logs/`) e caches ignorados | `.gitignore` |
+| O sistema não grava documentos nem chaves; as mensagens de log vão só para o terminal (sem arquivo) e registram custo, avisos técnicos e a linha da requisição (endereço e rota), nunca o texto dos documentos | ADR-014; `app/server.py::log_message`, `app/llm_client.py`, `app/pipeline.py`; seção 2 deste documento |
+| Casos de demonstração e do golden dataset são fictícios, com aviso em cada documento | `golden_dataset/`, `demo/` |
+| Registro bruto dos testes externos fica fora do repositório; o público recebe só o resumo sem identificação | `docs/roteiro-teste-externo.md` |
+| Evidências publicadas não trazem endereços de infraestrutura (o endereço do túnel temporário usado no teste externo foi omitido) | `docs/evidencias/` |
+
+**Antes de cada commit:** conferir `git status` e o diff à procura de chaves, e-mails,
+telefones, CPFs, números de processo e caminhos de pastas pessoais.
+
+---
+
 ## Resumo para o pitch
 
 O MVP implementa proteções técnicas reais e verificáveis (path traversal, limite de

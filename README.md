@@ -46,6 +46,7 @@
 - [Como é feito](#como-é-feito)
 - [Como rodar](#como-rodar)
 - [Documentação](#documentação)
+- [Licença](#licença)
 - [Integrantes](#integrantes)
 
 ---
@@ -356,6 +357,17 @@ exige `ANTHROPIC_API_KEY`; sem a chave, eles são pulados.
 - [Catálogo de situações](docs/CATALOGO_DE_SITUACOES.md): os 32 casos fictícios e as
   fontes públicas que inspiraram os temas.
 - [Testes internos](docs/testes-internos.md) e [roteiro de teste externo](docs/roteiro-teste-externo.md).
+
+---
+
+## Licença
+
+Código distribuído sob a [licença MIT](LICENSE). Copyright (c) 2026 Equipe Código de Defesa.
+
+Este repositório não publica credenciais (como o `.env` e a chave da Anthropic), dados de
+usuários, documentos reais de clientes, logs com informações pessoais nem arquivos
+enviados nos testes externos. Todos os casos são fictícios. Detalhes na
+[política de publicação](docs/CONFORMIDADE.md#política-de-publicação-do-repositório).
 
 ---
 

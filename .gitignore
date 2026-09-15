@@ -1,13 +1,62 @@
+# Política de publicação: docs/CONFORMIDADE.md, seção "Política de publicação do repositório".
+# O que está listado aqui nunca vai para o repositório público.
+
 # Credenciais locais — nunca commitar (Constituição, Princípio V; ADR-005)
 .env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+secrets*.json
+.vercel/
 
 # Agentes de codificação podem guardar credenciais/tokens na própria pasta do agente
 .claude/
 
-# Python
+# Documentos enviados e arquivos de testes externos (podem conter dados de clientes)
+uploads/
+upload/
+arquivos_enviados/
+testes_externos/
+
+# Datasets sensíveis, dados de teste reais e métricas brutas com dados de participantes
+dados_reais/
+dados_sensiveis/
+datasets_privados/
+metricas_brutas/
+respostas_participantes/
+
+# Infraestrutura de produção, configurações internas e integrações comerciais (ficam separadas)
+privado/
+infra_producao/
+config_interna/
+
+# Bancos de dados locais
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+
+# Logs (podem conter informações pessoais)
+*.log
+logs/
+
+# Python, ambientes e caches
 __pycache__/
 *.pyc
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+.venv/
+venv/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
 
 # Materiais da organização do hackathon (terceiros) — ficam só na máquina local
 *.pdf

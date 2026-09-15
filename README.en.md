@@ -47,6 +47,7 @@
 - [How it is built](#how-it-is-built)
 - [Running it](#running-it)
 - [Documentation](#documentation)
+- [License](#license)
 - [Team](#team)
 
 ---
@@ -367,6 +368,19 @@ All documentation is in Portuguese.
 - [Catalog of situations](docs/CATALOGO_DE_SITUACOES.md): the 32 fictional cases and the
   public sources that inspired the themes.
 - [Internal tests](docs/testes-internos.md) and [external test script](docs/roteiro-teste-externo.md).
+
+---
+
+## License
+
+Code released under the [MIT License](LICENSE). Copyright (c) 2026 Equipe Código de Defesa
+(the Código de Defesa team).
+
+This repository does not publish credentials (such as `.env` and the Anthropic API key),
+user data, real client documents, logs containing personal information or files uploaded
+during external tests. All cases are fictional. Details in the
+[publication policy](docs/CONFORMIDADE.md#política-de-publicação-do-repositório) (in
+Portuguese).
 
 ---
 

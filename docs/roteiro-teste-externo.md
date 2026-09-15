@@ -65,9 +65,17 @@ saiu — é para você poder conferir, não acreditar por confiança.
 
 ## Para a equipe: onde registrar
 
-Anotar cada teste como `EXT-001`, `EXT-002`... em `docs/testes-internos.md` (seção 13),
-com: perfil do participante, data, tempo de uso, se concluiu sem ajuda, notas de 1–5 e as
-respostas abertas. Depoimento só vai para material público **com autorização**.
+Anotar cada teste como `EXT-001`, `EXT-002`... em duas camadas:
+
+- **Registro bruto (privado):** perfil do participante, data, tempo de uso, se concluiu sem
+  ajuda, notas de 1–5, respostas abertas e qualquer arquivo usado no teste ficam em
+  `privado/testes_externos/`, pasta ignorada pelo Git e fora do repositório público.
+- **Resumo público:** em `docs/testes-internos.md` (seção 13), só o código do teste, o perfil
+  genérico ("advogada de família", "estudante de Direito"), o resultado e as notas, **sem
+  nome, contato ou qualquer dado que identifique a pessoa**.
+
+Depoimento só vai para material público **com autorização**. Política completa em
+[CONFORMIDADE.md](CONFORMIDADE.md#política-de-publicação-do-repositório).
 
 Casos fictícios prontos para enviar ao tester (pasta de cada um tem os documentos +
 `tese.txt`):

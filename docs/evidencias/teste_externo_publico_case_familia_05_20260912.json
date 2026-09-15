@@ -231,7 +231,7 @@
     "data": "2026-09-12",
     "caso": "case_familia_05 (FAM-005, guarda/alienacao parental)",
     "provedor": "anthropic (claude-sonnet-5 / claude-haiku-4-5)",
-    "canal": "URL publica via Cloudflare Tunnel (belong-grade-amy-longest.trycloudflare.com)",
+    "canal": "URL publica temporaria via Cloudflare Tunnel (endereco omitido; tunel encerrado)",
     "tempo_resposta_segundos": 80,
     "violacoes_provenance": 0,
     "citacoes_documento_inexistente": 0
