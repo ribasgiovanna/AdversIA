@@ -1,56 +1,28 @@
 "use strict";
 
 /* ==========================================================================
-   Textos que o advogado vê. Nenhum termo interno do sistema aparece na tela:
-   as chaves à esquerda são o que o servidor devolve, os rótulos à direita são
-   o que a pessoa lê.
+   AdversIA — interface (ADR-020).
+   Uma tarefa por tela: início → escolha do caso (ou documentos, na área da gestão)
+   → análise → relatório. Texto enxuto, detalhes sob demanda e transições suaves.
+   Nenhum termo interno aparece na tela: as chaves à esquerda são o que o servidor
+   devolve; os rótulos à direita são o que a pessoa lê.
    ========================================================================== */
 
 const CATEGORIAS = {
-  vulnerabilidade_critica: { grupo: "criticos", rotulo: "Ponto crítico" },
-  vulnerabilidade_media: { grupo: "criticos", rotulo: "Ponto de atenção" },
-  contradicao: { grupo: "contradicoes", rotulo: "Contradição" },
-  lacuna_probatoria: { grupo: "lacunas", rotulo: "Falta de prova" },
-  contra_argumento: { grupo: "argumentos", rotulo: "Argumento contrário" },
-  pergunta_dificil: { grupo: "perguntas", rotulo: "Pergunta difícil" },
+  vulnerabilidade_critica: { grupo: "criticos", rotulo: "Ponto crítico", icone: "critico" },
+  vulnerabilidade_media: { grupo: "criticos", rotulo: "Ponto de atenção", icone: "atencao" },
+  contradicao: { grupo: "contradicoes", rotulo: "Contradição", icone: "contradicao" },
+  lacuna_probatoria: { grupo: "lacunas", rotulo: "Falta de prova", icone: "lacuna" },
+  contra_argumento: { grupo: "argumentos", rotulo: "Argumento contrário", icone: "argumento" },
+  pergunta_dificil: { grupo: "perguntas", rotulo: "Pergunta difícil", icone: "pergunta" },
 };
 
 const GRUPOS = [
-  {
-    id: "criticos",
-    titulo: "Pontos críticos",
-    descricao: "O que mais ameaça a sua estratégia.",
-    classe: "grupo-critico",
-    placar: null,
-  },
-  {
-    id: "contradicoes",
-    titulo: "Contradições",
-    descricao: "Informações que não batem entre si nos documentos.",
-    classe: "grupo-contradicao",
-    placar: ["contradição", "contradições"],
-  },
-  {
-    id: "lacunas",
-    titulo: "Alegações sem prova",
-    descricao: "O que foi afirmado, mas não tem documento que sustente.",
-    classe: "grupo-lacuna",
-    placar: ["alegação sem prova", "alegações sem prova"],
-  },
-  {
-    id: "argumentos",
-    titulo: "Argumentos que a outra parte pode usar",
-    descricao: "Como o advogado do outro lado pode atacar a sua tese.",
-    classe: "grupo-argumento",
-    placar: ["argumento contrário", "argumentos contrários"],
-  },
-  {
-    id: "perguntas",
-    titulo: "Perguntas que podem ser feitas",
-    descricao: "O que um juiz ou o advogado da outra parte pode perguntar.",
-    classe: "grupo-pergunta",
-    placar: ["pergunta difícil", "perguntas difíceis"],
-  },
+  { id: "criticos", titulo: "Pontos críticos", descricao: "O que mais ameaça a estratégia.", classe: "grupo-critico", icone: "critico", placar: null },
+  { id: "contradicoes", titulo: "Contradições", descricao: "Informações que não batem entre os documentos.", classe: "grupo-contradicao", icone: "contradicao", placar: ["contradição", "contradições"] },
+  { id: "lacunas", titulo: "Alegações sem prova", descricao: "Afirmado, mas sem documento que sustente.", classe: "grupo-lacuna", icone: "lacuna", placar: ["sem prova", "sem prova"] },
+  { id: "argumentos", titulo: "Argumentos da outra parte", descricao: "Como o outro lado pode atacar a tese.", classe: "grupo-argumento", icone: "argumento", placar: ["argumento contrário", "argumentos contrários"] },
+  { id: "perguntas", titulo: "Perguntas difíceis", descricao: "O que o juiz ou a outra parte pode perguntar.", classe: "grupo-pergunta", icone: "pergunta", placar: ["pergunta difícil", "perguntas difíceis"] },
 ];
 
 const ORIGENS = {
@@ -78,12 +50,17 @@ const INICIO_ETAPAS_REAL = [0, 15, 35, 60, 90, 125];
 // Ritmo das etapas no modo demonstração, em milissegundos.
 const DURACAO_ETAPAS_DEMO = [1300, 1600, 1500, 2100, 1800, 1500];
 
-/* Modo de uso: "demo" mostra resultados preparados para casos fictícios (sem custo);
-   "chave" faz a análise real com a chave da Anthropic do próprio usuário. */
+/* ---------- estado ---------- */
+
+// "demo": resultados preparados para casos fictícios; "chave": análise real (área da gestão).
 let modo = "demo";
+let exemplos = [];
+let tipoAtivo = "";
+let exemploEscolhido = null;
 let casoDemo = null;
 let contextoReal = null; // { documentos, tese, chave, codigo } da última análise real, para a simulação
 let codigoGestao = null; // código da gestão já conferido pelo servidor; só na memória desta aba
+const arquivos = new Map();
 
 /* ---------- utilidades ---------- */
 
@@ -117,10 +94,6 @@ async function lerJson(resposta) {
   try { return await resposta.json(); } catch { return {}; }
 }
 
-/* ==========================================================================
-   Movimento — digitação, troca suave e revelação ao rolar.
-   ========================================================================== */
-
 function movimentoReduzido() {
   return (
     document.documentElement.getAttribute("data-movimento") === "reduzido" ||
@@ -128,11 +101,68 @@ function movimentoReduzido() {
   );
 }
 
-async function fontesProntas() {
-  try { if (document.fonts && document.fonts.ready) await document.fonts.ready; } catch { /* segue sem esperar */ }
+/* ---------- ícones (SVG criados por código, sem innerHTML) ---------- */
+
+const ICONES = {
+  critico: ["M12 3.5 2.8 19.5h18.4L12 3.5Z", "M12 10v4.5", "M12 17.2v.3"],
+  atencao: ["M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z", "M12 7.5v5.5", "M12 16.2v.3"],
+  contradicao: ["M4 8h14", "m14.5 4.5 3.5 3.5-3.5 3.5", "M20 16H6", "m9.5 12.5-3.5 3.5 3.5 3.5"],
+  lacuna: ["M6 3h8l4 4v14H6V3Z", "M14 3v4h4", "M10.2 11.3a1.9 1.9 0 1 1 2.6 1.8c-.5.2-.8.6-.8 1.1v.4", "M12 17.3v.2"],
+  argumento: ["M4 5h16v11H9l-5 4V5Z", "M8.5 9.5h7", "M8.5 12.5h4.5"],
+  pergunta: ["M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z", "M9.6 9.3a2.5 2.5 0 1 1 3.4 2.3c-.6.3-1 .8-1 1.5v.6", "M12 16.8v.2"],
+  ajuda: ["M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z", "M9.6 9.3a2.5 2.5 0 1 1 3.4 2.3c-.6.3-1 .8-1 1.5v.6", "M12 16.8v.2"],
+  documento: ["M6 3h8l4 4v14H6V3Z", "M14 3v4h4", "M9 12h6", "M9 16h4"],
+  busca: ["M10.5 4a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13Z", "m20 20-4.8-4.8"],
+  alvo: ["M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z", "M12 7.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9Z", "M12 11.2a.8.8 0 1 0 0 1.6.8.8 0 0 0 0-1.6Z"],
+  relogio: ["M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z", "M12 7v5l3.2 2"],
+  lista: ["M10 6h10", "M10 12h10", "M10 18h10", "m3.5 6 1.3 1.3L7 5", "m3.5 12 1.3 1.3L7 11", "m3.5 18 1.3 1.3L7 17"],
+  chat: ["M20.5 12a8 8 0 0 1-11.6 7.1L4 20l1-4.4A8 8 0 1 1 20.5 12Z"],
+  escudo: ["M12 3 5 6v5c0 4.4 3 8.3 7 10 4-1.7 7-5.6 7-10V6l-7-3Z", "m9 12 2 2 4-4"],
+  balanca: ["M12 4v16", "M8 20h8", "M5 7h14", "M5 7l-2.5 6a2.8 2.8 0 0 0 5 0L5 7Z", "M19 7l-2.5 6a2.8 2.8 0 0 0 5 0L19 7Z"],
+  acessivel: ["M12 3.3a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6Z", "M4.5 9c2.5.7 5 1 7.5 1s5-.3 7.5-1", "M12 10v4.5l-3 6", "M12 14.5l3 6"],
+  cadeado: ["M6 11h12v9H6v-9Z", "M8.5 11V8a3.5 3.5 0 0 1 7 0v3"],
+  voltar: ["M19 12H5", "m11 6-6 6 6 6"],
+  seta: ["M5 12h14", "m13 6 6 6-6 6"],
+  som: ["M4 9h4l5-4v14l-5-4H4V9Z", "M16.5 8.5a5 5 0 0 1 0 7", "M19 6a8.5 8.5 0 0 1 0 12"],
+  impressora: ["M7 8V3h10v5", "M6 17H4v-7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v7h-2", "M7 14h10v7H7v-7Z"],
+  expandir: ["m7 9 5-5 5 5", "m7 15 5 5 5-5"],
+  recolher: ["m7 4 5 5 5-5", "m7 20 5-5 5 5"],
+  fechar: ["M6 6l12 12", "M18 6 6 18"],
+  check: ["m5 12.5 4.5 4.5L19 7.5"],
+  olho: ["M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z", "M12 9.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5Z"],
+  microfone: ["M9 6a3 3 0 0 1 6 0v5a3 3 0 0 1-6 0V6Z", "M5.5 11a6.5 6.5 0 0 0 13 0", "M12 17.5V21"],
+  enviar: ["M4 12 20 4l-4.5 16-3.5-6.5L4 12Z", "m12 13.5 8-9.5"],
+};
+
+function criarIcone(nome) {
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.setAttribute("viewBox", "0 0 24 24");
+  svg.setAttribute("class", "icone");
+  svg.setAttribute("aria-hidden", "true");
+  svg.setAttribute("focusable", "false");
+  (ICONES[nome] || ICONES.atencao).forEach((desenho) => {
+    const caminho = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    caminho.setAttribute("d", desenho);
+    caminho.setAttribute("fill", "none");
+    caminho.setAttribute("stroke", "currentColor");
+    caminho.setAttribute("stroke-width", "1.8");
+    caminho.setAttribute("stroke-linecap", "round");
+    caminho.setAttribute("stroke-linejoin", "round");
+    svg.appendChild(caminho);
+  });
+  return svg;
 }
 
-// Mesmo ritmo do template: espera as fontes, depois 50 ms por letra, com cursor piscando.
+function preencherIcones(raiz = document) {
+  raiz.querySelectorAll("[data-icone]").forEach((no) => {
+    if (!no.querySelector("svg")) no.prepend(criarIcone(no.dataset.icone));
+  });
+}
+
+const iconeAbrir = () => el("span", { classe: "icone-abrir", "aria-hidden": "true" });
+
+/* ---------- movimento ---------- */
+
 async function animarTitulo() {
   const alvo = $("titulo-digitado");
   const texto = alvo.dataset.texto;
@@ -141,79 +171,19 @@ async function animarTitulo() {
     return;
   }
   alvo.textContent = "";
-  await fontesProntas();
-  await esperar(750); // deixa o título terminar de surgir antes de começar a digitar
+  try { if (document.fonts && document.fonts.ready) await document.fonts.ready; } catch { /* segue */ }
+  await esperar(650);
   let letras = 0;
   const relogio = setInterval(() => {
     letras += 1;
     alvo.textContent = texto.slice(0, letras);
     if (letras >= texto.length) {
       clearInterval(relogio);
-      alvo.parentElement.classList.add("brilhando");
-      setTimeout(() => alvo.classList.add("concluido"), 2600);
+      setTimeout(() => alvo.classList.add("concluido"), 2200);
     }
   }, 50);
 }
 
-// O exemplo do campo "Sua tese" é digitado quando o campo aparece na tela.
-function digitarExemploDaTese() {
-  const campo = $("tese");
-  const texto = campo.getAttribute("placeholder") || "";
-  if (!texto || movimentoReduzido() || !("IntersectionObserver" in window)) return;
-  campo.setAttribute("placeholder", "");
-  const observador = new IntersectionObserver((entradas) => {
-    if (!entradas.some((entrada) => entrada.isIntersecting)) return;
-    observador.disconnect();
-    let letras = 0;
-    const relogio = setInterval(() => {
-      letras += 1;
-      const fim = letras >= texto.length;
-      campo.setAttribute("placeholder", texto.slice(0, letras) + (fim ? "" : "\u258D"));
-      if (fim) clearInterval(relogio);
-    }, 35);
-  }, { threshold: 0.6 });
-  observador.observe(campo);
-}
-
-let digitacaoAtual = null;
-
-function pararDigitacao() {
-  if (!digitacaoAtual) return;
-  const digitacao = digitacaoAtual;
-  digitacaoAtual = null;
-  digitacao.terminar();
-}
-
-// Preenche um campo "digitando". Textos longos aceleram para durar no máximo ~2,5 s.
-function digitarNoCampo(campo, texto) {
-  pararDigitacao();
-  if (movimentoReduzido() || !texto) {
-    campo.value = texto;
-    return;
-  }
-  const msPorLetra = Math.max(6, Math.min(50, 1600 / texto.length));
-  const inicio = performance.now();
-  let quadro = 0;
-  campo.value = "";
-  campo.classList.add("digitando");
-  digitacaoAtual = {
-    terminar() {
-      cancelAnimationFrame(quadro);
-      campo.value = texto;
-      campo.classList.remove("digitando");
-    },
-  };
-  const passo = (agora) => {
-    const letras = Math.min(texto.length, Math.floor((agora - inicio) / msPorLetra) + 1);
-    campo.value = texto.slice(0, letras);
-    campo.scrollTop = campo.scrollHeight;
-    if (letras < texto.length) quadro = requestAnimationFrame(passo);
-    else pararDigitacao();
-  };
-  quadro = requestAnimationFrame(passo);
-}
-
-// Troca de conteúdo como no template: some subindo 4 px em 150 ms e volta com o novo texto.
 function trocarTextoSuave(elemento, texto) {
   if (movimentoReduzido() || elemento.textContent === texto) {
     elemento.textContent = texto;
@@ -226,22 +196,84 @@ function trocarTextoSuave(elemento, texto) {
   }, 150);
 }
 
-// Cada bloco surge de baixo quando entra na tela; os que entram juntos vêm em sequência.
-function revelarAoRolar(elementos) {
-  if (movimentoReduzido() || !("IntersectionObserver" in window)) return;
-  const observador = new IntersectionObserver((entradas) => {
-    let ordem = 0;
-    entradas.forEach((entrada) => {
-      if (!entrada.isIntersecting) return;
-      entrada.target.style.setProperty("--atraso", `${Math.min(ordem, 5) * 70}ms`);
-      entrada.target.classList.add("revelado");
-      observador.unobserve(entrada.target);
-      ordem += 1;
-    });
-  }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
-  elementos.forEach((elemento) => {
-    elemento.classList.add("revelar");
-    observador.observe(elemento);
+// Números do placar sobem de 0 até o total, em 0,7 s.
+function contarAte(no, alvo) {
+  if (movimentoReduzido() || alvo <= 1) {
+    no.textContent = String(alvo);
+    return;
+  }
+  const inicio = performance.now();
+  const passo = (agora) => {
+    const t = Math.min(1, (agora - inicio) / 700);
+    no.textContent = String(Math.round(alvo * (1 - Math.pow(1 - t, 3))));
+    if (t < 1) requestAnimationFrame(passo);
+  };
+  no.textContent = "0";
+  requestAnimationFrame(passo);
+}
+
+/* ==========================================================================
+   Telas — uma de cada vez, com transição suave entre elas.
+   ========================================================================== */
+
+const TELAS = {
+  inicio: "tela-inicio",
+  casos: "tela-casos",
+  documentos: "tela-documentos",
+  progresso: "secao-progresso",
+  erro: "secao-erro",
+  relatorio: "secao-relatorio",
+};
+
+function trocarTela(nome, depois) {
+  const aplicar = () => {
+    Object.entries(TELAS).forEach(([chave, id]) => { $(id).hidden = chave !== nome; });
+    document.body.dataset.tela = nome;
+    window.scrollTo({ top: 0, behavior: "instant" });
+    if (depois) depois();
+  };
+  if (document.startViewTransition && !movimentoReduzido()) document.startViewTransition(aplicar);
+  else aplicar();
+}
+
+function irParaCasos() {
+  modo = "demo";
+  trocarTela("casos", () => $("titulo-casos").focus({ preventScroll: true }));
+}
+
+function irParaDocumentos() {
+  modo = "chave";
+  trocarTela("documentos", () => $("titulo-documentos").focus({ preventScroll: true }));
+}
+
+function acompanharAlturaDoTopo() {
+  const topo = document.querySelector(".topo");
+  const atualizar = () => document.documentElement.style.setProperty("--altura-topo", `${topo.offsetHeight}px`);
+  atualizar();
+  if ("ResizeObserver" in window) new ResizeObserver(atualizar).observe(topo);
+}
+
+function mostrarErro(id, mensagem, focarEm) {
+  const erro = $(id);
+  erro.textContent = mensagem;
+  erro.hidden = false;
+  if (focarEm) focarEm.focus();
+}
+
+const esconderErro = (id) => { $(id).hidden = true; };
+
+/* ---------- janelas (<dialog> nativo: foco preso e Esc para fechar) ---------- */
+
+function abrirDialogo(dialogo, focarEm) {
+  if (typeof dialogo.showModal === "function") dialogo.showModal();
+  else dialogo.setAttribute("open", "");
+  if (focarEm) focarEm.focus();
+}
+
+function configurarDialogos() {
+  document.querySelectorAll("dialog.dialogo").forEach((dialogo) => {
+    dialogo.addEventListener("click", (evento) => { if (evento.target === dialogo) dialogo.close(); });
+    dialogo.querySelectorAll("[data-fechar]").forEach((botao) => botao.addEventListener("click", () => dialogo.close()));
   });
 }
 
@@ -308,7 +340,6 @@ function mudarEscala(direcao) {
 function configurarPainelAcessibilidade() {
   const botaoAbrir = $("abrir-acessibilidade");
   const painel = $("painel-acessibilidade");
-
   const abrir = (abrirPainel) => {
     painel.hidden = !abrirPainel;
     botaoAbrir.setAttribute("aria-expanded", String(abrirPainel));
@@ -320,7 +351,6 @@ function configurarPainelAcessibilidade() {
   document.addEventListener("keydown", (evento) => {
     if (evento.key === "Escape" && !painel.hidden) { abrir(false); botaoAbrir.focus(); }
   });
-
   $("diminuir-texto").addEventListener("click", () => mudarEscala(-1));
   $("aumentar-texto").addEventListener("click", () => mudarEscala(1));
   document.querySelectorAll("[data-tema]").forEach((botao) => {
@@ -333,256 +363,12 @@ function configurarPainelAcessibilidade() {
     atualizarPreferencia(Object.assign({}, PREFERENCIAS_PADRAO));
     anunciar("Configurações de acessibilidade restauradas.");
   });
-
   aplicarPreferencias();
 }
 
 /* ==========================================================================
-   Formulário: documentos, casos de exemplo e tese.
+   Escolha do caso (demonstração)
    ========================================================================== */
-
-const arquivos = new Map();
-
-function formatarTamanho(bytes) {
-  if (bytes < 1024 * 1024) return `${Math.max(1, Math.round(bytes / 1024))} KB`;
-  return `${(bytes / (1024 * 1024)).toFixed(1).replace(".", ",")} MB`;
-}
-
-function renderizarArquivos() {
-  const lista = $("lista-arquivos");
-  lista.replaceChildren();
-  if (modo === "demo") {
-    (casoDemo ? casoDemo.documentos : []).forEach((doc) => {
-      lista.appendChild(
-        el("li", { classe: "documento-demo" }, [
-          el("details", {}, [
-            el("summary", {}, [
-              el("span", { classe: "arquivo-nome", texto: doc.nome }),
-              el("span", { classe: "arquivo-tamanho", texto: "ler documento" }),
-            ]),
-            el("pre", { classe: "documento-conteudo", texto: doc.conteudo }),
-          ]),
-        ])
-      );
-    });
-    return;
-  }
-  for (const arquivo of arquivos.values()) {
-    const remover = el("button", {
-      type: "button",
-      classe: "arquivo-remover",
-      "aria-label": `Remover ${arquivo.name}`,
-      texto: "Remover",
-    });
-    remover.addEventListener("click", () => {
-      arquivos.delete(arquivo.name);
-      renderizarArquivos();
-      anunciar(`${arquivo.name} removido.`);
-      $("documentos").focus();
-    });
-    lista.appendChild(
-      el("li", {}, [
-        el("span", {}, [
-          el("span", { classe: "arquivo-nome", texto: arquivo.name }),
-          el("span", { classe: "arquivo-tamanho", texto: formatarTamanho(arquivo.size) }),
-        ]),
-        remover,
-      ])
-    );
-  }
-}
-
-function adicionarArquivos(lista) {
-  const novos = Array.from(lista || []);
-  novos.forEach((arquivo) => arquivos.set(arquivo.name, arquivo));
-  renderizarArquivos();
-  if (novos.length) {
-    esconderErroFormulario();
-    anunciar(`${novos.length} ${plural(novos.length, ["documento adicionado", "documentos adicionados"])}.`);
-  }
-}
-
-function configurarEnvioDeArquivos() {
-  const entrada = $("documentos");
-  const zona = $("zona-arquivos");
-
-  entrada.addEventListener("change", () => {
-    adicionarArquivos(entrada.files);
-    entrada.value = "";
-  });
-  ["dragenter", "dragover"].forEach((tipo) =>
-    zona.addEventListener(tipo, (evento) => { evento.preventDefault(); zona.classList.add("arrastando"); })
-  );
-  ["dragleave", "drop"].forEach((tipo) =>
-    zona.addEventListener(tipo, () => zona.classList.remove("arrastando"))
-  );
-  zona.addEventListener("drop", (evento) => {
-    evento.preventDefault();
-    adicionarArquivos(evento.dataTransfer.files);
-  });
-}
-
-/* ---------- lista de opções no visual do sistema ----------
-   Substitui o <select> nativo (cuja lista aberta não aceita estilo) seguindo o padrão
-   "select-only combobox" do W3C: setas, Home/End, Enter/Espaço, Esc, Tab e busca pela
-   primeira letra funcionam como num campo de seleção comum. */
-
-function criarSelecao(raiz, aoMudar) {
-  const botao = raiz.querySelector(".selecao-botao");
-  const valorTexto = raiz.querySelector(".selecao-valor");
-  const lista = raiz.querySelector(".selecao-lista");
-  let opcoes = [];
-  let valor = null;
-  let ativo = -1;
-
-  function marcarAtivo(indice, rolar = true) {
-    if (indice < 0 || indice >= opcoes.length) return;
-    if (opcoes[ativo]) opcoes[ativo].no.classList.remove("ativa");
-    ativo = indice;
-    const no = opcoes[indice].no;
-    no.classList.add("ativa");
-    lista.setAttribute("aria-activedescendant", no.id);
-    if (rolar) no.scrollIntoView({ block: "nearest" });
-  }
-
-  function escolher(indice, notificar = true) {
-    const opcao = opcoes[indice];
-    if (!opcao) {
-      valor = null;
-      valorTexto.textContent = "";
-      return;
-    }
-    const mudou = opcao.valor !== valor;
-    opcoes.forEach((o, i) => o.no.setAttribute("aria-selected", String(i === indice)));
-    valor = opcao.valor;
-    valorTexto.textContent = opcao.rotulo;
-    if (mudou && notificar) aoMudar(valor);
-  }
-
-  function abrir() {
-    lista.hidden = false;
-    raiz.classList.add("aberta");
-    botao.setAttribute("aria-expanded", "true");
-    marcarAtivo(Math.max(0, opcoes.findIndex((o) => o.valor === valor)));
-    lista.focus();
-  }
-
-  function fechar(focarBotao) {
-    if (lista.hidden) return;
-    lista.hidden = true;
-    raiz.classList.remove("aberta");
-    botao.setAttribute("aria-expanded", "false");
-    lista.removeAttribute("aria-activedescendant");
-    if (focarBotao) botao.focus();
-  }
-
-  // grupos: [{ nome: "Partilha de bens" | null, itens: [{ valor, rotulo }] }]
-  function definirOpcoes(grupos, valorInicial) {
-    lista.replaceChildren();
-    opcoes = [];
-    ativo = -1;
-    grupos.forEach((grupo, g) => {
-      let destino = lista;
-      if (grupo.nome) {
-        const idNome = `${raiz.id}-grupo-${g}`;
-        destino = el("div", { classe: "selecao-grupo", role: "group", "aria-labelledby": idNome }, [
-          el("div", { classe: "selecao-grupo-nome", id: idNome, role: "presentation", texto: grupo.nome }),
-        ]);
-        lista.appendChild(destino);
-      }
-      grupo.itens.forEach((item) => {
-        const indice = opcoes.length;
-        const no = el("div", {
-          classe: "selecao-opcao",
-          id: `${raiz.id}-opcao-${indice}`,
-          role: "option",
-          "aria-selected": "false",
-          texto: item.rotulo,
-        });
-        no.addEventListener("pointermove", () => { if (ativo !== indice) marcarAtivo(indice, false); });
-        no.addEventListener("click", () => { escolher(indice); fechar(true); });
-        destino.appendChild(no);
-        opcoes.push({ ...item, no });
-      });
-    });
-    const inicial = opcoes.findIndex((o) => o.valor === valorInicial);
-    valor = null;
-    escolher(inicial >= 0 ? inicial : 0, false);
-  }
-
-  botao.addEventListener("mousedown", (evento) => { if (!lista.hidden) evento.preventDefault(); });
-  botao.addEventListener("click", () => (lista.hidden ? abrir() : fechar(true)));
-  botao.addEventListener("keydown", (evento) => {
-    if (evento.key === "ArrowDown" || evento.key === "ArrowUp") {
-      evento.preventDefault();
-      abrir();
-    }
-  });
-
-  lista.addEventListener("keydown", (evento) => {
-    switch (evento.key) {
-      case "ArrowDown": evento.preventDefault(); marcarAtivo(Math.min(opcoes.length - 1, ativo + 1)); break;
-      case "ArrowUp": evento.preventDefault(); marcarAtivo(Math.max(0, ativo - 1)); break;
-      case "Home": evento.preventDefault(); marcarAtivo(0); break;
-      case "End": evento.preventDefault(); marcarAtivo(opcoes.length - 1); break;
-      case "Enter":
-      case " ": evento.preventDefault(); escolher(ativo); fechar(true); break;
-      case "Escape": evento.preventDefault(); evento.stopPropagation(); fechar(true); break;
-      case "Tab": escolher(ativo); fechar(true); break; // o foco volta ao botão e o Tab segue dali
-      default:
-        if (evento.key.length === 1 && opcoes.length) {
-          const letra = evento.key.toLocaleLowerCase("pt-BR");
-          for (let passo = 1; passo <= opcoes.length; passo += 1) {
-            const i = (ativo + passo) % opcoes.length;
-            if (opcoes[i].rotulo.toLocaleLowerCase("pt-BR").startsWith(letra)) { marcarAtivo(i); break; }
-          }
-        }
-    }
-  });
-
-  raiz.addEventListener("focusout", (evento) => {
-    if (!raiz.contains(evento.relatedTarget)) fechar(false);
-  });
-
-  return {
-    definirOpcoes,
-    get valor() { return valor; },
-  };
-}
-
-/* ---------- filtro de casos de exemplo ---------- */
-
-let exemplos = [];
-let selecaoTipo;
-let selecaoSituacao;
-
-function exemploSelecionado() {
-  return exemplos.find((exemplo) => exemplo.id === selecaoSituacao.valor);
-}
-
-function mostrarDescricaoExemplo() {
-  const exemplo = exemploSelecionado();
-  trocarTextoSuave($("exemplo-descricao"), exemplo ? exemplo.descricao : "");
-  $("usar-exemplo").disabled = !exemplo;
-}
-
-function preencherSituacoes() {
-  const tipo = selecaoTipo.valor;
-  const grupos = new Map();
-  exemplos
-    .filter((exemplo) => !tipo || exemplo.tipo === tipo)
-    .forEach((exemplo) => {
-      if (!grupos.has(exemplo.tipo)) grupos.set(exemplo.tipo, []);
-      grupos.get(exemplo.tipo).push({ valor: exemplo.id, rotulo: exemplo.titulo });
-    });
-  // Com "Todos os tipos", as situações ficam agrupadas por tipo para continuar fácil de achar.
-  selecaoSituacao.definirOpcoes(
-    tipo
-      ? [{ nome: null, itens: grupos.get(tipo) || [] }]
-      : Array.from(grupos, ([nome, itens]) => ({ nome, itens }))
-  );
-  mostrarDescricaoExemplo();
-}
 
 async function carregarExemplos() {
   try {
@@ -590,142 +376,114 @@ async function carregarExemplos() {
     if (!resposta.ok) throw new Error(`indice ${resposta.status}`);
     exemplos = await resposta.json();
     if (!exemplos.length) throw new Error("indice vazio");
-
-    selecaoSituacao = criarSelecao($("selecao-situacao"), mostrarDescricaoExemplo);
-    selecaoTipo = criarSelecao($("selecao-tipo"), () => {
-      preencherSituacoes();
-      const total = exemplos.filter((e) => !selecaoTipo.valor || e.tipo === selecaoTipo.valor).length;
-      anunciar(`${total} ${plural(total, ["situação disponível", "situações disponíveis"])}.`);
-    });
-
-    const contagem = new Map();
-    exemplos.forEach((exemplo) => contagem.set(exemplo.tipo, (contagem.get(exemplo.tipo) || 0) + 1));
-    selecaoTipo.definirOpcoes(
-      [
-        {
-          nome: null,
-          itens: [
-            { valor: "", rotulo: `Todos os tipos (${exemplos.length} ${plural(exemplos.length, ["caso", "casos"])})` },
-            ...Array.from(contagem, ([tipo, total]) => ({
-              valor: tipo,
-              rotulo: `${tipo} (${total} ${plural(total, ["caso", "casos"])})`,
-            })),
-          ],
-        },
-      ],
-      ""
-    );
-
-    $("usar-exemplo").addEventListener("click", () => {
-      const exemplo = exemploSelecionado();
-      if (exemplo) usarExemplo(exemplo);
-    });
-
-    preencherSituacoes();
-    $("exemplos").hidden = false;
+    renderizarFiltroTipos();
+    renderizarCasos();
   } catch (erro) {
-    // No modo demonstração os casos são o conteúdo principal: sem eles, avisar em vez de
-    // deixar a tela sem opções (foi assim que o problema da publicação passou despercebido).
+    // Os casos são o conteúdo principal da demonstração: sem eles, avisar em vez de deixar a tela vazia.
     console.warn("Casos de demonstração indisponíveis:", erro);
-    if (modo === "demo") {
-      mostrarErroFormulario("Não conseguimos carregar os casos de demonstração. Recarregue a página em instantes.");
-    }
+    mostrarErro("erro-casos", "Não conseguimos carregar os casos. Recarregue a página em instantes.");
   }
 }
 
-async function usarExemplo(exemplo) {
+function renderizarFiltroTipos() {
+  const contagem = new Map();
+  exemplos.forEach((exemplo) => contagem.set(exemplo.tipo, (contagem.get(exemplo.tipo) || 0) + 1));
+  const opcoes = [["", "Todos", exemplos.length], ...Array.from(contagem, ([tipo, total]) => [tipo, tipo, total])];
+  $("filtro-tipos").replaceChildren(
+    ...opcoes.map(([valor, rotulo, total]) => {
+      const chip = el("button", { type: "button", classe: "chip", "aria-pressed": String(valor === tipoAtivo), "data-tipo": valor }, [
+        el("span", { texto: rotulo }),
+        el("span", { classe: "chip-contagem", texto: String(total) }),
+      ]);
+      chip.addEventListener("click", () => {
+        tipoAtivo = valor;
+        document.querySelectorAll("#filtro-tipos .chip").forEach((c) => c.setAttribute("aria-pressed", String(c === chip)));
+        renderizarCasos();
+        anunciar(`${total} ${plural(total, ["caso", "casos"])}.`);
+      });
+      return chip;
+    })
+  );
+}
+
+function renderizarCasos() {
+  const visiveis = exemplos.filter((exemplo) => !tipoAtivo || exemplo.tipo === tipoAtivo);
+  $("grade-casos").replaceChildren(
+    ...visiveis.map((exemplo, i) => {
+      const escolhido = Boolean(exemploEscolhido && exemploEscolhido.id === exemplo.id);
+      const cartao = el("button", { type: "button", classe: "cartao-caso", "aria-pressed": String(escolhido), "data-caso": exemplo.id }, [
+        el("span", { classe: "cartao-caso-tipo", texto: exemplo.tipo }),
+        el("span", { classe: "cartao-caso-titulo", texto: exemplo.titulo }),
+        el("span", { classe: "cartao-caso-descricao", texto: exemplo.descricao }),
+        el("span", { classe: "cartao-caso-marca", "aria-hidden": "true" }, [criarIcone("check")]),
+      ]);
+      cartao.style.setProperty("--ordem", String(Math.min(i, 16)));
+      cartao.addEventListener("click", () => escolherCaso(exemplo, cartao));
+      return el("li", {}, [cartao]);
+    })
+  );
+}
+
+async function escolherCaso(exemplo, cartao) {
+  exemploEscolhido = exemplo;
+  document.querySelectorAll(".cartao-caso").forEach((c) => c.setAttribute("aria-pressed", String(c === cartao)));
+  $("caso-escolhido-titulo").textContent = exemplo.titulo;
+  $("barra-caso").hidden = false;
+  $("analisar-caso").disabled = true;
+  $("ver-documentos").disabled = true;
+  esconderErro("erro-casos");
   try {
     const resposta = await fetch(`demo/casos/${encodeURIComponent(exemplo.id)}.json`);
     if (!resposta.ok) throw new Error();
-    casoDemo = await resposta.json();
-    arquivos.clear();
-    casoDemo.documentos.forEach((doc) => {
-      arquivos.set(doc.nome, new File([doc.conteudo], doc.nome, { type: "text/plain" }));
-    });
-    renderizarArquivos();
-    digitarNoCampo($("tese"), casoDemo.tese);
-    $("confirmacao-dados").checked = true;
-    esconderErroFormulario();
-    anunciar(`Caso carregado: ${exemplo.titulo}. ${casoDemo.documentos.length} documentos e a tese foram preenchidos.`);
+    const caso = await resposta.json();
+    if (exemploEscolhido !== exemplo) return; // outro caso foi escolhido enquanto este carregava
+    casoDemo = caso;
+    $("analisar-caso").disabled = false;
+    $("ver-documentos").disabled = false;
+    anunciar(`Caso escolhido: ${exemplo.titulo}.`);
   } catch {
     casoDemo = null;
-    mostrarErroFormulario("Não conseguimos carregar o caso de exemplo. Tente de novo.");
+    mostrarErro("erro-casos", "Não conseguimos carregar este caso. Tente de novo.");
   }
 }
 
-const TEXTOS_MODO = {
-  demo: {
-    tituloDocumentos: "Escolha um caso",
-    ajudaDocumentos: "Casos fictícios preparados para mostrar tudo o que a AdversIA entrega. Escolha o tipo, a situação e clique em “Usar este caso”.",
-    legendaExemplos: "Casos fictícios prontos",
-    tituloTese: "Tese do caso",
-    ajudaTese: "A tese vem preenchida com o caso escolhido.",
-    botao: "Ver a análise deste caso",
-  },
-  chave: {
-    tituloDocumentos: "Documentos do caso",
-    ajudaDocumentos: "Petição, contestação, provas, acordos. Aceitamos PDF, Word (.docx) e texto (.txt).",
-    legendaExemplos: "Sem documentos à mão? Use um caso fictício pronto",
-    tituloTese: "Sua tese",
-    ajudaTese: "Em poucas linhas: o que você pretende sustentar e em nome de qual parte.",
-    botao: "Analisar estratégia",
-  },
-};
+function mostrarDocumentosDoCaso() {
+  if (!casoDemo) return;
+  $("titulo-dialogo-documentos").textContent = casoDemo.titulo;
+  $("dialogo-tese").textContent = casoDemo.tese;
+  $("dialogo-lista-docs").replaceChildren(
+    ...casoDemo.documentos.map((doc) =>
+      el("details", { classe: "documento recolhivel" }, [
+        el("summary", {}, [criarIcone("documento"), el("span", { texto: doc.nome }), iconeAbrir()]),
+        el("pre", { classe: "documento-conteudo", texto: doc.conteudo }),
+      ])
+    )
+  );
+  const dialogo = $("dialogo-documentos");
+  abrirDialogo(dialogo, dialogo.querySelector("[data-fechar]"));
+}
 
-function aplicarModo(novoModo) {
-  modo = novoModo;
-  const textos = TEXTOS_MODO[modo];
-  $("form-analise").dataset.modo = modo;
-  $("titulo-passo-documentos").textContent = textos.tituloDocumentos;
-  $("documentos-ajuda").textContent = textos.ajudaDocumentos;
-  $("legenda-exemplos").textContent = textos.legendaExemplos;
-  $("rotulo-tese").textContent = textos.tituloTese;
-  $("tese-ajuda").textContent = textos.ajudaTese;
-  $("botao-analisar").textContent = textos.botao;
-  $("envio-proprio").hidden = modo === "demo";
-  $("passo-chave").hidden = modo === "demo";
-  $("bloco-confirmacao").hidden = modo === "demo";
-  $("tese").readOnly = modo === "demo";
-  if (modo === "demo") {
-    pararDigitacao();
-    $("tese").value = casoDemo ? casoDemo.tese : "";
+/* ==========================================================================
+   Área da gestão e envio de documentos (ADR-015)
+   ========================================================================== */
+
+function abrirAreaGestao() {
+  if (codigoGestao) {
+    irParaDocumentos();
+    return;
   }
-  renderizarArquivos();
-  esconderErroFormulario();
+  esconderErro("gestao-erro");
+  $("codigo-gestao").value = "";
+  abrirDialogo($("dialogo-gestao"), $("codigo-gestao"));
 }
 
-function configurarModo() {
-  document.querySelectorAll('input[name="modo"]').forEach((opcao) => {
-    opcao.addEventListener("change", () => {
-      if (!opcao.checked) return;
-      aplicarModo(opcao.value);
-      anunciar(opcao.value === "demo" ? "Modo demonstração gratuita." : "Modo análise com documentos.");
-    });
-  });
-  aplicarModo(document.querySelector('input[name="modo"]:checked').value);
-}
-
-/* ---------- acesso da gestão (ADR-015) ---------- */
-
-function liberarGestao(codigo) {
-  codigoGestao = codigo;
-  $("opcao-modo-chave").hidden = false;
-  $("acesso-gestao").hidden = true;
-  $("modo-chave").checked = true;
-  aplicarModo("chave");
-  anunciar("Acesso da gestão liberado. Modo análise com documentos.");
-  $("modo-chave").focus();
-}
-
-async function entrarGestao() {
+async function entrarGestao(evento) {
+  evento.preventDefault();
   const campo = $("codigo-gestao");
-  const erro = $("gestao-erro");
   const codigo = campo.value.trim();
-  erro.hidden = true;
+  esconderErro("gestao-erro");
   if (!codigo) {
-    erro.textContent = "Digite o código de acesso da gestão.";
-    erro.hidden = false;
-    campo.focus();
+    mostrarErro("gestao-erro", "Digite o código de acesso da gestão.", campo);
     return;
   }
   const botao = $("entrar-gestao");
@@ -739,110 +497,109 @@ async function entrarGestao() {
     }
     const dados = await lerJson(resposta);
     if (!resposta.ok) throw new Error(dados.erro || MENSAGEM_FALHA_PADRAO);
+    codigoGestao = codigo;
     campo.value = "";
-    liberarGestao(codigo);
+    $("botao-gestao-rotulo").textContent = "Analisar documentos";
+    $("dialogo-gestao").close();
+    anunciar("Acesso da gestão liberado.");
+    irParaDocumentos();
   } catch (falha) {
-    erro.textContent = falha.message || MENSAGEM_FALHA_PADRAO;
-    erro.hidden = false;
-    campo.focus();
+    mostrarErro("gestao-erro", falha.message || MENSAGEM_FALHA_PADRAO, campo);
   } finally {
     botao.disabled = false;
   }
 }
 
-function configurarGestao() {
-  const painel = $("painel-gestao");
-  const abrir = $("botao-gestao");
-  abrir.addEventListener("click", () => {
-    painel.hidden = !painel.hidden;
-    abrir.setAttribute("aria-expanded", String(!painel.hidden));
-    if (!painel.hidden) $("codigo-gestao").focus();
-  });
-  $("entrar-gestao").addEventListener("click", entrarGestao);
-  // O campo fica dentro do formulário da análise: Enter confere o código em vez de enviar o formulário.
-  $("codigo-gestao").addEventListener("keydown", (evento) => {
-    if (evento.key === "Enter") {
-      evento.preventDefault();
-      entrarGestao();
-    }
-  });
+function formatarTamanho(bytes) {
+  if (bytes < 1024 * 1024) return `${Math.max(1, Math.round(bytes / 1024))} KB`;
+  return `${(bytes / (1024 * 1024)).toFixed(1).replace(".", ",")} MB`;
 }
 
-function mostrarErroFormulario(mensagem, focarEm) {
-  const erro = $("erro-formulario");
-  erro.textContent = mensagem;
-  erro.hidden = false;
-  if (focarEm) focarEm.focus();
+function renderizarArquivos() {
+  const lista = $("lista-arquivos");
+  lista.replaceChildren(
+    ...Array.from(arquivos.values(), (arquivo) => {
+      const remover = el("button", { type: "button", classe: "arquivo-remover", "aria-label": `Remover ${arquivo.name}`, texto: "Remover" });
+      remover.addEventListener("click", () => {
+        arquivos.delete(arquivo.name);
+        renderizarArquivos();
+        anunciar(`${arquivo.name} removido.`);
+        $("documentos").focus();
+      });
+      return el("li", {}, [
+        el("span", {}, [el("span", { classe: "arquivo-nome", texto: arquivo.name }), el("span", { classe: "arquivo-tamanho", texto: formatarTamanho(arquivo.size) })]),
+        remover,
+      ]);
+    })
+  );
 }
 
-function esconderErroFormulario() {
-  $("erro-formulario").hidden = true;
+function adicionarArquivos(lista) {
+  const novos = Array.from(lista || []);
+  novos.forEach((arquivo) => arquivos.set(arquivo.name, arquivo));
+  renderizarArquivos();
+  if (novos.length) {
+    esconderErro("erro-formulario");
+    anunciar(`${novos.length} ${plural(novos.length, ["documento adicionado", "documentos adicionados"])}.`);
+  }
+}
+
+function configurarEnvioDeArquivos() {
+  const entrada = $("documentos");
+  const zona = $("zona-arquivos");
+  entrada.addEventListener("change", () => {
+    adicionarArquivos(entrada.files);
+    entrada.value = "";
+  });
+  ["dragenter", "dragover"].forEach((tipo) =>
+    zona.addEventListener(tipo, (evento) => { evento.preventDefault(); zona.classList.add("arrastando"); })
+  );
+  ["dragleave", "drop"].forEach((tipo) => zona.addEventListener(tipo, () => zona.classList.remove("arrastando")));
+  zona.addEventListener("drop", (evento) => {
+    evento.preventDefault();
+    adicionarArquivos(evento.dataTransfer.files);
+  });
 }
 
 function validarFormulario() {
-  if (modo === "demo") {
-    if (!casoDemo) {
-      mostrarErroFormulario("Escolha um caso e clique em “Usar este caso” para ver a análise.", $("filtro-situacao"));
-      return null;
-    }
-    return casoDemo.tese;
-  }
   if (!codigoGestao) {
-    mostrarErroFormulario("A análise com documentos está disponível só para a gestão.", $("botao-gestao"));
+    mostrarErro("erro-formulario", "A análise com documentos está disponível só para a gestão.", $("botao-gestao"));
     return null;
   }
   const tese = $("tese").value.trim();
   if (arquivos.size === 0) {
-    mostrarErroFormulario("Envie pelo menos um documento do caso.", $("documentos"));
+    mostrarErro("erro-formulario", "Envie pelo menos um documento do caso.", $("documentos"));
     return null;
   }
   if (!tese) {
-    mostrarErroFormulario("Descreva a tese que você quer testar.", $("tese"));
+    mostrarErro("erro-formulario", "Descreva a tese que você quer testar.", $("tese"));
     return null;
   }
   const chave = $("chave-anthropic").value.trim();
   if (!chave) {
-    mostrarErroFormulario("Informe a sua chave da Anthropic para fazer a análise real, ou escolha a demonstração gratuita.", $("chave-anthropic"));
+    mostrarErro("erro-formulario", "Informe a chave da Anthropic para fazer a análise.", $("chave-anthropic"));
     return null;
   }
   if (!/^sk-ant-/.test(chave)) {
-    mostrarErroFormulario("Essa não parece uma chave da Anthropic. Ela começa com “sk-ant-”.", $("chave-anthropic"));
+    mostrarErro("erro-formulario", "Essa não parece uma chave da Anthropic. Ela começa com “sk-ant-”.", $("chave-anthropic"));
     return null;
   }
   if (!$("confirmacao-dados").checked) {
-    mostrarErroFormulario("Confirme que os documentos são fictícios ou anonimizados para continuar.", $("confirmacao-dados"));
+    mostrarErro("erro-formulario", "Confirme que os documentos são fictícios ou anonimizados.", $("confirmacao-dados"));
     return null;
   }
   return tese;
 }
 
 /* ==========================================================================
-   Navegação entre as telas.
+   Análise: progresso e resultado
    ========================================================================== */
 
-function mostrarTela(tela) {
-  const telas = {
-    formulario: ["abertura", "secao-formulario"],
-    progresso: ["secao-progresso"],
-    erro: ["secao-erro"],
-    relatorio: ["secao-relatorio"],
-  };
-  const visiveis = new Set(telas[tela]);
-  ["abertura", "secao-formulario", "secao-progresso", "secao-erro", "secao-relatorio"].forEach((id) => {
-    $(id).hidden = !visiveis.has(id);
-  });
-  window.scrollTo({ top: 0 });
-}
-
-/* ==========================================================================
-   Análise: envio, acompanhamento das etapas e resultado.
-   ========================================================================== */
-
-function renderizarEtapas(etapas, etapaAtual, estado) {
+function renderizarEtapas(etapaAtual, concluida) {
   const lista = $("etapas");
-  if (lista.children.length !== etapas.length) {
+  if (lista.children.length !== ETAPAS.length) {
     lista.replaceChildren(
-      ...etapas.map((texto, i) =>
+      ...ETAPAS.map((texto) =>
         el("li", { classe: "etapa", "data-estado": "aguardando" }, [
           el("span", { classe: "etapa-marcador", "aria-hidden": "true" }),
           el("span", { classe: "etapa-texto", texto }),
@@ -854,50 +611,80 @@ function renderizarEtapas(etapas, etapaAtual, estado) {
   Array.from(lista.children).forEach((item, i) => {
     const numero = i + 1;
     let situacao = "aguardando";
-    if (estado === "concluida" || numero < etapaAtual) situacao = "concluida";
+    if (concluida || numero < etapaAtual) situacao = "concluida";
     else if (numero === etapaAtual) situacao = "andamento";
     if (item.dataset.estado === situacao) return;
     item.dataset.estado = situacao;
     item.querySelector(".etapa-marcador").textContent = situacao === "concluida" ? "✓" : "";
     item.querySelector(".etapa-situacao").textContent =
       situacao === "concluida" ? ", concluída" : situacao === "andamento" ? ", em andamento" : ", aguardando";
-    if (situacao === "andamento") anunciar(`Etapa ${numero} de ${etapas.length}: ${etapas[i]}.`);
+    if (situacao === "andamento") anunciar(`Etapa ${numero} de ${ETAPAS.length}: ${ETAPAS[i]}.`);
   });
+  const feitas = concluida ? ETAPAS.length : Math.max(0, etapaAtual - 1);
+  const avanco = concluida ? 100 : ((feitas + 0.5) / ETAPAS.length) * 100;
+  $("barra-progresso-preenchimento").style.width = `${avanco}%`;
+  $("barra-progresso").setAttribute("aria-valuenow", String(feitas));
+  trocarTextoSuave($("etapa-atual"), concluida ? "Relatório pronto" : ETAPAS[etapaAtual - 1]);
 }
 
-function mostrarProgresso(texto) {
-  $("apoio-progresso").textContent = texto;
+function mostrarProgresso(apoio) {
+  $("apoio-progresso").textContent = apoio;
   $("etapas").replaceChildren();
-  renderizarEtapas(ETAPAS, 1, "processando");
-  mostrarTela("progresso");
-  $("titulo-progresso").focus();
+  $("etapa-atual").textContent = "";
+  renderizarEtapas(1, false);
+  trocarTela("progresso", () => $("titulo-progresso").focus({ preventScroll: true }));
 }
 
-async function executarDemonstracao() {
-  mostrarProgresso("Acompanhe cada etapa abaixo.");
-  for (let etapa = 1; etapa <= ETAPAS.length; etapa += 1) {
-    renderizarEtapas(ETAPAS, etapa, "processando");
-    await esperar(movimentoReduzido() ? 250 : DURACAO_ETAPAS_DEMO[etapa - 1]);
+function mostrarFalha(erro) {
+  $("erro-texto").textContent = erro.message || MENSAGEM_FALHA_PADRAO;
+  trocarTela("erro", () => $("titulo-erro").focus({ preventScroll: true }));
+}
+
+async function analisarCasoDemo() {
+  if (!casoDemo) {
+    mostrarErro("erro-casos", "Escolha um caso para continuar.");
+    return;
   }
-  renderizarEtapas(ETAPAS, ETAPAS.length, "concluida");
-  contextoReal = null;
-  renderizarRelatorio(casoDemo.relatorio);
+  modo = "demo";
+  const botao = $("analisar-caso");
+  botao.disabled = true;
+  try {
+    mostrarProgresso("Demonstração com análise preparada previamente.");
+    for (let etapa = 1; etapa <= ETAPAS.length; etapa += 1) {
+      renderizarEtapas(etapa, false);
+      await esperar(movimentoReduzido() ? 250 : DURACAO_ETAPAS_DEMO[etapa - 1]);
+    }
+    renderizarEtapas(ETAPAS.length, true);
+    await esperar(movimentoReduzido() ? 50 : 450);
+    contextoReal = null;
+    renderizarRelatorio(casoDemo.relatorio);
+  } catch (erro) {
+    mostrarFalha(erro);
+  } finally {
+    botao.disabled = false;
+  }
 }
 
-async function executarAnaliseReal(tese) {
+async function analisarDocumentos(evento) {
+  evento.preventDefault();
+  esconderErro("erro-formulario");
+  const tese = validarFormulario();
+  if (tese === null) return;
+  modo = "chave";
   const chave = $("chave-anthropic").value.trim();
   const dadosFormulario = new FormData();
   for (const arquivo of arquivos.values()) dadosFormulario.append("documentos", arquivo, arquivo.name);
   dadosFormulario.append("tese", tese);
 
-  mostrarProgresso("Costuma levar de 2 a 3 minutos. Acompanhe cada etapa abaixo.");
+  const botao = $("botao-analisar");
+  botao.disabled = true;
+  mostrarProgresso("Costuma levar de 2 a 3 minutos.");
   // A análise real roda numa única chamada; a tela avança pelas etapas no tempo típico de cada uma.
   const inicio = Date.now();
   const relogio = setInterval(() => {
     const segundos = (Date.now() - inicio) / 1000;
-    renderizarEtapas(ETAPAS, INICIO_ETAPAS_REAL.filter((s) => segundos >= s).length, "processando");
+    renderizarEtapas(INICIO_ETAPAS_REAL.filter((s) => segundos >= s).length, false);
   }, 1000);
-
   try {
     let resposta;
     try {
@@ -911,99 +698,336 @@ async function executarAnaliseReal(tese) {
     }
     const dados = await lerJson(resposta);
     if (!resposta.ok) throw new Error(dados.erro || MENSAGEM_FALHA_PADRAO);
-    renderizarEtapas(ETAPAS, ETAPAS.length, "concluida");
+    renderizarEtapas(ETAPAS.length, true);
     contextoReal = { documentos: dados.documentos, tese: dados.tese, chave, codigo: codigoGestao };
     renderizarRelatorio(dados.relatorio);
+  } catch (erro) {
+    mostrarFalha(erro);
   } finally {
     clearInterval(relogio);
-  }
-}
-
-async function analisar(evento) {
-  evento.preventDefault();
-  pararDigitacao();
-  esconderErroFormulario();
-  const tese = validarFormulario();
-  if (tese === null) return;
-
-  const botao = $("botao-analisar");
-  botao.disabled = true;
-  try {
-    if (modo === "demo") await executarDemonstracao();
-    else await executarAnaliseReal(tese);
-  } catch (erro) {
-    $("erro-texto").textContent = erro.message || MENSAGEM_FALHA_PADRAO;
-    mostrarTela("erro");
-    $("titulo-erro").focus();
-  } finally {
     botao.disabled = false;
   }
 }
 
-/* ---------- relatório ---------- */
+/* ==========================================================================
+   Relatório
+   ========================================================================== */
+
+let nomesDosAchados = new Map();
+const ABAS = ["pontos", "linha", "plano", "audiencia"];
+
+function idDoAchado(id) {
+  return `achado-${String(id).replace(/[^a-zA-Z0-9_-]/g, "-")}`;
+}
+
+/* ---------- seções que abrem e fecham (padrão accordion do W3C) ---------- */
+
+function criarSecaoRecolhivel({ id, nivel, titulo, contagem, descricao, classe, aberta, conteudo, icone }) {
+  const idCorpo = `${id}-corpo`;
+  const botao = el("button", { type: "button", classe: "secao-alternar", "aria-expanded": String(aberta), "aria-controls": idCorpo }, [
+    icone ? el("span", { classe: "secao-icone", "aria-hidden": "true" }, [criarIcone(icone)]) : el("span", { classe: "secao-marca", "aria-hidden": "true" }),
+    el("span", { classe: "secao-titulo", texto: titulo }),
+    contagem === undefined ? null : el("span", { classe: "secao-contagem", texto: String(contagem) }),
+    iconeAbrir(),
+  ]);
+  const corpo = el("div", { classe: "secao-corpo", id: idCorpo, "data-aberta": String(aberta) }, [
+    el("div", { classe: "secao-corpo-interno" }, [descricao ? el("p", { classe: "secao-descricao", texto: descricao }) : null, conteudo]),
+  ]);
+  corpo.inert = !aberta;
+  const secao = el("section", { classe: `secao-recolhivel ${classe}`, id: `${id}-secao`, "aria-labelledby": id }, [
+    el(nivel, { classe: "secao-cabecalho", id }, [botao]),
+    corpo,
+  ]);
+  botao.addEventListener("click", () => abrirSecao(secao, !secaoAberta(secao)));
+  return secao;
+}
+
+const secaoAberta = (secao) => secao.querySelector(".secao-corpo").dataset.aberta === "true";
+
+function abrirSecao(secao, abrir) {
+  secao.querySelector(".secao-alternar").setAttribute("aria-expanded", String(abrir));
+  const corpo = secao.querySelector(".secao-corpo");
+  corpo.dataset.aberta = String(abrir);
+  corpo.inert = !abrir;
+}
+
+function alternarTudo(container, abrir) {
+  container.querySelectorAll(".secao-recolhivel").forEach((secao) => abrirSecao(secao, abrir));
+  container.querySelectorAll("details.recolhivel").forEach((detalhe) => { detalhe.open = abrir; });
+  anunciar(abrir ? "Todos os itens foram abertos." : "Todos os itens foram recolhidos.");
+}
+
+function configurarControlesRecolher() {
+  document.querySelectorAll(".controles-recolher").forEach((grupo) => {
+    grupo.querySelectorAll("button").forEach((botao) => {
+      botao.addEventListener("click", () => alternarTudo($(grupo.dataset.alvo), botao.dataset.abrir === "true"));
+    });
+  });
+}
+
+/* ---------- documento para impressão e PDF (ADR-022) ----------
+   Na impressão (botão ou Ctrl+P) sai um documento formal, com linguagem técnica e sem os
+   elementos visuais da página. */
+
+let relatorioAtual = null;
+let tituloDaPagina = null;
+
+const CATEGORIA_TECNICA = {
+  vulnerabilidade_critica: "Vulnerabilidade crítica",
+  vulnerabilidade_media: "Vulnerabilidade moderada",
+  contradicao: "Contradição",
+  lacuna_probatoria: "Lacuna probatória",
+  contra_argumento: "Contra-argumento",
+  pergunta_dificil: "Pergunta de audiência",
+};
+const SECAO_TECNICA = {
+  criticos: "Vulnerabilidades críticas e moderadas",
+  contradicoes: "Contradições entre documentos",
+  lacunas: "Lacunas probatórias",
+  argumentos: "Contra-argumentos da parte adversa",
+  perguntas: "Perguntas prováveis em audiência",
+};
+const ORIGEM_TECNICA = {
+  FACT: "fato documentado",
+  SOURCE: "fonte citada nos autos",
+  INFERENCE: "inferência a partir dos documentos",
+  ADVERSARIAL_HYPOTHESIS: "hipótese adversarial",
+  UNVERIFIED: "não verificado nos documentos",
+};
+const PRIORIDADE_TECNICA = { alta: "Alta", media: "Média", baixa: "Baixa" };
+
+function tabelaImpressao(cabecalhos, linhas, classe = "") {
+  // Sem cabeçalho, a primeira coluna rotula a linha (tabela de identificação).
+  const celula = (texto, i) => (cabecalhos ? el("td", { texto }) : el(i === 0 ? "th" : "td", { scope: i === 0 ? "row" : null, texto }));
+  return el("table", { classe: `di-tabela ${classe}`.trim() }, [
+    cabecalhos ? el("thead", {}, [el("tr", {}, cabecalhos.map((texto) => el("th", { scope: "col", texto })))]) : null,
+    el("tbody", {}, linhas.map((celulas) => el("tr", {}, celulas.map(celula)))),
+  ]);
+}
+
+// "Lemos 2 documentos e identificamos 3 partes, ..." → "2 documentos analisados; 3 partes, ... identificados."
+function resumoTecnico(resumo) {
+  if (!resumo) return "—";
+  const partes = resumo.match(/^Lemos (.+?) e identificamos (.+?)\.?$/);
+  if (!partes) return resumo;
+  return `${partes[1]} ${/^1 /.test(partes[1]) ? "analisado" : "analisados"}; ${partes[2]} identificados.`;
+}
+
+function montarDocumentoImpressao() {
+  const relatorio = relatorioAtual;
+  const destino = $("documento-impressao");
+  if (!relatorio) {
+    destino.replaceChildren();
+    return;
+  }
+  const demonstracao = !contextoReal;
+  const tituloCaso = demonstracao && casoDemo ? casoDemo.titulo : "Caso analisado";
+  const emissao = new Date().toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" });
+  const achados = relatorio.findings || [];
+  const secoes = [];
+  let numeroSecao = 0;
+  const secao = (titulo) => { numeroSecao += 1; secoes.push(el("h2", { texto: `${numeroSecao}. ${titulo}` })); return numeroSecao; };
+
+  // 1. Identificação
+  secao("Identificação");
+  secoes.push(tabelaImpressao(null, [
+    ["Caso", tituloCaso],
+    ["Natureza", demonstracao ? "Demonstração com caso fictício (análise preparada previamente)" : "Análise de documentos enviados"],
+    ["Documentos", resumoTecnico(relatorio.resumo_do_caso)],
+    ["Emissão", emissao],
+  ], "di-meta"));
+
+  // 2. Tese
+  secao("Tese submetida à revisão");
+  secoes.push(el("p", { texto: relatorio.tese_analisada || "—" }));
+
+  // 3. Síntese
+  const porGrupo = Object.fromEntries(GRUPOS.map((g) => [g.id, []]));
+  achados.forEach((achado) => {
+    const categoria = CATEGORIAS[achado.categoria];
+    if (categoria) porGrupo[categoria.grupo].push(achado);
+  });
+  const eventos = relatorio.linha_do_tempo || [];
+  const provas = Array.isArray(relatorio.plano_de_provas) ? relatorio.plano_de_provas : [];
+  secao("Síntese");
+  secoes.push(tabelaImpressao(["Item", "Quantidade"], [
+    ...GRUPOS.filter((g) => porGrupo[g.id].length).map((g) => [SECAO_TECNICA[g.id], String(porGrupo[g.id].length)]),
+    ["Fatos datados na cronologia", String(eventos.length)],
+    ["Divergências de versão na cronologia", String(eventos.filter((e) => e.divergencia).length)],
+    ["Diligências probatórias recomendadas", String(provas.length)],
+  ]));
+
+  // 4. Vulnerabilidades
+  const numeroVulnerabilidades = secao("Vulnerabilidades identificadas");
+  const codigos = new Map();
+  let subsecao = 0;
+  GRUPOS.forEach((grupo) => {
+    const itens = porGrupo[grupo.id];
+    if (!itens.length) return;
+    subsecao += 1;
+    secoes.push(el("h3", { texto: `${numeroVulnerabilidades}.${subsecao} ${SECAO_TECNICA[grupo.id]}` }));
+    itens.forEach((achado, i) => {
+      const codigo = `${numeroVulnerabilidades}.${subsecao}.${i + 1}`;
+      codigos.set(achado.id, codigo);
+      const fundamentos = (achado.origem || []).map((citacao) =>
+        el("li", { texto: `${citacao.documento}: “${citacao.trecho || ""}”${citacao.conferido === true ? " (trecho conferido)" : citacao.conferido === false ? " (trecho não localizado literalmente)" : ""}` })
+      );
+      secoes.push(
+        el("div", { classe: "di-item" }, [
+          el("p", {}, [
+            el("span", { classe: "di-item-codigo", texto: codigo }),
+            document.createTextNode(`${achado.texto} `),
+            el("span", { classe: "di-qualificacao", texto: `[${CATEGORIA_TECNICA[achado.categoria] || "Apontamento"}; ${ORIGEM_TECNICA[achado.provenance] || ORIGEM_TECNICA.UNVERIFIED}]` }),
+          ]),
+          fundamentos.length ? el("ul", { classe: "di-fundamentos" }, fundamentos) : null,
+        ])
+      );
+    });
+  });
+  if (!achados.length) secoes.push(el("p", { texto: "Não foram identificadas vulnerabilidades com base nos documentos." }));
+
+  // 5. Cronologia
+  secao("Cronologia dos fatos");
+  secoes.push(
+    eventos.length
+      ? tabelaImpressao(["Data", "Fato", "Fonte", "Divergência"], eventos.map((e) => [e.data, e.evento, [e.documento, e.quem_afirma].filter(Boolean).join(" — "), e.divergencia || "—"]))
+      : el("p", { texto: "Os documentos não apresentam datas suficientes para a cronologia." })
+  );
+
+  // 6. Plano de provas
+  secao("Plano de diligências probatórias");
+  if (provas.length) {
+    const ordenadas = PRIORIDADES.flatMap(([chave]) => provas.filter((p) => p.prioridade === chave));
+    secoes.push(tabelaImpressao(["Prioridade", "Prova", "Finalidade", "Meio de obtenção", "Itens relacionados"], ordenadas.map((p) => [
+      PRIORIDADE_TECNICA[p.prioridade] || "—",
+      p.prova,
+      p.finalidade || "—",
+      p.como_obter || "—",
+      (p.apontamentos || []).map((id) => codigos.get(id)).filter(Boolean).join(", ") || "—",
+    ])));
+  } else {
+    secoes.push(el("p", { texto: Array.isArray(relatorio.plano_de_provas) ? "Nenhuma diligência adicional recomendada." : "Plano de provas indisponível nesta análise." }));
+  }
+
+  secoes.push(el("p", { classe: "di-nota", texto: "Trechos marcados como conferidos foram localizados literalmente no texto do documento indicado." }));
+
+  destino.replaceChildren(
+    el("header", { classe: "di-cabecalho" }, [
+      el("p", { classe: "di-marca", texto: "AdversIA" }),
+      el("h1", { classe: "di-titulo", texto: "Relatório de revisão adversarial" }),
+      el("p", { classe: "di-subtitulo", texto: tituloCaso }),
+    ]),
+    ...secoes
+  );
+}
+
+function prepararImpressao() {
+  montarDocumentoImpressao();
+  // O navegador pode disparar beforeprint mais de uma vez; guarda só o título original.
+  if (tituloDaPagina === null) tituloDaPagina = document.title;
+  if (relatorioAtual) {
+    const nome = !contextoReal && casoDemo ? casoDemo.titulo : "Caso analisado";
+    document.title = `AdversIA - Relatório - ${nome}`;
+  }
+}
+
+function concluirImpressao() {
+  if (tituloDaPagina === null) return;
+  document.title = tituloDaPagina;
+  tituloDaPagina = null;
+}
+
+function rolarAte(elemento, bloco = "start") {
+  elemento.scrollIntoView({ behavior: movimentoReduzido() ? "auto" : "smooth", block: bloco });
+}
+
+function irParaGrupo(idGrupo) {
+  const secao = $(`grupo-${idGrupo}-secao`);
+  if (!secao) return;
+  abrirSecao(secao, true);
+  rolarAte(secao);
+  secao.querySelector(".secao-alternar").focus({ preventScroll: true });
+}
+
+// Resultado da conferência feita pelo servidor: o trecho existe (ou não) no documento enviado.
+function seloConferencia(conferido) {
+  if (conferido === true) return el("span", { classe: "selo-conferido", texto: "✓ Trecho conferido no documento" });
+  if (conferido === false) return el("span", { classe: "selo-confira", texto: "Não localizamos este trecho exato — confira" });
+  return null;
+}
+
+function listaDeOrigens(citacoes, titulo = "Onde está nos documentos") {
+  return el("div", { classe: "origens" }, [
+    el("p", { classe: "origens-titulo", texto: titulo }),
+    el("ul", {}, citacoes.map((citacao) =>
+      el("li", { classe: "origem" }, [
+        el("span", { classe: "origem-linha" }, [el("span", { classe: "origem-documento", texto: citacao.documento }), seloConferencia(citacao.conferido)]),
+        citacao.trecho ? el("span", { classe: "origem-trecho", texto: `“${citacao.trecho}”` }) : null,
+      ])
+    )),
+  ]);
+}
 
 function renderizarAchado(achado) {
   const categoria = CATEGORIAS[achado.categoria] || { rotulo: "Apontamento" };
   const origem = ORIGENS[achado.provenance] || ORIGENS.UNVERIFIED;
+  const corpo = el("div", { classe: "achado-corpo" }, [achado.origem && achado.origem.length ? listaDeOrigens(achado.origem) : null]);
 
-  const cartao = el("article", { classe: "achado", id: idDoAchado(achado.id), tabindex: "-1" }, [
-    el("div", { classe: "achado-topo" }, [
-      el("span", { classe: "achado-categoria", texto: nomesDosAchados.get(achado.id) || categoria.rotulo }),
-      el("span", { classe: `etiqueta ${origem.classe}`, texto: origem.rotulo }),
+  // Recolhido, mostra a categoria, a etiqueta e o começo do texto; aberto, o texto inteiro e os trechos.
+  const cartao = el("details", { classe: "achado recolhivel", id: idDoAchado(achado.id), tabindex: "-1" }, [
+    el("summary", { classe: "achado-resumo" }, [
+      el("span", { classe: "achado-topo" }, [
+        el("span", { classe: "achado-categoria" }, [criarIcone(categoria.icone), el("span", { texto: nomesDosAchados.get(achado.id) || categoria.rotulo })]),
+        el("span", { classe: `etiqueta ${origem.classe}`, texto: origem.rotulo }),
+      ]),
+      el("span", { classe: "achado-texto", texto: achado.texto }),
+      iconeAbrir(),
     ]),
-    el("p", { classe: "achado-texto", texto: achado.texto }),
+    corpo,
   ]);
-
-  if (achado.origem && achado.origem.length) {
-    const lista = el("ul");
-    achado.origem.forEach((citacao) => {
-      lista.appendChild(
-        el("li", { classe: "origem" }, [
-          el("span", { classe: "origem-linha" }, [
-            el("span", { classe: "origem-documento", texto: citacao.documento }),
-            seloConferencia(citacao.conferido),
-          ]),
-          citacao.trecho ? el("span", { classe: "origem-trecho", texto: `“${citacao.trecho}”` }) : null,
-        ])
-      );
-    });
-    cartao.appendChild(
-      el("div", { classe: "origens" }, [el("p", { classe: "origens-titulo", texto: "Onde está nos documentos" }), lista])
-    );
-  }
   return el("li", {}, [cartao]);
 }
 
 function renderizarRelatorio(relatorio) {
   pararLeitura();
+  relatorioAtual = relatorio;
+  const achados = relatorio.findings || [];
 
   // "Falta de prova 2", "Contradição 1"...: o mesmo nome aparece no cartão e nos vínculos do plano.
   nomesDosAchados = new Map();
   const contagemPorCategoria = {};
-  (relatorio.findings || []).forEach((achado) => {
+  achados.forEach((achado) => {
     const categoria = CATEGORIAS[achado.categoria];
     if (!categoria) return;
     contagemPorCategoria[achado.categoria] = (contagemPorCategoria[achado.categoria] || 0) + 1;
     nomesDosAchados.set(achado.id, `${categoria.rotulo} ${contagemPorCategoria[achado.categoria]}`);
   });
+
   $("selo-demo").hidden = contextoReal !== null;
+  $("titulo-relatorio").textContent = !contextoReal && casoDemo ? casoDemo.titulo : "Seu caso";
   $("resumo-caso").textContent = relatorio.resumo_do_caso;
   $("tese-analisada").textContent = relatorio.tese_analisada;
+  document.querySelector(".tese-analisada").open = false;
 
   const porGrupo = Object.fromEntries(GRUPOS.map((g) => [g.id, []]));
-  (relatorio.findings || []).forEach((achado) => {
+  achados.forEach((achado) => {
     const categoria = CATEGORIAS[achado.categoria];
     if (categoria) porGrupo[categoria.grupo].push(achado);
   });
 
-  const placar = $("placar");
-  placar.replaceChildren(
+  $("placar").replaceChildren(
     ...GRUPOS.filter((g) => g.placar).map((grupo) => {
       const total = porGrupo[grupo.id].length;
-      return el("li", { classe: grupo.classe }, [
-        el("span", { classe: "placar-numero", texto: String(total) }),
+      const numero = el("span", { classe: "placar-numero", texto: String(total) });
+      const botao = el("button", { type: "button", classe: "placar-botao" }, [
+        el("span", { classe: "placar-icone", "aria-hidden": "true" }, [criarIcone(grupo.icone)]),
+        numero,
         el("span", { classe: "placar-rotulo", texto: plural(total, grupo.placar) }),
       ]);
+      botao.disabled = total === 0;
+      botao.addEventListener("click", () => irParaGrupo(grupo.id));
+      contarAte(numero, total);
+      return el("li", { classe: grupo.classe }, [botao]);
     })
   );
 
@@ -1013,56 +1037,56 @@ function renderizarRelatorio(relatorio) {
   GRUPOS.forEach((grupo) => {
     const itens = porGrupo[grupo.id];
     if (!itens.length) return;
+    // Só o primeiro grupo com apontamentos começa aberto; os itens começam recolhidos.
+    const aberta = totalAchados === 0;
     totalAchados += itens.length;
-    const idTitulo = `grupo-${grupo.id}`;
     containerGrupos.appendChild(
-      el("section", { classe: `grupo ${grupo.classe}`, "aria-labelledby": idTitulo }, [
-        el("div", { classe: "grupo-cabecalho" }, [
-          el("h3", { id: idTitulo, texto: grupo.titulo }),
-          el("p", { texto: grupo.descricao }),
-        ]),
-        el("ol", { classe: "grupo-lista" }, itens.map(renderizarAchado)),
-      ])
+      criarSecaoRecolhivel({
+        id: `grupo-${grupo.id}`,
+        nivel: "h4",
+        titulo: grupo.titulo,
+        contagem: itens.length,
+        descricao: grupo.descricao,
+        classe: `grupo ${grupo.classe}`,
+        icone: grupo.icone,
+        aberta,
+        conteudo: el("ol", { classe: "grupo-lista" }, itens.map(renderizarAchado)),
+      })
     );
   });
+  document.querySelector('.controles-recolher[data-alvo="grupos"]').hidden = totalAchados === 0;
   if (!totalAchados) {
-    containerGrupos.appendChild(
-      el("p", { classe: "sem-achados", texto: "Não encontramos pontos vulneráveis com base nos documentos enviados." })
-    );
+    containerGrupos.appendChild(el("p", { classe: "sem-achados", texto: "Não encontramos pontos vulneráveis com base nos documentos enviados." }));
   }
-
-  revelarAoRolar(document.querySelectorAll("#placar li, #grupos .grupo-cabecalho, #grupos .achado"));
-
-  $("avisos").replaceChildren(...(relatorio.avisos || []).map((aviso) => el("p", { texto: aviso })));
 
   $("contador-pontos").textContent = String(totalAchados);
   renderizarLinhaDoTempo(relatorio.linha_do_tempo || []);
-  renderizarPlano(relatorio.plano_de_provas, relatorio.findings || []);
+  renderizarPlano(relatorio.plano_de_provas);
   prepararAudiencia(
     contextoReal
-      ? (relatorio.findings || []).filter((achado) => achado.categoria === "pergunta_dificil").map((achado) => achado.texto)
+      ? achados.filter((achado) => achado.categoria === "pergunta_dificil").map((achado) => achado.texto)
       : casoDemo && casoDemo.audiencia
         ? casoDemo.audiencia.map((bloco) => bloco.pergunta)
         : []
   );
   selecionarAba("pontos", false);
-
-  mostrarTela("relatorio");
-  $("titulo-relatorio").focus();
+  trocarTela("relatorio", () => $("titulo-relatorio").focus({ preventScroll: true }));
   anunciar(`Relatório pronto, com ${totalAchados} ${plural(totalAchados, ["apontamento", "apontamentos"])}.`);
 }
 
-/* ==========================================================================
-   Relatório em abas: pontos vulneráveis, linha do tempo, plano de provas e
-   simulação de audiência.
-   ========================================================================== */
+/* ---------- abas horizontais com sublinhado que desliza (ADR-021) ---------- */
 
-let nomesDosAchados = new Map();
-
-const ABAS = ["pontos", "linha", "plano", "audiencia"];
-
-function idDoAchado(id) {
-  return `achado-${String(id).replace(/[^a-zA-Z0-9_-]/g, "-")}`;
+function moverIndicadorDasAbas() {
+  const ativa = document.querySelector('.abas [role="tab"][aria-selected="true"]');
+  const indicador = document.querySelector(".abas-indicador");
+  if (!ativa || !indicador || !ativa.offsetWidth) return;
+  indicador.style.width = `${ativa.offsetWidth}px`;
+  indicador.style.transform = `translateX(${ativa.offsetLeft}px)`;
+  // No celular a barra rola para os lados: a aba escolhida fica sempre à vista.
+  const barra = ativa.parentElement;
+  if (ativa.offsetLeft < barra.scrollLeft || ativa.offsetLeft + ativa.offsetWidth > barra.scrollLeft + barra.clientWidth) {
+    barra.scrollTo({ left: ativa.offsetLeft - 16, behavior: movimentoReduzido() ? "auto" : "smooth" });
+  }
 }
 
 function selecionarAba(nome, focar = true) {
@@ -1073,15 +1097,23 @@ function selecionarAba(nome, focar = true) {
     botao.tabIndex = ativa ? 0 : -1;
     $(`painel-${aba}`).hidden = !ativa;
   });
-  if (focar) $(`aba-${nome}`).focus();
+  moverIndicadorDasAbas();
+  if (!focar) return;
+  $(`aba-${nome}`).focus({ preventScroll: true });
+  // Se a pessoa estava lá embaixo, o conteúdo novo começa visível, logo abaixo do cabeçalho.
+  const paineis = $("paineis");
+  const limite = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--altura-topo")) || 64;
+  if (paineis.getBoundingClientRect().top < limite) rolarAte(paineis);
 }
 
 function configurarAbas() {
+  // A barra fica oculta até o relatório aparecer; quando ganha tamanho, o sublinhado se posiciona.
+  if ("ResizeObserver" in window) new ResizeObserver(moverIndicadorDasAbas).observe(document.querySelector(".abas"));
   ABAS.forEach((aba, indice) => {
     const botao = $(`aba-${aba}`);
     botao.addEventListener("click", () => selecionarAba(aba));
     botao.addEventListener("keydown", (evento) => {
-      const destino = { ArrowRight: indice + 1, ArrowLeft: indice - 1, Home: 0, End: ABAS.length - 1 }[evento.key];
+      const destino = { ArrowRight: indice + 1, ArrowDown: indice + 1, ArrowLeft: indice - 1, ArrowUp: indice - 1, Home: 0, End: ABAS.length - 1 }[evento.key];
       if (destino === undefined) return;
       evento.preventDefault();
       selecionarAba(ABAS[(destino + ABAS.length) % ABAS.length]);
@@ -1089,57 +1121,59 @@ function configurarAbas() {
   });
 }
 
-// Resultado da conferência feita pelo servidor: o trecho existe (ou não) no documento enviado.
-function seloConferencia(conferido) {
-  if (conferido === true) return el("span", { classe: "selo-conferido", texto: "✓ Trecho conferido no documento" });
-  if (conferido === false) return el("span", { classe: "selo-confira", texto: "Não localizamos este trecho exato — confira" });
-  return null;
-}
-
 function irParaAchado(id) {
   const alvo = $(idDoAchado(id));
   if (!alvo) return;
   selecionarAba("pontos", false);
-  alvo.classList.add("revelado");
-  alvo.scrollIntoView({ behavior: movimentoReduzido() ? "auto" : "smooth", block: "center" });
-  alvo.focus({ preventScroll: true });
-  alvo.classList.remove("destacado");
-  void alvo.offsetWidth; // reinicia a animação de destaque
-  alvo.classList.add("destacado");
+  const secao = alvo.closest(".secao-recolhivel");
+  const estavaFechada = secao && !secaoAberta(secao);
+  if (secao) abrirSecao(secao, true);
+  alvo.open = true;
+  // Espera a seção terminar de abrir para rolar até a posição certa.
+  setTimeout(() => {
+    rolarAte(alvo, "center");
+    alvo.focus({ preventScroll: true });
+    alvo.classList.remove("destacado");
+    void alvo.offsetWidth; // reinicia a animação de destaque
+    alvo.classList.add("destacado");
+  }, estavaFechada && !movimentoReduzido() ? 360 : 30);
 }
 
 /* ---------- linha do tempo ---------- */
 
 function renderizarLinhaDoTempo(eventos) {
-  const lista = $("linha-do-tempo");
   const divergentes = eventos.filter((evento) => evento.divergencia).length;
   $("contador-linha").textContent = eventos.length ? String(eventos.length) : "";
   $("resumo-linha").textContent = eventos.length
-    ? `${eventos.length} ${plural(eventos.length, ["fato com data", "fatos com data"])}` +
-      (divergentes ? ` · ${divergentes} ${plural(divergentes, ["ponto com versões diferentes", "pontos com versões diferentes"])}` : "")
-    : "Os documentos não trazem datas suficientes para montar a linha do tempo.";
-
-  lista.replaceChildren(
+    ? `${eventos.length} ${plural(eventos.length, ["fato", "fatos"])}` +
+      (divergentes ? ` · ${divergentes} com versões diferentes` : "")
+    : "Os documentos não trazem datas suficientes.";
+  document.querySelector('.controles-recolher[data-alvo="linha-do-tempo"]').hidden = eventos.length === 0;
+  $("linha-do-tempo").replaceChildren(
     ...eventos.map((evento) =>
       el("li", { classe: `evento${evento.divergencia ? " evento-divergente" : ""}` }, [
         el("span", { classe: "evento-marcador", "aria-hidden": "true" }),
         el("p", { classe: "evento-data", texto: evento.data }),
-        el("div", { classe: "evento-corpo" }, [
-          el("p", { classe: "evento-texto", texto: evento.evento }),
-          el("p", { classe: "evento-fonte", texto: [`Segundo ${evento.documento}`, evento.quem_afirma].filter(Boolean).join(" · ") }),
-          evento.trecho ? el("p", { classe: "evento-trecho", texto: `“${evento.trecho}”` }) : null,
-          evento.trecho ? seloConferencia(evento.trecho_conferido) : null,
-          evento.divergencia
-            ? el("p", { classe: "evento-divergencia" }, [
-                el("strong", { texto: "Versões diferentes: " }),
-                document.createTextNode(evento.divergencia),
-              ])
-            : null,
+        el("details", { classe: "evento-corpo recolhivel" }, [
+          el("summary", { classe: "evento-resumo" }, [
+            el("span", { classe: "evento-resumo-texto" }, [
+              evento.divergencia ? el("span", { classe: "evento-selo-divergencia", texto: "Versões diferentes" }) : null,
+              el("span", { classe: "evento-texto", texto: evento.evento }),
+            ]),
+            iconeAbrir(),
+          ]),
+          el("div", { classe: "evento-detalhes" }, [
+            el("p", { classe: "evento-fonte", texto: [`Segundo ${evento.documento}`, evento.quem_afirma].filter(Boolean).join(" · ") }),
+            evento.trecho ? el("p", { classe: "evento-trecho", texto: `“${evento.trecho}”` }) : null,
+            evento.trecho ? seloConferencia(evento.trecho_conferido) : null,
+            evento.divergencia
+              ? el("p", { classe: "evento-divergencia" }, [el("strong", { texto: "Versões diferentes: " }), document.createTextNode(evento.divergencia)])
+              : null,
+          ]),
         ]),
       ])
     )
   );
-  revelarAoRolar(lista.querySelectorAll(".evento"));
 }
 
 /* ---------- plano de provas ---------- */
@@ -1155,16 +1189,13 @@ let contadorItensPlano = 0;
 function atualizarProgressoPlano() {
   const caixas = Array.from(document.querySelectorAll(".plano-marcar"));
   const feitas = caixas.filter((caixa) => caixa.checked).length;
-  $("progresso-plano").textContent = caixas.length
-    ? `${feitas} de ${caixas.length} ${plural(caixas.length, ["prova providenciada", "provas providenciadas"])}`
-    : "";
+  $("progresso-plano").textContent = caixas.length ? `${feitas} de ${caixas.length} ${plural(caixas.length, ["providenciada", "providenciadas"])}` : "";
 }
 
 function renderizarItemPlano(item) {
   const idCaixa = `prova-${(contadorItensPlano += 1)}`;
-  const caixa = el("input", { type: "checkbox", id: idCaixa, classe: "plano-marcar" });
+  const caixa = el("input", { type: "checkbox", id: idCaixa, classe: "plano-marcar", "aria-label": `Providenciada: ${item.prova}` });
   caixa.addEventListener("change", atualizarProgressoPlano);
-
   const vinculos = (item.apontamentos || [])
     .filter((id) => nomesDosAchados.has(id))
     .map((id) => {
@@ -1172,16 +1203,15 @@ function renderizarItemPlano(item) {
       botao.addEventListener("click", () => irParaAchado(id));
       return botao;
     });
-
   return el("li", { classe: "item-plano" }, [
     caixa,
-    el("div", { classe: "item-plano-corpo" }, [
-      el("label", { for: idCaixa, classe: "item-plano-prova", texto: item.prova }),
-      item.finalidade ? el("p", { classe: "item-plano-finalidade", texto: item.finalidade }) : null,
-      item.como_obter
-        ? el("p", { classe: "item-plano-obter" }, [el("strong", { texto: "Como obter: " }), document.createTextNode(item.como_obter)])
-        : null,
-      vinculos.length ? el("div", { classe: "item-plano-vinculos" }, [el("span", { texto: "Resolve:" }), ...vinculos]) : null,
+    el("details", { classe: "item-plano-corpo recolhivel" }, [
+      el("summary", { classe: "item-plano-resumo" }, [el("span", { classe: "item-plano-prova", texto: item.prova }), iconeAbrir()]),
+      el("div", { classe: "item-plano-detalhes" }, [
+        item.finalidade ? el("p", { classe: "item-plano-finalidade", texto: item.finalidade }) : null,
+        item.como_obter ? el("p", { classe: "item-plano-obter" }, [el("strong", { texto: "Como obter: " }), document.createTextNode(item.como_obter)]) : null,
+        vinculos.length ? el("div", { classe: "item-plano-vinculos" }, [el("span", { texto: "Resolve:" }), ...vinculos]) : null,
+      ]),
     ]),
   ]);
 }
@@ -1189,35 +1219,38 @@ function renderizarItemPlano(item) {
 function renderizarPlano(itens) {
   const container = $("plano-de-provas");
   container.replaceChildren();
-
+  document.querySelector('.controles-recolher[data-alvo="plano-de-provas"]').hidden = !Array.isArray(itens) || itens.length === 0;
   if (!Array.isArray(itens)) {
     $("contador-plano").textContent = "";
     $("progresso-plano").textContent = "";
-    container.appendChild(
-      el("p", { classe: "sem-achados", texto: "Não foi possível montar o plano de provas desta vez. Os demais resultados do relatório continuam válidos." })
-    );
+    container.appendChild(el("p", { classe: "sem-achados", texto: "Não foi possível montar o plano de provas desta vez. O restante do relatório continua válido." }));
     return;
   }
-
   $("contador-plano").textContent = itens.length ? String(itens.length) : "";
-  if (!itens.length) {
-    container.appendChild(el("p", { classe: "sem-achados", texto: "Nenhuma prova adicional foi sugerida para este caso." }));
-  }
+  if (!itens.length) container.appendChild(el("p", { classe: "sem-achados", texto: "Nenhuma prova adicional foi sugerida." }));
+  let primeira = true;
   PRIORIDADES.forEach(([chave, titulo]) => {
     const doGrupo = itens.filter((item) => item.prioridade === chave);
     if (!doGrupo.length) return;
-    const idTitulo = `plano-${chave}`;
     container.appendChild(
-      el("section", { classe: `plano-grupo prioridade-${chave}`, "aria-labelledby": idTitulo }, [
-        el("h4", { id: idTitulo, classe: "plano-grupo-titulo", texto: `${titulo} (${doGrupo.length})` }),
-        el("ul", { classe: "plano-lista" }, doGrupo.map(renderizarItemPlano)),
-      ])
+      criarSecaoRecolhivel({
+        id: `plano-${chave}`,
+        nivel: "h4",
+        titulo,
+        contagem: doGrupo.length,
+        classe: `plano-grupo prioridade-${chave}`,
+        aberta: primeira,
+        conteudo: el("ul", { classe: "plano-lista" }, doGrupo.map(renderizarItemPlano)),
+      })
     );
+    primeira = false;
   });
   atualizarProgressoPlano();
 }
 
-/* ---------- simulação de audiência ---------- */
+/* ==========================================================================
+   Simulação de audiência em formato de chat (ADR-018)
+   ========================================================================== */
 
 const AVALIACOES = {
   convincente: { rotulo: "Resposta convincente", classe: "etiqueta-fato" },
@@ -1225,7 +1258,7 @@ const AVALIACOES = {
   fragil: { rotulo: "Resposta frágil", classe: "etiqueta-fragil" },
 };
 
-const audiencia = { perguntas: [], indice: 0, perguntaAtual: "", ehReplica: false, resultados: [], enviando: false };
+const audiencia = { perguntas: [], indice: 0, perguntaAtual: "", ehReplica: false, resultados: [], enviando: false, sessao: 0 };
 
 const Reconhecimento = window.SpeechRecognition || window.webkitSpeechRecognition;
 let ditado = null;
@@ -1238,7 +1271,7 @@ function pararDitado() {
   }
   const botao = $("ditar-resposta");
   botao.setAttribute("aria-pressed", "false");
-  botao.textContent = "Falar a resposta";
+  botao.setAttribute("aria-label", "Falar a resposta");
 }
 
 function alternarDitado() {
@@ -1258,13 +1291,12 @@ function alternarDitado() {
       else provisorio += trecho;
     }
     campo.value = base + definitivo + provisorio;
+    campo.dispatchEvent(new Event("input"));
   };
   reconhecimento.onerror = (evento) => {
     pararDitado();
     if (evento.error === "not-allowed" || evento.error === "service-not-allowed") {
-      const erro = $("audiencia-erro");
-      erro.textContent = "Não foi possível usar o microfone. Permita o acesso ao microfone no navegador ou digite a resposta.";
-      erro.hidden = false;
+      mostrarErro("audiencia-erro", "Não foi possível usar o microfone. Permita o acesso no navegador ou digite a resposta.");
     }
   };
   reconhecimento.onend = () => { if (ditado === reconhecimento) pararDitado(); };
@@ -1272,30 +1304,84 @@ function alternarDitado() {
   reconhecimento.start();
   const botao = $("ditar-resposta");
   botao.setAttribute("aria-pressed", "true");
-  botao.textContent = "Parar de falar";
+  botao.setAttribute("aria-label", "Parar de falar");
 }
 
-function balao(autor, texto, classe) {
-  return el("div", { classe: `balao ${classe}` }, [el("span", { classe: "balao-autor", texto: autor }), el("p", { texto })]);
+const AUTORES_CHAT = {
+  contrario: { nome: "Advogado(a) da parte contrária", sigla: "PC" },
+  voce: { nome: "Você", sigla: "EU" },
+  adversia: { nome: "AdversIA", sigla: "IA" },
+};
+
+const horaAgora = () => new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
+const textoChat = (texto) => el("p", { classe: "chat-texto", texto });
+
+function mensagemChat(quem, conteudo, classeExtra = "") {
+  const autor = AUTORES_CHAT[quem];
+  return el("li", { classe: `chat-msg chat-msg-${quem} ${classeExtra}`.trim() }, [
+    quem === "voce" ? null : el("span", { classe: "chat-avatar", "aria-hidden": "true", texto: autor.sigla }),
+    el("div", { classe: "chat-bolha" }, [
+      el("p", { classe: "chat-autor" }, [el("span", { texto: autor.nome }), el("span", { classe: "chat-hora", texto: horaAgora() })]),
+      ...conteudo,
+    ]),
+  ]);
 }
 
-function mostrarPergunta(texto, ehReplica) {
+function mensagemSistema(texto) {
+  return el("li", { classe: "chat-msg chat-msg-sistema" }, [el("div", { classe: "chat-bolha" }, [textoChat(texto)])]);
+}
+
+function adicionarMensagem(item) {
+  const lista = $("chat-mensagens");
+  lista.appendChild(item);
+  lista.scrollTo({ top: lista.scrollHeight, behavior: movimentoReduzido() ? "auto" : "smooth" });
+  return item;
+}
+
+function indicadorDigitando(quem) {
+  const aviso = quem === "adversia" ? "A AdversIA está avaliando a resposta." : `${AUTORES_CHAT[quem].nome} está digitando.`;
+  return el("li", { classe: `chat-msg chat-msg-${quem} chat-digitando` }, [
+    el("span", { classe: "chat-avatar", "aria-hidden": "true", texto: AUTORES_CHAT[quem].sigla }),
+    el("div", { classe: "chat-bolha", "aria-hidden": "true" }, [el("i"), el("i"), el("i")]),
+    el("span", { classe: "visualmente-oculto", texto: aviso }),
+  ]);
+}
+
+// Mostra "digitando…" por um instante. Devolve false se a simulação foi recomeçada nesse meio-tempo.
+async function simularDigitacao(quem, ms) {
+  const sessao = audiencia.sessao;
+  const indicador = adicionarMensagem(indicadorDigitando(quem));
+  await esperar(movimentoReduzido() ? 150 : ms);
+  indicador.remove();
+  return sessao === audiencia.sessao;
+}
+
+async function mostrarPergunta(texto, ehReplica, focar = false) {
   audiencia.perguntaAtual = texto;
   audiencia.ehReplica = ehReplica;
   const posicao = `pergunta ${audiencia.indice + 1} de ${audiencia.perguntas.length}`;
-  $("audiencia-contador").textContent = ehReplica ? `Réplica · ${posicao}` : posicao.replace(/^p/, "P");
-  $("audiencia-pergunta").textContent = texto;
-  $("resposta-audiencia").value = "";
-  $("audiencia-erro").hidden = true;
-  $("audiencia-form").hidden = false;
+  $("chat-status").textContent = ehReplica ? `Réplica · ${posicao}` : posicao.replace(/^p/, "P");
+  $("audiencia-form").hidden = true;
+  // A réplica já apareceu na conversa logo depois da avaliação.
+  if (!ehReplica) {
+    if (!(await simularDigitacao("contrario", 1100))) return;
+    adicionarMensagem(mensagemChat("contrario", [textoChat(texto)]));
+  }
+  prepararCompositor(ehReplica, focar);
+}
+
+function prepararCompositor(ehReplica, focar) {
+  const campo = $("resposta-audiencia");
+  campo.value = "";
+  campo.style.height = "";
+  esconderErro("audiencia-erro");
   $("pular-pergunta").textContent = ehReplica ? "Pular réplica" : "Pular pergunta";
 
-  // Na demonstração, a pessoa escolhe entre respostas preparadas; com a chave, responde livremente.
+  // Na demonstração, a pessoa escolhe entre respostas preparadas; na análise real, escreve ou fala.
   const demonstracao = !contextoReal;
   const bloco = demonstracao && !ehReplica && casoDemo ? casoDemo.audiencia[audiencia.indice] : null;
   $("audiencia-opcoes").hidden = !demonstracao;
   $("audiencia-livre").hidden = demonstracao;
-  $("enviar-resposta").hidden = demonstracao;
   $("ditar-resposta").hidden = demonstracao || !Reconhecimento;
   $("audiencia-opcoes-lista").replaceChildren(
     ...(bloco ? bloco.respostas : []).map((opcao) => {
@@ -1307,37 +1393,40 @@ function mostrarPergunta(texto, ehReplica) {
       return botao;
     })
   );
+  $("audiencia-form").hidden = false;
+  if (focar) {
+    const alvo = demonstracao ? document.querySelector(".opcao-resposta") : campo;
+    if (alvo) alvo.focus({ preventScroll: true });
+  }
 }
 
 async function escolherRespostaDemo(opcao) {
   if (audiencia.enviando) return;
   audiencia.enviando = true;
-  document.querySelectorAll(".opcao-resposta").forEach((botao) => { botao.disabled = true; });
-  $("rotulo-opcoes").textContent = "Avaliando a resposta…";
+  $("audiencia-form").hidden = true;
+  adicionarMensagem(mensagemChat("voce", [textoChat(opcao.texto)]));
   anunciar("Avaliando a resposta.");
-  await esperar(movimentoReduzido() ? 200 : 1400);
-  $("rotulo-opcoes").textContent = "Escolha uma resposta para ver como ela seria avaliada";
+  const continua = await simularDigitacao("adversia", 1500);
   audiencia.enviando = false;
-  registrarRodada(opcao.texto, opcao.avaliacao);
+  if (continua) registrarRodada(opcao.avaliacao);
 }
 
 function prepararAudiencia(perguntas) {
   pararDitado();
+  audiencia.sessao += 1;
   audiencia.perguntas = perguntas;
   audiencia.indice = 0;
   audiencia.resultados = [];
-  $("audiencia-transcricao").replaceChildren();
+  audiencia.enviando = false;
+  $("chat-mensagens").replaceChildren();
+  $("audiencia-form").hidden = true;
   $("contador-audiencia").textContent = perguntas.length ? String(perguntas.length) : "";
-  $("audiencia-fim").hidden = true;
   if (!perguntas.length) {
-    $("audiencia-form").hidden = true;
-    $("audiencia-fim-titulo").textContent = "Sem perguntas para simular";
-    $("audiencia-fim-resumo").textContent = "Este relatório não trouxe perguntas difíceis para a simulação.";
-    $("recomecar-audiencia").hidden = true;
-    $("audiencia-fim").hidden = false;
+    $("chat-status").textContent = "Sem perguntas";
+    adicionarMensagem(mensagemSistema("Este relatório não trouxe perguntas difíceis para a simulação."));
     return;
   }
-  $("recomecar-audiencia").hidden = false;
+  adicionarMensagem(mensagemSistema(`Audiência simulada: ${perguntas.length} ${plural(perguntas.length, ["pergunta", "perguntas"])}. Responda como faria diante do juiz.`));
   mostrarPergunta(perguntas[0], false);
 }
 
@@ -1347,9 +1436,7 @@ function avancarPergunta() {
     encerrarAudiencia();
     return;
   }
-  mostrarPergunta(audiencia.perguntas[audiencia.indice], false);
-  $("audiencia-form").scrollIntoView({ block: "nearest", behavior: movimentoReduzido() ? "auto" : "smooth" });
-  $("resposta-audiencia").focus({ preventScroll: true });
+  mostrarPergunta(audiencia.perguntas[audiencia.indice], false, true);
 }
 
 function encerrarAudiencia() {
@@ -1358,164 +1445,144 @@ function encerrarAudiencia() {
   const respondidas = audiencia.resultados.filter(Boolean);
   const contar = (tipo) => respondidas.filter((resultado) => resultado === tipo).length;
   const partes = [
-    ["convincente", ["resposta convincente", "respostas convincentes"]],
-    ["parcial", ["resposta que convence em parte", "respostas que convencem em parte"]],
-    ["fragil", ["resposta frágil", "respostas frágeis"]],
+    ["convincente", ["convincente", "convincentes"]],
+    ["parcial", ["convence em parte", "convencem em parte"]],
+    ["fragil", ["frágil", "frágeis"]],
   ]
     .map(([tipo, rotulos]) => [contar(tipo), rotulos])
     .filter(([total]) => total)
     .map(([total, rotulos]) => `${total} ${plural(total, rotulos)}`);
+  const resumo = respondidas.length ? `Resultado: ${partes.join(", ")}.` : "Nenhuma pergunta foi respondida.";
 
-  $("audiencia-fim-titulo").textContent = "Simulação concluída";
-  $("audiencia-fim-resumo").textContent = respondidas.length
-    ? `Resultado: ${partes.join(", ")}.${contar("fragil") ? " Vale revisar as respostas frágeis antes da audiência." : ""}`
-    : "Nenhuma pergunta foi respondida.";
-  $("audiencia-fim").hidden = false;
-  $("audiencia-fim-titulo").focus();
+  $("chat-status").textContent = "Simulação concluída";
+  const recomecar = el("button", { type: "button", classe: "botao-secundario", texto: "Recomeçar simulação" });
+  recomecar.addEventListener("click", () => prepararAudiencia(audiencia.perguntas.slice()));
+  const fim = adicionarMensagem(
+    el("li", { classe: "chat-msg chat-msg-sistema chat-fim" }, [
+      el("div", { classe: "chat-bolha" }, [el("p", { classe: "chat-fim-titulo", texto: "Simulação concluída", tabindex: "-1" }), textoChat(resumo), recomecar]),
+    ])
+  );
+  fim.querySelector(".chat-fim-titulo").focus({ preventScroll: true });
+  anunciar(`Simulação concluída. ${resumo}`);
 }
 
-function renderizarAvaliacao(avaliacao, tipo) {
+function mensagemAvaliacao(avaliacao, tipo) {
   const bloco = (titulo, itens, classe) =>
-    itens && itens.length
-      ? el("div", { classe: `avaliacao-bloco ${classe}` }, [el("h5", { texto: titulo }), el("ul", {}, itens.map((texto) => el("li", { texto })))])
-      : null;
+    itens && itens.length ? el("div", { classe: `avaliacao-bloco ${classe}` }, [el("h5", { texto: titulo }), el("ul", {}, itens.map((texto) => el("li", { texto })))]) : null;
+  const colunas = [bloco("O que funcionou", avaliacao.pontos_fortes, "bloco-forte"), bloco("O que ficou frágil", avaliacao.pontos_frageis, "bloco-fragil")].filter(Boolean);
   const apoio = avaliacao.apoio_nos_documentos || [];
-
-  return el("div", { classe: "avaliacao", tabindex: "-1" }, [
-    el("div", { classe: "avaliacao-topo" }, [el("span", { classe: `etiqueta ${tipo.classe}`, texto: tipo.rotulo })]),
-    avaliacao.resumo ? el("p", { classe: "avaliacao-resumo", texto: avaliacao.resumo }) : null,
-    el("div", { classe: "avaliacao-colunas" }, [
-      bloco("O que funcionou", avaliacao.pontos_fortes, "bloco-forte"),
-      bloco("O que ficou frágil", avaliacao.pontos_frageis, "bloco-fragil"),
-    ]),
-    avaliacao.sugestao
-      ? el("div", { classe: "avaliacao-sugestao" }, [el("h5", { texto: "Como fortalecer a resposta" }), el("p", { texto: avaliacao.sugestao })])
-      : null,
-    apoio.length
-      ? el("div", { classe: "origens" }, [
-          el("p", { classe: "origens-titulo", texto: "Onde está nos documentos" }),
-          el("ul", {}, apoio.map((citacao) =>
-            el("li", { classe: "origem" }, [
-              el("span", { classe: "origem-linha" }, [el("span", { classe: "origem-documento", texto: citacao.documento }), seloConferencia(citacao.conferido)]),
-              citacao.trecho ? el("span", { classe: "origem-trecho", texto: `“${citacao.trecho}”` }) : null,
-            ])
-          )),
-        ])
-      : null,
-    avaliacao.replica ? balao("Réplica da parte contrária", avaliacao.replica, "balao-contrario balao-replica") : null,
-    el("div", { classe: "avaliacao-acoes" }),
-  ]);
+  const detalhes = colunas.length || apoio.length
+    ? el("details", { classe: "chat-detalhes" }, [
+        el("summary", { texto: "Ver avaliação completa" }),
+        el("div", { classe: "chat-detalhes-corpo" }, [colunas.length ? el("div", { classe: "avaliacao-colunas" }, colunas) : null, apoio.length ? listaDeOrigens(apoio) : null]),
+      ])
+    : null;
+  return mensagemChat("adversia", [
+    el("span", { classe: `etiqueta ${tipo.classe}`, texto: tipo.rotulo }),
+    avaliacao.resumo ? textoChat(avaliacao.resumo) : null,
+    avaliacao.sugestao ? el("div", { classe: "avaliacao-sugestao" }, [el("h5", { texto: "Como fortalecer" }), el("p", { texto: avaliacao.sugestao })]) : null,
+    detalhes,
+  ], "chat-msg-avaliacao");
 }
 
-function registrarRodada(resposta, avaliacao) {
+async function registrarRodada(avaliacao) {
   audiencia.resultados[audiencia.indice] = avaliacao.avaliacao;
   const tipo = AVALIACOES[avaliacao.avaliacao] || AVALIACOES.parcial;
-  const cartao = renderizarAvaliacao(avaliacao, tipo);
-  const rodada = el("article", { classe: "rodada" }, [
-    balao("Advogado(a) da parte contrária", audiencia.perguntaAtual, "balao-contrario"),
-    balao("Você", resposta, "balao-voce"),
-    cartao,
-  ]);
-  $("audiencia-transcricao").appendChild(rodada);
-  $("audiencia-form").hidden = true;
-
-  const acoes = cartao.querySelector(".avaliacao-acoes");
-  const ultima = audiencia.indice >= audiencia.perguntas.length - 1;
-  if (avaliacao.replica && contextoReal) {
-    const responder = el("button", { type: "button", classe: "botao-secundario", texto: "Responder à réplica" });
-    responder.addEventListener("click", () => {
-      acoes.replaceChildren();
-      mostrarPergunta(avaliacao.replica, true);
-      $("resposta-audiencia").focus();
-    });
-    acoes.appendChild(responder);
-  }
-  const seguir = el("button", {
-    type: "button",
-    classe: avaliacao.replica && contextoReal ? "botao-texto" : "botao-secundario",
-    texto: ultima ? "Encerrar simulação" : "Próxima pergunta",
-  });
-  seguir.addEventListener("click", () => {
-    acoes.replaceChildren();
-    avancarPergunta();
-  });
-  acoes.appendChild(seguir);
-
-  cartao.scrollIntoView({ block: "start", behavior: movimentoReduzido() ? "auto" : "smooth" });
-  cartao.focus({ preventScroll: true });
+  adicionarMensagem(mensagemAvaliacao(avaliacao, tipo));
   anunciar(`${tipo.rotulo}. ${avaliacao.resumo || ""}`);
+  if (avaliacao.replica) {
+    if (!(await simularDigitacao("contrario", 1200))) return;
+    adicionarMensagem(mensagemChat("contrario", [el("span", { classe: "chat-rotulo-replica", texto: "Réplica" }), textoChat(avaliacao.replica)], "chat-msg-replica"));
+  }
+  adicionarAcoesDaRodada(avaliacao);
+}
+
+function adicionarAcoesDaRodada(avaliacao) {
+  const ultima = audiencia.indice >= audiencia.perguntas.length - 1;
+  const podeResponderReplica = Boolean(avaliacao.replica && contextoReal);
+  const acoes = el("li", { classe: "chat-acoes" });
+  const botao = (texto, classe, aoClicar) => {
+    const b = el("button", { type: "button", classe, texto });
+    b.addEventListener("click", () => { acoes.remove(); aoClicar(); });
+    return b;
+  };
+  if (podeResponderReplica) acoes.appendChild(botao("Responder à réplica", "botao-secundario", () => mostrarPergunta(avaliacao.replica, true, true)));
+  acoes.appendChild(botao(ultima ? "Encerrar simulação" : "Próxima pergunta", podeResponderReplica ? "botao-texto" : "botao-principal", avancarPergunta));
+  adicionarMensagem(acoes);
+  acoes.querySelector("button").focus({ preventScroll: true });
 }
 
 async function enviarRespostaAudiencia(evento) {
   evento.preventDefault();
   if (audiencia.enviando) return;
   pararDitado();
-  const erro = $("audiencia-erro");
-  const resposta = $("resposta-audiencia").value.trim();
+  const campo = $("resposta-audiencia");
+  const resposta = campo.value.trim();
   if (!resposta) {
-    erro.textContent = "Escreva ou fale a sua resposta antes de enviar.";
-    erro.hidden = false;
-    $("resposta-audiencia").focus();
+    mostrarErro("audiencia-erro", "Escreva ou fale a sua resposta antes de enviar.", campo);
     return;
   }
   if (!contextoReal) {
-    erro.textContent = "Faça uma análise com documentos (área da gestão) para responder com as suas próprias palavras.";
-    erro.hidden = false;
+    mostrarErro("audiencia-erro", "Para responder com as suas palavras, use a análise com documentos.");
     return;
   }
 
   audiencia.enviando = true;
-  erro.hidden = true;
-  const botao = $("enviar-resposta");
-  botao.disabled = true;
-  botao.textContent = "Avaliando a sua resposta…";
+  const sessao = audiencia.sessao;
+  esconderErro("audiencia-erro");
+  $("audiencia-form").hidden = true;
+  const minhaMensagem = adicionarMensagem(mensagemChat("voce", [textoChat(resposta)]));
+  const indicador = adicionarMensagem(indicadorDigitando("adversia"));
   anunciar("Avaliando a sua resposta.");
   try {
     let respostaHttp;
     try {
       respostaHttp = await fetch("api/audiencia", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "X-Anthropic-Key": contextoReal.chave,
-          "X-Codigo-Gestao": contextoReal.codigo,
-        },
-        body: JSON.stringify({
-          documentos: contextoReal.documentos,
-          tese: contextoReal.tese,
-          pergunta: audiencia.perguntaAtual,
-          resposta,
-        }),
+        headers: { "Content-Type": "application/json", "X-Anthropic-Key": contextoReal.chave, "X-Codigo-Gestao": contextoReal.codigo },
+        body: JSON.stringify({ documentos: contextoReal.documentos, tese: contextoReal.tese, pergunta: audiencia.perguntaAtual, resposta }),
       });
     } catch {
       throw new Error(MENSAGEM_SEM_CONEXAO);
     }
     const dados = await lerJson(respostaHttp);
     if (!respostaHttp.ok) throw new Error(dados.erro || MENSAGEM_FALHA_PADRAO);
-    registrarRodada(resposta, dados);
+    indicador.remove();
+    if (sessao === audiencia.sessao) registrarRodada(dados);
   } catch (falha) {
-    erro.textContent = falha.message || MENSAGEM_FALHA_PADRAO;
-    erro.hidden = false;
+    indicador.remove();
+    if (sessao !== audiencia.sessao) return;
+    // A resposta volta para a caixa de texto, para a pessoa tentar de novo sem digitar tudo.
+    minhaMensagem.remove();
+    $("audiencia-form").hidden = false;
+    campo.value = resposta;
+    mostrarErro("audiencia-erro", falha.message || MENSAGEM_FALHA_PADRAO, campo);
   } finally {
     audiencia.enviando = false;
-    botao.disabled = false;
-    botao.textContent = "Enviar resposta";
   }
 }
 
 function configurarAudiencia() {
+  const campo = $("resposta-audiencia");
   $("audiencia-form").addEventListener("submit", enviarRespostaAudiencia);
-  $("pular-pergunta").addEventListener("click", () => { pararDitado(); avancarPergunta(); });
-  $("recomecar-audiencia").addEventListener("click", () => {
-    prepararAudiencia(audiencia.perguntas.slice());
-    $("resposta-audiencia").focus();
+  campo.addEventListener("input", () => {
+    campo.style.height = "auto";
+    campo.style.height = `${Math.min(campo.scrollHeight, 160)}px`;
   });
-
-  if (Reconhecimento) {
-    $("ditar-resposta").hidden = false;
-    $("ditar-resposta").addEventListener("click", alternarDitado);
-  }
-
+  campo.addEventListener("keydown", (evento) => {
+    if (evento.key === "Enter" && !evento.shiftKey && !evento.isComposing) {
+      evento.preventDefault();
+      $("audiencia-form").requestSubmit();
+    }
+  });
+  $("pular-pergunta").addEventListener("click", () => {
+    if (audiencia.enviando) return;
+    pararDitado();
+    $("audiencia-form").hidden = true;
+    adicionarMensagem(mensagemSistema(audiencia.ehReplica ? "Você pulou a réplica." : "Você pulou esta pergunta."));
+    avancarPergunta();
+  });
+  if (Reconhecimento) $("ditar-resposta").addEventListener("click", alternarDitado);
   if ("speechSynthesis" in window) {
     $("ouvir-pergunta").addEventListener("click", () => {
       const sintese = window.speechSynthesis;
@@ -1537,8 +1604,8 @@ let lendo = false;
 
 function textoParaLeitura() {
   const partes = [$("titulo-relatorio").textContent, $("resumo-caso").textContent, `Tese analisada: ${$("tese-analisada").textContent}`];
-  document.querySelectorAll("#grupos .grupo").forEach((grupo) => {
-    partes.push(grupo.querySelector("h3").textContent);
+  document.querySelectorAll("#grupos .secao-recolhivel").forEach((grupo) => {
+    partes.push(grupo.querySelector(".secao-titulo").textContent);
     grupo.querySelectorAll(".achado").forEach((achado, i) => {
       partes.push(`${i + 1}. ${achado.querySelector(".achado-texto").textContent} (${achado.querySelector(".etiqueta").textContent}).`);
     });
@@ -1551,7 +1618,8 @@ function pararLeitura() {
   lendo = false;
   const botao = $("ouvir-relatorio");
   botao.setAttribute("aria-pressed", "false");
-  botao.textContent = "Ouvir relatório";
+  botao.setAttribute("aria-label", "Ouvir relatório");
+  botao.dataset.dica = "Ouvir";
 }
 
 function alternarLeitura() {
@@ -1560,17 +1628,15 @@ function alternarLeitura() {
   const vozes = sintese.getVoices();
   const voz = vozes.find((v) => v.lang === "pt-BR") || vozes.find((v) => v.lang && v.lang.startsWith("pt"));
   const partes = textoParaLeitura();
-
   lendo = true;
   const botao = $("ouvir-relatorio");
   botao.setAttribute("aria-pressed", "true");
-  botao.textContent = "Parar leitura";
-
+  botao.setAttribute("aria-label", "Parar leitura");
+  botao.dataset.dica = "Parar";
   partes.forEach((texto, i) => {
     const fala = new SpeechSynthesisUtterance(texto);
     fala.lang = "pt-BR";
     if (voz) fala.voice = voz;
-    fala.rate = 1;
     if (i === partes.length - 1) fala.onend = pararLeitura;
     sintese.speak(fala);
   });
@@ -1581,21 +1647,39 @@ function alternarLeitura() {
    ========================================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
+  preencherIcones();
   configurarPainelAcessibilidade();
+  configurarDialogos();
   configurarEnvioDeArquivos();
-  configurarModo();
-  configurarGestao();
-  carregarExemplos();
-  animarTitulo();
-  digitarExemploDaTese();
-  $("tese").addEventListener("focus", pararDigitacao);
   configurarAbas();
   configurarAudiencia();
+  configurarControlesRecolher();
+  acompanharAlturaDoTopo();
+  carregarExemplos();
+  animarTitulo();
 
-  $("form-analise").addEventListener("submit", analisar);
-  $("botao-tentar-de-novo").addEventListener("click", () => { mostrarTela("formulario"); $("botao-analisar").focus(); });
-  $("nova-analise").addEventListener("click", () => { pararLeitura(); mostrarTela("formulario"); $("tese").focus(); });
+  $("link-inicio").addEventListener("click", (evento) => {
+    evento.preventDefault();
+    pararLeitura();
+    trocarTela("inicio");
+  });
+  $("comecar-demo").addEventListener("click", irParaCasos);
+  document.querySelectorAll("[data-ir]").forEach((botao) => botao.addEventListener("click", () => trocarTela(botao.dataset.ir)));
+  $("botao-gestao").addEventListener("click", abrirAreaGestao);
+  $("form-gestao").addEventListener("submit", entrarGestao);
+  $("analisar-caso").addEventListener("click", analisarCasoDemo);
+  $("ver-documentos").addEventListener("click", mostrarDocumentosDoCaso);
+  $("form-analise").addEventListener("submit", analisarDocumentos);
+  $("abrir-legenda").addEventListener("click", () => abrirDialogo($("dialogo-legenda"), $("dialogo-legenda").querySelector("[data-fechar]")));
+  $("botao-tentar-de-novo").addEventListener("click", () => (modo === "chave" ? irParaDocumentos() : irParaCasos()));
+  $("nova-analise").addEventListener("click", () => {
+    pararLeitura();
+    if (modo === "chave") irParaDocumentos();
+    else irParaCasos();
+  });
   $("imprimir-relatorio").addEventListener("click", () => window.print());
+  window.addEventListener("beforeprint", prepararImpressao);
+  window.addEventListener("afterprint", concluirImpressao);
 
   if ("speechSynthesis" in window) {
     $("ouvir-relatorio").addEventListener("click", alternarLeitura);

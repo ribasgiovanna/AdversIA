@@ -217,30 +217,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "FGTS é diferente, todo mundo sabe que é pessoal.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta repete a conclusão sem explicar a diferença que a pergunta pede.",
-      "pontos_fortes": [
-       "Coerente com a posição defendida."
-      ],
-      "pontos_frageis": [
-       "Não apresenta nenhum critério.",
-       "\"Todo mundo sabe\" não é argumento."
-      ],
-      "sugestao": "Explique a característica concreta do FGTS que o documento destaca, o vínculo ao trabalhador, e reconheça que a outra parte vai questionar esse ponto.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "pedido_exclusao_fgts.txt",
-        "trecho": "O FGTS está vinculado ao trabalhador individualmente",
-        "conferido": true
-       }
-      ],
-      "replica": "E o salário também não está vinculado ao trabalhador?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "O FGTS fica vinculado ao trabalhador e não fica à disposição livre do casal, ao contrário do salário que entra na conta e é usado pela família. Por isso não seria patrimônio comum disponível para partilha.",
      "avaliacao": {
       "avaliacao": "parcial",
@@ -263,6 +239,31 @@
       ],
       "replica": "Então, quando houver saque, a outra parte teria direito a uma parte?"
      }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Salário é renda que o casal usa; o FGTS é uma reserva vinculada que só fica à disposição do trabalhador em situações específicas, como a demissão. Enquanto está na conta vinculada, nem o próprio titular é dono dele de verdade.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta desenvolve bem a diferença, mas termina com uma afirmação absoluta fácil de contestar.",
+      "pontos_fortes": [
+       "Explica a diferença de disponibilidade.",
+       "É coerente com a natureza vinculada descrita no documento."
+      ],
+      "pontos_frageis": [
+       "\"Nem o titular é dono\" é exagerado.",
+       "Não enfrenta o fato de o saldo integrar o patrimônio do trabalhador."
+      ],
+      "sugestao": "Evite afirmações absolutas; fique na natureza pessoal e vinculada descrita no documento.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_exclusao_fgts.txt",
+        "trecho": "O FGTS está vinculado ao trabalhador individualmente",
+        "conferido": true
+       }
+      ],
+      "replica": "Se ninguém é dono, por que o saldo vai para o trabalhador quando ele é demitido?"
+     }
     }
    ]
   },
@@ -271,24 +272,25 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Foi quase tudo antes do casamento.",
+     "texto": "Ainda não sabemos, e isso muda o tamanho da discussão, não o argumento. O extrato analítico separa os depósitos por data e será juntado. Mesmo a parte depositada durante o casamento, pela tese defendida, fica fora da partilha por ser vinculada ao trabalhador.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta contradiz o próprio documento, que diz que os valores foram acumulados durante o casamento.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "O documento afirma o acúmulo durante o casamento.",
-       "Nenhum extrato sustenta a afirmação."
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta separa o dado que falta do argumento central e mostra que a tese se sustenta qualquer que seja a divisão dos depósitos.",
+      "pontos_fortes": [
+       "Não afirma o que não sabe.",
+       "Indica a prova certa.",
+       "Mantém a coerência da tese."
       ],
-      "sugestao": "Não afirme proporções sem o extrato analítico; indique que ele vai separar os períodos.",
+      "pontos_frageis": [],
+      "sugestao": "Traga o extrato analítico já separado por período.",
       "apoio_nos_documentos": [
        {
         "documento": "pedido_exclusao_fgts.txt",
-        "trecho": "Durante o casamento, um dos cônjuges acumulou valores em conta vinculada ao FGTS",
+        "trecho": "um dos cônjuges acumulou valores em conta vinculada ao FGTS",
         "conferido": true
        }
       ],
-      "replica": "Então por que o próprio pedido diz que os valores foram acumulados durante o casamento?"
+      "replica": ""
      }
     },
     {
@@ -322,28 +324,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Isso não importa para a discussão.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta descarta um ponto que pode mudar completamente a discussão sobre a partilha.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "O uso do FGTS em um bem comum é relevante.",
-       "Pode sugerir que há algo a esconder."
-      ],
-      "sugestao": "Responda com base no histórico de saques e diga que a questão será esclarecida por ele.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "pedido_exclusao_fgts.txt",
-        "trecho": "conta vinculada ao FGTS",
-        "conferido": true
-       }
-      ],
-      "replica": "Então houve uso na compra de imóvel?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "Os documentos não mencionam uso do FGTS na compra de bens. O histórico de saques vai esclarecer isso, e, se houve uso, a discussão passa a ser sobre esse bem, e não sobre o saldo que ficou na conta.",
      "avaliacao": {
       "avaliacao": "convincente",
@@ -358,6 +338,136 @@
        {
         "documento": "pedido_exclusao_fgts.txt",
         "trecho": "O FGTS está vinculado ao trabalhador individualmente",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Não foi usado. O saldo ficou intacto na conta vinculada durante todo o casamento, e é por isso que manteve a natureza pessoal.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é direta e coerente com a tese, mas afirma um fato que nenhum documento mostra.",
+      "pontos_fortes": [
+       "Liga a ausência de uso à natureza pessoal.",
+       "Responde à pergunta sem rodeios."
+      ],
+      "pontos_frageis": [
+       "Não há histórico de saques nos autos.",
+       "Se houver saque, a resposta compromete a credibilidade."
+      ],
+      "sugestao": "Não afirme que não houve uso: peça o histórico de saques.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_exclusao_fgts.txt",
+        "trecho": "O dinheiro possui natureza pessoal",
+        "conferido": true
+       }
+      ],
+      "replica": "Onde está o histórico de saques que comprova que o saldo nunca foi movimentado?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Se o trabalhador pudesse sacar o FGTS amanhã, o dinheiro deixaria de ser pessoal?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Não. Mesmo sacado, o FGTS continua ligado ao trabalho de uma só pessoa, e por isso mantém natureza pessoal.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é coerente com a tese, mas leva o argumento a um ponto difícil de sustentar.",
+      "pontos_fortes": [
+       "Mantém a linha do documento."
+      ],
+      "pontos_frageis": [
+       "Não explica por que o salário, também ligado ao trabalho de uma pessoa, entra na partilha.",
+       "Estende a natureza pessoal ao dinheiro já sacado."
+      ],
+      "sugestao": "Concentre o argumento na conta vinculada, e não no dinheiro depois do saque.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_exclusao_fgts.txt",
+        "trecho": "O dinheiro possui natureza pessoal.",
+        "conferido": true
+       }
+      ],
+      "replica": "Então o salário guardado na poupança também seria pessoal?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Enquanto o dinheiro fica na conta vinculada, ele não está à disposição do casal, e o saque só é possível em situações específicas. É essa indisponibilidade que sustenta o pedido de exclusão.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta desenvolve o argumento da disponibilidade, mas não diz o que acontece depois do saque.",
+      "pontos_fortes": [
+       "Usa a ideia de patrimônio disponível do documento."
+      ],
+      "pontos_frageis": [
+       "Indisponibilidade temporária não prova que o valor não é comum.",
+       "Deixa aberta a situação após o saque."
+      ],
+      "sugestao": "Antecipe a objeção sobre o saque e diga como o pedido a enfrenta.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_exclusao_fgts.txt",
+        "trecho": "não deveria ser tratado como patrimônio comum disponível para partilha",
+        "conferido": true
+       }
+      ],
+      "replica": "E quando o saque acontecer, o valor passa a ser dividido?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "O outro cônjuge também tem conta de FGTS? Ela ficaria fora da partilha pelo mesmo critério?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Não sabemos, mas isso não muda o pedido: o que se discute é a conta de quem acumulou os valores durante o casamento.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta mantém o foco, mas evita a pergunta sobre coerência e perde a chance de mostrar reciprocidade.",
+      "pontos_fortes": [
+       "Delimita o objeto da discussão."
+      ],
+      "pontos_frageis": [
+       "Evita a questão de coerência.",
+       "Pode parecer que o critério só vale para um lado."
+      ],
+      "sugestao": "Diga expressamente que o mesmo critério vale para os dois.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_exclusao_fgts.txt",
+        "trecho": "um dos cônjuges acumulou valores em conta vinculada ao FGTS",
+        "conferido": true
+       }
+      ],
+      "replica": "Se a outra parte tivesse FGTS, o senhor também pediria para excluir?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Os documentos não informam. Se tiver, o critério é o mesmo: cada um fica com o próprio FGTS. O pedido não busca vantagem, e sim uma regra que vale para os dois.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta demonstra coerência e reciprocidade, o que afasta a impressão de pedido oportunista.",
+      "pontos_fortes": [
+       "Não afirma o que não sabe.",
+       "Aplica o critério aos dois cônjuges.",
+       "Reforça a boa-fé."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Peça o extrato do FGTS do outro cônjuge para completar o quadro.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_exclusao_fgts.txt",
+        "trecho": "O FGTS está vinculado ao trabalhador individualmente.",
         "conferido": true
        }
       ],

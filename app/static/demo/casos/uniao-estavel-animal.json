@@ -300,28 +300,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Porque ele também adotou o cachorro, então tem que pagar.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta reconhece o vínculo de Felipe com Thor, o que enfraquece o pedido de ficar exclusivamente com o animal.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Admitir a adoção conjunta reforça o pedido de convivência de Felipe.",
-       "Não resolve a incoerência entre exclusividade e divisão de despesas."
-      ],
-      "sugestao": "Ajuste o pedido: se houver convivência, as despesas podem ser divididas na proporção do tempo de cada um.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "manifestacao_felipe.txt",
-        "trecho": "Felipe não concorda em pagar despesas de um animal que ficaria apenas com Renata",
-        "conferido": true
-       }
-      ],
-      "replica": "Então a senhora concorda que Felipe tenha convivência com Thor?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "Renata pode ajustar o pedido: se Thor ficar com ela e Felipe tiver convivência, as despesas podem ser divididas na proporção do tempo de cada um. O que ela não aceita é arcar sozinha com todos os custos de um animal adotado durante a união.",
      "avaliacao": {
       "avaliacao": "convincente",
@@ -342,6 +320,31 @@
       ],
       "replica": ""
      }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Porque Thor foi adotado durante a união e é responsabilidade dos dois, como um filho: quem não fica com ele contribui com as despesas.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta tem uma lógica intuitiva, mas a comparação com um filho é frágil e ignora o pedido de convivência de Felipe.",
+      "pontos_fortes": [
+       "Lembra que a adoção foi feita durante a união.",
+       "Justifica a divisão de custos."
+      ],
+      "pontos_frageis": [
+       "Comparar o animal a um filho abre espaço para contestação.",
+       "Não considera que Felipe pede convivência com Thor."
+      ],
+      "sugestao": "Evite comparar o animal a um filho; proponha divisão das despesas proporcional ao tempo de cada um.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_renata.txt",
+        "trecho": "adotaram juntos o cachorro Thor",
+        "conferido": true
+       }
+      ],
+      "replica": "O cachorro tem direito a pensão como um filho?"
+     }
     }
    ]
   },
@@ -350,28 +353,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Não importa o nome no papel, o cachorro é dela.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta desconsidera um documento que pode pesar e ainda afirma uma exclusividade que o próprio pedido não sustenta.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "O pedido de Renata diz que a adoção foi conjunta.",
-       "O termo pode ser relevante na decisão."
-      ],
-      "sugestao": "Reconheça o termo, se estiver no nome de Felipe, e destaque os cuidados diários comprovados.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "manifestacao_felipe.txt",
-        "trecho": "está em nome de Felipe",
-        "conferido": true
-       }
-      ],
-      "replica": "Mas o próprio pedido não diz que vocês adotaram juntos?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "O termo pode estar no nome de Felipe, mas a adoção foi feita pelos dois durante a união, e os cuidados diários de Renata serão demonstrados pelos registros do veterinário.",
      "avaliacao": {
       "avaliacao": "parcial",
@@ -393,6 +374,34 @@
       ],
       "replica": "E se o histórico mostrar Felipe nas consultas?"
      }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Em nome de Felipe, que também pagou a taxa e as primeiras vacinas, e Renata não nega. O termo registra quem assinou na ONG, não quem cuida. Desde 2020, os cuidados diários foram de Renata, e depois da separação Thor ficou com ela; Felipe não pede que ele volte, pede apenas convivência.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta reconhece o fato documental, mostra seus limites e usa o próprio pedido de Felipe para reforçar a posição de Renata.",
+      "pontos_fortes": [
+       "Não nega o que está no termo.",
+       "Separa titularidade de cuidado.",
+       "Aponta que Felipe só pede convivência."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Traga os registros do veterinário em nome de Renata.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "manifestacao_felipe.txt",
+        "trecho": "está em nome de Felipe, que pagou a taxa de adoção e as primeiras vacinas",
+        "conferido": true
+       },
+       {
+        "documento": "pedido_renata.txt",
+        "trecho": "Depois da separação, Thor ficou com Renata",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
     }
    ]
   },
@@ -401,24 +410,27 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Todo mundo sabe que aquele prédio proíbe cachorro.",
+     "texto": "O próprio Felipe confirma: ele diz que o condomínio permite apenas visitas de animais, e não moradia. Então não há onde Thor ficar com ele.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta não indica documento e se apoia em conhecimento geral, contra a afirmação expressa de Felipe.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Nenhum documento é indicado.",
-       "Felipe afirma que o condomínio permite visitas."
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta tenta usar a frase de Felipe contra ele, mas a distorce: visitas de animais são justamente o que ele pede.",
+      "pontos_fortes": [
+       "Tenta extrair uma admissão da manifestação.",
+       "Liga o ponto à viabilidade da convivência."
       ],
-      "sugestao": "Peça o regimento do condomínio antes de sustentar a restrição.",
+      "pontos_frageis": [
+       "Felipe pede convivência em fins de semana, que é compatível com visitas.",
+       "Nenhum regimento foi juntado."
+      ],
+      "sugestao": "Não use a frase dele contra ele; peça o regimento do condomínio.",
       "apoio_nos_documentos": [
        {
         "documento": "manifestacao_felipe.txt",
-        "trecho": "O condomínio onde mora hoje permite visitas de animais",
+        "trecho": "condomínio onde mora hoje permite visitas de animais",
         "conferido": true
        }
       ],
-      "replica": "E se o regimento permitir visitas?"
+      "replica": "Se o condomínio permite visitas de animais, o fim de semana com o pai não é justamente uma visita?"
      }
     },
     {
@@ -443,6 +455,112 @@
        }
       ],
       "replica": "E a convivência poderia acontecer fora do apartamento?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Quem pagou a taxa de adoção e as primeiras vacinas de Thor?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "As primeiras despesas foram em 2020. Desde então, quem levou Thor ao veterinário, pagou a ração e passeou com ele todos os dias foi Renata. Os recibos e o prontuário da clínica vão mostrar quem arcou com os cuidados ao longo dos anos.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta não disputa um pagamento pontual e desloca o foco para o cuidado contínuo, com prova indicada.",
+      "pontos_fortes": [
+       "Não nega o fato.",
+       "Foca no período longo.",
+       "Indica prontuário e recibos."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Peça o prontuário com a identificação de quem levava o animal.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_renata.txt",
+        "trecho": "Renata sempre foi a principal responsável pelos cuidados de Thor",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Foi Felipe, mas com dinheiro do casal, porque eles viviam em união estável.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta reconhece o pagamento, mas afirma a origem do dinheiro sem nenhum extrato.",
+      "pontos_fortes": [
+       "Não nega um fato verificável."
+      ],
+      "pontos_frageis": [
+       "A origem do dinheiro não está provada.",
+       "Admite um pagamento que reforça o vínculo dele."
+      ],
+      "sugestao": "Diga como a origem do dinheiro será demonstrada.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_renata.txt",
+        "trecho": "Renata e Felipe viveram em união estável de 04/2019 a 20/01/2025",
+        "conferido": true
+       }
+      ],
+      "replica": "Onde está o extrato mostrando que era dinheiro do casal?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Por que Felipe não pode ficar com Thor em fins de semana alternados, se o condomínio dele permite visitas de animais?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Renata aceita discutir a convivência, desde que o regimento do condomínio confirme a permissão e que as despesas sejam divididas na mesma proporção. O pedido de exclusividade foi feito quando se sabia que ele morava num prédio que não aceitava animais.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é conciliadora e coerente, mas cede o pedido principal de exclusividade.",
+      "pontos_fortes": [
+       "Explica a origem do pedido.",
+       "Liga convivência a divisão de despesas."
+      ],
+      "pontos_frageis": [
+       "Abre mão da exclusividade.",
+       "A informação do regimento ainda não foi verificada."
+      ],
+      "sugestao": "Apresente a convivência como pedido subsidiário.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_renata.txt",
+        "trecho": "Felipe mudou-se para um apartamento que não aceita animais.",
+        "conferido": true
+       }
+      ],
+      "replica": "Então o pedido de exclusividade não se sustenta mais?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Porque Thor está adaptado à rotina com Renata, e a mudança de ambiente a cada quinze dias pode prejudicar o bem-estar dele.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta invoca o bem-estar do animal, mas sem avaliação ou documento que o sustente.",
+      "pontos_fortes": [
+       "Traz um critério relevante."
+      ],
+      "pontos_frageis": [
+       "Nenhum documento trata do bem-estar de Thor.",
+       "Sem avaliação veterinária, é só uma opinião."
+      ],
+      "sugestao": "Se quiser usar esse argumento, peça uma avaliação veterinária.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_renata.txt",
+        "trecho": "passeava com ele todos os dias",
+        "conferido": true
+       }
+      ],
+      "replica": "Algum veterinário disse que as visitas fariam mal a Thor?"
      }
     }
    ]

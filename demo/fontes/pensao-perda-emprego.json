@@ -14,8 +14,14 @@
     "texto": "As partes divergem sobre quando os pagamentos a menor começaram. Marcos diz que só deixou de pagar o valor integral depois da demissão, a partir de abril de 2023; Juliana afirma que os depósitos já vinham abaixo do combinado desde dezembro de 2022, antes da demissão. Se a versão dela se confirmar, a perda do emprego deixa de explicar o inadimplemento.",
     "provenance": "INFERENCE",
     "origem": [
-     {"documento": "peticao_revisional_marcos.txt", "trecho": "deixou de conseguir pagar o valor integral da pensão a partir de abril de 2023"},
-     {"documento": "contestacao_juliana.txt", "trecho": "desde dezembro de 2022, antes mesmo da demissão, os depósitos já vinham sendo feitos com valor inferior ao combinado"}
+     {
+      "documento": "peticao_revisional_marcos.txt",
+      "trecho": "deixou de conseguir pagar o valor integral da pensão a partir de abril de 2023"
+     },
+     {
+      "documento": "contestacao_juliana.txt",
+      "trecho": "desde dezembro de 2022, antes mesmo da demissão, os depósitos já vinham sendo feitos com valor inferior ao combinado"
+     }
     ]
    },
    {
@@ -24,8 +30,14 @@
     "texto": "A data da separação de fato é diferente em cada documento: janeiro de 2021 na petição e outubro de 2020 na contestação. O ponto é secundário para a pensão, mas mostra que a cronologia apresentada por Marcos é contestada desde o início.",
     "provenance": "INFERENCE",
     "origem": [
-     {"documento": "peticao_revisional_marcos.txt", "trecho": "O casal se separou de fato em janeiro de 2021"},
-     {"documento": "contestacao_juliana.txt", "trecho": "A separação de fato do casal ocorreu em outubro de 2020"}
+     {
+      "documento": "peticao_revisional_marcos.txt",
+      "trecho": "O casal se separou de fato em janeiro de 2021"
+     },
+     {
+      "documento": "contestacao_juliana.txt",
+      "trecho": "A separação de fato do casal ocorreu em outubro de 2020"
+     }
     ]
    },
    {
@@ -34,8 +46,14 @@
     "texto": "Marcos afirma que a mudança de cidade aconteceu sem aviso prévio; Juliana diz que avisou por mensagem de celular quase dois meses antes. Também há diferença de dois dias na data da mudança (10/01/2024 contra 08/01/2024).",
     "provenance": "INFERENCE",
     "origem": [
-     {"documento": "peticao_revisional_marcos.txt", "trecho": "Juliana mudou-se com Sofia para outra cidade, a cerca de 300 km, sem avisar Marcos previamente"},
-     {"documento": "contestacao_juliana.txt", "trecho": "a requerida avisou Marcos por mensagem de celular em 20/11/2023, quase dois meses antes"}
+     {
+      "documento": "peticao_revisional_marcos.txt",
+      "trecho": "Juliana mudou-se com Sofia para outra cidade, a cerca de 300 km, sem avisar Marcos previamente"
+     },
+     {
+      "documento": "contestacao_juliana.txt",
+      "trecho": "a requerida avisou Marcos por mensagem de celular em 20/11/2023, quase dois meses antes"
+     }
     ]
    },
    {
@@ -44,7 +62,10 @@
     "texto": "A renda atual de Marcos, base do pedido de redução para 15%, é descrita apenas como variável, sem extratos do aplicativo de transporte, declaração de imposto de renda ou qualquer valor mensal.",
     "provenance": "INFERENCE",
     "origem": [
-     {"documento": "peticao_revisional_marcos.txt", "trecho": "sobrevive de trabalhos informais como motorista de aplicativo, com renda variável"}
+     {
+      "documento": "peticao_revisional_marcos.txt",
+      "trecho": "sobrevive de trabalhos informais como motorista de aplicativo, com renda variável"
+     }
     ]
    },
    {
@@ -53,8 +74,14 @@
     "texto": "Juliana atribui a Marcos um emprego de gerente com salário fixo desde maio de 2023, mas reconhece não ter cópia das publicações que o comprovariam. É uma alegação sem prova, que pode ganhar força se for confirmada por testemunhas ou registros.",
     "provenance": "INFERENCE",
     "origem": [
-     {"documento": "contestacao_juliana.txt", "trecho": "em maio de 2023 ele passou a trabalhar como gerente em uma loja de autopeças de um amigo, recebendo salário fixo"},
-     {"documento": "contestacao_juliana.txt", "trecho": "A requerida não possui cópia dessas publicações"}
+     {
+      "documento": "contestacao_juliana.txt",
+      "trecho": "em maio de 2023 ele passou a trabalhar como gerente em uma loja de autopeças de um amigo, recebendo salário fixo"
+     },
+     {
+      "documento": "contestacao_juliana.txt",
+      "trecho": "A requerida não possui cópia dessas publicações"
+     }
     ]
    },
    {
@@ -63,7 +90,10 @@
     "texto": "A mensagem de celular de 20/11/2023, que decidiria se houve ou não aviso da mudança, não foi juntada por nenhuma das partes.",
     "provenance": "INFERENCE",
     "origem": [
-     {"documento": "contestacao_juliana.txt", "trecho": "avisou Marcos por mensagem de celular em 20/11/2023"}
+     {
+      "documento": "contestacao_juliana.txt",
+      "trecho": "avisou Marcos por mensagem de celular em 20/11/2023"
+     }
     ]
    },
    {
@@ -72,7 +102,10 @@
     "texto": "O pedido de divisão das despesas de deslocamento não traz o custo real das viagens de cerca de 300 km nem a frequência pretendida além das férias.",
     "provenance": "INFERENCE",
     "origem": [
-     {"documento": "peticao_revisional_marcos.txt", "trecho": "Marcos consegue ver a filha apenas uma vez por mês, por causa do custo e da distância da viagem"}
+     {
+      "documento": "peticao_revisional_marcos.txt",
+      "trecho": "Marcos consegue ver a filha apenas uma vez por mês, por causa do custo e da distância da viagem"
+     }
     ]
    },
    {
@@ -81,7 +114,10 @@
     "texto": "A parte contrária vai sustentar que a dificuldade financeira não nasceu da demissão: se os depósitos já eram menores em dezembro de 2022, a revisão estaria sendo usada para regularizar um inadimplemento anterior, e não para ajustar a pensão a uma mudança real de renda.",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
     "origem": [
-     {"documento": "contestacao_juliana.txt", "trecho": "Os atrasos da pensão não começaram em abril de 2023"}
+     {
+      "documento": "contestacao_juliana.txt",
+      "trecho": "Os atrasos da pensão não começaram em abril de 2023"
+     }
     ]
    },
    {
@@ -90,7 +126,10 @@
     "texto": "Reduzir a pensão pela metade exige demonstrar quanto Marcos ganha hoje. Sem esse número, a outra parte dirá que o percentual de 15% foi escolhido sem base e que a renda de aplicativo, somada a um possível emprego fixo, pode até ser maior que a anterior.",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
     "origem": [
-     {"documento": "peticao_revisional_marcos.txt", "trecho": "Redução da pensão alimentícia de 30% para 15% dos rendimentos"}
+     {
+      "documento": "peticao_revisional_marcos.txt",
+      "trecho": "Redução da pensão alimentícia de 30% para 15% dos rendimentos"
+     }
     ]
    },
    {
@@ -99,8 +138,14 @@
     "texto": "Juliana apresentará a mudança como consequência de uma proposta de emprego comunicada com antecedência, o que enfraquece a ideia de que ela deva arcar com metade das viagens por ter agido de forma unilateral e sem aviso.",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
     "origem": [
-     {"documento": "contestacao_juliana.txt", "trecho": "explicando que havia recebido uma proposta de emprego"},
-     {"documento": "contestacao_juliana.txt", "trecho": "sem que a requerida arque com as despesas das viagens"}
+     {
+      "documento": "contestacao_juliana.txt",
+      "trecho": "explicando que havia recebido uma proposta de emprego"
+     },
+     {
+      "documento": "contestacao_juliana.txt",
+      "trecho": "sem que a requerida arque com as despesas das viagens"
+     }
     ]
    },
    {
@@ -109,7 +154,10 @@
     "texto": "Quais valores foram depositados de dezembro de 2022 a março de 2023, antes da demissão, e onde isso está comprovado?",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
     "origem": [
-     {"documento": "contestacao_juliana.txt", "trecho": "desde dezembro de 2022, antes mesmo da demissão"}
+     {
+      "documento": "contestacao_juliana.txt",
+      "trecho": "desde dezembro de 2022, antes mesmo da demissão"
+     }
     ]
    },
    {
@@ -118,7 +166,10 @@
     "texto": "Qual foi a renda média mensal de Marcos como motorista de aplicativo nos últimos 12 meses?",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
     "origem": [
-     {"documento": "peticao_revisional_marcos.txt", "trecho": "com renda variável"}
+     {
+      "documento": "peticao_revisional_marcos.txt",
+      "trecho": "com renda variável"
+     }
     ]
    },
    {
@@ -127,7 +178,10 @@
     "texto": "Marcos trabalhou, com ou sem registro, na loja de autopeças a partir de maio de 2023?",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
     "origem": [
-     {"documento": "contestacao_juliana.txt", "trecho": "passou a trabalhar como gerente em uma loja de autopeças de um amigo"}
+     {
+      "documento": "contestacao_juliana.txt",
+      "trecho": "passou a trabalhar como gerente em uma loja de autopeças de um amigo"
+     }
     ]
    },
    {
@@ -136,7 +190,10 @@
     "texto": "Marcos recebeu, em 20/11/2023, alguma mensagem de Juliana falando da proposta de emprego e da mudança?",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
     "origem": [
-     {"documento": "contestacao_juliana.txt", "trecho": "avisou Marcos por mensagem de celular em 20/11/2023"}
+     {
+      "documento": "contestacao_juliana.txt",
+      "trecho": "avisou Marcos por mensagem de celular em 20/11/2023"
+     }
     ]
    },
    {
@@ -145,32 +202,197 @@
     "texto": "Quanto custa cada viagem até a nova cidade de Sofia e quantas vezes por mês Marcos pretende fazê-la?",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
     "origem": [
-     {"documento": "peticao_revisional_marcos.txt", "trecho": "divisão igual das despesas de deslocamento entre os genitores"}
+     {
+      "documento": "peticao_revisional_marcos.txt",
+      "trecho": "divisão igual das despesas de deslocamento entre os genitores"
+     }
     ]
    }
   ],
   "linha_do_tempo": [
-   {"data": "12/05/2012", "data_ordenacao": "2012-05-12", "evento": "Casamento de Marcos e Juliana", "quem_afirma": "Marcos", "documento": "peticao_revisional_marcos.txt", "trecho": "Marcos e Juliana se casaram em 12/05/2012", "divergencia": ""},
-   {"data": "03/08/2014", "data_ordenacao": "2014-08-03", "evento": "Nascimento de Sofia", "quem_afirma": "Marcos", "documento": "peticao_revisional_marcos.txt", "trecho": "Sofia, nasceu em 03/08/2014", "divergencia": ""},
-   {"data": "outubro de 2020", "data_ordenacao": "2020-10", "evento": "Separação de fato, segundo Juliana", "quem_afirma": "Juliana", "documento": "contestacao_juliana.txt", "trecho": "A separação de fato do casal ocorreu em outubro de 2020", "divergencia": "Marcos afirma que a separação foi em janeiro de 2021."},
-   {"data": "janeiro de 2021", "data_ordenacao": "2021-01", "evento": "Separação de fato, com a saída de Marcos do imóvel, segundo Marcos", "quem_afirma": "Marcos", "documento": "peticao_revisional_marcos.txt", "trecho": "O casal se separou de fato em janeiro de 2021", "divergencia": "Juliana afirma que a separação foi em outubro de 2020."},
-   {"data": "15/06/2021", "data_ordenacao": "2021-06-15", "evento": "Divórcio homologado, com guarda compartilhada e pensão de 30%", "quem_afirma": "Marcos", "documento": "peticao_revisional_marcos.txt", "trecho": "O divórcio foi homologado em 15/06/2021", "divergencia": ""},
-   {"data": "dezembro de 2022", "data_ordenacao": "2022-12", "evento": "Início dos depósitos abaixo do combinado, segundo Juliana", "quem_afirma": "Juliana", "documento": "contestacao_juliana.txt", "trecho": "desde dezembro de 2022, antes mesmo da demissão", "divergencia": "Marcos situa o início dos pagamentos a menor em abril de 2023, depois da demissão."},
-   {"data": "02/03/2023", "data_ordenacao": "2023-03-02", "evento": "Demissão de Marcos, após nove anos na empresa", "quem_afirma": "Marcos", "documento": "peticao_revisional_marcos.txt", "trecho": "Em 02/03/2023, Marcos foi demitido da empresa onde trabalhava havia nove anos", "divergencia": ""},
-   {"data": "abril de 2023", "data_ordenacao": "2023-04", "evento": "Marcos deixa de pagar o valor integral da pensão", "quem_afirma": "Marcos", "documento": "peticao_revisional_marcos.txt", "trecho": "deixou de conseguir pagar o valor integral da pensão a partir de abril de 2023", "divergencia": "Juliana afirma que os pagamentos a menor começaram em dezembro de 2022."},
-   {"data": "maio de 2023", "data_ordenacao": "2023-05", "evento": "Marcos passa a trabalhar como gerente em loja de autopeças, segundo Juliana (sem prova)", "quem_afirma": "Juliana", "documento": "contestacao_juliana.txt", "trecho": "em maio de 2023 ele passou a trabalhar como gerente", "divergencia": ""},
-   {"data": "20/11/2023", "data_ordenacao": "2023-11-20", "evento": "Juliana avisa sobre a mudança por mensagem de celular", "quem_afirma": "Juliana", "documento": "contestacao_juliana.txt", "trecho": "avisou Marcos por mensagem de celular em 20/11/2023", "divergencia": "Marcos afirma que não houve aviso prévio."},
-   {"data": "08/01/2024", "data_ordenacao": "2024-01-08", "evento": "Mudança de Juliana e Sofia para outra cidade, segundo Juliana", "quem_afirma": "Juliana", "documento": "contestacao_juliana.txt", "trecho": "A mudança aconteceu em 08/01/2024", "divergencia": "Marcos informa a data de 10/01/2024."},
-   {"data": "10/01/2024", "data_ordenacao": "2024-01-10", "evento": "Mudança de Juliana e Sofia para cidade a cerca de 300 km, segundo Marcos", "quem_afirma": "Marcos", "documento": "peticao_revisional_marcos.txt", "trecho": "Em 10/01/2024, Juliana mudou-se com Sofia para outra cidade", "divergencia": "Juliana informa a data de 08/01/2024 e diz ter avisado em 20/11/2023."}
+   {
+    "data": "12/05/2012",
+    "data_ordenacao": "2012-05-12",
+    "evento": "Casamento de Marcos e Juliana",
+    "quem_afirma": "Marcos",
+    "documento": "peticao_revisional_marcos.txt",
+    "trecho": "Marcos e Juliana se casaram em 12/05/2012",
+    "divergencia": ""
+   },
+   {
+    "data": "03/08/2014",
+    "data_ordenacao": "2014-08-03",
+    "evento": "Nascimento de Sofia",
+    "quem_afirma": "Marcos",
+    "documento": "peticao_revisional_marcos.txt",
+    "trecho": "Sofia, nasceu em 03/08/2014",
+    "divergencia": ""
+   },
+   {
+    "data": "outubro de 2020",
+    "data_ordenacao": "2020-10",
+    "evento": "Separação de fato, segundo Juliana",
+    "quem_afirma": "Juliana",
+    "documento": "contestacao_juliana.txt",
+    "trecho": "A separação de fato do casal ocorreu em outubro de 2020",
+    "divergencia": "Marcos afirma que a separação foi em janeiro de 2021."
+   },
+   {
+    "data": "janeiro de 2021",
+    "data_ordenacao": "2021-01",
+    "evento": "Separação de fato, com a saída de Marcos do imóvel, segundo Marcos",
+    "quem_afirma": "Marcos",
+    "documento": "peticao_revisional_marcos.txt",
+    "trecho": "O casal se separou de fato em janeiro de 2021",
+    "divergencia": "Juliana afirma que a separação foi em outubro de 2020."
+   },
+   {
+    "data": "15/06/2021",
+    "data_ordenacao": "2021-06-15",
+    "evento": "Divórcio homologado, com guarda compartilhada e pensão de 30%",
+    "quem_afirma": "Marcos",
+    "documento": "peticao_revisional_marcos.txt",
+    "trecho": "O divórcio foi homologado em 15/06/2021",
+    "divergencia": ""
+   },
+   {
+    "data": "dezembro de 2022",
+    "data_ordenacao": "2022-12",
+    "evento": "Início dos depósitos abaixo do combinado, segundo Juliana",
+    "quem_afirma": "Juliana",
+    "documento": "contestacao_juliana.txt",
+    "trecho": "desde dezembro de 2022, antes mesmo da demissão",
+    "divergencia": "Marcos situa o início dos pagamentos a menor em abril de 2023, depois da demissão."
+   },
+   {
+    "data": "02/03/2023",
+    "data_ordenacao": "2023-03-02",
+    "evento": "Demissão de Marcos, após nove anos na empresa",
+    "quem_afirma": "Marcos",
+    "documento": "peticao_revisional_marcos.txt",
+    "trecho": "Em 02/03/2023, Marcos foi demitido da empresa onde trabalhava havia nove anos",
+    "divergencia": ""
+   },
+   {
+    "data": "abril de 2023",
+    "data_ordenacao": "2023-04",
+    "evento": "Marcos deixa de pagar o valor integral da pensão",
+    "quem_afirma": "Marcos",
+    "documento": "peticao_revisional_marcos.txt",
+    "trecho": "deixou de conseguir pagar o valor integral da pensão a partir de abril de 2023",
+    "divergencia": "Juliana afirma que os pagamentos a menor começaram em dezembro de 2022."
+   },
+   {
+    "data": "maio de 2023",
+    "data_ordenacao": "2023-05",
+    "evento": "Marcos passa a trabalhar como gerente em loja de autopeças, segundo Juliana (sem prova)",
+    "quem_afirma": "Juliana",
+    "documento": "contestacao_juliana.txt",
+    "trecho": "em maio de 2023 ele passou a trabalhar como gerente",
+    "divergencia": ""
+   },
+   {
+    "data": "20/11/2023",
+    "data_ordenacao": "2023-11-20",
+    "evento": "Juliana avisa sobre a mudança por mensagem de celular",
+    "quem_afirma": "Juliana",
+    "documento": "contestacao_juliana.txt",
+    "trecho": "avisou Marcos por mensagem de celular em 20/11/2023",
+    "divergencia": "Marcos afirma que não houve aviso prévio."
+   },
+   {
+    "data": "08/01/2024",
+    "data_ordenacao": "2024-01-08",
+    "evento": "Mudança de Juliana e Sofia para outra cidade, segundo Juliana",
+    "quem_afirma": "Juliana",
+    "documento": "contestacao_juliana.txt",
+    "trecho": "A mudança aconteceu em 08/01/2024",
+    "divergencia": "Marcos informa a data de 10/01/2024."
+   },
+   {
+    "data": "10/01/2024",
+    "data_ordenacao": "2024-01-10",
+    "evento": "Mudança de Juliana e Sofia para cidade a cerca de 300 km, segundo Marcos",
+    "quem_afirma": "Marcos",
+    "documento": "peticao_revisional_marcos.txt",
+    "trecho": "Em 10/01/2024, Juliana mudou-se com Sofia para outra cidade",
+    "divergencia": "Juliana informa a data de 08/01/2024 e diz ter avisado em 20/11/2023."
+   }
   ],
   "plano_de_provas": [
-   {"prova": "Comprovantes de todos os depósitos da pensão desde junho de 2021", "finalidade": "Mostrar quando os pagamentos a menor realmente começaram e responder à afirmação de que vêm desde dezembro de 2022.", "como_obter": "Pedir ao cliente os comprovantes e extratos; o que faltar pode ser requerido ao juízo por ofício ao banco.", "prioridade": "alta", "apontamentos": ["contradicao-atrasos", "argumento-atrasos", "pergunta-depositos"]},
-   {"prova": "Relatório de ganhos do aplicativo de transporte dos últimos 12 meses", "finalidade": "Demonstrar a renda real de Marcos e dar base ao percentual pedido.", "como_obter": "Baixar o relatório na área do motorista do aplicativo ou solicitar à plataforma.", "prioridade": "alta", "apontamentos": ["lacuna-renda", "argumento-reducao", "pergunta-renda"]},
-   {"prova": "Termo de rescisão, Carteira de Trabalho Digital e extrato do FGTS de Marcos", "finalidade": "Comprovar a demissão e a ausência de novo vínculo formal desde então.", "como_obter": "O próprio cliente acessa a Carteira de Trabalho Digital e o aplicativo do FGTS; o termo de rescisão fica com ele.", "prioridade": "alta", "apontamentos": ["lacuna-novo-emprego", "pergunta-autopecas"]},
-   {"prova": "Declarações de imposto de renda de Marcos dos dois últimos anos", "finalidade": "Confirmar a queda de renda com um documento oficial.", "como_obter": "Pedir ao cliente as declarações e os recibos de entrega.", "prioridade": "media", "apontamentos": ["lacuna-renda", "argumento-reducao"]},
-   {"prova": "Exportação da conversa de celular entre Marcos e Juliana de novembro de 2023 a janeiro de 2024", "finalidade": "Esclarecer se houve aviso da mudança em 20/11/2023 e em que termos.", "como_obter": "Exportar a conversa pelo próprio aplicativo, com data e hora; havendo impugnação, lavrar ata notarial.", "prioridade": "media", "apontamentos": ["contradicao-aviso", "lacuna-mensagem", "pergunta-aviso"]},
-   {"prova": "Comprovantes de custo das viagens (passagens, combustível, pedágios)", "finalidade": "Dar valor concreto ao pedido de divisão das despesas de deslocamento.", "como_obter": "Reunir com o cliente recibos das viagens feitas desde janeiro de 2024 e cotações de passagens.", "prioridade": "media", "apontamentos": ["lacuna-custos", "argumento-mudanca", "pergunta-custos"]},
-   {"prova": "Comprovantes de residência de Marcos a partir do fim de 2020", "finalidade": "Definir a data da separação de fato.", "como_obter": "Contrato de aluguel, contas de consumo ou correspondências no novo endereço.", "prioridade": "baixa", "apontamentos": ["contradicao-separacao"]}
+   {
+    "prova": "Comprovantes de todos os depósitos da pensão desde junho de 2021",
+    "finalidade": "Mostrar quando os pagamentos a menor realmente começaram e responder à afirmação de que vêm desde dezembro de 2022.",
+    "como_obter": "Pedir ao cliente os comprovantes e extratos; o que faltar pode ser requerido ao juízo por ofício ao banco.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "contradicao-atrasos",
+     "argumento-atrasos",
+     "pergunta-depositos"
+    ]
+   },
+   {
+    "prova": "Relatório de ganhos do aplicativo de transporte dos últimos 12 meses",
+    "finalidade": "Demonstrar a renda real de Marcos e dar base ao percentual pedido.",
+    "como_obter": "Baixar o relatório na área do motorista do aplicativo ou solicitar à plataforma.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "lacuna-renda",
+     "argumento-reducao",
+     "pergunta-renda"
+    ]
+   },
+   {
+    "prova": "Termo de rescisão, Carteira de Trabalho Digital e extrato do FGTS de Marcos",
+    "finalidade": "Comprovar a demissão e a ausência de novo vínculo formal desde então.",
+    "como_obter": "O próprio cliente acessa a Carteira de Trabalho Digital e o aplicativo do FGTS; o termo de rescisão fica com ele.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "lacuna-novo-emprego",
+     "pergunta-autopecas"
+    ]
+   },
+   {
+    "prova": "Declarações de imposto de renda de Marcos dos dois últimos anos",
+    "finalidade": "Confirmar a queda de renda com um documento oficial.",
+    "como_obter": "Pedir ao cliente as declarações e os recibos de entrega.",
+    "prioridade": "media",
+    "apontamentos": [
+     "lacuna-renda",
+     "argumento-reducao"
+    ]
+   },
+   {
+    "prova": "Exportação da conversa de celular entre Marcos e Juliana de novembro de 2023 a janeiro de 2024",
+    "finalidade": "Esclarecer se houve aviso da mudança em 20/11/2023 e em que termos.",
+    "como_obter": "Exportar a conversa pelo próprio aplicativo, com data e hora; havendo impugnação, lavrar ata notarial.",
+    "prioridade": "media",
+    "apontamentos": [
+     "contradicao-aviso",
+     "lacuna-mensagem",
+     "pergunta-aviso"
+    ]
+   },
+   {
+    "prova": "Comprovantes de custo das viagens (passagens, combustível, pedágios)",
+    "finalidade": "Dar valor concreto ao pedido de divisão das despesas de deslocamento.",
+    "como_obter": "Reunir com o cliente recibos das viagens feitas desde janeiro de 2024 e cotações de passagens.",
+    "prioridade": "media",
+    "apontamentos": [
+     "lacuna-custos",
+     "argumento-mudanca",
+     "pergunta-custos"
+    ]
+   },
+   {
+    "prova": "Comprovantes de residência de Marcos a partir do fim de 2020",
+    "finalidade": "Definir a data da separação de fato.",
+    "como_obter": "Contrato de aluguel, contas de consumo ou correspondências no novo endereço.",
+    "prioridade": "baixa",
+    "apontamentos": [
+     "contradicao-separacao"
+    ]
+   }
   ]
  },
  "audiencia": [
@@ -179,18 +401,27 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Os atrasos só começaram depois da demissão, em abril de 2023. Antes disso o Marcos sempre pagou tudo certinho.",
+     "texto": "Os extratos de dezembro de 2022 a março de 2023 serão juntados, e qualquer valor menor será explicado. Mas a demissão e a renda variável como motorista de aplicativo são fatos que a própria contestação admite, e são eles que justificam a revisão daqui para frente.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta repete a versão da petição, mas afirma que Marcos sempre pagou o valor integral, e isso não está comprovado em nenhum documento.",
-      "pontos_fortes": ["Mantém a coerência com a data informada na petição."],
-      "pontos_frageis": ["Afirma pagamento integral até março de 2023 sem nenhum comprovante nos autos.", "Não enfrenta a afirmação de que os depósitos já eram menores desde dezembro de 2022."],
-      "sugestao": "Reconheça que a questão será resolvida pelos comprovantes de depósito e comprometa-se a juntá-los; enquanto isso, destaque que a contestação também não traz prova do alegado pagamento a menor.",
-      "apoio_nos_documentos": [
-       {"documento": "peticao_revisional_marcos.txt", "trecho": "deixou de conseguir pagar o valor integral da pensão a partir de abril de 2023"},
-       {"documento": "contestacao_juliana.txt", "trecho": "desde dezembro de 2022, antes mesmo da demissão, os depósitos já vinham sendo feitos com valor inferior ao combinado"}
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta indica a prova e usa a contestação, mas atribui a ela uma concordância que ela não dá.",
+      "pontos_fortes": [
+       "Não nega a possibilidade de pagamentos menores.",
+       "Indica os extratos do período.",
+       "Foca no que justifica a revisão."
       ],
-      "replica": "Então o senhor pode juntar agora os comprovantes de dezembro de 2022 a março de 2023 mostrando o valor integral?"
+      "pontos_frageis": [
+       "A contestação admite a demissão, mas afirma que Marcos passou a ter salário fixo como gerente.",
+       "Não informa os valores do período perguntado."
+      ],
+      "sugestao": "Use só o que a contestação realmente admite, a demissão, e responda à alegação do emprego de gerente.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_juliana.txt",
+        "trecho": "É verdade que Marcos foi demitido em março de 2023"
+       }
+      ],
+      "replica": "A contestação admite a renda variável, ou afirma que ele virou gerente com salário fixo?"
      }
     },
     {
@@ -199,11 +430,19 @@
      "avaliacao": {
       "avaliacao": "parcial",
       "resumo": "Sua resposta aponta corretamente que a outra parte também não provou o que alega, mas ainda depende de um documento que não está nos autos.",
-      "pontos_fortes": ["Mostra que a afirmação sobre dezembro de 2022 não tem prova.", "Compromete-se a produzir a prova que resolve a divergência."],
-      "pontos_frageis": ["Não informa valores concretos do período questionado."],
+      "pontos_fortes": [
+       "Mostra que a afirmação sobre dezembro de 2022 não tem prova.",
+       "Compromete-se a produzir a prova que resolve a divergência."
+      ],
+      "pontos_frageis": [
+       "Não informa valores concretos do período questionado."
+      ],
       "sugestao": "Mantenha a linha e, se possível, informe já o valor depositado em cada mês daquele período, com a ressalva de que os extratos serão juntados.",
       "apoio_nos_documentos": [
-       {"documento": "contestacao_juliana.txt", "trecho": "Os atrasos da pensão não começaram em abril de 2023"}
+       {
+        "documento": "contestacao_juliana.txt",
+        "trecho": "Os atrasos da pensão não começaram em abril de 2023"
+       }
       ],
       "replica": "E se os extratos mostrarem depósitos menores já em janeiro de 2023, qual seria a explicação?"
      }
@@ -215,17 +454,24 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Ele ganha pouco, todo mundo sabe que aplicativo de transporte não paga bem.",
+     "texto": "O número ainda não está nos autos e virá com o relatório do aplicativo e o imposto de renda. Mas a pergunta também vale para a outra parte: a contestação diz que Marcos passou a ter salário fixo como gerente e admite não ter cópia das publicações. Se esse vínculo existir, os registros oficiais vão mostrar; se não existir, a versão cai.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta troca um número que a pergunta exige por uma generalização, e nada nos documentos informa quanto Marcos ganha.",
-      "pontos_fortes": [],
-      "pontos_frageis": ["Não traz nenhum valor.", "Baseia-se em percepção geral, não em prova do caso."],
-      "sugestao": "Informe que a renda é variável, como consta da petição, e que o relatório de ganhos do aplicativo dos últimos 12 meses será juntado para mostrar a média mensal.",
-      "apoio_nos_documentos": [
-       {"documento": "peticao_revisional_marcos.txt", "trecho": "sobrevive de trabalhos informais como motorista de aplicativo, com renda variável"}
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta é honesta sobre o número que falta e mostra que a principal alegação contra Marcos também não tem prova.",
+      "pontos_fortes": [
+       "Indica as provas da renda.",
+       "Aponta a admissão de que não há cópia das publicações.",
+       "Propõe verificação por registros oficiais."
       ],
-      "replica": "Se o senhor não sabe informar a renda, como chegou ao percentual de 15%?"
+      "pontos_frageis": [],
+      "sugestao": "Leve o relatório do aplicativo dos últimos 12 meses para a audiência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_juliana.txt",
+        "trecho": "A requerida não possui cópia dessas publicações"
+       }
+      ],
+      "replica": ""
      }
     },
     {
@@ -234,11 +480,19 @@
      "avaliacao": {
       "avaliacao": "parcial",
       "resumo": "Sua resposta é honesta e indica as provas certas, mas hoje o pedido de redução continua sem um número que o sustente.",
-      "pontos_fortes": ["Não afirma nada além do que está nos documentos.", "Indica provas objetivas de renda."],
-      "pontos_frageis": ["A média mensal continua desconhecida."],
+      "pontos_fortes": [
+       "Não afirma nada além do que está nos documentos.",
+       "Indica provas objetivas de renda."
+      ],
+      "pontos_frageis": [
+       "A média mensal continua desconhecida."
+      ],
       "sugestao": "Antes da audiência, calcule a média com o relatório do aplicativo e leve o valor pronto para relacioná-lo ao percentual pedido.",
       "apoio_nos_documentos": [
-       {"documento": "peticao_revisional_marcos.txt", "trecho": "Redução da pensão alimentícia de 30% para 15% dos rendimentos"}
+       {
+        "documento": "peticao_revisional_marcos.txt",
+        "trecho": "Redução da pensão alimentícia de 30% para 15% dos rendimentos"
+       }
       ],
       "replica": "E esse relatório vai incluir algum outro trabalho, como o da loja de autopeças?"
      }
@@ -250,18 +504,26 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Não houve aviso nenhum. Ele só descobriu a mudança quando foi buscar a filha na escola.",
+     "texto": "Recebeu uma mensagem genérica sobre uma proposta de emprego, sem data de mudança nem endereço. Isso não é aviso prévio de que uma criança vai morar a 300 km de distância.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta repete a petição, mas nega categoricamente uma mensagem que pode existir e ser exibida pela outra parte.",
-      "pontos_fortes": ["Está de acordo com a versão apresentada na petição."],
-      "pontos_frageis": ["Se a mensagem de 20/11/2023 aparecer, a credibilidade de todo o relato fica comprometida.", "Não diferencia receber uma mensagem de haver combinação sobre a nova rotina."],
-      "sugestao": "Confirme com o cliente, antes da audiência, se houve alguma mensagem naquela data, e responda com base no que a conversa exportada mostrar.",
-      "apoio_nos_documentos": [
-       {"documento": "peticao_revisional_marcos.txt", "trecho": "Marcos só soube da mudança quando foi buscar a filha na escola"},
-       {"documento": "contestacao_juliana.txt", "trecho": "avisou Marcos por mensagem de celular em 20/11/2023"}
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta tenta esvaziar o aviso, mas admite ter recebido a mensagem e descreve um conteúdo que não está nos autos.",
+      "pontos_fortes": [
+       "Mostra por que um aviso por mensagem não bastaria.",
+       "Mantém o foco na distância."
       ],
-      "replica": "O senhor autoriza, então, a exibição da conversa de celular do período?"
+      "pontos_frageis": [
+       "A petição afirma que Marcos não foi avisado.",
+       "O conteúdo da mensagem não foi juntado por ninguém."
+      ],
+      "sugestao": "Não descreva uma mensagem que não está nos autos; aponte que ela não foi juntada e foque na convivência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_revisional_marcos.txt",
+        "trecho": "sem avisar Marcos previamente"
+       }
+      ],
+      "replica": "Então Marcos recebeu a mensagem? A petição diz que ele não foi avisado."
      }
     },
     {
@@ -270,14 +532,126 @@
      "avaliacao": {
       "avaliacao": "convincente",
       "resumo": "Sua resposta não nega um fato que pode ser provado, aponta que a mensagem não está nos autos e leva a discussão para o que interessa ao pedido: a convivência à distância.",
-      "pontos_fortes": ["Não afirma nada que os documentos contradigam.", "Mostra que a prova do aviso não foi apresentada.", "Reconduz o debate ao pedido de ampliação da convivência."],
+      "pontos_fortes": [
+       "Não afirma nada que os documentos contradigam.",
+       "Mostra que a prova do aviso não foi apresentada.",
+       "Reconduz o debate ao pedido de ampliação da convivência."
+      ],
       "pontos_frageis": [],
       "sugestao": "Mantenha a linha e leve os comprovantes de custo das viagens para dar concretude ao pedido de divisão das despesas.",
       "apoio_nos_documentos": [
-       {"documento": "contestacao_juliana.txt", "trecho": "avisou Marcos por mensagem de celular em 20/11/2023"},
-       {"documento": "peticao_revisional_marcos.txt", "trecho": "Ampliação da convivência, com a filha passando metade das férias escolares com o pai"}
+       {
+        "documento": "contestacao_juliana.txt",
+        "trecho": "avisou Marcos por mensagem de celular em 20/11/2023"
+       },
+       {
+        "documento": "peticao_revisional_marcos.txt",
+        "trecho": "Ampliação da convivência, com a filha passando metade das férias escolares com o pai"
+       }
       ],
       "replica": ""
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Marcos trabalha desde maio de 2023 como gerente em uma loja de autopeças?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Não. Desde a demissão ele faz trabalhos informais como motorista de aplicativo, como está na petição.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é firme, mas nega de forma absoluta um fato que pode ser verificado.",
+      "pontos_fortes": [
+       "Coerente com a petição."
+      ],
+      "pontos_frageis": [
+       "Uma negativa categórica é arriscada se houver registro ou testemunha.",
+       "Não aponta que a alegação contrária está sem prova."
+      ],
+      "sugestao": "Aponte a falta de prova da alegação e ofereça a verificação.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_revisional_marcos.txt",
+        "trecho": "sobrevive de trabalhos informais como motorista de aplicativo"
+       }
+      ],
+      "replica": "E se o dono da loja for ouvido como testemunha?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "A própria contestação diz que Juliana não tem cópia das publicações. Marcos nega o vínculo e concorda com ofício ao INSS e à loja, que mostrarão se houve registro ou pagamento.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta aponta a falta de prova da outra parte e oferece a verificação, o que transmite segurança.",
+      "pontos_fortes": [
+       "Usa o documento da outra parte.",
+       "Oferece prova objetiva.",
+       "Não se limita a negar."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Peça também o extrato de ganhos do aplicativo no mesmo período.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_juliana.txt",
+        "trecho": "A requerida não possui cópia"
+       }
+      ],
+      "replica": ""
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Quanto custa cada viagem de 300 km para Marcos ver Sofia?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Cerca de metade do que ele ganha em uma semana de aplicativo, e por isso só consegue ir uma vez por mês.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta liga o custo à frequência das visitas, mas não traz nenhum valor comprovado.",
+      "pontos_fortes": [
+       "Explica a frequência mensal."
+      ],
+      "pontos_frageis": [
+       "Estimativa sem número nem comprovante.",
+       "Depende de uma renda que também não está provada."
+      ],
+      "sugestao": "Leve os comprovantes de combustível, pedágio ou passagem.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_revisional_marcos.txt",
+        "trecho": "consegue ver a filha apenas uma vez por mês"
+       }
+      ],
+      "replica": "Qual é o valor em reais, e onde está o comprovante?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "O valor não está nos autos. Vamos juntar os comprovantes de combustível, pedágio e passagens desde janeiro de 2024, que mostram o custo real de cada visita.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é honesta e indica a prova, mas o pedido de divisão das despesas continua sem número.",
+      "pontos_fortes": [
+       "Reconhece a lacuna.",
+       "Delimita o período."
+      ],
+      "pontos_frageis": [
+       "Ainda não há valor para dividir.",
+       "Não liga o custo ao pedido de divisão igual."
+      ],
+      "sugestao": "Apresente uma média mensal assim que reunir os comprovantes.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_revisional_marcos.txt",
+        "trecho": "divisão igual das despesas de deslocamento entre os genitores"
+       }
+      ],
+      "replica": "Então o pedido de dividir as despesas foi feito sem saber quanto elas custam?"
      }
     }
    ]

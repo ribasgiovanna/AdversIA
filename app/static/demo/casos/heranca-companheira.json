@@ -209,28 +209,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Não era união estável de verdade, ela era só uma namorada.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta contradiz o próprio documento apresentado pelos parentes, que afirma a união estável.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "O documento dos parentes diz expressamente que ele vivia em união estável.",
-       "Nenhum fato sustenta a ideia de namoro."
-      ],
-      "sugestao": "Não negue o que o próprio documento admite; concentre-se nos bens e no grau de parentesco.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "manifestacao_colaterais.txt",
-        "trecho": "Ele vivia em união estável",
-        "conferido": true
-       }
-      ],
-      "replica": "Então por que a manifestação dos senhores afirma a união estável?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "O documento registra a união estável. O que se discute é a participação dos parentes na sucessão, e para isso vamos demonstrar a relação de bens e o grau de parentesco de cada um.",
      "avaliacao": {
       "avaliacao": "parcial",
@@ -252,6 +230,31 @@
       ],
       "replica": "E qual bem, especificamente, os senhores entendem que lhes cabe?"
      }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Os parentes não discutem a união estável; discutem o alcance dela. Os bens que o falecido tinha antes da união não foram construídos com a companheira e devem permanecer na família dele.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta reconhece a união e recoloca a discussão, mas fala de bens anteriores sem que nenhuma relação de bens tenha sido apresentada.",
+      "pontos_fortes": [
+       "Não nega o que está no documento.",
+       "Delimita o ponto em disputa."
+      ],
+      "pontos_frageis": [
+       "Não há relação de bens nem datas de aquisição.",
+       "\"Devem permanecer na família\" é uma conclusão, não um fato."
+      ],
+      "sugestao": "Não fale em bens anteriores antes de juntar a relação de bens com as datas.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "manifestacao_colaterais.txt",
+        "trecho": "Ele vivia em união estável",
+        "conferido": true
+       }
+      ],
+      "replica": "Quais bens eram anteriores à união? Há alguma relação de bens nos autos?"
+     }
     }
    ]
   },
@@ -260,28 +263,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Todos os parentes têm direito igual.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta não identifica ninguém e afirma igualdade entre parentes de graus diferentes sem nenhuma base.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Não responde quem são os parentes.",
-       "Ignora que graus de parentesco diferentes podem ter tratamento diferente."
-      ],
-      "sugestao": "Identifique cada parente e comprove o parentesco com certidões.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "manifestacao_colaterais.txt",
-        "trecho": "irmãos, tios e sobrinhos",
-        "conferido": true
-       }
-      ],
-      "replica": "Os tios pedem a mesma parte que os irmãos?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "Vamos juntar as certidões de cada parente, para identificar quem são e o grau de parentesco de cada um com o falecido.",
      "avaliacao": {
       "avaliacao": "parcial",
@@ -302,6 +283,29 @@
       ],
       "replica": "Algum desses parentes já faleceu e tem filhos?"
      }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "O documento fala em irmãos, tios e sobrinhos, sem nomes. Vamos identificar cada um com as certidões e já adiantamos: os parentes não estão todos no mesmo grau, e a participação de tios e sobrinhos precisa ser examinada separadamente da dos irmãos.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta reconhece a lacuna, indica a prova e antecipa uma distinção que organiza a discussão sobre quem pode participar.",
+      "pontos_fortes": [
+       "Indica as certidões.",
+       "Mostra domínio sobre a diferença de graus de parentesco.",
+       "Não promete o que não pode provar."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Leve as certidões de parentesco já separadas por grau.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "manifestacao_colaterais.txt",
+        "trecho": "irmãos, tios e sobrinhos",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
     }
    ]
   },
@@ -310,24 +314,27 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Tudo o que ele tinha.",
+     "texto": "Todo o patrimônio deixado pelo falecido está em disputa, porque os parentes pedem participação na herança como um todo. As datas de aquisição podem ser apuradas depois, no curso do inventário.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta não identifica nenhum bem e ignora que a data de aquisição pode mudar o tratamento de cada um.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Nenhum bem é identificado.",
-       "Não diferencia bens anteriores e posteriores à união."
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é coerente com o pedido amplo dos parentes, mas adia uma informação que define o que cada um pode receber.",
+      "pontos_fortes": [
+       "Explica a abrangência do pedido.",
+       "Não nega a necessidade das datas."
       ],
-      "sugestao": "Apresente a relação de bens com as datas de aquisição.",
+      "pontos_frageis": [
+       "Sem relação de bens, o pedido fica genérico.",
+       "Adiar as datas enfraquece a posição dos parentes."
+      ],
+      "sugestao": "Junte a relação de bens com as datas agora: elas definem o que está em discussão.",
       "apoio_nos_documentos": [
        {
         "documento": "manifestacao_colaterais.txt",
-        "trecho": "quem deveria receber os bens",
+        "trecho": "Os familiares defendem sua participação na sucessão",
         "conferido": true
        }
       ],
-      "replica": "Inclusive o que foi adquirido junto com a companheira?"
+      "replica": "Se as datas ficam para depois, como o juízo vai saber o que cada um pode receber?"
      }
     },
     {
@@ -346,6 +353,112 @@
        {
         "documento": "manifestacao_colaterais.txt",
         "trecho": "Ele vivia em união estável",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Algum desses parentes convivia com o falecido ou dependia dele?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "A manifestação não trata de convivência nem de dependência, porque o pedido se baseia no parentesco. Se o juízo considerar esse ponto relevante, indicaremos testemunhas.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta não inventa fatos, mas confirma que o único fundamento apresentado é o parentesco.",
+      "pontos_fortes": [
+       "Fiel ao documento.",
+       "Oferece prova se necessário."
+      ],
+      "pontos_frageis": [
+       "Reconhece que não há relação concreta descrita.",
+       "Deixa o pedido dependente só do grau de parentesco."
+      ],
+      "sugestao": "Organize a relação de parentes com o grau de cada um antes de discutir convivência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "manifestacao_colaterais.txt",
+        "trecho": "parentes do falecido",
+        "conferido": true
+       }
+      ],
+      "replica": "Então o pedido depende só do grau de parentesco?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Sim, os parentes mantinham contato frequente com ele, e isso mostra que a família tinha laços reais e deve participar da sucessão.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta tenta dar concretude ao pedido, mas afirma convivência que nenhum documento registra.",
+      "pontos_fortes": [
+       "Busca ir além do simples parentesco."
+      ],
+      "pontos_frageis": [
+       "Nenhum documento fala em convivência.",
+       "Laço afetivo não define, por si, quem herda."
+      ],
+      "sugestao": "Indique quem convivia com ele e como isso será provado.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "manifestacao_colaterais.txt",
+        "trecho": "Os familiares defendem sua participação na sucessão",
+        "conferido": true
+       }
+      ],
+      "replica": "Quem, exatamente, convivia com ele, e como isso será provado?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "O falecido deixou testamento?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Não deixou, tanto que o inventário discute quem deve receber os bens. Se houvesse testamento, a discussão seria outra.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é lógica à primeira vista, mas deduz a inexistência do testamento sem nenhuma certidão.",
+      "pontos_fortes": [
+       "Usa a própria existência da disputa como argumento."
+      ],
+      "pontos_frageis": [
+       "Não há certidão de busca.",
+       "Pode haver disputa mesmo com testamento."
+      ],
+      "sugestao": "Troque a dedução por uma certidão.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "manifestacao_colaterais.txt",
+        "trecho": "discutem quem deveria receber os bens",
+        "conferido": true
+       }
+      ],
+      "replica": "Foi feita alguma busca de testamento? Onde está a certidão?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "O documento não menciona testamento. Vamos pedir a certidão de busca de testamentos antes de discutir a divisão, porque um testamento pode mudar a partilha para todos, inclusive para a companheira.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta reconhece a lacuna, indica a providência certa e mostra que ela interessa a todas as partes.",
+      "pontos_fortes": [
+       "Não afirma o que não sabe.",
+       "Indica prova objetiva.",
+       "Postura colaborativa."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Junte a certidão de busca na primeira oportunidade.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "manifestacao_colaterais.txt",
+        "trecho": "Um homem faleceu sem deixar descendentes ou ascendentes.",
         "conferido": true
        }
       ],

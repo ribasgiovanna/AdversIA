@@ -243,28 +243,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "O Lucas deixou bem claro que quer morar com o pai, ele fala isso toda semana.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta acrescenta um fato, a frequência semanal, que não está nos documentos, e confirma que não houve escuta profissional.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "\"Toda semana\" não aparece em nenhum documento.",
-       "Reforça que a preferência é só relato do pai."
-      ],
-      "sugestao": "Reconheça que a preferência ainda não foi colhida por profissional e requeira o estudo psicossocial.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "pedido_daniel.txt",
-        "trecho": "Lucas passou a afirmar que prefere permanecer mais tempo na casa do pai",
-        "conferido": true
-       }
-      ],
-      "replica": "E quantos anos Lucas tem para essa preferência ser levada em conta?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "O pedido relata a preferência de Lucas. Por isso requeremos que ele seja ouvido por equipe técnica, para que a vontade dele seja registrada da forma adequada.",
      "avaliacao": {
       "avaliacao": "parcial",
@@ -286,6 +264,29 @@
       ],
       "replica": "E se o estudo mostrar que ele diz o mesmo à mãe sobre a casa dela?"
      }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Ainda não foi ouvida, e Daniel não quer que Lucas tenha de escolher entre os pais. Por isso a preferência é só um dos quatro fundamentos: proximidade da escola, horários flexíveis e menos tempo no trânsito podem ser verificados sem depender da vontade dele. Pedimos o estudo psicossocial para completar.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta é honesta sobre a escuta e reduz a dependência do argumento mais frágil, apoiando o pedido em fatos verificáveis.",
+      "pontos_fortes": [
+       "Não expõe a criança.",
+       "Mostra que o pedido tem outros fundamentos objetivos.",
+       "Pede o estudo técnico."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Traga comprovantes de endereço e da distância até a escola.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_daniel.txt",
+        "trecho": "A residência de Daniel fica próxima à escola e às atividades do menino",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
     }
    ]
   },
@@ -294,24 +295,27 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "A mãe não participa de nada, quem faz tudo é o pai.",
+     "texto": "Hoje é a mãe, porque Lucas mora com ela durante a semana. Isso é consequência da residência atual, não prova de que ela seja mais apta. Com a mudança, Daniel, que tem horários flexíveis, assumiria essa rotina.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta contradiz o que a mãe afirma e o próprio pedido, que diz que Lucas mora com ela durante a semana.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Nenhum documento sustenta que o pai faz \"tudo\".",
-       "É pouco crível diante da rotina semanal descrita no pedido."
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta tenta relativizar o argumento da mãe, mas admite sem verificação o fato que ela alega.",
+      "pontos_fortes": [
+       "Explica o contexto da rotina atual.",
+       "Liga a mudança à flexibilidade do pai."
       ],
-      "sugestao": "Não negue a participação da mãe; mostre que ela também não comprovou ser a principal responsável e peça os registros da escola.",
+      "pontos_frageis": [
+       "Confirma que a mãe é a principal responsável, sem nenhum registro.",
+       "A flexibilidade de horários ainda não está provada."
+      ],
+      "sugestao": "Não admita o fato sem verificar: peça à escola e às clínicas os registros de acompanhamento.",
       "apoio_nos_documentos": [
        {
-        "documento": "pedido_daniel.txt",
-        "trecho": "Durante a semana, Lucas mora com Patrícia",
+        "documento": "manifestacao_patricia.txt",
+        "trecho": "sempre foi a principal responsável pela rotina escolar e médica",
         "conferido": true
        }
       ],
-      "replica": "Então por que Lucas mora com a mãe durante a semana?"
+      "replica": "Então o senhor reconhece que quem cuida da rotina escolar e médica é a mãe?"
      }
     },
     {
@@ -343,15 +347,19 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Ele é o próprio chefe, pode sair quando quiser.",
+     "texto": "Daniel vai juntar a escala de trabalho dos últimos seis meses e a declaração do empregador. E mais do que o papel importa o histórico: nos fins de semana com o pai, Lucas cumpre todas as atividades sem nenhum atraso.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta acrescenta um fato novo, que Daniel é o próprio chefe, sem nenhum documento.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Nenhum documento informa a ocupação de Daniel."
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta indica prova documental concreta, mas afirma um histórico que não está em nenhum documento.",
+      "pontos_fortes": [
+       "Prova documental com período definido.",
+       "Tenta mostrar a flexibilidade na prática."
       ],
-      "sugestao": "Indique a declaração do empregador ou, se ele for autônomo, documentos que mostrem a rotina de trabalho.",
+      "pontos_frageis": [
+       "O histórico dos fins de semana não está documentado.",
+       "Fins de semana não mostram a rotina escolar dos dias úteis."
+      ],
+      "sugestao": "Fique na escala e na declaração e explique como os horários cobrem a entrada e a saída da escola.",
       "apoio_nos_documentos": [
        {
         "documento": "pedido_daniel.txt",
@@ -359,7 +367,7 @@
         "conferido": true
        }
       ],
-      "replica": "E qual é a profissão dele, afinal?"
+      "replica": "Onde está registrado que Lucas cumpre todas as atividades sem atraso nesses fins de semana?"
      }
     },
     {
@@ -383,6 +391,108 @@
        }
       ],
       "replica": "E quem fica com Lucas nos dias em que o pai não tem essa flexibilidade?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Quanto tempo Lucas passa hoje no trânsito para ir à escola?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "O pedido não informa o tempo, e vamos medi-lo: juntaremos os endereços das duas casas e da escola com o cálculo do trajeto, além do boletim de Lucas. Assim a vantagem da residência de Daniel fica demonstrada com dados.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta reconhece a lacuna e oferece uma prova objetiva e fácil de verificar.",
+      "pontos_fortes": [
+       "Prova simples e verificável.",
+       "Liga o dado ao pedido."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Leve o cálculo do trajeto impresso.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_daniel.txt",
+        "trecho": "A mudança reduziria o tempo que Lucas passa diariamente no trânsito",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Mais de uma hora por dia, o que cansa a criança e prejudica o rendimento escolar.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta dá concretude ao argumento, mas com um tempo e um prejuízo escolar que não estão nos autos.",
+      "pontos_fortes": [
+       "Mostra por que o deslocamento importa."
+      ],
+      "pontos_frageis": [
+       "O tempo informado não tem base.",
+       "Não há boletim ou relatório da escola."
+      ],
+      "sugestao": "Apresente o cálculo do trajeto e o boletim em vez de estimativas.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_daniel.txt",
+        "trecho": "Patrícia precisa percorrer uma distância maior diariamente",
+        "conferido": true
+       }
+      ],
+      "replica": "De onde vem essa hora? E qual é o rendimento escolar dele?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "A mudança de residência não seria uma ruptura na rotina de Lucas, como diz a mãe?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Ruptura seria manter Lucas longe da escola e do pai que ele prefere. Crianças se adaptam rápido a mudanças positivas.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é firme, mas generaliza sobre adaptação e ignora a relação de Lucas com a mãe.",
+      "pontos_fortes": [
+       "Retoma a proximidade da escola."
+      ],
+      "pontos_frageis": [
+       "A preferência de Lucas não foi avaliada.",
+       "\"Crianças se adaptam rápido\" não tem apoio técnico."
+      ],
+      "sugestao": "Proponha uma transição com avaliação técnica em vez de minimizar a mudança.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "manifestacao_patricia.txt",
+        "trecho": "poderia representar uma ruptura desnecessária",
+        "conferido": true
+       }
+      ],
+      "replica": "Qual profissional afirmou que a mudança seria positiva para ele?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "A guarda continua compartilhada e Lucas já convive com o pai nos fins de semana, então não se trata de ruptura, e sim de inverter uma rotina que ele já conhece. Propomos que a mãe tenha convivência ampla durante a semana e em fins de semana alternados.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta enfrenta a objeção com fatos do pedido e oferece uma convivência equilibrada à mãe.",
+      "pontos_fortes": [
+       "Usa a guarda compartilhada.",
+       "Propõe calendário concreto para a mãe."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Leve o calendário proposto por escrito.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_daniel.txt",
+        "trecho": "possuem guarda compartilhada do filho Lucas",
+        "conferido": true
+       }
+      ],
+      "replica": ""
      }
     }
    ]

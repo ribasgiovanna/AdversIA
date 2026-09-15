@@ -13,108 +13,440 @@
     "categoria": "lacuna_probatoria",
     "texto": "O pedido de Roberto se apoia apenas na maioridade e na renda da filha; não descreve nenhuma mudança na capacidade financeira dele nem informa quanto ganha hoje.",
     "provenance": "INFERENCE",
-    "origem": [{"documento": "peticao_roberto.txt", "trecho": "sob o fundamento de que a filha atingiu a maioridade civil e já possui renda própria"}]
+    "origem": [
+     {
+      "documento": "peticao_roberto.txt",
+      "trecho": "sob o fundamento de que a filha atingiu a maioridade civil e já possui renda própria"
+     }
+    ]
    },
    {
     "id": "lacuna-comprovante-renda",
     "categoria": "lacuna_probatoria",
     "texto": "A renda de cerca de R$ 1.400,00 é citada pelas duas partes, mas sem holerite, carteira de trabalho ou qualquer comprovante.",
     "provenance": "INFERENCE",
-    "origem": [{"documento": "peticao_roberto.txt", "trecho": "recebendo aproximadamente R$ 1.400,00"}]
+    "origem": [
+     {
+      "documento": "peticao_roberto.txt",
+      "trecho": "recebendo aproximadamente R$ 1.400,00"
+     }
+    ]
    },
    {
     "id": "lacuna-curso",
     "categoria": "lacuna_probatoria",
     "texto": "Nenhum documento informa a duração do curso técnico, a previsão de conclusão ou a frequência de Mariana.",
     "provenance": "INFERENCE",
-    "origem": [{"documento": "peticao_roberto.txt", "trecho": "iniciou um curso técnico e passou a trabalhar em emprego de meio período"}]
+    "origem": [
+     {
+      "documento": "peticao_roberto.txt",
+      "trecho": "iniciou um curso técnico e passou a trabalhar em emprego de meio período"
+     }
+    ]
    },
    {
     "id": "lacuna-despesas",
     "categoria": "lacuna_probatoria",
     "texto": "Mariana afirma que a renda não basta, mas não lista nenhuma despesa, o que também deixa a necessidade dela sem demonstração.",
     "provenance": "INFERENCE",
-    "origem": [{"documento": "contestacao_mariana.txt", "trecho": "não é suficiente para arcar sozinha com todas as suas despesas"}]
+    "origem": [
+     {
+      "documento": "contestacao_mariana.txt",
+      "trecho": "não é suficiente para arcar sozinha com todas as suas despesas"
+     }
+    ]
    },
    {
     "id": "lacuna-valor-pensao",
     "categoria": "lacuna_probatoria",
     "texto": "O valor atual da pensão não aparece em nenhum documento, o que impede discutir a proporção de uma eventual redução.",
     "provenance": "INFERENCE",
-    "origem": [{"documento": "peticao_roberto.txt", "trecho": "foi condenado a pagar pensão alimentícia em favor de sua filha Mariana"}]
+    "origem": [
+     {
+      "documento": "peticao_roberto.txt",
+      "trecho": "foi condenado a pagar pensão alimentícia em favor de sua filha Mariana"
+     }
+    ]
    },
    {
     "id": "argumento-maioridade",
     "categoria": "contra_argumento",
     "texto": "A defesa dirá que a maioridade, sozinha, não encerra a pensão de quem está estudando para conquistar a própria independência, que é exatamente a situação descrita por Mariana.",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "contestacao_mariana.txt", "trecho": "Ainda está estudando e buscando qualificação profissional, cursando um curso técnico"}]
+    "origem": [
+     {
+      "documento": "contestacao_mariana.txt",
+      "trecho": "Ainda está estudando e buscando qualificação profissional, cursando um curso técnico"
+     }
+    ]
    },
    {
     "id": "argumento-meio-periodo",
     "categoria": "contra_argumento",
     "texto": "O trabalho em meio período será apresentado como escolha necessária para estudar, e não como capacidade plena de se sustentar.",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "contestacao_mariana.txt", "trecho": "Sua jornada de trabalho em meio período, necessária para conciliar com os estudos"}]
+    "origem": [
+     {
+      "documento": "contestacao_mariana.txt",
+      "trecho": "Sua jornada de trabalho em meio período, necessária para conciliar com os estudos"
+     }
+    ]
    },
    {
     "id": "argumento-condicoes-pai",
     "categoria": "contra_argumento",
     "texto": "Mariana afirma que Roberto tem condições econômicas melhores, e a petição não traz nada que mostre o contrário.",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "contestacao_mariana.txt", "trecho": "O genitor Roberto possui condições econômicas melhores do que as dela"}]
+    "origem": [
+     {
+      "documento": "contestacao_mariana.txt",
+      "trecho": "O genitor Roberto possui condições econômicas melhores do que as dela"
+     }
+    ]
    },
    {
     "id": "pergunta-curso",
     "categoria": "pergunta_dificil",
     "texto": "Quando termina o curso técnico de Mariana, e o pai pretende manter a pensão até lá?",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "contestacao_mariana.txt", "trecho": "cursando um curso técnico"}]
+    "origem": [
+     {
+      "documento": "contestacao_mariana.txt",
+      "trecho": "cursando um curso técnico"
+     }
+    ]
    },
    {
     "id": "pergunta-despesas",
     "categoria": "pergunta_dificil",
     "texto": "Quais são as despesas mensais de Mariana hoje, e quanto delas os R$ 1.400,00 cobrem?",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "contestacao_mariana.txt", "trecho": "não é suficiente para arcar sozinha com todas as suas despesas"}]
+    "origem": [
+     {
+      "documento": "contestacao_mariana.txt",
+      "trecho": "não é suficiente para arcar sozinha com todas as suas despesas"
+     }
+    ]
    },
    {
     "id": "pergunta-valor",
     "categoria": "pergunta_dificil",
     "texto": "Se o pedido é de redução, para qual valor, e com base em qual cálculo?",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "peticao_roberto.txt", "trecho": "Roberto requer a redução ou o encerramento da pensão alimentícia"}]
+    "origem": [
+     {
+      "documento": "peticao_roberto.txt",
+      "trecho": "Roberto requer a redução ou o encerramento da pensão alimentícia"
+     }
+    ]
    }
   ],
   "linha_do_tempo": [],
   "plano_de_provas": [
-   {"prova": "Comprovante de renda de Mariana (holerite ou carteira de trabalho)", "finalidade": "Confirmar o valor que ela recebe e a jornada de meio período.", "como_obter": "Requerer que Mariana exiba os comprovantes ou pedir ofício ao empregador.", "prioridade": "alta", "apontamentos": ["lacuna-comprovante-renda", "argumento-meio-periodo"]},
-   {"prova": "Comprovante de matrícula com a previsão de conclusão do curso técnico", "finalidade": "Definir por quanto tempo ainda faz sentido manter a pensão.", "como_obter": "Requerer que Mariana junte a declaração da instituição de ensino.", "prioridade": "alta", "apontamentos": ["lacuna-curso", "argumento-maioridade", "pergunta-curso"]},
-   {"prova": "Sentença ou acordo que fixou a pensão, com o valor atual", "finalidade": "Permitir discutir a proporção da redução pedida.", "como_obter": "Cópia do processo de alimentos anterior, que o próprio cliente tem.", "prioridade": "media", "apontamentos": ["lacuna-valor-pensao", "pergunta-valor"]},
-   {"prova": "Planilha de despesas de Mariana com comprovantes", "finalidade": "Testar a alegação de que a renda não é suficiente.", "como_obter": "Requerer que a filha apresente as despesas mensais comprovadas.", "prioridade": "media", "apontamentos": ["lacuna-despesas", "pergunta-despesas"]},
-   {"prova": "Comprovantes da renda atual de Roberto", "finalidade": "Evitar que a falta de informação sobre o pai pese contra o pedido.", "como_obter": "Reunir com o cliente holerites ou declaração de imposto de renda.", "prioridade": "baixa", "apontamentos": ["lacuna-mudanca-pai", "argumento-condicoes-pai"]}
+   {
+    "prova": "Comprovante de renda de Mariana (holerite ou carteira de trabalho)",
+    "finalidade": "Confirmar o valor que ela recebe e a jornada de meio período.",
+    "como_obter": "Requerer que Mariana exiba os comprovantes ou pedir ofício ao empregador.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "lacuna-comprovante-renda",
+     "argumento-meio-periodo"
+    ]
+   },
+   {
+    "prova": "Comprovante de matrícula com a previsão de conclusão do curso técnico",
+    "finalidade": "Definir por quanto tempo ainda faz sentido manter a pensão.",
+    "como_obter": "Requerer que Mariana junte a declaração da instituição de ensino.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "lacuna-curso",
+     "argumento-maioridade",
+     "pergunta-curso"
+    ]
+   },
+   {
+    "prova": "Sentença ou acordo que fixou a pensão, com o valor atual",
+    "finalidade": "Permitir discutir a proporção da redução pedida.",
+    "como_obter": "Cópia do processo de alimentos anterior, que o próprio cliente tem.",
+    "prioridade": "media",
+    "apontamentos": [
+     "lacuna-valor-pensao",
+     "pergunta-valor"
+    ]
+   },
+   {
+    "prova": "Planilha de despesas de Mariana com comprovantes",
+    "finalidade": "Testar a alegação de que a renda não é suficiente.",
+    "como_obter": "Requerer que a filha apresente as despesas mensais comprovadas.",
+    "prioridade": "media",
+    "apontamentos": [
+     "lacuna-despesas",
+     "pergunta-despesas"
+    ]
+   },
+   {
+    "prova": "Comprovantes da renda atual de Roberto",
+    "finalidade": "Evitar que a falta de informação sobre o pai pese contra o pedido.",
+    "como_obter": "Reunir com o cliente holerites ou declaração de imposto de renda.",
+    "prioridade": "baixa",
+    "apontamentos": [
+     "lacuna-mudanca-pai",
+     "argumento-condicoes-pai"
+    ]
+   }
   ]
  },
  "audiencia": [
   {
    "pergunta": "Quando termina o curso técnico de Mariana, e o pai pretende manter a pensão até lá?",
    "respostas": [
-    {"rotulo": "Resposta A", "texto": "Ela está enrolando no curso só para continuar recebendo.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta acusa Mariana de má-fé sem nenhum dado nos documentos que sustente isso.", "pontos_fortes": [], "pontos_frageis": ["Nenhum documento indica atraso ou abandono do curso.", "O tom acusatório tende a enfraquecer a credibilidade do pedido."], "sugestao": "Peça que Mariana informe a previsão de conclusão e proponha a manutenção da pensão apenas até esse prazo.", "apoio_nos_documentos": [{"documento": "contestacao_mariana.txt", "trecho": "Ainda está estudando e buscando qualificação profissional, cursando um curso técnico"}], "replica": "O senhor tem algum documento que mostre que ela está atrasada no curso?"}},
-    {"rotulo": "Resposta B", "texto": "Nenhum documento informa a duração do curso. Pedimos que Mariana junte a matrícula com a previsão de conclusão e propomos que a pensão seja mantida só até esse prazo, com redução imediata pela renda que ela já recebe.", "avaliacao": {"avaliacao": "convincente", "resumo": "Sua resposta reconhece a situação de estudante, aponta a falta de informação e oferece uma solução razoável e verificável.", "pontos_fortes": ["Não nega o fato de que Mariana estuda.", "Transforma a discussão em um prazo concreto.", "Mantém o argumento da renda própria."], "pontos_frageis": [], "sugestao": "Leve um valor de redução calculado para tornar a proposta ainda mais concreta.", "apoio_nos_documentos": [{"documento": "peticao_roberto.txt", "trecho": "iniciou um curso técnico e passou a trabalhar em emprego de meio período"}], "replica": ""}}
+    {
+     "rotulo": "Resposta A",
+     "texto": "Com a maioridade, acaba o dever de sustento que decorre do poder familiar; o que pode continuar é a ajuda para os estudos, que depende de prova de matrícula e de aproveitamento. Mariana já trabalha e não comprovou nada disso, então a pensão deve cessar agora, e ela pode pedir de novo se provar a necessidade.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta distingue bem o fundamento da pensão depois da maioridade, mas pede o corte imediato e não responde sobre o prazo do curso.",
+      "pontos_fortes": [
+       "Explica por que a situação mudou com a maioridade.",
+       "Aponta a falta de comprovantes do curso."
+      ],
+      "pontos_frageis": [
+       "A própria petição reconhece que Mariana cursa técnico.",
+       "Não informa quando o curso termina, que é o que foi perguntado."
+      ],
+      "sugestao": "Responda diretamente sobre o prazo do curso e ofereça uma data final, em vez de pedir o corte imediato.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_roberto.txt",
+        "trecho": "iniciou um curso técnico"
+       }
+      ],
+      "replica": "Então o senhor quer interromper a pensão no meio do curso que o próprio pedido reconhece?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Nenhum documento informa a duração do curso. Pedimos que Mariana junte a matrícula com a previsão de conclusão e propomos que a pensão seja mantida só até esse prazo, com redução imediata pela renda que ela já recebe.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta reconhece a situação de estudante, aponta a falta de informação e oferece uma solução razoável e verificável.",
+      "pontos_fortes": [
+       "Não nega o fato de que Mariana estuda.",
+       "Transforma a discussão em um prazo concreto.",
+       "Mantém o argumento da renda própria."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Leve um valor de redução calculado para tornar a proposta ainda mais concreta.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_roberto.txt",
+        "trecho": "iniciou um curso técnico e passou a trabalhar em emprego de meio período"
+       }
+      ],
+      "replica": ""
+     }
+    }
    ]
   },
   {
    "pergunta": "Quais são as despesas mensais de Mariana hoje, e quanto delas os R$ 1.400,00 cobrem?",
    "respostas": [
-    {"rotulo": "Resposta A", "texto": "Uma pessoa jovem vive muito bem com R$ 1.400,00.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta usa uma opinião geral no lugar dos dados que a pergunta pede.", "pontos_fortes": [], "pontos_frageis": ["Não há nos documentos informação sobre o custo de vida de Mariana.", "Ignora as despesas com o curso."], "sugestao": "Mostre que é Mariana quem precisa demonstrar as despesas que alega não conseguir pagar.", "apoio_nos_documentos": [{"documento": "contestacao_mariana.txt", "trecho": "não é suficiente para arcar sozinha com todas as suas despesas"}], "replica": "E as mensalidades do curso técnico entram nessa conta?"}},
-    {"rotulo": "Resposta B", "texto": "Mariana afirma que a renda não basta, mas não lista nenhuma despesa. Sem esses números, não é possível afirmar que ela continua dependendo da pensão no valor atual.", "avaliacao": {"avaliacao": "parcial", "resumo": "Sua resposta aponta corretamente a falta de prova da outra parte, mas o pedido de Roberto também não traz números próprios.", "pontos_fortes": ["Não inventa despesas nem valores.", "Destaca uma lacuna real da contestação."], "pontos_frageis": ["A petição não informa o valor atual da pensão nem a renda do pai."], "sugestao": "Requeira a planilha de despesas e leve o valor atual da pensão para comparar.", "apoio_nos_documentos": [{"documento": "contestacao_mariana.txt", "trecho": "não é suficiente para arcar sozinha com todas as suas despesas"}], "replica": "E quanto o senhor paga hoje de pensão?"}}
+    {
+     "rotulo": "Resposta A",
+     "texto": "Hoje não se sabe, porque Mariana não informou nenhuma despesa. Roberto vai juntar os próprios rendimentos, e pedimos que Mariana apresente a planilha com curso, transporte e moradia. Com os números dos dois lados, o juízo fixa um valor proporcional.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta aponta a falta de prova da outra parte sem se esconder atrás dela: oferece os próprios números e propõe um critério objetivo.",
+      "pontos_fortes": [
+       "Aponta que a contestação não traz despesas.",
+       "Compromete Roberto com a própria prova.",
+       "Propõe solução proporcional."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Leve os comprovantes de rendimentos de Roberto já organizados.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_mariana.txt",
+        "trecho": "não é suficiente para arcar sozinha com todas as suas despesas"
+       }
+      ],
+      "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Mariana afirma que a renda não basta, mas não lista nenhuma despesa. Sem esses números, não é possível afirmar que ela continua dependendo da pensão no valor atual.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta aponta corretamente a falta de prova da outra parte, mas o pedido de Roberto também não traz números próprios.",
+      "pontos_fortes": [
+       "Não inventa despesas nem valores.",
+       "Destaca uma lacuna real da contestação."
+      ],
+      "pontos_frageis": [
+       "A petição não informa o valor atual da pensão nem a renda do pai."
+      ],
+      "sugestao": "Requeira a planilha de despesas e leve o valor atual da pensão para comparar.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_mariana.txt",
+        "trecho": "não é suficiente para arcar sozinha com todas as suas despesas"
+       }
+      ],
+      "replica": "E quanto o senhor paga hoje de pensão?"
+     }
+    }
    ]
   },
   {
    "pergunta": "Se o pedido é de redução, para qual valor, e com base em qual cálculo?",
    "respostas": [
-    {"rotulo": "Resposta A", "texto": "Queremos zerar a pensão, ela já é maior de idade.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta abandona o pedido de redução e se apoia só na maioridade, o argumento que a defesa melhor rebate.", "pontos_fortes": [], "pontos_frageis": ["A maioridade sozinha não responde à situação de estudante.", "Não apresenta nenhum cálculo."], "sugestao": "Mantenha o encerramento como pedido principal, mas ofereça um valor de redução ligado à renda que Mariana já recebe.", "apoio_nos_documentos": [{"documento": "contestacao_mariana.txt", "trecho": "A pensão alimentícia contribui diretamente para sua formação profissional"}], "replica": "Então o senhor não aceita nenhuma redução intermediária?"}},
-    {"rotulo": "Resposta B", "texto": "O pedido principal é o encerramento. Subsidiariamente, pedimos a redução proporcional à renda de cerca de R$ 1.400,00 que Mariana já recebe, e vamos apresentar o cálculo com o valor atual da pensão.", "avaliacao": {"avaliacao": "parcial", "resumo": "Sua resposta organiza bem os pedidos, mas o cálculo e o valor atual da pensão ainda não estão nos autos.", "pontos_fortes": ["Apresenta um pedido alternativo razoável.", "Usa a renda que as duas partes reconhecem."], "pontos_frageis": ["Sem o valor atual da pensão, a proporção continua indefinida."], "sugestao": "Junte a sentença que fixou a pensão e leve o cálculo pronto.", "apoio_nos_documentos": [{"documento": "peticao_roberto.txt", "trecho": "Roberto requer a redução ou o encerramento da pensão alimentícia"}], "replica": "E como fica o custo do curso nesse cálculo?"}}
+    {
+     "rotulo": "Resposta A",
+     "texto": "Propomos reduzir a pensão de modo que a soma dela com o salário de Mariana fique igual ao que ela recebia antes de começar a trabalhar. Assim ela não perde nada, e Roberto deixa de sustentar sozinho uma pessoa que já tem renda.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta traz um critério simples, mas ele pode anular todo o salário de Mariana e ignora os gastos novos com curso e trabalho.",
+      "pontos_fortes": [
+       "Critério objetivo e fácil de explicar.",
+       "Responde à pergunta sobre o cálculo."
+      ],
+      "pontos_frageis": [
+       "O valor atual da pensão não está nos autos.",
+       "Na prática, o salário dela serviria só para aliviar o pai."
+      ],
+      "sugestao": "Proponha uma redução proporcional com o cálculo nos autos e informe o valor atual da pensão.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_roberto.txt",
+        "trecho": "recebendo aproximadamente R$ 1.400,00"
+       }
+      ],
+      "replica": "Então todo o salário dela serviria só para diminuir o que o pai paga?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "O pedido principal é o encerramento. Subsidiariamente, pedimos a redução proporcional à renda de cerca de R$ 1.400,00 que Mariana já recebe, e vamos apresentar o cálculo com o valor atual da pensão.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta organiza bem os pedidos, mas o cálculo e o valor atual da pensão ainda não estão nos autos.",
+      "pontos_fortes": [
+       "Apresenta um pedido alternativo razoável.",
+       "Usa a renda que as duas partes reconhecem."
+      ],
+      "pontos_frageis": [
+       "Sem o valor atual da pensão, a proporção continua indefinida."
+      ],
+      "sugestao": "Junte a sentença que fixou a pensão e leve o cálculo pronto.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_roberto.txt",
+        "trecho": "Roberto requer a redução ou o encerramento da pensão alimentícia"
+       }
+      ],
+      "replica": "E como fica o custo do curso nesse cálculo?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Roberto tem condições econômicas melhores que as de Mariana?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "A diferença de renda existe, mas não é o que se discute: com a maioridade e a renda própria, a questão é se Mariana ainda precisa da pensão no valor atual. Roberto vai juntar os próprios rendimentos para que a comparação seja feita com números.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta não nega o óbvio, recoloca o critério e oferece transparência sobre a renda.",
+      "pontos_fortes": [
+       "Admite a diferença sem prejuízo à tese.",
+       "Traz a necessidade atual para o centro.",
+       "Oferece os próprios números."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Leve os comprovantes de rendimentos de Roberto.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_mariana.txt",
+        "trecho": "O genitor Roberto possui condições econômicas melhores do que as dela"
+       }
+      ],
+      "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Roberto também tem despesas e outra família para sustentar, então a comparação simples de salários não é justa.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta tenta relativizar a diferença de renda, mas com um fato que não está nos documentos.",
+      "pontos_fortes": [
+       "Lembra que a capacidade de pagar também conta."
+      ],
+      "pontos_frageis": [
+       "A outra família não aparece em nenhum documento.",
+       "Não apresenta nenhum número."
+      ],
+      "sugestao": "Só mencione encargos de Roberto que você possa comprovar.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_roberto.txt",
+        "trecho": "Roberto requer a redução ou o encerramento da pensão alimentícia"
+       }
+      ],
+      "replica": "Onde está nos autos que Roberto tem outra família?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Por que o pedido não informa o valor atual da pensão?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "O valor consta da decisão anterior, que as partes conhecem, e não precisava ser repetido.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta explica a omissão, mas o juízo precisa desse número para decidir a redução.",
+      "pontos_fortes": [
+       "Indica onde o valor está."
+      ],
+      "pontos_frageis": [
+       "A decisão anterior não foi juntada.",
+       "Sem o valor, a redução não pode ser calculada."
+      ],
+      "sugestao": "Junte a decisão que fixou a pensão e os últimos comprovantes.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_roberto.txt",
+        "trecho": "Roberto foi condenado a pagar pensão alimentícia"
+       }
+      ],
+      "replica": "E como o juízo vai calcular a redução sem esse valor?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Foi uma falha que vamos corrigir: juntaremos a decisão que fixou a pensão e os comprovantes dos últimos pagamentos. Sem esse número não é possível dimensionar a redução, e é do interesse de Roberto que ele esteja nos autos.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta assume a omissão e a corrige com os documentos certos.",
+      "pontos_fortes": [
+       "Reconhece a falha.",
+       "Indica prova completa."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Traga também o cálculo do valor proposto.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_roberto.txt",
+        "trecho": "Roberto foi condenado a pagar pensão alimentícia"
+       }
+      ],
+      "replica": ""
+     }
+    }
    ]
   }
  ]

@@ -305,28 +305,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Isso não tem nada a ver com o processo.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta evita um ponto que atinge diretamente a acusação sobre os saques.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Deixa sem resposta a alegação de que o dinheiro beneficiou a casa de Mônica.",
-       "Passa impressão de esconder algo."
-      ],
-      "sugestao": "Responda com os fatos e explique se a reforma atendeu à segurança de Aurora.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "manifestacao_rogerio.txt",
-        "trecho": "a reforma do banheiro da casa de Mônica, onde a mãe mora",
-        "conferido": true
-       }
-      ],
-      "replica": "Então a senhora não nega que a reforma foi paga com o dinheiro da sua mãe?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "Houve uma reforma para adaptar o banheiro à mãe, e parte foi paga com o dinheiro dela. Mas isso responde por uma parte pequena dos R$ 42 mil, e o restante precisa de prestação de contas com os extratos.",
      "avaliacao": {
       "avaliacao": "parcial",
@@ -349,6 +327,34 @@
       ],
       "replica": "Qual foi o valor da reforma?"
      }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Houve uma adaptação do banheiro para a segurança da mãe, que mora na casa de Mônica. Se foi paga com dinheiro de Aurora, o gasto foi em benefício dela, e isso aparecerá na prestação de contas. O problema não é essa reforma: é que ninguém sabe o destino do conjunto dos R$ 42 mil, e os recibos que Rogério diz guardar nunca foram mostrados.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta não esconde a reforma, explica por que ela beneficiou Aurora e recoloca o foco na falta de contas do total sacado.",
+      "pontos_fortes": [
+       "Não nega um fato verificável.",
+       "Não inventa valores.",
+       "Aponta que os recibos não foram apresentados."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Leve os comprovantes da reforma, se Mônica os tiver.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "manifestacao_rogerio.txt",
+        "trecho": "conforme recibos que Rogério guarda",
+        "conferido": true
+       },
+       {
+        "documento": "pedido_monica.txt",
+        "trecho": "sem que Mônica saiba para quê",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
     }
    ]
   },
@@ -357,16 +363,19 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Porque ela tem Alzheimer e não tem mais condições de decidir nada.",
+     "texto": "Porque o Alzheimer é progressivo: ainda que hoje Aurora converse, em pouco tempo não conseguirá decidir, e é melhor que a curatela já preveja isso do que abrir outro processo depois.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta trata o diagnóstico como incapacidade total, sem avaliação atual e contra o que o outro filho descreve.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "O laudo citado é de 09/2023.",
-       "Ignora a vontade manifestada por Aurora."
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta traz uma preocupação real com a evolução da doença, mas pede poderes para uma situação que ainda não existe.",
+      "pontos_fortes": [
+       "Pensa na proteção futura de Aurora.",
+       "Evita a necessidade de novo processo."
       ],
-      "sugestao": "Ajuste o pedido ao que a perícia atual indicar e limite a curatela ao necessário.",
+      "pontos_frageis": [
+       "O laudo indica fase inicial da doença.",
+       "Pedir poderes preventivos contraria a ideia de medida proporcional."
+      ],
+      "sugestao": "Peça curatela limitada ao que a perícia apontar hoje; se a doença avançar, o pedido pode ser revisto.",
       "apoio_nos_documentos": [
        {
         "documento": "manifestacao_rogerio.txt",
@@ -374,7 +383,7 @@
         "conferido": true
        }
       ],
-      "replica": "Algum médico avaliou a sua mãe depois de 2023?"
+      "replica": "Então a senhora pede poderes para uma situação que ainda não existe?"
      }
     },
     {
@@ -407,24 +416,27 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Porque meu irmão não é confiável.",
+     "texto": "Porque a tomada de decisão apoiada colocaria como apoiador justamente quem movimentou R$ 42 mil sem prestar contas. Primeiro Rogério explica os saques; depois se discute qualquer apoio.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta acusa o irmão sem indicar prova e transforma a questão em conflito familiar.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Nenhum documento comprova uso indevido.",
-       "Não fala da situação de Aurora."
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta aponta um conflito real, mas trata os saques como irregulares antes da prestação de contas e não responde se Aurora pode decidir com apoio.",
+      "pontos_fortes": [
+       "Mostra o risco de ter Rogério como apoiador.",
+       "Exige prestação de contas."
       ],
-      "sugestao": "Fale dos fatos objetivos: saques sem prestação de contas e a necessidade de controle.",
+      "pontos_frageis": [
+       "Os saques ainda não foram examinados.",
+       "Não trata da capacidade de Aurora."
+      ],
+      "sugestao": "Responda sobre a capacidade de Aurora e peça a prestação de contas sem pressupor desvio.",
       "apoio_nos_documentos": [
        {
-        "documento": "manifestacao_rogerio.txt",
-        "trecho": "conforme recibos que Rogério guarda",
+        "documento": "pedido_monica.txt",
+        "trecho": "foram sacados cerca de R$ 42.000,00 da conta de Aurora",
         "conferido": true
        }
       ],
-      "replica": "A senhora tem alguma prova de que ele usou o dinheiro para si?"
+      "replica": "Se os recibos mostrarem cuidadora e remédios, a senhora aceita o apoio dos dois filhos?"
      }
     },
     {
@@ -449,6 +461,112 @@
        }
       ],
       "replica": "Então a senhora concorda com a decisão apoiada?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Quem paga a cuidadora noturna de Aurora?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Isso deve aparecer na prestação de contas. Rogério diz ter recibos da cuidadora, dos remédios e da reforma: se forem apresentados e somados, saberemos quanto dos cerca de R$ 42.000,00 está explicado. Até lá, o problema continua sendo a falta de contas.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta não nega a despesa e transforma a alegação de Rogério em pedido de prestação de contas.",
+      "pontos_fortes": [
+       "Não afirma o que não sabe.",
+       "Usa a própria alegação de Rogério.",
+       "Mantém o foco nas contas."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Peça que os recibos sejam apresentados em planilha mês a mês.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_monica.txt",
+        "trecho": "foram sacados cerca de R$ 42.000,00 da conta de Aurora",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Mônica cuida da mãe durante o dia e à noite, e a cuidadora é só uma ajuda eventual.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta valoriza o cuidado de Mônica, mas não responde quem paga a cuidadora.",
+      "pontos_fortes": [
+       "Mostra dedicação da requerente."
+      ],
+      "pontos_frageis": [
+       "Não responde à pergunta.",
+       "Não há recibo nem contrato."
+      ],
+      "sugestao": "Responda com base nos extratos e recibos.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_monica.txt",
+        "trecho": "Aurora recebeu diagnóstico de doença de Alzheimer em 09/2023",
+        "conferido": true
+       }
+      ],
+      "replica": "Então existe cuidadora, e alguém paga por ela?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Aurora foi ouvida sobre quem ela quer como apoio ou curadora?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Não, porque a doença já compromete o julgamento dela e a opinião dela poderia ser influenciada por quem estiver perto.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta aponta um risco real, mas afasta a escuta antes da perícia e contradiz o que se diz sobre a lucidez dela.",
+      "pontos_fortes": [
+       "Menciona risco de influência."
+      ],
+      "pontos_frageis": [
+       "Afastar a escuta parece desproporcional.",
+       "Conflita com a afirmação de que ela conversa e reconhece os filhos."
+      ],
+      "sugestao": "Aceite a escuta e peça que seja feita com apoio técnico.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_monica.txt",
+        "trecho": "Aurora já não reconhece alguns netos e se perde quando sai sozinha.",
+        "conferido": true
+       }
+      ],
+      "replica": "Se ela disse a vizinhos o que quer, por que não ouvi-la no processo?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Ainda não foi. Mônica concorda que Aurora seja ouvida pelo juízo e pela perícia, e a vontade dela deve pesar na escolha; o relato de vizinhos não substitui essa escuta.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta respeita a vontade de Aurora, mas não diz o que fará se ela preferir os dois filhos.",
+      "pontos_fortes": [
+       "Aceita a escuta.",
+       "Afasta relato indireto."
+      ],
+      "pontos_frageis": [
+       "Não antecipa o cenário desfavorável.",
+       "Aceita um critério que pode favorecer a proposta de Rogério."
+      ],
+      "sugestao": "Diga como a proteção do patrimônio fica garantida em qualquer cenário.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_monica.txt",
+        "trecho": "Nomeação de Mônica como curadora de Aurora",
+        "conferido": true
+       }
+      ],
+      "replica": "E se Aurora disser que quer os dois filhos como apoiadores?"
      }
     }
    ]

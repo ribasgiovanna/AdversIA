@@ -301,24 +301,27 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Isso é invenção dele para afastar a gente da neta.",
+     "texto": "A avó falou da mãe de Lívia, que morreu em 2023, sem intenção de atacar a madrasta. Uma criança em luto precisa poder falar da mãe, e é esse espaço que os avós oferecem.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta acusa o pai de inventar o episódio sem nenhum elemento e ignora a recomendação de cautela.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Nenhum documento sustenta que o episódio foi inventado.",
-       "O tom de confronto reforça a preocupação do pai."
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta traz um argumento sensível sobre o luto, mas praticamente admite a frase e minimiza o efeito que ela teve em Lívia.",
+      "pontos_fortes": [
+       "Lembra a importância de falar da mãe no luto.",
+       "Nega a intenção de atacar a madrasta."
       ],
-      "sugestao": "Não negue nem admita sem cuidado: peça que o episódio seja avaliado tecnicamente e mostre abertura a orientação profissional.",
+      "pontos_frageis": [
+       "Não enfrenta o fato de Lívia ter voltado chorando.",
+       "Pode confirmar a preocupação do pai."
+      ],
+      "sugestao": "Não justifique o episódio; aceite orientação profissional e peça a avaliação técnica.",
       "apoio_nos_documentos": [
        {
-        "documento": "contestacao_caio.txt",
-        "trecho": "Lívia voltou chorando",
+        "documento": "pedido_avos.txt",
+        "trecho": "A mãe de Lívia, filha de Irene e Walter, morreu em 14/06/2023",
         "conferido": true
        }
       ],
-      "replica": "Então a psicóloga da escola também inventou a recomendação de cautela?"
+      "replica": "Se não houve intenção, por que Lívia voltou chorando?"
      }
     },
     {
@@ -351,24 +354,30 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "O pai já tem a semana inteira com ela.",
+     "texto": "Os avós não querem tirar o tempo do pai. Os fins de semana alternados foram só uma referência, e eles aceitam outro formato: uma tarde por semana, buscando Lívia na escola como faziam até 2023, respeitando os turnos de Caio. O que se pede é recuperar o vínculo que existia, não disputar o tempo dele.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta contradiz o que Caio afirma sobre trabalhar em turnos durante a semana.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Ignora a informação sobre o trabalho em turnos.",
-       "Não oferece alternativa."
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta resolve a objeção do pai com uma alternativa concreta, ligada à rotina que Lívia já teve com os avós.",
+      "pontos_fortes": [
+       "Abre mão dos fins de semana sem abrir mão da convivência.",
+       "Usa a rotina anterior à morte da mãe.",
+       "Considera os turnos de trabalho do pai."
       ],
-      "sugestao": "Proponha dias ou períodos que não tirem o tempo do pai com a filha.",
+      "pontos_frageis": [],
+      "sugestao": "Confirme com a escola os horários de saída antes de propor o dia.",
       "apoio_nos_documentos": [
+       {
+        "documento": "pedido_avos.txt",
+        "trecho": "todas as tardes na casa dos avós, que a buscavam na escola",
+        "conferido": true
+       },
        {
         "documento": "contestacao_caio.txt",
         "trecho": "trabalha em turnos durante a semana",
         "conferido": true
        }
       ],
-      "replica": "Os avós sabem os horários de trabalho de Caio?"
+      "replica": ""
      }
     },
     {
@@ -402,28 +411,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Porque o pai não deixa a gente à vontade com a neta.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta coloca o conforto dos avós à frente do cuidado com a criança, num momento de acompanhamento psicológico.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Não se refere ao interesse de Lívia.",
-       "Reforça a preocupação do pai."
-      ],
-      "sugestao": "Explique a importância de um espaço próprio de convivência para Lívia e aceite uma transição gradual.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "contestacao_caio.txt",
-        "trecho": "não aceita as visitas sem sua presença",
-        "conferido": true
-       }
-      ],
-      "replica": "E o bem-estar de Lívia fica onde nisso?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "Os avós aceitam uma transição: as primeiras visitas podem ser acompanhadas e, com o parecer da psicóloga, passam a acontecer na casa deles, sem a presença do pai.",
      "avaliacao": {
       "avaliacao": "parcial",
@@ -444,6 +431,138 @@
        }
       ],
       "replica": "E quem define quando a transição termina?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Porque a presença do pai muda a dinâmica: Lívia não se sente livre para falar da mãe na frente da nova família. Na casa dos avós, onde a mãe cresceu, ela tem esse espaço.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta explica bem o valor da casa dos avós, mas atribui sentimentos a Lívia sem nenhuma avaliação e reforça o receio do pai sobre a nova família.",
+      "pontos_fortes": [
+       "Liga o pedido à história da mãe de Lívia.",
+       "Explica o sentido das visitas sem o pai."
+      ],
+      "pontos_frageis": [
+       "Nenhum profissional afirmou o que Lívia sente.",
+       "Pode soar como oposição à nova família."
+      ],
+      "sugestao": "Não fale pela criança; proponha uma transição com acompanhamento profissional.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_avos.txt",
+        "trecho": "Lívia pergunta pelos avós e pela casa onde a mãe cresceu",
+        "conferido": true
+       }
+      ],
+      "replica": "Quem disse que Lívia não se sente livre na presença do pai? A psicóloga?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Os avós aceitariam que a psicóloga que acompanha Lívia participe da retomada das visitas?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Aceitam. Lívia está em acompanhamento desde janeiro de 2025, e a psicóloga é quem melhor pode orientar como falar da mãe e da nova família. Os avós querem manter o vínculo, não disputar espaço com o pai.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta acolhe a preocupação do pai, valoriza a profissional e mantém o objetivo do pedido.",
+      "pontos_fortes": [
+       "Usa fato da contestação.",
+       "Postura colaborativa.",
+       "Foco no bem-estar de Lívia."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Proponha um plano de retomada com etapas definidas pela psicóloga.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_caio.txt",
+        "trecho": "Lívia começou acompanhamento psicológico em janeiro de 2025",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Aceitam, desde que isso não sirva para adiar indefinidamente as visitas, que já foram muito reduzidas.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta aceita a orientação, mas a condição soa como desconfiança da profissional.",
+      "pontos_fortes": [
+       "Aceita o acompanhamento.",
+       "Lembra a redução das visitas."
+      ],
+      "pontos_frageis": [
+       "A ressalva pode parecer resistência.",
+       "Não propõe como seria a retomada."
+      ],
+      "sugestao": "Troque a ressalva por um pedido de prazo para reavaliação.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_avos.txt",
+        "trecho": "os avós passaram a ver a neta só uma vez por",
+        "conferido": true
+       }
+      ],
+      "replica": "Se a psicóloga recomendar mais tempo, os avós vão aceitar?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Por que as ligações por vídeo às quartas-feiras não estão acontecendo, se o pai não se opõe ao contato?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Porque Caio não responde às mensagens desde novembro de 2024, e sem a ajuda dele Lívia, de 9 anos, não consegue ligar.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta explica a dificuldade, mas não traz cópia das mensagens e ignora que Caio diz não se opor.",
+      "pontos_fortes": [
+       "Liga o problema à idade de Lívia."
+      ],
+      "pontos_frageis": [
+       "Mensagens não juntadas.",
+       "Não aproveita a concordância declarada de Caio."
+      ],
+      "sugestao": "Junte as mensagens e proponha um horário fixo.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_avos.txt",
+        "trecho": "Desde novembro de 2024, Caio não responde",
+        "conferido": true
+       }
+      ],
+      "replica": "Os avós chegaram a propor um horário fixo para as ligações?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Se Caio não se opõe, a ligação semanal pode começar já, sem esperar o fim do processo, e os avós propõem que isso fique registrado num acordo parcial.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é pragmática e aproveita a contestação, mas não enfrenta por que o contato parou.",
+      "pontos_fortes": [
+       "Propõe solução imediata.",
+       "Usa a própria contestação."
+      ],
+      "pontos_frageis": [
+       "Não explica a interrupção.",
+       "Caio falou em visitas com a presença dele, não em ligações."
+      ],
+      "sugestao": "Pergunte se as ligações também seriam acompanhadas e ofereça essa possibilidade.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_caio.txt",
+        "trecho": "Caio não se opõe a que Lívia veja os avós",
+        "conferido": true
+       }
+      ],
+      "replica": "Caio aceitou visitas com a presença dele; as ligações também seriam acompanhadas?"
      }
     }
    ]

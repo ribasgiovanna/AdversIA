@@ -355,26 +355,27 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Ele nunca pagou nada, é tudo mentira.",
+     "texto": "Pagamentos feitos direto à escola não quitam pensão: a pensão é devida à mãe, em dinheiro, e o pai não pode escolher sozinho a forma de pagar. Por isso esses valores não entram no cálculo.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta nega pagamentos que podem ser confirmados facilmente pela escola.",
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta defende a forma combinada de pagamento, mas erra quem é a credora e recusa qualquer compensação de forma rígida.",
       "pontos_fortes": [
-       "Coerente com o pedido."
+       "Lembra que a forma de pagamento foi acordada.",
+       "Protege o valor da execução."
       ],
       "pontos_frageis": [
-       "Se a escola confirmar os pagamentos, a credibilidade do cálculo inteiro cai.",
-       "Não indica prova da negativa."
+       "A pensão é devida a Laura, não à mãe.",
+       "Ignorar pagamentos comprovados pode enfraquecer o pedido de prisão."
       ],
-      "sugestao": "Peça a declaração da escola antes de negar e ajuste o cálculo ao que for comprovado.",
+      "sugestao": "Peça a declaração da escola e discuta o abatimento, em vez de recusar qualquer compensação.",
       "apoio_nos_documentos": [
        {
-        "documento": "justificativa_anderson.txt",
-        "trecho": "pagou diretamente a mensalidade escolar de Laura de maio a dezembro de 2024",
+        "documento": "requerimento_camila.txt",
+        "trecho": "se obrigou a pagar pensão de R$ 900,00 por mês à filha Laura, todo dia 10",
         "conferido": true
        }
       ],
-      "replica": "A senhora autoriza que a escola informe quem pagou as mensalidades?"
+      "replica": "A pensão é devida à mãe ou a Laura, que teve a mensalidade paga?"
      }
     },
     {
@@ -408,24 +409,32 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Porque a dívida é essa e pronto.",
+     "texto": "Porque voltar a pagar em maio não apaga a mora anterior, e os meses entram no período cobrado até a data do requerimento.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta mantém um cálculo que pode incluir meses pagos, sem nenhuma verificação.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Não enfrenta a alegação de pagamento em dia.",
-       "Arrisca a credibilidade de todo o pedido."
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta confunde a dívida antiga com meses que podem ter sido pagos, o que arrisca cobrar a mais.",
+      "pontos_fortes": [
+       "Lembra que a regularização não apaga o atraso anterior.",
+       "Mantém a cobrança do período."
       ],
-      "sugestao": "Verifique os extratos de maio e junho de 2025 e ajuste a cobrança.",
+      "pontos_frageis": [
+       "Se maio e junho de 2025 foram pagos, não podem estar na dívida.",
+       "Não indica os extratos para conferir."
+      ],
+      "sugestao": "Revise a planilha com os extratos e retire os meses pagos.",
       "apoio_nos_documentos": [
        {
         "documento": "justificativa_anderson.txt",
         "trecho": "Desde maio de 2025 voltou a pagar a pensão em dia",
         "conferido": true
+       },
+       {
+        "documento": "requerimento_camila.txt",
+        "trecho": "de maio de 2024 a junho de 2025",
+        "conferido": true
        }
       ],
-      "replica": "E se os extratos mostrarem os depósitos de maio e junho?"
+      "replica": "Se ele pagou maio e junho de 2025, por que esses meses somam na dívida?"
      }
     },
     {
@@ -457,16 +466,17 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "A menina está passando fome por causa dele.",
+     "texto": "A prisão não exige urgência nova: exige dívida alimentar recente e não paga. Mesmo com a pensão em dia desde maio de 2025, o saldo de 2024 continua em aberto, e a troca de escola mostra o prejuízo. Aceitamos limitar a prisão às parcelas mais recentes e cobrar o restante por penhora, abatido o que for comprovado.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta afirma uma situação grave que nenhum documento descreve.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Nenhum documento fala em fome.",
-       "Exagero tende a enfraquecer o pedido."
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta explica o fundamento da prisão, reconhece a regularização atual e ajusta o pedido com boa-fé.",
+      "pontos_fortes": [
+       "Separa atraso antigo de pagamento atual.",
+       "Usa um fato dos autos.",
+       "Aceita abater o que for comprovado."
       ],
-      "sugestao": "Use os fatos dos autos, como a troca de escola, e ajuste o pedido de prisão às parcelas recentes.",
+      "pontos_frageis": [],
+      "sugestao": "Leve a planilha revisada para a audiência.",
       "apoio_nos_documentos": [
        {
         "documento": "requerimento_camila.txt",
@@ -474,7 +484,7 @@
         "conferido": true
        }
       ],
-      "replica": "E como ela está hoje, com a pensão sendo paga?"
+      "replica": ""
      }
     },
     {
@@ -499,6 +509,112 @@
        }
       ],
       "replica": "E quais parcelas recentes estão realmente em aberto?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Camila recebeu as transferências de R$ 300,00 em março e abril de 2025?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Se as transferências estiverem nos extratos, serão abatidas: são R$ 600,00 numa dívida de R$ 12.600,00. Isso não muda o fato de que a pensão ficou mais de um ano sem ser paga no valor combinado.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta demonstra boa-fé, dimensiona o valor e mantém o núcleo da cobrança.",
+      "pontos_fortes": [
+       "Não nega fato verificável.",
+       "Mostra a proporção do valor.",
+       "Preserva o pedido."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Traga a planilha já com esses abatimentos, se confirmados.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "requerimento_camila.txt",
+        "trecho": "Anderson não pagou nenhuma parcela de maio de 2024 a junho de 2025",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Transferências avulsas não são pagamento da pensão, que é de R$ 900,00 todo dia 10. Por isso não foram consideradas.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta tem apoio no acordo, mas recusar o abatimento de valores recebidos pode parecer má-fé.",
+      "pontos_fortes": [
+       "Usa os termos do acordo."
+      ],
+      "pontos_frageis": [
+       "Recusa abater dinheiro recebido.",
+       "A petição afirma que nenhuma parcela foi paga."
+      ],
+      "sugestao": "Aceite o abatimento e mantenha a cobrança do saldo.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "requerimento_camila.txt",
+        "trecho": "Anderson se obrigou a pagar pensão de R$ 900,00",
+        "conferido": true
+       }
+      ],
+      "replica": "Então Camila recebeu dinheiro de Anderson e mesmo assim disse que ele não pagou nada?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Por que a cobrança só foi proposta depois de 14 meses de atraso?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "O atraso na cobrança não apaga a dívida. O que se pede é o pagamento das parcelas vencidas e não pagas, e cabe a Anderson provar o que alega ter pago.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta defende a dívida, mas não explica a demora nem a urgência que sustenta a prisão.",
+      "pontos_fortes": [
+       "Firme quanto à existência da dívida.",
+       "Aponta o ônus de quem alega pagamento."
+      ],
+      "pontos_frageis": [
+       "Não responde à pergunta.",
+       "Não enfrenta a urgência."
+      ],
+      "sugestao": "Ligue a urgência às parcelas mais recentes.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "requerimento_camila.txt",
+        "trecho": "Intimação de Anderson para pagar R$ 12.600,00 em três dias",
+        "conferido": true
+       }
+      ],
+      "replica": "Se a família esperou mais de um ano, por que a prisão é urgente agora?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Camila tentou resolver de forma amigável, esperando que Anderson voltasse a trabalhar, para não prejudicar a relação dele com a filha.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta explica a demora, mas confirma que Camila sabia do desemprego, o que ajuda a justificativa dele.",
+      "pontos_fortes": [
+       "Apresenta uma razão compreensível."
+      ],
+      "pontos_frageis": [
+       "Nenhum documento fala das tentativas.",
+       "Reforça a tese de impossibilidade de pagar."
+      ],
+      "sugestao": "Explique a demora sem dar a Anderson o argumento do desemprego.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "requerimento_camila.txt",
+        "trecho": "Laura precisou trocar de escola por falta de dinheiro para a mensalidade.",
+        "conferido": true
+       }
+      ],
+      "replica": "Se ela sabia que ele estava desempregado, onde está a recusa voluntária de pagar?"
      }
     }
    ]

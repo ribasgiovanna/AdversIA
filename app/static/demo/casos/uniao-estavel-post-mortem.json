@@ -352,30 +352,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Ela morava com ele; o apartamento dela ficou abandonado.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta afirma um abandono do apartamento que nenhum documento menciona e não responde onde ela declarava residência.",
-      "pontos_fortes": [
-       "Mantém a versão da convivência."
-      ],
-      "pontos_frageis": [
-       "\"Abandonado\" não está nos documentos.",
-       "Não enfrenta as correspondências e a residência declarada."
-      ],
-      "sugestao": "Reconheça que ela manteve o imóvel, se for o caso, e mostre com documentos que a vida cotidiana era no apartamento de Eduardo.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "contestacao_filhos.txt",
-        "trecho": "Luciana manteve durante todo o período o próprio apartamento",
-        "conferido": true
-       }
-      ],
-      "replica": "Então por que as contas desse apartamento continuaram no nome dela?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "Luciana manteve o apartamento antigo, mas vivia com Eduardo. Vamos demonstrar isso com contas no endereço dele, o cadastro no condomínio e testemunhas.",
      "avaliacao": {
       "avaliacao": "parcial",
@@ -397,6 +373,31 @@
       ],
       "replica": "E por que alguém mantém um apartamento vazio por sete anos?"
      }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "As correspondências iam para o apartamento dela porque ele estava alugado e Luciana administrava o contrato; a residência de fato era com Eduardo desde 2018.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta dá uma explicação plausível para o endereço, mas se apoia em um aluguel que não aparece em nenhum documento.",
+      "pontos_fortes": [
+       "Explica por que o endereço antigo continuou em uso.",
+       "Mantém a data de início da convivência."
+      ],
+      "pontos_frageis": [
+       "O aluguel do apartamento não consta dos autos.",
+       "Não indica prova da moradia comum."
+      ],
+      "sugestao": "Não explique o endereço com fatos que não estão nos autos; indique as provas de moradia comum.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_luciana.txt",
+        "trecho": "passaram a viver juntos em 2018, no apartamento de Eduardo",
+        "conferido": true
+       }
+      ],
+      "replica": "Onde está o contrato de aluguel desse apartamento?"
+     }
     }
    ]
   },
@@ -405,28 +406,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Ela nunca saiu do plano.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta nega categoricamente um fato que pode ser confirmado com um simples documento da operadora.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Se a exclusão for confirmada, a credibilidade do relato cai.",
-       "Não indica prova da negativa."
-      ],
-      "sugestao": "Em vez de negar, peça o histórico à operadora e mostre que os filhos não comprovaram o que afirmam.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "contestacao_filhos.txt",
-        "trecho": "ela foi excluída do plano em 2022",
-        "conferido": true
-       }
-      ],
-      "replica": "A senhora autoriza que a operadora informe o histórico?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "A exclusão em 2022 é afirmada pelos filhos sem nenhum documento. Pedimos à operadora o histórico com datas e motivos. De todo modo, a inclusão como dependente em 2021 mostra como Eduardo tratava Luciana.",
      "avaliacao": {
       "avaliacao": "convincente",
@@ -447,6 +426,31 @@
       ],
       "replica": ""
      }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "A exclusão em 2022 foi uma decisão administrativa da empresa, sem relação com o casal. O que importa é que Eduardo a incluiu como dependente, e isso não se faz com uma namorada.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta valoriza a inclusão no plano, mas inventa o motivo da exclusão e generaliza o significado da inclusão.",
+      "pontos_fortes": [
+       "Destaca a inclusão como dependente.",
+       "Tenta afastar a relevância da exclusão."
+      ],
+      "pontos_frageis": [
+       "O motivo da exclusão não está em nenhum documento.",
+       "Os filhos afirmam que a inclusão foi só para a cirurgia."
+      ],
+      "sugestao": "Peça o histórico da operadora em vez de explicar o motivo da exclusão.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_luciana.txt",
+        "trecho": "Eduardo incluiu Luciana como dependente no plano de saúde",
+        "conferido": true
+       }
+      ],
+      "replica": "Qual documento mostra que a exclusão foi uma decisão da empresa?"
+     }
     }
    ]
   },
@@ -455,28 +459,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Ele não entendia nada de imposto de renda.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta cria uma explicação sobre Eduardo que nenhum documento sustenta.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Não há base nos documentos para essa explicação.",
-       "Parece uma justificativa improvisada."
-      ],
-      "sugestao": "Não explique a omissão com suposições; mostre que a ausência no imposto de renda não afasta, sozinha, a convivência.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "contestacao_filhos.txt",
-        "trecho": "nunca apresentou Luciana como companheira em documentos, testamento ou declaração de imposto de renda",
-        "conferido": true
-       }
-      ],
-      "replica": "Mas para incluir no plano de saúde ele entendia?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "A ausência na declaração de imposto de renda não afasta, sozinha, a convivência. A união será demonstrada pelo conjunto de provas de moradia e de vida em comum, inclusive a inclusão no plano de saúde.",
      "avaliacao": {
       "avaliacao": "parcial",
@@ -497,6 +479,135 @@
        }
       ],
       "replica": "E que outro documento, além do plano, registra Luciana como companheira?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Não sabemos o motivo, e não vamos supor. A declaração de imposto de renda é um indício entre outros, não um requisito para existir união estável. Ela será avaliada ao lado da inclusão no plano de saúde, das viagens, das festas de família e da convivência no apartamento desde 2018, provadas por documentos e testemunhas.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta não especula sobre o motivo, dá ao ponto o peso correto e o coloca dentro do conjunto de provas da convivência.",
+      "pontos_fortes": [
+       "Não inventa explicação.",
+       "Relativiza o indício com critério.",
+       "Enumera os fatos do pedido."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Leve a lista de testemunhas das festas de família e das viagens.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_luciana.txt",
+        "trecho": "apresentados como um casal",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Quem acompanhou Eduardo no hospital nos últimos meses de vida?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Os filhos afirmam que foram eles, sem juntar nenhum registro. Pedimos ao hospital a lista de acompanhantes e visitantes. Mesmo que os filhos estivessem presentes, isso não exclui Luciana, que viveu no apartamento dele até a morte.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta aponta a falta de prova, pede o registro certo e mostra que as versões não se excluem.",
+      "pontos_fortes": [
+       "Prova objetiva do hospital.",
+       "Não ataca os filhos.",
+       "Liga ao fato da moradia comum."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Peça também os registros de visitas do último mês.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_luciana.txt",
+        "trecho": "onde Luciana permaneceu até a morte dele",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Luciana estava lá todos os dias, e os filhos só apareciam nos fins de semana.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é firme, mas afirma frequência sem prova e soa como ataque aos filhos.",
+      "pontos_fortes": [
+       "Contrapõe diretamente a versão dos filhos."
+      ],
+      "pontos_frageis": [
+       "Não há registro do hospital.",
+       "A acusação pode gerar antipatia."
+      ],
+      "sugestao": "Troque a acusação pelo pedido de registros do hospital.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_luciana.txt",
+        "trecho": "passaram a viver juntos",
+        "conferido": true
+       }
+      ],
+      "replica": "Há algum registro do hospital com o nome dela?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Se Eduardo passava os fins de semana com os filhos, como era a vida em comum com Luciana?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Os dois viviam juntos durante a semana e dividiam as despesas da casa com o salário de professora de Luciana. Vamos juntar comprovantes de despesas e fotos das viagens do casal.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta traz fatos concretos e indica provas, mas elas ainda não estão nos autos.",
+      "pontos_fortes": [
+       "Descreve a vida em comum.",
+       "Indica documentos e fotos."
+      ],
+      "pontos_frageis": [
+       "Comprovantes ainda não juntados.",
+       "Não enfrenta diretamente a afirmação sobre os fins de semana."
+      ],
+      "sugestao": "Priorize contas no endereço de Eduardo com o nome de Luciana.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_luciana.txt",
+        "trecho": "Luciana ajudava nas despesas da casa com o salário de professora.",
+        "conferido": true
+       }
+      ],
+      "replica": "Em nome de quem estavam as contas da casa?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Passar fins de semana com os filhos não impede uma união estável. Muitas famílias vivem assim.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta tem razão em tese, mas generaliza sem trazer nenhum fato do casal.",
+      "pontos_fortes": [
+       "Afasta a ideia de incompatibilidade."
+      ],
+      "pontos_frageis": [
+       "Não descreve a rotina do casal.",
+       "Generalização não é prova."
+      ],
+      "sugestao": "Traga fatos concretos: viagens, festas, despesas divididas.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_luciana.txt",
+        "trecho": "os dois viajavam juntos, frequentavam festas de família",
+        "conferido": true
+       }
+      ],
+      "replica": "Luciana participava desses fins de semana?"
      }
     }
    ]

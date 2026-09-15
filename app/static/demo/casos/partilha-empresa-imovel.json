@@ -289,28 +289,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Todos os funcionários sabiam que era ela quem mandava na empresa.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta afirma um fato novo, sobre funcionários, que não aparece em nenhum documento, e não indica prova alguma.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Nenhum documento menciona funcionários ou que Mariana \"mandava\" na empresa.",
-       "Exagera a descrição da própria petição, que fala em auxílio na administração."
-      ],
-      "sugestao": "Repita o que a petição descreve e diga quais documentos e testemunhas vão comprovar essa atuação.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "peticao_mariana.txt",
-        "trecho": "passou a auxiliar o Réu na administração da empresa",
-        "conferido": true
-       }
-      ],
-      "replica": "Então por que o nome dela nunca apareceu no contrato social?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "A petição descreve que Mariana cuidava das contas, dos contratos e do atendimento. Vamos juntar contratos e boletos assinados por ela e ouvir clientes e fornecedores.",
      "avaliacao": {
       "avaliacao": "parcial",
@@ -332,6 +310,36 @@
       ],
       "replica": "Esses documentos são de antes ou de depois de 2014?"
      }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "A contestação não nega que Mariana cuidava das contas, dos contratos e do atendimento: limita-se a dizer que ela nunca foi sócia registrada. A discussão, portanto, não é o registro, é a contribuição. Vamos requerer à empresa e ao banco os contratos e extratos com a assinatura dela.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta explora bem o silêncio da contestação, mas trata a falta de negativa como se fosse prova.",
+      "pontos_fortes": [
+       "Mostra que a outra parte discute o registro, e não a atuação de Mariana.",
+       "Indica onde buscar a prova."
+      ],
+      "pontos_frageis": [
+       "A contestação atribui o crescimento ao trabalho operacional de Rafael, o que é uma impugnação indireta.",
+       "Nenhum contrato ou extrato assinado por Mariana está nos autos."
+      ],
+      "sugestao": "Use o silêncio da contestação como reforço, não como prova: junte ao menos alguns contratos assinados por Mariana antes da audiência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_mariana.txt",
+        "trecho": "cuidando das contas, dos contratos",
+        "conferido": true
+       },
+       {
+        "documento": "contestacao_rafael.txt",
+        "trecho": "decorreu principalmente do trabalho direto do Réu na parte operacional da empresa",
+        "conferido": true
+       }
+      ],
+      "replica": "Se ela fazia tanto, por que não existe um único contrato com a assinatura dela?"
+     }
     }
    ]
   },
@@ -340,33 +348,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Porque tudo o que o casal tem deve ser dividido meio a meio.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta ignora que o imóvel é anterior ao casamento, fato reconhecido pelas duas partes.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "A própria petição admite que o imóvel já era de Rafael antes da união.",
-       "Generaliza uma regra de divisão que não se aplica a bens anteriores."
-      ],
-      "sugestao": "Não sustente a metade do imóvel; concentre-se na valorização da empresa construída durante o casamento.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "peticao_mariana.txt",
-        "trecho": "Na época do casamento, o Réu já possuía um pequeno imóvel comercial",
-        "conferido": true
-       },
-       {
-        "documento": "contestacao_rafael.txt",
-        "trecho": "já era de sua propriedade exclusiva antes do casamento",
-        "conferido": true
-       }
-      ],
-      "replica": "Então a senhora reconhece que o imóvel é bem particular?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "O pedido da petição não é a metade do imóvel em si, mas a metade do valor da empresa construída durante o casamento e dos investimentos feitos com os lucros. A valorização do negócio será apurada na perícia.",
      "avaliacao": {
       "avaliacao": "convincente",
@@ -387,6 +368,31 @@
       ],
       "replica": ""
      }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "O imóvel anterior ao casamento não se comunica, e não pedimos isso. Pedimos metade da valorização que ele e a empresa tiveram durante o casamento, fruto do esforço comum, a ser apurada por perícia.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta reconhece que o bem é anterior e propõe perícia, mas amplia o pedido para a valorização do imóvel, que não consta da petição.",
+      "pontos_fortes": [
+       "Não defende a divisão do imóvel em si.",
+       "Propõe prova técnica."
+      ],
+      "pontos_frageis": [
+       "Os pedidos da petição falam da empresa e dos investimentos, não da valorização do imóvel.",
+       "A valorização de mercado de um imóvel não decorre do trabalho do casal."
+      ],
+      "sugestao": "Fique no que a petição pede: metade do valor da empresa e dos investimentos feitos com os lucros durante o casamento.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_mariana.txt",
+        "trecho": "também se valorizou e atualmente vale cerca de R$ 500.000,00",
+        "conferido": true
+       }
+      ],
+      "replica": "Em que parte da petição está o pedido sobre a valorização do imóvel?"
+     }
     }
    ]
   },
@@ -395,28 +401,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Foi depois do casamento, isso é óbvio.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta trata como óbvio um ponto que nenhum documento esclarece e que Rafael contesta.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Nenhum documento informa a data de abertura.",
-       "Rafael afirma que a empresa foi criada com patrimônio anterior ao casamento."
-      ],
-      "sugestao": "Indique que a data será comprovada pelo contrato social na Junta Comercial.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "contestacao_rafael.txt",
-        "trecho": "de patrimônio que o Réu já possuía antes de se casar com a Autora",
-        "conferido": true
-       }
-      ],
-      "replica": "E se o contrato social for de 2012?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "A petição diz que a empresa foi aberta posteriormente no imóvel. O contrato social na Junta Comercial vai mostrar a data exata, e requeremos a certidão.",
      "avaliacao": {
       "avaliacao": "parcial",
@@ -437,6 +421,138 @@
        }
       ],
       "replica": "Se a empresa já existia antes de 2014, o que sobra do pedido?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Nenhum documento informa o ano, e não vamos supor. A petição diz que Rafael abriu a empresa posteriormente no imóvel, e a contestação não afirma que ela existia antes de 2014: diz apenas que foi criada com recursos anteriores ao casamento. A certidão da Junta Comercial vai fixar a data.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta não afirma uma data sem prova, compara as duas versões com precisão e indica o documento que resolve a questão.",
+      "pontos_fortes": [
+       "Separa a origem do dinheiro da data de abertura.",
+       "Usa as duas peças sem distorcê-las.",
+       "Pede a certidão da Junta Comercial."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Traga a certidão da Junta Comercial para a audiência, se possível.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_mariana.txt",
+        "trecho": "no qual posteriormente abriu uma empresa",
+        "conferido": true
+       },
+       {
+        "documento": "contestacao_rafael.txt",
+        "trecho": "foi criada utilizando recursos provenientes desse",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Mariana recebia salário ou pró-labore pelo trabalho na empresa?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Não recebia, e é justamente por isso que a contribuição dela deve ser compensada na partilha: trabalhou na administração sem remuneração enquanto cuidava dos filhos.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta liga bem a falta de remuneração ao pedido, mas afirma um fato que nenhum documento mostra.",
+      "pontos_fortes": [
+       "Relaciona o trabalho não pago ao crescimento do negócio.",
+       "Usa a dedicação aos filhos descrita na petição."
+      ],
+      "pontos_frageis": [
+       "Nenhum documento informa se ela recebia ou não.",
+       "Se houver pagamento, o argumento perde força."
+      ],
+      "sugestao": "Diga que a remuneração será esclarecida pela contabilidade da empresa antes de afirmar que não existia.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_mariana.txt",
+        "trecho": "a Autora deixou seu emprego para cuidar dos dois filhos do casal",
+        "conferido": true
+       }
+      ],
+      "replica": "Há algum extrato mostrando que ela nunca recebeu nada da empresa?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Os documentos não informam se havia remuneração, e vamos esclarecer isso com a contabilidade da empresa. De todo modo, a petição não pede salário atrasado: pede participação no crescimento do negócio construído durante o casamento, para o qual ela contribuiu na administração.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta não afirma o que não sabe, indica a prova e mostra que o pedido não depende da remuneração.",
+      "pontos_fortes": [
+       "Honestidade sobre a lacuna.",
+       "Separa salário de participação no patrimônio.",
+       "Indica a contabilidade como fonte."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Peça desde já os livros e a folha de pagamento da empresa.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_mariana.txt",
+        "trecho": "crescimento do patrimônio decorre do esforço comum do casal",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Os lucros da empresa foram investidos em quais bens durante o casamento?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Foram reinvestidos na própria empresa e em aplicações financeiras, e por isso metade desses investimentos é de Mariana.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta mantém o pedido, mas cita aplicações sem identificar nenhuma e sem documento.",
+      "pontos_fortes": [
+       "Coerente com o pedido de metade dos investimentos."
+      ],
+      "pontos_frageis": [
+       "Não identifica bens nem contas.",
+       "Reinvestimento na empresa se confunde com o pedido sobre a própria empresa."
+      ],
+      "sugestao": "Indique como os investimentos serão identificados, em vez de afirmá-los genericamente.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_mariana.txt",
+        "trecho": "Metade dos investimentos realizados com os lucros da empresa durante o casamento",
+        "conferido": true
+       }
+      ],
+      "replica": "Quais aplicações? Em nome de quem?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "A petição pede a metade desses investimentos, mas ainda não os identifica. Vamos requerer os extratos da empresa e de Rafael desde 2014 e as declarações de imposto de renda, que mostram onde os lucros foram aplicados.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta reconhece a lacuna e aponta as provas que permitem identificar os bens.",
+      "pontos_fortes": [
+       "Indica fontes objetivas.",
+       "Delimita o período do casamento."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Formalize o pedido de ofício à Receita e aos bancos.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_mariana.txt",
+        "trecho": "Metade dos investimentos realizados com os lucros da empresa durante o casamento",
+        "conferido": true
+       }
+      ],
+      "replica": ""
      }
     }
    ]

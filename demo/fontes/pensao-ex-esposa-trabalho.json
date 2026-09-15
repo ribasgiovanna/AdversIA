@@ -13,100 +13,423 @@
     "categoria": "lacuna_probatoria",
     "texto": "O retorno da ex-esposa ao mercado de trabalho é o fundamento do pedido, mas não há contrato, carteira de trabalho, salário ou nome do empregador.",
     "provenance": "INFERENCE",
-    "origem": [{"documento": "pedido_exoneracao.txt", "trecho": "Ela havia voltado ao mercado de trabalho"}]
+    "origem": [
+     {
+      "documento": "pedido_exoneracao.txt",
+      "trecho": "Ela havia voltado ao mercado de trabalho"
+     }
+    ]
    },
    {
     "id": "lacuna-autonomia",
     "categoria": "lacuna_probatoria",
     "texto": "A afirmação de que ela deixou de depender economicamente dele não vem com nenhum dado de renda ou despesas.",
     "provenance": "INFERENCE",
-    "origem": [{"documento": "pedido_exoneracao.txt", "trecho": "deixou de depender economicamente dele"}]
+    "origem": [
+     {
+      "documento": "pedido_exoneracao.txt",
+      "trecho": "deixou de depender economicamente dele"
+     }
+    ]
    },
    {
     "id": "lacuna-fixacao",
     "categoria": "lacuna_probatoria",
     "texto": "Não se sabe qual necessidade justificou a fixação da pensão no divórcio; sem isso, fica difícil demonstrar que ela deixou de existir.",
     "provenance": "INFERENCE",
-    "origem": [{"documento": "pedido_exoneracao.txt", "trecho": "se a necessidade que justificou sua fixação deixou de existir"}]
+    "origem": [
+     {
+      "documento": "pedido_exoneracao.txt",
+      "trecho": "se a necessidade que justificou sua fixação deixou de existir"
+     }
+    ]
    },
    {
     "id": "lacuna-renda-exmarido",
     "categoria": "lacuna_probatoria",
     "texto": "A pensão corresponde a 25% dos rendimentos do ex-marido, mas o valor dos rendimentos atuais dele não é informado.",
     "provenance": "INFERENCE",
-    "origem": [{"documento": "pedido_exoneracao.txt", "trecho": "uma pensão correspondente a 25% dos seus rendimentos"}]
+    "origem": [
+     {
+      "documento": "pedido_exoneracao.txt",
+      "trecho": "uma pensão correspondente a 25% dos seus rendimentos"
+     }
+    ]
    },
    {
     "id": "argumento-comprovacao",
     "categoria": "contra_argumento",
     "texto": "A ex-esposa exigirá prova efetiva da mudança econômica, e o pedido, como está, oferece apenas a afirmação.",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "contestacao_exesposa.txt", "trecho": "A alteração da situação econômica deveria ser efetivamente comprovada"}]
+    "origem": [
+     {
+      "documento": "contestacao_exesposa.txt",
+      "trecho": "A alteração da situação econômica deveria ser efetivamente comprovada"
+     }
+    ]
    },
    {
     "id": "argumento-plano-saude",
     "categoria": "contra_argumento",
     "texto": "A disposição de continuar pagando o plano de saúde pode ser usada pela outra parte como sinal de que ainda existe alguma necessidade.",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "pedido_exoneracao.txt", "trecho": "ele se dispôs a continuar pagando algumas despesas, como o plano de saúde"}]
+    "origem": [
+     {
+      "documento": "pedido_exoneracao.txt",
+      "trecho": "ele se dispôs a continuar pagando algumas despesas, como o plano de saúde"
+     }
+    ]
    },
    {
     "id": "argumento-circunstancias",
     "categoria": "contra_argumento",
     "texto": "A defesa dirá que a obrigação não se encerra automaticamente e que as circunstâncias atuais precisam ser examinadas, inclusive a estabilidade do novo trabalho.",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "contestacao_exesposa.txt", "trecho": "A obrigação não poderia simplesmente desaparecer sem análise das circunstâncias"}]
+    "origem": [
+     {
+      "documento": "contestacao_exesposa.txt",
+      "trecho": "A obrigação não poderia simplesmente desaparecer sem análise das circunstâncias"
+     }
+    ]
    },
    {
     "id": "pergunta-emprego",
     "categoria": "pergunta_dificil",
     "texto": "Se a ex-esposa realmente voltou a trabalhar, qual é o emprego e o salário dela, e onde isso está comprovado?",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "pedido_exoneracao.txt", "trecho": "a ex-esposa voltou a trabalhar"}]
+    "origem": [
+     {
+      "documento": "pedido_exoneracao.txt",
+      "trecho": "a ex-esposa voltou a trabalhar"
+     }
+    ]
    },
    {
     "id": "pergunta-plano-saude",
     "categoria": "pergunta_dificil",
     "texto": "Se ela já não depende do ex-marido, por que ele se dispõe a continuar pagando o plano de saúde?",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "pedido_exoneracao.txt", "trecho": "como o plano de saúde"}]
+    "origem": [
+     {
+      "documento": "pedido_exoneracao.txt",
+      "trecho": "como o plano de saúde"
+     }
+    ]
    },
    {
     "id": "pergunta-fixacao",
     "categoria": "pergunta_dificil",
     "texto": "Qual era a situação da ex-esposa quando a pensão foi fixada, e o que exatamente mudou desde então?",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "contestacao_exesposa.txt", "trecho": "A pensão havia sido estabelecida anteriormente e vinha sendo recebida"}]
+    "origem": [
+     {
+      "documento": "contestacao_exesposa.txt",
+      "trecho": "A pensão havia sido estabelecida anteriormente e vinha sendo recebida"
+     }
+    ]
    }
   ],
   "linha_do_tempo": [],
   "plano_de_provas": [
-   {"prova": "Registro do vínculo de trabalho e do salário da ex-esposa", "finalidade": "Comprovar o retorno ao mercado de trabalho e a renda atual.", "como_obter": "Requerer ao juízo ofício ao INSS para o extrato de vínculos e remunerações, ou ao empregador.", "prioridade": "alta", "apontamentos": ["lacuna-emprego", "lacuna-autonomia", "argumento-comprovacao", "pergunta-emprego"]},
-   {"prova": "Sentença ou acordo de divórcio que fixou a pensão", "finalidade": "Mostrar a situação que justificou a pensão e compará-la com a atual.", "como_obter": "Cópia do processo de divórcio, que o cliente tem.", "prioridade": "alta", "apontamentos": ["lacuna-fixacao", "argumento-circunstancias", "pergunta-fixacao"]},
-   {"prova": "Proposta escrita de manutenção do plano de saúde por prazo determinado", "finalidade": "Apresentar a oferta como transição, e não como reconhecimento de dependência.", "como_obter": "Formalizar com o cliente o prazo e juntar ao processo.", "prioridade": "media", "apontamentos": ["argumento-plano-saude", "pergunta-plano-saude"]},
-   {"prova": "Comprovantes de rendimentos atuais do ex-marido", "finalidade": "Evitar questionamentos sobre a base de cálculo da pensão.", "como_obter": "Holerites ou declaração de imposto de renda do cliente.", "prioridade": "baixa", "apontamentos": ["lacuna-renda-exmarido"]}
+   {
+    "prova": "Registro do vínculo de trabalho e do salário da ex-esposa",
+    "finalidade": "Comprovar o retorno ao mercado de trabalho e a renda atual.",
+    "como_obter": "Requerer ao juízo ofício ao INSS para o extrato de vínculos e remunerações, ou ao empregador.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "lacuna-emprego",
+     "lacuna-autonomia",
+     "argumento-comprovacao",
+     "pergunta-emprego"
+    ]
+   },
+   {
+    "prova": "Sentença ou acordo de divórcio que fixou a pensão",
+    "finalidade": "Mostrar a situação que justificou a pensão e compará-la com a atual.",
+    "como_obter": "Cópia do processo de divórcio, que o cliente tem.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "lacuna-fixacao",
+     "argumento-circunstancias",
+     "pergunta-fixacao"
+    ]
+   },
+   {
+    "prova": "Proposta escrita de manutenção do plano de saúde por prazo determinado",
+    "finalidade": "Apresentar a oferta como transição, e não como reconhecimento de dependência.",
+    "como_obter": "Formalizar com o cliente o prazo e juntar ao processo.",
+    "prioridade": "media",
+    "apontamentos": [
+     "argumento-plano-saude",
+     "pergunta-plano-saude"
+    ]
+   },
+   {
+    "prova": "Comprovantes de rendimentos atuais do ex-marido",
+    "finalidade": "Evitar questionamentos sobre a base de cálculo da pensão.",
+    "como_obter": "Holerites ou declaração de imposto de renda do cliente.",
+    "prioridade": "baixa",
+    "apontamentos": [
+     "lacuna-renda-exmarido"
+    ]
+   }
   ]
  },
  "audiencia": [
   {
    "pergunta": "Se a ex-esposa realmente voltou a trabalhar, qual é o emprego e o salário dela, e onde isso está comprovado?",
    "respostas": [
-    {"rotulo": "Resposta A", "texto": "Ela voltou a trabalhar e hoje tem renda própria, como ela mesma reconhece na contestação.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta atribui à contestação um reconhecimento que não existe e não informa emprego nem salário.", "pontos_fortes": ["Mantém a linha central do pedido."], "pontos_frageis": ["A contestação não reconhece o retorno ao trabalho; ela exige prova da mudança.", "Não responde à pergunta sobre emprego e salário."], "sugestao": "Não atribua à outra parte o que ela não disse. Informe que o vínculo e o salário serão comprovados por ofício ao INSS e ao empregador.", "apoio_nos_documentos": [{"documento": "contestacao_exesposa.txt", "trecho": "A alteração da situação econômica deveria ser efetivamente comprovada"}], "replica": "Em qual trecho da contestação a ex-esposa admite ter voltado a trabalhar?"}},
-    {"rotulo": "Resposta B", "texto": "Vamos requerer ofício ao INSS e ao empregador para comprovar o vínculo e o salário dela. A contestação, aliás, não nega o retorno ao trabalho: apenas exige que ele seja comprovado.", "avaliacao": {"avaliacao": "parcial", "resumo": "Sua resposta indica a prova certa e lê corretamente a contestação, mas o dado principal ainda não está nos autos.", "pontos_fortes": ["Indica prova oficial.", "Descreve a contestação com precisão."], "pontos_frageis": ["Emprego e salário continuam desconhecidos."], "sugestao": "Se o cliente souber o nome do empregador, informe já para agilizar o ofício.", "apoio_nos_documentos": [{"documento": "contestacao_exesposa.txt", "trecho": "A alteração da situação econômica deveria ser efetivamente comprovada"}], "replica": "E se o salário dela for pequeno e o emprego, temporário?"}}
+    {
+     "rotulo": "Resposta A",
+     "texto": "O vínculo aparece no extrato previdenciário, e vamos juntá-lo com as publicações profissionais dela nas redes sociais, que mostram o cargo atual. A contestação, aliás, não nega o retorno ao trabalho.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta indica uma prova oficial e lê bem a contestação, mas conta com documentos que o ex-marido não consegue obter sozinho.",
+      "pontos_fortes": [
+       "Aponta o registro oficial do vínculo.",
+       "Mostra que a contestação não nega o retorno ao trabalho."
+      ],
+      "pontos_frageis": [
+       "O extrato previdenciário de outra pessoa depende de ordem judicial.",
+       "Publicações em redes sociais sem registro têm pouco valor."
+      ],
+      "sugestao": "Peça ao juízo ofício ao INSS e ao empregador, sem contar com publicações nas redes.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_exoneracao.txt",
+        "trecho": "Ela havia voltado ao mercado de trabalho"
+       }
+      ],
+      "replica": "Como o ex-marido vai obter o extrato previdenciário dela sem ordem judicial?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Vamos requerer ofício ao INSS e ao empregador para comprovar o vínculo e o salário dela. A contestação, aliás, não nega o retorno ao trabalho: apenas exige que ele seja comprovado.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta indica a prova certa e lê corretamente a contestação, mas o dado principal ainda não está nos autos.",
+      "pontos_fortes": [
+       "Indica prova oficial.",
+       "Descreve a contestação com precisão."
+      ],
+      "pontos_frageis": [
+       "Emprego e salário continuam desconhecidos."
+      ],
+      "sugestao": "Se o cliente souber o nome do empregador, informe já para agilizar o ofício.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_exesposa.txt",
+        "trecho": "A alteração da situação econômica deveria ser efetivamente comprovada"
+       }
+      ],
+      "replica": "E se o salário dela for pequeno e o emprego, temporário?"
+     }
+    }
    ]
   },
   {
    "pergunta": "Se ela já não depende do ex-marido, por que ele se dispõe a continuar pagando o plano de saúde?",
    "respostas": [
-    {"rotulo": "Resposta A", "texto": "É só por bondade dele.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta não explica a oferta e deixa aberta a leitura de que ainda há necessidade.", "pontos_fortes": [], "pontos_frageis": ["Não afasta a interpretação de dependência residual."], "sugestao": "Apresente a oferta como uma transição com prazo, compatível com a mudança de situação.", "apoio_nos_documentos": [{"documento": "pedido_exoneracao.txt", "trecho": "Mesmo assim, ele se dispôs a continuar pagando algumas despesas, como o plano de saúde"}], "replica": "Então ele reconhece que ela ainda precisa de ajuda?"}},
-    {"rotulo": "Resposta B", "texto": "A oferta do plano de saúde é uma transição responsável, não o reconhecimento de dependência: a pensão em dinheiro perde a razão de ser com a renda própria comprovada, e o plano evita desamparo imediato. Propomos um prazo definido.", "avaliacao": {"avaliacao": "convincente", "resumo": "Sua resposta transforma um possível ponto fraco em sinal de boa-fé e o liga ao argumento de que a necessidade deixou de existir.", "pontos_fortes": ["Não afirma fatos ausentes dos documentos.", "Dá à oferta um sentido coerente com o pedido.", "Propõe prazo, o que reforça a transitoriedade."], "pontos_frageis": [], "sugestao": "Formalize o prazo proposto por escrito antes da audiência.", "apoio_nos_documentos": [{"documento": "pedido_exoneracao.txt", "trecho": "ele se dispôs a continuar pagando algumas despesas, como o plano de saúde"}], "replica": ""}}
+    {
+     "rotulo": "Resposta A",
+     "texto": "Porque a ajuda pode ser prestada de outra forma que não o dinheiro, e o plano de saúde é justamente isso: ele não reconhece dependência, escolhe a forma de ajudar.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta tenta dar um sentido positivo à oferta, mas acaba sugerindo que a obrigação continua existindo.",
+      "pontos_fortes": [
+       "Afasta a ideia de reconhecimento de dependência.",
+       "Mantém a boa-fé do ex-marido."
+      ],
+      "pontos_frageis": [
+       "Tratar o plano como outra forma de pagar contradiz o pedido de exoneração.",
+       "Não propõe prazo para essa ajuda."
+      ],
+      "sugestao": "Apresente o plano como transição com prazo, não como forma substituta de cumprir a obrigação.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_exoneracao.txt",
+        "trecho": "continuar pagando algumas despesas, como o plano de saúde"
+       }
+      ],
+      "replica": "Se é outra forma de pagar a pensão, então a obrigação continua existindo?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "A oferta do plano de saúde é uma transição responsável, não o reconhecimento de dependência: a pensão em dinheiro perde a razão de ser com a renda própria comprovada, e o plano evita desamparo imediato. Propomos um prazo definido.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta transforma um possível ponto fraco em sinal de boa-fé e o liga ao argumento de que a necessidade deixou de existir.",
+      "pontos_fortes": [
+       "Não afirma fatos ausentes dos documentos.",
+       "Dá à oferta um sentido coerente com o pedido.",
+       "Propõe prazo, o que reforça a transitoriedade."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Formalize o prazo proposto por escrito antes da audiência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_exoneracao.txt",
+        "trecho": "ele se dispôs a continuar pagando algumas despesas, como o plano de saúde"
+       }
+      ],
+      "replica": ""
+     }
+    }
    ]
   },
   {
    "pergunta": "Qual era a situação da ex-esposa quando a pensão foi fixada, e o que exatamente mudou desde então?",
    "respostas": [
-    {"rotulo": "Resposta A", "texto": "Antes ela não trabalhava, agora trabalha. Simples.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta resume a mudança, mas não indica como a situação anterior e a atual serão comprovadas.", "pontos_fortes": ["Identifica a mudança alegada."], "pontos_frageis": ["Não há nos autos a sentença que fixou a pensão.", "Não há prova do trabalho atual."], "sugestao": "Indique a sentença de divórcio para a situação anterior e o registro de vínculo para a atual.", "apoio_nos_documentos": [{"documento": "pedido_exoneracao.txt", "trecho": "Ela havia voltado ao mercado de trabalho"}], "replica": "E o que a sentença de divórcio dizia sobre a necessidade dela?"}},
-    {"rotulo": "Resposta B", "texto": "Vamos juntar a sentença de divórcio, que mostra a situação quando a pensão foi fixada, e o registro do vínculo de trabalho atual, para comparar as duas situações.", "avaliacao": {"avaliacao": "parcial", "resumo": "Sua resposta organiza bem a prova da mudança, mas os dois documentos ainda precisam ser juntados.", "pontos_fortes": ["Estrutura a comparação exigida pela defesa."], "pontos_frageis": ["Nenhum dos documentos está nos autos."], "sugestao": "Destaque na sentença o trecho que fundamenta a necessidade da época.", "apoio_nos_documentos": [{"documento": "contestacao_exesposa.txt", "trecho": "A pensão havia sido estabelecida anteriormente e vinha sendo recebida"}], "replica": "E seis anos depois, a idade dela não dificulta a recolocação?"}}
+    {
+     "rotulo": "Resposta A",
+     "texto": "A sentença de divórcio ainda precisa ser juntada, e ela é a peça-chave para mostrar o cenário da fixação; ao lado dela, juntaremos o vínculo atual. Além disso, mais de seis anos de pagamento mostram tempo razoável de readaptação, e o ex-marido não deixa a ex-esposa desamparada: mantém o plano de saúde.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta organiza a comparação entre as duas situações e acrescenta dois fatos dos autos que reforçam o pedido.",
+      "pontos_fortes": [
+       "Indica os dois documentos da comparação.",
+       "Usa o tempo de pagamento.",
+       "Mostra boa-fé com o plano de saúde."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Traga a sentença de divórcio para a audiência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_exoneracao.txt",
+        "trecho": "paga há mais de seis anos"
+       }
+      ],
+      "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Vamos juntar a sentença de divórcio, que mostra a situação quando a pensão foi fixada, e o registro do vínculo de trabalho atual, para comparar as duas situações.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta organiza bem a prova da mudança, mas os dois documentos ainda precisam ser juntados.",
+      "pontos_fortes": [
+       "Estrutura a comparação exigida pela defesa."
+      ],
+      "pontos_frageis": [
+       "Nenhum dos documentos está nos autos."
+      ],
+      "sugestao": "Destaque na sentença o trecho que fundamenta a necessidade da época.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_exesposa.txt",
+        "trecho": "A pensão havia sido estabelecida anteriormente e vinha sendo recebida"
+       }
+      ],
+      "replica": "E seis anos depois, a idade dela não dificulta a recolocação?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "A pensão de 25% vinha sendo paga em dia até agora?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Sim. A pensão é paga há mais de seis anos sem interrupção, e isso mostra que o ex-marido cumpriu a obrigação e agora pede, de boa-fé, que ela seja revista.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta mostra boa-fé, mas afirma pontualidade sem comprovante e não liga o pagamento à mudança alegada.",
+      "pontos_fortes": [
+       "Usa o tempo de pagamento descrito no pedido.",
+       "Apresenta o ex-marido como cumpridor da obrigação."
+      ],
+      "pontos_frageis": [
+       "Os documentos falam em seis anos de pagamento, mas não trazem comprovantes.",
+       "Pagar em dia não demonstra que a necessidade acabou."
+      ],
+      "sugestao": "Use o histórico de pagamentos como sinal de boa-fé e volte ao ponto central: a mudança na situação dela.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_exoneracao.txt",
+        "trecho": "paga há mais de seis anos"
+       }
+      ],
+      "replica": "Então ela depende desse valor há seis anos, e o corte seria abrupto?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "A própria contestação confirma que a pensão vinha sendo recebida. O ex-marido não pede para deixar de pagar o que deve: pede a revisão porque a necessidade que justificou a pensão mudou. Os comprovantes dos seis anos serão juntados.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta usa a própria contestação para confirmar o cumprimento e separa o pagamento da necessidade.",
+      "pontos_fortes": [
+       "Apoia-se no documento da outra parte.",
+       "Separa adimplência de necessidade.",
+       "Indica a prova do pagamento."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Junte os comprovantes de depósito do período antes da audiência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_exesposa.txt",
+        "trecho": "A pensão havia sido estabelecida anteriormente e vinha sendo recebida."
+       }
+      ],
+      "replica": ""
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Se ela voltou a trabalhar, a renda dela basta para manter o padrão de vida que tinha?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "O padrão de vida do casamento não precisa ser mantido para sempre. A pensão entre ex-cônjuges serve para dar tempo de retomar a autonomia, e isso já aconteceu com o retorno ao trabalho.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta segue a lógica do pedido, mas conclui que a autonomia foi retomada sem nenhum número.",
+      "pontos_fortes": [
+       "Coerente com o argumento de que a pensão não é indefinida."
+      ],
+      "pontos_frageis": [
+       "Ainda não há prova do salário dela.",
+       "Afirma autonomia sem comparar renda e despesas."
+      ],
+      "sugestao": "Diga como a renda dela será comprovada antes de afirmar que basta.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_exoneracao.txt",
+        "trecho": "A pensão não deveria continuar indefinidamente"
+       }
+      ],
+      "replica": "E se o salário dela for um terço do que recebia com a pensão?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Ainda não sabemos o salário dela, e por isso pedimos ofício ao empregador. Se a renda não bastar, o ex-marido aceita uma redução gradual em vez da exoneração imediata, mantendo o plano de saúde que já se dispôs a pagar.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é honesta e oferece alternativa, mas cede parte do pedido antes de conhecer a renda dela.",
+      "pontos_fortes": [
+       "Reconhece a lacuna.",
+       "Usa a oferta do plano de saúde.",
+       "Propõe solução intermediária."
+      ],
+      "pontos_frageis": [
+       "Abre mão da exoneração imediata sem saber a renda.",
+       "Pode ser lida como admissão de que ela ainda precisa de ajuda."
+      ],
+      "sugestao": "Apresente a redução gradual como pedido subsidiário, e não como concessão.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_exoneracao.txt",
+        "trecho": "continuar pagando algumas despesas, como o plano de saúde"
+       }
+      ],
+      "replica": "Então o próprio requerente admite que ela ainda precisa de ajuda?"
+     }
+    }
    ]
   }
  ]

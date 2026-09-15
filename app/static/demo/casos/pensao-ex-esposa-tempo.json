@@ -216,26 +216,27 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Faz muito tempo, ela já teve tempo mais que suficiente.",
+     "texto": "A pensão é paga desde o divórcio, tempo mais do que suficiente para qualquer readaptação profissional. Se a ex-esposa discorda, cabe a ela mostrar por que ainda não conseguiu se sustentar.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta não informa o número de anos nem a situação da época, que é o que a pergunta pede.",
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é assertiva, mas não informa quantos anos são e tenta transferir para a outra parte uma prova que é do ex-marido.",
       "pontos_fortes": [
-       "Mantém o argumento do tempo decorrido."
+       "Liga o tempo à ideia de readaptação.",
+       "Mantém o argumento principal do pedido."
       ],
       "pontos_frageis": [
-       "Nenhum dado concreto.",
-       "\"Tempo suficiente\" é uma opinião, não um fato."
+       "Não informa o número de anos, que foi perguntado.",
+       "Não diz qual era a situação dela no divórcio."
       ],
-      "sugestao": "Informe a data do divórcio e os termos da pensão com base na sentença ou escritura.",
+      "sugestao": "Informe a data do divórcio e o tempo exato de pagamento; argumente com o número, não com impressões.",
       "apoio_nos_documentos": [
        {
         "documento": "pedido_exoneracao.txt",
-        "trecho": "O tempo decorrido desde o divórcio deveria ser considerado",
+        "trecho": "pagava pensão à ex-esposa desde o divórcio",
         "conferido": true
        }
       ],
-      "replica": "E quanto tempo, exatamente?"
+      "replica": "Quantos anos, exatamente? O senhor não sabe informar a data do divórcio?"
      }
     },
     {
@@ -268,28 +269,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Ela é jovem e saudável, pode muito bem trabalhar.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta afirma idade e saúde da ex-esposa, dados que não aparecem em nenhum documento.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Nenhum documento informa idade ou saúde.",
-       "Poder trabalhar não é o mesmo que ter renda."
-      ],
-      "sugestao": "Indique a prova de vínculos e renda que será requerida ao INSS.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "pedido_exoneracao.txt",
-        "trecho": "teria condições de se sustentar",
-        "conferido": true
-       }
-      ],
-      "replica": "Quantos anos ela tem?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "O pedido se apoia no caráter transitório da pensão entre ex-cônjuges. Para mostrar a capacidade atual dela, vamos requerer ofício ao INSS com os vínculos e a renda.",
      "avaliacao": {
       "avaliacao": "parcial",
@@ -311,6 +290,29 @@
       ],
       "replica": "E se ela não tiver nenhum vínculo registrado?"
      }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Hoje esse fato não está nos autos, e é melhor dizer isso. O pedido se apoia em dois pontos que não dependem dele: o caráter transitório da pensão entre ex-cônjuges e o tempo decorrido. Para mostrar a capacidade atual, pedimos ofício ao INSS e à Receita, e aceitamos que a decisão considere o que esses dados mostrarem.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta é honesta sobre a falta de prova, mostra que o pedido tem fundamentos independentes e propõe a verificação adequada.",
+      "pontos_fortes": [
+       "Não inventa fatos sobre a ex-esposa.",
+       "Separa os fundamentos do pedido.",
+       "Indica duas fontes oficiais."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Esteja pronto para explicar por que o tempo decorrido, sozinho, já justifica a revisão.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_exoneracao.txt",
+        "trecho": "caráter excepcional e transitório",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
     }
    ]
   },
@@ -319,24 +321,27 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Não, ele não quer pagar mais nada.",
+     "texto": "Ele já pagou por tempo suficiente para cumprir qualquer prazo de transição. Aceitar mais um prazo agora seria prorrogar sem fim uma obrigação que o próprio pedido mostra ser transitória.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta recusa uma solução intermediária que seria coerente com o próprio argumento de transitoriedade.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Parece inflexível.",
-       "Desperdiça a coerência com o caráter transitório."
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é coerente com a tese de transitoriedade, mas passa uma imagem de intransigência que pode pesar contra o pedido.",
+      "pontos_fortes": [
+       "Usa o argumento do tempo já decorrido.",
+       "Mantém a pretensão principal."
       ],
-      "sugestao": "Mantenha o pedido principal, mas aceite um prazo de transição como alternativa.",
+      "pontos_frageis": [
+       "Recusa uma alternativa razoável.",
+       "Não considera a situação atual da ex-esposa."
+      ],
+      "sugestao": "Mostre flexibilidade: aceite um prazo final curto como alternativa ao fim imediato.",
       "apoio_nos_documentos": [
        {
         "documento": "pedido_exoneracao.txt",
-        "trecho": "caráter excepcional e transitório",
+        "trecho": "O tempo decorrido desde o divórcio deveria ser considerado",
         "conferido": true
        }
       ],
-      "replica": "Mesmo que ela não tenha renda nenhuma hoje?"
+      "replica": "Então nenhuma transição é aceitável, mesmo que ela esteja sem renda?"
      }
     },
     {
@@ -359,6 +364,112 @@
        }
       ],
       "replica": ""
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "A renda do ex-marido mudou desde o divórcio?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "O pedido não trata da renda dele, e vamos juntar os comprovantes atuais para mostrar que não há folga. O fundamento, porém, é outro: o tempo decorrido desde o divórcio, que deve ser considerado.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta oferece prova e volta ao fundamento, mas promete um resultado que ainda não conhece.",
+      "pontos_fortes": [
+       "Indica prova da renda.",
+       "Retoma o argumento do tempo."
+      ],
+      "pontos_frageis": [
+       "Afirma que não há folga antes de ver os comprovantes.",
+       "Mistura o fundamento do tempo com a capacidade de pagar."
+      ],
+      "sugestao": "Separe os dois pontos: primeiro o tempo, depois a renda como elemento complementar.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_exoneracao.txt",
+        "trecho": "O tempo decorrido desde o divórcio deveria ser considerado.",
+        "conferido": true
+       }
+      ],
+      "replica": "Se a renda dele aumentou, o tempo decorrido pesa menos?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "O pedido não se baseia na renda dele, e sim no tempo decorrido e no caráter transitório da obrigação. Mesmo sem mudança na renda, a pensão entre ex-cônjuges não deve durar para sempre.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta mantém o foco do pedido, mas evita a pergunta e deixa a capacidade dele em aberto.",
+      "pontos_fortes": [
+       "Fiel ao fundamento do pedido."
+      ],
+      "pontos_frageis": [
+       "Sem mudança concreta, o tempo sozinho é argumento discutível.",
+       "Não dizer se a renda aumentou convida a outra parte a explorar o ponto."
+      ],
+      "sugestao": "Informe a renda atual com documentos, mesmo que ela não seja o fundamento principal.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_exoneracao.txt",
+        "trecho": "A obrigação alimentar entre ex-cônjuges normalmente possui caráter excepcional",
+        "conferido": true
+       }
+      ],
+      "replica": "Então ele ganha o mesmo ou mais, e só quer parar de pagar?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Que tentativas de trabalho ou de qualificação a ex-esposa fez nesses anos?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "O pedido não informa, e não vamos supor. Pedimos ofício ao INSS e o depoimento pessoal dela sobre cursos e empregos. Se ela nunca buscou autonomia, o pedido se reforça; se buscou e não conseguiu, o juízo pode fixar um prazo de transição.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta não inventa fatos, indica as provas e mostra que o pedido se sustenta nos dois cenários.",
+      "pontos_fortes": [
+       "Honestidade sobre a lacuna.",
+       "Provas objetivas e depoimento.",
+       "Alternativa coerente com o caráter transitório."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Inclua o depoimento pessoal na especificação de provas.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_exoneracao.txt",
+        "trecho": "A ex-esposa deveria buscar autonomia financeira.",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Ela teve anos para se qualificar e voltar ao mercado. Se não o fez, isso não pode ser transferido indefinidamente ao ex-marido, e é esse o fundamento do pedido.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é firme e coerente com o pedido, mas pressupõe falta de iniciativa sem nenhum documento.",
+      "pontos_fortes": [
+       "Liga o tempo decorrido à responsabilidade dela."
+      ],
+      "pontos_frageis": [
+       "Supõe inércia sem prova.",
+       "Ignora motivos possíveis, como idade ou saúde."
+      ],
+      "sugestao": "Troque a suposição por um pedido de prova sobre a vida profissional dela.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_exoneracao.txt",
+        "trecho": "A ex-esposa deveria buscar autonomia financeira.",
+        "conferido": true
+       }
+      ],
+      "replica": "O senhor sabe se ela tentou e não conseguiu emprego?"
      }
     }
    ]

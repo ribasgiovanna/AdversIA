@@ -13,92 +13,403 @@
     "categoria": "lacuna_probatoria",
     "texto": "Os documentos não dizem se o falecido estava separado de fato da esposa durante a relação. Esse é o ponto que mais pesa: sem separação de fato, a relação tende a ser vista como paralela ao casamento.",
     "provenance": "INFERENCE",
-    "origem": [{"documento": "pedido_reconhecimento.txt", "trecho": "uma relação com alguém que já era casado"}]
+    "origem": [
+     {
+      "documento": "pedido_reconhecimento.txt",
+      "trecho": "uma relação com alguém que já era casado"
+     }
+    ]
    },
    {
     "id": "lacuna-duracao",
     "categoria": "lacuna_probatoria",
     "texto": "A relação é descrita como de \"longo período\", sem datas de início e fim, endereço comum ou tempo de convivência.",
     "provenance": "INFERENCE",
-    "origem": [{"documento": "pedido_reconhecimento.txt", "trecho": "manteve, durante longo período, uma relação"}]
+    "origem": [
+     {
+      "documento": "pedido_reconhecimento.txt",
+      "trecho": "manteve, durante longo período, uma relação"
+     }
+    ]
    },
    {
     "id": "lacuna-dependencia",
     "categoria": "lacuna_probatoria",
     "texto": "A dependência econômica é chamada de \"possível\", ou seja, a própria requerente não afirma nem comprova que dependia do falecido.",
     "provenance": "INFERENCE",
-    "origem": [{"documento": "pedido_reconhecimento.txt", "trecho": "possível dependência econômica"}]
+    "origem": [
+     {
+      "documento": "pedido_reconhecimento.txt",
+      "trecho": "possível dependência econômica"
+     }
+    ]
    },
    {
     "id": "lacuna-publicidade",
     "categoria": "lacuna_probatoria",
     "texto": "A \"aparência de união familiar\" não vem acompanhada de fotos, correspondências, testemunhas ou qualquer sinal de convivência pública.",
     "provenance": "INFERENCE",
-    "origem": [{"documento": "pedido_reconhecimento.txt", "trecho": "aparência de união familiar"}]
+    "origem": [
+     {
+      "documento": "pedido_reconhecimento.txt",
+      "trecho": "aparência de união familiar"
+     }
+    ]
    },
    {
     "id": "argumento-concubinato",
     "categoria": "contra_argumento",
     "texto": "A parte contrária sustentará que a relação com pessoa casada não se equipara a união estável, e que por isso não gera direito a pensão por morte.",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "manifestacao_contraria.txt", "trecho": "O ordenamento brasileiro não equipara o concubinato a casamento ou união estável quando existe casamento ou união estável anterior"}]
+    "origem": [
+     {
+      "documento": "manifestacao_contraria.txt",
+      "trecho": "O ordenamento brasileiro não equipara o concubinato a casamento ou união estável quando existe casamento ou união estável anterior"
+     }
+    ]
    },
    {
     "id": "argumento-uniao-paralela",
     "categoria": "contra_argumento",
     "texto": "O reconhecimento será apresentado como uma forma de dar efeitos jurídicos a duas famílias ao mesmo tempo, o que a outra parte dirá não ser admitido.",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "manifestacao_contraria.txt", "trecho": "uma espécie de reconhecimento jurídico de uniões paralelas"}]
+    "origem": [
+     {
+      "documento": "manifestacao_contraria.txt",
+      "trecho": "uma espécie de reconhecimento jurídico de uniões paralelas"
+     }
+    ]
    },
    {
     "id": "pergunta-separacao",
     "categoria": "pergunta_dificil",
     "texto": "O falecido estava separado de fato da esposa durante a relação com a requerente?",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "pedido_reconhecimento.txt", "trecho": "alguém que já era casado"}]
+    "origem": [
+     {
+      "documento": "pedido_reconhecimento.txt",
+      "trecho": "alguém que já era casado"
+     }
+    ]
    },
    {
     "id": "pergunta-dependencia",
     "categoria": "pergunta_dificil",
     "texto": "Que prova mostra a dependência econômica, e não apenas a possibilidade dela?",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "pedido_reconhecimento.txt", "trecho": "possível dependência econômica"}]
+    "origem": [
+     {
+      "documento": "pedido_reconhecimento.txt",
+      "trecho": "possível dependência econômica"
+     }
+    ]
    },
    {
     "id": "pergunta-duracao",
     "categoria": "pergunta_dificil",
     "texto": "Por quantos anos a relação durou, e o casal chegou a morar junto?",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "pedido_reconhecimento.txt", "trecho": "relacionamento duradouro"}]
+    "origem": [
+     {
+      "documento": "pedido_reconhecimento.txt",
+      "trecho": "relacionamento duradouro"
+     }
+    ]
    }
   ],
   "linha_do_tempo": [],
   "plano_de_provas": [
-   {"prova": "Provas de eventual separação de fato do falecido: endereços distintos da esposa, testemunhas, documentos", "finalidade": "Enfrentar o principal obstáculo ao reconhecimento, que é o casamento em vigor.", "como_obter": "Reunir comprovantes de endereço do falecido, ouvir vizinhos e familiares, requerer informações a órgãos públicos.", "prioridade": "alta", "apontamentos": ["lacuna-casamento-vigente", "argumento-concubinato", "argumento-uniao-paralela", "pergunta-separacao"]},
-   {"prova": "Comprovantes de dependência econômica: transferências, contas pagas pelo falecido, inclusão em plano de saúde ou imposto de renda", "finalidade": "Transformar a dependência \"possível\" em fato demonstrado.", "como_obter": "Extratos bancários da requerente e pedido de informações ao plano de saúde e à Receita Federal.", "prioridade": "alta", "apontamentos": ["lacuna-dependencia", "pergunta-dependencia"]},
-   {"prova": "Provas de convivência pública e duração: fotos datadas, correspondências no mesmo endereço, testemunhas", "finalidade": "Mostrar o tempo e a publicidade da relação.", "como_obter": "Reunir com a cliente fotos, correspondências e indicar testemunhas sem interesse na causa.", "prioridade": "media", "apontamentos": ["lacuna-duracao", "lacuna-publicidade", "pergunta-duracao"]}
+   {
+    "prova": "Provas de eventual separação de fato do falecido: endereços distintos da esposa, testemunhas, documentos",
+    "finalidade": "Enfrentar o principal obstáculo ao reconhecimento, que é o casamento em vigor.",
+    "como_obter": "Reunir comprovantes de endereço do falecido, ouvir vizinhos e familiares, requerer informações a órgãos públicos.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "lacuna-casamento-vigente",
+     "argumento-concubinato",
+     "argumento-uniao-paralela",
+     "pergunta-separacao"
+    ]
+   },
+   {
+    "prova": "Comprovantes de dependência econômica: transferências, contas pagas pelo falecido, inclusão em plano de saúde ou imposto de renda",
+    "finalidade": "Transformar a dependência \"possível\" em fato demonstrado.",
+    "como_obter": "Extratos bancários da requerente e pedido de informações ao plano de saúde e à Receita Federal.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "lacuna-dependencia",
+     "pergunta-dependencia"
+    ]
+   },
+   {
+    "prova": "Provas de convivência pública e duração: fotos datadas, correspondências no mesmo endereço, testemunhas",
+    "finalidade": "Mostrar o tempo e a publicidade da relação.",
+    "como_obter": "Reunir com a cliente fotos, correspondências e indicar testemunhas sem interesse na causa.",
+    "prioridade": "media",
+    "apontamentos": [
+     "lacuna-duracao",
+     "lacuna-publicidade",
+     "pergunta-duracao"
+    ]
+   }
   ]
  },
  "audiencia": [
   {
    "pergunta": "O falecido estava separado de fato da esposa durante a relação com a requerente?",
    "respostas": [
-    {"rotulo": "Resposta A", "texto": "Ele não gostava mais da esposa, só continuava casado no papel.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta afirma uma separação de fato que nenhum documento menciona e baseia a afirmação em sentimentos do falecido.", "pontos_fortes": [], "pontos_frageis": ["Nenhum documento fala em separação de fato.", "\"Casado no papel\" precisa de prova, como endereços diferentes."], "sugestao": "Diga que a situação do casamento será investigada com provas de endereço e testemunhas, sem antecipar o resultado.", "apoio_nos_documentos": [{"documento": "pedido_reconhecimento.txt", "trecho": "uma relação com alguém que já era casado"}], "replica": "Ele morava com a esposa?"}},
-    {"rotulo": "Resposta B", "texto": "Os documentos não informam a situação do casamento. Vamos reunir comprovantes de endereço e ouvir testemunhas para verificar se havia separação de fato.", "avaliacao": {"avaliacao": "parcial", "resumo": "Sua resposta é honesta e aponta o caminho certo, mas admite que o ponto mais importante da tese ainda não tem prova.", "pontos_fortes": ["Não afirma o que os documentos não mostram.", "Identifica o ponto decisivo."], "pontos_frageis": ["Se não houver separação de fato, a tese perde força."], "sugestao": "Priorize essa prova antes de qualquer outra.", "apoio_nos_documentos": [{"documento": "manifestacao_contraria.txt", "trecho": "quando existe casamento ou união estável anterior"}], "replica": "E se ficar provado que ele morava com a esposa até morrer?"}}
+    {
+     "rotulo": "Resposta A",
+     "texto": "Mesmo que não estivesse separado de fato, a relação tinha todas as características de família: duração, afeto e dependência. O que se pede é que essa realidade não fique sem proteção só porque havia um casamento no papel.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta defende a tese com convicção, mas concede o ponto que a outra parte usa para afastar o reconhecimento.",
+      "pontos_fortes": [
+       "Mantém o foco na realidade vivida.",
+       "Resume os elementos de família de fato."
+      ],
+      "pontos_frageis": [
+       "Admite a hipótese de casamento em curso, o centro do argumento contrário.",
+       "A dependência é descrita no pedido apenas como possível."
+      ],
+      "sugestao": "Não conceda o ponto central: diga que a separação de fato será verificada e só depois apresente o argumento subsidiário.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_reconhecimento.txt",
+        "trecho": "A realidade vivida pelas pessoas deveria receber proteção jurídica"
+       }
+      ],
+      "replica": "Então a senhora admite que ele continuava casado e vivendo com a esposa?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Os documentos não informam a situação do casamento. Vamos reunir comprovantes de endereço e ouvir testemunhas para verificar se havia separação de fato.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é honesta e aponta o caminho certo, mas admite que o ponto mais importante da tese ainda não tem prova.",
+      "pontos_fortes": [
+       "Não afirma o que os documentos não mostram.",
+       "Identifica o ponto decisivo."
+      ],
+      "pontos_frageis": [
+       "Se não houver separação de fato, a tese perde força."
+      ],
+      "sugestao": "Priorize essa prova antes de qualquer outra.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "manifestacao_contraria.txt",
+        "trecho": "quando existe casamento ou união estável anterior"
+       }
+      ],
+      "replica": "E se ficar provado que ele morava com a esposa até morrer?"
+     }
+    }
    ]
   },
   {
    "pergunta": "Que prova mostra a dependência econômica, e não apenas a possibilidade dela?",
    "respostas": [
-    {"rotulo": "Resposta A", "texto": "Ela dependia totalmente dele, não tinha outra renda.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta vai além do próprio pedido, que fala só em dependência possível, e não indica prova alguma.", "pontos_fortes": [], "pontos_frageis": ["O pedido não afirma dependência total.", "Nenhum documento informa a renda da requerente."], "sugestao": "Mantenha-se no que o pedido diz e indique as provas de transferências e despesas pagas pelo falecido.", "apoio_nos_documentos": [{"documento": "pedido_reconhecimento.txt", "trecho": "possível dependência econômica"}], "replica": "Então por que o pedido fala apenas em dependência possível?"}},
-    {"rotulo": "Resposta B", "texto": "O pedido fala em possível dependência. Vamos juntar extratos de transferências e comprovantes de despesas pagas pelo falecido para demonstrar em que medida ela existia.", "avaliacao": {"avaliacao": "parcial", "resumo": "Sua resposta é coerente com o pedido e indica provas objetivas, mas a dependência ainda não está demonstrada.", "pontos_fortes": ["Fiel ao que está no documento.", "Indica prova bancária."], "pontos_frageis": ["Até a juntada, o requisito continua em aberto."], "sugestao": "Separe os comprovantes por ano para mostrar a regularidade do apoio.", "apoio_nos_documentos": [{"documento": "pedido_reconhecimento.txt", "trecho": "possível dependência econômica"}], "replica": "E essas transferências eram regulares ou esporádicas?"}}
+    {
+     "rotulo": "Resposta A",
+     "texto": "A dependência é possível, e não presumida, como o próprio pedido diz. Vamos demonstrá-la com três provas objetivas: transferências regulares nos extratos, contas da casa pagas pelo falecido e os registros de renda da requerente. Se elas não aparecerem, esse fundamento perde força, e diremos isso com franqueza.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta é fiel ao pedido, define provas objetivas e mostra honestidade sobre o que acontece se elas não se confirmarem.",
+      "pontos_fortes": [
+       "Não exagera a dependência.",
+       "Indica três provas concretas.",
+       "Ganha credibilidade pela franqueza."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Traga já os extratos que tiver para a audiência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_reconhecimento.txt",
+        "trecho": "possível dependência econômica"
+       }
+      ],
+      "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "O pedido fala em possível dependência. Vamos juntar extratos de transferências e comprovantes de despesas pagas pelo falecido para demonstrar em que medida ela existia.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é coerente com o pedido e indica provas objetivas, mas a dependência ainda não está demonstrada.",
+      "pontos_fortes": [
+       "Fiel ao que está no documento.",
+       "Indica prova bancária."
+      ],
+      "pontos_frageis": [
+       "Até a juntada, o requisito continua em aberto."
+      ],
+      "sugestao": "Separe os comprovantes por ano para mostrar a regularidade do apoio.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_reconhecimento.txt",
+        "trecho": "possível dependência econômica"
+       }
+      ],
+      "replica": "E essas transferências eram regulares ou esporádicas?"
+     }
+    }
    ]
   },
   {
    "pergunta": "Por quantos anos a relação durou, e o casal chegou a morar junto?",
    "respostas": [
-    {"rotulo": "Resposta A", "texto": "Foram muitos anos, praticamente uma vida inteira juntos.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta não informa o tempo nem se houve moradia comum, e exagera a descrição do pedido.", "pontos_fortes": [], "pontos_frageis": ["Nenhum número de anos é informado.", "\"Uma vida inteira\" não está nos documentos."], "sugestao": "Informe um período aproximado com base em documentos datados e diga se houve residência comum.", "apoio_nos_documentos": [{"documento": "pedido_reconhecimento.txt", "trecho": "manteve, durante longo período, uma relação"}], "replica": "E durante todos esses anos ele continuou casado?"}},
-    {"rotulo": "Resposta B", "texto": "O pedido descreve um relacionamento duradouro. A duração e a convivência serão demonstradas por fotos datadas, correspondências e testemunhas; a tese pede que essa realidade seja examinada.", "avaliacao": {"avaliacao": "parcial", "resumo": "Sua resposta indica as provas e a linha da tese, mas continua sem informar o tempo de relação e se houve moradia comum.", "pontos_fortes": ["Não inventa datas.", "Conecta a prova ao argumento da realidade vivida."], "pontos_frageis": ["A pergunta objetiva continua sem resposta."], "sugestao": "Descubra com a cliente as datas aproximadas e se houve endereço comum antes da audiência.", "apoio_nos_documentos": [{"documento": "pedido_reconhecimento.txt", "trecho": "A realidade vivida pelas pessoas deveria receber proteção jurídica"}], "replica": "Havia algum documento em que ele declarasse a requerente como companheira?"}}
+    {
+     "rotulo": "Resposta A",
+     "texto": "Foram mais de dez anos, com viagens, datas comemorativas e a casa dela como ponto de encontro. Não precisavam morar juntos para ser família, e as fotos e testemunhas vão mostrar isso.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é convincente no tom, mas traz números e fatos que não estão em nenhum documento.",
+      "pontos_fortes": [
+       "Responde às duas partes da pergunta.",
+       "Indica fotos e testemunhas."
+      ],
+      "pontos_frageis": [
+       "Os \"mais de dez anos\" e as viagens não constam do pedido.",
+       "Admitir que não moravam juntos enfraquece a aparência de família."
+      ],
+      "sugestao": "Não apresente números que não estão nos documentos; indique a prova que vai estabelecer a duração.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_reconhecimento.txt",
+        "trecho": "relacionamento duradouro"
+       }
+      ],
+      "replica": "De onde vem esse número de mais de dez anos?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "O pedido descreve um relacionamento duradouro. A duração e a convivência serão demonstradas por fotos datadas, correspondências e testemunhas; a tese pede que essa realidade seja examinada.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta indica as provas e a linha da tese, mas continua sem informar o tempo de relação e se houve moradia comum.",
+      "pontos_fortes": [
+       "Não inventa datas.",
+       "Conecta a prova ao argumento da realidade vivida."
+      ],
+      "pontos_frageis": [
+       "A pergunta objetiva continua sem resposta."
+      ],
+      "sugestao": "Descubra com a cliente as datas aproximadas e se houve endereço comum antes da audiência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_reconhecimento.txt",
+        "trecho": "A realidade vivida pelas pessoas deveria receber proteção jurídica"
+       }
+      ],
+      "replica": "Havia algum documento em que ele declarasse a requerente como companheira?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "A esposa do falecido sabia da relação com a requerente?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Sabia e aceitava, o que mostra que a relação era pública e tinha aparência de família.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta tenta reforçar a publicidade da relação, mas com um fato que nenhum documento traz.",
+      "pontos_fortes": [
+       "Liga o conhecimento à aparência de família."
+      ],
+      "pontos_frageis": [
+       "Não há prova de que a esposa sabia ou aceitava."
+      ],
+      "sugestao": "Indique como a publicidade da relação será provada, sem afirmar o conhecimento da esposa.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_reconhecimento.txt",
+        "trecho": "aparência de união familiar"
+       }
+      ],
+      "replica": "Qual prova mostra que a esposa sabia e aceitava?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Os documentos não dizem. Vamos ouvir testemunhas do convívio social do casal para mostrar se a relação era pública; mas o pedido não depende de a esposa ter consentido, e sim das características da relação.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é honesta e indica a prova, mas a publicidade continua sendo o ponto mais frágil.",
+      "pontos_fortes": [
+       "Não afirma o que não sabe.",
+       "Mantém o foco nas características da relação."
+      ],
+      "pontos_frageis": [
+       "A falta de publicidade pode enfraquecer a aparência de família."
+      ],
+      "sugestao": "Identifique testemunhas antes da audiência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_reconhecimento.txt",
+        "trecho": "aparência de união familiar"
+       }
+      ],
+      "replica": "E se ninguém sabia da relação?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Por que proteger a requerente não violaria a proteção da família do casamento?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "O pedido não pretende retirar direitos da esposa, e sim examinar se a realidade vivida pela requerente também merece proteção. Se reconhecida, a pensão pode ser dividida, e essa consequência deve ser avaliada com as provas da relação.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta enfrenta a objeção sem atacar a esposa e explica a consequência prática do pedido.",
+      "pontos_fortes": [
+       "Não desqualifica o casamento.",
+       "Explica o efeito sobre a pensão."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Prepare-se para responder sobre a divisão da pensão.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_reconhecimento.txt",
+        "trecho": "A realidade vivida pelas pessoas deveria receber proteção jurídica"
+       },
+       {
+        "documento": "manifestacao_contraria.txt",
+        "trecho": "significar uma espécie de reconhecimento jurídico de uniões paralelas"
+       }
+      ],
+      "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Porque a família do casamento, na prática, já não existia; a verdadeira família do falecido era com a requerente.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é convicta, mas afirma a inexistência do casamento sem nenhuma prova de separação de fato.",
+      "pontos_fortes": [
+       "Tenta afastar a objeção de uniões paralelas."
+      ],
+      "pontos_frageis": [
+       "Não há prova de separação de fato.",
+       "O tom pode ser visto como ofensivo à esposa."
+      ],
+      "sugestao": "Só sustente a separação de fato se houver prova; caso contrário, fique na proteção da realidade vivida.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "manifestacao_contraria.txt",
+        "trecho": "O ordenamento brasileiro não equipara o concubinato a casamento ou união estável"
+       }
+      ],
+      "replica": "Com que prova a senhora afirma que o casamento já não existia?"
+     }
+    }
    ]
   }
  ]

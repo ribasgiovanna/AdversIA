@@ -14,8 +14,14 @@
     "texto": "Joana afirma que o episódio de 22/09/2024 aconteceu na frente de Davi; Marcelo nega a agressão e diz que o menino dormia no quarto. A presença da criança é o que liga o episódio ao pedido de guarda.",
     "provenance": "INFERENCE",
     "origem": [
-     {"documento": "pedido_joana.txt", "trecho": "Marcelo empurrou Joana contra a parede na frente de Davi"},
-     {"documento": "contestacao_marcelo.txt", "trecho": "Davi estava dormindo no quarto naquele momento"}
+     {
+      "documento": "pedido_joana.txt",
+      "trecho": "Marcelo empurrou Joana contra a parede na frente de Davi"
+     },
+     {
+      "documento": "contestacao_marcelo.txt",
+      "trecho": "Davi estava dormindo no quarto naquele momento"
+     }
     ]
    },
    {
@@ -24,8 +30,14 @@
     "texto": "Joana relaciona os pesadelos de Davi ao episódio; Marcelo diz que começaram antes, quando o menino mudou de escola.",
     "provenance": "INFERENCE",
     "origem": [
-     {"documento": "pedido_joana.txt", "trecho": "Desde então, Davi tem pesadelos e passou a urinar na cama, segundo Joana"},
-     {"documento": "contestacao_marcelo.txt", "trecho": "Os pesadelos de Davi começaram antes de setembro de 2024, quando ele mudou de escola"}
+     {
+      "documento": "pedido_joana.txt",
+      "trecho": "Desde então, Davi tem pesadelos e passou a urinar na cama, segundo Joana"
+     },
+     {
+      "documento": "contestacao_marcelo.txt",
+      "trecho": "Os pesadelos de Davi começaram antes de setembro de 2024, quando ele mudou de escola"
+     }
     ]
    },
    {
@@ -33,112 +45,473 @@
     "categoria": "contradicao",
     "texto": "Marcelo afirma que Davi volta tranquilo das visitas, conforme mensagens da própria Joana, o que contrasta com o quadro de sofrimento descrito no pedido.",
     "provenance": "INFERENCE",
-    "origem": [{"documento": "contestacao_marcelo.txt", "trecho": "Davi volta dos fins de semana tranquilo, conforme mensagens da própria Joana"}]
+    "origem": [
+     {
+      "documento": "contestacao_marcelo.txt",
+      "trecho": "Davi volta dos fins de semana tranquilo, conforme mensagens da própria Joana"
+     }
+    ]
    },
    {
     "id": "lacuna-avaliacao",
     "categoria": "lacuna_probatoria",
     "texto": "Não há nenhuma avaliação psicológica de Davi; os sintomas são relatados apenas pela mãe.",
     "provenance": "INFERENCE",
-    "origem": [{"documento": "pedido_joana.txt", "trecho": "segundo Joana"}]
+    "origem": [
+     {
+      "documento": "pedido_joana.txt",
+      "trecho": "segundo Joana"
+     }
+    ]
    },
    {
     "id": "lacuna-documentos-policiais",
     "categoria": "lacuna_probatoria",
     "texto": "O boletim de ocorrência, a decisão da medida protetiva e o inquérito não foram juntados; o conteúdo e o motivo do arquivamento só são conhecidos pelo que as partes descrevem.",
     "provenance": "INFERENCE",
-    "origem": [{"documento": "pedido_joana.txt", "trecho": "Joana registrou boletim de ocorrência no mesmo dia"}]
+    "origem": [
+     {
+      "documento": "pedido_joana.txt",
+      "trecho": "Joana registrou boletim de ocorrência no mesmo dia"
+     }
+    ]
    },
    {
     "id": "lacuna-mensagens",
     "categoria": "lacuna_probatoria",
     "texto": "As mensagens em que Joana teria dito que Davi volta tranquilo não foram juntadas.",
     "provenance": "INFERENCE",
-    "origem": [{"documento": "contestacao_marcelo.txt", "trecho": "conforme mensagens da própria Joana"}]
+    "origem": [
+     {
+      "documento": "contestacao_marcelo.txt",
+      "trecho": "conforme mensagens da própria Joana"
+     }
+    ]
    },
    {
     "id": "argumento-arquivamento",
     "categoria": "contra_argumento",
     "texto": "Marcelo usará o arquivamento do inquérito, em 10/03/2025, para sustentar que a agressão não foi comprovada e que não há base para restringir a convivência.",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "contestacao_marcelo.txt", "trecho": "foi arquivado em 10/03/2025, por falta de provas"}]
+    "origem": [
+     {
+      "documento": "contestacao_marcelo.txt",
+      "trecho": "foi arquivado em 10/03/2025, por falta de provas"
+     }
+    ]
    },
    {
     "id": "argumento-alcance-medida",
     "categoria": "contra_argumento",
     "texto": "A defesa lembrará que a medida protetiva protege apenas Joana e não inclui Davi, o que mostra que não se reconheceu risco à criança naquele momento.",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "contestacao_marcelo.txt", "trecho": "A medida protetiva protege apenas Joana e não inclui Davi"}]
+    "origem": [
+     {
+      "documento": "contestacao_marcelo.txt",
+      "trecho": "A medida protetiva protege apenas Joana e não inclui Davi"
+     }
+    ]
    },
    {
     "id": "argumento-assiduidade",
     "categoria": "contra_argumento",
     "texto": "Marcelo apresentará a regularidade das visitas como sinal de vínculo e cuidado com o filho.",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "contestacao_marcelo.txt", "trecho": "Marcelo nunca faltou a uma visita"}]
+    "origem": [
+     {
+      "documento": "contestacao_marcelo.txt",
+      "trecho": "Marcelo nunca faltou a uma visita"
+     }
+    ]
    },
    {
     "id": "pergunta-presenca",
     "categoria": "pergunta_dificil",
     "texto": "Davi estava acordado e presente no momento do episódio de 22/09/2024? Quem, além de Joana, pode confirmar isso?",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "pedido_joana.txt", "trecho": "na frente de Davi"}]
+    "origem": [
+     {
+      "documento": "pedido_joana.txt",
+      "trecho": "na frente de Davi"
+     }
+    ]
    },
    {
     "id": "pergunta-arquivamento",
     "categoria": "pergunta_dificil",
     "texto": "Se o inquérito foi arquivado por falta de provas, em que se baseia a restrição da convivência do pai com o filho?",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "contestacao_marcelo.txt", "trecho": "arquivado em 10/03/2025, por falta de provas"}]
+    "origem": [
+     {
+      "documento": "contestacao_marcelo.txt",
+      "trecho": "arquivado em 10/03/2025, por falta de provas"
+     }
+    ]
    },
    {
     "id": "pergunta-mensagens",
     "categoria": "pergunta_dificil",
     "texto": "Joana escreveu a Marcelo que Davi voltava tranquilo das visitas?",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "contestacao_marcelo.txt", "trecho": "Davi volta dos fins de semana tranquilo"}]
+    "origem": [
+     {
+      "documento": "contestacao_marcelo.txt",
+      "trecho": "Davi volta dos fins de semana tranquilo"
+     }
+    ]
    },
    {
     "id": "pergunta-sintomas",
     "categoria": "pergunta_dificil",
     "texto": "Os pesadelos de Davi começaram antes ou depois de setembro de 2024?",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "contestacao_marcelo.txt", "trecho": "começaram antes de setembro de 2024"}]
+    "origem": [
+     {
+      "documento": "contestacao_marcelo.txt",
+      "trecho": "começaram antes de setembro de 2024"
+     }
+    ]
    }
   ],
   "linha_do_tempo": [
-   {"data": "22/09/2024", "data_ordenacao": "2024-09-22", "evento": "Episódio em casa após discussão; Joana registra boletim de ocorrência", "quem_afirma": "Joana", "documento": "pedido_joana.txt", "trecho": "Em 22/09/2024, depois de uma discussão em casa, Marcelo empurrou Joana contra a parede na frente de Davi", "divergencia": "Marcelo nega a agressão e afirma que Davi dormia no quarto."},
-   {"data": "25/09/2024", "data_ordenacao": "2024-09-25", "evento": "Medida protetiva em favor de Joana", "quem_afirma": "Joana", "documento": "pedido_joana.txt", "trecho": "em 25/09/2024, obteve medida protetiva", "divergencia": "Marcelo destaca que a medida não inclui Davi."},
-   {"data": "10/03/2025", "data_ordenacao": "2025-03-10", "evento": "Arquivamento do inquérito, segundo Marcelo", "quem_afirma": "Marcelo", "documento": "contestacao_marcelo.txt", "trecho": "O inquérito aberto a partir do boletim de ocorrência foi arquivado em 10/03/2025", "divergencia": ""}
+   {
+    "data": "22/09/2024",
+    "data_ordenacao": "2024-09-22",
+    "evento": "Episódio em casa após discussão; Joana registra boletim de ocorrência",
+    "quem_afirma": "Joana",
+    "documento": "pedido_joana.txt",
+    "trecho": "Em 22/09/2024, depois de uma discussão em casa, Marcelo empurrou Joana contra a parede na frente de Davi",
+    "divergencia": "Marcelo nega a agressão e afirma que Davi dormia no quarto."
+   },
+   {
+    "data": "25/09/2024",
+    "data_ordenacao": "2024-09-25",
+    "evento": "Medida protetiva em favor de Joana",
+    "quem_afirma": "Joana",
+    "documento": "pedido_joana.txt",
+    "trecho": "em 25/09/2024, obteve medida protetiva",
+    "divergencia": "Marcelo destaca que a medida não inclui Davi."
+   },
+   {
+    "data": "10/03/2025",
+    "data_ordenacao": "2025-03-10",
+    "evento": "Arquivamento do inquérito, segundo Marcelo",
+    "quem_afirma": "Marcelo",
+    "documento": "contestacao_marcelo.txt",
+    "trecho": "O inquérito aberto a partir do boletim de ocorrência foi arquivado em 10/03/2025",
+    "divergencia": ""
+   }
   ],
   "plano_de_provas": [
-   {"prova": "Avaliação psicológica de Davi pela equipe técnica", "finalidade": "Verificar o estado emocional da criança e a origem dos sintomas, com segurança para ela.", "como_obter": "Requerer ao juízo a avaliação com urgência.", "prioridade": "alta", "apontamentos": ["lacuna-avaliacao", "contradicao-sintomas", "contradicao-visitas", "pergunta-sintomas"]},
-   {"prova": "Cópia do boletim de ocorrência, da decisão da medida protetiva e do inquérito, com a decisão de arquivamento", "finalidade": "Conhecer exatamente o que foi registrado e por que o inquérito foi arquivado.", "como_obter": "Pedir cópias à delegacia e ao juízo que concedeu a medida.", "prioridade": "alta", "apontamentos": ["lacuna-documentos-policiais", "argumento-arquivamento", "argumento-alcance-medida", "pergunta-arquivamento"]},
-   {"prova": "Relatos de pessoas que estavam na casa ou ouviram o episódio, e registros de atendimento de Joana ou Davi", "finalidade": "Esclarecer se Davi presenciou o que aconteceu.", "como_obter": "Identificar vizinhos ou familiares e pedir registros de atendimento de saúde, se houver.", "prioridade": "alta", "apontamentos": ["contradicao-presenca", "pergunta-presenca"]},
-   {"prova": "Relatório escolar sobre o comportamento de Davi antes e depois de setembro de 2024, com a data da troca de escola", "finalidade": "Verificar quando os sinais de sofrimento começaram.", "como_obter": "Solicitar relatórios às duas escolas.", "prioridade": "media", "apontamentos": ["contradicao-sintomas"]},
-   {"prova": "Conversas completas entre Joana e Marcelo sobre as visitas", "finalidade": "Mostrar o contexto integral das mensagens citadas pelo pai.", "como_obter": "Exportar a conversa inteira pelo aplicativo, com data e hora.", "prioridade": "media", "apontamentos": ["lacuna-mensagens", "contradicao-visitas", "argumento-assiduidade", "pergunta-mensagens"]}
+   {
+    "prova": "Avaliação psicológica de Davi pela equipe técnica",
+    "finalidade": "Verificar o estado emocional da criança e a origem dos sintomas, com segurança para ela.",
+    "como_obter": "Requerer ao juízo a avaliação com urgência.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "lacuna-avaliacao",
+     "contradicao-sintomas",
+     "contradicao-visitas",
+     "pergunta-sintomas"
+    ]
+   },
+   {
+    "prova": "Cópia do boletim de ocorrência, da decisão da medida protetiva e do inquérito, com a decisão de arquivamento",
+    "finalidade": "Conhecer exatamente o que foi registrado e por que o inquérito foi arquivado.",
+    "como_obter": "Pedir cópias à delegacia e ao juízo que concedeu a medida.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "lacuna-documentos-policiais",
+     "argumento-arquivamento",
+     "argumento-alcance-medida",
+     "pergunta-arquivamento"
+    ]
+   },
+   {
+    "prova": "Relatos de pessoas que estavam na casa ou ouviram o episódio, e registros de atendimento de Joana ou Davi",
+    "finalidade": "Esclarecer se Davi presenciou o que aconteceu.",
+    "como_obter": "Identificar vizinhos ou familiares e pedir registros de atendimento de saúde, se houver.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "contradicao-presenca",
+     "pergunta-presenca"
+    ]
+   },
+   {
+    "prova": "Relatório escolar sobre o comportamento de Davi antes e depois de setembro de 2024, com a data da troca de escola",
+    "finalidade": "Verificar quando os sinais de sofrimento começaram.",
+    "como_obter": "Solicitar relatórios às duas escolas.",
+    "prioridade": "media",
+    "apontamentos": [
+     "contradicao-sintomas"
+    ]
+   },
+   {
+    "prova": "Conversas completas entre Joana e Marcelo sobre as visitas",
+    "finalidade": "Mostrar o contexto integral das mensagens citadas pelo pai.",
+    "como_obter": "Exportar a conversa inteira pelo aplicativo, com data e hora.",
+    "prioridade": "media",
+    "apontamentos": [
+     "lacuna-mensagens",
+     "contradicao-visitas",
+     "argumento-assiduidade",
+     "pergunta-mensagens"
+    ]
+   }
   ]
  },
  "audiencia": [
   {
    "pergunta": "Davi estava acordado e presente no momento do episódio de 22/09/2024? Quem, além de Joana, pode confirmar isso?",
    "respostas": [
-    {"rotulo": "Resposta A", "texto": "Davi viu tudo e ficou traumatizado.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta afirma um trauma que nenhuma avaliação registrou e não indica quem mais presenciou o episódio.", "pontos_fortes": ["Coerente com o relato do pedido."], "pontos_frageis": ["\"Traumatizado\" exige avaliação técnica.", "Nenhuma outra testemunha é indicada."], "sugestao": "Mantenha o relato de Joana, indique como a presença de Davi será esclarecida e peça a avaliação psicológica.", "apoio_nos_documentos": [{"documento": "contestacao_marcelo.txt", "trecho": "Davi estava dormindo no quarto naquele momento"}], "replica": "Algum profissional já avaliou Davi?"}},
-    {"rotulo": "Resposta B", "texto": "Joana afirma que o episódio aconteceu na frente de Davi. A avaliação psicológica e os relatos de quem estava por perto vão esclarecer isso, e é por esse motivo que pedimos convivência assistida só até essa avaliação.", "avaliacao": {"avaliacao": "parcial", "resumo": "Sua resposta é cuidadosa e liga o pedido temporário à prova necessária, mas não indica ainda nenhuma confirmação além da mãe.", "pontos_fortes": ["Não afirma trauma sem avaliação.", "Mostra que o pedido é provisório."], "pontos_frageis": ["A presença de Davi continua sustentada apenas pelo relato de Joana."], "sugestao": "Identifique antes da audiência quem mais estava na casa ou ouviu o episódio.", "apoio_nos_documentos": [{"documento": "pedido_joana.txt", "trecho": "apenas de forma assistida, em local indicado pelo juízo, até avaliação psicológica"}], "replica": "E se ninguém mais puder confirmar a presença do menino?"}}
+    {
+     "rotulo": "Resposta A",
+     "texto": "Joana afirma que sim, e Marcelo diz que ele dormia. Não vamos transformar Davi em testemunha: o pedido não depende de ele ter visto, e sim de avaliar se a convivência hoje é segura. A medida protetiva de 25/09/2024 mostra que houve elementos para proteger Joana, e a avaliação psicológica vai dizer do que Davi precisa.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta reconhece a divergência, protege a criança e mostra que o pedido se sustenta mesmo sem resolver quem viu o quê.",
+      "pontos_fortes": [
+       "Não expõe Davi.",
+       "Usa um fato dos autos com moderação.",
+       "Liga o pedido à avaliação psicológica."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Traga a decisão da medida protetiva para a audiência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_joana.txt",
+        "trecho": "em 25/09/2024, obteve medida protetiva"
+       }
+      ],
+      "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Joana afirma que o episódio aconteceu na frente de Davi. A avaliação psicológica e os relatos de quem estava por perto vão esclarecer isso, e é por esse motivo que pedimos convivência assistida só até essa avaliação.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é cuidadosa e liga o pedido temporário à prova necessária, mas não indica ainda nenhuma confirmação além da mãe.",
+      "pontos_fortes": [
+       "Não afirma trauma sem avaliação.",
+       "Mostra que o pedido é provisório."
+      ],
+      "pontos_frageis": [
+       "A presença de Davi continua sustentada apenas pelo relato de Joana."
+      ],
+      "sugestao": "Identifique antes da audiência quem mais estava na casa ou ouviu o episódio.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_joana.txt",
+        "trecho": "apenas de forma assistida, em local indicado pelo juízo, até avaliação psicológica"
+       }
+      ],
+      "replica": "E se ninguém mais puder confirmar a presença do menino?"
+     }
+    }
    ]
   },
   {
    "pergunta": "Se o inquérito foi arquivado por falta de provas, em que se baseia a restrição da convivência do pai com o filho?",
    "respostas": [
-    {"rotulo": "Resposta A", "texto": "O arquivamento não significa nada, ele é culpado.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta afirma culpa como fato e desqualifica uma decisão sem apresentar nenhum elemento novo.", "pontos_fortes": [], "pontos_frageis": ["Afirma como certo algo que não foi comprovado.", "Tende a enfraquecer a credibilidade do pedido de proteção."], "sugestao": "Separe a questão criminal da proteção da criança e mostre que o pedido é temporário e cauteloso.", "apoio_nos_documentos": [{"documento": "contestacao_marcelo.txt", "trecho": "foi arquivado em 10/03/2025, por falta de provas"}], "replica": "Então a senhora mantém uma acusação que a própria investigação não confirmou?"}},
-    {"rotulo": "Resposta B", "texto": "O arquivamento não afasta a necessidade de avaliar a segurança de Davi. O pedido não é de afastar o pai: é de convivência assistida, temporária, até a avaliação psicológica, justamente para proteger a criança sem prejulgar ninguém.", "avaliacao": {"avaliacao": "convincente", "resumo": "Sua resposta separa a questão criminal da proteção da criança, não afirma culpa e mostra que o pedido é proporcional e provisório.", "pontos_fortes": ["Não prejulga o pai.", "Deixa claro o caráter temporário da medida.", "Coloca o foco na segurança de Davi."], "pontos_frageis": [], "sugestao": "Junte a decisão de arquivamento para mostrar que ela não analisou a situação da criança.", "apoio_nos_documentos": [{"documento": "pedido_joana.txt", "trecho": "Convivência de Marcelo com o filho apenas de forma assistida, em local indicado pelo juízo, até avaliação psicológica"}], "replica": ""}}
+    {
+     "rotulo": "Resposta A",
+     "texto": "Arquivamento por falta de provas não é absolvição, e a medida protetiva continua valendo. Se a proteção foi mantida, o juízo de família não pode ignorar o risco.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta faz uma distinção correta sobre o arquivamento, mas afirma a vigência de uma medida que protege só Joana e sem documento que a confirme.",
+      "pontos_fortes": [
+       "Explica que arquivamento não equivale a inocência.",
+       "Mantém a preocupação com o risco."
+      ],
+      "pontos_frageis": [
+       "Nenhum documento informa que a medida continua em vigor.",
+       "A medida não inclui Davi."
+      ],
+      "sugestao": "Não afirme a vigência sem documento; foque na avaliação da segurança de Davi.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_marcelo.txt",
+        "trecho": "foi arquivado em 10/03/2025, por falta de provas"
+       }
+      ],
+      "replica": "Onde consta que a medida protetiva continua em vigor, e ela inclui Davi?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "O arquivamento não afasta a necessidade de avaliar a segurança de Davi. O pedido não é de afastar o pai: é de convivência assistida, temporária, até a avaliação psicológica, justamente para proteger a criança sem prejulgar ninguém.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta separa a questão criminal da proteção da criança, não afirma culpa e mostra que o pedido é proporcional e provisório.",
+      "pontos_fortes": [
+       "Não prejulga o pai.",
+       "Deixa claro o caráter temporário da medida.",
+       "Coloca o foco na segurança de Davi."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Junte a decisão de arquivamento para mostrar que ela não analisou a situação da criança.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_joana.txt",
+        "trecho": "Convivência de Marcelo com o filho apenas de forma assistida, em local indicado pelo juízo, até avaliação psicológica"
+       }
+      ],
+      "replica": ""
+     }
+    }
    ]
   },
   {
    "pergunta": "Joana escreveu a Marcelo que Davi voltava tranquilo das visitas?",
    "respostas": [
-    {"rotulo": "Resposta A", "texto": "Ela nunca escreveu isso.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta nega mensagens que podem ser exibidas pela outra parte.", "pontos_fortes": [], "pontos_frageis": ["Se as mensagens aparecerem, a credibilidade de Joana fica comprometida."], "sugestao": "Verifique a conversa antes e explique o contexto das mensagens, se existirem.", "apoio_nos_documentos": [{"documento": "contestacao_marcelo.txt", "trecho": "conforme mensagens da própria Joana"}], "replica": "A senhora autoriza a juntada da conversa inteira?"}},
-    {"rotulo": "Resposta B", "texto": "As conversas serão juntadas por inteiro, e não só trechos escolhidos. Uma criança pode voltar tranquila de uma visita e ainda assim precisar de avaliação, que é exatamente o que se pede.", "avaliacao": {"avaliacao": "parcial", "resumo": "Sua resposta evita negar o que pode ser provado e dá contexto, mas admite um ponto que enfraquece o quadro de sofrimento descrito.", "pontos_fortes": ["Pede a conversa completa.", "Mantém a coerência com o pedido de avaliação."], "pontos_frageis": ["Mensagens de tranquilidade pesam contra a restrição da convivência."], "sugestao": "Leia a conversa inteira antes da audiência para saber em que contexto as mensagens foram escritas.", "apoio_nos_documentos": [{"documento": "contestacao_marcelo.txt", "trecho": "Davi volta dos fins de semana tranquilo"}], "replica": "Então por que restringir visitas das quais ele volta tranquilo?"}}
+    {
+     "rotulo": "Resposta A",
+     "texto": "Pode ter escrito em algum momento, para não provocar Marcelo: quem tem medida protetiva evita conflito. Isso não significa que Davi estivesse bem.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta não nega as mensagens e dá um contexto compreensível, mas se apoia numa suposição sobre o motivo delas.",
+      "pontos_fortes": [
+       "Evita negar o que pode ser provado.",
+       "Relaciona a conduta ao contexto de proteção."
+      ],
+      "pontos_frageis": [
+       "O motivo das mensagens é suposição.",
+       "Pode sugerir que Joana escrevia algo que não era verdade."
+      ],
+      "sugestao": "Não justifique as mensagens com suposições; peça a juntada da conversa completa.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_marcelo.txt",
+        "trecho": "conforme mensagens da própria Joana"
+       }
+      ],
+      "replica": "Então a senhora escrevia que ele estava tranquilo sem que fosse verdade?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "As conversas serão juntadas por inteiro, e não só trechos escolhidos. Uma criança pode voltar tranquila de uma visita e ainda assim precisar de avaliação, que é exatamente o que se pede.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta evita negar o que pode ser provado e dá contexto, mas admite um ponto que enfraquece o quadro de sofrimento descrito.",
+      "pontos_fortes": [
+       "Pede a conversa completa.",
+       "Mantém a coerência com o pedido de avaliação."
+      ],
+      "pontos_frageis": [
+       "Mensagens de tranquilidade pesam contra a restrição da convivência."
+      ],
+      "sugestao": "Leia a conversa inteira antes da audiência para saber em que contexto as mensagens foram escritas.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_marcelo.txt",
+        "trecho": "Davi volta dos fins de semana tranquilo"
+       }
+      ],
+      "replica": "Então por que restringir visitas das quais ele volta tranquilo?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Os pesadelos de Davi começaram antes ou depois de setembro de 2024?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Depois do episódio de 22/09/2024. Antes disso, Davi dormia bem.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é direta, mas se apoia só no relato da mãe, e a contestação liga os pesadelos à troca de escola.",
+      "pontos_fortes": [
+       "Coerente com a petição."
+      ],
+      "pontos_frageis": [
+       "Só a mãe relata.",
+       "Não enfrenta a explicação da troca de escola."
+      ],
+      "sugestao": "Indique quem mais pode confirmar quando os sintomas começaram.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_joana.txt",
+        "trecho": "Desde então, Davi tem pesadelos e passou a urinar na cama, segundo Joana."
+       }
+      ],
+      "replica": "A troca de escola também foi em setembro; como separar as duas causas?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "O relato é de Joana, como a petição registra, e a contestação liga os pesadelos à troca de escola. Não cabe a nenhum dos pais decidir a causa: por isso pedimos avaliação psicológica, e relatórios da escola e do pediatra ajudarão a fixar quando os sintomas começaram.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta reconhece os limites do relato e transforma a divergência em fundamento do pedido de avaliação.",
+      "pontos_fortes": [
+       "Não exagera o próprio relato.",
+       "Indica provas de terceiros.",
+       "Reforça a necessidade da avaliação."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Peça o relatório da escola nova e da antiga.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_joana.txt",
+        "trecho": "até avaliação psicológica"
+       }
+      ],
+      "replica": ""
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Como deve ser feita a entrega de Davi para as visitas, se a medida protetiva impede Marcelo de se aproximar de Joana?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Por terceiros ou em local neutro. Enquanto a avaliação não sai, pedimos que a convivência aconteça em local indicado pelo juízo, o que resolve a entrega sem que Joana precise sair de casa e sem descumprir a medida.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta resolve um problema prático e mostra que o pedido de convivência assistida protege todos.",
+      "pontos_fortes": [
+       "Solução concreta.",
+       "Compatível com a medida protetiva.",
+       "Liga ao pedido principal."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Sugira nomes de terceiros de confiança para a entrega.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_joana.txt",
+        "trecho": "o que obriga Joana a sair de casa para evitar o encontro"
+       }
+      ],
+      "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "A entrega pode continuar na casa dos avós maternos, com Joana fora de casa, como já acontece hoje.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é prática, mas mantém a situação que a própria petição descreve como problema.",
+      "pontos_fortes": [
+       "Usa uma rotina existente."
+      ],
+      "pontos_frageis": [
+       "Contradiz a queixa da petição.",
+       "Enfraquece o pedido de convivência assistida."
+      ],
+      "sugestao": "Proponha um local neutro, coerente com o pedido.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_joana.txt",
+        "trecho": "Marcelo continua buscando Davi na casa dos avós maternos"
+       }
+      ],
+      "replica": "Se hoje funciona assim, por que a convivência precisa ser assistida?"
+     }
+    }
    ]
   }
  ]

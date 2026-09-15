@@ -14,8 +14,14 @@
     "texto": "Paulo afirma que Cláudia mora sozinha e usa o apartamento com exclusividade; Cláudia afirma que vive ali com o filho do casal, de 9 anos, que tem residência fixada com ela. Se a versão dela se confirmar, deixa de existir o uso exclusivo que fundamenta o pedido de aluguel.",
     "provenance": "INFERENCE",
     "origem": [
-     {"documento": "pedido_paulo.txt", "trecho": "Cláudia mora sozinha no apartamento"},
-     {"documento": "contestacao_claudia.txt", "trecho": "vive nele com o filho do casal, Pedro, de 9 anos, que tem residência fixada com a mãe desde o divórcio"}
+     {
+      "documento": "pedido_paulo.txt",
+      "trecho": "Cláudia mora sozinha no apartamento"
+     },
+     {
+      "documento": "contestacao_claudia.txt",
+      "trecho": "vive nele com o filho do casal, Pedro, de 9 anos, que tem residência fixada com a mãe desde o divórcio"
+     }
     ]
    },
    {
@@ -24,8 +30,14 @@
     "texto": "Paulo diz que continua pagando metade das parcelas do financiamento; Cláudia diz que ele parou em março de 2023 e que desde então ela paga tudo sozinha.",
     "provenance": "INFERENCE",
     "origem": [
-     {"documento": "pedido_paulo.txt", "trecho": "Paulo continua pagando metade das parcelas do financiamento"},
-     {"documento": "contestacao_claudia.txt", "trecho": "Paulo deixou de pagar a sua metade das parcelas do financiamento em março de 2023"}
+     {
+      "documento": "pedido_paulo.txt",
+      "trecho": "Paulo continua pagando metade das parcelas do financiamento"
+     },
+     {
+      "documento": "contestacao_claudia.txt",
+      "trecho": "Paulo deixou de pagar a sua metade das parcelas do financiamento em março de 2023"
+     }
     ]
    },
    {
@@ -34,8 +46,14 @@
     "texto": "O valor de mercado de R$ 3.000,00, base do aluguel pedido, vem de anúncios que não foram juntados, como a própria contestação aponta.",
     "provenance": "INFERENCE",
     "origem": [
-     {"documento": "pedido_paulo.txt", "trecho": "custa cerca de R$ 3.000,00 por mês, conforme anúncios consultados por Paulo"},
-     {"documento": "contestacao_claudia.txt", "trecho": "Os anúncios mencionados por Paulo não foram juntados"}
+     {
+      "documento": "pedido_paulo.txt",
+      "trecho": "custa cerca de R$ 3.000,00 por mês, conforme anúncios consultados por Paulo"
+     },
+     {
+      "documento": "contestacao_claudia.txt",
+      "trecho": "Os anúncios mencionados por Paulo não foram juntados"
+     }
     ]
    },
    {
@@ -43,99 +61,459 @@
     "categoria": "lacuna_probatoria",
     "texto": "Paulo não junta nenhum comprovante de que continua pagando metade das parcelas.",
     "provenance": "INFERENCE",
-    "origem": [{"documento": "pedido_paulo.txt", "trecho": "Paulo continua pagando metade das parcelas do financiamento"}]
+    "origem": [
+     {
+      "documento": "pedido_paulo.txt",
+      "trecho": "Paulo continua pagando metade das parcelas do financiamento"
+     }
+    ]
    },
    {
     "id": "lacuna-residencia-filho",
     "categoria": "lacuna_probatoria",
     "texto": "Nenhuma das partes juntou o acordo ou a decisão do divórcio que teria fixado a residência do filho com a mãe.",
     "provenance": "INFERENCE",
-    "origem": [{"documento": "contestacao_claudia.txt", "trecho": "tem residência fixada com a mãe desde o divórcio"}]
+    "origem": [
+     {
+      "documento": "contestacao_claudia.txt",
+      "trecho": "tem residência fixada com a mãe desde o divórcio"
+     }
+    ]
    },
    {
     "id": "lacuna-comprovantes-claudia",
     "categoria": "lacuna_probatoria",
     "texto": "Cláudia afirma pagar parcelas, condomínio e IPTU sozinha, mas diz apenas que guarda os comprovantes, sem juntá-los.",
     "provenance": "INFERENCE",
-    "origem": [{"documento": "contestacao_claudia.txt", "trecho": "conforme comprovantes bancários que ela guarda"}]
+    "origem": [
+     {
+      "documento": "contestacao_claudia.txt",
+      "trecho": "conforme comprovantes bancários que ela guarda"
+     }
+    ]
    },
    {
     "id": "argumento-moradia-filho",
     "categoria": "contra_argumento",
     "texto": "A defesa sustentará que, servindo de moradia ao filho comum, o imóvel não é usado com exclusividade por Cláudia, o que tende a afastar o pagamento de aluguel a Paulo.",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "contestacao_claudia.txt", "trecho": "porque o imóvel serve de moradia ao filho comum"}]
+    "origem": [
+     {
+      "documento": "contestacao_claudia.txt",
+      "trecho": "porque o imóvel serve de moradia ao filho comum"
+     }
+    ]
    },
    {
     "id": "argumento-compensacao",
     "categoria": "contra_argumento",
     "texto": "Se Paulo parou de pagar as parcelas em março de 2023, a compensação pedida por Cláudia reduzirá o que ele recebe na venda e fará o pedido de aluguel parecer desproporcional.",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "contestacao_claudia.txt", "trecho": "compensação das parcelas pagas somente por Cláudia desde março de 2023"}]
+    "origem": [
+     {
+      "documento": "contestacao_claudia.txt",
+      "trecho": "compensação das parcelas pagas somente por Cláudia desde março de 2023"
+     }
+    ]
    },
    {
     "id": "pergunta-filho",
     "categoria": "pergunta_dificil",
     "texto": "O filho Pedro mora no apartamento com a mãe desde o divórcio?",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "contestacao_claudia.txt", "trecho": "vive nele com o filho do casal"}]
+    "origem": [
+     {
+      "documento": "contestacao_claudia.txt",
+      "trecho": "vive nele com o filho do casal"
+     }
+    ]
    },
    {
     "id": "pergunta-parcelas",
     "categoria": "pergunta_dificil",
     "texto": "Paulo pagou a metade das parcelas depois de março de 2023? Onde estão os comprovantes?",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "contestacao_claudia.txt", "trecho": "Paulo deixou de pagar a sua metade das parcelas do financiamento em março de 2023"}]
+    "origem": [
+     {
+      "documento": "contestacao_claudia.txt",
+      "trecho": "Paulo deixou de pagar a sua metade das parcelas do financiamento em março de 2023"
+     }
+    ]
    },
    {
     "id": "pergunta-valor",
     "categoria": "pergunta_dificil",
     "texto": "Onde estão os anúncios que mostram o aluguel de R$ 3.000,00 na região?",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "pedido_paulo.txt", "trecho": "conforme anúncios consultados por Paulo"}]
+    "origem": [
+     {
+      "documento": "pedido_paulo.txt",
+      "trecho": "conforme anúncios consultados por Paulo"
+     }
+    ]
    },
    {
     "id": "pergunta-termo-inicial",
     "categoria": "pergunta_dificil",
     "texto": "Paulo pediu a Cláudia algum pagamento pelo uso do imóvel antes de entrar na Justiça, para cobrar desde 01/09/2022?",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "pedido_paulo.txt", "trecho": "Desde a saída de Paulo, em 01/09/2022"}]
+    "origem": [
+     {
+      "documento": "pedido_paulo.txt",
+      "trecho": "Desde a saída de Paulo, em 01/09/2022"
+     }
+    ]
    }
   ],
   "linha_do_tempo": [
-   {"data": "2016", "data_ordenacao": "2016", "evento": "Compra do apartamento pelo casal, com financiamento", "quem_afirma": "Paulo", "documento": "pedido_paulo.txt", "trecho": "o apartamento comprado pelo casal em 2016, ainda financiado", "divergencia": ""},
-   {"data": "10/08/2022", "data_ordenacao": "2022-08-10", "evento": "Divórcio, com o apartamento em partes iguais", "quem_afirma": "Paulo", "documento": "pedido_paulo.txt", "trecho": "Paulo e Cláudia se divorciaram em 10/08/2022", "divergencia": ""},
-   {"data": "01/09/2022", "data_ordenacao": "2022-09-01", "evento": "Saída de Paulo; Cláudia passa a morar no apartamento", "quem_afirma": "Paulo", "documento": "pedido_paulo.txt", "trecho": "Desde a saída de Paulo, em 01/09/2022, Cláudia mora sozinha no apartamento", "divergencia": "Cláudia afirma que mora no apartamento com o filho do casal."},
-   {"data": "março de 2023", "data_ordenacao": "2023-03", "evento": "Paulo deixa de pagar a metade das parcelas, segundo Cláudia", "quem_afirma": "Cláudia", "documento": "contestacao_claudia.txt", "trecho": "Paulo deixou de pagar a sua metade das parcelas do financiamento em março de 2023", "divergencia": "Paulo afirma que continua pagando metade das parcelas."}
+   {
+    "data": "2016",
+    "data_ordenacao": "2016",
+    "evento": "Compra do apartamento pelo casal, com financiamento",
+    "quem_afirma": "Paulo",
+    "documento": "pedido_paulo.txt",
+    "trecho": "o apartamento comprado pelo casal em 2016, ainda financiado",
+    "divergencia": ""
+   },
+   {
+    "data": "10/08/2022",
+    "data_ordenacao": "2022-08-10",
+    "evento": "Divórcio, com o apartamento em partes iguais",
+    "quem_afirma": "Paulo",
+    "documento": "pedido_paulo.txt",
+    "trecho": "Paulo e Cláudia se divorciaram em 10/08/2022",
+    "divergencia": ""
+   },
+   {
+    "data": "01/09/2022",
+    "data_ordenacao": "2022-09-01",
+    "evento": "Saída de Paulo; Cláudia passa a morar no apartamento",
+    "quem_afirma": "Paulo",
+    "documento": "pedido_paulo.txt",
+    "trecho": "Desde a saída de Paulo, em 01/09/2022, Cláudia mora sozinha no apartamento",
+    "divergencia": "Cláudia afirma que mora no apartamento com o filho do casal."
+   },
+   {
+    "data": "março de 2023",
+    "data_ordenacao": "2023-03",
+    "evento": "Paulo deixa de pagar a metade das parcelas, segundo Cláudia",
+    "quem_afirma": "Cláudia",
+    "documento": "contestacao_claudia.txt",
+    "trecho": "Paulo deixou de pagar a sua metade das parcelas do financiamento em março de 2023",
+    "divergencia": "Paulo afirma que continua pagando metade das parcelas."
+   }
   ],
   "plano_de_provas": [
-   {"prova": "Extrato de evolução do financiamento, com os pagamentos feitos por Paulo desde setembro de 2022", "finalidade": "Comprovar que Paulo continua pagando a metade das parcelas.", "como_obter": "Como cotitular do financiamento, Paulo pode pedir o extrato ao banco; reunir também os comprovantes de transferência.", "prioridade": "alta", "apontamentos": ["contradicao-parcelas", "lacuna-parcelas-paulo", "argumento-compensacao", "pergunta-parcelas"]},
-   {"prova": "Acordo ou sentença do divórcio sobre a guarda e a residência do filho", "finalidade": "Verificar onde Pedro mora e medir o impacto no pedido de aluguel.", "como_obter": "Cópia do processo de divórcio, que o cliente tem.", "prioridade": "alta", "apontamentos": ["contradicao-sozinha", "lacuna-residencia-filho", "argumento-moradia-filho", "pergunta-filho"]},
-   {"prova": "Avaliação do valor de aluguel por corretor ou perito, com os anúncios de referência", "finalidade": "Dar base técnica ao valor de mercado.", "como_obter": "Juntar os anúncios consultados e requerer avaliação por perito.", "prioridade": "media", "apontamentos": ["lacuna-anuncios", "pergunta-valor"]},
-   {"prova": "Mensagens ou notificação em que Paulo pediu a Cláudia pagamento pelo uso do imóvel", "finalidade": "Sustentar a cobrança desde a data pedida.", "como_obter": "Reunir com o cliente mensagens, e-mails ou notificação enviada.", "prioridade": "media", "apontamentos": ["pergunta-termo-inicial"]},
-   {"prova": "Exibição dos comprovantes que Cláudia diz guardar", "finalidade": "Testar a alegação de que ela paga sozinha parcelas, condomínio e IPTU.", "como_obter": "Requerer ao juízo que Cláudia junte os comprovantes.", "prioridade": "baixa", "apontamentos": ["lacuna-comprovantes-claudia"]}
+   {
+    "prova": "Extrato de evolução do financiamento, com os pagamentos feitos por Paulo desde setembro de 2022",
+    "finalidade": "Comprovar que Paulo continua pagando a metade das parcelas.",
+    "como_obter": "Como cotitular do financiamento, Paulo pode pedir o extrato ao banco; reunir também os comprovantes de transferência.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "contradicao-parcelas",
+     "lacuna-parcelas-paulo",
+     "argumento-compensacao",
+     "pergunta-parcelas"
+    ]
+   },
+   {
+    "prova": "Acordo ou sentença do divórcio sobre a guarda e a residência do filho",
+    "finalidade": "Verificar onde Pedro mora e medir o impacto no pedido de aluguel.",
+    "como_obter": "Cópia do processo de divórcio, que o cliente tem.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "contradicao-sozinha",
+     "lacuna-residencia-filho",
+     "argumento-moradia-filho",
+     "pergunta-filho"
+    ]
+   },
+   {
+    "prova": "Avaliação do valor de aluguel por corretor ou perito, com os anúncios de referência",
+    "finalidade": "Dar base técnica ao valor de mercado.",
+    "como_obter": "Juntar os anúncios consultados e requerer avaliação por perito.",
+    "prioridade": "media",
+    "apontamentos": [
+     "lacuna-anuncios",
+     "pergunta-valor"
+    ]
+   },
+   {
+    "prova": "Mensagens ou notificação em que Paulo pediu a Cláudia pagamento pelo uso do imóvel",
+    "finalidade": "Sustentar a cobrança desde a data pedida.",
+    "como_obter": "Reunir com o cliente mensagens, e-mails ou notificação enviada.",
+    "prioridade": "media",
+    "apontamentos": [
+     "pergunta-termo-inicial"
+    ]
+   },
+   {
+    "prova": "Exibição dos comprovantes que Cláudia diz guardar",
+    "finalidade": "Testar a alegação de que ela paga sozinha parcelas, condomínio e IPTU.",
+    "como_obter": "Requerer ao juízo que Cláudia junte os comprovantes.",
+    "prioridade": "baixa",
+    "apontamentos": [
+     "lacuna-comprovantes-claudia"
+    ]
+   }
   ]
  },
  "audiencia": [
   {
    "pergunta": "O filho Pedro mora no apartamento com a mãe desde o divórcio?",
    "respostas": [
-    {"rotulo": "Resposta A", "texto": "O menino fica mais na casa dos avós. Quem usa o apartamento é ela.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta cria um fato novo, a permanência na casa dos avós, que não aparece em nenhum documento.", "pontos_fortes": [], "pontos_frageis": ["Nenhum documento menciona os avós.", "Não enfrenta a afirmação de que a residência do filho foi fixada com a mãe."], "sugestao": "Verifique com o cliente o que o divórcio definiu sobre a residência de Pedro antes de responder.", "apoio_nos_documentos": [{"documento": "contestacao_claudia.txt", "trecho": "tem residência fixada com a mãe desde o divórcio"}], "replica": "Então o acordo de divórcio não fixou a residência de Pedro com a mãe?"}},
-    {"rotulo": "Resposta B", "texto": "Se a residência de Pedro foi fixada com a mãe, Paulo não discute que o filho more ali. O pedido principal é a venda do imóvel, e o aluguel pode ser rediscutido à luz dessa situação.", "avaliacao": {"avaliacao": "parcial", "resumo": "Sua resposta é realista e preserva o pedido de venda, mas concede o ponto que mais enfraquece o pedido de aluguel.", "pontos_fortes": ["Não nega um fato provável.", "Protege o pedido que não depende do uso exclusivo."], "pontos_frageis": ["O pedido de aluguel fica praticamente sem base."], "sugestao": "Considere concentrar a tese na venda e na compensação correta das parcelas.", "apoio_nos_documentos": [{"documento": "pedido_paulo.txt", "trecho": "Venda do apartamento e divisão do valor entre os dois"}], "replica": "Então Paulo desiste do aluguel?"}}
+    {
+     "rotulo": "Resposta A",
+     "texto": "Se Pedro mora ali, isso não afasta todo o pedido: afasta a ideia de uso gratuito sem nenhuma compensação. Paulo continua dono de metade e sem poder usar o imóvel. Pedimos que o uso seja considerado no acerto da venda, junto com as parcelas pagas por cada um.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta aceita a situação do filho sem abrir mão do direito de Paulo e propõe um acerto equilibrado dentro do pedido de venda.",
+      "pontos_fortes": [
+       "Não discute a moradia do filho.",
+       "Transforma o aluguel em compensação no acerto final.",
+       "Considera também as parcelas pagas por Cláudia."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Prepare uma conta simples com as parcelas pagas por cada um desde 2022.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_claudia.txt",
+        "trecho": "vive nele com o filho do casal, Pedro"
+       },
+       {
+        "documento": "pedido_paulo.txt",
+        "trecho": "Venda do apartamento e divisão do valor entre os dois"
+       }
+      ],
+      "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Se a residência de Pedro foi fixada com a mãe, Paulo não discute que o filho more ali. O pedido principal é a venda do imóvel, e o aluguel pode ser rediscutido à luz dessa situação.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é realista e preserva o pedido de venda, mas concede o ponto que mais enfraquece o pedido de aluguel.",
+      "pontos_fortes": [
+       "Não nega um fato provável.",
+       "Protege o pedido que não depende do uso exclusivo."
+      ],
+      "pontos_frageis": [
+       "O pedido de aluguel fica praticamente sem base."
+      ],
+      "sugestao": "Considere concentrar a tese na venda e na compensação correta das parcelas.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_paulo.txt",
+        "trecho": "Venda do apartamento e divisão do valor entre os dois"
+       }
+      ],
+      "replica": "Então Paulo desiste do aluguel?"
+     }
+    }
    ]
   },
   {
    "pergunta": "Paulo pagou a metade das parcelas depois de março de 2023? Onde estão os comprovantes?",
    "respostas": [
-    {"rotulo": "Resposta A", "texto": "Ele sempre pagou certinho, nunca atrasou.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta reforça a afirmação da petição sem trazer nenhum comprovante, justamente o que a pergunta pede.", "pontos_fortes": ["Coerente com a petição."], "pontos_frageis": ["Nenhum comprovante está nos autos.", "\"Nunca atrasou\" amplia o que foi alegado."], "sugestao": "Indique o extrato de evolução do financiamento como prova e comprometa-se a juntá-lo.", "apoio_nos_documentos": [{"documento": "contestacao_claudia.txt", "trecho": "Paulo deixou de pagar a sua metade das parcelas do financiamento em março de 2023"}], "replica": "Então basta mostrar um único comprovante de abril de 2023."}},
-    {"rotulo": "Resposta B", "texto": "Vamos juntar o extrato de evolução do financiamento e as transferências feitas por Paulo desde setembro de 2022, mês a mês.", "avaliacao": {"avaliacao": "parcial", "resumo": "Sua resposta indica a prova certa, mas a divergência só será resolvida quando os documentos forem juntados.", "pontos_fortes": ["Prova objetiva e acessível ao cliente."], "pontos_frageis": ["Até lá, a afirmação de Cláudia não foi rebatida."], "sugestao": "Leve à audiência pelo menos os comprovantes de 2023.", "apoio_nos_documentos": [{"documento": "pedido_paulo.txt", "trecho": "Paulo continua pagando metade das parcelas do financiamento"}], "replica": "E se o extrato mostrar pagamentos só até fevereiro de 2023?"}}
+    {
+     "rotulo": "Resposta A",
+     "texto": "Paulo paga a parte dele por débito automático, então não há como ter atrasado. Os extratos da conta dele mostram os débitos mês a mês.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é segura e indica os extratos, mas afirma uma forma de pagamento que não aparece em nenhum documento.",
+      "pontos_fortes": [
+       "Indica prova bancária mês a mês.",
+       "Responde com objetividade."
+      ],
+      "pontos_frageis": [
+       "O débito automático não consta dos autos.",
+       "A contestação afirma que Paulo parou de pagar em março de 2023."
+      ],
+      "sugestao": "Não afirme a forma de pagamento sem documento; junte o extrato do financiamento.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_paulo.txt",
+        "trecho": "Paulo continua pagando metade das parcelas do financiamento"
+       }
+      ],
+      "replica": "Onde está o contrato que mostra débito automático da metade na conta de Paulo?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Vamos juntar o extrato de evolução do financiamento e as transferências feitas por Paulo desde setembro de 2022, mês a mês.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta indica a prova certa, mas a divergência só será resolvida quando os documentos forem juntados.",
+      "pontos_fortes": [
+       "Prova objetiva e acessível ao cliente."
+      ],
+      "pontos_frageis": [
+       "Até lá, a afirmação de Cláudia não foi rebatida."
+      ],
+      "sugestao": "Leve à audiência pelo menos os comprovantes de 2023.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_paulo.txt",
+        "trecho": "Paulo continua pagando metade das parcelas do financiamento"
+       }
+      ],
+      "replica": "E se o extrato mostrar pagamentos só até fevereiro de 2023?"
+     }
+    }
    ]
   },
   {
    "pergunta": "Onde estão os anúncios que mostram o aluguel de R$ 3.000,00 na região?",
    "respostas": [
-    {"rotulo": "Resposta A", "texto": "Todo mundo sabe quanto custa um aluguel naquela região.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta troca a prova pedida por senso comum.", "pontos_fortes": [], "pontos_frageis": ["Os anúncios não foram juntados.", "Valor de mercado exige prova."], "sugestao": "Junte os anúncios e peça avaliação por perito.", "apoio_nos_documentos": [{"documento": "contestacao_claudia.txt", "trecho": "Os anúncios mencionados por Paulo não foram juntados"}], "replica": "Então o valor foi estimado sem nenhum documento?"}},
-    {"rotulo": "Resposta B", "texto": "Os anúncios serão juntados, e pedimos avaliação por perito, que é a forma adequada de fixar o valor de mercado. O pedido de venda, de todo modo, não depende desse valor.", "avaliacao": {"avaliacao": "convincente", "resumo": "Sua resposta reconhece a falta dos anúncios, propõe a prova técnica e protege o pedido que não depende do valor do aluguel.", "pontos_fortes": ["Indica prova técnica.", "Separa o pedido de venda da discussão sobre o valor."], "pontos_frageis": [], "sugestao": "Mantenha a linha e junte os anúncios antes da audiência.", "apoio_nos_documentos": [{"documento": "pedido_paulo.txt", "trecho": "Venda do apartamento e divisão do valor entre os dois"}], "replica": ""}}
+    {
+     "rotulo": "Resposta A",
+     "texto": "Os anúncios foram consultados em sites públicos e qualquer pessoa pode conferir. O valor de R$ 3.000,00 é até conservador para a região, e vamos juntar as capturas de tela.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta promete a prova, mas se apoia em capturas de tela e numa avaliação de mercado sem base técnica.",
+      "pontos_fortes": [
+       "Indica que os anúncios serão juntados.",
+       "Mantém o valor pedido."
+      ],
+      "pontos_frageis": [
+       "\"Conservador\" não tem nenhum apoio nos autos.",
+       "Capturas de tela sem data e endereço provam pouco."
+      ],
+      "sugestao": "Proponha avaliação por perito em vez de defender o valor com anúncios.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_claudia.txt",
+        "trecho": "Os anúncios mencionados por Paulo não foram juntados"
+       }
+      ],
+      "replica": "Capturas de tela sem data e sem endereço provam o valor de mercado deste apartamento?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Os anúncios serão juntados, e pedimos avaliação por perito, que é a forma adequada de fixar o valor de mercado. O pedido de venda, de todo modo, não depende desse valor.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta reconhece a falta dos anúncios, propõe a prova técnica e protege o pedido que não depende do valor do aluguel.",
+      "pontos_fortes": [
+       "Indica prova técnica.",
+       "Separa o pedido de venda da discussão sobre o valor."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Mantenha a linha e junte os anúncios antes da audiência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_paulo.txt",
+        "trecho": "Venda do apartamento e divisão do valor entre os dois"
+       }
+      ],
+      "replica": ""
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Antes da ação, Paulo pediu a Cláudia algum pagamento pelo uso do apartamento?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Pediu várias vezes, conversando com ela, mas Cláudia se recusou.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta tenta justificar a cobrança desde 2022, mas não indica nenhum registro desses pedidos.",
+      "pontos_fortes": [
+       "Tenta sustentar a data inicial do aluguel."
+      ],
+      "pontos_frageis": [
+       "Nenhum documento fala desses pedidos.",
+       "Conversas sem registro não fixam a data da cobrança."
+      ],
+      "sugestao": "Procure mensagens ou notificações com data.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_paulo.txt",
+        "trecho": "sem pagar nada a Paulo pelo uso da parte dele"
+       }
+      ],
+      "replica": "Há mensagem, e-mail ou notificação com a data desses pedidos?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Os documentos não mostram pedido anterior. Se o juízo entender que o aluguel só corre depois da cobrança, Paulo aceita que ele comece na citação, e não em 01/09/2022.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é realista, mas cede de imediato mais de dois anos do valor pedido.",
+      "pontos_fortes": [
+       "Não inventa fatos.",
+       "Oferece alternativa razoável."
+      ],
+      "pontos_frageis": [
+       "Reduz o pedido antes de o juízo se manifestar.",
+       "Confirma que não houve cobrança anterior."
+      ],
+      "sugestao": "Apresente a data da citação como pedido subsidiário.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_paulo.txt",
+        "trecho": "desde 01/09/2022"
+       }
+      ],
+      "replica": "Então Paulo nunca reclamou do uso do imóvel até entrar com a ação?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Se Cláudia paga sozinha as parcelas, o condomínio e o IPTU desde março de 2023, isso não compensa o aluguel pedido?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "São valores diferentes, mas podem ser acertados juntos. Paulo aceita que, na venda, as parcelas pagas só por Cláudia sejam descontadas da parte dele, como ela mesma pede, e que o aluguel seja compensado com esse valor. Condomínio e IPTU acompanham o uso exclusivo que ela faz do imóvel.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta aproveita o pedido da própria Cláudia para propor um acerto de contas equilibrado.",
+      "pontos_fortes": [
+       "Usa o pedido subsidiário da contestação.",
+       "Separa parcelas de despesas de uso.",
+       "Propõe solução prática."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Leve uma planilha com parcelas, aluguel e compensação mês a mês.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_claudia.txt",
+        "trecho": "compensação das parcelas pagas somente por Cláudia"
+       }
+      ],
+      "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Paulo continua pagando metade das parcelas, como está no pedido, então não há o que compensar.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é coerente com o pedido, mas mantém uma afirmação que a contestação nega sem apresentar extrato.",
+      "pontos_fortes": [
+       "Fiel ao que consta do pedido."
+      ],
+      "pontos_frageis": [
+       "A contestação afirma o contrário e diz ter comprovantes.",
+       "Nenhum extrato foi apresentado."
+      ],
+      "sugestao": "Junte o extrato do financiamento antes de sustentar esse ponto.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_paulo.txt",
+        "trecho": "Paulo continua pagando metade das parcelas do financiamento."
+       }
+      ],
+      "replica": "Onde estão os comprovantes dos pagamentos depois de março de 2023?"
+     }
+    }
    ]
   }
  ]

@@ -531,3 +531,238 @@ instâncias (mitigado pela espera de 1 s e por um código longo).
 
 **STATUS:** Aceito. Validado localmente em 14/09/2026 (ver seção de testes da documentação
 técnica).
+
+---
+
+## ADR-016
+
+**DATA:** 14/09/2026
+
+**DECISÃO:** Nova paleta de cores e relatório com blocos recolhíveis. A tipografia
+(Atkinson Hyperlegible + Lexend) foi mantida.
+
+**COMO FUNCIONA:**
+- **Paleta:** o bordô da marca (`#600f18`) com creme (`#f3eee6` fundo, `#fbf8f3` cartões) e
+  grafite (`#25282b` texto). No modo escuro, o fundo é grafite (`#1f2123`), não preto, com
+  texto creme (`#eee7da`) e bordô claro (`#e3a2a8`) nos destaques; o botão principal é
+  bordô. As cores das categorias (contradição, falta de prova etc.) foram ajustadas para
+  conversar com a paleta. Os modos de alto contraste não mudaram.
+- **Relatório recolhível:** grupos de apontamentos e prioridades do plano de provas são
+  seções no padrão *accordion* do W3C (título + botão com `aria-expanded`); só a primeira
+  começa aberta. Cada apontamento, fato da linha do tempo e prova é um `<details>` recolhido
+  que mostra o resumo (no apontamento, as duas primeiras linhas). "Abrir tudo" e "Recolher
+  tudo" em cada aba; os números do placar abrem e levam ao grupo; os vínculos do plano abrem
+  o apontamento. Na simulação, a rodada anterior recolhe quando chega a próxima. Na
+  impressão, tudo sai aberto e volta ao estado anterior depois.
+
+**MOTIVO:** o relatório completo gerava uma página muito longa; recolhido, o advogado vê o
+panorama e abre só o que quer ler. A paleta preto e cinza anterior não conversava com o
+bordô da marca.
+
+**ALTERNATIVAS:** paginação dos apontamentos (descartada: esconde o panorama). Uma troca de
+fontes (Cormorant Garamond nos títulos, IBM Plex no texto) foi testada e descartada pela
+equipe; as fontes de legibilidade foram mantidas.
+
+**DESVANTAGENS:** mais um clique para ler cada item.
+
+**STATUS:** Aceito. Validado localmente em 14/09/2026 no navegador (tema claro, escuro e
+celular).
+
+---
+
+## ADR-017
+
+**DATA:** 14/09/2026
+
+**DECISÃO:** Vidro fosco (*glassmorphism*) discreto em cartões, cabeçalho e abas, e layout
+fluido que acompanha a largura da tela.
+
+**COMO FUNCIONA:**
+- **Vidro:** superfícies translúcidas com `backdrop-filter: blur(18px) saturate(150%)` sobre
+  um fundo com manchas suaves de bordô e grafite (sem esse fundo o desfoque não aparece).
+  A camada fica quase opaca (64% no claro, 56% no escuro) para o texto manter o contraste.
+  As abas do relatório ficam fixas abaixo do cabeçalho, também em vidro. Alto contraste,
+  "reduzir transparência" do sistema e impressão desligam o efeito.
+- **Layout:** largura máxima de 1560 px com margens (`clamp(16px, 4vw, 64px)`) e texto
+  (16 a 18 px) que crescem com a tela. A partir de 1100 px: tela inicial em duas colunas
+  (apresentação fixa à esquerda, formulário à direita); no relatório, a tese fica ao lado do
+  título e apontamentos e provas ficam em grade de duas colunas. Celular sem mudança.
+
+**MOTIVO:** a página ficava numa coluna estreita de 880 px no meio de telas largas, com
+muito espaço vazio e rolagem longa. O vidro dá profundidade à interface sem trocar a
+identidade.
+
+**ALTERNATIVAS:** vidro forte em todos os elementos (descartado: texto sobre fundo muito
+transparente perde contraste, o que é crítico para leitura de documentos jurídicos);
+largura totalmente livre (descartado: linhas longas demais em monitores ultralargos).
+
+**DESVANTAGENS:** `backdrop-filter` custa processamento em computadores e celulares mais
+fracos; o efeito é sutil sobre o fundo creme.
+
+**STATUS:** Aceito. Validado localmente em 14/09/2026 (1920, 1366 e 400 px; claro, escuro e
+alto contraste).
+
+---
+
+## ADR-018
+
+**DATA:** 14/09/2026
+
+**DECISÃO:** A simulação de audiência passa a ter formato de chat.
+
+**COMO FUNCIONA:**
+- Janela "Sala de audiência" com cabeçalho (participantes e "Pergunta 2 de 3"), lista de
+  mensagens com rolagem própria (`role="log"`, `aria-live="polite"`) e caixa de resposta fixa
+  embaixo.
+- Mensagens à esquerda para o advogado da parte contrária (avatar grafite) e para a
+  avaliação da AdversIA (avatar bordô); à direita, a resposta da pessoa em balão bordô. Cada
+  mensagem tem nome e horário.
+- Antes de cada pergunta e durante a avaliação aparece "digitando…" (três pontos; aviso só
+  para leitor de tela). A avaliação mostra veredito, resumo e sugestão; os pontos fortes e
+  frágeis e os trechos dos documentos ficam em "Ver avaliação completa". A réplica chega
+  como nova mensagem do advogado contrário.
+- Demonstração: respostas prontas como sugestões acima da caixa. Análise real: caixa de
+  texto que cresce, Enter envia, Shift+Enter quebra linha, microfone para ditar; se o envio
+  falhar, a resposta volta para a caixa com a mensagem de erro.
+- Substitui as rodadas recolhíveis da ADR-016.
+
+**MOTIVO:** a experiência de conversa aproxima o treino da dinâmica real de uma audiência
+(pergunta, resposta, réplica) e deixa o histórico em ordem cronológica, fácil de revisar.
+
+**DESVANTAGENS:** a espera de "digitando" (cerca de 1 s) é encenada na demonstração; com
+"reduzir animações" ela cai para 0,15 s.
+
+**STATUS:** Aceito. Validado localmente em 14/09/2026 (demonstração completa, envio real
+simulado com sucesso e com erro, tema escuro e celular).
+
+---
+
+## ADR-019
+
+**DATA:** 14/09/2026
+
+**DECISÃO:** Reduzir as cores do sistema. Além do bordô da marca e dos neutros grafite e
+creme, só três cores, e sempre com significado:
+
+| Cor | Quando usar |
+|---|---|
+| Bordô | a marca, botões e destaques |
+| Grafite e creme | todo o resto |
+| Verde (discreto) | confirmado: "Está nos documentos", trecho conferido, resposta convincente |
+| Âmbar (mostarda) | atenção: sem base suficiente, convence em parte, versões diferentes na linha do tempo, prioridade média |
+| Vermelho | risco: ponto crítico, resposta frágil, prioridade alta, erros |
+
+**COMO FUNCIONA:** os tipos de apontamento (contradição, falta de prova, argumento
+contrário, pergunta difícil, ponto de atenção) passam a usar grafite e são identificados
+por **ícone e nome** (SVG criado por código, `criarIcone`), no cartão, no título de cada
+grupo e no placar. O ponto crítico mantém o vermelho e o ícone de alerta. As etiquetas
+"Conclusão tirada dos documentos" (preenchida) e "Possível argumento da outra parte"
+(contorno) ficaram neutras. O roxo e o azul saíram. Os modos de alto contraste seguem com
+as próprias cores.
+
+**MOTIVO:** muitas cores sem significado competiam com o bordô da marca e obrigavam a
+pessoa a decorar uma legenda. Agora a cor diz o nível de confiança ou de risco, e o ícone
+diz o tipo.
+
+**STATUS:** Aceito. Validado localmente em 14/09/2026 (tema claro e escuro).
+
+---
+
+## ADR-020
+
+**DATA:** 14/09/2026
+
+**DECISÃO:** Redesenhar a interface para guiar o olhar: uma tarefa por tela, texto enxuto,
+detalhes sob demanda e transições suaves. Critérios e fontes em `docs/REQUISITOS_UX.md`.
+
+**COMO FUNCIONA:**
+- **Início:** título, uma frase, um botão principal, três selos de confiança e uma prévia
+  visual do relatório; abaixo, "Como funciona" em três passos.
+- **Escolha do caso:** filtro por tipo em botões e grade de cartões (substituem os menus);
+  a escolha aparece numa barra fixa com "Ver documentos" (janela) e "Analisar caso".
+- **Área da gestão:** botão no topo abre uma janela para o código; os documentos são
+  enviados numa tela própria, sem misturar com a demonstração.
+- **Progresso:** indicador de etapas, barra de progresso e a etapa atual em destaque.
+- **Relatório:** título com o nome do caso, tese recolhida em uma linha, ações como ícones
+  com dica; navegação lateral fixa em telas largas (abas horizontais no celular); placar
+  que conta até o total; seções que abrem e fecham com animação; legenda numa janela.
+- **Simulação:** o chat ocupa a coluna inteira do relatório, com altura da tela.
+- **Técnica:** sem framework e sem build; `<dialog>` nativo, View Transitions, transições CSS
+  (`grid-template-rows` e `::details-content`), tudo desligável por "Reduzir animações".
+
+**MOTIVO:** a versão anterior mostrava muitas instruções e opções ao mesmo tempo, sem uma
+hierarquia clara, e tinha desalinhamentos (como o chat mais estreito que a coluna). Para quem
+chega cansado depois de estudar o caso, cada tela precisa indicar um único próximo passo.
+
+**ALTERNATIVAS:** migrar para React (descartada: não resolve hierarquia nem texto, exigiria
+build na Vercel e reabriria o que já estava validado).
+
+**DESVANTAGENS:** mais uma tela no fluxo da demonstração (escolher → analisar); as prints do
+README ficaram desatualizadas.
+
+**STATUS:** Aceito. Validado localmente em 14/09/2026 no navegador (1440 px claro e escuro,
+390 px), 24 verificações sem erros de JavaScript.
+
+---
+
+## ADR-021
+
+**DATA:** 14/09/2026
+
+**DECISÃO:** Trocar a navegação lateral do relatório por uma barra de abas horizontal logo
+acima do conteúdo, fixa abaixo do cabeçalho, com um sublinhado que desliza até a aba ativa.
+
+**MOTIVO:** a navegação lateral dentro de um cartão flutuante ocupava uma coluna inteira
+para só quatro itens, estreitava o conteúdo e ficava visualmente solta. Para poucas seções
+do mesmo conteúdo, abas horizontais acima do painel são o padrão recomendado (Nielsen Norman
+Group, *Tabs, Used Right*); navegação lateral compensa quando há muitas seções.
+
+**COMO FUNCIONA:** mesma barra em todas as larguras (no celular ela rola para os lados e
+mantém a aba escolhida à vista); o sublinhado é posicionado por código
+(`moverIndicadorDasAbas`, com `ResizeObserver`); padrão ARIA de abas mantido (setas, Home,
+End). O conteúdo passa a usar a largura inteira.
+
+**STATUS:** Aceito. Validado localmente em 14/09/2026 (1440 px claro e escuro, 390 px).
+
+---
+
+## ADR-022
+
+**DATA:** 14/09/2026
+
+**DECISÃO:** (1) A exportação em PDF passa a gerar um documento técnico próprio, e não uma
+cópia da tela. (2) A simulação de audiência passa de 3 para 5 perguntas por caso. (3) O
+rótulo do topo passa a ser o bordão "A divorciar? AdversIA". (4) Saem da página os selos de
+confiança do início e o rodapé de avisos do relatório.
+
+**MOTIVO:** a impressão anterior reproduzia cartões, cores e botões, o que não serve como
+peça de trabalho de um escritório. Três perguntas eram pouco para treinar uma audiência. Os
+selos e o rodapé repetiam texto e poluíam as telas (pedido da equipe).
+
+**COMO FUNCIONA:**
+- **PDF:** no evento `beforeprint`, `montarDocumentoImpressao()` preenche
+  `#documento-impressao` a partir do relatório atual. No `@media print`, só esse elemento
+  aparece. O documento tem folha A4, numeração "Página N de M" e seis seções numeradas:
+  1. Identificação;
+  2. Tese submetida à revisão;
+  3. Síntese, em tabela de contagens;
+  4. Vulnerabilidades identificadas, com itens 4.x.y, qualificação técnica e fundamentos
+     documentais com o status de conferência;
+  5. Cronologia dos fatos, em tabela;
+  6. Plano de diligências probatórias, em tabela com remissão aos itens da seção 4.
+
+  O nome sugerido para o arquivo é "AdversIA - Relatório - <caso>". O título original da
+  página é guardado uma única vez, mesmo que o navegador dispare `beforeprint` mais de uma vez.
+- **Perguntas:** 64 perguntas novas, escritas à mão, 2 por caso. Cada uma tem duas respostas
+  bem construídas: uma convincente e uma parcial, ou duas parciais. Os trechos citados foram
+  conferidos literalmente por `scripts/construir_demo.py`, e a ordem das respostas é sorteada
+  de forma fixa.
+- **Avisos:** os avisos continuam no dado da API (`AVISOS_FIXOS` em `VulnerabilityReport`),
+  mas não são mais exibidos na página. A confirmação obrigatória antes de enviar documentos
+  continua valendo.
+
+**DESVANTAGENS:** sem o rodapé, o lembrete de que o relatório não é parecer jurídico deixa de
+aparecer na tela. O PDF segue a paginação do navegador, e não um gerador de PDF próprio.
+
+**STATUS:** Aceito. Validado localmente em 14/09/2026, com 34 verificações no navegador
+(incluindo a emulação de impressão e a geração de PDF A4) e sem erros de JavaScript.

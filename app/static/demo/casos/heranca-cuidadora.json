@@ -243,26 +243,28 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Porque é justo: ela cuidou do pai e ele não fez nada.",
+     "texto": "Os dois são herdeiros em igualdade, e Fernanda não questiona isso. O que ela pede é que o valor econômico de oito anos de cuidados, que pouparam o pai de pagar cuidadora e acompanhante, seja reconhecido na partilha como um crédito dela, e não como aumento da quota.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta se apoia só em justiça em sentido geral e ainda afirma que Carlos não fez nada, o que contradiz o próprio pedido de Fernanda.",
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta dá ao pedido um fundamento econômico mais sólido, mas altera o que está escrito na manifestação.",
       "pontos_fortes": [
-       "Destaca a dedicação de Fernanda."
+       "Transforma um pedido sem base clara em um argumento com fundamento econômico.",
+       "Não contesta a igualdade entre herdeiros."
       ],
       "pontos_frageis": [
-       "O pedido reconhece que Carlos contribuiu financeiramente.",
-       "Não indica fundamento além do senso de justiça."
+       "A manifestação pede expressamente parcela maior do patrimônio.",
+       "Não há estimativa do valor dos cuidados.",
+       "Carlos também contribuiu financeiramente."
       ],
-      "sugestao": "Reconheça a contribuição de Carlos e explique que a diferença está nos cuidados diretos, que precisam ser comprovados.",
+      "sugestao": "Apresente o crédito pelos cuidados como pedido alternativo, sem abandonar o principal, e traga uma estimativa do custo de uma cuidadora no período.",
       "apoio_nos_documentos": [
        {
         "documento": "alegacoes_fernanda.txt",
-        "trecho": "Carlos contribuiu financeiramente durante o período",
+        "trecho": "Requer-se o reconhecimento de um direito a receber uma parcela maior do patrimônio",
         "conferido": true
        }
       ],
-      "replica": "Então a senhora nega que Carlos mandava dinheiro todo mês?"
+      "replica": "Então a senhora desiste do pedido de parcela maior que está escrito na manifestação?"
      }
     },
     {
@@ -297,28 +299,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Todo mundo na família sabe que foi ela.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta não indica nenhum documento e se apoia em pessoas da família, que não são testemunhas isentas.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Nenhum documento é indicado.",
-       "Parentes têm interesse na herança."
-      ],
-      "sugestao": "Indique receitas, agendamentos e testemunhas sem interesse, como médicos e vizinhos.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "alegacoes_fernanda.txt",
-        "trecho": "Fernanda dedicou anos de sua vida ao cuidado direto e cotidiano do pai",
-        "conferido": true
-       }
-      ],
-      "replica": "E quem, fora da família, pode confirmar isso?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "Vamos juntar receitas e comprovantes de consultas em que Fernanda aparece como acompanhante, e indicar médicos e vizinhos como testemunhas.",
      "avaliacao": {
       "avaliacao": "parcial",
@@ -339,6 +319,28 @@
       ],
       "replica": "E Carlos também não acompanhava o pai nas visitas?"
      }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Carlos não nega os cuidados: a manifestação dele só discute se isso dá direito a mais herança. Ainda assim, vamos juntar comprovantes de residência de Fernanda na casa do pai durante o período e os prontuários das consultas, que registram o acompanhante.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta usa a própria manifestação da outra parte para mostrar que o fato não é controvertido e ainda indica prova documental isenta.",
+      "pontos_fortes": [
+       "Mostra que o cuidado é reconhecido por Carlos.",
+       "Indica provas documentais objetivas."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Leve os comprovantes de residência para a audiência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "manifestacao_carlos.txt",
+        "trecho": "o fato de Fernanda ter cuidado do pai",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
     }
    ]
   },
@@ -347,24 +349,27 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Ele mandava uma mixaria, não fazia diferença nenhuma.",
+     "texto": "Reconhece, e isso reforça o pedido: se Carlos precisava mandar dinheiro, as despesas eram altas, e quem as fazia acontecer no dia a dia era Fernanda. O dinheiro dele pagava as contas; o trabalho dela não tinha preço.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta desqualifica uma contribuição sem saber o valor, que não consta de nenhum documento.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "O valor enviado é desconhecido.",
-       "O tom tende a prejudicar a credibilidade."
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta reconhece a contribuição de Carlos, mas a retórica final enfraquece a distinção que a tese precisa fazer.",
+      "pontos_fortes": [
+       "Não nega um fato reconhecido no próprio pedido.",
+       "Tenta usar a contribuição financeira a favor de Fernanda."
       ],
-      "sugestao": "Reconheça a contribuição, como o próprio pedido faz, e diferencie o apoio financeiro dos cuidados diretos.",
+      "pontos_frageis": [
+       "Admite que a ajuda de Carlos era essencial às despesas.",
+       "\"Não tinha preço\" não ajuda a quantificar o pedido."
+      ],
+      "sugestao": "Separe claramente ajuda financeira de cuidado diário, sem supervalorizar o argumento.",
       "apoio_nos_documentos": [
        {
-        "documento": "manifestacao_carlos.txt",
-        "trecho": "enviava mensalmente dinheiro para ajudar nas despesas médicas e domésticas do pai",
+        "documento": "alegacoes_fernanda.txt",
+        "trecho": "Carlos contribuiu financeiramente durante o período",
         "conferido": true
        }
       ],
-      "replica": "A senhora sabe quanto ele mandava?"
+      "replica": "Se o dinheiro de Carlos sustentava o pai, por que só o trabalho de Fernanda deveria aumentar a parte dela?"
      }
     },
     {
@@ -387,6 +392,110 @@
        }
       ],
       "replica": ""
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Fernanda morava de graça na casa do pai durante os oito anos?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Os documentos não tratam de aluguel. Se Carlos quiser compensar a moradia, a mesma conta precisa incluir o valor dos cuidados diários e da renda que Fernanda deixou de ganhar; por isso pedimos que as duas coisas sejam avaliadas juntas.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta não nega o fato e transforma a objeção num argumento de equilíbrio.",
+      "pontos_fortes": [
+       "Propõe uma conta completa.",
+       "Usa a perda de renda descrita no pedido."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Prepare uma estimativa do custo de uma cuidadora no período.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "alegacoes_fernanda.txt",
+        "trecho": "Fernanda deixou de trabalhar em determinados períodos para poder acompanhá-lo",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Morava, mas isso não foi um benefício: ela estava ali para cuidar dele, e não por conveniência própria.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta explica o motivo da moradia, mas admite um benefício que a outra parte pode pedir para compensar.",
+      "pontos_fortes": [
+       "Liga a moradia aos cuidados."
+      ],
+      "pontos_frageis": [
+       "Confirma oito anos sem aluguel.",
+       "O motivo alegado não tem prova."
+      ],
+      "sugestao": "Mostre que qualquer compensação da moradia precisa incluir o valor dos cuidados.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "alegacoes_fernanda.txt",
+        "trecho": "Fernanda morou com ele e ficou responsável",
+        "conferido": true
+       }
+      ],
+      "replica": "Então ela também foi beneficiada durante oito anos, sem pagar aluguel?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Quanto Fernanda deixou de ganhar nos períodos em que parou de trabalhar?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Vamos juntar a carteira de trabalho e os comprovantes de renda anteriores, que mostram os períodos sem trabalho e o salário que ela recebia. Com esses números, o pedido deixa de ser só uma questão de justiça e passa a ter valor.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta indica a prova certa, mas o valor ainda é desconhecido e pode ser pequeno.",
+      "pontos_fortes": [
+       "Prova documental objetiva.",
+       "Dá base econômica ao pedido."
+      ],
+      "pontos_frageis": [
+       "Os documentos ainda não estão nos autos."
+      ],
+      "sugestao": "Verifique os valores antes da audiência para saber se reforçam o pedido.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "alegacoes_fernanda.txt",
+        "trecho": "deixou de trabalhar em determinados períodos",
+        "conferido": true
+       }
+      ],
+      "replica": "E se a renda perdida for menor que a diferença de herança pedida?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Ela perdeu anos de carreira e de contribuição previdenciária, um prejuízo muito maior do que a diferença de herança que pede.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta dá peso ao prejuízo, mas sem nenhum número e exagerando o que o pedido descreve.",
+      "pontos_fortes": [
+       "Aponta um prejuízo além do salário."
+      ],
+      "pontos_frageis": [
+       "O pedido fala em períodos, não em anos de carreira.",
+       "Nenhum valor é apresentado."
+      ],
+      "sugestao": "Traga os períodos e a renda anterior comprovados.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "alegacoes_fernanda.txt",
+        "trecho": "deixou de trabalhar em determinados períodos",
+        "conferido": true
+       }
+      ],
+      "replica": "Quais períodos, e quanto ela ganhava antes?"
      }
     }
    ]

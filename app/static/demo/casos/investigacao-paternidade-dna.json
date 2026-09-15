@@ -328,24 +328,32 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Todo mundo na empresa sabia que a gente estava junto.",
+     "texto": "O próprio Alexandre admite o relacionamento. A diferença entre setembro e novembro é irrelevante: Mateus nasceu em 20/08/2013, então a concepção foi por volta de novembro de 2012, dentro do período que ele reconhece.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta não indica quem sabia, nem até quando, e o réu usa o mesmo tipo de argumento a favor dele.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Nenhuma testemunha identificada.",
-       "Não situa o fim do relacionamento no tempo."
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta usa as datas com segurança, mas faz a conta contra a própria tese: pela versão de Alexandre, novembro fica fora do relacionamento.",
+      "pontos_fortes": [
+       "Usa a admissão do relacionamento.",
+       "Relaciona a data de nascimento ao período."
       ],
-      "sugestao": "Indique pessoas e registros concretos do período de setembro a novembro de 2012.",
+      "pontos_frageis": [
+       "Se o relacionamento terminou em setembro, novembro não está no período que ele reconhece.",
+       "Chama de irrelevante um ponto que é central."
+      ],
+      "sugestao": "Não diga que a diferença é irrelevante; leve a discussão para o novo exame de DNA.",
       "apoio_nos_documentos": [
        {
         "documento": "contestacao_alexandre.txt",
-        "trecho": "conforme sabiam outros funcionários da empresa",
+        "trecho": "Alexandre reconhece que teve um relacionamento com Sílvia",
+        "conferido": true
+       },
+       {
+        "documento": "peticao_silvia.txt",
+        "trecho": "Mateus nasceu em 20/08/2013",
         "conferido": true
        }
       ],
-      "replica": "E os mesmos funcionários sabiam do outro relacionamento?"
+      "replica": "Se ele diz que terminou em setembro, novembro não fica fora do período que ele reconhece?"
      }
     },
     {
@@ -378,28 +386,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Isso é uma ofensa e não merece resposta.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta evita a pergunta, o que tende a ser lido como confirmação.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Não nega nem esclarece.",
-       "Deixa o argumento do réu sem resposta."
-      ],
-      "sugestao": "Responda com objetividade e lembre que o exame de DNA encerra a dúvida.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "contestacao_alexandre.txt",
-        "trecho": "Sílvia também se relacionava com outro colega de trabalho",
-        "conferido": true
-       }
-      ],
-      "replica": "Então a senhora não nega?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "Sílvia nega. De todo modo, é justamente para afastar qualquer dúvida que o exame de DNA existe, e Mateus quer fazê-lo.",
      "avaliacao": {
       "avaliacao": "parcial",
@@ -421,6 +407,29 @@
       ],
       "replica": "E quem era o outro colega?"
      }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Sílvia nega, e Alexandre não indica nome, data ou funcionário que confirme. Mas não precisamos vencer essa discussão: o exame de DNA resolve. Mateus aceita o novo exame que o próprio Alexandre pediu, com intimação no endereço atual, e pedimos que conste a advertência sobre as consequências de uma nova ausência.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta nega com serenidade, aponta a vagueza da acusação e aceita a prova definitiva com uma garantia contra nova ausência.",
+      "pontos_fortes": [
+       "Mostra que a acusação não tem nomes nem datas.",
+       "Aceita o pedido do réu.",
+       "Pede advertência sobre nova ausência."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Formalize o pedido de advertência por escrito.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_alexandre.txt",
+        "trecho": "Realização de novo exame de DNA, com intimação no endereço atual",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
     }
    ]
   },
@@ -429,17 +438,19 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Porque só agora a mãe decidiu correr atrás.",
+     "texto": "Porque Alexandre prometeu várias vezes que registraria o filho por conta própria, e Sílvia esperou por isso durante anos para não expor Mateus a um processo.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta sugere desinteresse e não explica a demora.",
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta explica a demora de forma humana, mas com promessas que não aparecem em nenhum documento.",
       "pontos_fortes": [
-       "É sincera."
+       "Dá uma razão compreensível para a demora.",
+       "Mostra cuidado com Mateus."
       ],
       "pontos_frageis": [
-       "Pode ser usada para reforçar a dúvida sobre a paternidade."
+       "As promessas não constam dos autos.",
+       "Se Alexandre negar, a explicação fica sem apoio."
       ],
-      "sugestao": "Explique o contexto da demora e lembre que o direito ao reconhecimento é do filho.",
+      "sugestao": "Só explique a demora com fatos que você pode provar; lembre que o direito ao reconhecimento é de Mateus.",
       "apoio_nos_documentos": [
        {
         "documento": "peticao_silvia.txt",
@@ -447,7 +458,7 @@
         "conferido": true
        }
       ],
-      "replica": "E durante 12 anos a senhora nunca pediu nada a ele?"
+      "replica": "Onde estão essas promessas? Há alguma mensagem?"
      }
     },
     {
@@ -471,6 +482,112 @@
        }
       ],
       "replica": "E por que ela não pediu antes?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Se Alexandre aceita fazer o exame agora, por que as duas ausências ainda deveriam pesar contra ele?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Se o exame for feito, as ausências perdem importância, e é isso que Mateus quer. Pedimos, porém, o comprovante da internação e a verificação do endereço da segunda intimação; se não houver justificativa, uma nova ausência deve ter consequência.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta prioriza a prova, exige comprovação das justificativas e preserva o peso de uma nova recusa.",
+      "pontos_fortes": [
+       "Foco no exame.",
+       "Pede comprovação objetiva.",
+       "Mantém consequência para nova ausência."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Peça que a nova intimação seja pessoal, no endereço informado por ele.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_alexandre.txt",
+        "trecho": "Não compareceu ao exame de 14/05/2025 porque estava internado",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Porque quem falta duas vezes a um exame determinado pelo juízo mostra que tem medo do resultado.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é incisiva, mas atribui intenção sem prova e ignora as justificativas apresentadas.",
+      "pontos_fortes": [
+       "Destaca a gravidade das ausências."
+      ],
+      "pontos_frageis": [
+       "Ignora a internação e a intimação no endereço antigo.",
+       "Atribui intenção sem prova."
+      ],
+      "sugestao": "Peça a comprovação das justificativas antes de atribuir intenção.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_silvia.txt",
+        "trecho": "Alexandre não compareceu a nenhuma das datas e não apresentou justificativa.",
+        "conferido": true
+       }
+      ],
+      "replica": "E se a internação de maio estiver comprovada?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Quais rendimentos de Alexandre sustentam o pedido de 30%?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Ele sempre teve empregos estáveis, e 30% é o percentual usual para um filho.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta mantém o pedido, mas não há documento da renda e o percentual usual não tem apoio nos autos.",
+      "pontos_fortes": [
+       "Mantém o valor pedido."
+      ],
+      "pontos_frageis": [
+       "Nenhum documento sobre a renda.",
+       "Percentual usual não é prova."
+      ],
+      "sugestao": "Relacione o percentual às despesas de Mateus.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_silvia.txt",
+        "trecho": "Fixação de pensão alimentícia de 30% dos rendimentos de Alexandre.",
+        "conferido": true
+       }
+      ],
+      "replica": "Qual é o salário dele hoje, e quais são as despesas de Mateus?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "A renda ainda não está nos autos. Pedimos ofício ao empregador e à Receita, e vamos juntar a planilha de despesas de Mateus, de 12 anos, para ajustar o percentual.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é honesta e indica as provas, mas confirma que o percentual foi pedido sem conhecer a renda.",
+      "pontos_fortes": [
+       "Indica provas.",
+       "Liga o valor às despesas."
+      ],
+      "pontos_frageis": [
+       "Pedido de 30% sem base.",
+       "Planilha ainda não juntada."
+      ],
+      "sugestao": "Apresente a planilha antes da audiência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_silvia.txt",
+        "trecho": "Mateus nasceu em 20/08/2013",
+        "conferido": true
+       }
+      ],
+      "replica": "Então o percentual pode mudar?"
      }
     }
    ]

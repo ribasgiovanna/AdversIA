@@ -14,8 +14,14 @@
     "texto": "Márcia afirma que os três imóveis comerciais rendem cerca de R$ 18.000,00 por mês; Otávio diz que dois estão vazios desde março de 2024 e que só um está alugado, por R$ 6.000,00.",
     "provenance": "INFERENCE",
     "origem": [
-     {"documento": "peticao_marcia.txt", "trecho": "os três imóveis comerciais alugados do casal, que rendem cerca de R$ 18.000,00 por mês"},
-     {"documento": "contestacao_otavio.txt", "trecho": "Dois dos três imóveis comerciais estão vazios desde março de 2024; apenas um está alugado, por R$ 6.000,00"}
+     {
+      "documento": "peticao_marcia.txt",
+      "trecho": "os três imóveis comerciais alugados do casal, que rendem cerca de R$ 18.000,00 por mês"
+     },
+     {
+      "documento": "contestacao_otavio.txt",
+      "trecho": "Dois dos três imóveis comerciais estão vazios desde março de 2024; apenas um está alugado, por R$ 6.000,00"
+     }
     ]
    },
    {
@@ -24,8 +30,14 @@
     "texto": "O lucro mensal de R$ 22.000,00 da distribuidora é uma estimativa de Márcia; Otávio afirma que a empresa teve prejuízo em 2024.",
     "provenance": "INFERENCE",
     "origem": [
-     {"documento": "peticao_marcia.txt", "trecho": "cujo lucro mensal Márcia estima em R$ 22.000,00"},
-     {"documento": "contestacao_otavio.txt", "trecho": "A distribuidora teve prejuízo em 2024"}
+     {
+      "documento": "peticao_marcia.txt",
+      "trecho": "cujo lucro mensal Márcia estima em R$ 22.000,00"
+     },
+     {
+      "documento": "contestacao_otavio.txt",
+      "trecho": "A distribuidora teve prejuízo em 2024"
+     }
     ]
    },
    {
@@ -34,8 +46,14 @@
     "texto": "Márcia diz que não recebe nenhuma renda desde a separação; Otávio afirma ter transferido R$ 50.000,00 a ela em 10/05/2024, como adiantamento da partilha.",
     "provenance": "INFERENCE",
     "origem": [
-     {"documento": "peticao_marcia.txt", "trecho": "não recebe nenhuma renda desde a separação"},
-     {"documento": "contestacao_otavio.txt", "trecho": "Em 10/05/2024, Otávio transferiu R$ 50.000,00 para Márcia como adiantamento da partilha"}
+     {
+      "documento": "peticao_marcia.txt",
+      "trecho": "não recebe nenhuma renda desde a separação"
+     },
+     {
+      "documento": "contestacao_otavio.txt",
+      "trecho": "Em 10/05/2024, Otávio transferiu R$ 50.000,00 para Márcia como adiantamento da partilha"
+     }
     ]
    },
    {
@@ -43,98 +61,454 @@
     "categoria": "lacuna_probatoria",
     "texto": "Nenhum contrato de locação ou extrato de recebimento de aluguel foi juntado por qualquer das partes.",
     "provenance": "INFERENCE",
-    "origem": [{"documento": "peticao_marcia.txt", "trecho": "Otávio administra sozinho os três imóveis comerciais alugados do casal"}]
+    "origem": [
+     {
+      "documento": "peticao_marcia.txt",
+      "trecho": "Otávio administra sozinho os três imóveis comerciais alugados do casal"
+     }
+    ]
    },
    {
     "id": "lacuna-balanco",
     "categoria": "lacuna_probatoria",
     "texto": "O balanço da distribuidora, que resolveria a divergência sobre lucro e prejuízo, é prometido por Otávio, mas não foi apresentado.",
     "provenance": "INFERENCE",
-    "origem": [{"documento": "contestacao_otavio.txt", "trecho": "conforme balanço que será apresentado"}]
+    "origem": [
+     {
+      "documento": "contestacao_otavio.txt",
+      "trecho": "conforme balanço que será apresentado"
+     }
+    ]
    },
    {
     "id": "lacuna-estimativa",
     "categoria": "lacuna_probatoria",
     "texto": "Não se sabe em que Márcia se baseou para estimar o lucro da empresa, e o valor pedido de R$ 8.000,00 não vem com cálculo.",
     "provenance": "INFERENCE",
-    "origem": [{"documento": "peticao_marcia.txt", "trecho": "Fixação de alimentos compensatórios de R$ 8.000,00 por mês até a conclusão da partilha"}]
+    "origem": [
+     {
+      "documento": "peticao_marcia.txt",
+      "trecho": "Fixação de alimentos compensatórios de R$ 8.000,00 por mês até a conclusão da partilha"
+     }
+    ]
    },
    {
     "id": "argumento-uso-casa",
     "categoria": "contra_argumento",
     "texto": "Otávio dirá que o desequilíbrio não é só dele: Márcia mora sozinha na casa do casal, avaliada em R$ 1,2 milhão, sem pagar nada, enquanto ele paga aluguel.",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "contestacao_otavio.txt", "trecho": "Márcia mora sozinha na casa do casal, avaliada em R$ 1,2 milhão, sem pagar nada por isso"}]
+    "origem": [
+     {
+      "documento": "contestacao_otavio.txt",
+      "trecho": "Márcia mora sozinha na casa do casal, avaliada em R$ 1,2 milhão, sem pagar nada por isso"
+     }
+    ]
    },
    {
     "id": "argumento-abatimento",
     "categoria": "contra_argumento",
     "texto": "Mesmo que algum valor seja fixado, Otávio pedirá que o adiantamento de R$ 50.000,00 e o uso exclusivo da casa sejam descontados.",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "contestacao_otavio.txt", "trecho": "abatimento do valor adiantado e do uso exclusivo da casa"}]
+    "origem": [
+     {
+      "documento": "contestacao_otavio.txt",
+      "trecho": "abatimento do valor adiantado e do uso exclusivo da casa"
+     }
+    ]
    },
    {
     "id": "pergunta-estimativa",
     "categoria": "pergunta_dificil",
     "texto": "Em que Márcia se baseia para estimar o lucro da distribuidora em R$ 22.000,00 por mês?",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "peticao_marcia.txt", "trecho": "cujo lucro mensal Márcia estima em R$ 22.000,00"}]
+    "origem": [
+     {
+      "documento": "peticao_marcia.txt",
+      "trecho": "cujo lucro mensal Márcia estima em R$ 22.000,00"
+     }
+    ]
    },
    {
     "id": "pergunta-50mil",
     "categoria": "pergunta_dificil",
     "texto": "Márcia recebeu R$ 50.000,00 de Otávio em 10/05/2024?",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "contestacao_otavio.txt", "trecho": "Otávio transferiu R$ 50.000,00 para Márcia"}]
+    "origem": [
+     {
+      "documento": "contestacao_otavio.txt",
+      "trecho": "Otávio transferiu R$ 50.000,00 para Márcia"
+     }
+    ]
    },
    {
     "id": "pergunta-casa",
     "categoria": "pergunta_dificil",
     "texto": "Por que o uso exclusivo da casa de R$ 1,2 milhão não deveria ser descontado do valor pedido?",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "contestacao_otavio.txt", "trecho": "avaliada em R$ 1,2 milhão"}]
+    "origem": [
+     {
+      "documento": "contestacao_otavio.txt",
+      "trecho": "avaliada em R$ 1,2 milhão"
+     }
+    ]
    },
    {
     "id": "pergunta-imoveis",
     "categoria": "pergunta_dificil",
     "texto": "Márcia sabe se os três imóveis comerciais continuam alugados hoje?",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "contestacao_otavio.txt", "trecho": "estão vazios desde março de 2024"}]
+    "origem": [
+     {
+      "documento": "contestacao_otavio.txt",
+      "trecho": "estão vazios desde março de 2024"
+     }
+    ]
    }
   ],
   "linha_do_tempo": [
-   {"data": "1999", "data_ordenacao": "1999", "evento": "Márcia deixa de trabalhar para cuidar da casa e dos filhos", "quem_afirma": "Márcia", "documento": "peticao_marcia.txt", "trecho": "Márcia deixou de trabalhar em 1999, a pedido de Otávio", "divergencia": ""},
-   {"data": "01/02/2024", "data_ordenacao": "2024-02-01", "evento": "Separação de fato, depois de 26 anos de casamento", "quem_afirma": "Márcia", "documento": "peticao_marcia.txt", "trecho": "Márcia e Otávio se separaram de fato em 01/02/2024, depois de 26 anos de casamento", "divergencia": ""},
-   {"data": "março de 2024", "data_ordenacao": "2024-03", "evento": "Dois dos três imóveis comerciais ficam vazios, segundo Otávio", "quem_afirma": "Otávio", "documento": "contestacao_otavio.txt", "trecho": "estão vazios desde março de 2024", "divergencia": "Márcia afirma que os três imóveis rendem cerca de R$ 18.000,00 por mês."},
-   {"data": "10/05/2024", "data_ordenacao": "2024-05-10", "evento": "Transferência de R$ 50.000,00 a Márcia como adiantamento da partilha, segundo Otávio", "quem_afirma": "Otávio", "documento": "contestacao_otavio.txt", "trecho": "Em 10/05/2024, Otávio transferiu R$ 50.000,00 para Márcia", "divergencia": "Márcia afirma não receber nenhuma renda desde a separação."}
+   {
+    "data": "1999",
+    "data_ordenacao": "1999",
+    "evento": "Márcia deixa de trabalhar para cuidar da casa e dos filhos",
+    "quem_afirma": "Márcia",
+    "documento": "peticao_marcia.txt",
+    "trecho": "Márcia deixou de trabalhar em 1999, a pedido de Otávio",
+    "divergencia": ""
+   },
+   {
+    "data": "01/02/2024",
+    "data_ordenacao": "2024-02-01",
+    "evento": "Separação de fato, depois de 26 anos de casamento",
+    "quem_afirma": "Márcia",
+    "documento": "peticao_marcia.txt",
+    "trecho": "Márcia e Otávio se separaram de fato em 01/02/2024, depois de 26 anos de casamento",
+    "divergencia": ""
+   },
+   {
+    "data": "março de 2024",
+    "data_ordenacao": "2024-03",
+    "evento": "Dois dos três imóveis comerciais ficam vazios, segundo Otávio",
+    "quem_afirma": "Otávio",
+    "documento": "contestacao_otavio.txt",
+    "trecho": "estão vazios desde março de 2024",
+    "divergencia": "Márcia afirma que os três imóveis rendem cerca de R$ 18.000,00 por mês."
+   },
+   {
+    "data": "10/05/2024",
+    "data_ordenacao": "2024-05-10",
+    "evento": "Transferência de R$ 50.000,00 a Márcia como adiantamento da partilha, segundo Otávio",
+    "quem_afirma": "Otávio",
+    "documento": "contestacao_otavio.txt",
+    "trecho": "Em 10/05/2024, Otávio transferiu R$ 50.000,00 para Márcia",
+    "divergencia": "Márcia afirma não receber nenhuma renda desde a separação."
+   }
   ],
   "plano_de_provas": [
-   {"prova": "Contratos de locação e extratos dos aluguéis recebidos desde fevereiro de 2024", "finalidade": "Mostrar quanto os imóveis comerciais realmente rendem.", "como_obter": "Requerer que Otávio exiba os contratos e extratos, ou ofício à imobiliária que administra os imóveis.", "prioridade": "alta", "apontamentos": ["contradicao-alugueis", "lacuna-contratos", "pergunta-imoveis"]},
-   {"prova": "Perícia contábil na distribuidora, com balanços e extratos de 2023 e 2024", "finalidade": "Apurar o resultado real da empresa e substituir a estimativa por números.", "como_obter": "Requerer perícia contábil ao juízo.", "prioridade": "alta", "apontamentos": ["contradicao-lucro", "lacuna-balanco", "lacuna-estimativa", "pergunta-estimativa"]},
-   {"prova": "Extrato da conta de Márcia em maio de 2024", "finalidade": "Esclarecer a transferência de R$ 50.000,00 e sua natureza.", "como_obter": "Extrato emitido pela própria cliente.", "prioridade": "alta", "apontamentos": ["contradicao-renda", "pergunta-50mil", "argumento-abatimento"]},
-   {"prova": "Avaliação do valor de aluguel da casa do casal", "finalidade": "Dimensionar com números o desconto pedido pelo uso exclusivo.", "como_obter": "Requerer avaliação por perito ou corretor.", "prioridade": "media", "apontamentos": ["argumento-uso-casa", "argumento-abatimento", "pergunta-casa"]}
+   {
+    "prova": "Contratos de locação e extratos dos aluguéis recebidos desde fevereiro de 2024",
+    "finalidade": "Mostrar quanto os imóveis comerciais realmente rendem.",
+    "como_obter": "Requerer que Otávio exiba os contratos e extratos, ou ofício à imobiliária que administra os imóveis.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "contradicao-alugueis",
+     "lacuna-contratos",
+     "pergunta-imoveis"
+    ]
+   },
+   {
+    "prova": "Perícia contábil na distribuidora, com balanços e extratos de 2023 e 2024",
+    "finalidade": "Apurar o resultado real da empresa e substituir a estimativa por números.",
+    "como_obter": "Requerer perícia contábil ao juízo.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "contradicao-lucro",
+     "lacuna-balanco",
+     "lacuna-estimativa",
+     "pergunta-estimativa"
+    ]
+   },
+   {
+    "prova": "Extrato da conta de Márcia em maio de 2024",
+    "finalidade": "Esclarecer a transferência de R$ 50.000,00 e sua natureza.",
+    "como_obter": "Extrato emitido pela própria cliente.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "contradicao-renda",
+     "pergunta-50mil",
+     "argumento-abatimento"
+    ]
+   },
+   {
+    "prova": "Avaliação do valor de aluguel da casa do casal",
+    "finalidade": "Dimensionar com números o desconto pedido pelo uso exclusivo.",
+    "como_obter": "Requerer avaliação por perito ou corretor.",
+    "prioridade": "media",
+    "apontamentos": [
+     "argumento-uso-casa",
+     "argumento-abatimento",
+     "pergunta-casa"
+    ]
+   }
   ]
  },
  "audiencia": [
   {
    "pergunta": "Em que Márcia se baseia para estimar o lucro da distribuidora em R$ 22.000,00 por mês?",
    "respostas": [
-    {"rotulo": "Resposta A", "texto": "Ela conhece a empresa, sabe muito bem quanto rende.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta invoca um conhecimento de Márcia sobre a empresa que nenhum documento descreve, e ela deixou de trabalhar em 1999.", "pontos_fortes": [], "pontos_frageis": ["Não indica base concreta para a estimativa.", "O próprio pedido informa que ela não trabalha desde 1999."], "sugestao": "Reconheça que o valor é estimado e peça a perícia contábil para apurar o resultado real.", "apoio_nos_documentos": [{"documento": "peticao_marcia.txt", "trecho": "cujo lucro mensal Márcia estima em R$ 22.000,00"}], "replica": "Ela participou da gestão da distribuidora em algum momento?"}},
-    {"rotulo": "Resposta B", "texto": "O valor é uma estimativa, e por isso pedimos perícia contábil na distribuidora. Otávio também não apresentou o balanço que promete, e é ele quem tem acesso aos números.", "avaliacao": {"avaliacao": "parcial", "resumo": "Sua resposta é honesta sobre a estimativa e aponta que o controle dos números está com a outra parte, mas o valor pedido continua sem base.", "pontos_fortes": ["Não superestima a estimativa.", "Mostra que a prova está em poder de Otávio."], "pontos_frageis": ["O valor de R$ 8.000,00 continua sem cálculo."], "sugestao": "Peça também que Otávio seja obrigado a exibir os extratos da empresa.", "apoio_nos_documentos": [{"documento": "contestacao_otavio.txt", "trecho": "conforme balanço que será apresentado"}], "replica": "E como se chegou aos R$ 8.000,00 pedidos?"}}
+    {
+     "rotulo": "Resposta A",
+     "texto": "É uma estimativa, e isso precisa ser dito: quem tem os números é Otávio, que administra a distribuidora sozinho desde a separação. Pedimos perícia contábil e, até lá, um valor provisório que considere ao menos a renda que ele mesmo admite, os R$ 6.000,00 do imóvel alugado.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta é honesta sobre a estimativa, aponta quem controla os números e propõe um valor provisório com base na própria admissão da outra parte.",
+      "pontos_fortes": [
+       "Assume que o valor é estimado.",
+       "Pede perícia.",
+       "Usa a renda admitida por Otávio como piso."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Leve o cálculo do valor provisório pronto.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_otavio.txt",
+        "trecho": "apenas um está alugado, por R$ 6.000,00"
+       },
+       {
+        "documento": "peticao_marcia.txt",
+        "trecho": "Otávio administra sozinho os três imóveis comerciais"
+       }
+      ],
+      "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "O valor é uma estimativa, e por isso pedimos perícia contábil na distribuidora. Otávio também não apresentou o balanço que promete, e é ele quem tem acesso aos números.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é honesta sobre a estimativa e aponta que o controle dos números está com a outra parte, mas o valor pedido continua sem base.",
+      "pontos_fortes": [
+       "Não superestima a estimativa.",
+       "Mostra que a prova está em poder de Otávio."
+      ],
+      "pontos_frageis": [
+       "O valor de R$ 8.000,00 continua sem cálculo."
+      ],
+      "sugestao": "Peça também que Otávio seja obrigado a exibir os extratos da empresa.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_otavio.txt",
+        "trecho": "conforme balanço que será apresentado"
+       }
+      ],
+      "replica": "E como se chegou aos R$ 8.000,00 pedidos?"
+     }
+    }
    ]
   },
   {
    "pergunta": "Márcia recebeu R$ 50.000,00 de Otávio em 10/05/2024?",
    "respostas": [
-    {"rotulo": "Resposta A", "texto": "Ela não recebeu nada dele.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta nega uma transferência bancária que pode ser comprovada com um extrato.", "pontos_fortes": ["Coerente com o pedido."], "pontos_frageis": ["Se a transferência aparecer no extrato, a credibilidade cai.", "Não diferencia adiantamento de partilha e renda."], "sugestao": "Confirme o extrato e, se houve a transferência, explique que adiantar parte da partilha não é renda.", "apoio_nos_documentos": [{"documento": "contestacao_otavio.txt", "trecho": "Em 10/05/2024, Otávio transferiu R$ 50.000,00 para Márcia como adiantamento da partilha"}], "replica": "A senhora autoriza a juntada do seu extrato de maio de 2024?"}},
-    {"rotulo": "Resposta B", "texto": "Se houve a transferência de 10/05/2024, ela foi um adiantamento da partilha, como o próprio Otávio afirma, e não renda. Adiantar parte do que já pertence a Márcia não substitui a renda dos bens comuns que ele recebe sozinho todo mês.", "avaliacao": {"avaliacao": "convincente", "resumo": "Sua resposta não nega um fato verificável e usa a própria descrição de Otávio para mostrar que o valor não resolve o desequilíbrio.", "pontos_fortes": ["Usa a qualificação dada pela outra parte.", "Mantém o foco na renda dos bens comuns."], "pontos_frageis": [], "sugestao": "Confirme o valor no extrato antes da audiência.", "apoio_nos_documentos": [{"documento": "contestacao_otavio.txt", "trecho": "como adiantamento da partilha"}, {"documento": "peticao_marcia.txt", "trecho": "Otávio administra sozinho os três imóveis comerciais alugados do casal"}], "replica": ""}}
+    {
+     "rotulo": "Resposta A",
+     "texto": "Recebeu, e isso prova o argumento dela: foram R$ 50 mil em mais de um ano, menos do que o lucro de três meses da distribuidora.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta não nega a transferência, mas usa como fato uma estimativa de lucro que ainda não foi comprovada.",
+      "pontos_fortes": [
+       "Não nega um fato verificável.",
+       "Mostra a desproporção entre a transferência e a renda dos bens."
+      ],
+      "pontos_frageis": [
+       "O lucro de R$ 22 mil é apenas uma estimativa.",
+       "Não esclarece que a transferência foi adiantamento de partilha, e não renda."
+      ],
+      "sugestao": "Não use a estimativa como fato; trate a transferência como adiantamento de partilha, e não como renda.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_otavio.txt",
+        "trecho": "Em 10/05/2024, Otávio transferiu R$ 50.000,00 para Márcia como adiantamento da partilha"
+       }
+      ],
+      "replica": "Esse lucro de R$ 22 mil está comprovado em algum documento?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Se houve a transferência de 10/05/2024, ela foi um adiantamento da partilha, como o próprio Otávio afirma, e não renda. Adiantar parte do que já pertence a Márcia não substitui a renda dos bens comuns que ele recebe sozinho todo mês.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta não nega um fato verificável e usa a própria descrição de Otávio para mostrar que o valor não resolve o desequilíbrio.",
+      "pontos_fortes": [
+       "Usa a qualificação dada pela outra parte.",
+       "Mantém o foco na renda dos bens comuns."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Confirme o valor no extrato antes da audiência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_otavio.txt",
+        "trecho": "como adiantamento da partilha"
+       },
+       {
+        "documento": "peticao_marcia.txt",
+        "trecho": "Otávio administra sozinho os três imóveis comerciais alugados do casal"
+       }
+      ],
+      "replica": ""
+     }
+    }
    ]
   },
   {
    "pergunta": "Por que o uso exclusivo da casa de R$ 1,2 milhão não deveria ser descontado do valor pedido?",
    "respostas": [
-    {"rotulo": "Resposta A", "texto": "Depois de 26 anos, ela merece ficar na casa.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta apela ao merecimento e não enfrenta a questão econômica levantada.", "pontos_fortes": ["Lembra a longa duração do casamento."], "pontos_frageis": ["Não responde por que o uso não deveria ser considerado."], "sugestao": "Admita que o uso da casa pode ser considerado e mostre, com números, que ele não equivale à renda dos bens administrados por Otávio.", "apoio_nos_documentos": [{"documento": "contestacao_otavio.txt", "trecho": "Márcia mora sozinha na casa do casal"}], "replica": "E quanto custaria alugar uma casa dessas?"}},
-    {"rotulo": "Resposta B", "texto": "O uso da casa pode ser considerado no valor, mas não compensa a renda dos imóveis comerciais e da empresa. Pedimos a avaliação do valor de aluguel da casa para fazer essa conta com números.", "avaliacao": {"avaliacao": "parcial", "resumo": "Sua resposta é equilibrada e propõe a prova certa, mas a comparação ainda depende de valores que não estão nos autos.", "pontos_fortes": ["Reconhece o ponto sem ceder o pedido.", "Propõe prova técnica."], "pontos_frageis": ["A renda real dos bens também ainda não está comprovada."], "sugestao": "Leve uma estimativa do valor de aluguel da casa para a audiência.", "apoio_nos_documentos": [{"documento": "contestacao_otavio.txt", "trecho": "abatimento do valor adiantado e do uso exclusivo da casa"}], "replica": "E se o aluguel da casa for maior que a renda que Otávio recebe?"}}
+    {
+     "rotulo": "Resposta A",
+     "texto": "Porque a casa é bem comum e não gera renda para Márcia: morar não paga remédio, comida nem contas. Ainda assim, se o juízo entender que o uso deve ser considerado, aceitamos o abatimento pelo valor de aluguel apurado em avaliação, desde que os aluguéis comerciais e o resultado da distribuidora também entrem na conta.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta explica por que o uso da casa não substitui renda e aceita o abatimento com uma condição equilibrada.",
+      "pontos_fortes": [
+       "Distingue moradia de renda.",
+       "Aceita avaliação técnica.",
+       "Exige que a conta considere todos os bens."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Peça a avaliação do valor de aluguel da casa desde já.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_otavio.txt",
+        "trecho": "Márcia mora sozinha na casa do casal, avaliada em R$ 1,2 milhão"
+       }
+      ],
+      "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "O uso da casa pode ser considerado no valor, mas não compensa a renda dos imóveis comerciais e da empresa. Pedimos a avaliação do valor de aluguel da casa para fazer essa conta com números.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é equilibrada e propõe a prova certa, mas a comparação ainda depende de valores que não estão nos autos.",
+      "pontos_fortes": [
+       "Reconhece o ponto sem ceder o pedido.",
+       "Propõe prova técnica."
+      ],
+      "pontos_frageis": [
+       "A renda real dos bens também ainda não está comprovada."
+      ],
+      "sugestao": "Leve uma estimativa do valor de aluguel da casa para a audiência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_otavio.txt",
+        "trecho": "abatimento do valor adiantado e do uso exclusivo da casa"
+       }
+      ],
+      "replica": "E se o aluguel da casa for maior que a renda que Otávio recebe?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Márcia sabe se os três imóveis comerciais continuam alugados?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Estavam alugados na separação, e não há motivo para acreditar que dois ficaram vazios justamente depois disso.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta desconfia da versão contrária, mas não tem informação atual e insinua má-fé sem prova.",
+      "pontos_fortes": [
+       "Mantém a renda descrita na petição."
+      ],
+      "pontos_frageis": [
+       "Sem informação atual sobre os imóveis.",
+       "Insinuação sem prova."
+      ],
+      "sugestao": "Peça os contratos de locação em vez de insinuar.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_marcia.txt",
+        "trecho": "Otávio administra sozinho os três imóveis comerciais"
+       }
+      ],
+      "replica": "Então a renda de R$ 18.000,00 pode ser só de um imóvel?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Ela não tem acesso a essa informação, porque Otávio administra os imóveis sozinho. Pedimos os contratos de locação e os extratos dos aluguéis desde fevereiro de 2024. Mesmo na versão dele, há R$ 6.000,00 por mês de aluguel, e nenhuma parte chega a Márcia.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta explica a falta de acesso, pede a prova certa e mostra o desequilíbrio até na versão de Otávio.",
+      "pontos_fortes": [
+       "Usa a própria versão da outra parte.",
+       "Pede prova objetiva.",
+       "Mantém o desequilíbrio em evidência."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Peça também a relação de imobiliárias que administram os imóveis.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_otavio.txt",
+        "trecho": "Dois dos três imóveis comerciais estão vazios desde março de 2024"
+       }
+      ],
+      "replica": ""
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Márcia procurou trabalho desde a separação?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Não, e não seria razoável exigir isso: ela tem 57 anos e está fora do mercado desde 1999.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta traz argumentos reais, mas não relata nenhuma tentativa e pode soar como acomodação.",
+      "pontos_fortes": [
+       "Usa idade e tempo fora do mercado."
+      ],
+      "pontos_frageis": [
+       "Nenhuma tentativa relatada.",
+       "Pode parecer desinteresse."
+      ],
+      "sugestao": "Mencione, se houver, cursos ou tentativas de recolocação.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_marcia.txt",
+        "trecho": "Tem 57 anos e não recebe nenhuma renda desde a separação."
+       }
+      ],
+      "replica": "Nem um curso ou uma inscrição em vaga em mais de um ano?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Os alimentos compensatórios não dependem de ela trabalhar: servem para equilibrar a renda dos bens comuns que só Otávio recebe até a partilha. Mesmo que ela arrume emprego, esse desequilíbrio continua.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta mostra o fundamento do pedido, mas não responde à pergunta.",
+      "pontos_fortes": [
+       "Explica a finalidade do pedido."
+      ],
+      "pontos_frageis": [
+       "Evita dizer se houve busca de trabalho.",
+       "Afirma a natureza do instituto sem apoio nos documentos."
+      ],
+      "sugestao": "Responda primeiro ao fato e depois explique o fundamento.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_marcia.txt",
+        "trecho": "Fixação de alimentos compensatórios de R$ 8.000,00 por mês até a conclusão da partilha."
+       }
+      ],
+      "replica": "Então ela receberia R$ 8.000,00 mesmo que tivesse salário?"
+     }
+    }
    ]
   }
  ]

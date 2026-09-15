@@ -330,25 +330,27 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Nunca recebi mensagem nenhuma.",
+     "texto": "Recebi uma mensagem confusa sobre um possível atraso, sem nenhuma confirmação de gravidez, e respondi de forma impensada. Eu era muito jovem. Só tive motivo real para acreditar que era o pai em 10/2024.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta nega de forma absoluta uma mensagem que pode ser exibida pela outra parte.",
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta dá um contexto humano, mas admite ter sido avisado e descreve uma mensagem que ninguém juntou.",
       "pontos_fortes": [
-       "Coerente com a petição."
+       "Tenta explicar a resposta dada na época.",
+       "Mantém a data de 10/2024."
       ],
       "pontos_frageis": [
-       "Se a mensagem aparecer, toda a credibilidade do autor fica comprometida."
+       "Confirma o recebimento da mensagem.",
+       "O conteúdo descrito não está nos autos."
       ],
-      "sugestao": "Verifique as conversas de 2017 antes da audiência e responda com base no que encontrar.",
+      "sugestao": "Não descreva uma mensagem que você não tem; peça a conversa inteira.",
       "apoio_nos_documentos": [
        {
-        "documento": "contestacao_priscila_leandro.txt",
-        "trecho": "Priscila avisou Bernardo da gravidez em 11/2017, por mensagem",
+        "documento": "peticao_bernardo.txt",
+        "trecho": "Bernardo só soube que poderia ser o pai de Alice em 10/2024",
         "conferido": true
        }
       ],
-      "replica": "O senhor autoriza a juntada das conversas daquele período?"
+      "replica": "Então o senhor admite que foi avisado e respondeu que não queria saber?"
      }
     },
     {
@@ -383,28 +385,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Ela vai se acostumar, criança se adapta rápido.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta ignora a recomendação profissional e reforça o argumento de risco de sofrimento.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Desconsidera que Alice não sabe da origem biológica.",
-       "Não propõe nenhum cuidado."
-      ],
-      "sugestao": "Proponha uma aproximação gradual com acompanhamento psicológico.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "contestacao_priscila_leandro.txt",
-        "trecho": "podem causar sofrimento à criança",
-        "conferido": true
-       }
-      ],
-      "replica": "O senhor está disposto a esperar o tempo que a psicóloga indicar?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "Bernardo concorda com uma aproximação gradual, acompanhada por profissional, começando por encontros curtos e respeitando o tempo de Alice. Os fins de semana alternados seriam o objetivo final, não o ponto de partida.",
      "avaliacao": {
       "avaliacao": "convincente",
@@ -425,6 +405,31 @@
       ],
       "replica": ""
      }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Com a ajuda de Leandro, que é quem Alice conhece como pai: ele pode me apresentar como um amigo da família, e aos poucos a convivência se constrói de forma natural, sem traumas.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta propõe uma aproximação gradual, mas esconde de Alice quem você é e depende de alguém que se opõe ao pedido.",
+      "pontos_fortes": [
+       "Propõe um começo gradual.",
+       "Tenta evitar um choque para a criança."
+      ],
+      "pontos_frageis": [
+       "A psicóloga recomenda revelar a verdade aos poucos, com apoio profissional, e não disfarçá-la.",
+       "Leandro é réu e contesta o pedido."
+      ],
+      "sugestao": "Proponha aproximação conduzida por profissional, sem esconder quem você é.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_priscila_leandro.txt",
+        "trecho": "recomendou que essa revelação seja feita aos poucos",
+        "conferido": true
+       }
+      ],
+      "replica": "Apresentar o pai biológico como amigo da família não é o contrário do que a psicóloga recomenda?"
+     }
     }
    ]
   },
@@ -433,6 +438,29 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
+     "texto": "Porque, depois do breve relacionamento de 2017, eu não convivia com Priscila nem com Alice e nunca tinha visto a menina de perto. Em 10/2024, uma amiga em comum comentou a semelhança; ela pode confirmar essa conversa, e indico o nome dela como testemunha. Depois disso, fiz o exame com autorização de Priscila.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta explica a data com um fato coerente, indica quem pode confirmá-lo e mostra a sequência até o exame.",
+      "pontos_fortes": [
+       "Explica por que a semelhança não foi notada antes.",
+       "Indica testemunha.",
+       "Mostra a cronologia até o exame."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Confirme com a amiga se ela aceita depor antes de indicá-la.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_bernardo.txt",
+        "trecho": "quando uma amiga em comum comentou a semelhança física",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
      "texto": "Eu não via a Alice antes, então não tinha como saber.",
      "avaliacao": {
       "avaliacao": "parcial",
@@ -453,27 +481,112 @@
       ],
       "replica": "E o senhor nunca desconfiou, sabendo do relacionamento em 2017?"
      }
-    },
+    }
+   ]
+  },
+  {
+   "pergunta": "Por que incluir o nome no registro agora, em vez de começar pela convivência?",
+   "respostas": [
     {
-     "rotulo": "Resposta B",
-     "texto": "Todo mundo fala que ela é a minha cara.",
+     "rotulo": "Resposta A",
+     "texto": "Porque Alice tem direito de ter o nome do pai biológico no registro, e esperar só adia o que o exame já confirmou.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta não explica a data e não identifica quem comentou a semelhança.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Não responde à pergunta sobre 2024.",
-       "Não indica testemunha."
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta invoca o interesse de Alice, mas não enfrenta o momento da criança nem a recomendação da psicóloga.",
+      "pontos_fortes": [
+       "Apoia-se no resultado do exame."
       ],
-      "sugestao": "Explique quando e como soube e indique a amiga em comum.",
+      "pontos_frageis": [
+       "Ignora que Alice não sabe da origem biológica.",
+       "Não considera a revelação gradual recomendada."
+      ],
+      "sugestao": "Separe o tempo do registro do tempo da revelação.",
       "apoio_nos_documentos": [
        {
         "documento": "peticao_bernardo.txt",
-        "trecho": "em 10/2024",
+        "trecho": "Um exame de DNA feito com autorização de Priscila",
         "conferido": true
        }
       ],
-      "replica": "Quem é \"todo mundo\"?"
+      "replica": "Alice nem sabe que Leandro não é o pai biológico; o registro viria antes da conversa?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "O registro e a convivência podem ter tempos diferentes. Bernardo pede o reconhecimento, mantido Leandro, e aceita que a convivência só comece depois de a revelação ser feita com apoio da psicóloga, no tempo de Alice.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta separa os pedidos, preserva o pai registral e incorpora a proteção da criança.",
+      "pontos_fortes": [
+       "Mantém Leandro no registro.",
+       "Respeita a revelação gradual.",
+       "Pedido proporcional."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Proponha que a psicóloga informe ao juízo quando a convivência pode começar.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_bernardo.txt",
+        "trecho": "Bernardo não quer retirar Leandro do registro.",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Bernardo aceita que a psicóloga da família conduza a revelação a Alice, sem a participação dele no primeiro momento?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Aceita a revelação gradual, mas pede que ela seja acompanhada por profissional indicado pelo juízo, já que a psicóloga atual foi escolhida pela família de Alice.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta busca neutralidade, mas pode atrasar o processo e interromper um acompanhamento já em curso.",
+      "pontos_fortes": [
+       "Preocupação com imparcialidade.",
+       "Aceita a revelação gradual."
+      ],
+      "pontos_frageis": [
+       "Pode soar como desconfiança.",
+       "Troca de profissional pode prejudicar Alice."
+      ],
+      "sugestao": "Proponha que o profissional do juízo trabalhe junto com a psicóloga atual.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_priscila_leandro.txt",
+        "trecho": "recomendou que essa revelação seja feita aos poucos, com apoio profissional.",
+        "conferido": true
+       }
+      ],
+      "replica": "Alice teria de começar do zero com uma nova psicóloga?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Aceita, desde que haja prazo para isso acontecer, para que a revelação não seja adiada indefinidamente.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta aceita a orientação, mas um prazo fixo pode conflitar com o tempo da criança.",
+      "pontos_fortes": [
+       "Aceita o acompanhamento.",
+       "Evita adiamento sem fim."
+      ],
+      "pontos_frageis": [
+       "Prazo rígido pode prejudicar Alice.",
+       "A psicóloga acompanha a família dos réus."
+      ],
+      "sugestao": "Peça relatórios periódicos em vez de prazo fixo.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_priscila_leandro.txt",
+        "trecho": "A psicóloga que acompanha a família",
+        "conferido": true
+       }
+      ],
+      "replica": "Quem define o prazo, o juízo ou a psicóloga?"
      }
     }
    ]

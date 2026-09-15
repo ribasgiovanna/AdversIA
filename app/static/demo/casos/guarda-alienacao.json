@@ -221,16 +221,19 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Ela fala mal do pai para a criança o tempo todo, todo mundo vê.",
+     "texto": "O pai não vai rotular a mãe: vai descrever episódios. Vamos juntar as mensagens em que visitas foram desmarcadas em cima da hora e o relato da escola sobre mudanças de comportamento da filha depois dos fins de semana, com datas, e pedimos que a perícia diga se isso configura alienação.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta descreve comportamentos que não aparecem em nenhum documento e não traz nenhuma data.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Nenhum documento relata que a mãe fala mal do pai.",
-       "\"Todo mundo vê\" não indica testemunhas nem registros."
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta parece concreta e pede a prova certa, mas cita episódios que não aparecem em nenhum documento.",
+      "pontos_fortes": [
+       "Evita rotular a mãe.",
+       "Pede perícia antes de qualquer conclusão."
       ],
-      "sugestao": "Reconheça que os episódios ainda precisam ser documentados e requeira a perícia psicológica.",
+      "pontos_frageis": [
+       "As visitas desmarcadas e as mudanças de comportamento não estão nos autos.",
+       "Se não forem comprovadas, a credibilidade do pai cai."
+      ],
+      "sugestao": "Só cite episódios que você consegue provar; se ainda não os tem, peça a perícia sem antecipar fatos.",
       "apoio_nos_documentos": [
        {
         "documento": "alegacoes_pai.txt",
@@ -238,7 +241,7 @@
         "conferido": true
        }
       ],
-      "replica": "Quem é esse \"todo mundo\", e por que ninguém foi indicado como testemunha?"
+      "replica": "Em quais documentos estão essas visitas desmarcadas?"
      }
     },
     {
@@ -272,24 +275,27 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Não precisa de laudo, a alienação é evidente.",
+     "texto": "Não há laudo, mas há um indício técnico: o primeiro grau condicionou a ampliação das visitas da mãe a acompanhamento psicoterápico, o que só se justifica se houver algo a tratar na relação dela com a filha.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta dispensa a prova técnica justamente no ponto em que ela é mais necessária.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Nenhum documento torna a alienação \"evidente\".",
-       "Enfraquece o pedido de guarda unilateral."
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta usa um fato relevante dos autos, mas tira dele uma conclusão que a decisão não afirma.",
+      "pontos_fortes": [
+       "Reconhece que não há laudo.",
+       "Aponta uma decisão que mostra cautela do juízo."
       ],
-      "sugestao": "Admita que ainda não há laudo e peça a perícia antes de qualquer decisão definitiva.",
+      "pontos_frageis": [
+       "A condição pode ser apenas uma precaução.",
+       "\"Só se justifica\" é uma afirmação forte demais sem o texto da decisão."
+      ],
+      "sugestao": "Use a decisão como sinal de cautela do juízo, não como prova de alienação, e peça a perícia.",
       "apoio_nos_documentos": [
        {
         "documento": "alegacoes_mae.txt",
-        "trecho": "O simples conflito entre os pais não seria suficiente para afastá-la",
+        "trecho": "sua ampliação ficou condicionada à realização de acompanhamento psicoterápico",
         "conferido": true
        }
       ],
-      "replica": "Se é evidente, por que o juízo de primeiro grau manteve a guarda compartilhada?"
+      "replica": "A decisão diz em algum momento que houve alienação parental?"
      }
     },
     {
@@ -321,28 +327,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Não é conflito, é alienação, ponto.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta repete a acusação sem oferecer nenhum critério ou fato que a diferencie de um conflito.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Não indica nenhum fato.",
-       "Deixa sem resposta o principal argumento da mãe."
-      ],
-      "sugestao": "Explique que a diferença está nos atos dirigidos à criança e no efeito sobre ela, que a perícia vai apurar.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "alegacoes_mae.txt",
-        "trecho": "O simples conflito entre os pais não seria suficiente para afastá-la",
-        "conferido": true
-       }
-      ],
-      "replica": "E em que a filha foi prejudicada até agora?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "A diferença estará nos atos concretos e no efeito sobre a filha, que a perícia vai apurar. O pai não pede que o conflito, por si só, afaste a guarda compartilhada.",
      "avaliacao": {
       "avaliacao": "parcial",
@@ -363,6 +347,141 @@
        }
       ],
       "replica": "E se a perícia concluir que a filha está bem com os dois?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "O pai concorda que o conflito entre adultos, sozinho, não afasta a guarda compartilhada. A diferença que ele aponta é o efeito sobre a filha, e o primeiro grau já entendeu que a convivência precisa de acompanhamento antes de ser ampliada. A perícia vai dizer se esse efeito existe.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta aceita o critério da própria mãe, usa um fato dos autos e deixa a conclusão para a prova técnica.",
+      "pontos_fortes": [
+       "Concorda com o argumento da outra parte e o usa a favor do pai.",
+       "Usa a decisão de primeiro grau com moderação.",
+       "Pede perícia."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Prepare-se para explicar qual efeito concreto sobre a filha a perícia deve avaliar.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "alegacoes_mae.txt",
+        "trecho": "O simples conflito entre os pais não seria suficiente para afastá-la",
+        "conferido": true
+       },
+       {
+        "documento": "alegacoes_pai.txt",
+        "trecho": "considerando o bem-estar da filha",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Por que o pai alega alienação parental se a filha já mora com ele?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Porque morar com o pai não resolve a convivência: o que se discute é se os atos atribuídos à mãe prejudicam a filha. O pai pede que a guarda seja definida pela avaliação desse efeito, e não apenas pela moradia atual.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta separa moradia de convivência e coloca o bem-estar da filha como critério.",
+      "pontos_fortes": [
+       "Explica a utilidade do pedido.",
+       "Usa o critério do bem-estar da criança."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Prepare-se para indicar quais efeitos a perícia deve avaliar.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "alegacoes_pai.txt",
+        "trecho": "A convivência da criança com a mãe precisava ser analisada considerando o bem-estar",
+        "conferido": true
+       },
+       {
+        "documento": "alegacoes_mae.txt",
+        "trecho": "a criança permaneceu morando com o pai",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Porque a guarda compartilhada dá à mãe poder de decisão, e ela usa esse poder para afastar a filha do pai.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta aponta um risco da guarda compartilhada, mas atribui à mãe uma conduta sem nenhuma prova.",
+      "pontos_fortes": [
+       "Explica o interesse na guarda unilateral."
+      ],
+      "pontos_frageis": [
+       "Nenhuma decisão concreta da mãe é indicada.",
+       "A filha mora com o pai, o que enfraquece a ideia de afastamento."
+      ],
+      "sugestao": "Aponte decisões concretas ou peça a perícia sem afirmar a conduta.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "alegacoes_pai.txt",
+        "trecho": "A mãe estaria praticando atos de alienação parental",
+        "conferido": true
+       }
+      ],
+      "replica": "Que decisão concreta a mãe tomou para afastar a filha?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "O acompanhamento psicoterápico determinado em primeiro grau já começou?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Os documentos não informam. Pedimos que a mãe comprove o início e a frequência do acompanhamento, porque isso interessa aos dois lados: mostra se a condição fixada pelo juízo está sendo cumprida antes de qualquer mudança nas visitas.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta é neutra, pede a prova certa e usa a decisão do juízo com equilíbrio.",
+      "pontos_fortes": [
+       "Não presume culpa.",
+       "Pede comprovação objetiva."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Formalize o pedido de comprovação nos autos.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "alegacoes_mae.txt",
+        "trecho": "sua ampliação ficou condicionada à realização de acompanhamento psicoterápico",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Se não começou, é porque a mãe não tem interesse em cumprir as condições para ampliar as visitas.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta tenta usar a condição a favor do pai, mas presume um fato que ninguém confirmou.",
+      "pontos_fortes": [
+       "Lembra a condição fixada pelo juízo."
+      ],
+      "pontos_frageis": [
+       "Não sabe se o acompanhamento começou.",
+       "Presume desinteresse da mãe."
+      ],
+      "sugestao": "Peça a comprovação do acompanhamento em vez de presumir.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "alegacoes_mae.txt",
+        "trecho": "sua ampliação ficou condicionada à realização de acompanhamento psicoterápico",
+        "conferido": true
+       }
+      ],
+      "replica": "O senhor sabe se ela iniciou o acompanhamento?"
      }
     }
    ]

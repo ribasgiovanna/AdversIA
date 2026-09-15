@@ -313,24 +313,30 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Não me lembro dessa mensagem.",
+     "texto": "Não vou negar nem confirmar sem ver a conversa inteira. Peço que ela seja juntada completa, com o que Tatiana me disse antes. De todo modo, uma dúvida levantada numa discussão não é o mesmo que saber que eu não era o pai, e essa certeza eu só tive em 2025.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta é evasiva sobre uma mensagem que pode ser exibida e enfraquece a alegação de engano.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Se a mensagem aparecer, a tese de engano cai.",
-       "Não oferece contexto."
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta evita uma admissão isolada, pede o contexto completo e preserva a distinção entre dúvida e conhecimento da verdade.",
+      "pontos_fortes": [
+       "Pede a conversa inteira.",
+       "Não nega o que pode ser provado.",
+       "Mantém o fundamento do engano."
       ],
-      "sugestao": "Verifique as conversas antes e, se a mensagem existir, explique em que contexto foi escrita.",
+      "pontos_frageis": [],
+      "sugestao": "Leia a conversa completa antes da audiência para não ser surpreendido.",
       "apoio_nos_documentos": [
        {
+        "documento": "peticao_fabio.txt",
+        "trecho": "Fábio afirma que foi enganado por Tatiana",
+        "conferido": true
+       },
+       {
         "documento": "contestacao_tatiana.txt",
-        "trecho": "ele respondeu, em mensagem, que pai é quem cria",
+        "trecho": "Tatiana contou a ele sobre um relacionamento anterior",
         "conferido": true
        }
       ],
-      "replica": "E se a mensagem for juntada ao processo?"
+      "replica": ""
      }
     },
     {
@@ -364,17 +370,19 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Fui só para não chatear o menino, mas não sou pai dele.",
+     "texto": "Porque o resultado de um exame particular não me autoriza a tirar do Gabriel, de um dia para o outro, a presença de quem ele chama de pai. Enquanto o juízo não decide, continuo cumprindo o que me cabe. Isso não é aceitar a paternidade; é não usar o menino num conflito entre adultos.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta confirma o cuidado com Gabriel e, ao mesmo tempo, reforça o vínculo que a defesa quer demonstrar.",
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é madura e protege Gabriel, mas, ao dizer que continua cumprindo o papel de pai, reforça a paternidade socioafetiva que a outra parte defende.",
       "pontos_fortes": [
-       "Sinceridade."
+       "Mostra responsabilidade com a criança.",
+       "Separa a conduta da decisão judicial."
       ],
       "pontos_frageis": [
-       "Reforça o argumento da paternidade socioafetiva."
+       "\"Continuo cumprindo o que me cabe\" confirma o vínculo afetivo.",
+       "Não retoma o fundamento do engano."
       ],
-      "sugestao": "Separe o cuidado com a criança do pedido jurídico e explique que a situação está em definição.",
+      "sugestao": "Deixe claro que a conduta foi uma proteção temporária ao menino e retome o fundamento do engano.",
       "apoio_nos_documentos": [
        {
         "documento": "contestacao_tatiana.txt",
@@ -382,7 +390,7 @@
         "conferido": true
        }
       ],
-      "replica": "Então o senhor se preocupa com ele como pai?"
+      "replica": "Se o senhor continua cumprindo o papel de pai, a relação de pai e filho não continua existindo?"
      }
     },
     {
@@ -416,24 +424,27 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Eu mesmo peguei o cabelo da escova, o resultado é claro.",
+     "texto": "Coletei o cabelo da escova dele, na minha casa, num fim de semana de convivência, e o laboratório é credenciado. O resultado foi categórico: nenhuma compatibilidade.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta confirma exatamente a falha apontada pela defesa: coleta feita pelo interessado, sem controle.",
-      "pontos_fortes": [],
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta descreve a coleta com detalhes, mas não resolve a falta de cadeia de custódia e afirma dados que não estão nos autos.",
+      "pontos_fortes": [
+       "Explica onde e como o material foi obtido.",
+       "Mostra segurança no resultado."
+      ],
       "pontos_frageis": [
-       "Admite a ausência de cadeia de custódia.",
-       "Não propõe prova segura."
+       "Ninguém além de Fábio garante a origem do material.",
+       "O credenciamento do laboratório não consta dos autos."
       ],
       "sugestao": "Reconheça o limite do exame particular e peça o exame judicial.",
       "apoio_nos_documentos": [
        {
-        "documento": "contestacao_tatiana.txt",
-        "trecho": "sem cadeia de custódia do material",
+        "documento": "peticao_fabio.txt",
+        "trecho": "com material coletado por Fábio",
         "conferido": true
        }
       ],
-      "replica": "Então ninguém garante que o material era do menino?"
+      "replica": "Quem, além do senhor, pode garantir que o cabelo era do Gabriel?"
      }
     },
     {
@@ -452,6 +463,112 @@
        {
         "documento": "peticao_fabio.txt",
         "trecho": "concluiu que ele não é o pai biológico de Gabriel",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "O que o senhor pretende dizer a Gabriel se o pedido for aceito?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Que ele sempre será importante para mim, mas que a verdade biológica precisa constar do registro.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é sincera, mas o afeto declarado reforça a paternidade socioafetiva alegada pela outra parte.",
+      "pontos_fortes": [
+       "Mostra cuidado com a criança."
+      ],
+      "pontos_frageis": [
+       "Reforça o vínculo afetivo.",
+       "Não explica como fica a convivência."
+      ],
+      "sugestao": "Separe o que pretende para a convivência do que pede para o registro.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_fabio.txt",
+        "trecho": "Declaração de que Fábio não é pai de Gabriel e exclusão do nome dele do registro.",
+        "conferido": true
+       }
+      ],
+      "replica": "Se ele continua importante, por que retirar seu nome do registro?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Isso será conversado com acompanhamento psicológico, no momento certo. O processo trata de um registro feito com base em informação falsa, e não do carinho que tenho por ele.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é cuidadosa, mas evita dizer se a convivência continuará e admite o carinho sem enfrentar o vínculo.",
+      "pontos_fortes": [
+       "Prudente em relação à criança.",
+       "Mantém o foco no alegado engano."
+      ],
+      "pontos_frageis": [
+       "Não diz o que acontece com a convivência.",
+       "Admite afeto sem enfrentar a socioafetividade."
+      ],
+      "sugestao": "Diga claramente o que pretende quanto à convivência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_fabio.txt",
+        "trecho": "Fábio registrou Gabriel como filho logo depois do nascimento",
+        "conferido": true
+       }
+      ],
+      "replica": "O senhor pretende continuar indo às reuniões da escola?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "O senhor continua pagando a pensão de R$ 1.100,00?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Continuo pagando porque sou obrigado, mas isso não significa que me considero pai dele.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é franca, mas soa fria e contrasta com a conduta descrita na contestação.",
+      "pontos_fortes": [
+       "Deixa clara a posição do autor."
+      ],
+      "pontos_frageis": [
+       "Pode reforçar a ideia de pedido financeiro.",
+       "Contrasta com a participação na escola."
+      ],
+      "sugestao": "Mostre responsabilidade com a criança, e não só cumprimento da obrigação.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_fabio.txt",
+        "trecho": "Fim da pensão alimentícia de R$ 1.100,00 paga a Gabriel desde 2023.",
+        "conferido": true
+       }
+      ],
+      "replica": "Se é só obrigação, por que continua participando das reuniões da escola?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Continuo, e vou continuar até a decisão. Não quero que Gabriel fique desamparado enquanto o processo corre; o pedido é que a obrigação termine se for reconhecido que não sou o pai.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta demonstra boa-fé e separa o cuidado com a criança da discussão sobre o registro.",
+      "pontos_fortes": [
+       "Mostra responsabilidade.",
+       "Não antecipa o resultado.",
+       "Afasta a ideia de pedido apenas financeiro."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Junte os comprovantes de pagamento recentes.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_fabio.txt",
+        "trecho": "Fim da pensão alimentícia de R$ 1.100,00 paga a Gabriel desde 2023.",
         "conferido": true
        }
       ],

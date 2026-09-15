@@ -206,24 +206,27 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "É muito dinheiro, uns atrasados enormes que ele recebeu sozinho.",
+     "texto": "O cálculo exato está na ação previdenciária, mas a lógica é simples: o casamento durou mais de 20 anos e a aposentadoria especial exige longo tempo de atividade, então a maior parte do período que gerou os atrasados coincide com o casamento.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta não informa valor nem período e acrescenta que ele recebeu sozinho, o que não está nos documentos.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Nenhum valor é indicado.",
-       "Nenhum documento diz se os atrasados já foram pagos."
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta tem uma lógica plausível, mas conclui sobre os períodos sem ter a decisão previdenciária em mãos.",
+      "pontos_fortes": [
+       "Liga a duração do casamento ao período de trabalho.",
+       "Indica onde está o cálculo."
       ],
-      "sugestao": "Informe que os valores e períodos constam da decisão previdenciária e que ela será juntada com o cálculo.",
+      "pontos_frageis": [
+       "Não informa o valor nem os anos, que foram perguntados.",
+       "Conclui sobre a coincidência de períodos sem documento."
+      ],
+      "sugestao": "Não conclua antes da prova: junte a decisão previdenciária e compare os períodos ano a ano.",
       "apoio_nos_documentos": [
        {
         "documento": "pedido_esposa.txt",
-        "trecho": "reconhecida em outra ação judicial",
+        "trecho": "O valor da aposentadoria estava relacionado a período em que ainda existia a relação",
         "conferido": true
        }
       ],
-      "replica": "Se a senhora não sabe o valor, como sabe que é enorme?"
+      "replica": "Qual foi o período reconhecido na ação, e quanto dele é anterior ao casamento?"
      }
     },
     {
@@ -257,28 +260,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Esquecemos de colocar no começo.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta confirma a crítica da outra parte e trata como descuido o que pode ter explicação legítima.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Reforça o argumento de pedido tardio.",
-       "Ignora que a questão surgiu durante o processo."
-      ],
-      "sugestao": "Explique que os valores decorrem de uma decisão em outra ação e que o pedido foi feito quando a questão apareceu.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "contestacao_marido.txt",
-        "trecho": "especialmente porque o pedido da ex-esposa surgiu posteriormente",
-        "conferido": true
-       }
-      ],
-      "replica": "Então a senhora admite que o pedido é novo?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "A aposentadoria foi reconhecida em outra ação, e a questão surgiu durante o processo, como está descrito. O pedido foi feito assim que o fato apareceu, e a data da decisão previdenciária vai demonstrar isso.",
      "avaliacao": {
       "avaliacao": "convincente",
@@ -298,6 +279,36 @@
       ],
       "replica": ""
      }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Porque os valores só passaram a existir com a decisão da outra ação; antes disso não havia o que partilhar. E, na comunhão universal, o que entra durante o casamento é comum, então o momento do pedido não muda nada.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta explica bem a origem tardia dos valores, mas descarta a questão do momento em vez de enfrentá-la.",
+      "pontos_fortes": [
+       "Explica por que o pedido não poderia ter sido feito antes.",
+       "Usa o regime de bens do casal."
+      ],
+      "pontos_frageis": [
+       "Diz que o momento não importa, quando é justamente o que a outra parte contesta.",
+       "Não indica a data da decisão previdenciária."
+      ],
+      "sugestao": "Mostre a cronologia com a data da decisão em vez de dizer que o momento não importa.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_esposa.txt",
+        "trecho": "sob o regime de comunhão universal de bens",
+        "conferido": true
+       },
+       {
+        "documento": "contestacao_marido.txt",
+        "trecho": "o pedido da ex-esposa surgiu posteriormente",
+        "conferido": true
+       }
+      ],
+      "replica": "Se o momento não importa, por que a data da decisão previdenciária não foi informada?"
+     }
     }
    ]
   },
@@ -306,28 +317,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Ela sempre dependeu dele, então precisa da pensão.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta afirma uma dependência que nenhum documento descreve e não traz nenhum número.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Nenhum documento diz que ela sempre dependeu do marido.",
-       "Não responde à exigência de demonstrar os requisitos."
-      ],
-      "sugestao": "Informe a renda e as despesas atuais com documentos, e relacione a necessidade ao fim do casamento de mais de 20 anos.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "contestacao_marido.txt",
-        "trecho": "a necessidade de demonstrar os requisitos para a pensão alimentícia",
-        "conferido": true
-       }
-      ],
-      "replica": "Ela trabalha hoje?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "Vamos juntar os comprovantes de renda e das despesas fixas da ex-esposa. Depois de mais de 20 anos de casamento, é esse conjunto que vai mostrar a necessidade.",
      "avaliacao": {
       "avaliacao": "parcial",
@@ -348,6 +337,131 @@
        }
       ],
       "replica": "E ela tem condições de voltar a trabalhar?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Os números ainda serão juntados. Mas a necessidade aqui não é só de renda: depois de mais de 20 anos casada em comunhão universal, o patrimônio próprio da ex-esposa depende da partilha. Enquanto ela não sai, a pensão garante o sustento, e por isso pedimos pensão por prazo definido, até a conclusão da partilha.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta liga a necessidade a um fato concreto do processo e ajusta o pedido a uma medida temporária e razoável.",
+      "pontos_fortes": [
+       "Explica a necessidade pela situação patrimonial.",
+       "Propõe prazo definido, o que reduz a resistência.",
+       "Não esconde que os números faltam."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Leve ao menos uma planilha resumida das despesas atuais.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_esposa.txt",
+        "trecho": "Diante das circunstâncias econômicas do casal, ela também teria direito à pensão",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "A ex-esposa trabalhou fora durante o casamento?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Os documentos não informam, e vamos juntar o extrato previdenciário dela. Para a partilha, isso não muda nada: na comunhão universal, o valor ligado ao período do casamento é comum. Para a pensão, o histórico vai mostrar a real capacidade dela de se sustentar.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta separa os dois pedidos e indica a prova adequada para cada um.",
+      "pontos_fortes": [
+       "Distingue partilha e pensão.",
+       "Indica prova oficial."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Traga o extrato previdenciário para a audiência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_esposa.txt",
+        "trecho": "sob o regime de comunhão universal de bens",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Não, ela se dedicou à casa e à família por mais de 20 anos, o que justifica a partilha e a pensão.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta reforça a dependência, mas afirma um histórico que nenhum documento mostra.",
+      "pontos_fortes": [
+       "Liga o casamento longo às duas pretensões."
+      ],
+      "pontos_frageis": [
+       "Não há prova de que ela nunca trabalhou.",
+       "Mistura a partilha, que não depende disso, com a pensão."
+      ],
+      "sugestao": "Separe os pedidos e indique como o histórico de trabalho será comprovado.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_esposa.txt",
+        "trecho": "O casal permaneceu casado por mais de 20 anos",
+        "conferido": true
+       }
+      ],
+      "replica": "Onde está nos autos que ela nunca trabalhou?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "O pedido de pensão tem prazo ou é por tempo indeterminado?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "É por tempo indeterminado, porque depois de 20 anos de casamento a dependência econômica é permanente.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é coerente com um casamento longo, mas presume dependência que a outra parte exige que seja demonstrada.",
+      "pontos_fortes": [
+       "Usa a duração do casamento."
+      ],
+      "pontos_frageis": [
+       "Dependência permanente não está provada.",
+       "Aumenta a resistência ao pedido."
+      ],
+      "sugestao": "Considere aceitar um prazo vinculado à partilha.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_marido.txt",
+        "trecho": "a necessidade de demonstrar os requisitos para a pensão alimentícia",
+        "conferido": true
+       }
+      ],
+      "replica": "Qual documento mostra que essa dependência é permanente?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "O pedido não fixa prazo, e a ex-esposa aceita que a pensão seja temporária, vinculada à conclusão da partilha e à reorganização da vida econômica dela. É uma forma de equilibrar a transição sem criar uma obrigação perpétua.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta torna o pedido razoável e mais fácil de acolher.",
+      "pontos_fortes": [
+       "Propõe prazo vinculado a um marco objetivo.",
+       "Mostra boa-fé."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Sugira um prazo concreto na audiência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_esposa.txt",
+        "trecho": "ela também teria direito à pensão",
+        "conferido": true
+       }
+      ],
+      "replica": ""
      }
     }
    ]

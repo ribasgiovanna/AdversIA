@@ -17,6 +17,7 @@ Falha com código 1 se algum trecho não existir no documento ou se houver erro 
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import sys
 from pathlib import Path
@@ -139,8 +140,13 @@ def construir(fonte: dict, erros: list[str]) -> dict:
             for campo in ("pontos_fortes", "pontos_frageis"):
                 av.setdefault(campo, [])
             av.setdefault("replica", "")
-            respostas.append({"rotulo": resposta["rotulo"], "texto": resposta["texto"], "avaliacao": av})
-        audiencia.append({"pergunta": bloco["pergunta"], "respostas": respostas})
+            respostas.append({"texto": resposta["texto"], "avaliacao": av})
+        # A ordem das respostas é sorteada de forma fixa (mesmo resultado a cada geração), para
+        # que a melhor resposta não fique sempre na mesma posição; os rótulos vêm depois.
+        respostas.sort(key=lambda r: hashlib.sha256(f"{ident}|{bloco['pergunta']}|{r['texto']}".encode("utf-8")).hexdigest())
+        for posicao, resposta in enumerate(respostas):
+            resposta["rotulo"] = f"Resposta {'ABCDEFGH'[posicao]}"
+        audiencia.append({"pergunta": bloco["pergunta"], "respostas": [{"rotulo": r["rotulo"], "texto": r["texto"], "avaliacao": r["avaliacao"]} for r in respostas]})
 
     if fonte["tipo"] not in TIPOS:
         erros.append(f"{ident}: tipo desconhecido '{fonte['tipo']}'")

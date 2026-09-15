@@ -349,29 +349,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Isso é mentira, ele sempre soube onde a gente morava.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta nega com firmeza, mas não indica como Nelson saberia do endereço.",
-      "pontos_fortes": [
-       "Resposta direta."
-      ],
-      "pontos_frageis": [
-       "Nenhuma prova de que o endereço era conhecido."
-      ],
-      "sugestao": "Indique fatos concretos: contatos com a família paterna, a pensão depositada, a escola informada.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "contestacao_nelson.txt",
-        "trecho": "em 2011, se mudou de cidade sem informar o novo endereço",
-        "conferido": true
-       }
-      ],
-      "replica": "E como ele saberia, se não havia contato?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "A mudança aconteceu, mas Nelson continuou pagando a pensão e mantinha contato com a família da mãe. Se quisesse encontrar a filha, tinha meios. Em mais de dez anos, não houve nenhum pedido de visitas na Justiça.",
      "avaliacao": {
       "avaliacao": "convincente",
@@ -391,6 +368,31 @@
       ],
       "replica": ""
      }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Mesmo que a mãe tenha se mudado, isso foi em 2011. Nelson teve mais de uma década para buscar a filha e não o fez, nem depois que ela completou 18 anos e podia decidir por conta própria.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta mostra que a mudança não explica toda a ausência, mas ignora as tentativas que Nelson alega até 2015 e a mensagem de 2020.",
+      "pontos_fortes": [
+       "Não nega a mudança.",
+       "Mostra o longo período sem contato."
+      ],
+      "pontos_frageis": [
+       "Não enfrenta as tentativas alegadas por Nelson.",
+       "Não indica os meios que ele tinha para encontrar a filha."
+      ],
+      "sugestao": "Enfrente as tentativas alegadas por Nelson e mostre os meios que ele tinha, como o contato pela pensão.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_nelson.txt",
+        "trecho": "em 2011, se mudou de cidade sem informar o novo endereço",
+        "conferido": true
+       }
+      ],
+      "replica": "E as tentativas até 2015 e a mensagem de 2020 que ele menciona?"
+     }
     }
    ]
   },
@@ -399,24 +401,25 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "É óbvio que o sofrimento vem do abandono.",
+     "texto": "Ainda não há laudo nos autos, e não vamos antecipar o que ele dirá. Carolina faz acompanhamento desde 2019; pedimos relatório da psicóloga e, se houver impugnação, perícia judicial, para que a relação entre a ausência do pai e o sofrimento seja examinada por quem tem competência técnica.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta afirma a causa do sofrimento sem nenhuma avaliação profissional.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Nenhum laudo.",
-       "Deixa espaço para outras explicações."
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta é honesta sobre a falta de laudo, não antecipa conclusões e oferece o caminho técnico completo para provar o nexo.",
+      "pontos_fortes": [
+       "Não promete o conteúdo do relatório.",
+       "Prevê a perícia judicial.",
+       "Usa o acompanhamento desde 2019."
       ],
-      "sugestao": "Junte o relatório da psicóloga que acompanha Carolina desde 2019.",
+      "pontos_frageis": [],
+      "sugestao": "Solicite o relatório à psicóloga com antecedência.",
       "apoio_nos_documentos": [
        {
         "documento": "peticao_carolina.txt",
-        "trecho": "relata sentimento de rejeição",
+        "trecho": "Carolina faz acompanhamento psicológico desde 2019",
         "conferido": true
        }
       ],
-      "replica": "E a separação dos pais, aos 5 anos, não pode ter causado isso?"
+      "replica": ""
      }
     },
     {
@@ -449,6 +452,34 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
+     "texto": "Carolina vai confirmar se recebeu, e não vamos negar o que pode ser provado. Se recebeu, a falta de resposta de uma filha adulta, depois de dez anos de ausência, não transfere a ela a responsabilidade: a mensagem de 2020 não muda o que aconteceu desde 2010, quando as visitas pararam.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta não arrisca uma negativa e mostra que uma mensagem isolada não apaga o período de ausência.",
+      "pontos_fortes": [
+       "Evita negar um fato verificável.",
+       "Coloca a mensagem no contexto de dez anos.",
+       "Mantém o foco no período do abandono."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Confirme com Carolina se ela recebeu a mensagem antes da audiência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_carolina.txt",
+        "trecho": "Desde 2010, Nelson não visitou a filha",
+        "conferido": true
+       },
+       {
+        "documento": "contestacao_nelson.txt",
+        "trecho": "Em 2020, enviou mensagem a Carolina pelo aniversário dela",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
      "texto": "Uma mensagem depois de dez anos não significa nada.",
      "avaliacao": {
       "avaliacao": "parcial",
@@ -469,27 +500,111 @@
       ],
       "replica": "Então ela preferiu não retomar o contato?"
      }
-    },
+    }
+   ]
+  },
+  {
+   "pergunta": "Como se chegou ao valor de R$ 100.000,00?",
+   "respostas": [
     {
-     "rotulo": "Resposta B",
-     "texto": "Não sei, nunca vi essa mensagem.",
+     "rotulo": "Resposta A",
+     "texto": "É um valor proporcional a mais de dez anos de ausência e ao sofrimento que Carolina carrega até hoje.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta é incerta sobre um fato que a própria autora deveria saber e pode ser desmentida.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Incerteza sobre fato pessoal.",
-       "Risco de a mensagem ser exibida."
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta liga o valor à duração da ausência, mas não apresenta critério objetivo nem prova do dano.",
+      "pontos_fortes": [
+       "Relaciona valor e tempo."
       ],
-      "sugestao": "Verifique com Carolina antes da audiência se a mensagem foi recebida.",
+      "pontos_frageis": [
+       "Sem critério objetivo.",
+       "Relatório psicológico ainda não juntado."
+      ],
+      "sugestao": "Explique o critério e indique a prova da extensão do dano.",
       "apoio_nos_documentos": [
        {
-        "documento": "contestacao_nelson.txt",
-        "trecho": "não recebeu resposta",
+        "documento": "peticao_carolina.txt",
+        "trecho": "Indenização por danos morais de R$ 100.000,00, pelo abandono afetivo.",
         "conferido": true
        }
       ],
-      "replica": "E se a mensagem aparecer como lida?"
+      "replica": "Por que R$ 100.000,00, e não R$ 50.000,00 ou R$ 200.000,00?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "O valor é uma estimativa e pode ser fixado pelo juízo conforme a prova. O que Carolina pede é o reconhecimento do dano; o relatório da psicóloga e as datas em que o pai esteve ausente vão mostrar a extensão dele.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é prudente e indica prova, mas relativiza o próprio pedido.",
+      "pontos_fortes": [
+       "Indica prova do dano.",
+       "Flexível quanto ao valor."
+      ],
+      "pontos_frageis": [
+       "Enfraquece o valor pedido.",
+       "Relatório ainda não juntado."
+      ],
+      "sugestao": "Mantenha o valor e apresente os fatos que o justificam.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_carolina.txt",
+        "trecho": "Carolina faz acompanhamento psicológico desde 2019",
+        "conferido": true
+       }
+      ],
+      "replica": "Então o valor pedido não tem base definida?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Se Nelson pagou a pensão em dia e parte da faculdade, isso não mostra cuidado com a filha?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "O pagamento da faculdade foi parcial e só aconteceu no fim, quando Carolina já era adulta.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta tenta diminuir o gesto, mas não há documento sobre quando ele custeou a faculdade.",
+      "pontos_fortes": [
+       "Relativiza o argumento do réu."
+      ],
+      "pontos_frageis": [
+       "Nenhum documento informa quando ele pagou.",
+       "Não separa o dever financeiro do cuidado afetivo."
+      ],
+      "sugestao": "Separe pensão e presença em vez de diminuir o pagamento.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_nelson.txt",
+        "trecho": "Pagou a pensão em dia até 2024",
+        "conferido": true
+       }
+      ],
+      "replica": "Mesmo parcial, não é sinal de que ele se importava?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Mostra que ele cumpriu a obrigação financeira, e a petição reconhece isso. O pedido é sobre outra coisa: a ausência de visitas desde 2010 e em momentos como a cirurgia de 2017. Pagar a pensão não substitui a presença.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta reconhece o fato favorável ao réu e separa com clareza o dever financeiro do cuidado afetivo.",
+      "pontos_fortes": [
+       "Não nega fato reconhecido.",
+       "Delimita o objeto do pedido.",
+       "Cita datas concretas."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Leve a lista de datas importantes em que o pai esteve ausente.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_carolina.txt",
+        "trecho": "Nelson sempre pagou a pensão alimentícia, mas nunca procurou a filha.",
+        "conferido": true
+       }
+      ],
+      "replica": ""
      }
     }
    ]

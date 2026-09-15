@@ -14,8 +14,14 @@
     "texto": "O pedido descreve a convivência do pai como fins de semana alternados; Leonardo afirma buscar Clara na escola às terças e quintas desde 2022 e levá-la à natação aos sábados. A mudança afetaria uma rotina maior do que a descrita.",
     "provenance": "INFERENCE",
     "origem": [
-     {"documento": "pedido_beatriz.txt", "trecho": "convivência com o pai em fins de semana alternados"},
-     {"documento": "manifestacao_leonardo.txt", "trecho": "busca a filha na escola às terças e quintas desde 2022 e a leva à natação aos sábados"}
+     {
+      "documento": "pedido_beatriz.txt",
+      "trecho": "convivência com o pai em fins de semana alternados"
+     },
+     {
+      "documento": "manifestacao_leonardo.txt",
+      "trecho": "busca a filha na escola às terças e quintas desde 2022 e a leva à natação aos sábados"
+     }
     ]
    },
    {
@@ -24,8 +30,14 @@
     "texto": "O pedido fala em salário três vezes maior; Leonardo afirma que a proposta apresentada não está assinada e não informa cargo nem salário.",
     "provenance": "INFERENCE",
     "origem": [
-     {"documento": "pedido_beatriz.txt", "trecho": "com salário três vezes maior que o atual"},
-     {"documento": "manifestacao_leonardo.txt", "trecho": "A proposta de emprego apresentada não está assinada pela empresa e não informa o cargo nem o salário"}
+     {
+      "documento": "pedido_beatriz.txt",
+      "trecho": "com salário três vezes maior que o atual"
+     },
+     {
+      "documento": "manifestacao_leonardo.txt",
+      "trecho": "A proposta de emprego apresentada não está assinada pela empresa e não informa o cargo nem o salário"
+     }
     ]
    },
    {
@@ -33,106 +45,473 @@
     "categoria": "lacuna_probatoria",
     "texto": "A escola bilíngue oferecida pela empresa não vem com nenhum documento sobre vaga, custo ou condições.",
     "provenance": "INFERENCE",
-    "origem": [{"documento": "pedido_beatriz.txt", "trecho": "A empresa oferece escola bilíngue para os filhos dos empregados"}]
+    "origem": [
+     {
+      "documento": "pedido_beatriz.txt",
+      "trecho": "A empresa oferece escola bilíngue para os filhos dos empregados"
+     }
+    ]
    },
    {
     "id": "lacuna-vontade",
     "categoria": "lacuna_probatoria",
     "texto": "A vontade de Clara de morar em Portugal foi relatada apenas à mãe, sem escuta por profissional.",
     "provenance": "INFERENCE",
-    "origem": [{"documento": "pedido_beatriz.txt", "trecho": "Clara disse à mãe que gostaria de morar em Portugal"}]
+    "origem": [
+     {
+      "documento": "pedido_beatriz.txt",
+      "trecho": "Clara disse à mãe que gostaria de morar em Portugal"
+     }
+    ]
    },
    {
     "id": "lacuna-custos",
     "categoria": "lacuna_probatoria",
     "texto": "O compromisso de pagar as passagens não vem com estimativa de custo nem prova de capacidade financeira para mantê-lo.",
     "provenance": "INFERENCE",
-    "origem": [{"documento": "pedido_beatriz.txt", "trecho": "com passagens pagas pela mãe"}]
+    "origem": [
+     {
+      "documento": "pedido_beatriz.txt",
+      "trecho": "com passagens pagas pela mãe"
+     }
+    ]
    },
    {
     "id": "argumento-rotina",
     "categoria": "contra_argumento",
     "texto": "Leonardo sustentará que a mudança rompe uma convivência semanal consolidada, que chamadas de vídeo não substituem.",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "manifestacao_leonardo.txt", "trecho": "Leonardo participa da rotina de Clara muito além dos fins de semana"}]
+    "origem": [
+     {
+      "documento": "manifestacao_leonardo.txt",
+      "trecho": "Leonardo participa da rotina de Clara muito além dos fins de semana"
+     }
+    ]
    },
    {
     "id": "argumento-ferias",
     "categoria": "contra_argumento",
     "texto": "O plano de convivência em todas as férias de julho será apontado como inviável, porque o pai não pode se afastar do trabalho por um mês inteiro.",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "manifestacao_leonardo.txt", "trecho": "não considera que Leonardo não tem condições de se afastar do trabalho por um mês inteiro"}]
+    "origem": [
+     {
+      "documento": "manifestacao_leonardo.txt",
+      "trecho": "não considera que Leonardo não tem condições de se afastar do trabalho por um mês inteiro"
+     }
+    ]
    },
    {
     "id": "argumento-familia",
     "categoria": "contra_argumento",
     "texto": "A outra parte destacará que toda a rede familiar de Clara, inclusive os avós com quem ela almoça aos domingos, fica no Brasil.",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "manifestacao_leonardo.txt", "trecho": "inclusive os avós paternos, com quem ela almoça aos domingos, mora no Brasil"}]
+    "origem": [
+     {
+      "documento": "manifestacao_leonardo.txt",
+      "trecho": "inclusive os avós paternos, com quem ela almoça aos domingos, mora no Brasil"
+     }
+    ]
    },
    {
     "id": "pergunta-salario",
     "categoria": "pergunta_dificil",
     "texto": "Qual é o cargo e o salário da proposta, e por que ela não está assinada pela empresa?",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "manifestacao_leonardo.txt", "trecho": "não está assinada pela empresa"}]
+    "origem": [
+     {
+      "documento": "manifestacao_leonardo.txt",
+      "trecho": "não está assinada pela empresa"
+     }
+    ]
    },
    {
     "id": "pergunta-rotina",
     "categoria": "pergunta_dificil",
     "texto": "Como fica a rotina de terças, quintas e sábados que Clara tem com o pai?",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "manifestacao_leonardo.txt", "trecho": "às terças e quintas desde 2022"}]
+    "origem": [
+     {
+      "documento": "manifestacao_leonardo.txt",
+      "trecho": "às terças e quintas desde 2022"
+     }
+    ]
    },
    {
     "id": "pergunta-ferias",
     "categoria": "pergunta_dificil",
     "texto": "Se Leonardo não pode se afastar do trabalho por um mês, como funcionaria a convivência nas férias?",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "pedido_beatriz.txt", "trecho": "convivência com o pai em todas as férias de julho e em metade das férias de dezembro"}]
+    "origem": [
+     {
+      "documento": "pedido_beatriz.txt",
+      "trecho": "convivência com o pai em todas as férias de julho e em metade das férias de dezembro"
+     }
+    ]
    },
    {
     "id": "pergunta-escuta",
     "categoria": "pergunta_dificil",
     "texto": "A vontade de Clara foi ouvida por algum profissional?",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "pedido_beatriz.txt", "trecho": "Clara disse à mãe"}]
+    "origem": [
+     {
+      "documento": "pedido_beatriz.txt",
+      "trecho": "Clara disse à mãe"
+     }
+    ]
    }
   ],
   "linha_do_tempo": [
-   {"data": "2021", "data_ordenacao": "2021", "evento": "Divórcio, com guarda compartilhada e residência de referência com a mãe", "quem_afirma": "Beatriz", "documento": "pedido_beatriz.txt", "trecho": "têm guarda compartilhada de Clara desde o divórcio, em 2021", "divergencia": ""},
-   {"data": "2022", "data_ordenacao": "2022", "evento": "Leonardo passa a buscar Clara na escola às terças e quintas", "quem_afirma": "Leonardo", "documento": "manifestacao_leonardo.txt", "trecho": "busca a filha na escola às terças e quintas desde 2022", "divergencia": "Beatriz descreve a convivência do pai apenas em fins de semana alternados."},
-   {"data": "03/02/2025", "data_ordenacao": "2025-02-03", "evento": "Beatriz recebe proposta de emprego em Lisboa", "quem_afirma": "Beatriz", "documento": "pedido_beatriz.txt", "trecho": "Em 03/02/2025, Beatriz recebeu proposta de emprego em Lisboa", "divergencia": "Leonardo afirma que a proposta não está assinada e não informa cargo nem salário."},
-   {"data": "julho de 2025", "data_ordenacao": "2025-07", "evento": "Data pretendida para a mudança de Clara", "quem_afirma": "Beatriz", "documento": "pedido_beatriz.txt", "trecho": "se mudar com a mãe para Lisboa em julho de 2025", "divergencia": ""},
-   {"data": "01/08/2025", "data_ordenacao": "2025-08-01", "evento": "Início previsto do emprego em Lisboa", "quem_afirma": "Beatriz", "documento": "pedido_beatriz.txt", "trecho": "início previsto para 01/08/2025", "divergencia": ""}
+   {
+    "data": "2021",
+    "data_ordenacao": "2021",
+    "evento": "Divórcio, com guarda compartilhada e residência de referência com a mãe",
+    "quem_afirma": "Beatriz",
+    "documento": "pedido_beatriz.txt",
+    "trecho": "têm guarda compartilhada de Clara desde o divórcio, em 2021",
+    "divergencia": ""
+   },
+   {
+    "data": "2022",
+    "data_ordenacao": "2022",
+    "evento": "Leonardo passa a buscar Clara na escola às terças e quintas",
+    "quem_afirma": "Leonardo",
+    "documento": "manifestacao_leonardo.txt",
+    "trecho": "busca a filha na escola às terças e quintas desde 2022",
+    "divergencia": "Beatriz descreve a convivência do pai apenas em fins de semana alternados."
+   },
+   {
+    "data": "03/02/2025",
+    "data_ordenacao": "2025-02-03",
+    "evento": "Beatriz recebe proposta de emprego em Lisboa",
+    "quem_afirma": "Beatriz",
+    "documento": "pedido_beatriz.txt",
+    "trecho": "Em 03/02/2025, Beatriz recebeu proposta de emprego em Lisboa",
+    "divergencia": "Leonardo afirma que a proposta não está assinada e não informa cargo nem salário."
+   },
+   {
+    "data": "julho de 2025",
+    "data_ordenacao": "2025-07",
+    "evento": "Data pretendida para a mudança de Clara",
+    "quem_afirma": "Beatriz",
+    "documento": "pedido_beatriz.txt",
+    "trecho": "se mudar com a mãe para Lisboa em julho de 2025",
+    "divergencia": ""
+   },
+   {
+    "data": "01/08/2025",
+    "data_ordenacao": "2025-08-01",
+    "evento": "Início previsto do emprego em Lisboa",
+    "quem_afirma": "Beatriz",
+    "documento": "pedido_beatriz.txt",
+    "trecho": "início previsto para 01/08/2025",
+    "divergencia": ""
+   }
   ],
   "plano_de_provas": [
-   {"prova": "Carta-proposta assinada pela empresa, com cargo, salário, data de início e benefício escolar", "finalidade": "Dar solidez à razão econômica da mudança.", "como_obter": "Solicitar à empresa a proposta formal assinada e a confirmação da vaga escolar.", "prioridade": "alta", "apontamentos": ["contradicao-proposta", "lacuna-escola", "pergunta-salario"]},
-   {"prova": "Estudo psicossocial com escuta de Clara e avaliação do impacto da mudança", "finalidade": "Registrar a vontade da criança de forma adequada e avaliar o vínculo com o pai.", "como_obter": "Requerer ao juízo o estudo pela equipe técnica.", "prioridade": "alta", "apontamentos": ["lacuna-vontade", "argumento-rotina", "pergunta-escuta"]},
-   {"prova": "Plano de convivência detalhado e compatível com o trabalho do pai", "finalidade": "Mostrar como a relação com o pai e a família será preservada na prática.", "como_obter": "Montar com a cliente um calendário anual com férias divididas, visitas ao Brasil e rotina de chamadas.", "prioridade": "alta", "apontamentos": ["contradicao-convivencia", "argumento-ferias", "argumento-familia", "pergunta-rotina", "pergunta-ferias"]},
-   {"prova": "Orçamento das passagens e comprovação da capacidade de pagá-las", "finalidade": "Tornar o compromisso de custeio verificável.", "como_obter": "Pesquisar valores de passagens e juntar a proposta salarial.", "prioridade": "media", "apontamentos": ["lacuna-custos"]}
+   {
+    "prova": "Carta-proposta assinada pela empresa, com cargo, salário, data de início e benefício escolar",
+    "finalidade": "Dar solidez à razão econômica da mudança.",
+    "como_obter": "Solicitar à empresa a proposta formal assinada e a confirmação da vaga escolar.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "contradicao-proposta",
+     "lacuna-escola",
+     "pergunta-salario"
+    ]
+   },
+   {
+    "prova": "Estudo psicossocial com escuta de Clara e avaliação do impacto da mudança",
+    "finalidade": "Registrar a vontade da criança de forma adequada e avaliar o vínculo com o pai.",
+    "como_obter": "Requerer ao juízo o estudo pela equipe técnica.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "lacuna-vontade",
+     "argumento-rotina",
+     "pergunta-escuta"
+    ]
+   },
+   {
+    "prova": "Plano de convivência detalhado e compatível com o trabalho do pai",
+    "finalidade": "Mostrar como a relação com o pai e a família será preservada na prática.",
+    "como_obter": "Montar com a cliente um calendário anual com férias divididas, visitas ao Brasil e rotina de chamadas.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "contradicao-convivencia",
+     "argumento-ferias",
+     "argumento-familia",
+     "pergunta-rotina",
+     "pergunta-ferias"
+    ]
+   },
+   {
+    "prova": "Orçamento das passagens e comprovação da capacidade de pagá-las",
+    "finalidade": "Tornar o compromisso de custeio verificável.",
+    "como_obter": "Pesquisar valores de passagens e juntar a proposta salarial.",
+    "prioridade": "media",
+    "apontamentos": [
+     "lacuna-custos"
+    ]
+   }
   ]
  },
  "audiencia": [
   {
    "pergunta": "Qual é o cargo e o salário da proposta, e por que ela não está assinada pela empresa?",
    "respostas": [
-    {"rotulo": "Resposta A", "texto": "A proposta é ótima, ela vai ganhar muito bem.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta não informa cargo nem salário e não explica a falta de assinatura.", "pontos_fortes": [], "pontos_frageis": ["Nenhum dado concreto.", "Não enfrenta a crítica sobre o documento."], "sugestao": "Informe o cargo e o salário e comprometa-se a juntar a proposta assinada.", "apoio_nos_documentos": [{"documento": "manifestacao_leonardo.txt", "trecho": "não informa o cargo nem o salário"}], "replica": "E a senhora já assinou algum contrato com essa empresa?"}},
-    {"rotulo": "Resposta B", "texto": "Vamos juntar a carta-proposta assinada pela empresa, com cargo, salário, data de início e o benefício da escola bilíngue.", "avaliacao": {"avaliacao": "parcial", "resumo": "Sua resposta indica o documento certo, mas a base econômica da mudança continua sem prova.", "pontos_fortes": ["Prova objetiva e completa."], "pontos_frageis": ["Até a juntada, a proposta segue frágil."], "sugestao": "Obtenha a carta assinada antes da audiência.", "apoio_nos_documentos": [{"documento": "pedido_beatriz.txt", "trecho": "Em 03/02/2025, Beatriz recebeu proposta de emprego em Lisboa"}], "replica": "E se a empresa não confirmar a vaga para Clara na escola?"}}
+    {
+     "rotulo": "Resposta A",
+     "texto": "O cargo é de gerente de projetos, com salário três vezes o atual; a assinatura depende da autorização judicial, porque a empresa só formaliza a contratação quando a família tem garantia de que poderá se mudar.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é detalhada e explica a falta de assinatura, mas com informações que não estão em nenhum documento.",
+      "pontos_fortes": [
+       "Responde às duas partes da pergunta.",
+       "Dá uma justificativa plausível."
+      ],
+      "pontos_frageis": [
+       "O cargo e a condição para assinatura não constam dos autos.",
+       "Sem a carta assinada, a base econômica continua sem prova."
+      ],
+      "sugestao": "Não informe cargo ou condições que não estão nos documentos; peça à empresa a carta assinada.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_beatriz.txt",
+        "trecho": "com salário três vezes maior que o atual"
+       }
+      ],
+      "replica": "Onde está escrito que a empresa só assina depois da autorização?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Vamos juntar a carta-proposta assinada pela empresa, com cargo, salário, data de início e o benefício da escola bilíngue.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta indica o documento certo, mas a base econômica da mudança continua sem prova.",
+      "pontos_fortes": [
+       "Prova objetiva e completa."
+      ],
+      "pontos_frageis": [
+       "Até a juntada, a proposta segue frágil."
+      ],
+      "sugestao": "Obtenha a carta assinada antes da audiência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_beatriz.txt",
+        "trecho": "Em 03/02/2025, Beatriz recebeu proposta de emprego em Lisboa"
+       }
+      ],
+      "replica": "E se a empresa não confirmar a vaga para Clara na escola?"
+     }
+    }
    ]
   },
   {
    "pergunta": "Como fica a rotina de terças, quintas e sábados que Clara tem com o pai?",
    "respostas": [
-    {"rotulo": "Resposta A", "texto": "Ele só tem direito aos fins de semana alternados, foi o que ficou combinado.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta ignora a rotina real descrita pelo pai e reduz a relação a um direito formal.", "pontos_fortes": ["Coerente com o regime descrito no pedido."], "pontos_frageis": ["Não enfrenta a participação semanal alegada.", "Passa a impressão de desprezo pelo vínculo com o pai."], "sugestao": "Reconheça a participação do pai e mostre como ela será preservada de outra forma.", "apoio_nos_documentos": [{"documento": "manifestacao_leonardo.txt", "trecho": "busca a filha na escola às terças e quintas desde 2022"}], "replica": "Então a senhora nega que ele busque Clara na escola?"}},
-    {"rotulo": "Resposta B", "texto": "O pedido reconhece a importância do pai e será ajustado à rotina real: além das chamadas de vídeo, propomos que Clara passe com ele os períodos mais longos de férias, divididos de forma compatível com o trabalho dele, e que venha ao Brasil em datas combinadas, com passagens pagas pela mãe.", "avaliacao": {"avaliacao": "convincente", "resumo": "Sua resposta não nega a participação do pai, adapta o plano às objeções dele e mantém o pedido de pé com uma proposta concreta.", "pontos_fortes": ["Reconhece o vínculo real.", "Responde à objeção sobre o mês de férias.", "Mantém o custeio pela mãe."], "pontos_frageis": [], "sugestao": "Leve o calendário anual por escrito para a audiência.", "apoio_nos_documentos": [{"documento": "pedido_beatriz.txt", "trecho": "com passagens pagas pela mãe"}, {"documento": "manifestacao_leonardo.txt", "trecho": "não tem condições de se afastar do trabalho por um mês inteiro"}], "replica": ""}}
+    {
+     "rotulo": "Resposta A",
+     "texto": "A rotina vai mudar, é verdade, mas a convivência não acaba: as chamadas de vídeo três vezes por semana mantêm o contato frequente, e todas as férias de julho compensam o tempo presencial.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta reconhece a mudança, mas repete o plano original sem enfrentar a objeção de que o pai não pode passar julho inteiro com a filha.",
+      "pontos_fortes": [
+       "Não nega a rotina atual do pai.",
+       "Mostra que haverá contato frequente."
+      ],
+      "pontos_frageis": [
+       "Chamadas de vídeo não substituem a presença semanal.",
+       "Ignora a objeção sobre as férias de julho."
+      ],
+      "sugestao": "Ajuste o calendário às objeções do pai em vez de repetir o plano original.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_beatriz.txt",
+        "trecho": "chamadas de vídeo três vezes por semana"
+       }
+      ],
+      "replica": "E se o pai não puder se afastar do trabalho por um mês inteiro em julho?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "O pedido reconhece a importância do pai e será ajustado à rotina real: além das chamadas de vídeo, propomos que Clara passe com ele os períodos mais longos de férias, divididos de forma compatível com o trabalho dele, e que venha ao Brasil em datas combinadas, com passagens pagas pela mãe.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta não nega a participação do pai, adapta o plano às objeções dele e mantém o pedido de pé com uma proposta concreta.",
+      "pontos_fortes": [
+       "Reconhece o vínculo real.",
+       "Responde à objeção sobre o mês de férias.",
+       "Mantém o custeio pela mãe."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Leve o calendário anual por escrito para a audiência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_beatriz.txt",
+        "trecho": "com passagens pagas pela mãe"
+       },
+       {
+        "documento": "manifestacao_leonardo.txt",
+        "trecho": "não tem condições de se afastar do trabalho por um mês inteiro"
+       }
+      ],
+      "replica": ""
+     }
+    }
    ]
   },
   {
    "pergunta": "A vontade de Clara foi ouvida por algum profissional?",
    "respostas": [
-    {"rotulo": "Resposta A", "texto": "Clara já decidiu, ela quer morar em Portugal.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta atribui a uma criança de 8 anos uma decisão que só foi relatada à mãe.", "pontos_fortes": [], "pontos_frageis": ["O desejo foi relatado apenas à mãe.", "Não houve escuta profissional."], "sugestao": "Reconheça que a vontade de Clara precisa ser ouvida por equipe técnica e peça o estudo.", "apoio_nos_documentos": [{"documento": "pedido_beatriz.txt", "trecho": "Clara disse à mãe que gostaria de morar em Portugal"}], "replica": "E ela sabe que ficaria longe do pai e dos avós?"}},
-    {"rotulo": "Resposta B", "texto": "A vontade de Clara foi relatada à mãe. Por isso pedimos que ela seja ouvida por equipe técnica, para que a opinião dela seja registrada da forma adequada.", "avaliacao": {"avaliacao": "parcial", "resumo": "Sua resposta é honesta e pede a prova certa, mas o argumento continua dependendo dessa escuta.", "pontos_fortes": ["Não exagera o relato.", "Propõe a escuta técnica."], "pontos_frageis": ["Até o estudo, a vontade da criança é apenas relato."], "sugestao": "Peça o estudo com urgência, por causa da data pretendida para a mudança.", "apoio_nos_documentos": [{"documento": "pedido_beatriz.txt", "trecho": "Clara disse à mãe"}], "replica": "E se o estudo mostrar que ela quer ficar perto do pai?"}}
+    {
+     "rotulo": "Resposta A",
+     "texto": "Ainda não, e Beatriz não quer que a decisão pese sobre Clara. A vontade dela foi relatada à mãe e deve ser ouvida por equipe técnica, mas o pedido não depende disso: se apoia na proposta de emprego, na escola bilíngue e num plano de convivência que será ajustado à rotina real com o pai.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta é honesta sobre a escuta, protege a criança e mostra que o pedido tem fundamentos próprios.",
+      "pontos_fortes": [
+       "Não atribui à criança uma decisão.",
+       "Pede a escuta técnica.",
+       "Mostra os demais fundamentos."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Leve o plano de convivência revisado por escrito.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_beatriz.txt",
+        "trecho": "Clara disse à mãe que gostaria de morar em Portugal"
+       }
+      ],
+      "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "A vontade de Clara foi relatada à mãe. Por isso pedimos que ela seja ouvida por equipe técnica, para que a opinião dela seja registrada da forma adequada.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é honesta e pede a prova certa, mas o argumento continua dependendo dessa escuta.",
+      "pontos_fortes": [
+       "Não exagera o relato.",
+       "Propõe a escuta técnica."
+      ],
+      "pontos_frageis": [
+       "Até o estudo, a vontade da criança é apenas relato."
+      ],
+      "sugestao": "Peça o estudo com urgência, por causa da data pretendida para a mudança.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_beatriz.txt",
+        "trecho": "Clara disse à mãe"
+       }
+      ],
+      "replica": "E se o estudo mostrar que ela quer ficar perto do pai?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Se Leonardo não pode se afastar do trabalho por um mês inteiro, como Clara passaria as férias de julho com ele?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Os avós paternos podem ajudar a cuidar de Clara durante o dia, enquanto Leonardo trabalha.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta busca uma solução, mas transfere aos avós uma convivência que é do pai.",
+      "pontos_fortes": [
+       "Usa a rede familiar descrita."
+      ],
+      "pontos_frageis": [
+       "Os avós não foram consultados.",
+       "Clara passaria o dia longe do pai."
+      ],
+      "sugestao": "Proponha a divisão das férias em períodos compatíveis com o trabalho dele.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "manifestacao_leonardo.txt",
+        "trecho": "inclusive os avós paternos, com quem ela almoça aos domingos"
+       }
+      ],
+      "replica": "Então Clara passaria as férias com os avós, e não com o pai?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "O período pode ser dividido: duas semanas em julho e parte das férias de dezembro. Beatriz aceita também que Clara venha em feriados longos, com passagens pagas por ela.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta adapta o plano à objeção, mas reduz o tempo contínuo com o pai e ainda não está no pedido.",
+      "pontos_fortes": [
+       "Flexibilidade.",
+       "Mantém o custeio das passagens."
+      ],
+      "pontos_frageis": [
+       "Menos tempo contínuo com o pai.",
+       "Proposta nova, fora do pedido escrito."
+      ],
+      "sugestao": "Leve um calendário anual com a soma dos dias com o pai.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_beatriz.txt",
+        "trecho": "com passagens pagas pela mãe"
+       }
+      ],
+      "replica": "Quantos dias por ano, somados, Clara ficaria com o pai?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Como Leonardo continuará acompanhando a escola e a saúde de Clara em Lisboa?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "A guarda continua compartilhada, então Leonardo mantém acesso à escola e aos médicos. Beatriz se compromete a cadastrá-lo na escola bilíngue, enviar boletins e relatórios e marcar as reuniões por vídeo, com calendário combinado.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta traduz a guarda compartilhada em medidas concretas de participação do pai.",
+      "pontos_fortes": [
+       "Usa a manutenção da guarda compartilhada.",
+       "Compromissos concretos.",
+       "Inclui escola e saúde."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Coloque esses compromissos por escrito no pedido.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_beatriz.txt",
+        "trecho": "Manutenção da guarda compartilhada"
+       }
+      ],
+      "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Por chamadas de vídeo três vezes por semana, como está no pedido, em que Clara pode contar a ele como está.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta usa o que está no pedido, mas chamada com a criança não substitui contato com escola e médicos.",
+      "pontos_fortes": [
+       "Frequência definida."
+      ],
+      "pontos_frageis": [
+       "Não trata de escola nem de saúde.",
+       "Não mostra como o pai participará das decisões."
+      ],
+      "sugestao": "Inclua acesso direto do pai à escola e aos médicos.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_beatriz.txt",
+        "trecho": "chamadas de vídeo três vezes por semana"
+       }
+      ],
+      "replica": "Leonardo buscava Clara na escola duas vezes por semana; como falará com os professores?"
+     }
+    }
    ]
   }
  ]

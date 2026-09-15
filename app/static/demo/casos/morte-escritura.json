@@ -201,30 +201,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Ele pagava todo mês, sempre, sem falhar.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta afirma regularidade absoluta sem apresentar nenhum comprovante.",
-      "pontos_fortes": [
-       "Coerente com o fato de que ela recebia a pensão."
-      ],
-      "pontos_frageis": [
-       "Nenhum extrato está nos autos.",
-       "\"Sem falhar\" amplia o que o documento diz."
-      ],
-      "sugestao": "Indique os extratos bancários como prova e comprometa-se a juntá-los.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "pedido_pensao_por_morte.txt",
-        "trecho": "recebia pensão alimentícia do ex-marido",
-        "conferido": true
-       }
-      ],
-      "replica": "E qual foi o último depósito?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "Vamos juntar os extratos com os depósitos da pensão até a data da morte, para mostrar que ela era efetivamente paga.",
      "avaliacao": {
       "avaliacao": "parcial",
@@ -245,6 +221,31 @@
       ],
       "replica": "E se houver meses sem depósito?"
      }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "A escritura criou a obrigação, e o cumprimento dela se presume até prova em contrário. Se alguém alegar que a pensão não era paga, cabe a quem alega demonstrar.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta tem lógica jurídica, mas conta com uma presunção em vez de provar um requisito que pode ser decisivo.",
+      "pontos_fortes": [
+       "Parte da validade da escritura.",
+       "Tenta distribuir o ônus da prova."
+      ],
+      "pontos_frageis": [
+       "Nenhum comprovante de pagamento foi indicado.",
+       "Se os extratos mostrarem falhas, a presunção cai."
+      ],
+      "sugestao": "Não conte com presunção: junte os extratos com os depósitos até a data da morte.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_pensao_por_morte.txt",
+        "trecho": "A pensão alimentícia era válida",
+        "conferido": true
+       }
+      ],
+      "replica": "E se não houver nenhum depósito nos extratos dos últimos meses?"
+     }
     }
    ]
   },
@@ -253,28 +254,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Cartório e juiz são a mesma coisa.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta faz uma equiparação simplista que ignora a distinção levantada e não usa os argumentos do próprio pedido.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Não enfrenta a literalidade do texto.",
-       "Afirmação genérica e fácil de rebater."
-      ],
-      "sugestao": "Explique que a escritura e a decisão judicial cumprem a mesma função de fixar a pensão, e que a via escolhida não apaga a obrigação.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "pedido_pensao_por_morte.txt",
-        "trecho": "O fato de ter sido estabelecida por escritura pública não eliminava sua existência",
-        "conferido": true
-       }
-      ],
-      "replica": "Então o texto que fala em fixação judicial deve ser ignorado?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "A escritura e a decisão judicial cumprem a mesma função: fixar a pensão. A diferença é só a via escolhida pelo casal. A pensão existia, era válida e era recebida, e não faz sentido que a ex-esposa perca a proteção por ter feito o divórcio de forma consensual em cartório.",
      "avaliacao": {
       "avaliacao": "convincente",
@@ -294,6 +273,31 @@
       ],
       "replica": ""
      }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "O texto fala em fixação judicial porque foi escrito antes de existir o divórcio em cartório. Quando a via extrajudicial foi criada, a escritura passou a ter os mesmos efeitos da sentença.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta traz um argumento histórico forte, mas se apoia em normas que não estão nos autos.",
+      "pontos_fortes": [
+       "Enfrenta a literalidade do texto.",
+       "Explica a diferença pela evolução da lei."
+      ],
+      "pontos_frageis": [
+       "O texto normativo citado não foi juntado.",
+       "Se o argumento histórico não se confirmar, a resposta perde a base."
+      ],
+      "sugestao": "Só use esse argumento com o texto normativo juntado; sem ele, fique no argumento de função.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_pensao_por_morte.txt",
+        "trecho": "a pensão foi fixada por escritura pública, não por decisão judicial",
+        "conferido": true
+       }
+      ],
+      "replica": "Qual norma dá à escritura os mesmos efeitos da sentença? Ela está nos autos?"
+     }
     }
    ]
   },
@@ -302,24 +306,25 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Não lembro o valor, mas era alto e não tinha prazo.",
+     "texto": "Esses dados estão na escritura, que será juntada. Adianto o que importa para o pedido: se havia prazo e ele não tinha terminado na data da morte, a pensão estava vigente; se não havia prazo, com mais razão. Nos dois casos, a certidão resolve.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta não informa o valor e afirma a ausência de prazo sem o documento.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Nenhum valor é indicado.",
-       "A escritura não está nos autos para confirmar a falta de prazo."
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta não inventa valores e mostra que o pedido se sustenta em qualquer das hipóteses sobre o prazo.",
+      "pontos_fortes": [
+       "Indica o documento certo.",
+       "Analisa as duas hipóteses.",
+       "Não afirma nada que os autos não mostram."
       ],
-      "sugestao": "Obtenha a certidão da escritura antes de responder sobre valor e prazo.",
+      "pontos_frageis": [],
+      "sugestao": "Junte a certidão da escritura antes da audiência.",
       "apoio_nos_documentos": [
        {
         "documento": "pedido_pensao_por_morte.txt",
-        "trecho": "estabelecida por escritura pública",
+        "trecho": "estabelecida por escritura pública em divórcio consensual extrajudicial",
         "conferido": true
        }
       ],
-      "replica": "Como a senhora sabe que não havia prazo sem ter a escritura?"
+      "replica": ""
      }
     },
     {
@@ -343,6 +348,112 @@
        }
       ],
       "replica": "E se a escritura previa pensão só por alguns anos?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "A escritura do divórcio foi feita com assistência de advogado?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "A certidão da escritura, que será juntada, mostra quem assinou e quem prestou assistência. O ponto central é que a pensão foi estabelecida por escritura pública, em divórcio consensual, e não por um acerto informal entre os dois.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta indica a prova e reforça a formalidade do ato, que é o centro da tese.",
+      "pontos_fortes": [
+       "Indica o documento certo.",
+       "Distingue escritura pública de acordo informal.",
+       "Mantém o foco no argumento principal."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Destaque na certidão o trecho que fixa a pensão.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_pensao_por_morte.txt",
+        "trecho": "estabelecida por escritura pública em divórcio consensual extrajudicial",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Sim. Divórcio em cartório exige advogado, então a escritura tem a mesma segurança de um acordo homologado pelo juiz.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta traz um argumento útil, mas apoia-se numa regra que não está nos documentos e não junta a escritura.",
+      "pontos_fortes": [
+       "Aproxima a escritura da decisão judicial."
+      ],
+      "pontos_frageis": [
+       "Afirma exigência legal sem o texto nos autos.",
+       "A escritura, que comprovaria a assistência, não foi juntada."
+      ],
+      "sugestao": "Junte a certidão da escritura com os nomes de quem assinou.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_pensao_por_morte.txt",
+        "trecho": "estabelecida por escritura pública em divórcio consensual extrajudicial",
+        "conferido": true
+       }
+      ],
+      "replica": "Onde está a escritura para conferirmos quem assinou?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "A ex-esposa tinha outra renda além da pensão quando o ex-marido morreu?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Não tinha, e é por isso que a pensão por morte é essencial: ela dependia totalmente daquele valor.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta reforça a necessidade, mas afirma dependência total sem nenhum documento.",
+      "pontos_fortes": [
+       "Liga o pedido à necessidade."
+      ],
+      "pontos_frageis": [
+       "Nenhum documento informa a renda dela.",
+       "Uma afirmação absoluta é fácil de desmentir."
+      ],
+      "sugestao": "Diga como a ausência de renda será comprovada.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_pensao_por_morte.txt",
+        "trecho": "recebia pensão alimentícia",
+        "conferido": true
+       }
+      ],
+      "replica": "Há extrato do INSS ou declaração de imposto de renda que mostre isso?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Os documentos não tratam de outra renda, e o pedido não depende disso: o que se discute é se a pensão fixada em escritura dá o mesmo direito. Se a renda for relevante, juntaremos o extrato do INSS.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta mantém o foco na questão jurídica, mas minimiza um ponto que pode ser examinado.",
+      "pontos_fortes": [
+       "Não afirma o que não sabe.",
+       "Indica prova se necessário."
+      ],
+      "pontos_frageis": [
+       "Trata como irrelevante um ponto que pode pesar.",
+       "Ainda não sabe o que o extrato mostrará."
+      ],
+      "sugestao": "Verifique a renda dela antes da audiência para não ser surpreendida.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_pensao_por_morte.txt",
+        "trecho": "A pensão alimentícia era válida.",
+        "conferido": true
+       }
+      ],
+      "replica": "E se ela tinha emprego com salário maior que a pensão?"
      }
     }
    ]

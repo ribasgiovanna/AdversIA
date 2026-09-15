@@ -314,24 +314,27 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "A proposta é ótima, ela vai ganhar muito bem.",
+     "texto": "O cargo é de gerente de projetos, com salário três vezes o atual; a assinatura depende da autorização judicial, porque a empresa só formaliza a contratação quando a família tem garantia de que poderá se mudar.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta não informa cargo nem salário e não explica a falta de assinatura.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Nenhum dado concreto.",
-       "Não enfrenta a crítica sobre o documento."
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é detalhada e explica a falta de assinatura, mas com informações que não estão em nenhum documento.",
+      "pontos_fortes": [
+       "Responde às duas partes da pergunta.",
+       "Dá uma justificativa plausível."
       ],
-      "sugestao": "Informe o cargo e o salário e comprometa-se a juntar a proposta assinada.",
+      "pontos_frageis": [
+       "O cargo e a condição para assinatura não constam dos autos.",
+       "Sem a carta assinada, a base econômica continua sem prova."
+      ],
+      "sugestao": "Não informe cargo ou condições que não estão nos documentos; peça à empresa a carta assinada.",
       "apoio_nos_documentos": [
        {
-        "documento": "manifestacao_leonardo.txt",
-        "trecho": "não informa o cargo nem o salário",
+        "documento": "pedido_beatriz.txt",
+        "trecho": "com salário três vezes maior que o atual",
         "conferido": true
        }
       ],
-      "replica": "E a senhora já assinou algum contrato com essa empresa?"
+      "replica": "Onde está escrito que a empresa só assina depois da autorização?"
      }
     },
     {
@@ -364,30 +367,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Ele só tem direito aos fins de semana alternados, foi o que ficou combinado.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta ignora a rotina real descrita pelo pai e reduz a relação a um direito formal.",
-      "pontos_fortes": [
-       "Coerente com o regime descrito no pedido."
-      ],
-      "pontos_frageis": [
-       "Não enfrenta a participação semanal alegada.",
-       "Passa a impressão de desprezo pelo vínculo com o pai."
-      ],
-      "sugestao": "Reconheça a participação do pai e mostre como ela será preservada de outra forma.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "manifestacao_leonardo.txt",
-        "trecho": "busca a filha na escola às terças e quintas desde 2022",
-        "conferido": true
-       }
-      ],
-      "replica": "Então a senhora nega que ele busque Clara na escola?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "O pedido reconhece a importância do pai e será ajustado à rotina real: além das chamadas de vídeo, propomos que Clara passe com ele os períodos mais longos de férias, divididos de forma compatível com o trabalho dele, e que venha ao Brasil em datas combinadas, com passagens pagas pela mãe.",
      "avaliacao": {
       "avaliacao": "convincente",
@@ -413,6 +392,31 @@
       ],
       "replica": ""
      }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "A rotina vai mudar, é verdade, mas a convivência não acaba: as chamadas de vídeo três vezes por semana mantêm o contato frequente, e todas as férias de julho compensam o tempo presencial.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta reconhece a mudança, mas repete o plano original sem enfrentar a objeção de que o pai não pode passar julho inteiro com a filha.",
+      "pontos_fortes": [
+       "Não nega a rotina atual do pai.",
+       "Mostra que haverá contato frequente."
+      ],
+      "pontos_frageis": [
+       "Chamadas de vídeo não substituem a presença semanal.",
+       "Ignora a objeção sobre as férias de julho."
+      ],
+      "sugestao": "Ajuste o calendário às objeções do pai em vez de repetir o plano original.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_beatriz.txt",
+        "trecho": "chamadas de vídeo três vezes por semana",
+        "conferido": true
+       }
+      ],
+      "replica": "E se o pai não puder se afastar do trabalho por um mês inteiro em julho?"
+     }
     }
    ]
   },
@@ -421,16 +425,17 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Clara já decidiu, ela quer morar em Portugal.",
+     "texto": "Ainda não, e Beatriz não quer que a decisão pese sobre Clara. A vontade dela foi relatada à mãe e deve ser ouvida por equipe técnica, mas o pedido não depende disso: se apoia na proposta de emprego, na escola bilíngue e num plano de convivência que será ajustado à rotina real com o pai.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta atribui a uma criança de 8 anos uma decisão que só foi relatada à mãe.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "O desejo foi relatado apenas à mãe.",
-       "Não houve escuta profissional."
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta é honesta sobre a escuta, protege a criança e mostra que o pedido tem fundamentos próprios.",
+      "pontos_fortes": [
+       "Não atribui à criança uma decisão.",
+       "Pede a escuta técnica.",
+       "Mostra os demais fundamentos."
       ],
-      "sugestao": "Reconheça que a vontade de Clara precisa ser ouvida por equipe técnica e peça o estudo.",
+      "pontos_frageis": [],
+      "sugestao": "Leve o plano de convivência revisado por escrito.",
       "apoio_nos_documentos": [
        {
         "documento": "pedido_beatriz.txt",
@@ -438,7 +443,7 @@
         "conferido": true
        }
       ],
-      "replica": "E ela sabe que ficaria longe do pai e dos avós?"
+      "replica": ""
      }
     },
     {
@@ -463,6 +468,112 @@
        }
       ],
       "replica": "E se o estudo mostrar que ela quer ficar perto do pai?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Se Leonardo não pode se afastar do trabalho por um mês inteiro, como Clara passaria as férias de julho com ele?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "O período pode ser dividido: duas semanas em julho e parte das férias de dezembro. Beatriz aceita também que Clara venha em feriados longos, com passagens pagas por ela.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta adapta o plano à objeção, mas reduz o tempo contínuo com o pai e ainda não está no pedido.",
+      "pontos_fortes": [
+       "Flexibilidade.",
+       "Mantém o custeio das passagens."
+      ],
+      "pontos_frageis": [
+       "Menos tempo contínuo com o pai.",
+       "Proposta nova, fora do pedido escrito."
+      ],
+      "sugestao": "Leve um calendário anual com a soma dos dias com o pai.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_beatriz.txt",
+        "trecho": "com passagens pagas pela mãe",
+        "conferido": true
+       }
+      ],
+      "replica": "Quantos dias por ano, somados, Clara ficaria com o pai?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Os avós paternos podem ajudar a cuidar de Clara durante o dia, enquanto Leonardo trabalha.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta busca uma solução, mas transfere aos avós uma convivência que é do pai.",
+      "pontos_fortes": [
+       "Usa a rede familiar descrita."
+      ],
+      "pontos_frageis": [
+       "Os avós não foram consultados.",
+       "Clara passaria o dia longe do pai."
+      ],
+      "sugestao": "Proponha a divisão das férias em períodos compatíveis com o trabalho dele.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "manifestacao_leonardo.txt",
+        "trecho": "inclusive os avós paternos, com quem ela almoça aos domingos",
+        "conferido": true
+       }
+      ],
+      "replica": "Então Clara passaria as férias com os avós, e não com o pai?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Como Leonardo continuará acompanhando a escola e a saúde de Clara em Lisboa?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Por chamadas de vídeo três vezes por semana, como está no pedido, em que Clara pode contar a ele como está.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta usa o que está no pedido, mas chamada com a criança não substitui contato com escola e médicos.",
+      "pontos_fortes": [
+       "Frequência definida."
+      ],
+      "pontos_frageis": [
+       "Não trata de escola nem de saúde.",
+       "Não mostra como o pai participará das decisões."
+      ],
+      "sugestao": "Inclua acesso direto do pai à escola e aos médicos.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_beatriz.txt",
+        "trecho": "chamadas de vídeo três vezes por semana",
+        "conferido": true
+       }
+      ],
+      "replica": "Leonardo buscava Clara na escola duas vezes por semana; como falará com os professores?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "A guarda continua compartilhada, então Leonardo mantém acesso à escola e aos médicos. Beatriz se compromete a cadastrá-lo na escola bilíngue, enviar boletins e relatórios e marcar as reuniões por vídeo, com calendário combinado.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta traduz a guarda compartilhada em medidas concretas de participação do pai.",
+      "pontos_fortes": [
+       "Usa a manutenção da guarda compartilhada.",
+       "Compromissos concretos.",
+       "Inclui escola e saúde."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Coloque esses compromissos por escrito no pedido.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "pedido_beatriz.txt",
+        "trecho": "Manutenção da guarda compartilhada",
+        "conferido": true
+       }
+      ],
+      "replica": ""
      }
     }
    ]

@@ -408,35 +408,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Saíram da conta conjunta, todo mundo sabia que o casal pagava tudo junto.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta repete a petição, mas se apoia em algo que \"todo mundo sabia\", sem nenhum extrato que mostre os débitos.",
-      "pontos_fortes": [
-       "Mantém a versão apresentada na petição."
-      ],
-      "pontos_frageis": [
-       "Não indica nenhum documento.",
-       "Ricardo afirma que os aportes saíam do salário dele, e a resposta não enfrenta isso."
-      ],
-      "sugestao": "Diga que a conta conjunta será comprovada pelos extratos do período, que Helena pode emitir como cotitular, e que a contestação também não traz prova de pagamento com o salário de Ricardo.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "peticao_helena.txt",
-        "trecho": "com aportes mensais feitos a partir da conta conjunta do casal",
-        "conferido": true
-       },
-       {
-        "documento": "contestacao_ricardo.txt",
-        "trecho": "os aportes mensais seguintes eram feitos com o salário dele",
-        "conferido": true
-       }
-      ],
-      "replica": "Então a senhora pode juntar hoje algum extrato mostrando um único débito desses aportes na conta conjunta?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "Os aportes saíam da conta conjunta, como consta da petição. Helena é cotitular e vai juntar os extratos de 2014 a 2023; a contestação, por sua vez, não traz prova de que o salário de Ricardo pagava os aportes.",
      "avaliacao": {
       "avaliacao": "parcial",
@@ -458,6 +429,29 @@
       ],
       "replica": "E se os extratos mostrarem que a conta conjunta recebia apenas o salário de Ricardo?"
      }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Da conta conjunta, como diz a petição, e os extratos de 2014 a 2023 vão confirmar. Mas o ponto mais sério da contestação são os R$ 60 mil iniciais vindos de herança. Helena não precisa negar isso: se for comprovado, esse valor inicial pode ser separado, e os aportes e rendimentos do casamento continuam sendo do casal.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta responde à pergunta, antecipa o argumento mais forte da outra parte e protege a maior parte do saldo com uma concessão calculada.",
+      "pontos_fortes": [
+       "Indica os extratos.",
+       "Isola o valor de herança sem abandonar o pedido.",
+       "Mostra razoabilidade."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Confirme com Helena se ela aceita separar o valor inicial antes de dizer isso na audiência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_ricardo.txt",
+        "trecho": "contratado em maio de 2014 com R$ 60 mil recebidos de herança",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
     }
    ]
   },
@@ -466,28 +460,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Foi em 15/03/2023, isso é incontroverso.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta chama de incontroversa uma data que Ricardo contesta expressamente.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "A contestação afirma que a separação foi em janeiro de 2023.",
-       "Não indica nenhum documento que comprove a data."
-      ],
-      "sugestao": "Reconheça a divergência e indique como a data será provada, por exemplo com o contrato de aluguel do novo endereço de Ricardo.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "contestacao_ricardo.txt",
-        "trecho": "A separação de fato ocorreu em janeiro de 2023, e não em março",
-        "conferido": true
-       }
-      ],
-      "replica": "Se a separação foi em janeiro, a senhora concorda que o resgate de fevereiro aconteceu depois dela?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "A petição indica 15/03/2023, e a contestação fala em janeiro de 2023 sem apresentar nenhum comprovante. Vamos pedir o contrato de aluguel do novo endereço de Ricardo para fixar a data.",
      "avaliacao": {
       "avaliacao": "parcial",
@@ -509,6 +481,31 @@
       ],
       "replica": "E se o contrato de aluguel de Ricardo for de janeiro de 2023?"
      }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "A data exata é secundária: seja em janeiro, seja em março de 2023, o resgate de fevereiro aconteceu durante a vida em comum ou logo antes da separação, e o saldo de dezembro de 2022 continua dentro do casamento.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta tenta neutralizar a divergência, mas erra a consequência: na versão de Ricardo, o resgate teria ocorrido depois da separação.",
+      "pontos_fortes": [
+       "Lembra que o saldo de dezembro de 2022 é anterior às duas datas.",
+       "Evita uma disputa longa sobre o dia."
+      ],
+      "pontos_frageis": [
+       "Se a separação foi em janeiro, fevereiro fica depois dela.",
+       "Não indica prova da data defendida."
+      ],
+      "sugestao": "Não trate a data como secundária: ela define se o resgate ocorreu antes ou depois da separação.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_helena.txt",
+        "trecho": "Em fevereiro de 2023, um mês antes da separação",
+        "conferido": true
+       }
+      ],
+      "replica": "Se a separação foi em janeiro, o resgate de fevereiro aconteceu depois dela, não durante a vida em comum."
+     }
     }
    ]
   },
@@ -517,24 +514,27 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Porque ele gastou com outra coisa, com certeza.",
+     "texto": "Porque a fatura do cartão e o IPTU somavam poucos milhares de reais, e o resgate foi de R$ 150 mil. Mesmo que uma parte tenha pagado dívidas, a maior parte continua sem explicação.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta afirma um destino diferente para o dinheiro sem qualquer base nos documentos.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Nenhum documento indica outro destino para o resgate.",
-       "Transforma uma suspeita em afirmação."
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta tem boa lógica de proporção, mas usa valores de dívidas que não estão em nenhum documento.",
+      "pontos_fortes": [
+       "Mostra a desproporção entre o resgate e as dívidas citadas.",
+       "Não nega que alguma dívida possa ter sido paga."
       ],
-      "sugestao": "Em vez de afirmar para onde foi o dinheiro, mostre que quem alega o pagamento de dívidas é Ricardo e que ele não juntou nenhum comprovante.",
+      "pontos_frageis": [
+       "Os valores do cartão e do IPTU não constam dos autos.",
+       "Não aponta que a contestação não junta comprovantes."
+      ],
+      "sugestao": "Não estime valores que não estão nos autos; mostre que a alegação de pagamento de dívidas não tem prova.",
       "apoio_nos_documentos": [
        {
-        "documento": "contestacao_ricardo.txt",
-        "trecho": "foi usado para quitar dívidas do próprio casal",
+        "documento": "peticao_helena.txt",
+        "trecho": "Ricardo resgatou cerca de R$ 150 mil do plano aberto",
         "conferido": true
        }
       ],
-      "replica": "Então a senhora não sabe, na verdade, para onde foi o dinheiro?"
+      "replica": "Onde estão os valores do cartão e do IPTU que a senhora cita?"
      }
     },
     {
@@ -562,6 +562,113 @@
        }
       ],
       "replica": ""
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Como Helena teve acesso ao saldo de R$ 380 mil informado no aplicativo do banco?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "O valor é aproximado, como diz a petição. Por isso pedimos ofício ao banco com o saldo na data da separação e o histórico de resgates: o número exato virá do banco, e não do aplicativo.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta não defende um número frágil e indica a fonte que resolve a questão.",
+      "pontos_fortes": [
+       "Reconhece o caráter aproximado.",
+       "Indica prova oficial.",
+       "Inclui o histórico de resgates."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Peça o saldo em duas datas: a da separação na versão de Helena e na de Ricardo.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_helena.txt",
+        "trecho": "o saldo informado no aplicativo do banco era de aproximadamente R$ 380 mil",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Ela era cotitular da conta conjunta e acompanhava o aplicativo junto com Ricardo.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta explica o acesso, mas confunde a conta conjunta com o plano, que foi contratado por Ricardo.",
+      "pontos_fortes": [
+       "Liga Helena à conta de onde saíam os aportes."
+      ],
+      "pontos_frageis": [
+       "Ser cotitular da conta não dá acesso ao plano.",
+       "Não há captura de tela nem extrato."
+      ],
+      "sugestao": "Diga como o saldo será confirmado por documento do banco.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_helena.txt",
+        "trecho": "com aportes mensais feitos a partir da conta conjunta do casal",
+        "conferido": true
+       }
+      ],
+      "replica": "Ela acessava o aplicativo com a senha de Ricardo?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Qual é o fundamento para dividir o plano fechado da empresa, que Ricardo diz ser benefício previdenciário e não investimento?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Pedimos o regulamento do plano e o extrato de contribuições desde 2012. Se o plano permitir resgate ou portabilidade, ele funciona como reserva financeira; se não permitir, Helena concentra o pedido no plano aberto.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é prudente e indica a prova, mas admite abandonar o pedido conforme o regulamento.",
+      "pontos_fortes": [
+       "Indica o documento decisivo.",
+       "Delimita o período.",
+       "Propõe critério objetivo."
+      ],
+      "pontos_frageis": [
+       "Sinaliza desistência antes de ver o regulamento.",
+       "Ainda não há documento do plano."
+      ],
+      "sugestao": "Apresente o critério sem anunciar a desistência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_helena.txt",
+        "trecho": "participa, desde 2012, do plano de previdência complementar fechado",
+        "conferido": true
+       }
+      ],
+      "replica": "Então o pedido sobre o plano fechado pode ser abandonado?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "As contribuições foram descontadas do salário de Ricardo durante o casamento, e o salário integra o patrimônio do casal. Logo, o que foi acumulado também integra.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta tem lógica, mas não enfrenta a diferença entre plano aberto e fechado apontada na contestação.",
+      "pontos_fortes": [
+       "Liga as contribuições ao período do casamento."
+      ],
+      "pontos_frageis": [
+       "Não trata da natureza de benefício alegada.",
+       "O mesmo raciocínio levaria a dividir aposentadorias em geral."
+      ],
+      "sugestao": "Mostre, com o regulamento, se o plano funciona como reserva resgatável.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_helena.txt",
+        "trecho": "com contribuições descontadas do salário",
+        "conferido": true
+       }
+      ],
+      "replica": "Então a aposentadoria dele pelo INSS também deveria ser dividida?"
      }
     }
    ]

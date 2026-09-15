@@ -383,30 +383,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Eles estavam juntos até abril, isso é certo.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta repete a petição, mas não indica prova para o ponto que decide o caso.",
-      "pontos_fortes": [
-       "Coerente com a petição."
-      ],
-      "pontos_frageis": [
-       "Nenhuma prova é indicada.",
-       "Gustavo afirma que não houve contato depois de fevereiro."
-      ],
-      "sugestao": "Indique mensagens, fotos ou testemunhas de março e abril de 2025.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "contestacao_gustavo.txt",
-        "trecho": "que não houve contato entre os dois depois disso",
-        "conferido": true
-       }
-      ],
-      "replica": "Então não há uma única mensagem de março?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "A petição informa namoro até abril. Vamos juntar as conversas exportadas e fotos de março e abril de 2025, com ata notarial, e indicar amigos que conviviam com o casal.",
      "avaliacao": {
       "avaliacao": "parcial",
@@ -428,6 +404,34 @@
       ],
       "replica": "E essas conversas são do número novo ou do antigo de Gustavo?"
      }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "A gravidez de cerca de oito semanas em 02/05/2025 aponta concepção em março, e Gustavo afirma que o namoro terminou em fevereiro. Por isso vamos juntar as conversas e fotos de março e abril, com ata notarial, e indicar amigos do casal. Nesta fase, o que se exige são indícios da paternidade, e não certeza.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta identifica exatamente por que março é decisivo, indica as provas certas e lembra o padrão de prova desta fase.",
+      "pontos_fortes": [
+       "Liga a data da gestação à divergência sobre o fim do namoro.",
+       "Indica provas com ata notarial.",
+       "Usa o critério de indícios."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Confirme com Aline quais conversas de março ela ainda tem.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_aline.txt",
+        "trecho": "com cerca de oito semanas de gestação",
+        "conferido": true
+       },
+       {
+        "documento": "contestacao_gustavo.txt",
+        "trecho": "o relacionamento terminou em fevereiro de 2025",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
     }
    ]
   },
@@ -436,28 +440,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Não sei, ela mandou para o número de sempre.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta admite desconhecer um detalhe que pode derrubar a versão do bloqueio.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Se foi o número antigo, a falta de resposta tem outra explicação.",
-       "Enfraquece a acusação de bloqueio."
-      ],
-      "sugestao": "Verifique a conversa antes da audiência e responda com o que ela mostrar.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "contestacao_gustavo.txt",
-        "trecho": "trocou de número de telefone em março de 2025",
-        "conferido": true
-       }
-      ],
-      "replica": "Então a senhora não tem como afirmar que houve bloqueio?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "A conversa será exportada com o número de destino. Se ele trocou de número em março, a pergunta passa a ser como Aline e Gustavo se comunicavam em março e abril, e é isso que as mensagens vão mostrar.",
      "avaliacao": {
       "avaliacao": "parcial",
@@ -479,6 +461,31 @@
       ],
       "replica": "E se todas as mensagens de março e abril forem para o número antigo, sem resposta?"
      }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Para o número novo, que Gustavo passou a ela em março, quando ainda estavam juntos. Ele trocou de telefone, não de namorada.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta resolve a contradição de forma engenhosa, mas com um fato que não está nos autos e um tom que pode soar provocativo.",
+      "pontos_fortes": [
+       "Enfrenta diretamente a troca de número.",
+       "Mantém a versão do namoro até abril."
+      ],
+      "pontos_frageis": [
+       "Não há prova de que Gustavo passou o número novo a Aline.",
+       "O tom irônico pode prejudicar a credibilidade."
+      ],
+      "sugestao": "Não afirme fatos que não estão nos autos; a conversa exportada vai mostrar o número de destino.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_gustavo.txt",
+        "trecho": "trocou de número de telefone em março de 2025",
+        "conferido": true
+       }
+      ],
+      "replica": "Onde está a prova de que ele passou o número novo a ela?"
+     }
     }
    ]
   },
@@ -487,28 +494,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "É o mínimo para uma gestação digna.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta usa uma afirmação geral no lugar do cálculo pedido.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Nenhum valor de despesa é informado.",
-       "Não considera a renda informada por Gustavo."
-      ],
-      "sugestao": "Apresente os recibos e orçamentos do pré-natal e aceite a adequação à renda comprovada.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "peticao_aline.txt",
-        "trecho": "A gestação exige consultas de pré-natal, exames e medicamentos",
-        "conferido": true
-       }
-      ],
-      "replica": "Mesmo que Gustavo ganhe R$ 2.500,00 e já pague outra pensão?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "O valor será demonstrado com os recibos e orçamentos do pré-natal e dos exames. Se a renda de Gustavo for a que ele informa, Aline aceita que o juízo fixe um valor proporcional, porque nesta fase o que se exige são indícios da paternidade, e não a certeza.",
      "avaliacao": {
       "avaliacao": "convincente",
@@ -527,6 +512,137 @@
        }
       ],
       "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "R$ 1.200,00 é menos da metade do que ganha um gerente de loja de eletrônicos, e as despesas de um pré-natal particular passam facilmente disso.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta justifica o valor com a renda e as despesas, mas parte de uma função que Gustavo contesta e de gastos sem recibos.",
+      "pontos_fortes": [
+       "Liga o valor à renda e às despesas.",
+       "Responde à pergunta sobre o cálculo."
+      ],
+      "pontos_frageis": [
+       "Gustavo diz ser vendedor, com renda de R$ 2.500,00.",
+       "Não há recibos do pré-natal nem menção à pensão que ele paga a outro filho."
+      ],
+      "sugestao": "Mostre os recibos e aceite um valor proporcional à renda comprovada.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_aline.txt",
+        "trecho": "Gustavo é gerente de uma loja de eletrônicos",
+        "conferido": true
+       }
+      ],
+      "replica": "E se ele for vendedor, ganhar R$ 2.500,00 e já pagar pensão a outro filho?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Que documento mostra que Gustavo é gerente, e não vendedor?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Ele se apresentava como gerente para os amigos e nas redes sociais, e Aline sabe disso pelo tempo de namoro.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta explica a origem da informação, mas nenhuma publicação ou documento está nos autos.",
+      "pontos_fortes": [
+       "Indica de onde veio a informação."
+      ],
+      "pontos_frageis": [
+       "Não há publicação juntada.",
+       "O que se diz nas redes não prova cargo nem salário."
+      ],
+      "sugestao": "Peça ofício ao empregador em vez de depender das redes sociais.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_aline.txt",
+        "trecho": "Gustavo é gerente de uma loja de eletrônicos.",
+        "conferido": true
+       }
+      ],
+      "replica": "Onde estão essas publicações?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Nenhum documento dos autos prova o cargo, de um lado ou de outro: Gustavo também não junta holerite. Pedimos ofício ao empregador com cargo e salário. Enquanto isso, o valor pode ser fixado de forma provisória e revisto quando a renda for comprovada.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta mostra que a outra parte também não provou o que diz, indica a prova e protege o pedido.",
+      "pontos_fortes": [
+       "Aponta a falta de prova dos dois lados.",
+       "Pede ofício ao empregador.",
+       "Propõe valor provisório."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Junte ao pedido de ofício a identificação da loja.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_gustavo.txt",
+        "trecho": "Gustavo trabalha como vendedor, e não como gerente",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Aline concorda em fazer o exame de DNA assim que for possível, como Gustavo propõe?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Concorda, mas só depois do nascimento. Até lá, os alimentos precisam ser pagos, porque a gestação não pode esperar.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta protege a necessidade atual, mas adia a prova e pode parecer que Aline evita o exame.",
+      "pontos_fortes": [
+       "Mantém o pedido durante a gestação."
+      ],
+      "pontos_frageis": [
+       "Não explica o motivo de esperar.",
+       "Pode ser lida como resistência à prova."
+      ],
+      "sugestao": "Diga que o momento do exame seguirá orientação médica.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_aline.txt",
+        "trecho": "Fixação de alimentos gravídicos de R$ 1.200,00 por mês até o nascimento.",
+        "conferido": true
+       }
+      ],
+      "replica": "Então, até o nascimento, Gustavo pagaria sem nenhuma prova de que é o pai?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Sim. Aline aceita o exame no momento indicado pelo médico. A proposta de Gustavo mostra que ele não descarta a paternidade, e os alimentos seguem valendo até o resultado.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta aceita a prova, mas interpreta a proposta de Gustavo além do que ela diz.",
+      "pontos_fortes": [
+       "Aceita o exame.",
+       "Mantém os alimentos até o resultado."
+      ],
+      "pontos_frageis": [
+       "Aceitar o exame não é reconhecer a paternidade.",
+       "Não indica quando o exame será feito."
+      ],
+      "sugestao": "Não atribua à proposta um reconhecimento que ela não contém.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_gustavo.txt",
+        "trecho": "Gustavo aceita fazer exame de DNA assim que for possível.",
+        "conferido": true
+       }
+      ],
+      "replica": "Ele aceitar o exame não é reconhecer a paternidade, é justamente duvidar dela."
      }
     }
    ]

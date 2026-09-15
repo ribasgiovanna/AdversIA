@@ -474,35 +474,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Os atrasos só começaram depois da demissão, em abril de 2023. Antes disso o Marcos sempre pagou tudo certinho.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta repete a versão da petição, mas afirma que Marcos sempre pagou o valor integral, e isso não está comprovado em nenhum documento.",
-      "pontos_fortes": [
-       "Mantém a coerência com a data informada na petição."
-      ],
-      "pontos_frageis": [
-       "Afirma pagamento integral até março de 2023 sem nenhum comprovante nos autos.",
-       "Não enfrenta a afirmação de que os depósitos já eram menores desde dezembro de 2022."
-      ],
-      "sugestao": "Reconheça que a questão será resolvida pelos comprovantes de depósito e comprometa-se a juntá-los; enquanto isso, destaque que a contestação também não traz prova do alegado pagamento a menor.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "peticao_revisional_marcos.txt",
-        "trecho": "deixou de conseguir pagar o valor integral da pensão a partir de abril de 2023",
-        "conferido": true
-       },
-       {
-        "documento": "contestacao_juliana.txt",
-        "trecho": "desde dezembro de 2022, antes mesmo da demissão, os depósitos já vinham sendo feitos com valor inferior ao combinado",
-        "conferido": true
-       }
-      ],
-      "replica": "Então o senhor pode juntar agora os comprovantes de dezembro de 2022 a março de 2023 mostrando o valor integral?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "A petição situa a dificuldade a partir de abril de 2023, e a contestação não junta nenhum comprovante do suposto pagamento a menor desde dezembro de 2022. Vamos juntar os extratos de todo o período.",
      "avaliacao": {
       "avaliacao": "parcial",
@@ -524,6 +495,32 @@
       ],
       "replica": "E se os extratos mostrarem depósitos menores já em janeiro de 2023, qual seria a explicação?"
      }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Os extratos de dezembro de 2022 a março de 2023 serão juntados, e qualquer valor menor será explicado. Mas a demissão e a renda variável como motorista de aplicativo são fatos que a própria contestação admite, e são eles que justificam a revisão daqui para frente.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta indica a prova e usa a contestação, mas atribui a ela uma concordância que ela não dá.",
+      "pontos_fortes": [
+       "Não nega a possibilidade de pagamentos menores.",
+       "Indica os extratos do período.",
+       "Foca no que justifica a revisão."
+      ],
+      "pontos_frageis": [
+       "A contestação admite a demissão, mas afirma que Marcos passou a ter salário fixo como gerente.",
+       "Não informa os valores do período perguntado."
+      ],
+      "sugestao": "Use só o que a contestação realmente admite, a demissão, e responda à alegação do emprego de gerente.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_juliana.txt",
+        "trecho": "É verdade que Marcos foi demitido em março de 2023",
+        "conferido": true
+       }
+      ],
+      "replica": "A contestação admite a renda variável, ou afirma que ele virou gerente com salário fixo?"
+     }
     }
    ]
   },
@@ -532,28 +529,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Ele ganha pouco, todo mundo sabe que aplicativo de transporte não paga bem.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta troca um número que a pergunta exige por uma generalização, e nada nos documentos informa quanto Marcos ganha.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Não traz nenhum valor.",
-       "Baseia-se em percepção geral, não em prova do caso."
-      ],
-      "sugestao": "Informe que a renda é variável, como consta da petição, e que o relatório de ganhos do aplicativo dos últimos 12 meses será juntado para mostrar a média mensal.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "peticao_revisional_marcos.txt",
-        "trecho": "sobrevive de trabalhos informais como motorista de aplicativo, com renda variável",
-        "conferido": true
-       }
-      ],
-      "replica": "Se o senhor não sabe informar a renda, como chegou ao percentual de 15%?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "A renda é variável, como está na petição. Vamos apresentar o relatório de ganhos do aplicativo dos últimos 12 meses e a declaração de imposto de renda.",
      "avaliacao": {
       "avaliacao": "parcial",
@@ -575,6 +550,29 @@
       ],
       "replica": "E esse relatório vai incluir algum outro trabalho, como o da loja de autopeças?"
      }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "O número ainda não está nos autos e virá com o relatório do aplicativo e o imposto de renda. Mas a pergunta também vale para a outra parte: a contestação diz que Marcos passou a ter salário fixo como gerente e admite não ter cópia das publicações. Se esse vínculo existir, os registros oficiais vão mostrar; se não existir, a versão cai.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta é honesta sobre o número que falta e mostra que a principal alegação contra Marcos também não tem prova.",
+      "pontos_fortes": [
+       "Indica as provas da renda.",
+       "Aponta a admissão de que não há cópia das publicações.",
+       "Propõe verificação por registros oficiais."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Leve o relatório do aplicativo dos últimos 12 meses para a audiência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_juliana.txt",
+        "trecho": "A requerida não possui cópia dessas publicações",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
     }
    ]
   },
@@ -583,35 +581,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Não houve aviso nenhum. Ele só descobriu a mudança quando foi buscar a filha na escola.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta repete a petição, mas nega categoricamente uma mensagem que pode existir e ser exibida pela outra parte.",
-      "pontos_fortes": [
-       "Está de acordo com a versão apresentada na petição."
-      ],
-      "pontos_frageis": [
-       "Se a mensagem de 20/11/2023 aparecer, a credibilidade de todo o relato fica comprometida.",
-       "Não diferencia receber uma mensagem de haver combinação sobre a nova rotina."
-      ],
-      "sugestao": "Confirme com o cliente, antes da audiência, se houve alguma mensagem naquela data, e responda com base no que a conversa exportada mostrar.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "peticao_revisional_marcos.txt",
-        "trecho": "Marcos só soube da mudança quando foi buscar a filha na escola",
-        "conferido": true
-       },
-       {
-        "documento": "contestacao_juliana.txt",
-        "trecho": "avisou Marcos por mensagem de celular em 20/11/2023",
-        "conferido": true
-       }
-      ],
-      "replica": "O senhor autoriza, então, a exibição da conversa de celular do período?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "A mensagem de 20/11/2023 não foi juntada por nenhuma das partes. Mesmo que tenha existido, um aviso por mensagem não resolve como fica a convivência com a filha a 300 km de distância, que é o que pedimos que seja definido.",
      "avaliacao": {
       "avaliacao": "convincente",
@@ -636,6 +605,137 @@
        }
       ],
       "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Recebeu uma mensagem genérica sobre uma proposta de emprego, sem data de mudança nem endereço. Isso não é aviso prévio de que uma criança vai morar a 300 km de distância.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta tenta esvaziar o aviso, mas admite ter recebido a mensagem e descreve um conteúdo que não está nos autos.",
+      "pontos_fortes": [
+       "Mostra por que um aviso por mensagem não bastaria.",
+       "Mantém o foco na distância."
+      ],
+      "pontos_frageis": [
+       "A petição afirma que Marcos não foi avisado.",
+       "O conteúdo da mensagem não foi juntado por ninguém."
+      ],
+      "sugestao": "Não descreva uma mensagem que não está nos autos; aponte que ela não foi juntada e foque na convivência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_revisional_marcos.txt",
+        "trecho": "sem avisar Marcos previamente",
+        "conferido": true
+       }
+      ],
+      "replica": "Então Marcos recebeu a mensagem? A petição diz que ele não foi avisado."
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Marcos trabalha desde maio de 2023 como gerente em uma loja de autopeças?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Não. Desde a demissão ele faz trabalhos informais como motorista de aplicativo, como está na petição.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é firme, mas nega de forma absoluta um fato que pode ser verificado.",
+      "pontos_fortes": [
+       "Coerente com a petição."
+      ],
+      "pontos_frageis": [
+       "Uma negativa categórica é arriscada se houver registro ou testemunha.",
+       "Não aponta que a alegação contrária está sem prova."
+      ],
+      "sugestao": "Aponte a falta de prova da alegação e ofereça a verificação.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_revisional_marcos.txt",
+        "trecho": "sobrevive de trabalhos informais como motorista de aplicativo",
+        "conferido": true
+       }
+      ],
+      "replica": "E se o dono da loja for ouvido como testemunha?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "A própria contestação diz que Juliana não tem cópia das publicações. Marcos nega o vínculo e concorda com ofício ao INSS e à loja, que mostrarão se houve registro ou pagamento.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta aponta a falta de prova da outra parte e oferece a verificação, o que transmite segurança.",
+      "pontos_fortes": [
+       "Usa o documento da outra parte.",
+       "Oferece prova objetiva.",
+       "Não se limita a negar."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Peça também o extrato de ganhos do aplicativo no mesmo período.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_juliana.txt",
+        "trecho": "A requerida não possui cópia",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Quanto custa cada viagem de 300 km para Marcos ver Sofia?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Cerca de metade do que ele ganha em uma semana de aplicativo, e por isso só consegue ir uma vez por mês.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta liga o custo à frequência das visitas, mas não traz nenhum valor comprovado.",
+      "pontos_fortes": [
+       "Explica a frequência mensal."
+      ],
+      "pontos_frageis": [
+       "Estimativa sem número nem comprovante.",
+       "Depende de uma renda que também não está provada."
+      ],
+      "sugestao": "Leve os comprovantes de combustível, pedágio ou passagem.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_revisional_marcos.txt",
+        "trecho": "consegue ver a filha apenas uma vez por mês",
+        "conferido": true
+       }
+      ],
+      "replica": "Qual é o valor em reais, e onde está o comprovante?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "O valor não está nos autos. Vamos juntar os comprovantes de combustível, pedágio e passagens desde janeiro de 2024, que mostram o custo real de cada visita.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é honesta e indica a prova, mas o pedido de divisão das despesas continua sem número.",
+      "pontos_fortes": [
+       "Reconhece a lacuna.",
+       "Delimita o período."
+      ],
+      "pontos_frageis": [
+       "Ainda não há valor para dividir.",
+       "Não liga o custo ao pedido de divisão igual."
+      ],
+      "sugestao": "Apresente uma média mensal assim que reunir os comprovantes.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_revisional_marcos.txt",
+        "trecho": "divisão igual das despesas de deslocamento entre os genitores",
+        "conferido": true
+       }
+      ],
+      "replica": "Então o pedido de dividir as despesas foi feito sem saber quanto elas custam?"
      }
     }
    ]

@@ -371,26 +371,27 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Ele mesmo disse que tinha mais de 200 mil, isso basta.",
+     "texto": "A prova é o comportamento dele: quem tem R$ 35 mil não tira tudo da corretora cinco dias depois da separação. A transferência de 05/07/2024 confirma que a carteira valia muito mais do que ele admite.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta trata como prova suficiente uma mensagem que não foi juntada e que a outra parte contesta.",
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta usa um indício forte, mas o apresenta como prova do saldo, o que ele não é.",
       "pontos_fortes": [
-       "Usa um fato descrito na petição."
+       "Liga a mensagem de fevereiro à conduta posterior.",
+       "Mostra a proximidade entre a separação e a transferência."
       ],
       "pontos_frageis": [
-       "A mensagem não está nos autos.",
-       "O pedido é pelo valor na data da separação, e a mensagem é de fevereiro."
+       "Transferir uma carteira não revela quanto havia nela.",
+       "Não pede o documento que prova o saldo."
       ],
-      "sugestao": "Apresente a mensagem como indício e peça ofício à corretora para obter o saldo exato.",
+      "sugestao": "Trate a transferência como indício e peça ofício à corretora com o saldo da data da separação.",
       "apoio_nos_documentos": [
        {
-        "documento": "contestacao_thiago.txt",
-        "trecho": "A mensagem de fevereiro de 2024 foi uma brincadeira e não corresponde ao saldo real",
+        "documento": "peticao_sabrina.txt",
+        "trecho": "Thiago transferiu as criptomoedas para uma carteira digital própria",
         "conferido": true
        }
       ],
-      "replica": "E se o extrato da corretora mostrar R$ 35 mil em junho de 2024?"
+      "replica": "Transferir uma carteira prova o saldo que havia nela?"
      }
     },
     {
@@ -424,24 +425,27 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Não houve reforma nenhuma.",
+     "texto": "Houve uma reforma pequena, só de pintura, que nem de longe custou R$ 80 mil, e Sabrina não acompanhou nenhuma obra na cozinha.",
      "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta nega categoricamente um fato que pode ser comprovado por fotos, notas ou vizinhos.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Se a reforma for provada, a credibilidade de todo o relato fica comprometida.",
-       "Não indica prova da negativa."
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta tenta reduzir a importância da reforma, mas admite uma obra e dá detalhes que não estão nos autos.",
+      "pontos_fortes": [
+       "Mostra a desproporção entre uma reforma pequena e o valor do empréstimo.",
+       "Nega o acompanhamento da obra."
       ],
-      "sugestao": "Em vez de negar, mostre que a outra parte não comprovou a reforma nem o destino do dinheiro.",
+      "pontos_frageis": [
+       "A petição diz que o dinheiro foi usado em despesas de Thiago, não em reforma.",
+       "Os detalhes da pintura não constam de nenhum documento."
+      ],
+      "sugestao": "Não descreva uma obra que não está nos autos; exija os comprovantes da reforma e o destino do empréstimo.",
       "apoio_nos_documentos": [
        {
-        "documento": "contestacao_thiago.txt",
-        "trecho": "foi usado para reformar a cozinha do apartamento onde o casal morava",
+        "documento": "peticao_sabrina.txt",
+        "trecho": "feito sem conhecimento de Sabrina e usado para despesas dele",
         "conferido": true
        }
       ],
-      "replica": "Então a cozinha do apartamento continua como era em 2022?"
+      "replica": "Então houve reforma? A petição diz que o dinheiro foi usado em despesas dele."
      }
     },
     {
@@ -478,30 +482,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "É óbvio que ele quis esconder, fez isso logo depois da separação.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta transforma a coincidência de datas em certeza sobre a intenção, sem nenhuma prova adicional.",
-      "pontos_fortes": [
-       "Usa a proximidade de datas, que está nos autos."
-      ],
-      "pontos_frageis": [
-       "Intenção não se presume apenas pela data.",
-       "Não enfrenta a explicação de instabilidade da corretora."
-      ],
-      "sugestao": "Apresente a data como indício e peça perícia na carteira para verificar movimentações posteriores.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "peticao_sabrina.txt",
-        "trecho": "Em 05/07/2024, poucos dias depois da separação",
-        "conferido": true
-       }
-      ],
-      "replica": "Instabilidade de corretora não é motivo razoável para proteger o dinheiro?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "A transferência ocorreu cinco dias após a separação, para uma carteira fora da corretora, e a instabilidade alegada não tem nenhuma prova. A perícia na carteira vai mostrar se houve movimentação depois disso.",
      "avaliacao": {
       "avaliacao": "parcial",
@@ -522,6 +502,135 @@
        }
       ],
       "replica": "E se a perícia mostrar que o saldo continua intacto na carteira?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Ainda não há prova da intenção, e o pedido não depende dela. Sabrina pede a partilha pelo valor da data da separação, 30/06/2024: o que foi feito com a carteira depois disso não muda o valor a dividir. A transferência só reforça a necessidade de ofício à corretora e de perícia na carteira.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta não afirma uma intenção que não pode provar e mostra que a tese se sustenta sem ela, pelo critério da data da separação.",
+      "pontos_fortes": [
+       "Separa intenção de valor a partilhar.",
+       "Usa o próprio pedido para definir a data.",
+       "Indica as provas técnicas."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Formalize o pedido de ofício à corretora antes da audiência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_sabrina.txt",
+        "trecho": "pelo valor da data da separação de fato",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Como Sabrina não soube de um empréstimo de R$ 80 mil, se o dinheiro do casal passava pela mesma conta?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Sabrina não assinou o contrato, e a petição afirma que ela não sabia. A resposta objetiva está no extrato: pedimos ao banco a conta em que o crédito entrou e o caminho do dinheiro. Se ele foi usado na reforma, Thiago terá como mostrar; até agora, não mostrou.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta não inventa detalhes, indica a prova decisiva e devolve o ônus a quem alega a reforma.",
+      "pontos_fortes": [
+       "Não afirma o que não sabe.",
+       "Pede prova objetiva.",
+       "Aponta a falta de prova da versão contrária."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Peça também notas fiscais de materiais em nome de qualquer dos dois.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_thiago.txt",
+        "trecho": "foi usado para reformar a cozinha",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Thiago contratou o empréstimo sozinho, por aplicativo, e o valor caiu numa conta só dele.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta explica o desconhecimento, mas afirma detalhes que nenhum documento mostra.",
+      "pontos_fortes": [
+       "Mantém a versão da petição."
+      ],
+      "pontos_frageis": [
+       "Nenhum documento diz em que conta o dinheiro entrou.",
+       "O contrato pode desmentir o meio de contratação."
+      ],
+      "sugestao": "Diga que o extrato do crédito vai mostrar a conta de destino.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_sabrina.txt",
+        "trecho": "O empréstimo pessoal de R$ 80 mil contratado por Thiago em 03/2023",
+        "conferido": true
+       }
+      ],
+      "replica": "Qual conta? Há extrato mostrando isso?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Por que as criptomoedas devem ser divididas pelo valor da separação, e não pelo valor atual, se o mercado oscila para os dois lados?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Porque Thiago ficou sozinho com o controle das moedas e as transferiu para uma carteira própria poucos dias depois da separação. Sabrina não pode assumir o risco de decisões que não tomou.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta liga o critério ao controle exclusivo de Thiago, mas ainda não há prova do valor na data da separação.",
+      "pontos_fortes": [
+       "Usa a transferência como fato relevante.",
+       "Argumento de equidade claro."
+      ],
+      "pontos_frageis": [
+       "O valor na data da separação não está provado.",
+       "O argumento explica perdas, mas não ganhos."
+      ],
+      "sugestao": "Peça à corretora o saldo em 30/06/2024 para dar número ao argumento.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_sabrina.txt",
+        "trecho": "Thiago transferiu as criptomoedas para",
+        "conferido": true
+       }
+      ],
+      "replica": "E se a carteira valer mais hoje, Sabrina aceita receber o valor menor?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Porque foi na separação que o patrimônio comum deixou de existir, e o que acontece depois é risco de quem ficou com a carteira.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta dá um critério claro, mas não mostra apoio nos documentos e ignora o cenário de valorização.",
+      "pontos_fortes": [
+       "Fixa um marco temporal objetivo."
+      ],
+      "pontos_frageis": [
+       "Afirmação de critério jurídico sem apoio nos autos.",
+       "Se o valor subir depois, o mesmo critério tira de Sabrina a valorização."
+      ],
+      "sugestao": "Explique por que o critério continua justo se a carteira se valorizar.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_sabrina.txt",
+        "trecho": "Partilha igualitária das criptomoedas compradas durante o casamento",
+        "conferido": true
+       }
+      ],
+      "replica": "E se a carteira tivesse dobrado de valor depois da separação?"
      }
     }
    ]

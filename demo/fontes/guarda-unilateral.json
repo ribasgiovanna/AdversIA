@@ -13,93 +13,405 @@
     "categoria": "lacuna_probatoria",
     "texto": "O argumento central é condicional: a guarda compartilhada deixaria de ser adequada \"se\" houver prejuízo. Nenhum documento descreve prejuízo concreto à filha.",
     "provenance": "INFERENCE",
-    "origem": [{"documento": "argumentos_guarda_unilateral.txt", "trecho": "Se a convivência entre os responsáveis estiver causando prejuízo à criança, a guarda compartilhada pode deixar de ser adequada"}]
+    "origem": [
+     {
+      "documento": "argumentos_guarda_unilateral.txt",
+      "trecho": "Se a convivência entre os responsáveis estiver causando prejuízo à criança, a guarda compartilhada pode deixar de ser adequada"
+     }
+    ]
    },
    {
     "id": "lacuna-alienacao",
     "categoria": "lacuna_probatoria",
     "texto": "A alienação parental aparece como hipótese genérica, sem nenhum episódio, data ou avaliação técnica.",
     "provenance": "INFERENCE",
-    "origem": [{"documento": "argumentos_guarda_unilateral.txt", "trecho": "Situações de alienação parental ou outros comportamentos prejudiciais podem justificar uma solução diferente"}]
+    "origem": [
+     {
+      "documento": "argumentos_guarda_unilateral.txt",
+      "trecho": "Situações de alienação parental ou outros comportamentos prejudiciais podem justificar uma solução diferente"
+     }
+    ]
    },
    {
     "id": "lacuna-dados-filha",
     "categoria": "lacuna_probatoria",
     "texto": "Não há nenhum dado sobre a filha: idade, com quem mora, escola, saúde ou rotina de convivência atual.",
     "provenance": "INFERENCE",
-    "origem": [{"documento": "argumentos_guarda_compartilhada.txt", "trecho": "qual seria a melhor modalidade de guarda da filha"}]
+    "origem": [
+     {
+      "documento": "argumentos_guarda_compartilhada.txt",
+      "trecho": "qual seria a melhor modalidade de guarda da filha"
+     }
+    ]
    },
    {
     "id": "argumento-responsabilidade",
     "categoria": "contra_argumento",
     "texto": "A genitora sustentará que ambos os pais têm responsabilidade sobre a criança e que retirar um deles das decisões exige motivo concreto.",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "argumentos_guarda_compartilhada.txt", "trecho": "Ambos os pais possuem responsabilidade sobre a criança"}]
+    "origem": [
+     {
+      "documento": "argumentos_guarda_compartilhada.txt",
+      "trecho": "Ambos os pais possuem responsabilidade sobre a criança"
+     }
+    ]
    },
    {
     "id": "argumento-conflito",
     "categoria": "contra_argumento",
     "texto": "O conflito entre os adultos, sozinho, será apresentado como insuficiente para afastar a guarda compartilhada, o que obriga o genitor a mostrar mais do que desentendimento.",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "argumentos_guarda_compartilhada.txt", "trecho": "O conflito entre os adultos não deveria automaticamente retirar de um deles a participação nas decisões sobre o filho"}]
+    "origem": [
+     {
+      "documento": "argumentos_guarda_compartilhada.txt",
+      "trecho": "O conflito entre os adultos não deveria automaticamente retirar de um deles a participação nas decisões sobre o filho"
+     }
+    ]
    },
    {
     "id": "argumento-interesse",
     "categoria": "contra_argumento",
     "texto": "O argumento do melhor interesse da criança serve aos dois lados: a genitora dirá que o interesse da filha é conviver com ambos.",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "argumentos_guarda_compartilhada.txt", "trecho": "A criança tem direito à convivência com ambos"}]
+    "origem": [
+     {
+      "documento": "argumentos_guarda_compartilhada.txt",
+      "trecho": "A criança tem direito à convivência com ambos"
+     }
+    ]
    },
    {
     "id": "pergunta-prejuizo",
     "categoria": "pergunta_dificil",
     "texto": "Qual prejuízo concreto a filha sofre hoje com a guarda compartilhada?",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "argumentos_guarda_unilateral.txt", "trecho": "estiver causando prejuízo à criança"}]
+    "origem": [
+     {
+      "documento": "argumentos_guarda_unilateral.txt",
+      "trecho": "estiver causando prejuízo à criança"
+     }
+    ]
    },
    {
     "id": "pergunta-alternativa",
     "categoria": "pergunta_dificil",
     "texto": "Por que medidas menos drásticas, como acompanhamento psicológico ou regras claras de convivência, não resolveriam?",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "argumentos_guarda_unilateral.txt", "trecho": "podem justificar uma solução diferente"}]
+    "origem": [
+     {
+      "documento": "argumentos_guarda_unilateral.txt",
+      "trecho": "podem justificar uma solução diferente"
+     }
+    ]
    },
    {
     "id": "pergunta-comportamentos",
     "categoria": "pergunta_dificil",
     "texto": "Que comportamentos prejudiciais, além da alegação de alienação parental, foram observados, e por quem?",
     "provenance": "ADVERSARIAL_HYPOTHESIS",
-    "origem": [{"documento": "argumentos_guarda_unilateral.txt", "trecho": "outros comportamentos prejudiciais"}]
+    "origem": [
+     {
+      "documento": "argumentos_guarda_unilateral.txt",
+      "trecho": "outros comportamentos prejudiciais"
+     }
+    ]
    }
   ],
   "linha_do_tempo": [],
   "plano_de_provas": [
-   {"prova": "Estudo psicossocial com os pais e a filha", "finalidade": "Verificar se existe prejuízo concreto e se há alienação parental.", "como_obter": "Requerer ao juízo o estudo pela equipe técnica.", "prioridade": "alta", "apontamentos": ["lacuna-prejuizo", "lacuna-alienacao", "pergunta-prejuizo"]},
-   {"prova": "Registro dos comportamentos alegados, com datas e testemunhas", "finalidade": "Dar concretude às situações que justificariam a guarda unilateral.", "como_obter": "Reunir mensagens, relatos da escola e indicar testemunhas que presenciaram os fatos.", "prioridade": "alta", "apontamentos": ["lacuna-alienacao", "pergunta-comportamentos", "argumento-conflito"]},
-   {"prova": "Relatórios escolar e de saúde da filha", "finalidade": "Mostrar a situação real da criança e informar os dados que faltam.", "como_obter": "Solicitar à escola e ao pediatra relatórios atualizados.", "prioridade": "media", "apontamentos": ["lacuna-dados-filha", "argumento-interesse"]},
-   {"prova": "Proposta escrita de convivência com a genitora em caso de guarda unilateral", "finalidade": "Mostrar que o pedido não busca afastar a mãe da filha.", "como_obter": "Elaborar com o cliente um calendário de convivência e juntar ao processo.", "prioridade": "media", "apontamentos": ["argumento-responsabilidade", "pergunta-alternativa"]}
+   {
+    "prova": "Estudo psicossocial com os pais e a filha",
+    "finalidade": "Verificar se existe prejuízo concreto e se há alienação parental.",
+    "como_obter": "Requerer ao juízo o estudo pela equipe técnica.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "lacuna-prejuizo",
+     "lacuna-alienacao",
+     "pergunta-prejuizo"
+    ]
+   },
+   {
+    "prova": "Registro dos comportamentos alegados, com datas e testemunhas",
+    "finalidade": "Dar concretude às situações que justificariam a guarda unilateral.",
+    "como_obter": "Reunir mensagens, relatos da escola e indicar testemunhas que presenciaram os fatos.",
+    "prioridade": "alta",
+    "apontamentos": [
+     "lacuna-alienacao",
+     "pergunta-comportamentos",
+     "argumento-conflito"
+    ]
+   },
+   {
+    "prova": "Relatórios escolar e de saúde da filha",
+    "finalidade": "Mostrar a situação real da criança e informar os dados que faltam.",
+    "como_obter": "Solicitar à escola e ao pediatra relatórios atualizados.",
+    "prioridade": "media",
+    "apontamentos": [
+     "lacuna-dados-filha",
+     "argumento-interesse"
+    ]
+   },
+   {
+    "prova": "Proposta escrita de convivência com a genitora em caso de guarda unilateral",
+    "finalidade": "Mostrar que o pedido não busca afastar a mãe da filha.",
+    "como_obter": "Elaborar com o cliente um calendário de convivência e juntar ao processo.",
+    "prioridade": "media",
+    "apontamentos": [
+     "argumento-responsabilidade",
+     "pergunta-alternativa"
+    ]
+   }
   ]
  },
  "audiencia": [
   {
    "pergunta": "Qual prejuízo concreto a filha sofre hoje com a guarda compartilhada?",
    "respostas": [
-    {"rotulo": "Resposta A", "texto": "A menina sofre muito, está sempre triste e com medo.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta descreve sofrimento que nenhum documento registra, sem relatório ou avaliação que o confirme.", "pontos_fortes": [], "pontos_frageis": ["Nenhum documento menciona tristeza ou medo da filha.", "Afirmações sobre o estado emocional exigem avaliação técnica."], "sugestao": "Diga que o prejuízo será apurado pelo estudo psicossocial e pelos relatórios da escola, sem antecipar conclusões.", "apoio_nos_documentos": [{"documento": "argumentos_guarda_unilateral.txt", "trecho": "Se a convivência entre os responsáveis estiver causando prejuízo à criança"}], "replica": "Algum profissional já registrou esse medo?"}},
-    {"rotulo": "Resposta B", "texto": "O prejuízo será demonstrado pelo estudo psicossocial e pelos relatórios da escola. O pedido não se baseia no conflito entre os pais, e sim no efeito que a convivência atual tem sobre a filha.", "avaliacao": {"avaliacao": "parcial", "resumo": "Sua resposta separa corretamente conflito de prejuízo, mas ainda não aponta nenhum prejuízo verificável.", "pontos_fortes": ["Não inventa o estado emocional da criança.", "Indica a prova técnica adequada."], "pontos_frageis": ["O argumento central continua condicional."], "sugestao": "Levante com o cliente fatos observáveis, como faltas escolares ou mudanças de comportamento registradas.", "apoio_nos_documentos": [{"documento": "argumentos_guarda_compartilhada.txt", "trecho": "O conflito entre os adultos não deveria automaticamente retirar de um deles a participação nas decisões sobre o filho"}], "replica": "E se o estudo não encontrar prejuízo?"}}
+    {
+     "rotulo": "Resposta A",
+     "texto": "A filha fica no meio de decisões que os pais não conseguem tomar juntos: escola, saúde, rotina. Com a guarda compartilhada, cada decisão vira disputa, e quem paga o preço é ela.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta descreve bem o impacto possível sobre a filha, mas não aponta nenhum episódio concreto e se apoia no conflito entre os pais.",
+      "pontos_fortes": [
+       "Traz a discussão para a perspectiva da criança.",
+       "Explica por que a guarda compartilhada pode não funcionar."
+      ],
+      "pontos_frageis": [
+       "A outra parte sustenta justamente que o conflito, sozinho, não basta.",
+       "Nenhuma decisão frustrada é indicada."
+      ],
+      "sugestao": "Traga um exemplo concreto, com data, em que o desacordo prejudicou a filha.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "argumentos_guarda_compartilhada.txt",
+        "trecho": "O conflito entre os adultos não deveria automaticamente retirar de um deles a"
+       }
+      ],
+      "replica": "Qual decisão sobre escola ou saúde deixou de ser tomada por causa do desacordo?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "O prejuízo será demonstrado pelo estudo psicossocial e pelos relatórios da escola. O pedido não se baseia no conflito entre os pais, e sim no efeito que a convivência atual tem sobre a filha.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta separa corretamente conflito de prejuízo, mas ainda não aponta nenhum prejuízo verificável.",
+      "pontos_fortes": [
+       "Não inventa o estado emocional da criança.",
+       "Indica a prova técnica adequada."
+      ],
+      "pontos_frageis": [
+       "O argumento central continua condicional."
+      ],
+      "sugestao": "Levante com o cliente fatos observáveis, como faltas escolares ou mudanças de comportamento registradas.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "argumentos_guarda_compartilhada.txt",
+        "trecho": "O conflito entre os adultos não deveria automaticamente retirar de um deles a participação nas decisões sobre o filho"
+       }
+      ],
+      "replica": "E se o estudo não encontrar prejuízo?"
+     }
+    }
    ]
   },
   {
    "pergunta": "Por que medidas menos drásticas, como acompanhamento psicológico ou regras claras de convivência, não resolveriam?",
    "respostas": [
-    {"rotulo": "Resposta A", "texto": "Nada funciona com essa mãe.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta desqualifica a genitora sem nenhum fato e ainda sugere que medidas intermediárias nem foram tentadas.", "pontos_fortes": [], "pontos_frageis": ["Nenhum documento relata tentativas frustradas.", "O tom pessoal enfraquece o pedido."], "sugestao": "Mostre abertura a medidas intermediárias e deixe a guarda unilateral condicionada ao resultado da avaliação técnica.", "apoio_nos_documentos": [{"documento": "argumentos_guarda_compartilhada.txt", "trecho": "Ambos os pais possuem responsabilidade sobre a criança"}], "replica": "Quais medidas já foram tentadas, então?"}},
-    {"rotulo": "Resposta B", "texto": "O genitor aceita acompanhamento e regras de convivência, e pede a guarda unilateral apenas se a avaliação técnica mostrar prejuízo à filha, que é o critério que ele mesmo defende.", "avaliacao": {"avaliacao": "convincente", "resumo": "Sua resposta é coerente com o próprio argumento do genitor, demonstra boa-fé e desloca a decisão para a avaliação técnica.", "pontos_fortes": ["Coerente com o critério do prejuízo apresentado nos documentos.", "Mostra disposição para soluções intermediárias."], "pontos_frageis": [], "sugestao": "Formalize a proposta de medidas intermediárias por escrito.", "apoio_nos_documentos": [{"documento": "argumentos_guarda_unilateral.txt", "trecho": "Se a convivência entre os responsáveis estiver causando prejuízo à criança, a guarda compartilhada pode deixar de ser adequada"}], "replica": ""}}
+    {
+     "rotulo": "Resposta A",
+     "texto": "Medidas intermediárias já foram tentadas sem resultado, e cada nova tentativa expõe a criança a mais conflito. Quando o prejuízo já existe, esperar mais uma rodada de acompanhamento é priorizar os adultos, e não a filha.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é firme e centrada na criança, mas afirma tentativas anteriores que não estão nos autos.",
+      "pontos_fortes": [
+       "Usa o critério do interesse da criança.",
+       "Mostra urgência."
+      ],
+      "pontos_frageis": [
+       "Nenhum documento registra medidas já tentadas.",
+       "Recusar medidas intermediárias pode parecer intransigência."
+      ],
+      "sugestao": "Não afirme tentativas que não estão documentadas; aceite as medidas intermediárias como etapa.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "argumentos_guarda_unilateral.txt",
+        "trecho": "O interesse da criança deve prevalecer sobre a preferência dos pais"
+       }
+      ],
+      "replica": "Quais medidas foram tentadas, e onde isso está nos autos?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "O genitor aceita acompanhamento e regras de convivência, e pede a guarda unilateral apenas se a avaliação técnica mostrar prejuízo à filha, que é o critério que ele mesmo defende.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta é coerente com o próprio argumento do genitor, demonstra boa-fé e desloca a decisão para a avaliação técnica.",
+      "pontos_fortes": [
+       "Coerente com o critério do prejuízo apresentado nos documentos.",
+       "Mostra disposição para soluções intermediárias."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Formalize a proposta de medidas intermediárias por escrito.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "argumentos_guarda_unilateral.txt",
+        "trecho": "Se a convivência entre os responsáveis estiver causando prejuízo à criança, a guarda compartilhada pode deixar de ser adequada"
+       }
+      ],
+      "replica": ""
+     }
+    }
    ]
   },
   {
    "pergunta": "Que comportamentos prejudiciais, além da alegação de alienação parental, foram observados, e por quem?",
    "respostas": [
-    {"rotulo": "Resposta A", "texto": "Vários comportamentos, a família inteira já percebeu.", "avaliacao": {"avaliacao": "fragil", "resumo": "Sua resposta não nomeia nenhum comportamento e se apoia em observações de pessoas que não aparecem nos documentos.", "pontos_fortes": [], "pontos_frageis": ["Nenhum comportamento é descrito.", "A família do genitor não é testemunha isenta."], "sugestao": "Descreva episódios específicos e indique quem, fora da família, pode confirmá-los.", "apoio_nos_documentos": [{"documento": "argumentos_guarda_unilateral.txt", "trecho": "outros comportamentos prejudiciais"}], "replica": "Cite um único comportamento, com data."}},
-    {"rotulo": "Resposta B", "texto": "Os comportamentos serão descritos com datas e confirmados por relatos da escola, e requeremos a avaliação técnica. Não pedimos que a alienação seja presumida.", "avaliacao": {"avaliacao": "parcial", "resumo": "Sua resposta é cuidadosa e indica provas de terceiros, mas ainda não descreve nenhum comportamento.", "pontos_fortes": ["Evita presunções.", "Indica fontes independentes."], "pontos_frageis": ["A pergunta continua sem nenhum exemplo concreto."], "sugestao": "Leve ao menos um episódio documentado para a audiência.", "apoio_nos_documentos": [{"documento": "argumentos_guarda_unilateral.txt", "trecho": "Situações de alienação parental ou outros comportamentos prejudiciais podem justificar uma solução diferente"}], "replica": "E a escola já registrou algum desses episódios?"}}
+    {
+     "rotulo": "Resposta A",
+     "texto": "Nenhum comportamento além da alegação de alienação está descrito nos documentos, e não vamos inventar. O genitor pede justamente que a situação seja avaliada por quem tem competência técnica, com estudo psicossocial e escuta da criança, antes de qualquer decisão sobre a guarda.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta é honesta sobre o que falta, coerente com o argumento de que outros comportamentos precisam ser avaliados e aponta a prova adequada.",
+      "pontos_fortes": [
+       "Não inventa fatos.",
+       "Liga o pedido à avaliação técnica.",
+       "Mantém a credibilidade do genitor."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Indique ao juízo quais pessoas podem ser ouvidas no estudo psicossocial.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "argumentos_guarda_unilateral.txt",
+        "trecho": "outros comportamentos prejudiciais podem justificar"
+       }
+      ],
+      "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Os comportamentos serão descritos com datas e confirmados por relatos da escola, e requeremos a avaliação técnica. Não pedimos que a alienação seja presumida.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta é cuidadosa e indica provas de terceiros, mas ainda não descreve nenhum comportamento.",
+      "pontos_fortes": [
+       "Evita presunções.",
+       "Indica fontes independentes."
+      ],
+      "pontos_frageis": [
+       "A pergunta continua sem nenhum exemplo concreto."
+      ],
+      "sugestao": "Leve ao menos um episódio documentado para a audiência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "argumentos_guarda_unilateral.txt",
+        "trecho": "Situações de alienação parental ou outros comportamentos prejudiciais podem justificar uma solução diferente"
+       }
+      ],
+      "replica": "E a escola já registrou algum desses episódios?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "O genitor aceitaria manter a filha convivendo regularmente com a mãe se tiver a guarda unilateral?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Sim. A guarda unilateral trata de quem decide; a convivência com a mãe continua sendo direito da criança e deve ser ampla, com calendário definido. O genitor não pede o afastamento da mãe.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta separa guarda de convivência e reduz o receio de afastamento.",
+      "pontos_fortes": [
+       "Reconhece o direito da criança à convivência.",
+       "Propõe calendário claro."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Leve uma proposta de calendário de convivência.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "argumentos_guarda_compartilhada.txt",
+        "trecho": "A criança tem direito à convivência com ambos"
+       }
+      ],
+      "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Aceitaria, desde que as visitas sejam supervisionadas até que a alienação seja esclarecida.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta mostra cautela, mas pede supervisão sem nenhum fato concreto que a justifique.",
+      "pontos_fortes": [
+       "Mantém a convivência."
+      ],
+      "pontos_frageis": [
+       "Supervisão sem fundamento parece punição.",
+       "Nenhum ato concreto foi descrito."
+      ],
+      "sugestao": "Condicione medidas restritivas ao resultado da avaliação técnica.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "argumentos_guarda_unilateral.txt",
+        "trecho": "Situações de alienação parental ou outros comportamentos prejudiciais podem"
+       }
+      ],
+      "replica": "Supervisão com base em quê, se nenhum ato concreto foi descrito?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Por que o conflito entre os pais, por si só, justificaria retirar da mãe a participação nas decisões?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Porque, quando os pais não conseguem conversar, alguém precisa ter a palavra final para proteger a criança.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta traz um argumento prático, mas justifica o pedido exatamente pelo conflito, que a outra parte diz não bastar.",
+      "pontos_fortes": [
+       "Mostra um problema real de decisão."
+      ],
+      "pontos_frageis": [
+       "Não aponta prejuízo à criança.",
+       "Contraria o próprio critério do pedido."
+      ],
+      "sugestao": "Apoie o pedido no prejuízo à criança, e não no conflito.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "argumentos_guarda_compartilhada.txt",
+        "trecho": "O conflito entre os adultos não deveria automaticamente retirar de um deles a"
+       }
+      ],
+      "replica": "Então o pedido se baseia só no conflito?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Não justificaria, e o genitor não sustenta isso. O pedido se apoia no prejuízo à criança, que precisa ser demonstrado pela avaliação técnica. Se ela não apontar prejuízo, a guarda compartilhada pode ser mantida com regras claras.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta concorda com o limite correto e mostra coerência com o próprio fundamento do pedido.",
+      "pontos_fortes": [
+       "Evita a armadilha da pergunta.",
+       "Aceita o resultado técnico."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Prepare-se para explicar qual prejuízo será avaliado.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "argumentos_guarda_unilateral.txt",
+        "trecho": "Se a convivência entre os responsáveis estiver causando prejuízo à criança"
+       }
+      ],
+      "replica": ""
+     }
+    }
    ]
   }
  ]

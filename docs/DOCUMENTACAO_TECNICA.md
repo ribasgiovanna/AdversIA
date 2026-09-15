@@ -653,14 +653,15 @@ próprio back-end. `app.js` em `"use strict"`, carregado no fim do `<body>`.
 | Movimento | `movimentoReduzido()`, digitação do título (50 ms por letra), digitação do exemplo da tese, preenchimento "digitado" do caso, troca suave, `revelarAoRolar` (IntersectionObserver) |
 | Acessibilidade | preferências (tema, escala 0,9 a 1,75, contraste, espaçamento, animações) persistidas em `localStorage` |
 | Formulário | lista de arquivos (sem duplicar nome), arrastar e soltar, validação local com foco no campo com erro |
-| Modos | `configurarModo`/`aplicarModo`: rádios "Demonstração" e "Meus documentos"; troca títulos, ajudas e campos visíveis (`data-modo` no formulário); a validação muda por modo |
-| Casos de exemplo | componente próprio de lista de seleção (padrão ARIA *select-only combobox*: setas, Home/End, Enter/Espaço, Esc, Tab, busca por letra, fecha ao clicar fora); lê `demo/indice.json`; ao escolher, busca `demo/casos/<id>.json` e mostra documentos e tese somente leitura |
+| Telas (ADR-020) | `trocarTela`: uma tela por vez (início, casos, documentos, progresso, erro, relatório), com View Transitions quando disponível; `irParaCasos` (demonstração) e `irParaDocumentos` (área da gestão) |
+| Exportar PDF (ADR-022) | `beforeprint` → `montarDocumentoImpressao()` preenche `#documento-impressao` (identificação, tese, síntese, vulnerabilidades numeradas, cronologia e plano de diligências em tabelas); no `@media print` só esse elemento aparece, em A4 com "Página N de M" |
+| Casos de exemplo | lê `demo/indice.json`; filtro por tipo em botões (`aria-pressed`) e grade de cartões; ao escolher, busca `demo/casos/<id>.json` e mostra a barra fixa com "Ver documentos" (janela `<dialog>`) e "Analisar caso" |
 | Análise (demonstração) | `executarDemonstracao`: etapas com duração fixa (`DURACAO_ETAPAS_DEMO`, ~10 s), anunciadas ao leitor de tela; depois renderiza o relatório pré-montado com o selo de demonstração |
 | Análise (real) | `executarAnaliseReal`: um `POST api/analisar` com `X-Anthropic-Key`; etapas avançam por tempo estimado (`INICIO_ETAPAS_REAL`); guarda `{documentos, tese, chave}` em `contextoReal`, só em memória |
 | Relatório | nomes numerados por categoria ("Falta de prova 2"); cartões com selo de conferência; placar; abas com teclado (setas, Home, End) |
 | Linha do tempo | lista ordenada, marcador de divergência, selo de conferência |
 | Plano de provas | agrupado por prioridade, checkbox com contador, botões de vínculo que trocam de aba, rolam até o apontamento e o destacam |
-| Simulação | demonstração: botões com respostas prontas (`escolherRespostaDemo`) e avaliação pré-montada; real: resposta digitada ou por **ditado** (`SpeechRecognition`, pt-BR), `POST api/audiencia` com documentos e tese da memória, avaliação, réplica (só no modo real), próxima pergunta, resumo final |
+| Simulação (chat, ADR-018) | janela de conversa (`role="log"`) com mensagens do advogado da parte contrária, da pessoa e da AdversIA, indicador "digitando", réplica como nova mensagem e resumo final com "Recomeçar"; demonstração: sugestões de resposta prontas (`escolherRespostaDemo`) e avaliação pré-montada; real: caixa de texto que cresce (Enter envia, Shift+Enter quebra linha), **ditado** (`SpeechRecognition`, pt-BR) e `POST api/audiencia`; em erro, a resposta volta para a caixa |
 | Leitura em voz alta | `speechSynthesis`, voz pt-BR quando disponível |
 
 **Segurança no DOM:** **nenhum uso de `innerHTML`, `insertAdjacentHTML`, `eval` ou
@@ -683,8 +684,14 @@ aba (variáveis JavaScript), nunca em `localStorage`, `sessionStorage` ou cookie
   `prefers-reduced-motion` ou `[data-movimento="reduzido"]`.
 - Impressão: esconde controles e a simulação, mostra todas as abas e força visíveis os
   blocos ainda não revelados.
-- Responsivo: grids com `auto-fit`/`minmax`; linha do tempo muda de 3 para 2 colunas abaixo
-  de 600 px; sem rolagem horizontal em 400 px (verificado).
+- Responsivo (ADR-017): largura máxima de 1560 px com margens e tamanho de texto fluidos
+  (`clamp`); a partir de 1100 px a tela inicial vira duas colunas (apresentação fixa à
+  esquerda, formulário à direita), o cabeçalho do relatório põe a tese ao lado do título e
+  apontamentos e provas ficam em grade; linha do tempo muda de 3 para 2 colunas abaixo de
+  600 px; sem rolagem horizontal em 400 px (verificado).
+- Vidro fosco (ADR-017): `backdrop-filter` em cartões, cabeçalho e abas (fixas abaixo do
+  cabeçalho, com `--altura-topo` medido por `ResizeObserver`) sobre um fundo com gradientes
+  suaves; desligado no alto contraste, com `prefers-reduced-transparency` e na impressão.
 
 ---
 
@@ -959,9 +966,16 @@ python -m pytest                   # suíte completa: exige ANTHROPIC_API_KEY e 
 | 013 | Linha do tempo, plano de provas, simulação de audiência e conferência de trechos |
 | 014 | Vercel, modo demonstração pré-montado (32 casos fictícios) e chave da Anthropic do próprio usuário |
 | 015 | Análise com documentos exclusiva da gestão, por código de acesso |
+| 016 | Identidade visual creme, grafite e bordô; relatório com blocos recolhíveis |
+| 017 | Vidro fosco em cartões e abas; layout fluido que acompanha a largura da tela |
+| 018 | Simulação de audiência em formato de chat |
+| 019 | Paleta reduzida: bordô, grafite e creme, com verde, âmbar e vermelho só para significado; categorias por ícone |
+| 020 | Redesenho da interface: uma ação por tela, revelação progressiva e transições |
+| 021 | Relatório com abas horizontais e sublinhado deslizante, no lugar da navegação lateral |
+| 022 | PDF como documento técnico próprio, 5 perguntas por caso na simulação, bordão no topo, sem selos e sem rodapé de avisos na página |
 
 - **Outros documentos:** `CONFORMIDADE.md` (acessibilidade, LGPD, segurança),
-  `CATALOGO_DE_SITUACOES.md` (casos fictícios e fontes públicas dos temas), `COSTS.md`,
+  `CATALOGO_DE_SITUACOES.md` (casos fictícios e fontes públicas dos temas), `REQUISITOS_UX.md` (critérios de experiência de uso), `COSTS.md`,
   `RISKS.md`, `METRICS.md`, `BACKLOG.md`, `PRODUCT_SCOPE.md`, `ANALISE_CASOS_FAMILIA.md`,
   `ADVERSIA_PROJECT_FOUNDATION_V1.md`.
 

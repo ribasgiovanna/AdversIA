@@ -243,28 +243,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Ela está enrolando no curso só para continuar recebendo.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta acusa Mariana de má-fé sem nenhum dado nos documentos que sustente isso.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Nenhum documento indica atraso ou abandono do curso.",
-       "O tom acusatório tende a enfraquecer a credibilidade do pedido."
-      ],
-      "sugestao": "Peça que Mariana informe a previsão de conclusão e proponha a manutenção da pensão apenas até esse prazo.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "contestacao_mariana.txt",
-        "trecho": "Ainda está estudando e buscando qualificação profissional, cursando um curso técnico",
-        "conferido": true
-       }
-      ],
-      "replica": "O senhor tem algum documento que mostre que ela está atrasada no curso?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "Nenhum documento informa a duração do curso. Pedimos que Mariana junte a matrícula com a previsão de conclusão e propomos que a pensão seja mantida só até esse prazo, com redução imediata pela renda que ela já recebe.",
      "avaliacao": {
       "avaliacao": "convincente",
@@ -285,6 +263,31 @@
       ],
       "replica": ""
      }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Com a maioridade, acaba o dever de sustento que decorre do poder familiar; o que pode continuar é a ajuda para os estudos, que depende de prova de matrícula e de aproveitamento. Mariana já trabalha e não comprovou nada disso, então a pensão deve cessar agora, e ela pode pedir de novo se provar a necessidade.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta distingue bem o fundamento da pensão depois da maioridade, mas pede o corte imediato e não responde sobre o prazo do curso.",
+      "pontos_fortes": [
+       "Explica por que a situação mudou com a maioridade.",
+       "Aponta a falta de comprovantes do curso."
+      ],
+      "pontos_frageis": [
+       "A própria petição reconhece que Mariana cursa técnico.",
+       "Não informa quando o curso termina, que é o que foi perguntado."
+      ],
+      "sugestao": "Responda diretamente sobre o prazo do curso e ofereça uma data final, em vez de pedir o corte imediato.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_roberto.txt",
+        "trecho": "iniciou um curso técnico",
+        "conferido": true
+       }
+      ],
+      "replica": "Então o senhor quer interromper a pensão no meio do curso que o próprio pedido reconhece?"
+     }
     }
    ]
   },
@@ -293,28 +296,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Uma pessoa jovem vive muito bem com R$ 1.400,00.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta usa uma opinião geral no lugar dos dados que a pergunta pede.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "Não há nos documentos informação sobre o custo de vida de Mariana.",
-       "Ignora as despesas com o curso."
-      ],
-      "sugestao": "Mostre que é Mariana quem precisa demonstrar as despesas que alega não conseguir pagar.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "contestacao_mariana.txt",
-        "trecho": "não é suficiente para arcar sozinha com todas as suas despesas",
-        "conferido": true
-       }
-      ],
-      "replica": "E as mensalidades do curso técnico entram nessa conta?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "Mariana afirma que a renda não basta, mas não lista nenhuma despesa. Sem esses números, não é possível afirmar que ela continua dependendo da pensão no valor atual.",
      "avaliacao": {
       "avaliacao": "parcial",
@@ -336,6 +317,29 @@
       ],
       "replica": "E quanto o senhor paga hoje de pensão?"
      }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Hoje não se sabe, porque Mariana não informou nenhuma despesa. Roberto vai juntar os próprios rendimentos, e pedimos que Mariana apresente a planilha com curso, transporte e moradia. Com os números dos dois lados, o juízo fixa um valor proporcional.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta aponta a falta de prova da outra parte sem se esconder atrás dela: oferece os próprios números e propõe um critério objetivo.",
+      "pontos_fortes": [
+       "Aponta que a contestação não traz despesas.",
+       "Compromete Roberto com a própria prova.",
+       "Propõe solução proporcional."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Leve os comprovantes de rendimentos de Roberto já organizados.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_mariana.txt",
+        "trecho": "não é suficiente para arcar sozinha com todas as suas despesas",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
     }
    ]
   },
@@ -344,28 +348,6 @@
    "respostas": [
     {
      "rotulo": "Resposta A",
-     "texto": "Queremos zerar a pensão, ela já é maior de idade.",
-     "avaliacao": {
-      "avaliacao": "fragil",
-      "resumo": "Sua resposta abandona o pedido de redução e se apoia só na maioridade, o argumento que a defesa melhor rebate.",
-      "pontos_fortes": [],
-      "pontos_frageis": [
-       "A maioridade sozinha não responde à situação de estudante.",
-       "Não apresenta nenhum cálculo."
-      ],
-      "sugestao": "Mantenha o encerramento como pedido principal, mas ofereça um valor de redução ligado à renda que Mariana já recebe.",
-      "apoio_nos_documentos": [
-       {
-        "documento": "contestacao_mariana.txt",
-        "trecho": "A pensão alimentícia contribui diretamente para sua formação profissional",
-        "conferido": true
-       }
-      ],
-      "replica": "Então o senhor não aceita nenhuma redução intermediária?"
-     }
-    },
-    {
-     "rotulo": "Resposta B",
      "texto": "O pedido principal é o encerramento. Subsidiariamente, pedimos a redução proporcional à renda de cerca de R$ 1.400,00 que Mariana já recebe, e vamos apresentar o cálculo com o valor atual da pensão.",
      "avaliacao": {
       "avaliacao": "parcial",
@@ -386,6 +368,134 @@
        }
       ],
       "replica": "E como fica o custo do curso nesse cálculo?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "Propomos reduzir a pensão de modo que a soma dela com o salário de Mariana fique igual ao que ela recebia antes de começar a trabalhar. Assim ela não perde nada, e Roberto deixa de sustentar sozinho uma pessoa que já tem renda.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta traz um critério simples, mas ele pode anular todo o salário de Mariana e ignora os gastos novos com curso e trabalho.",
+      "pontos_fortes": [
+       "Critério objetivo e fácil de explicar.",
+       "Responde à pergunta sobre o cálculo."
+      ],
+      "pontos_frageis": [
+       "O valor atual da pensão não está nos autos.",
+       "Na prática, o salário dela serviria só para aliviar o pai."
+      ],
+      "sugestao": "Proponha uma redução proporcional com o cálculo nos autos e informe o valor atual da pensão.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_roberto.txt",
+        "trecho": "recebendo aproximadamente R$ 1.400,00",
+        "conferido": true
+       }
+      ],
+      "replica": "Então todo o salário dela serviria só para diminuir o que o pai paga?"
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Roberto tem condições econômicas melhores que as de Mariana?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Roberto também tem despesas e outra família para sustentar, então a comparação simples de salários não é justa.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta tenta relativizar a diferença de renda, mas com um fato que não está nos documentos.",
+      "pontos_fortes": [
+       "Lembra que a capacidade de pagar também conta."
+      ],
+      "pontos_frageis": [
+       "A outra família não aparece em nenhum documento.",
+       "Não apresenta nenhum número."
+      ],
+      "sugestao": "Só mencione encargos de Roberto que você possa comprovar.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_roberto.txt",
+        "trecho": "Roberto requer a redução ou o encerramento da pensão alimentícia",
+        "conferido": true
+       }
+      ],
+      "replica": "Onde está nos autos que Roberto tem outra família?"
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "A diferença de renda existe, mas não é o que se discute: com a maioridade e a renda própria, a questão é se Mariana ainda precisa da pensão no valor atual. Roberto vai juntar os próprios rendimentos para que a comparação seja feita com números.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta não nega o óbvio, recoloca o critério e oferece transparência sobre a renda.",
+      "pontos_fortes": [
+       "Admite a diferença sem prejuízo à tese.",
+       "Traz a necessidade atual para o centro.",
+       "Oferece os próprios números."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Leve os comprovantes de rendimentos de Roberto.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "contestacao_mariana.txt",
+        "trecho": "O genitor Roberto possui condições econômicas melhores do que as dela",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    }
+   ]
+  },
+  {
+   "pergunta": "Por que o pedido não informa o valor atual da pensão?",
+   "respostas": [
+    {
+     "rotulo": "Resposta A",
+     "texto": "Foi uma falha que vamos corrigir: juntaremos a decisão que fixou a pensão e os comprovantes dos últimos pagamentos. Sem esse número não é possível dimensionar a redução, e é do interesse de Roberto que ele esteja nos autos.",
+     "avaliacao": {
+      "avaliacao": "convincente",
+      "resumo": "Sua resposta assume a omissão e a corrige com os documentos certos.",
+      "pontos_fortes": [
+       "Reconhece a falha.",
+       "Indica prova completa."
+      ],
+      "pontos_frageis": [],
+      "sugestao": "Traga também o cálculo do valor proposto.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_roberto.txt",
+        "trecho": "Roberto foi condenado a pagar pensão alimentícia",
+        "conferido": true
+       }
+      ],
+      "replica": ""
+     }
+    },
+    {
+     "rotulo": "Resposta B",
+     "texto": "O valor consta da decisão anterior, que as partes conhecem, e não precisava ser repetido.",
+     "avaliacao": {
+      "avaliacao": "parcial",
+      "resumo": "Sua resposta explica a omissão, mas o juízo precisa desse número para decidir a redução.",
+      "pontos_fortes": [
+       "Indica onde o valor está."
+      ],
+      "pontos_frageis": [
+       "A decisão anterior não foi juntada.",
+       "Sem o valor, a redução não pode ser calculada."
+      ],
+      "sugestao": "Junte a decisão que fixou a pensão e os últimos comprovantes.",
+      "apoio_nos_documentos": [
+       {
+        "documento": "peticao_roberto.txt",
+        "trecho": "Roberto foi condenado a pagar pensão alimentícia",
+        "conferido": true
+       }
+      ],
+      "replica": "E como o juízo vai calcular a redução sem esse valor?"
      }
     }
    ]

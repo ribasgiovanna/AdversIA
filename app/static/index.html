@@ -27,18 +27,22 @@
   </script>
   <link rel="stylesheet" href="/style.css" />
 </head>
-<body>
+<body data-tela="inicio">
   <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
 
   <header class="topo">
     <div class="topo-interno">
-      <a class="marca" href="/">
+      <a class="marca" href="/" id="link-inicio">
         <img class="marca-logo" src="/logo-adversia.png" alt="AdversIA — página inicial" />
       </a>
-      <button type="button" class="botao-acessibilidade" id="abrir-acessibilidade" aria-expanded="false" aria-controls="painel-acessibilidade">
-        <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="4.5" r="2" fill="currentColor"/><path d="M4 8.5c2.6.8 5.3 1.2 8 1.2s5.4-.4 8-1.2M12 9.7v4.6m0 0-3 6.2m3-6.2 3 6.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>Acessibilidade</span>
-      </button>
+      <div class="topo-acoes">
+        <button type="button" class="botao-fantasma" id="botao-gestao" aria-haspopup="dialog">
+          <span data-icone="cadeado"></span><span class="topo-rotulo" id="botao-gestao-rotulo">Área da gestão</span>
+        </button>
+        <button type="button" class="botao-contorno" id="abrir-acessibilidade" aria-expanded="false" aria-controls="painel-acessibilidade">
+          <span data-icone="acessivel"></span><span class="topo-rotulo">Acessibilidade</span>
+        </button>
+      </div>
     </div>
 
     <section class="painel-acessibilidade" id="painel-acessibilidade" hidden aria-labelledby="titulo-acessibilidade">
@@ -47,7 +51,6 @@
           <h2 id="titulo-acessibilidade">Acessibilidade</h2>
           <button type="button" class="botao-texto" id="fechar-acessibilidade">Fechar</button>
         </div>
-
         <div class="painel-grade">
           <div class="grupo-opcao">
             <span class="rotulo-opcao" id="rotulo-tamanho">Tamanho do texto</span>
@@ -57,7 +60,6 @@
               <button type="button" id="aumentar-texto" aria-label="Aumentar o texto">A+</button>
             </div>
           </div>
-
           <div class="grupo-opcao">
             <span class="rotulo-opcao" id="rotulo-tema">Tema</span>
             <div class="controle-segmentado" role="radiogroup" aria-labelledby="rotulo-tema">
@@ -66,22 +68,19 @@
               <button type="button" role="radio" data-tema="auto" aria-checked="true">Automático</button>
             </div>
           </div>
-
           <div class="grupo-opcao">
             <span class="rotulo-opcao">Leitura</span>
             <label class="opcao-alternar"><input type="checkbox" id="alto-contraste" /><span>Alto contraste</span></label>
             <label class="opcao-alternar"><input type="checkbox" id="espacamento-amplo" /><span>Texto mais espaçado</span></label>
             <label class="opcao-alternar"><input type="checkbox" id="reduzir-animacoes" /><span>Reduzir animações</span></label>
           </div>
-
           <div class="grupo-opcao">
             <span class="rotulo-opcao">Libras e áudio</span>
-            <p class="nota-opcao">Para tradução em Libras, use o botão do <strong>VLibras</strong> na lateral direita da tela.</p>
-            <p class="nota-opcao">No relatório, o botão <strong>Ouvir relatório</strong> lê todo o conteúdo em voz alta.</p>
+            <p class="nota-opcao">Libras: botão do <strong>VLibras</strong>, na lateral direita.</p>
+            <p class="nota-opcao">No relatório, use <strong>Ouvir</strong> para leitura em voz alta.</p>
           </div>
         </div>
-
-        <button type="button" class="botao-texto" id="restaurar-acessibilidade">Restaurar configurações padrão</button>
+        <button type="button" class="botao-texto" id="restaurar-acessibilidade">Restaurar padrão</button>
       </div>
     </section>
   </header>
@@ -89,247 +88,351 @@
   <main id="conteudo" tabindex="-1">
     <p class="visualmente-oculto" id="anuncio" aria-live="polite"></p>
 
-    <section class="abertura" id="abertura">
-      <p class="tagline">A divorciar? adversIA.</p>
-      <h1>
-        <span class="visualmente-oculto">Veja a sua tese pelos olhos da parte contrária.</span>
-        <span aria-hidden="true">Veja a sua tese pelos olhos da
-          <span class="titulo-destaque"><span class="titulo-fantasma">parte contrária.</span><span class="titulo-digitado" id="titulo-digitado" data-texto="parte contrária.">parte contrária.</span></span>
-        </span>
-      </h1>
-      <p class="apoio">
-        Envie os documentos do caso e a sua tese. A AdversIA aponta contradições, alegações sem
-        prova e perguntas difíceis, mostrando de onde tirou cada ponto.
-      </p>
+    <!-- Início -->
+    <section class="tela tela-inicio" id="tela-inicio" aria-labelledby="titulo-inicio">
+      <div class="heroi">
+        <div class="heroi-texto">
+          <p class="eyebrow eyebrow-bordao">A divorciar? AdversIA</p>
+          <h1 id="titulo-inicio">
+            <span class="visualmente-oculto">Veja a sua tese pelos olhos da parte contrária.</span>
+            <span aria-hidden="true">Veja a sua tese pelos olhos da
+              <span class="titulo-destaque"><span class="titulo-fantasma">parte contrária.</span><span class="titulo-digitado" id="titulo-digitado" data-texto="parte contrária.">parte contrária.</span></span>
+            </span>
+          </h1>
+          <p class="heroi-apoio">Contradições, provas que faltam e perguntas difíceis, antes da audiência.</p>
+          <div class="heroi-acoes">
+            <button type="button" class="botao-principal botao-grande" id="comecar-demo">
+              Experimentar com um caso <span data-icone="seta"></span>
+            </button>
+            <a class="botao-texto" href="#como-funciona">Como funciona</a>
+          </div>
+        </div>
+
+        <div class="heroi-previa" aria-hidden="true">
+          <div class="previa-janela">
+            <div class="previa-topo">
+              <span class="previa-pontos"><i></i><i></i><i></i></span>
+              <span class="previa-titulo">Relatório · Perda de emprego e mudança de cidade</span>
+            </div>
+            <div class="previa-placar">
+              <div><span data-icone="contradicao"></span><b>3</b><small>contradições</small></div>
+              <div><span data-icone="lacuna"></span><b>4</b><small>sem prova</small></div>
+              <div><span data-icone="pergunta"></span><b>5</b><small>perguntas</small></div>
+            </div>
+            <div class="previa-achado">
+              <span class="previa-rotulo"><span data-icone="contradicao"></span>Contradição 1</span>
+              <p>A separação é datada em janeiro de 2021 na petição e em outubro de 2020 na contestação.</p>
+              <span class="selo-conferido">✓ Trecho conferido no documento</span>
+            </div>
+            <div class="previa-chat">
+              <p class="previa-balao previa-balao-contrario">Os atrasos não começaram antes da demissão?</p>
+              <p class="previa-balao previa-balao-voce">Os extratos de todo o período serão juntados.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="como-funciona" id="como-funciona" aria-labelledby="titulo-como">
+        <h2 id="titulo-como">Como funciona</h2>
+        <ol class="passos-inicio">
+          <li>
+            <span class="passo-icone" data-icone="documento"></span>
+            <h3>Envie o caso</h3>
+            <p>Documentos e a tese que você quer testar.</p>
+          </li>
+          <li>
+            <span class="passo-icone" data-icone="busca"></span>
+            <h3>A IA ataca a tese</h3>
+            <p>Como faria o advogado da outra parte.</p>
+          </li>
+          <li>
+            <span class="passo-icone" data-icone="alvo"></span>
+            <h3>Prepare-se</h3>
+            <p>Plano de provas e treino de audiência.</p>
+          </li>
+        </ol>
+      </section>
     </section>
 
-    <section class="cartao" id="secao-formulario" aria-label="Nova análise">
-      <form id="form-analise" novalidate data-modo="demo">
-        <fieldset class="modo-analise">
-          <legend class="passo-titulo">Como você quer usar a AdversIA?</legend>
-          <div class="modo-opcoes">
-            <label class="modo-opcao">
-              <input type="radio" name="modo" id="modo-demo" value="demo" checked />
-              <span class="modo-titulo">Demonstração gratuita</span>
-              <span class="modo-descricao">Escolha um caso fictício pronto e veja o relatório completo, sem custo e sem cadastro.</span>
-            </label>
-            <label class="modo-opcao" id="opcao-modo-chave" hidden>
-              <input type="radio" name="modo" id="modo-chave" value="chave" />
-              <span class="modo-titulo">Analisar documentos</span>
-              <span class="modo-descricao">Área da gestão: envie os documentos do caso e use uma chave da Anthropic. O custo fica na conta dessa chave.</span>
-            </label>
-          </div>
-          <div class="acesso-gestao" id="acesso-gestao">
-            <button type="button" class="botao-texto" id="botao-gestao" aria-expanded="false" aria-controls="painel-gestao">Acesso da gestão</button>
-            <div class="painel-gestao" id="painel-gestao" hidden>
-              <label for="codigo-gestao" class="rotulo-filtro">Código de acesso da gestão</label>
-              <div class="linha-gestao">
-                <input type="password" class="campo-texto" id="codigo-gestao" autocomplete="off" spellcheck="false" aria-describedby="gestao-erro" />
-                <button type="button" class="botao-secundario" id="entrar-gestao">Entrar</button>
-              </div>
-              <p class="erro-formulario" id="gestao-erro" role="alert" hidden></p>
-            </div>
-          </div>
-        </fieldset>
+    <!-- Escolha do caso (demonstração) -->
+    <section class="tela" id="tela-casos" hidden aria-labelledby="titulo-casos">
+      <header class="tela-cabecalho">
+        <button type="button" class="botao-voltar" data-ir="inicio"><span data-icone="voltar"></span>Início</button>
+        <ol class="etapas-fluxo" aria-label="Etapas">
+          <li aria-current="step">Caso</li><li>Análise</li><li>Relatório</li>
+        </ol>
+        <h2 id="titulo-casos" tabindex="-1">Escolha um caso</h2>
+        <p>Casos fictícios, com a análise completa.</p>
+      </header>
 
-        <div class="passo">
-          <div class="passo-cabecalho">
-            <span class="passo-numero" aria-hidden="true">1</span>
-            <span class="passo-titulo" id="titulo-passo-documentos">Escolha um caso</span>
-          </div>
-          <p class="passo-ajuda" id="documentos-ajuda"></p>
+      <div class="filtro-tipos" id="filtro-tipos" role="group" aria-label="Filtrar por tipo de caso"></div>
+      <p class="erro-formulario" id="erro-casos" role="alert" hidden></p>
+      <ul class="grade-casos" id="grade-casos" aria-label="Casos disponíveis"></ul>
 
-          <div id="envio-proprio" hidden>
-            <div class="zona-arquivos" id="zona-arquivos">
-              <label for="documentos" class="visualmente-oculto">Escolher os documentos do caso</label>
-              <input type="file" id="documentos" name="documentos" multiple accept=".pdf,.docx,.txt,.md" aria-describedby="documentos-ajuda" />
-              <svg aria-hidden="true" viewBox="0 0 24 24" width="28" height="28"><path d="M12 16V4m0 0-4.5 4.5M12 4l4.5 4.5M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <p class="zona-arquivos-texto"><strong>Clique para escolher</strong> ou arraste os arquivos para cá</p>
-            </div>
-          </div>
+      <div class="barra-acao" id="barra-caso" hidden>
+        <div class="barra-acao-texto">
+          <span class="rotulo-pequeno">Caso escolhido</span>
+          <strong id="caso-escolhido-titulo"></strong>
+        </div>
+        <button type="button" class="botao-secundario" id="ver-documentos"><span data-icone="olho"></span>Ver documentos</button>
+        <button type="button" class="botao-principal" id="analisar-caso">Analisar caso <span data-icone="seta"></span></button>
+      </div>
+    </section>
 
+    <!-- Análise com documentos (área da gestão) -->
+    <section class="tela" id="tela-documentos" hidden aria-labelledby="titulo-documentos">
+      <header class="tela-cabecalho">
+        <button type="button" class="botao-voltar" data-ir="inicio"><span data-icone="voltar"></span>Início</button>
+        <ol class="etapas-fluxo" aria-label="Etapas">
+          <li aria-current="step">Caso</li><li>Análise</li><li>Relatório</li>
+        </ol>
+        <h2 id="titulo-documentos" tabindex="-1">Analisar documentos</h2>
+        <p>Área da gestão. Use apenas documentos anonimizados.</p>
+      </header>
+
+      <form class="cartao formulario" id="form-analise" novalidate>
+        <div class="campo">
+          <span class="campo-rotulo" id="rotulo-documentos">Documentos do caso</span>
+          <div class="zona-arquivos" id="zona-arquivos">
+            <label for="documentos" class="visualmente-oculto">Escolher os documentos do caso</label>
+            <input type="file" id="documentos" name="documentos" multiple accept=".pdf,.docx,.txt,.md" aria-describedby="documentos-ajuda" />
+            <span class="zona-icone" data-icone="documento"></span>
+            <p><strong>Arraste os arquivos</strong> ou clique para escolher</p>
+            <p class="campo-ajuda" id="documentos-ajuda">PDF, Word ou texto</p>
+          </div>
           <ul class="lista-arquivos" id="lista-arquivos"></ul>
-
-          <fieldset class="exemplos" id="exemplos" hidden>
-            <legend class="exemplos-rotulo" id="legenda-exemplos">Casos fictícios prontos</legend>
-            <div class="exemplos-filtro">
-              <div class="campo-filtro">
-                <span class="rotulo-filtro" id="rotulo-tipo">Tipo de caso</span>
-                <div class="selecao" id="selecao-tipo">
-                  <button type="button" class="selecao-botao" id="filtro-tipo" aria-haspopup="listbox" aria-expanded="false" aria-controls="lista-tipo" aria-labelledby="rotulo-tipo valor-tipo">
-                    <span class="selecao-valor" id="valor-tipo"></span>
-                    <span class="selecao-seta" aria-hidden="true"></span>
-                  </button>
-                  <div class="selecao-lista" id="lista-tipo" role="listbox" tabindex="-1" aria-labelledby="rotulo-tipo" hidden></div>
-                </div>
-              </div>
-              <div class="campo-filtro">
-                <span class="rotulo-filtro" id="rotulo-situacao">Situação</span>
-                <div class="selecao" id="selecao-situacao">
-                  <button type="button" class="selecao-botao" id="filtro-situacao" aria-haspopup="listbox" aria-expanded="false" aria-controls="lista-situacao" aria-labelledby="rotulo-situacao valor-situacao" aria-describedby="exemplo-descricao">
-                    <span class="selecao-valor" id="valor-situacao"></span>
-                    <span class="selecao-seta" aria-hidden="true"></span>
-                  </button>
-                  <div class="selecao-lista" id="lista-situacao" role="listbox" tabindex="-1" aria-labelledby="rotulo-situacao" hidden></div>
-                </div>
-              </div>
-            </div>
-            <div class="exemplo-escolhido">
-              <p class="exemplo-descricao" id="exemplo-descricao"></p>
-              <button type="button" class="botao-secundario" id="usar-exemplo">Usar este caso</button>
-            </div>
-          </fieldset>
         </div>
 
-        <div class="passo">
-          <div class="passo-cabecalho">
-            <span class="passo-numero" aria-hidden="true">2</span>
-            <label for="tese" class="passo-titulo" id="rotulo-tese">Tese do caso</label>
-          </div>
-          <p class="passo-ajuda" id="tese-ajuda"></p>
-          <textarea id="tese" name="tese" rows="4" aria-describedby="tese-ajuda" placeholder="Ex.: Em nome da mãe, pedir a guarda unilateral, alegando que o pai não participa da rotina da criança desde março."></textarea>
+        <div class="campo">
+          <label for="tese" class="campo-rotulo">Tese</label>
+          <textarea id="tese" name="tese" rows="3" placeholder="Ex.: Em nome da mãe, pedir a guarda unilateral porque o pai não participa da rotina desde março."></textarea>
         </div>
 
-        <div class="passo" id="passo-chave" hidden>
-          <div class="passo-cabecalho">
-            <span class="passo-numero" aria-hidden="true">3</span>
-            <label for="chave-anthropic" class="passo-titulo">Sua chave da Anthropic</label>
-          </div>
-          <p class="passo-ajuda" id="chave-ajuda">Usada só nesta análise: fica apenas nesta aba do navegador e não é gravada em lugar nenhum. Cada análise custa cerca de US$ 0,25 na sua conta. Não tem uma chave? <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener noreferrer">Crie no painel da Anthropic</a>.</p>
+        <div class="campo">
+          <label for="chave-anthropic" class="campo-rotulo">Chave da Anthropic</label>
           <input type="password" class="campo-texto" id="chave-anthropic" name="chave-anthropic" autocomplete="off" spellcheck="false" placeholder="sk-ant-…" aria-describedby="chave-ajuda" />
+          <p class="campo-ajuda" id="chave-ajuda">Usada só nesta análise, cerca de US$ 0,25. <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener noreferrer">Criar chave</a></p>
         </div>
 
-        <div class="confirmacao" id="bloco-confirmacao" hidden>
+        <label class="confirmacao">
           <input type="checkbox" id="confirmacao-dados" name="confirmacao-dados" />
-          <label for="confirmacao-dados">Confirmo que os documentos são fictícios ou anonimizados, sem dados reais de clientes.</label>
-        </div>
+          <span>Os documentos são fictícios ou anonimizados.</span>
+        </label>
 
         <p class="erro-formulario" id="erro-formulario" role="alert" hidden></p>
-
-        <button type="submit" class="botao-principal" id="botao-analisar">Ver a análise deste caso</button>
+        <button type="submit" class="botao-principal botao-grande" id="botao-analisar">Analisar <span data-icone="seta"></span></button>
       </form>
     </section>
 
-    <section class="cartao" id="secao-progresso" hidden aria-labelledby="titulo-progresso">
-      <h2 id="titulo-progresso" tabindex="-1">Analisando o seu caso</h2>
-      <p class="apoio-progresso" id="apoio-progresso">Acompanhe cada etapa abaixo.</p>
-      <ol class="etapas" id="etapas"></ol>
+    <!-- Progresso -->
+    <section class="tela tela-progresso" id="secao-progresso" hidden aria-labelledby="titulo-progresso">
+      <div class="cartao cartao-progresso">
+        <ol class="etapas-fluxo" aria-label="Etapas">
+          <li class="feito">Caso</li><li aria-current="step">Análise</li><li>Relatório</li>
+        </ol>
+        <span class="progresso-anel" aria-hidden="true"></span>
+        <h2 id="titulo-progresso" tabindex="-1">Analisando o caso</h2>
+        <p class="progresso-etapa-atual" id="etapa-atual" aria-hidden="true"></p>
+        <div class="barra-progresso" id="barra-progresso" role="progressbar" aria-label="Progresso da análise" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0">
+          <span id="barra-progresso-preenchimento"></span>
+        </div>
+        <ol class="etapas" id="etapas"></ol>
+        <p class="apoio-progresso" id="apoio-progresso"></p>
+      </div>
     </section>
 
-    <section class="cartao cartao-erro" id="secao-erro" hidden aria-labelledby="titulo-erro">
-      <h2 id="titulo-erro" tabindex="-1">Não foi possível concluir a análise</h2>
-      <p id="erro-texto"></p>
-      <button type="button" class="botao-principal" id="botao-tentar-de-novo">Voltar e tentar de novo</button>
+    <!-- Erro -->
+    <section class="tela tela-progresso" id="secao-erro" hidden aria-labelledby="titulo-erro">
+      <div class="cartao cartao-progresso cartao-erro">
+        <span class="erro-icone" data-icone="critico"></span>
+        <h2 id="titulo-erro" tabindex="-1">Não foi possível concluir</h2>
+        <p id="erro-texto"></p>
+        <button type="button" class="botao-principal" id="botao-tentar-de-novo">Voltar e tentar de novo</button>
+      </div>
     </section>
 
-    <section class="relatorio" id="secao-relatorio" hidden aria-labelledby="titulo-relatorio">
+    <!-- Relatório -->
+    <section class="tela relatorio" id="secao-relatorio" hidden aria-labelledby="titulo-relatorio">
       <header class="relatorio-cabecalho">
-        <p class="rotulo-secao">Relatório de pontos vulneráveis</p>
-        <p class="selo-demo" id="selo-demo" hidden>Caso fictício de demonstração · análise preparada previamente</p>
-        <h2 id="titulo-relatorio" tabindex="-1">O que a parte contrária pode explorar</h2>
-        <p class="resumo" id="resumo-caso"></p>
-        <div class="tese-analisada">
-          <span class="tese-rotulo">Tese analisada</span>
-          <p id="tese-analisada"></p>
+        <div class="relatorio-titulos">
+          <button type="button" class="botao-voltar" id="nova-analise"><span data-icone="voltar"></span>Nova análise</button>
+          <p class="eyebrow">Relatório <span class="selo-demo" id="selo-demo" hidden>Demonstração · análise preparada previamente</span></p>
+          <h2 id="titulo-relatorio" tabindex="-1">Seu caso</h2>
+          <p class="resumo" id="resumo-caso"></p>
         </div>
-        <div class="acoes-relatorio">
-          <button type="button" class="botao-secundario" id="ouvir-relatorio" aria-pressed="false">Ouvir relatório</button>
-          <button type="button" class="botao-secundario" id="imprimir-relatorio">Imprimir ou salvar em PDF</button>
-          <button type="button" class="botao-secundario" id="nova-analise">Nova análise</button>
+        <div class="relatorio-acoes">
+          <button type="button" class="botao-icone" id="ouvir-relatorio" aria-pressed="false" aria-label="Ouvir relatório" data-dica="Ouvir"><span data-icone="som"></span></button>
+          <button type="button" class="botao-icone" id="imprimir-relatorio" aria-label="Imprimir ou salvar em PDF" data-dica="PDF"><span data-icone="impressora"></span></button>
         </div>
+        <details class="tese-analisada">
+          <summary>
+            <span class="rotulo-pequeno">Tese</span>
+            <span class="tese-texto" id="tese-analisada"></span>
+            <span class="icone-abrir" aria-hidden="true"></span>
+          </summary>
+        </details>
       </header>
 
-      <div class="abas" role="tablist" aria-label="Partes do relatório">
-        <button type="button" role="tab" id="aba-pontos" aria-controls="painel-pontos" aria-selected="true">Pontos vulneráveis <span class="aba-contador" id="contador-pontos"></span></button>
-        <button type="button" role="tab" id="aba-linha" aria-controls="painel-linha" aria-selected="false" tabindex="-1">Linha do tempo <span class="aba-contador" id="contador-linha"></span></button>
-        <button type="button" role="tab" id="aba-plano" aria-controls="painel-plano" aria-selected="false" tabindex="-1">Plano de provas <span class="aba-contador" id="contador-plano"></span></button>
-        <button type="button" role="tab" id="aba-audiencia" aria-controls="painel-audiencia" aria-selected="false" tabindex="-1">Simular audiência <span class="aba-contador" id="contador-audiencia"></span></button>
-      </div>
+      <div class="relatorio-corpo">
+        <div class="abas" role="tablist" aria-label="Partes do relatório">
+          <button type="button" role="tab" id="aba-pontos" aria-controls="painel-pontos" aria-selected="true">
+            <span data-icone="alvo"></span><span class="aba-rotulo">Pontos vulneráveis</span><span class="aba-contador" id="contador-pontos"></span>
+          </button>
+          <button type="button" role="tab" id="aba-linha" aria-controls="painel-linha" aria-selected="false" tabindex="-1">
+            <span data-icone="relogio"></span><span class="aba-rotulo">Linha do tempo</span><span class="aba-contador" id="contador-linha"></span>
+          </button>
+          <button type="button" role="tab" id="aba-plano" aria-controls="painel-plano" aria-selected="false" tabindex="-1">
+            <span data-icone="lista"></span><span class="aba-rotulo">Plano de provas</span><span class="aba-contador" id="contador-plano"></span>
+          </button>
+          <button type="button" role="tab" id="aba-audiencia" aria-controls="painel-audiencia" aria-selected="false" tabindex="-1">
+            <span data-icone="chat"></span><span class="aba-rotulo">Simular audiência</span><span class="aba-contador" id="contador-audiencia"></span>
+          </button>
+          <span class="abas-indicador" aria-hidden="true"></span>
+        </div>
 
-      <div class="painel-relatorio" role="tabpanel" id="painel-pontos" aria-labelledby="aba-pontos" tabindex="0">
-        <ul class="placar" id="placar" aria-label="Resumo dos apontamentos"></ul>
-
-        <details class="legenda">
-          <summary>Como ler este relatório</summary>
-          <p>Cada apontamento traz uma etiqueta que diz de onde ele veio, e logo abaixo o trecho do documento que o sustenta — para você conferir, não para confiar de olhos fechados.</p>
-          <dl class="legenda-lista">
-            <div><dt><span class="etiqueta etiqueta-fato">Está nos documentos</span></dt><dd>Aparece de forma literal em um dos documentos enviados.</dd></div>
-            <div><dt><span class="etiqueta etiqueta-conclusao">Conclusão tirada dos documentos</span></dt><dd>Uma dedução a partir do que está escrito. O trecho de origem vem logo abaixo.</dd></div>
-            <div><dt><span class="etiqueta etiqueta-hipotese">Possível argumento da outra parte</span></dt><dd>Uma linha de ataque plausível. Não é fato comprovado: avalie se ela se sustenta.</dd></div>
-            <div><dt><span class="etiqueta etiqueta-sembase">Sem base suficiente — confira</span></dt><dd>Não encontramos apoio suficiente nos documentos. Trate com cautela.</dd></div>
-            <div><dt><span class="selo-conferido">✓ Trecho conferido no documento</span></dt><dd>A AdversIA procurou o trecho citado no texto do documento enviado e o encontrou, palavra por palavra.</dd></div>
-            <div><dt><span class="selo-confira">Não localizamos este trecho exato — confira</span></dt><dd>O trecho não foi encontrado de forma literal. Pode ser um resumo: confira no documento antes de usar.</dd></div>
-          </dl>
-        </details>
-
-        <div id="grupos"></div>
-      </div>
-
-      <div class="painel-relatorio" role="tabpanel" id="painel-linha" aria-labelledby="aba-linha" tabindex="0" hidden>
-        <header class="painel-relatorio-cabecalho">
-          <h3>Linha do tempo do caso</h3>
-          <p>Os fatos com data, na ordem em que aconteceram, segundo cada documento. Quando as versões das partes não batem, o ponto aparece destacado.</p>
-          <p class="resumo-painel" id="resumo-linha"></p>
-        </header>
-        <ol class="linha-do-tempo" id="linha-do-tempo"></ol>
-      </div>
-
-      <div class="painel-relatorio" role="tabpanel" id="painel-plano" aria-labelledby="aba-plano" tabindex="0" hidden>
-        <header class="painel-relatorio-cabecalho">
-          <h3>Plano de provas</h3>
-          <p>O que providenciar para fechar os pontos fracos antes da audiência, em ordem de prioridade. Marque o que já foi providenciado.</p>
-          <p class="resumo-painel" id="progresso-plano" aria-live="polite"></p>
-        </header>
-        <div id="plano-de-provas"></div>
-      </div>
-
-      <div class="painel-relatorio" role="tabpanel" id="painel-audiencia" aria-labelledby="aba-audiencia" tabindex="0" hidden>
-        <header class="painel-relatorio-cabecalho">
-          <h3>Simulação de audiência</h3>
-          <p>A AdversIA faz as perguntas difíceis como o advogado da parte contrária. Responda como faria na audiência e veja se a sua resposta se sustenta nos documentos.</p>
-        </header>
-
-        <div class="audiencia-transcricao" id="audiencia-transcricao"></div>
-
-        <form class="audiencia-form" id="audiencia-form" novalidate>
-          <div class="audiencia-pergunta-atual">
-            <p class="rotulo-secao" id="audiencia-contador"></p>
-            <div class="balao balao-contrario">
-              <span class="balao-autor">Advogado(a) da parte contrária</span>
-              <p id="audiencia-pergunta"></p>
+        <div class="paineis" id="paineis">
+          <div class="painel-relatorio" role="tabpanel" id="painel-pontos" aria-labelledby="aba-pontos" tabindex="0">
+            <div class="painel-topo">
+              <h3>Pontos vulneráveis</h3>
+              <div class="painel-ferramentas">
+                <button type="button" class="botao-icone pequeno" id="abrir-legenda" aria-haspopup="dialog" aria-label="Como ler o relatório" data-dica="Como ler"><span data-icone="ajuda"></span></button>
+                <div class="controles-recolher" data-alvo="grupos">
+                  <button type="button" class="botao-icone pequeno" data-abrir="true" aria-label="Abrir tudo" data-dica="Abrir tudo"><span data-icone="expandir"></span></button>
+                  <button type="button" class="botao-icone pequeno" data-abrir="false" aria-label="Recolher tudo" data-dica="Recolher tudo"><span data-icone="recolher"></span></button>
+                </div>
+              </div>
             </div>
-            <button type="button" class="botao-texto" id="ouvir-pergunta">Ouvir pergunta</button>
+            <ul class="placar" id="placar" aria-label="Resumo dos apontamentos"></ul>
+            <div id="grupos"></div>
           </div>
-          <div class="audiencia-opcoes" id="audiencia-opcoes" hidden>
-            <p class="rotulo-filtro" id="rotulo-opcoes">Escolha uma resposta para ver como ela seria avaliada</p>
-            <div class="audiencia-opcoes-lista" id="audiencia-opcoes-lista" role="group" aria-labelledby="rotulo-opcoes"></div>
-            <p class="nota-demo">Para responder com as suas próprias palavras, faça a análise com a sua chave.</p>
-          </div>
-          <div class="audiencia-livre" id="audiencia-livre">
-            <label for="resposta-audiencia" class="rotulo-filtro">Sua resposta</label>
-            <textarea id="resposta-audiencia" name="resposta-audiencia" rows="4" placeholder="Responda como responderia na audiência."></textarea>
-          </div>
-          <p class="erro-formulario" id="audiencia-erro" role="alert" hidden></p>
-          <div class="audiencia-acoes">
-            <button type="button" class="botao-texto" id="pular-pergunta">Pular pergunta</button>
-            <button type="button" class="botao-secundario" id="ditar-resposta" aria-pressed="false" hidden>Falar a resposta</button>
-            <button type="submit" class="botao-principal botao-compacto" id="enviar-resposta">Enviar resposta</button>
-          </div>
-        </form>
 
-        <div class="audiencia-fim" id="audiencia-fim" hidden>
-          <h4 id="audiencia-fim-titulo" tabindex="-1">Simulação concluída</h4>
-          <p id="audiencia-fim-resumo"></p>
-          <button type="button" class="botao-secundario" id="recomecar-audiencia">Recomeçar simulação</button>
+          <div class="painel-relatorio" role="tabpanel" id="painel-linha" aria-labelledby="aba-linha" tabindex="0" hidden>
+            <div class="painel-topo">
+              <div class="painel-topo-texto">
+                <h3>Linha do tempo</h3>
+                <p class="resumo-painel" id="resumo-linha"></p>
+              </div>
+              <div class="painel-ferramentas controles-recolher" data-alvo="linha-do-tempo">
+                <button type="button" class="botao-icone pequeno" data-abrir="true" aria-label="Abrir tudo" data-dica="Abrir tudo"><span data-icone="expandir"></span></button>
+                <button type="button" class="botao-icone pequeno" data-abrir="false" aria-label="Recolher tudo" data-dica="Recolher tudo"><span data-icone="recolher"></span></button>
+              </div>
+            </div>
+            <ol class="linha-do-tempo" id="linha-do-tempo"></ol>
+          </div>
+
+          <div class="painel-relatorio" role="tabpanel" id="painel-plano" aria-labelledby="aba-plano" tabindex="0" hidden>
+            <div class="painel-topo">
+              <div class="painel-topo-texto">
+                <h3>Plano de provas</h3>
+                <p class="resumo-painel" id="progresso-plano" aria-live="polite"></p>
+              </div>
+              <div class="painel-ferramentas controles-recolher" data-alvo="plano-de-provas">
+                <button type="button" class="botao-icone pequeno" data-abrir="true" aria-label="Abrir tudo" data-dica="Abrir tudo"><span data-icone="expandir"></span></button>
+                <button type="button" class="botao-icone pequeno" data-abrir="false" aria-label="Recolher tudo" data-dica="Recolher tudo"><span data-icone="recolher"></span></button>
+              </div>
+            </div>
+            <div id="plano-de-provas"></div>
+          </div>
+
+          <div class="painel-relatorio" role="tabpanel" id="painel-audiencia" aria-labelledby="aba-audiencia" tabindex="0" hidden>
+            <section class="chat-audiencia" aria-labelledby="chat-titulo">
+              <header class="chat-cabecalho">
+                <div class="chat-participantes" aria-hidden="true">
+                  <span class="chat-avatar avatar-contrario">PC</span>
+                  <span class="chat-avatar avatar-voce">EU</span>
+                </div>
+                <div class="chat-cabecalho-texto">
+                  <p class="chat-titulo" id="chat-titulo">Sala de audiência</p>
+                  <p class="chat-status" id="chat-status">Simulação</p>
+                </div>
+                <button type="button" class="botao-icone pequeno" id="ouvir-pergunta" aria-label="Ouvir pergunta" data-dica="Ouvir pergunta"><span data-icone="som"></span></button>
+              </header>
+
+              <ol class="chat-mensagens" id="chat-mensagens" role="log" aria-live="polite" aria-label="Conversa da simulação de audiência"></ol>
+
+              <form class="chat-compositor" id="audiencia-form" novalidate hidden>
+                <div class="chat-sugestoes" id="audiencia-opcoes" hidden>
+                  <p class="chat-sugestoes-rotulo" id="rotulo-opcoes">Escolha como responder</p>
+                  <div class="chat-sugestoes-lista" id="audiencia-opcoes-lista" role="group" aria-labelledby="rotulo-opcoes"></div>
+                </div>
+                <div class="chat-escrever" id="audiencia-livre">
+                  <label for="resposta-audiencia" class="visualmente-oculto">Sua resposta</label>
+                  <textarea id="resposta-audiencia" name="resposta-audiencia" rows="1" placeholder="Escreva a sua resposta…"></textarea>
+                  <button type="button" class="chat-botao-icone" id="ditar-resposta" aria-pressed="false" aria-label="Falar a resposta" hidden><span data-icone="microfone"></span></button>
+                  <button type="submit" class="chat-enviar" id="enviar-resposta" aria-label="Enviar resposta"><span data-icone="enviar"></span></button>
+                </div>
+                <p class="erro-formulario" id="audiencia-erro" role="alert" hidden></p>
+                <div class="chat-rodape-acoes">
+                  <button type="button" class="botao-texto" id="pular-pergunta">Pular pergunta</button>
+                </div>
+              </form>
+            </section>
+          </div>
+
         </div>
       </div>
-
-      <div class="avisos" id="avisos"></div>
     </section>
   </main>
 
+  <!-- Documento formatado para impressão e PDF (montado na hora de imprimir) -->
+  <article class="documento-impressao" id="documento-impressao" hidden></article>
+
+  <!-- Janelas -->
+  <dialog class="dialogo" id="dialogo-gestao" aria-labelledby="titulo-gestao">
+    <form class="dialogo-caixa" id="form-gestao" novalidate>
+      <div class="dialogo-cabecalho">
+        <div>
+          <h2 id="titulo-gestao">Área da gestão</h2>
+          <p class="dialogo-apoio">Digite o código de acesso.</p>
+        </div>
+        <button type="button" class="botao-icone pequeno" data-fechar aria-label="Fechar"><span data-icone="fechar"></span></button>
+      </div>
+      <label for="codigo-gestao" class="visualmente-oculto">Código de acesso da gestão</label>
+      <input type="password" class="campo-texto" id="codigo-gestao" autocomplete="off" spellcheck="false" placeholder="Código de acesso" aria-describedby="gestao-erro" />
+      <p class="erro-formulario" id="gestao-erro" role="alert" hidden></p>
+      <div class="dialogo-acoes">
+        <button type="button" class="botao-texto" data-fechar>Cancelar</button>
+        <button type="submit" class="botao-principal" id="entrar-gestao">Entrar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="dialogo dialogo-largo" id="dialogo-documentos" aria-labelledby="titulo-dialogo-documentos">
+    <div class="dialogo-caixa">
+      <div class="dialogo-cabecalho">
+        <div>
+          <p class="rotulo-pequeno">Documentos do caso</p>
+          <h2 id="titulo-dialogo-documentos"></h2>
+        </div>
+        <button type="button" class="botao-icone pequeno" data-fechar aria-label="Fechar"><span data-icone="fechar"></span></button>
+      </div>
+      <div class="bloco-tese">
+        <p class="rotulo-pequeno">Tese</p>
+        <p id="dialogo-tese"></p>
+      </div>
+      <div class="lista-documentos" id="dialogo-lista-docs"></div>
+    </div>
+  </dialog>
+
+  <dialog class="dialogo" id="dialogo-legenda" aria-labelledby="titulo-legenda">
+    <div class="dialogo-caixa">
+      <div class="dialogo-cabecalho">
+        <h2 id="titulo-legenda">Como ler o relatório</h2>
+        <button type="button" class="botao-icone pequeno" data-fechar aria-label="Fechar"><span data-icone="fechar"></span></button>
+      </div>
+      <dl class="legenda-lista">
+        <div><dt><span class="etiqueta etiqueta-fato">Está nos documentos</span></dt><dd>Aparece literalmente num documento.</dd></div>
+        <div><dt><span class="etiqueta etiqueta-conclusao">Conclusão tirada dos documentos</span></dt><dd>Dedução a partir do que está escrito.</dd></div>
+        <div><dt><span class="etiqueta etiqueta-hipotese">Possível argumento da outra parte</span></dt><dd>Linha de ataque plausível, não comprovada.</dd></div>
+        <div><dt><span class="etiqueta etiqueta-sembase">Sem base suficiente — confira</span></dt><dd>Pouco apoio nos documentos.</dd></div>
+        <div><dt><span class="selo-conferido">✓ Trecho conferido no documento</span></dt><dd>O trecho foi encontrado, palavra por palavra.</dd></div>
+        <div><dt><span class="selo-confira">Não localizamos este trecho exato — confira</span></dt><dd>Pode ser um resumo; confira antes de usar.</dd></div>
+      </dl>
+    </div>
+  </dialog>
+
   <footer class="rodape">
-    <p>AdversIA · Hackathon da Cidadania OAB/PR 2026 · Protótipo de demonstração</p>
+    <p>AdversIA · Hackathon da Cidadania OAB/PR 2026</p>
   </footer>
 
   <div vw class="enabled">

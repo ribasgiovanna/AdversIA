@@ -65,7 +65,7 @@ domínio genérico original do MVP.
 | Prática | Onde | Evidência |
 |---|---|---|
 | Checkbox de confirmação obrigatória antes de enviar qualquer documento | `index.html` (`confirmacao-dados`, `required`) | opera o Princípio V da Constituição de forma ativa, não só um aviso passivo |
-| Aviso fixo em toda resposta do sistema | `app/schemas.py::AVISOS_FIXOS` | usuário é lembrado a cada relatório, não só na tela inicial |
+| Aviso fixo em toda resposta do sistema | `app/schemas.py::AVISOS_FIXOS` | presente no dado de todo relatório da API; desde o ADR-022 não é exibido na página (decisão de interface da equipe) |
 | Sem persistência de documentos em disco ou banco | `app/pipeline.py`, `app/server.py` — nenhuma escrita em disco/banco dos documentos enviados | dado do usuário só existe na memória do processo |
 | Nenhum estado no servidor (ADR-014) | `app/api_comum.py` — a análise devolve o texto extraído e a simulação o recebe de volta; nada fica guardado entre requisições | o texto do caso só existe na memória da aba de quem fez a análise |
 | Chave da Anthropic do próprio usuário, sem armazenamento (ADR-014) | `app/api_comum.py::ler_chave` (formato validado) + `llm_client.usar_chave_anthropic` (cliente por requisição, descartado ao fim); o campo da tela é `type="password"` e a chave não vai para `localStorage` nem para o log | a equipe não guarda credencial de terceiros e não paga pelo uso de terceiros |
