@@ -1,5 +1,5 @@
 <p align="center">
-  🇧🇷 Português · <a href="README.en.md">🇺🇸 English</a>
+  🇺🇸 English · <a href="README.pt-br.md">🇧🇷 Português</a>
 </p>
 
 <p align="center">
@@ -10,370 +10,383 @@
 </p>
 
 <h3 align="center">A divorciar? AdversIA</h3>
+<p align="center"><sub>Our tagline, a Portuguese pun: "Getting divorced? AdversIA"</sub></p>
 
 <p align="center">
-  <strong>Veja a sua tese pelos olhos da parte contrária.</strong><br>
-  Revisão adversarial de estratégias em Direito de Família, com inteligência artificial.
+  <strong>See your case theory through the eyes of opposing counsel.</strong><br>
+  AI-powered adversarial review of litigation strategy in Brazilian Family Law.
 </p>
 
 <p align="center">
-  <a href="https://adversia.vercel.app"><strong>Acesse o site: adversia.vercel.app</strong></a><br>
-  <sub>Demonstração gratuita, sem cadastro</sub>
+  <a href="https://adversia.vercel.app"><strong>Try it: adversia.vercel.app</strong></a><br>
+  <sub>Free demo, no sign-up · the interface is in Portuguese</sub>
 </p>
 
 <p align="center">
-  Hackathon da Cidadania OAB/PR 2026 · Trilha Inovação Aberta e Cidadania
+  Citizenship Hackathon 2026, Brazilian Bar Association (OAB), Paraná Section · Open Innovation and Citizenship Track
 </p>
 
 <p align="center">
-  <img src="docs/imagens/01_inicio.png" alt="Tela inicial da AdversIA" width="860">
+  <img src="docs/imagens/01_inicio.png" alt="AdversIA home screen" width="860">
 </p>
 
 ---
 
-## Sumário
+## Contents
 
-- [O que é](#o-que-é)
-- [O problema](#o-problema)
-- [A solução](#a-solução)
-- [Como funciona](#como-funciona)
-- [O sistema em imagens](#o-sistema-em-imagens)
-- [Por que dá para confiar](#por-que-dá-para-confiar)
-- [Acessibilidade](#acessibilidade)
-- [Privacidade e cuidados](#privacidade-e-cuidados)
-- [Escopo do projeto](#escopo-do-projeto)
-- [Casos de exemplo](#casos-de-exemplo)
-- [Como é feito](#como-é-feito)
-- [Como rodar](#como-rodar)
-- [Documentação](#documentação)
-- [Licença](#licença)
-- [Integrantes](#integrantes)
-
----
-
-## O que é
-
-A **AdversIA** é uma assistente para advogados que atuam em **Direito de Família**:
-divórcio, partilha de bens, união estável, pensão alimentícia, guarda e convivência,
-filiação, curatela e outras situações da Vara de Família.
-
-O advogado envia os documentos do caso e descreve, em poucas linhas, o que pretende
-defender. A AdversIA lê tudo **como se fosse o advogado da outra parte** e mostra onde a
-estratégia pode ser atacada, **antes** que isso aconteça na audiência.
-
-Ela não decide o caso, não substitui o advogado e não é parecer jurídico. É uma revisão
-crítica para o advogado chegar mais preparado.
+- [What it is](#what-it-is)
+- [The problem](#the-problem)
+- [The solution](#the-solution)
+- [How it works](#how-it-works)
+- [Screenshots](#screenshots)
+- [Why you can trust it](#why-you-can-trust-it)
+- [Accessibility](#accessibility)
+- [Privacy and safeguards](#privacy-and-safeguards)
+- [Project scope](#project-scope)
+- [Sample cases](#sample-cases)
+- [How it is built](#how-it-is-built)
+- [Running it](#running-it)
+- [Documentation](#documentation)
+- [License](#license)
+- [Team](#team)
 
 ---
 
-## O problema
+## What it is
 
-Quem constrói uma tese tende a enxergar os pontos fortes e subestimar os fracos. Em
-Direito de Família isso pesa ainda mais: as provas costumam ser informais, as versões das
-partes divergem e há muita emoção envolvida. Na prática, os problemas aparecem tarde
-demais:
+**AdversIA** is an assistant for lawyers practicing **Family Law** in Brazil: divorce,
+division of marital property, stable unions (Brazil's recognized form of cohabitation),
+child and spousal support, custody and visitation, parentage, guardianship and other
+matters heard by Family Courts.
 
-- **datas e versões que não batem** entre a petição e a contestação;
-- **alegações importantes sem nenhuma prova** que as sustente;
-- **perguntas difíceis** do juiz ou da outra parte que ninguém tinha previsto;
-- falta de clareza sobre **quais provas ainda precisam ser produzidas**.
+The lawyer uploads the case documents and describes, in a few lines, the position they
+intend to argue. AdversIA reads everything **as if it were opposing counsel** and shows
+where the strategy can be attacked, **before** that happens at the hearing.
 
-Revisar tudo isso manualmente, caso a caso, consome tempo que o advogado muitas vezes não
-tem, principalmente o advogado que atende a população com menos recursos.
+It does not decide the case, does not replace the lawyer and is not a legal opinion. It is
+a critical review that helps the lawyer arrive better prepared.
 
 ---
 
-## A solução
+## The problem
 
-Uma ferramenta que faz o papel do "advogado do diabo" em minutos e entrega um relatório
-em quatro partes, que também pode ser salvo em PDF:
+Whoever builds a case theory tends to see its strengths and underestimate its weaknesses.
+In Family Law this weighs even more: evidence is often informal, the parties' accounts
+diverge and emotions run high. In practice, problems surface too late:
 
-| | O que entrega |
+- **dates and accounts that do not match** between the initial petition and the answer;
+- **key allegations with no supporting evidence**;
+- **hard questions** from the judge or opposing counsel that nobody anticipated;
+- no clear view of **which evidence still needs to be obtained**.
+
+Reviewing all of this by hand, case by case, takes time lawyers often do not have,
+especially those who represent low-income clients.
+
+---
+
+## The solution
+
+A tool that plays devil's advocate in minutes and delivers a four-part report, which can
+also be saved as a PDF:
+
+| | What it delivers |
 |---|---|
-| **Pontos vulneráveis** | Contradições, alegações sem prova, argumentos que a outra parte pode usar e perguntas difíceis, cada um mostrando de onde veio |
-| **Linha do tempo do caso** | Os fatos com data, em ordem, com destaque onde as versões das partes não batem |
-| **Plano de provas** | O que providenciar para fechar cada ponto fraco, por prioridade e com a forma lícita de obter |
-| **Simulação de audiência** | Um treino em formato de conversa: a parte contrária pergunta, o advogado responde e recebe a avaliação, uma sugestão de como fortalecer a resposta e a réplica |
-| **Relatório em PDF** | Documento formal, em linguagem técnica: identificação, tese, síntese, vulnerabilidades numeradas com os trechos dos documentos, cronologia e plano de diligências em tabelas |
+| **Vulnerabilities** | Contradictions, unsupported allegations, arguments the other side may raise and hard questions, each showing where it came from |
+| **Case timeline** | Dated facts in chronological order, highlighting where the parties' accounts diverge |
+| **Evidence plan** | What to obtain to close each weak point, by priority and with a lawful way to obtain it |
+| **Hearing simulation** | Practice in a chat format: opposing counsel asks, the lawyer answers and receives an assessment, a suggestion to strengthen the answer and a rebuttal |
+| **PDF report** | A formal document in technical language: identification, case theory, summary, numbered vulnerabilities with quotes from the documents, and tables for the timeline and the evidence plan |
 
-E um compromisso que atravessa tudo: **cada trecho citado é conferido, palavra por
-palavra, no documento enviado.**
+And one commitment throughout: **every quoted passage is checked, word for word, against
+the uploaded document.**
 
 ---
 
-## Como funciona
+## How it works
 
-A AdversIA tem **dois jeitos de usar**:
+AdversIA can be used **in two ways**:
 
-| | Demonstração | Análise com documentos (só gestão) |
+| | Demo | Document analysis (management only) |
 |---|---|---|
-| Para quem | Qualquer pessoa que queira conhecer o sistema | Equipe de gestão, com código de acesso |
-| Custo | **Gratuito**, sem cadastro | Usa a chave da Anthropic da própria pessoa (cerca de US$ 0,25 por análise, cobrado na conta dela) |
-| O que acontece | Você escolhe um dos **32 casos fictícios** e vê a análise completa, que foi preparada antes | A inteligência artificial lê os seus documentos na hora |
-| Simulação de audiência | **5 perguntas por caso**, cada uma com duas respostas bem construídas para escolher e comparar a avaliação | Você escreve ou fala a sua resposta |
+| Who it is for | Anyone who wants to try the system | The management team, with an access code |
+| Cost | **Free**, no sign-up | Uses the person's own Anthropic API key (about US$ 0.25 per analysis, charged to their account) |
+| What happens | You pick one of **32 fictional cases** and see the full analysis, prepared in advance | The AI reads your documents on the spot |
+| Hearing simulation | **5 questions per case**, each with two well-built answers to choose from and compare assessments | You type or speak your answer |
 
-No modo demonstração, o relatório mostra o selo *"Demonstração · análise preparada
-previamente"*.
+In demo mode, the report shows the badge *"Demonstração · análise preparada previamente"*
+(Demo · analysis prepared in advance).
 
-Passo a passo da demonstração:
+Demo walkthrough:
 
-1. Clique em **Experimentar com um caso**.
-2. **Escolha um caso** (dá para filtrar por tipo e ver os documentos antes).
-3. Clique em **Analisar caso** e navegue pelas abas do relatório.
-4. Na aba **Simular audiência**, treine respondendo às perguntas da parte contrária.
-5. Use o botão de impressora para **salvar o relatório em PDF**.
+1. Click **Experimentar com um caso** (Try a case).
+2. **Pick a case** (you can filter by type and view the documents first).
+3. Click **Analisar caso** (Analyze case) and browse the report tabs.
+4. In the **Simular audiência** (Simulate hearing) tab, practice answering opposing
+   counsel's questions.
+5. Use the printer button to **save the report as a PDF**.
 
-Passo a passo da análise com documentos, liberada só depois de clicar em **Área da
-gestão** e digitar o código:
+Document analysis walkthrough, available only after clicking **Área da gestão**
+(Management area) and entering the access code:
 
-1. **Envie os documentos do caso**: petição, contestação, acordos, declarações (PDF,
-   Word ou texto).
-2. **Escreva a sua tese**: o que você quer sustentar e em nome de qual parte.
-3. **Informe a sua chave da Anthropic.** Ela é usada só naquela análise e não fica
-   guardada.
-4. **Confirme** que os documentos são fictícios ou anonimizados.
-5. **Acompanhe a análise** (seis etapas, de 2 a 3 minutos), leia o relatório, treine na
-   simulação de audiência e salve em PDF.
+1. **Upload the case documents**: initial petition, answer, agreements, statements (PDF,
+   Word or plain text).
+2. **Write your case theory**: what you want to argue and on behalf of which party.
+3. **Enter your Anthropic API key.** It is used only for that analysis and is not stored.
+4. **Confirm** that the documents are fictional or anonymized.
+5. **Follow the analysis** (six stages, 2 to 3 minutes), read the report, practice in the
+   hearing simulation and save it as a PDF.
 
 ---
 
-## O sistema em imagens
+## Screenshots
 
-### Casos de exemplo prontos
-Filtro por tipo de caso e cartões com um resumo de cada situação, para testar sem
-documentos próprios e sem custo.
+The screenshots show the interface in Portuguese.
 
-<p align="center"><img src="docs/imagens/02_casos_de_exemplo.png" alt="Escolha de casos de exemplo" width="760"></p>
+### Ready-made sample cases
+Filter by case type and cards summarizing each situation, so you can test without your own
+documents and at no cost.
 
-### Análise em etapas
-O progresso aparece na tela enquanto o caso é analisado.
+<p align="center"><img src="docs/imagens/02_casos_de_exemplo.png" alt="Choosing a sample case" width="760"></p>
 
-<p align="center"><img src="docs/imagens/03_progresso.png" alt="Tela de progresso da análise" width="760"></p>
+### Step-by-step analysis
+Progress is shown on screen while the case is analyzed.
 
-### Pontos vulneráveis
-Placar do que a parte contrária pode explorar e cada apontamento com a sua origem e o
-trecho conferido no documento. As seções abrem e fecham, para não precisar rolar a página
-inteira.
+<p align="center"><img src="docs/imagens/03_progresso.png" alt="Analysis progress screen" width="760"></p>
 
-<p align="center"><img src="docs/imagens/04_pontos_vulneraveis.png" alt="Relatório de pontos vulneráveis" width="860"></p>
+### Vulnerabilities
+A scoreboard of what opposing counsel could exploit, and each finding with its source and
+the passage verified in the document. Sections expand and collapse, so there is no need to
+scroll through the whole page.
 
-### Linha do tempo do caso
-Fatos datados, em ordem, com as divergências entre as versões destacadas.
+<p align="center"><img src="docs/imagens/04_pontos_vulneraveis.png" alt="Vulnerabilities report" width="860"></p>
 
-<p align="center"><img src="docs/imagens/05_linha_do_tempo.png" alt="Linha do tempo do caso" width="860"></p>
+### Case timeline
+Dated facts in order, with discrepancies between the accounts highlighted.
 
-### Plano de provas
-O que providenciar, por prioridade, com caixa para marcar o que já foi providenciado e
-vínculo direto para o ponto fraco que cada prova resolve.
+<p align="center"><img src="docs/imagens/05_linha_do_tempo.png" alt="Case timeline" width="860"></p>
 
-<p align="center"><img src="docs/imagens/06_plano_de_provas.png" alt="Plano de provas" width="860"></p>
+### Evidence plan
+What to obtain, by priority, with a checkbox to mark what has been gathered and a direct
+link to the weak point each piece of evidence addresses.
 
-### Simulação de audiência
-Em formato de conversa: a parte contrária pergunta, a AdversIA avalia a resposta com base
-nos documentos, sugere como fortalecê-la e a parte contrária devolve a réplica.
+<p align="center"><img src="docs/imagens/06_plano_de_provas.png" alt="Evidence plan" width="860"></p>
 
-<p align="center"><img src="docs/imagens/07_simulacao_de_audiencia.png" alt="Simulação de audiência" width="860"></p>
+### Hearing simulation
+In a chat format: opposing counsel asks, AdversIA assesses the answer against the
+documents, suggests how to strengthen it, and opposing counsel replies with a rebuttal.
 
-### Relatório em PDF
-Documento formal em folha A4, sem os elementos visuais da página, com seções numeradas,
-tabelas e numeração de páginas.
+<p align="center"><img src="docs/imagens/07_simulacao_de_audiencia.png" alt="Hearing simulation" width="860"></p>
 
-<p align="center"><img src="docs/imagens/11_relatorio_pdf.png" alt="Primeira página do relatório em PDF" width="600"></p>
+### PDF report
+A formal A4 document without the page's visual elements, with numbered sections, tables
+and page numbers.
 
-### Acessibilidade, tema escuro e celular
+<p align="center"><img src="docs/imagens/11_relatorio_pdf.png" alt="First page of the PDF report" width="600"></p>
 
-<p align="center"><img src="docs/imagens/08_acessibilidade.png" alt="Painel de acessibilidade" width="860"></p>
+### Accessibility, dark theme and mobile
+
+<p align="center"><img src="docs/imagens/08_acessibilidade.png" alt="Accessibility panel" width="860"></p>
 
 <p align="center">
-  <img src="docs/imagens/09_tema_escuro.png" alt="Tema escuro" width="600">
+  <img src="docs/imagens/09_tema_escuro.png" alt="Dark theme" width="600">
   &nbsp;
-  <img src="docs/imagens/10_celular.png" alt="Versão para celular" width="220">
+  <img src="docs/imagens/10_celular.png" alt="Mobile version" width="220">
 </p>
 
 ---
 
-## Por que dá para confiar
+## Why you can trust it
 
-- **Tudo mostra de onde veio.** Cada apontamento traz uma etiqueta: *Está nos
-  documentos*, *Fonte jurídica citada*, *Conclusão tirada dos documentos*, *Possível
-  argumento da outra parte* ou *Sem base suficiente — confira*.
-- **Cada trecho citado é conferido automaticamente** no documento enviado:
-  *"✓ Trecho conferido no documento"* ou *"Não localizamos este trecho exato — confira"*.
-- **Não inventa leis nem decisões.** Nenhum número de lei, artigo ou processo é citado
-  sem estar nos documentos.
-- **Na dúvida, é cautelosa.** Quando falta base, ela diz isso em vez de afirmar.
-- **O advogado sempre decide.** O relatório é apoio à revisão, não parecer jurídico.
-
----
-
-## Acessibilidade
-
-Pensada para ser usada por todos. No botão **Acessibilidade**, no topo:
-
-- **Libras** pelo **VLibras**, ferramenta oficial e gratuita do Governo Federal;
-- **tamanho do texto** de 90% a 175%;
-- **tema claro, escuro ou automático**, e **alto contraste**;
-- **texto mais espaçado**, que ajuda pessoas com dislexia;
-- **reduzir animações** (a página também respeita essa preferência do sistema);
-- **ouvir o relatório** e as perguntas em voz alta, e **responder falando** na simulação;
-- letras escolhidas pela leitura fácil: Atkinson Hyperlegible, criada para pessoas com
-  baixa visão, e Lexend nos títulos;
-- uso completo pelo teclado, compatível com leitores de tela, e versão para celular;
-- **linguagem simples**, sem termos técnicos.
+- **Everything shows its source.** Each finding carries a label: *In the documents*,
+  *Legal source cited*, *Conclusion drawn from the documents*, *Possible argument from the
+  other side* or *Not enough basis — please check*.
+- **Every quoted passage is automatically verified** against the uploaded document:
+  *"✓ Passage verified in the document"* or *"We could not find this exact passage — please
+  check"*.
+- **It does not invent statutes or court decisions.** No statute, article or case number
+  is cited unless it appears in the documents.
+- **When in doubt, it is cautious.** When the basis is insufficient, it says so instead of
+  asserting.
+- **The lawyer always decides.** The report supports the review; it is not a legal opinion.
 
 ---
 
-## Privacidade e cuidados
+## Accessibility
 
-- Versão de demonstração: **use apenas documentos fictícios ou anonimizados**. A tela
-  pede essa confirmação antes de cada análise com documentos.
-- **Nada é gravado.** Os documentos são lidos, analisados e descartados. Para a simulação
-  de audiência, o texto dos documentos fica só na aba do navegador de quem fez a análise.
-- **A chave da Anthropic não fica guardada**: vai junto de cada pedido de análise e é
-  descartada em seguida. Ela não é salva no navegador nem no servidor.
-- **A análise com documentos é só para a gestão**, protegida por código de acesso. O
-  público usa apenas os casos fictícios.
-- Os casos do modo demonstração são **inventados**. As fontes públicas pesquisadas serviram
-  só para escolher os temas; nenhum dado de processo real foi usado.
-- Casos de família envolvem dados sensíveis, inclusive de crianças. Para uso com clientes
-  reais, seriam necessários login, prazo automático para apagar documentos e contrato com
-  o fornecedor da inteligência artificial.
-- O relatório é apoio à revisão, **não é parecer jurídico**.
+Designed to be usable by everyone. Under the **Acessibilidade** (Accessibility) button at
+the top:
 
----
-
-## Escopo do projeto
-
-**Dentro do escopo (entregue):**
-- Direito de Família: divórcio e partilha, união estável, pensão alimentícia, guarda e
-  convivência, filiação, curatela e tomada de decisão apoiada, abandono afetivo (e casos
-  relacionados de herança e pensão por morte).
-- Leitura de PDF com texto, Word (.docx) e arquivos de texto.
-- Relatório de pontos vulneráveis com origem de cada apontamento e conferência dos
-  trechos.
-- Linha do tempo, plano de provas e simulação de audiência em formato de conversa.
-- Exportação do relatório em PDF, em formato de documento técnico.
-- Modo demonstração gratuito com 32 casos fictícios, análises preparadas e 5 perguntas de
-  audiência por caso.
-- Análise real com documentos, restrita à gestão, com a chave da Anthropic da própria
-  pessoa.
-- Site publicado na internet (Vercel).
-- Painel de acessibilidade completo e interface em linguagem simples.
-
-**Fora do escopo desta versão:**
-- Outras áreas do Direito.
-- Consulta a legislação e jurisprudência externas.
-- Leitura de documentos escaneados (só imagem).
-- Login, cadastro de escritórios e armazenamento de casos.
-
-**Próximos passos:** login para escritórios, apagamento automático de documentos, leitura
-de documentos escaneados, novas áreas do Direito e testes com advogados e com pessoas
-usuárias de Libras e de leitores de tela.
+- **Brazilian Sign Language (Libras)** through **VLibras**, the Brazilian Federal
+  Government's official free tool;
+- **text size** from 90% to 175%;
+- **light, dark or automatic theme**, and **high contrast**;
+- **wider text spacing**, which helps people with dyslexia;
+- **reduce animations** (the page also honors the operating system's preference);
+- **listen to the report** and the questions read aloud, and **answer by voice** in the
+  simulation;
+- typefaces chosen for legibility: Atkinson Hyperlegible, designed for people with low
+  vision, and Lexend for headings;
+- full keyboard use, screen reader support and a mobile version;
+- **plain language**, without jargon.
 
 ---
 
-## Casos de exemplo
+## Privacy and safeguards
 
-Todos os **32 casos** são **fictícios**, sem relação com pessoas reais. De onde vieram os
-temas: [catálogo de situações](docs/CATALOGO_DE_SITUACOES.md).
+- This is a demo version: **use only fictional or anonymized documents**. The screen asks
+  for this confirmation before every document analysis.
+- **Nothing is stored.** Documents are read, analyzed and discarded. For the hearing
+  simulation, the document text stays only in the browser tab of the person who ran the
+  analysis.
+- **The Anthropic API key is not stored**: it travels with each analysis request and is
+  discarded afterwards. It is saved neither in the browser nor on the server.
+- **Document analysis is restricted to the management team**, protected by an access code.
+  The public only uses the fictional cases.
+- The demo cases are **made up**. Public sources were researched only to choose the
+  themes; no data from real court cases was used (Brazilian family proceedings are
+  confidential).
+- Family cases involve sensitive data, including data about children. Using it with real
+  clients would require login, automatic document deletion deadlines and a data processing
+  agreement with the AI provider.
+- The report supports the review; **it is not a legal opinion**.
 
-| Tipo | Situações |
+---
+
+## Project scope
+
+**In scope (delivered):**
+- Brazilian Family Law: divorce and property division, stable unions, child and spousal
+  support, custody and visitation, parentage, guardianship and supported decision-making,
+  emotional abandonment (and related inheritance and survivor's pension cases).
+- Reading text-based PDFs, Word (.docx) and plain text files.
+- Vulnerabilities report with the source of each finding and verification of quotes.
+- Timeline, evidence plan and chat-style hearing simulation.
+- PDF export of the report as a technical document.
+- Free demo mode with 32 fictional cases, prepared analyses and 5 hearing questions per
+  case.
+- Real document analysis, restricted to management, using the person's own Anthropic API
+  key.
+- Website published online (Vercel).
+- Full accessibility panel and a plain-language interface.
+
+**Out of scope for this version:**
+- Other areas of law.
+- Lookup of external legislation and case law.
+- Reading scanned (image-only) documents.
+- Login, law firm accounts and case storage.
+
+**Next steps:** login for law firms, automatic document deletion, reading scanned documents,
+new areas of law and testing with lawyers, sign language users and screen reader users.
+
+---
+
+## Sample cases
+
+All **32 cases** are **fictional** and bear no relation to real people. Where the themes
+came from: [catalog of situations](docs/CATALOGO_DE_SITUACOES.md) (in Portuguese).
+
+| Type | Situations |
 |---|---|
-| Divórcio e partilha de bens | Empresa e imóvel anteriores ao casamento · Aposentadoria na partilha e pedido de pensão · FGTS acumulado durante o casamento · Previdência privada aberta e fechada · Aluguel pelo uso do imóvel comum · Criptomoedas e empréstimo na partilha |
-| União estável | União estável depois da morte do companheiro · Animal de estimação na separação |
-| Pensão alimentícia | Perda de emprego e mudança de cidade (**melhor para ver a linha do tempo**) · Filha maior de idade com renda própria · Ex-esposa voltou a trabalhar · Pensão entre ex-cônjuges há muitos anos · Alimentos durante a gravidez · Pensão cobrada dos avós · Pensão atrasada com pedido de prisão · Alimentos compensatórios até a partilha |
-| Guarda e convivência | Alegação de alienação parental · Guarda unilateral ou compartilhada · Mudança de residência do filho · Mudança de país com a filha · Guarda com medida protetiva · Convivência dos avós com a neta |
-| Filiação | Investigação de paternidade sem exame de DNA · Negatória de paternidade e vínculo afetivo · Pai biológico e pai registral |
-| Curatela e proteção | Curatela de mãe com Alzheimer · Tomada de decisão apoiada |
-| Herança | Filha que cuidou do pai · Companheira e parentes do falecido |
-| Pensão por morte | Relação paralela ao casamento · Pensão combinada em cartório |
-| Responsabilidade na família | Indenização por abandono afetivo |
+| Divorce and property division | Business and real estate owned before the marriage · Retirement benefits in the division and a support claim · FGTS (Brazilian mandatory severance fund) accrued during the marriage · Open and closed private pension plans · Rent for sole use of the jointly owned home · Cryptocurrency and a loan in the division |
+| Stable union | Stable union recognized after the partner's death · Pet custody after separation |
+| Support | Job loss and relocation (**best case for the timeline**) · Adult daughter with her own income · Ex-wife returned to work · Spousal support paid for many years · Pregnancy support (*alimentos gravídicos*, paid by the alleged father during pregnancy) · Support claimed from grandparents · Unpaid support with a request for civil imprisonment (allowed in Brazil for support debts) · Compensatory support until property is divided |
+| Custody and visitation | Parental alienation allegation · Sole or joint custody · Child's change of residence · Relocating abroad with the daughter · Custody with a domestic violence protective order · Grandparents' visitation with their granddaughter |
+| Parentage | Paternity action without a DNA test · Paternity disavowal and socio-affective bond · Biological father and registered father (multiple parentage) |
+| Guardianship and protection | Guardianship of a mother with Alzheimer's · Supported decision-making |
+| Inheritance | Daughter who cared for her father · Surviving partner and the deceased's relatives |
+| Survivor's pension | Relationship parallel to a marriage · Support agreed before a notary |
+| Family liability | Damages for emotional abandonment |
 
 ---
 
-## Como é feito
+## How it is built
 
-| Parte | Tecnologia |
+| Part | Technology |
 |---|---|
-| Site | HTML, CSS e JavaScript puros, sem framework nem etapa de build |
-| Servidor local | Python 3.13, só com a biblioteca padrão (`app/server.py`) |
-| Publicação | Vercel: site estático + funções Python em `api/` |
-| Inteligência artificial | Claude, da Anthropic, com a chave de quem faz a análise |
-| Leitura de documentos | `pypdf` (PDF) e `python-docx` (Word) |
+| Website | Plain HTML, CSS and JavaScript, no framework and no build step |
+| Local server | Python 3.13, standard library only (`app/server.py`) |
+| Hosting | Vercel: static site + Python functions in `api/` |
+| AI | Claude, by Anthropic, using the key of whoever runs the analysis |
+| Document reading | `pypdf` (PDF) and `python-docx` (Word) |
 
-Estrutura do repositório:
+Repository layout:
 
 ```
-app/            código Python (pipeline de análise, leitura de documentos, API) e o site em app/static
-api/            funções da Vercel: analisar, audiencia e gestao
-demo/fontes/    análises e perguntas escritas para os 32 casos de demonstração
-golden_dataset/ documentos fictícios de cada caso
-scripts/        construir_demo.py: confere cada trecho citado e gera app/static/demo
-tests/          testes do pipeline (chamam a API real da Anthropic)
-docs/           documentação técnica, decisões, conformidade e imagens
+app/            Python code (analysis pipeline, document reading, API) and the website in app/static
+api/            Vercel functions: analisar (analyze), audiencia (hearing) and gestao (management)
+demo/fontes/    analyses and questions written for the 32 demo cases
+golden_dataset/ fictional documents for each case
+scripts/        construir_demo.py: verifies every quoted passage and builds app/static/demo
+tests/          pipeline tests (they call the real Anthropic API)
+docs/           technical documentation, decisions, compliance and images (in Portuguese)
 ```
 
 ---
 
-## Como rodar
+## Running it
 
-**Na internet:** [adversia.vercel.app](https://adversia.vercel.app), publicado na Vercel a
-partir deste repositório. O modo demonstração funciona sem nenhuma configuração.
+**Online:** [adversia.vercel.app](https://adversia.vercel.app), deployed on Vercel from
+this repository. Demo mode needs no configuration.
 
-**No computador**, com Python 3.13:
+**Locally**, with Python 3.13:
 
 ```bash
 pip install -r requirements.txt
 python -m app.server
-# abra http://localhost:8000
+# open http://localhost:8000
 ```
 
-O modo demonstração funciona sem nenhuma configuração. A análise com documentos é só
-para a gestão: defina a variável `ADVERSIA_CODIGO_GESTAO` (no `.env` ou no painel da
-Vercel; veja `.env.example`) e informe esse código e a chave da Anthropic na tela. Cada
-análise completa custa cerca de US$ 0,25, cobrados na conta de quem informou a chave.
+Demo mode needs no configuration. Document analysis is for management only: set the
+`ADVERSIA_CODIGO_GESTAO` variable (in `.env` or in the Vercel dashboard; see
+`.env.example`) and enter that code and an Anthropic API key on screen. Each full analysis
+costs about US$ 0.25, charged to the account whose key was used.
 
-**Depois de alterar um caso de demonstração** (`demo/fontes`), gere os arquivos do site de
-novo. O script para se algum trecho citado não estiver, palavra por palavra, no documento:
+**After changing a demo case** (`demo/fontes`), rebuild the website files. The script
+stops if any quoted passage is not found, word for word, in its document:
 
 ```bash
 python scripts/construir_demo.py
 ```
 
-**Testes:** `pytest` roda os testes do pipeline com a API real da Anthropic (há custo) e
-exige `ANTHROPIC_API_KEY`; sem a chave, eles são pulados.
+**Tests:** `pytest` runs the pipeline tests against the real Anthropic API (this has a
+cost) and requires `ANTHROPIC_API_KEY`; without the key, they are skipped.
 
 ---
 
-## Documentação
+## Documentation
 
-- [Documentação técnica](docs/DOCUMENTACAO_TECNICA.md): arquitetura, módulos, API,
-  segurança, testes e limitações.
-- [Decisões do projeto](docs/DECISIONS.md): o porquê de cada escolha.
-- [Conformidade](docs/CONFORMIDADE.md): acessibilidade, LGPD e segurança.
-- [Requisitos de experiência de uso](docs/REQUISITOS_UX.md): as referências que guiaram
-  o redesenho da interface.
-- [Custos](docs/COSTS.md): quanto custa cada análise e como foi medido.
-- [Catálogo de situações](docs/CATALOGO_DE_SITUACOES.md): os 32 casos fictícios e as
-  fontes públicas que inspiraram os temas.
-- [Testes internos](docs/testes-internos.md) e [roteiro de teste externo](docs/roteiro-teste-externo.md).
+All documentation is in Portuguese.
 
----
-
-## Licença
-
-Código distribuído sob a [licença MIT](LICENSE). Copyright (c) 2026 Equipe Código de Defesa.
-
-Este repositório não publica credenciais (como o `.env` e a chave da Anthropic), dados de
-usuários, documentos reais de clientes, logs com informações pessoais nem arquivos
-enviados nos testes externos. Todos os casos são fictícios. Detalhes na
-[política de publicação](docs/CONFORMIDADE.md#política-de-publicação-do-repositório).
+- [Technical documentation](docs/DOCUMENTACAO_TECNICA.md): architecture, modules, API,
+  security, tests and limitations.
+- [Project decisions](docs/DECISIONS.md): the reasoning behind each choice.
+- [Compliance](docs/CONFORMIDADE.md): accessibility, LGPD (Brazil's data protection law)
+  and security.
+- [User experience requirements](docs/REQUISITOS_UX.md): the references behind the
+  interface redesign.
+- [Costs](docs/COSTS.md): how much each analysis costs and how it was measured.
+- [Catalog of situations](docs/CATALOGO_DE_SITUACOES.md): the 32 fictional cases and the
+  public sources that inspired the themes.
+- [Internal tests](docs/testes-internos.md) and [external test script](docs/roteiro-teste-externo.md).
 
 ---
 
-## Integrantes
+## License
 
-- **Giovanna Ribas dos Reis** — [portfólio](https://ribasgiovanna.github.io/)
+Code released under the [MIT License](LICENSE). Copyright (c) 2026 Equipe Código de Defesa
+(the Código de Defesa team).
+
+This repository does not publish credentials (such as `.env` and the Anthropic API key),
+user data, real client documents, logs containing personal information or files uploaded
+during external tests. All cases are fictional. Details in the
+[publication policy](docs/CONFORMIDADE.md#política-de-publicação-do-repositório) (in
+Portuguese).
+
+---
+
+## Team
+
+- **Giovanna Ribas dos Reis** — [portfolio](https://ribasgiovanna.github.io/)
 - **Emelize Bonfim Mlot**
 - **Ana Beatriz Patussi**
 - **Julia Fernanda Zuchi**
@@ -381,4 +394,4 @@ enviados nos testes externos. Todos os casos são fictícios. Detalhes na
 
 ---
 
-<p align="center"><sub>AdversIA · Hackathon da Cidadania OAB/PR 2026 · Protótipo de demonstração</sub></p>
+<p align="center"><sub>AdversIA · Citizenship Hackathon 2026, OAB Paraná · Demo prototype</sub></p>
