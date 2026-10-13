@@ -55,8 +55,11 @@ def caso_familia_03():
 
 
 @pytest.fixture(autouse=True)
-def _skip_sem_api_key():
-    _exigir_api_key()
+def _skip_sem_api_key(request):
+    # Só os testes de pipeline (tests/test_pipeline_*.py) chamam a API real. Os testes de
+    # tests/unit/ rodam sem credencial — são eles que o CI executa a cada push.
+    if request.node.path.name.startswith("test_pipeline_"):
+        _exigir_api_key()
 
 
 # --- Relatórios cacheados por nome de caso ----------------------------------

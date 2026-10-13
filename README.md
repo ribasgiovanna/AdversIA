@@ -18,6 +18,10 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/ribasgiovanna/AdversIA/actions/workflows/tests.yml"><img src="https://github.com/ribasgiovanna/AdversIA/actions/workflows/tests.yml/badge.svg" alt="Tests"></a>
+</p>
+
+<p align="center">
   <a href="https://adversia.vercel.app"><strong>Try it: adversia.vercel.app</strong></a><br>
   <sub>Free demo, no sign-up · the interface is in Portuguese</sub>
 </p>
@@ -317,7 +321,8 @@ api/            Vercel functions: analisar (analyze), audiencia (hearing) and ge
 demo/fontes/    analyses and questions written for the 32 demo cases
 golden_dataset/ fictional documents for each case
 scripts/        construir_demo.py: verifies every quoted passage and builds app/static/demo
-tests/          pipeline tests (they call the real Anthropic API)
+tests/unit/     offline tests, run on every push (citation checks, access control, document reading, demo data)
+tests/          pipeline tests that call the real Anthropic API
 docs/           technical documentation, decisions, compliance and images (in Portuguese)
 ```
 
@@ -348,8 +353,11 @@ stops if any quoted passage is not found, word for word, in its document:
 python scripts/construir_demo.py
 ```
 
-**Tests:** `pytest` runs the pipeline tests against the real Anthropic API (this has a
-cost) and requires `ANTHROPIC_API_KEY`; without the key, they are skipped.
+**Tests:** `python -m pytest` runs two groups. The tests in `tests/unit/` need no API key and
+run automatically on every push (GitHub Actions): citation checking, access control,
+document reading and the integrity of the 32 demo cases. The pipeline tests
+(`tests/test_pipeline_*.py`) call the real Anthropic API (this has a cost) and require
+`ANTHROPIC_API_KEY`; without the key, they are skipped.
 
 ---
 
@@ -386,7 +394,7 @@ Portuguese).
 
 ## Team
 
-- **Giovanna Ribas dos Reis** — [portfolio](https://ribasgiovanna.github.io/)
+- **Giovanna Ribas dos Reis** — back end and front end · [portfolio](https://ribasgiovanna.github.io/)
 - **Emelize Bonfim Mlot**
 - **Ana Beatriz Patussi**
 - **Julia Fernanda Zuchi**
