@@ -9,6 +9,7 @@
 # se este arquivo for enviado, a Vercel tenta usá-lo como aplicação e o build falha.
 /app/server.py
 /.claude/
+/.github/
 /.specify/
 /specs/
 /docs/

@@ -17,6 +17,10 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/ribasgiovanna/AdversIA/actions/workflows/tests.yml"><img src="https://github.com/ribasgiovanna/AdversIA/actions/workflows/tests.yml/badge.svg" alt="Tests"></a>
+</p>
+
+<p align="center">
   <a href="https://adversia.vercel.app"><strong>Acesse o site: adversia.vercel.app</strong></a><br>
   <sub>Demonstração gratuita, sem cadastro</sub>
 </p>
@@ -309,7 +313,8 @@ api/            funções da Vercel: analisar, audiencia e gestao
 demo/fontes/    análises e perguntas escritas para os 32 casos de demonstração
 golden_dataset/ documentos fictícios de cada caso
 scripts/        construir_demo.py: confere cada trecho citado e gera app/static/demo
-tests/          testes do pipeline (chamam a API real da Anthropic)
+tests/unit/     testes sem API, rodam a cada push (conferência de citações, acesso, leitura de documentos, dados da demonstração)
+tests/          testes do pipeline que chamam a API real da Anthropic
 docs/           documentação técnica, decisões, conformidade e imagens
 ```
 
@@ -340,8 +345,11 @@ novo. O script para se algum trecho citado não estiver, palavra por palavra, no
 python scripts/construir_demo.py
 ```
 
-**Testes:** `pytest` roda os testes do pipeline com a API real da Anthropic (há custo) e
-exige `ANTHROPIC_API_KEY`; sem a chave, eles são pulados.
+**Testes:** `python -m pytest` roda dois grupos. Os testes de `tests/unit/` não precisam de
+chave e rodam automaticamente a cada push (GitHub Actions): conferência de citações,
+controle de acesso, leitura de documentos e integridade dos 32 casos de demonstração. Os
+testes do pipeline (`tests/test_pipeline_*.py`) chamam a API real da Anthropic (há custo)
+e exigem `ANTHROPIC_API_KEY`; sem a chave, eles são pulados.
 
 ---
 
@@ -373,7 +381,7 @@ enviados nos testes externos. Todos os casos são fictícios. Detalhes na
 
 ## Integrantes
 
-- **Giovanna Ribas dos Reis** — [portfólio](https://ribasgiovanna.github.io/)
+- **Giovanna Ribas dos Reis** — back-end e front-end · [portfólio](https://ribasgiovanna.github.io/)
 - **Emelize Bonfim Mlot**
 - **Ana Beatriz Patussi**
 - **Julia Fernanda Zuchi**

@@ -1,0 +1,19 @@
+name: Tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+      - run: pip install -r requirements.txt
+      # Sem ANTHROPIC_API_KEY: roda os testes de tests/unit/ e pula os de pipeline,
+      # que chamam a API real da Anthropic e têm custo.
+      - run: python -m pytest -q -rs
