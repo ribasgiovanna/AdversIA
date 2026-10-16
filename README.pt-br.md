@@ -382,8 +382,8 @@ enviados nos testes externos. Todos os casos são fictícios. Detalhes na
 ## Integrantes
 
 - **Giovanna Ribas dos Reis** — back-end e front-end · [portfólio](https://ribasgiovanna.github.io/)
-- **Emelize Bonfim Mlot**
-- **Ana Beatriz Patussi**
+- **Emelize Bonfim Mlot** · [GitHub](https://github.com/liz-whs)
+- **Ana Beatriz Patussi** · [GitHub](https://github.com/anaapatussi-prog)
 - **Julia Fernanda Zuchi**
 - **Natan Bombini Roth**
 
