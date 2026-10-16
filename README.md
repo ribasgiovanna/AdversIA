@@ -395,8 +395,8 @@ Portuguese).
 ## Team
 
 - **Giovanna Ribas dos Reis** — back end and front end · [portfolio](https://ribasgiovanna.github.io/)
-- **Emelize Bonfim Mlot**
-- **Ana Beatriz Patussi**
+- **Emelize Bonfim Mlot** · [GitHub](https://github.com/liz-whs)
+- **Ana Beatriz Patussi** · [GitHub](https://github.com/anaapatussi-prog)
 - **Julia Fernanda Zuchi**
 - **Natan Bombini Roth**
 
